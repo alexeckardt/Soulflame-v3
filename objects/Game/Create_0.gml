@@ -20,3 +20,8 @@ viewDamageBoxes = true;
 //Game Keep Track Of
 delta = -1;
 delta_scale = 60;
+
+//View
+ideal_camera_width = 320;
+ideal_camera_height = 180;
+ideal_aspect_ratio = 16/9;
