@@ -3,7 +3,7 @@
 //
 //
 //
-function meta_object_create(_objectId, _depthh) {
+function meta_object_create(objectId, depthh) {
 
 	//Display
 	show_debug_message("Attempting to create meta obj " + object_get_name(objectId) + "...");
