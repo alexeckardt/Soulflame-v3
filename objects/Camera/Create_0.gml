@@ -7,7 +7,7 @@ view_width = 320;
 view_height = 180;
 
 cameraZoom = 1;
-windowScale = 6;
+windowScale = 8;
 
 //Disable Application Surface
 application_surface_enable(false);

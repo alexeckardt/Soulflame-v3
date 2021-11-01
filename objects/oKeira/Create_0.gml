@@ -20,8 +20,8 @@ climbingGravMulti = 1/3
 lastOnFloorAtY = y;
 
 //Gravity & Jumping
-jumpSpeed = -6.3;
-myGrav = 0.3;
+jumpSpeed = -4.3;
+myGrav = 0.2;
 terminalVelocity = 10;
 halfGravityThreshold = 0.7;
 forceHalfGravity = false;

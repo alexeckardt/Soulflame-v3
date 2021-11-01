@@ -53,8 +53,12 @@ if (updateCam) {
 	display_set_gui_size(view_width*z, view_height*z);
 	
 	//Set Scale
-	window_set_size(view_width*windowScale, view_height*windowScale)
+	window_set_size(view_width*windowScale, view_height*windowScale);
+	window_center();
 	
+	display_reset(0, false)
+	
+	updateCam = false;
 }
 
 
