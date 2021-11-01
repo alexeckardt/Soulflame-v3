@@ -10,7 +10,7 @@ runSpeed = 3;
 
 
 //States
-STATE = 0;
+STATE = state.base;
 inControl = true
 directionFacing = 1;
 visualDirectionFacing = 0;
@@ -20,8 +20,8 @@ climbingGravMulti = 1/3
 lastOnFloorAtY = y;
 
 //Gravity & Jumping
-jumpSpeed = -4.3;
-myGrav = 0.2;
+jumpSpeed = -4.8;
+myGrav = 0.25;
 terminalVelocity = 10;
 halfGravityThreshold = 0.7;
 forceHalfGravity = false;
@@ -41,6 +41,7 @@ bounceJumpCoefficient = 0.7;
 wallClimbCoyoteeTime = 4	
 canVerticalClimb = false;
 timeNotClimbing = -1;
+climbingTermVel = 0.5;
 wallJumpSpeed = jumpSpeed * 0.9;
 wallJumpAngle = 30;
 

@@ -94,8 +94,8 @@ if (timeOffGround > -1) {
 	controlHSpeed = sign(controlHSpeed) * floor(abs(controlHSpeed) * 100) / 100;
 	hSpeed = controlHSpeed
 
-//Run Horizontally
-hAcc = mx * runSpeed * time
+//Dir Facing
+directionFacing = (controlHSpeed != 0 && inControl) ? sign(controlHSpeed) : directionFacing;
 
 
 //Collision
@@ -184,8 +184,7 @@ if (onGround && !wasOnGround) {
 	
 	//Reset State
 	if (STATE == state.climb) {
-		STATE = state.base;	
-	}
+		STATE = state.base;	}
 	
 	//Double Jump
 	
@@ -194,6 +193,39 @@ if (onGround && !wasOnGround) {
 }
 
 //Climbing
+timeNotClimbing += time;
+if (wallInDirection != 0) {
+
+	//Remeber Wall
+	lastWallInDirection = wallInDirection;
+	lastWallMeeting = instance_place(x + wallInDirection, y, Solid)
+
+	var climbing = (STATE == state.climb);
+
+	//Switch To Climb State
+	if (!climbing) {
+		if (abs(lastOnFloorAtY - y) > 20) { //Must be at least 2.5 tiles off the ground
+			STATE = state.climb;	
+			climbing = true;
+		}
+	}
+
+	//Reset Tracking Of Time
+	if (climbing) {
+		timeNotClimbing = -1;
+	}
+
+
+	//Reset STATE
+	if (lastWallMeeting == noone) {
+		wallInDirection = 0;
+		
+		//Exit Climb
+		if (climbing) {
+			STATE = state.base;
+		}
+	}
+}
 
 
 //Jump
@@ -207,10 +239,12 @@ jumpCooldownTicks -= time;
 if (jumpTicks > 0) {
 	jumpTicks -= time;
 	
+	var climbing = (STATE == state.climb);
+	
 	//Coyottee Time AND Wait for until on ground.
 	var onGroundJump = timeOffGround < coyoteeMaxTime && jumpCooldownTicks < 0;
-	var wallJump = timeNotClimbing < wallClimbCoyoteeTime && (directionFacing == -lastWallInDirection || !canVerticalClimb);
-	var verticalClimb = canVerticalClimb && directionFacing == lastWallInDirection;
+	var wallJump = climbing && (timeNotClimbing < wallClimbCoyoteeTime && (directionFacing == -lastWallInDirection || !canVerticalClimb));
+	var verticalClimb = climbing && (canVerticalClimb && directionFacing == lastWallInDirection);
 	var doubleJump = false;
 	var bounceOffEnemy = bouncingOffEnemy && forceJump;
 	
@@ -249,10 +283,10 @@ if (jumpTicks > 0) {
 			
 				//Decide Vector
 				var spd = wallJumpSpeed;
-				var jumpingAngle = 90 + lastWallInDirection*wallJumpAngle;
+				var jumpingAngle = 90 + wallInDirection*wallJumpAngle;
 			
-				controlHSpeed += lengthdir_x(spd, jumpingAngle);	
-				controlVSpeed += lengthdir_y(spd, jumpingAngle); 
+				controlHSpeed -= lengthdir_x(spd, jumpingAngle);	
+				controlVSpeed -= lengthdir_y(spd, jumpingAngle); 
 			
 				squishX = -squishOffset*1.3;
 				squishY = squishOffset*1.25;
