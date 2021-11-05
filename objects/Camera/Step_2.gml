@@ -27,8 +27,8 @@ if (instance_exists(target)) {
 goalX = clamp(goalX, roomEdgeBuffer+halfCamW, room_width-roomEdgeBuffer-halfCamW);
 goalY = clamp(goalY, roomEdgeBuffer+halfCamH, room_height-roomEdgeBuffer-halfCamH);
 
-x = goalX;
-y = goalY;
+x = (goalX);
+y = (goalY);
 
 
 
@@ -40,7 +40,7 @@ if (keyboard_check(vk_shift)) { x += 0.1; y += 0.05; }
 
 
 //Update Camera Position
-camera_set_view_pos(view_camera[0], floor(x), floor(y));
+camera_set_view_pos(view_camera[0], (x), (y));
 
 
 //Update Camera Dimensions

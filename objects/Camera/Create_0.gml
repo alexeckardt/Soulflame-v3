@@ -3,11 +3,15 @@
 //Update Size Of Camera
 
 updateCam = true;
-view_width = 320;
-view_height = 180;
+
+var goalPixelSize = 4
+view_width = 1920 div goalPixelSize;
+view_height = 1080 div goalPixelSize;
+
+displayHeight = display_get_height()
 
 cameraZoom = 1;
-windowScale = 8;
+windowScale = displayHeight div view_height;
 
 //Disable Application Surface
 application_surface_enable(false);

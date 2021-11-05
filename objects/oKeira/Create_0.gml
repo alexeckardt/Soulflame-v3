@@ -6,7 +6,7 @@ controlVSpeed = 0; //What I'm Controlling
 hSpeed = 0; //Real, Updates outside
 vSpeed = 0;
 
-runSpeed = 3;
+runSpeed = 2.5;
 
 
 //States
