@@ -21,8 +21,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Spr",
-    "path": "folders/Entity/Enemy/Base/Spr.yy",
+    "name": "Base",
+    "path": "folders/Entity/Enemy/Base.yy",
   },
   "resourceVersion": "1.0",
   "name": "oBaseEnemy",
