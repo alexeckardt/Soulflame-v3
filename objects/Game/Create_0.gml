@@ -13,9 +13,8 @@ persistance = ds_map_create();
 
 
 //Debug Settings
-viewHitboxes = true;
+viewHitboxes = false;
 viewDamageBoxes = true;
-
 
 //Game Keep Track Of
 delta = -1;

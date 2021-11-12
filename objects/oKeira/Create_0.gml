@@ -1,6 +1,7 @@
 /// @desc
 
 //Setup
+mask = sKeiraIdle;
 hitbox = hitbox_create_alt(oKeiraHitbox, x, y-12, 15, 23, false);
 
 //Speed
