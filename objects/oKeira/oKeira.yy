@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Keira",
-    "path": "folders/Entity/Keira.yy",
+    "path": "folders/Keira.yy",
   },
   "resourceVersion": "1.0",
   "name": "oKeira",

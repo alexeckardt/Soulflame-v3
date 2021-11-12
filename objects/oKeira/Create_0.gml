@@ -1,5 +1,8 @@
 /// @desc
 
+//Setup
+hitbox = hitbox_create_alt(oKeiraHitbox, x, y-12, 15, 23, false);
+
 //Speed
 controlHSpeed = 0; //What I'm Controlling
 controlVSpeed = 0; //What I'm Controlling
@@ -51,7 +54,7 @@ airFrictionValue = 0.05;
 airFrictionMultiplierLerp = 0;
 
 //knockback
-
+invulnerableTicks = 0
 
 //Collisions
 onGround = false;

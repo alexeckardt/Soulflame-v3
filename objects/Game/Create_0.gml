@@ -13,7 +13,7 @@ persistance = ds_map_create();
 
 
 //Debug Settings
-viewHitboxes = false;
+viewHitboxes = true;
 viewDamageBoxes = true;
 
 
