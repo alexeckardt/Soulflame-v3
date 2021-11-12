@@ -49,6 +49,7 @@ timeNotClimbing = -1;
 climbingTermVel = 0.5;
 wallJumpSpeed = jumpSpeed * 0.95;
 wallJumpAngle = 30;
+hasJumpedOffWallSinceOnGround = false;
 
 //Friction
 doAirFriction =true;

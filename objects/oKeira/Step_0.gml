@@ -87,7 +87,8 @@ if (timeOffGround > -1) {
 		//Keep Track
 		timeOffGround = -1;	
 		lastOnFloorAtY = y;
-		lastOnFloorAtX = x
+		lastOnFloorAtX = x;
+		hasJumpedOffWallSinceOnGround = false;
 	
 	}
 	
@@ -205,7 +206,7 @@ if (wallInDirection != 0) {
 
 	//Switch To Climb State
 	if (!climbing) {
-		if (lastOnFloorAtY - y > 20 || abs(lastOnFloorAtX-x) > 32) { //Must be at least 2.5 tiles off the ground if ne
+		if (lastOnFloorAtY - y > 20 || abs(lastOnFloorAtX-x) > 32) || hasJumpedOffWallSinceOnGround { //Must be at least 2.5 tiles off the ground if ne
 			STATE = state.climb;	
 			climbing = true;
 		}
@@ -294,6 +295,8 @@ if (jumpTicks > 0) {
 			
 				//Cannot Turn Around For A Short Amount of Time if I can't climb stragit
 				airFrictionMultiplierLerp *= canVerticalClimb;
+				
+				hasJumpedOffWallSinceOnGround = true;
 			}
 		
 			if (verticalClimb) {
