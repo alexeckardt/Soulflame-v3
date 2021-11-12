@@ -22,6 +22,7 @@ visualDirectionFacing = 0;
 //Climbing
 climbingGravMulti = 1/3
 lastOnFloorAtY = y;
+lastOnFloorAtX = x;
 
 //Gravity & Jumping
 jumpSpeed = -4.8;

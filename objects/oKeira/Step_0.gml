@@ -87,6 +87,7 @@ if (timeOffGround > -1) {
 		//Keep Track
 		timeOffGround = -1;	
 		lastOnFloorAtY = y;
+		lastOnFloorAtX = x
 	
 	}
 	
@@ -141,12 +142,12 @@ if (place_meeting(x, y+moveY, Solid)) {
 	var stopVspeed = true;
 	if (controlVSpeed < -1) {
 		if (!place_meeting(x+slideCornerRange+controlHSpeed, y-2+controlVSpeed, Solid)) {
-			controlHSpeed = 1.5;
+			controlHSpeed = max(controlHSpeed, 1.5);
 			stopVspeed = false;
 		}
 		
 		if (!place_meeting(x-slideCornerRange+controlHSpeed, y-2+controlVSpeed, Solid)) {
-			controlHSpeed = -1.5;
+			controlHSpeed = min(controlHSpeed, -1.5);
 			stopVspeed = false;
 		}
 		
@@ -204,7 +205,7 @@ if (wallInDirection != 0) {
 
 	//Switch To Climb State
 	if (!climbing) {
-		if (abs(lastOnFloorAtY - y) > 20) { //Must be at least 2.5 tiles off the ground
+		if (lastOnFloorAtY - y > 20 || abs(lastOnFloorAtX-x) > 32) { //Must be at least 2.5 tiles off the ground if ne
 			STATE = state.climb;	
 			climbing = true;
 		}
