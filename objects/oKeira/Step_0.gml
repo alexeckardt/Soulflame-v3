@@ -139,14 +139,14 @@ if (place_meeting(x, y+moveY, Solid)) {
 	
 	//Slide Around Corner
 	var stopVspeed = true;
-	if (vSpeed < -1) {
-		if (!place_meeting(x+slideCornerRange+hSpeed, y-2+vSpeed, Solid)) {
-			hSpeed = 2;
+	if (controlVSpeed < -1) {
+		if (!place_meeting(x+slideCornerRange+controlHSpeed, y-2+controlVSpeed, Solid)) {
+			controlHSpeed = 1.5;
 			stopVspeed = false;
 		}
 		
-		if (!place_meeting(x-slideCornerRange+hSpeed, y-2+vSpeed, Solid)) {
-			hSpeed = -2;
+		if (!place_meeting(x-slideCornerRange+controlHSpeed, y-2+controlVSpeed, Solid)) {
+			controlHSpeed = -1.5;
 			stopVspeed = false;
 		}
 		
@@ -285,8 +285,8 @@ if (jumpTicks > 0) {
 				var spd = wallJumpSpeed;
 				var jumpingAngle = 90 + wallInDirection*wallJumpAngle;
 			
-				controlHSpeed -= lengthdir_x(spd, jumpingAngle);	
-				controlVSpeed -= lengthdir_y(spd, jumpingAngle); 
+				controlHSpeed = -lengthdir_x(spd, jumpingAngle);	
+				controlVSpeed = -lengthdir_y(spd, jumpingAngle); 
 			
 				squishX = -squishOffset*1.3;
 				squishY = squishOffset*1.25;

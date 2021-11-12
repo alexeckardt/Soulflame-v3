@@ -46,7 +46,7 @@ wallClimbCoyoteeTime = 4
 canVerticalClimb = false;
 timeNotClimbing = -1;
 climbingTermVel = 0.5;
-wallJumpSpeed = jumpSpeed * 0.9;
+wallJumpSpeed = jumpSpeed * 0.95;
 wallJumpAngle = 30;
 
 //Friction
@@ -64,7 +64,7 @@ groundBelow = noone;
 mask = sprite_index;
 wallInDirection = 0;
 lastWallInDirection = 0;
-slideCornerRange = 2;
+slideCornerRange = 5;
 
 //Squish Squash
 squishX = 1;
