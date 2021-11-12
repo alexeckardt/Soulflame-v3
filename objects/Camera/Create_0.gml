@@ -9,9 +9,7 @@ view_width = 1920 div goalPixelSize;
 view_height = 1080 div goalPixelSize;
 
 displayHeight = display_get_height()
-
-cameraZoom = 1;
-windowScale = displayHeight div view_height;
+windowScale = (displayHeight div view_height) - 1;
 
 //Disable Application Surface
 application_surface_enable(false);
@@ -21,6 +19,7 @@ vc = view_camera[0];
 
 
 //Set the Size of the Camera
+cameraZoom = 1;
 camera_set_view_size(view_camera[0], view_width/cameraZoom + 1, view_height/cameraZoom + 1);
 display_set_gui_size(view_width, view_height);
 

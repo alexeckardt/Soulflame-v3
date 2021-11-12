@@ -1,6 +1,6 @@
 /// @desc
 
-//usingController = gamepad_is_connected(0);
+usingController = gamepad_is_connected(0);
 
 //Controller Controller (Preferred)
 if (usingController) {
