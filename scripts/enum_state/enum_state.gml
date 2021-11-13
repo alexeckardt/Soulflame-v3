@@ -7,6 +7,7 @@
 enum state {
 	base,
 	climb,
+	wall_cling,
 	hurt,
 	dead,
 	

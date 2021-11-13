@@ -44,12 +44,14 @@ bounceJumpCoefficient = 0.7;
 
 //Climbing
 wallClimbCoyoteeTime = 4	
-canVerticalClimb = false;
+canVerticalClimb = false;  //current control variable ; replace later
 timeNotClimbing = -1;
 climbingTermVel = 0.5;
 wallJumpSpeed = jumpSpeed * 0.95;
 wallJumpAngle = 30;
 hasJumpedOffWallSinceOnGround = false;
+timeNotClimbingBeforeReconnect = room_speed/2;
+wallClingVerticalJumpWallPushOffForce = 1.2
 
 //Friction
 doAirFriction =true;

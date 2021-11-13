@@ -2,14 +2,21 @@
 
 var time = Game.delta
 
-
-
 //Gravity
 if (timeOffGround > -1) {
 
 	//Choose Values
 	var grav = myGrav * ((STATE == state.climb && controlVSpeed > 0) ? climbingGravMulti : 1);
 	var term = (STATE != state.climb) ? terminalVelocity : climbingTermVel;
+
+	//Stop Vspeed If Clinging To A wall
+	if (STATE == state.wall_cling) {
+		grav = 0;
+		term = 0;
+		controlVSpeed = 0;
+	}
+
+
 
 	//Gives Hang Time If Jump is Still Held
 	var mult = (abs(controlVSpeed) < halfGravityThreshold && (Controller.jumpHeld || forceHalfGravity) && allowHalfGravity) ? 0.5 : 1;
@@ -202,22 +209,45 @@ if (wallInDirection != 0) {
 	lastWallInDirection = wallInDirection;
 	lastWallMeeting = instance_place(x + wallInDirection, y, Solid)
 
-	var climbing = (STATE == state.climb);
+	var climbing = (STATE == state.climb || STATE == state.wall_cling);
 
 	//Switch To Climb State
 	if (!climbing) {
-		if (lastOnFloorAtY - y > 20 || abs(lastOnFloorAtX-x) > 32) || hasJumpedOffWallSinceOnGround { //Must be at least 2.5 tiles off the ground if ne
-			STATE = state.climb;	
-			climbing = true;
+		var ydiff = lastOnFloorAtY - y;
+		if (ydiff > 20 || ydiff < 0 || abs(lastOnFloorAtX-x) > 32) || hasJumpedOffWallSinceOnGround { //Must be at least 2.5 tiles off the ground if ne
+			
+			//Must be climbable alittle above
+			//Prvent climbable when only feet touching
+			if (place_meeting(x + wallInDirection, y - 20, Solid)) {
+				STATE = state.climb;	
+				climbing = true;
+			}
+		}
+		
+		
+		//Just switched to climbing from not climbing; see if I'm on the edge of a tile
+		//Wall Edge Hold
+		if (climbing) {
+			if (!place_meeting(x + wallInDirection, y-24, Solid)) {
+				STATE = state.wall_cling;
+				climbing = true;
+			}
+		}
+		
+		//
+		//
+		if (!climbing) {
+			STATE = state.base;	
 		}
 	}
 
+	
 	//Reset Tracking Of Time
 	if (climbing) {
 		timeNotClimbing = -1;
 	}
-
-
+	
+	
 	//Reset STATE
 	if (lastWallMeeting == noone) {
 		wallInDirection = 0;
@@ -228,6 +258,8 @@ if (wallInDirection != 0) {
 		}
 	}
 }
+
+
 
 
 //Jump
@@ -241,17 +273,19 @@ jumpCooldownTicks -= time;
 if (jumpTicks > 0) {
 	jumpTicks -= time;
 	
-	var climbing = (STATE == state.climb);
-	
+
+	var wallClinging = (STATE == state.wall_cling);
+	var climbing = (STATE == state.climb || wallClinging);
+
 	//Coyottee Time AND Wait for until on ground.
 	var onGroundJump = timeOffGround < coyoteeMaxTime && jumpCooldownTicks < 0;
-	var wallJump = climbing && (timeNotClimbing < wallClimbCoyoteeTime && (directionFacing == -lastWallInDirection || !canVerticalClimb));
-	var verticalClimb = climbing && (canVerticalClimb && directionFacing == lastWallInDirection);
+	var wallJump = climbing && (timeNotClimbing < wallClimbCoyoteeTime && (mx != lastWallInDirection || !canVerticalClimb));
+	var verticalClimb = climbing && ((canVerticalClimb) && (mx == lastWallInDirection));
 	var doubleJump = false;
 	var bounceOffEnemy = bouncingOffEnemy && forceJump;
 	
 	if (inControl || forceJump) {
-		if (onGroundJump || wallJump || bounceOffEnemy) {
+		if (onGroundJump || wallJump || verticalClimb|| bounceOffEnemy) {
 		
 			//Jump Universal
 			jumpTicks = 0;
@@ -280,6 +314,29 @@ if (jumpTicks > 0) {
 				wallJump = false;
 			}
 		
+			//debug
+			if (climbing) {
+				var hi = true	
+			}
+		
+		
+			//Jump Straight Up
+			if (verticalClimb || wallClinging) {
+			
+				//Push Away from the wall
+				controlHSpeed = -wallInDirection * wallClingVerticalJumpWallPushOffForce * wallClinging
+				controlVSpeed = wallJumpSpeed * 0.9; 
+				squishX = -squishOffset;
+				squishY = squishOffset;
+		
+				//Stop
+				wallJump = false;
+				STATE = state.base;
+				wallInDirection = 0; //Resrt wall checks
+		
+			}
+		
+		
 			//Jump Off Wall 
 			if (wallJump) {
 			
@@ -297,14 +354,6 @@ if (jumpTicks > 0) {
 				airFrictionMultiplierLerp *= canVerticalClimb;
 				
 				hasJumpedOffWallSinceOnGround = true;
-			}
-		
-			if (verticalClimb) {
-			
-				controlVSpeed = wallJumpSpeed + vMomentum; 
-				squishX = -squishOffset;
-				squishY = squishOffset;
-		
 			}
 		}
 	}
