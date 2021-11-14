@@ -37,13 +37,13 @@ cutVspd = false;
 forceJump = false;
 jumpTicks = 0;
 jumpCooldownTicks = 0;		
-coyoteeMaxTime = 8;				
+coyoteeMaxTime = 6;				
 bouncingOffEnemy = false;
 preLandJumpsTime = 7			
 bounceJumpCoefficient = 0.7;
 
 //Climbing
-wallClimbCoyoteeTime = 4	
+wallClimbCoyoteeTime = 6	
 canVerticalClimb = false;  //current control variable ; replace later
 timeNotClimbing = -1;
 climbingTermVel = 0.5;
