@@ -12,7 +12,6 @@ vSpeed = 0;
 
 runSpeed = 2.5;
 
-
 //States
 STATE = state.base;
 inControl = true

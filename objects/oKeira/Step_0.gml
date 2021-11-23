@@ -16,8 +16,6 @@ if (timeOffGround > -1) {
 		controlVSpeed = 0;
 	}
 
-
-
 	//Gives Hang Time If Jump is Still Held
 	var mult = (abs(controlVSpeed) < halfGravityThreshold && (Controller.jumpHeld || forceHalfGravity) && allowHalfGravity) ? 0.5 : 1;
 	
@@ -104,8 +102,9 @@ if (timeOffGround > -1) {
 	hSpeed = controlHSpeed
 
 //Dir Facing
-directionFacing = (controlHSpeed != 0 && inControl) ? sign(controlHSpeed) : directionFacing;
-
+if (abs(controlHSpeed) >= 0.01) {
+	directionFacing = (hSpeedGoal != 0 && inControl) ? sign(hSpeedGoal) : sign(controlHSpeed);
+}
 
 //Collision
 	//Update Mask
@@ -313,12 +312,7 @@ if (jumpTicks > 0) {
 				
 				wallJump = false;
 			}
-		
-			//debug
-			if (climbing) {
-				var hi = true	
-			}
-		
+
 		
 			//Jump Straight Up
 			if (verticalClimb || wallClinging) {
@@ -349,6 +343,8 @@ if (jumpTicks > 0) {
 			
 				squishX = -squishOffset*1.3;
 				squishY = squishOffset*1.25;
+				
+				directionFacing = sign(controlHSpeed);
 			
 				//Cannot Turn Around For A Short Amount of Time if I can't climb stragit
 				airFrictionMultiplierLerp *= canVerticalClimb;
