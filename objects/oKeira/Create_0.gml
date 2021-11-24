@@ -4,6 +4,21 @@
 mask = sKeiraIdle;
 hitbox = hitbox_create_alt(oKeiraHitbox, x, y-12, 15, 23, false);
 
+
+//Sprites
+idleSprite = sKeiraIdle;
+readySprite = sKeiraIdleReadyNoWeapon;
+attackSprite = sKeiraAttackNoWeaponPunch0;
+
+
+//Display
+index_speed = 0;
+weapon_sprite = -1;
+displayWeaponSprite = false;
+displayWeaponParticles = false;
+displayReadyPosForTime = -1
+
+
 //Speed
 controlHSpeed = 0; //What I'm Controlling
 controlVSpeed = 0; //What I'm Controlling
@@ -17,6 +32,7 @@ STATE = state.base;
 inControl = true
 directionFacing = 1;
 visualDirectionFacing = 0;
+resetStateOnAnimationFinish = false;
 
 //Climbing
 climbingGravMulti = 1/3
@@ -73,3 +89,22 @@ slideCornerRange = 5;
 squishX = 1;
 squishY = 1;
 squishOffset = 0.1;
+
+//Weapons & Attacking
+allowControlOverIndex = -1;
+nextAttack = 0;
+wantToChangeAttackTicks = 0;
+timeForPreAttacks = 8;
+
+//Damage Vars
+damageCreateBaseDamage = 0;
+damageCreateDamageType = 0;
+damageCreateXoffset	= 0;
+damageCreateYoffset	= 0;
+damageCreateWidth	= 0;
+damageCreateHeight	= 0;
+damageKnockbackMulti = 0;
+damageKnockbackAddHSpeed = 0;
+damageKnockbackAddVSpeed = 0;
+damageKnockbackAddHspeedRelative = 0;
+

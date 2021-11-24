@@ -354,3 +354,61 @@ if (jumpTicks > 0) {
 		}
 	}
 }
+
+
+
+//Attack Input
+if (Controller.combatAttackPressed) {
+	//Decide Attack
+	keira_decide_attack_state();
+}
+
+//Switch To Attack
+if (nextAttack != state.height) {
+	
+	//Allow for input of attacks before "begun" current attack
+	wantToChangeAttackTicks -= time;
+	if (wantToChangeAttackTicks > 0) { //This might be backwards
+		
+		//Make Sure Attack is finished
+		if (STATE == state.base) {
+			
+			//Set New Attack
+			STATE = nextAttack;
+			
+			//Reset Animation (Otherwise will end if Playing same one)
+			image_index = 0;
+			useFront = !useFront;
+			
+			//Decide Attack Sprites
+			keira_decide_attack_sprite(nextAttack);
+			
+			//Reset Vars
+			nextAttack = state.height;
+			createdDamage = false;
+		}
+	}
+}
+
+//
+//Hurt State
+if (STATE == state.hurt) {
+	
+	//No Control
+	inControl = false;
+	
+	//Reset State
+	hurtTime -= time;
+	if (hurtTime< 0) {
+		STATE = state.base;	
+	}
+	
+} else {
+	//Invulnerability Time Post Damage
+	invulnerableTicks -= time;	
+}
+
+
+//Other
+
+event_user(0);
