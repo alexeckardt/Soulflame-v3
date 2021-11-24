@@ -1,5 +1,6 @@
 /// @desc State Actions + Visuals
 
+var time = Game.delta
 
 switch (STATE) {
 	default:
@@ -52,3 +53,10 @@ switch (STATE) {
 //Reset
 entity_state_reset_on_animation_finish(resetStateOnAnimationFinish);
 resetStateOnAnimationFinish = false;
+
+image_index += index_speed*time/2;
+//
+//time/2 because the sprites internal image_speed is 30
+//while the goal game speed is 60 (thus half speed)
+//
+	

@@ -3,13 +3,13 @@
 //Setup
 mask = sKeiraIdle;
 hitbox = hitbox_create_alt(oKeiraHitbox, x, y-12, 15, 23, false);
-
+image_speed = 0;
 
 //Sprites
 idleSprite = sKeiraIdle;
 readySprite = sKeiraIdleReadyNoWeapon;
 attackSprite = sKeiraAttackNoWeaponPunch0;
-
+runSprite = sKeiraIdle; //no animation yet LOL
 
 //Display
 index_speed = 0;
@@ -95,6 +95,8 @@ allowControlOverIndex = -1;
 nextAttack = 0;
 wantToChangeAttackTicks = 0;
 timeForPreAttacks = 8;
+tiltTime = room_speed/2;
+useFrontAttackSprite = false;
 
 //Damage Vars
 damageCreateBaseDamage = 0;

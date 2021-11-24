@@ -10,7 +10,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 	var bD = Player.basePunchDamage;
 	
 	//Send To Script
-	var spr = 0;
+	var spr = readySprite;
 	var weaponOverlaySprite = -1;
 	var spd = 0;
 	var damageObjConsistants = [];
@@ -26,9 +26,9 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			
 			damage = bD;
 			
-			spr = (useFront) ? sKeiraPunch0Front : sKeiraPunch0Back;
-			spd = 0.55;
-			damageObjConsistants = keira_damage_info_array_create(0, -32, 45, 15, 4, 0, -0.5, true);
+			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
+			spd = 0.75;
+			damageObjConsistants = keira_damage_info_array_create(0, -16, 35, 15, 4, 0, -0.5, true);
 			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = -1;
@@ -86,8 +86,8 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			
 			damage = bD*1.2;
 			
-			spr = (useFront) ? sKeiraPunch0Front : sKeiraPunch0Back;
-			spd = 0.65;
+			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
+			spd = 0.25;
 			damageObjConsistants = keira_damage_info_array_create(0, -32, 45, 15, 4, 0, -0.5, true);
 			
 			adjustDirectionFacingPreDamage = true;
@@ -119,7 +119,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 		case state.combat_air_down:
 			
 			damage = bD*1.2;
-			spr = (useFront) ? sKeiraPunch0Front : sKeiraPunch0Back;
+			spr = (useFrontAttackSprite) ? sKeiraPunch0Front : sKeiraPunch0Back;
 			spd = 0.65;
 			
 			var w = 30;
@@ -136,7 +136,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 		case state.combat_air_horizontal:
 			
 			damage = bD*hTiltMulti;
-			spr = (useFront) ? sKeiraPunch0Front : sKeiraPunch0Back;
+			spr = (useFrontAttackSprite) ? sKeiraPunch0Front : sKeiraPunch0Back;
 			spd = 0.4;
 			damageObjConsistants = keira_damage_info_array_create(-5, -40, 74,30, 8, 0, 0, true);
 			

@@ -34,7 +34,9 @@ if (timeOffGround > -1) {
 
 
 	//Controller Input
-	var mx = Controller.right - Controller.left;
+	controllerHorizontalMovementInput = Controller.right - Controller.left;
+	var mx = controllerHorizontalMovementInput;
+	
 
 	//Run Speed
 	var runSpeedMulti = 1;
@@ -378,7 +380,7 @@ if (nextAttack != state.height) {
 			
 			//Reset Animation (Otherwise will end if Playing same one)
 			image_index = 0;
-			useFront = !useFront;
+			useFrontAttackSprite = !useFrontAttackSprite;
 			
 			//Decide Attack Sprites
 			keira_decide_attack_sprite(nextAttack);

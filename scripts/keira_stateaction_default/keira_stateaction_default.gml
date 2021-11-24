@@ -12,7 +12,7 @@ function keira_stateaction_default() {
 		if (running) {
 			
 			displayReadyPosForTime = 0;
-			sprite_switch_to(sKeiraRun);
+			sprite_switch_to(runSprite);
 			index_speed = 0.4;
 			
 		} else {
