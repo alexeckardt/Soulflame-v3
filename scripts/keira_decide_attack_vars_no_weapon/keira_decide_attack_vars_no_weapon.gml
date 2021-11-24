@@ -48,6 +48,21 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			
 			break;
 		
+		case state.combat_running:
+		
+			damage = bD*hTiltMulti;
+			
+			spr = sKeiraAttackNoWeaponRunning;
+			spd = 0.4;
+			damageObjConsistants = keira_damage_info_array_create(-5, -40, 74, 30, 6, 0, -3, true);
+			
+			adjustDirectionFacingPreDamage = true;
+			allowControlOverIndex = -1;
+			
+			controlVSpeed = -2
+			
+			break;
+		
 		case state.combat_up:
 		
 			damage = bD*hTiltMulti;

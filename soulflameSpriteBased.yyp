@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"Enemy","path":"objects/Enemy/Enemy.yy",},"order":0,},
     {"id":{"name":"sprite_switch_to","path":"scripts/sprite_switch_to/sprite_switch_to.yy",},"order":3,},
+    {"id":{"name":"keira_stateaction_attack_running","path":"scripts/keira_stateaction_attack_running/keira_stateaction_attack_running.yy",},"order":5,},
     {"id":{"name":"generic_collide_solid","path":"scripts/generic_collide_solid/generic_collide_solid.yy",},"order":0,},
     {"id":{"name":"sDamageHitbox","path":"sprites/sDamageHitbox/sDamageHitbox.yy",},"order":0,},
     {"id":{"name":"oHitbox","path":"objects/oHitbox/oHitbox.yy",},"order":0,},
@@ -14,6 +15,7 @@
     {"id":{"name":"sHitboxArea","path":"sprites/sHitboxArea/sHitboxArea.yy",},"order":1,},
     {"id":{"name":"oEmptyEnemy","path":"objects/oEmptyEnemy/oEmptyEnemy.yy",},"order":1,},
     {"id":{"name":"essence_token_add_percent","path":"scripts/essence_token_add_percent/essence_token_add_percent.yy",},"order":2,},
+    {"id":{"name":"sKeiraAttackNoWeaponRunning","path":"sprites/sKeiraAttackNoWeaponRunning/sKeiraAttackNoWeaponRunning.yy",},"order":10,},
     {"id":{"name":"sKeiraAttackNoWeaponPunch1","path":"sprites/sKeiraAttackNoWeaponPunch1/sKeiraAttackNoWeaponPunch1.yy",},"order":8,},
     {"id":{"name":"Game","path":"objects/Game/Game.yy",},"order":0,},
     {"id":{"name":"Meta","path":"objects/Meta/Meta.yy",},"order":1,},
@@ -59,6 +61,7 @@
     {"id":{"name":"oKeira","path":"objects/oKeira/oKeira.yy",},"order":1,},
     {"id":{"name":"keira_geneirc_damage_create","path":"scripts/keira_geneirc_damage_create/keira_geneirc_damage_create.yy",},"order":6,},
     {"id":{"name":"damage_create_ext","path":"scripts/damage_create_ext/damage_create_ext.yy",},"order":4,},
+    {"id":{"name":"sKeiraRunNoWeapon","path":"sprites/sKeiraRunNoWeapon/sKeiraRunNoWeapon.yy",},"order":9,},
     {"id":{"name":"sHeartFull","path":"sprites/sHeartFull/sHeartFull.yy",},"order":5,},
     {"id":{"name":"oBaseEnemy","path":"objects/oBaseEnemy/oBaseEnemy.yy",},"order":2,},
     {"id":{"name":"keira_stateaction_slide_recover_equivalant","path":"scripts/keira_stateaction_slide_recover_equivalant/keira_stateaction_slide_recover_equivalant.yy",},"order":3,},

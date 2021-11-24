@@ -9,7 +9,7 @@ image_speed = 0;
 idleSprite = sKeiraIdle;
 readySprite = sKeiraIdleReadyNoWeapon;
 attackSprite = sKeiraAttackNoWeaponPunch0;
-runSprite = sKeiraIdle; //no animation yet LOL
+runSprite = sKeiraRunNoWeapon; //no animation yet LOL
 
 //Display
 index_speed = 0;
@@ -30,6 +30,8 @@ runSpeed = 2.5;
 //States
 STATE = state.base;
 inControl = true
+noControlMx = 0; //reset
+lastNoControlMX = 0;
 directionFacing = 1;
 visualDirectionFacing = 0;
 resetStateOnAnimationFinish = false;
@@ -95,7 +97,7 @@ allowControlOverIndex = -1;
 nextAttack = 0;
 wantToChangeAttackTicks = 0;
 timeForPreAttacks = 8;
-tiltTime = room_speed/2;
+tiltTime = 8;
 useFrontAttackSprite = false;
 
 //Damage Vars

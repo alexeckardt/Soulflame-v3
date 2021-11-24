@@ -13,7 +13,6 @@ switch (STATE) {
 	//
 	//Base
 	case state.combat_neutral:
-	case state.combat_running:
 	case state.combat_htilt:
 	case state.combat_up:
 	case state.combat_air_up:
@@ -26,25 +25,20 @@ switch (STATE) {
 		
 	break;
 	
-	case state.combat_air_down:
-		
-		//Air down
-		keira_stateaction_down_air()
+	//Running Attack
+	case state.combat_running:	keira_stateaction_attack_running();break;
 	
-	break;
+	//Air down
+	case state.combat_air_down:	keira_stateaction_down_air();break;
 	
-	case state.combat_slide:
-	
-		//Combat Slide
-		keira_stateaction_sliding_equivalant();
-	
-	break;
+	//Combat Slide
+	case state.combat_slide:	keira_stateaction_sliding_equivalant();break;
 	
 	
 	case state.combat_slide_recover:
 		
 		//Recovery Animation States
-		keira_stateaction_slide_recover_equivalant()
+		keira_stateaction_slide_recover_equivalant();
 		
 	break;
 	

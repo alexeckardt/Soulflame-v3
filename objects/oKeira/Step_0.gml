@@ -43,7 +43,14 @@ if (timeOffGround > -1) {
 
 	//Find Goal
 	var hspdGoalsMultipliers = time * power(0.99, time) * runSpeedMulti;
-	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers * inControl;
+	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers;
+	
+	//Change Goal Based on State
+	if (!inControl) {
+		hSpeedGoal = noControlMx * runSpeed * hspdGoalsMultipliers;
+		lastNoControlMX = noControlMx;
+		noControlMx = 0;
+	}
 
 	
 	//Get Friction Values
