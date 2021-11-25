@@ -8,23 +8,22 @@ function keira_decide_attack_state(){
 
 	
 	var stickDeadzone = 0.25;
-	var countAsRunThreshhold = 1.5;
 	var horizontalAttackReq = abs(Controller.horizontalStick) > stickDeadzone;
-	var running = abs(hSpeed) > runSpeed - countAsRunThreshhold;
-	
+	var running = runningForTime >= tiltTime;
+
 					//Take H Momentum into account here
 	var runAttack = running && horizontalAttackReq;
-	var doHTilt = horizontalAttackReq && Controller.hStickTimeInSameInput < tiltTime;
+	var doHTilt = horizontalAttackReq && Controller.hStickTimeInSameInput <= tiltTime;
 	var upAttack = (Controller.verticalStick) < -stickDeadzone && Controller.vStickTimeInSameInput < tiltTime;
 	var downAttack = (Controller.verticalStick) > stickDeadzone && Controller.vStickTimeInSameInput < tiltTime;
 
-	if (onGround) {
+	if (timeOffGround < 3) {
 		
 		if (doHTilt) {
 			nextAttack = state.combat_htilt;
 			
 		} else
-		if (runAttack) {
+		if (runningForTime > tiltTime) {
 			nextAttack = state.combat_running;
 			
 		} else 
@@ -35,6 +34,7 @@ function keira_decide_attack_state(){
 			nextAttack = state.combat_neutral;
 			
 		}
+		
 		
 		if (downAttack && running) {
 			nextAttack = state.combat_slide;

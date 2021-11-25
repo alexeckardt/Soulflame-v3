@@ -10,13 +10,15 @@ idleSprite = sKeiraIdle;
 readySprite = sKeiraIdleReadyNoWeapon;
 attackSprite = sKeiraAttackNoWeaponPunch0;
 runSprite = sKeiraRunNoWeapon; //no animation yet LOL
+slideActivateSprite = sKeiraAttackSlideActivate;
+slideRecoverSprite = sKeiraAttackSlideRecover;
 
 //Display
 index_speed = 0;
 weapon_sprite = -1;
 displayWeaponSprite = false;
 displayWeaponParticles = false;
-displayReadyPosForTime = -1
+displayReadyPosForTime = -1;
 
 
 //Speed
@@ -26,6 +28,7 @@ hSpeed = 0; //Real, Updates outside
 vSpeed = 0;
 
 runSpeed = 2.5;
+runningForTime = -1;
 
 //States
 STATE = state.base;
@@ -40,6 +43,15 @@ resetStateOnAnimationFinish = false;
 climbingGravMulti = 1/3
 lastOnFloorAtY = y;
 lastOnFloorAtX = x;
+
+//Slide
+slideMaxSpeed = 2.5;
+slideExitSpeedBase = 0.5;
+slideSpeed = 0;
+slideExitSpeed = 0;
+slideSpeedReduction = 0.05;
+slidingInDirection = 1;
+
 
 //Gravity & Jumping
 jumpSpeed = -4.8;
@@ -97,7 +109,7 @@ allowControlOverIndex = -1;
 nextAttack = 0;
 wantToChangeAttackTicks = 0;
 timeForPreAttacks = 8;
-tiltTime = 8;
+tiltTime = room_speed/4;
 useFrontAttackSprite = false;
 
 //Damage Vars
@@ -111,4 +123,6 @@ damageKnockbackMulti = 0;
 damageKnockbackAddHSpeed = 0;
 damageKnockbackAddVSpeed = 0;
 damageKnockbackAddHspeedRelative = 0;
+
+haveSlideDamage = false;
 

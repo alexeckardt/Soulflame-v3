@@ -37,20 +37,27 @@ if (timeOffGround > -1) {
 	controllerHorizontalMovementInput = Controller.right - Controller.left;
 	var mx = controllerHorizontalMovementInput;
 	
-
 	//Run Speed
 	var runSpeedMulti = 1;
 
 	//Find Goal
 	var hspdGoalsMultipliers = time * power(0.99, time) * runSpeedMulti;
 	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers;
-	
+	var slidingHspdGoal = slidingInDirection * slideSpeed * hspdGoalsMultipliers;
+
 	//Change Goal Based on State
 	if (!inControl) {
 		hSpeedGoal = noControlMx * runSpeed * hspdGoalsMultipliers;
 		lastNoControlMX = noControlMx;
 		noControlMx = 0;
 	}
+
+		//Auto Changes in Hespeed
+		if (STATE = state.combat_slide) { 
+			hSpeedGoal = slidingHspdGoal; 
+		}
+
+
 
 	
 	//Get Friction Values
@@ -189,10 +196,9 @@ y+=moveY;
 
 
 //Collision Detection
-var wasOnGround = onGround
+var wasOnGround = onGround;
 groundBelow = instance_place(x, y+1, Solid);
 onGround = (groundBelow != noone)
-
 
 //Land Detection
 if (onGround && !wasOnGround) {
@@ -208,6 +214,13 @@ if (onGround && !wasOnGround) {
 	//Attacks
 	allowCombatAirUp = true;
 }
+
+//
+//Run Detection
+var countAsRunThreshhold = 1.5;
+var running = abs(hSpeed) > runSpeed - countAsRunThreshhold;
+runningForTime = (running) ? runningForTime + Game.delta : -1;
+
 
 //Climbing
 timeNotClimbing += time;
@@ -246,6 +259,15 @@ if (wallInDirection != 0) {
 		//
 		if (!climbing) {
 			STATE = state.base;	
+		} else {
+		
+		//Enter A Climbing State; Remove Sliding Damage
+			//Set State To Recovery State
+			if (haveSlideDamage) {
+				damageObj.allowLifeDecay = true;
+				damageObj.life = -1;
+				haveSlideDamage = false;
+			}
 		}
 	}
 

@@ -19,6 +19,8 @@ function keira_stateaction_sliding_equivalant() {
 	//Create Damage
 	if (!createdDamage) {
 		createdDamage = true;
+		
+		haveSlideDamage = true;
 				
 		keira_geneirc_damage_create();
 			
@@ -40,12 +42,14 @@ function keira_stateaction_sliding_equivalant() {
 	
 	//Reduce Speed
 	slideSpeed = lerp(slideSpeed, 0, slideSpeedReduction);
+	//noControlMx = directionFacing;
 	
 	//Set State To Recovery State
 	if (slideSpeed < slideExitSpeed) {
 		STATE = state.combat_slide_recover;
 		damageObj.allowLifeDecay = true;
 		damageObj.life = -1;
+		haveSlideDamage = false;
 	}
 
 }
