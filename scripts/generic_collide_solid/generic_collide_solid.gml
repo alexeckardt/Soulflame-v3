@@ -20,6 +20,11 @@ function generic_collide_solid() {
 		//Reset Movement Vals
 		moveX = 0;
 		hSpeed = 0;
+		
+		//Bounce Off Wall From Knockback
+		knockbackHSpeed /= -2;
+		
+		
 	}
 	x += moveX;
 

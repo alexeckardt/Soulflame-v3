@@ -18,6 +18,7 @@ switch (STATE) {
 	case state.combat_air_up:
 	case state.combat_air_neutral:
 	case state.combat_air_horizontal:
+	case state.combat_down:
 	
 		//Ideally, All of the above will have their own stateaction;
 		//where different events playout based on the weapon

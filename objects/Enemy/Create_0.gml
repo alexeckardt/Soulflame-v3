@@ -31,7 +31,7 @@ mask_index = sprite_index;
 //
 	hitReactionTimeLeft = -1;
 	invulnerableTicks = 0;
-	myGrav = 0.3; //PLayer is 0.35?
+	myGrav = 0.2; //PLayer is 0.35?
 	STATE = state.base;
 
 	//Moveing

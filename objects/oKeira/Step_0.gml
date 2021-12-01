@@ -118,7 +118,7 @@ if (timeOffGround > -1) {
 	hSpeed = controlHSpeed
 
 //Dir Facing
-if (abs(controlHSpeed) >= 0.01) {
+if (STATE == state.base && abs(controlHSpeed) >= 0.01) {
 	directionFacing = (hSpeedGoal != 0 && inControl) ? sign(hSpeedGoal) : sign(controlHSpeed);
 }
 

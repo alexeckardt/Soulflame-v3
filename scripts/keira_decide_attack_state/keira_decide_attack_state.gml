@@ -19,6 +19,8 @@ function keira_decide_attack_state(){
 
 	if (timeOffGround < 3) {
 		
+		nextAttack = state.combat_neutral;
+		
 		if (doHTilt) {
 			nextAttack = state.combat_htilt;
 			
@@ -26,18 +28,20 @@ function keira_decide_attack_state(){
 		if (runningForTime > tiltTime) {
 			nextAttack = state.combat_running;
 			
-		} else 
+		}
+		
 		if (upAttack) {
 			nextAttack = state.combat_up;	
-		
-		} else {
-			nextAttack = state.combat_neutral;
-			
 		}
 		
 		
-		if (downAttack && running) {
-			nextAttack = state.combat_slide;
+		if (downAttack) {
+			
+			if (running) {
+				nextAttack = state.combat_slide;
+			} else {
+				nextAttack = state.combat_down;	
+			}
 		}
 		
 		//Others

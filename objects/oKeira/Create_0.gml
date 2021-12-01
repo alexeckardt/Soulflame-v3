@@ -52,7 +52,6 @@ slideExitSpeed = 0;
 slideSpeedReduction = 0.05;
 slidingInDirection = 1;
 
-
 //Gravity & Jumping
 jumpSpeed = -4.8;
 myGrav = 0.25;
@@ -61,6 +60,7 @@ halfGravityThreshold = 0.7;
 forceHalfGravity = false;
 allowHalfGravity = true;
 cutVspd = false;
+combatInAirJumpCoefficient = 0.3;
 
 //Jump
 forceJump = false;

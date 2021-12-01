@@ -17,6 +17,7 @@ enum state {
 	combat_htilt,			//Heavy Punch / Kicks
 	combat_running,			//Running Attack with small recovery
 	combat_up,				//Punch Upwards
+	combat_down,			//Punch Downwards
 	
 	combat_slide,			//Slide
 	combat_slide_recover,	//Recover
