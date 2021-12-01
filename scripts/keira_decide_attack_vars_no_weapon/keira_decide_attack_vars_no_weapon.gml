@@ -74,7 +74,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			adjustDirectionFacingPreDamage = false;
 			allowControlOverIndex = 4;
 			
-			controlVSpeed += jumpSpeed/8
+			//controlVSpeed += jumpSpeed/8
 			
 			break;
 		
@@ -106,7 +106,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			adjustDirectionFacingPreDamage = false;
 			allowControlOverIndex = -1;
 				
-			damageObjConsistants = keira_damage_info_array_create(-15, -10, 54, 25, 3, 2, -1, true);
+			damageObjConsistants = keira_damage_info_array_create(-15, -10, 54, 25, 1, 0, -2, true);
 
 				
 			break;
@@ -121,7 +121,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			
 			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
 			spd = 0.65;
-			damageObjConsistants = keira_damage_info_array_create(0, -32, 45, 15, 4, 0, -0.5, true);
+			damageObjConsistants = keira_damage_info_array_create(0, -16, 35, 15, 1, 0, -0.5, true);
 			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = 2;
@@ -136,7 +136,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			damage = bD*1.2;
 			spr = sKeiraAttackNoWeaponUppercut;
 			spd = 0.4;
-			damageObjConsistants = keira_damage_info_array_create(-18, -80, 65, 64, 2, 0, -7, true);
+			damageObjConsistants = keira_damage_info_array_create(-12, -50, 38, 44, 1.5, 0, -6, true);
 			
 			adjustDirectionFacingPreDamage = false;
 			forceHalfGravity = true;

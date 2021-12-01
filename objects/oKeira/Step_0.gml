@@ -210,6 +210,7 @@ if (onGround && !wasOnGround) {
 		STATE = state.base;	}
 	
 	//Double Jump
+	allowCoyoteeJump = true;
 	
 	//Attacks
 	allowCombatAirUp = true;
@@ -222,6 +223,7 @@ var running = abs(hSpeed) > runSpeed - countAsRunThreshhold;
 runningForTime = (running) ? runningForTime + Game.delta : -1;
 
 
+
 //Climbing
 timeNotClimbing += time;
 if (wallInDirection != 0) {
@@ -230,31 +232,39 @@ if (wallInDirection != 0) {
 	lastWallInDirection = wallInDirection;
 	lastWallMeeting = instance_place(x + wallInDirection, y, Solid)
 
+	//Check if techinically climbing
 	var climbing = (STATE == state.climb || STATE == state.wall_cling);
 
 	//Switch To Climb State
-	if (!climbing) {
-		var ydiff = lastOnFloorAtY - y;
-		if (ydiff > 20 || ydiff < 0 || abs(lastOnFloorAtX-x) > 32) || hasJumpedOffWallSinceOnGround { //Must be at least 2.5 tiles off the ground if ne
+	if (!onGround && !climbing) {
+		
+		//Only switch to climbing if not being "used" by player
+		if (STATE == state.base) {
 			
-			//Must be climbable alittle above
-			//Prvent climbable when only feet touching
-			if (place_meeting(x + wallInDirection, y - 20, Solid)) {
-				STATE = state.climb;	
-				climbing = true;
+			//Get ydifference
+			var ydiff = lastOnFloorAtY - y;
+			
+			//Make sure It makes sense to connect to wall
+			if (ydiff > 20 || ydiff < 0 || abs(lastOnFloorAtX-x) > 32) || hasJumpedOffWallSinceOnGround { //Must be at least 2.5 tiles off the ground if ne
+			
+				//Must be climbable alittle above
+				//Prvent climbable when only feet touching
+				if (place_meeting(x + wallInDirection, y - 20, Solid)) {
+					STATE = state.climb;	
+					climbing = true;
+				}
+			}
+		
+		
+			//Just switched to climbing from not climbing; see if I'm on the edge of a tile
+			//Wall Edge Hold
+			if (climbing) {
+				if (!place_meeting(x + wallInDirection, y-24, Solid)) {
+					STATE = state.wall_cling;
+					climbing = true;
+				}
 			}
 		}
-		
-		
-		//Just switched to climbing from not climbing; see if I'm on the edge of a tile
-		//Wall Edge Hold
-		if (climbing) {
-			if (!place_meeting(x + wallInDirection, y-24, Solid)) {
-				STATE = state.wall_cling;
-				climbing = true;
-			}
-		}
-		
 		//
 		//
 		if (!climbing) {
@@ -300,15 +310,17 @@ if (Controller.jump || forceJump) {
 
 //Check Jump
 jumpCooldownTicks -= time;
+
 if (jumpTicks > 0) {
 	jumpTicks -= time;
 	
-
 	var wallClinging = (STATE == state.wall_cling);
 	var climbing = (STATE == state.climb || wallClinging);
 
 	//Coyottee Time AND Wait for until on ground.
-	var onGroundJump = timeOffGround < coyoteeMaxTime && jumpCooldownTicks < 0;
+	var walkedOffPlatform = (y - lastOnFloorAtY > 0)
+	var onGroundJump = (onGround || timeOffGround < coyoteeMaxTime*walkedOffPlatform) //&& jumpCooldownTicks < 0;
+	
 	var wallJump = climbing && (timeNotClimbing < wallClimbCoyoteeTime && (mx != lastWallInDirection || !canVerticalClimb));
 	var verticalClimb = climbing && ((canVerticalClimb) && (mx == lastWallInDirection));
 	var doubleJump = false;
@@ -337,7 +349,9 @@ if (jumpTicks > 0) {
 		
 			//Set Speeds
 			if (onGroundJump) {
-				controlVSpeed += jumpSpeed; 
+				
+				var mom = 0; //u
+				controlVSpeed = jumpSpeed + mom; 
 				squishX = -squishOffset;
 				squishY = squishOffset;
 				
