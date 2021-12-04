@@ -69,7 +69,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 		
 			spr = sKeiraAttackNoWeaponUppercut;
 			spd = 0.4;
-			damageObjConsistants = keira_damage_info_array_create(-12, -50, 38, 44, 1.5, 0, -6, true);
+			damageObjConsistants = keira_damage_info_array_create(-12, -50, 38, 44, .5, 0.2, -6, true);
 			
 			adjustDirectionFacingPreDamage = false;
 			allowControlOverIndex = 4;
@@ -92,7 +92,6 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			slideExitSpeed = slideExitSpeedBase;
 				
 			damageObjConsistants = keira_damage_info_array_create(-15, -10, 38, 25, 0.5, slidingInDirection*3, -1.5, false);
-
 				
 			break;
 			
@@ -106,7 +105,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			adjustDirectionFacingPreDamage = false;
 			allowControlOverIndex = -1;
 				
-			damageObjConsistants = keira_damage_info_array_create(-15, -10, 54, 25, 1, 0, -2, true);
+			damageObjConsistants = keira_damage_info_array_create(-32, -10, 68, 25, 1, 0, -2, true);
 
 				
 			break;
@@ -136,7 +135,8 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			damage = bD*1.2;
 			spr = sKeiraAttackNoWeaponUppercut;
 			spd = 0.4;
-			damageObjConsistants = keira_damage_info_array_create(-12, -50, 38, 44, 1.5, 0, -6, true);
+			var vAdd = -4 + min(controlVSpeed, 0)
+			damageObjConsistants = keira_damage_info_array_create(-12, -50, 38, 44, 1.5, 0, vAdd, true);
 			
 			adjustDirectionFacingPreDamage = false;
 			forceHalfGravity = true;
@@ -171,7 +171,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			damage = bD*hTiltMulti;
 			spr = sKeiraAttackNoWeaponRunning;
 			spd = 0.4;
-			damageObjConsistants = keira_damage_info_array_create(-5, -16, 74,30, 8, 0, 0, true);
+			damageObjConsistants = keira_damage_info_array_create(-5, -16, 74,30, 4, 0, -1, true);
 			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = -1;
