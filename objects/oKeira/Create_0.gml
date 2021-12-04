@@ -54,9 +54,9 @@ slidingInDirection = 1;
 
 //Gravity & Jumping
 jumpSpeed = -5.5;
-myGrav = 0.35;
-terminalVelocity = 8;
-halfGravityThreshold = 0.9;
+myGrav = 0.3;
+terminalVelocity = 6;
+halfGravityThreshold = 0.7;
 forceHalfGravity = false;
 allowHalfGravity = true;
 cutVspd = false;
@@ -104,7 +104,10 @@ slideCornerRange = 5;
 //Squish Squash
 squishX = 1;
 squishY = 1;
-squishOffset = 0.1;
+squishXGoal = 1;
+squishYGoal = 1;
+squishOffset = 0.3;
+squishReturnSpeed = 0.2;
 
 //Weapons & Attacking
 allowControlOverIndex = -1;

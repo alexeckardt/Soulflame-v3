@@ -76,6 +76,10 @@ if (timeOffGround > -1) {
 
 		//In Air Speed Changes
 		var holdingOppositeInAir = (sign(mx) == -sign(hSpeedGoal) && mx != 0 && timeOffGround > room_speed/2) * airFrictionValue*5;
+		if (mx == 0) {
+			holdingOppositeInAir = airFrictionValue
+		}
+	
 	
 		//Smooth Friction Amount
 		airFrictionMultiplierLerp = lerp(airFrictionMultiplierLerp, doAirFriction, airFrictionValue/2);
@@ -203,7 +207,7 @@ onGround = (groundBelow != noone)
 //Land Detection
 if (onGround && !wasOnGround) {
 	squishX = squishOffset;
-	squishY = -squishOffset;
+	squishY = -squishOffset/2;
 	
 	//Reset State
 	if (STATE == state.climb) {
