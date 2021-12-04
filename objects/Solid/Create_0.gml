@@ -1,2 +1,2 @@
 /// @desc
-traction = 0.4
+traction = 0.25

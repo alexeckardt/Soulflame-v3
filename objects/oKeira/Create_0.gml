@@ -53,10 +53,10 @@ slideSpeedReduction = 0.05;
 slidingInDirection = 1;
 
 //Gravity & Jumping
-jumpSpeed = -4.8;
-myGrav = 0.25;
-terminalVelocity = 10;
-halfGravityThreshold = 0.7;
+jumpSpeed = -5.5;
+myGrav = 0.35;
+terminalVelocity = 8;
+halfGravityThreshold = 0.9;
 forceHalfGravity = false;
 allowHalfGravity = true;
 cutVspd = false;
@@ -82,11 +82,11 @@ wallJumpSpeed = jumpSpeed * 0.95;
 wallJumpAngle = 30;
 hasJumpedOffWallSinceOnGround = false;
 timeNotClimbingBeforeReconnect = room_speed/2;
-wallClingVerticalJumpWallPushOffForce = 1.2
+wallClingVerticalJumpWallPushOffForce = 0.8
 
 //Friction
 doAirFriction =true;
-airFrictionValue = 0.05;
+airFrictionValue = 0.045;
 airFrictionMultiplierLerp = 0;
 
 //knockback

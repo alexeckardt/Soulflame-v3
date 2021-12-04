@@ -23,7 +23,7 @@ if (timeOffGround > -1) {
 	controlVSpeed = min(controlVSpeed + grav*mult*time, term);
 	
 	//Short Jump if Let Go of Jump
-	if (!Controller.jumpHeld && controlVSpeed < -halfGravityThreshold && !cutVspd) {
+	if (!Controller.jumpHeld && !cutVspd) { //&& controlVSpeed < -halfGravityThreshold
 		controlVSpeed /= 1.6;	
 		cutVspd = true;
 	}
@@ -364,7 +364,7 @@ if (jumpTicks > 0) {
 			
 				//Push Away from the wall
 				controlHSpeed = -wallInDirection * wallClingVerticalJumpWallPushOffForce * wallClinging
-				controlVSpeed = wallJumpSpeed * 0.9; 
+				controlVSpeed = wallJumpSpeed; 
 				squishX = -squishOffset;
 				squishY = squishOffset;
 		
