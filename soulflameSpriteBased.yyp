@@ -16,6 +16,7 @@
     {"id":{"name":"keira_stateaction_default","path":"scripts/keira_stateaction_default/keira_stateaction_default.yy",},"order":0,},
     {"id":{"name":"sHitboxArea","path":"sprites/sHitboxArea/sHitboxArea.yy",},"order":1,},
     {"id":{"name":"oEmptyEnemy","path":"objects/oEmptyEnemy/oEmptyEnemy.yy",},"order":1,},
+    {"id":{"name":"corruption_add","path":"scripts/corruption_add/corruption_add.yy",},"order":8,},
     {"id":{"name":"sKeiraAttackSlide","path":"sprites/sKeiraAttackSlide/sKeiraAttackSlide.yy",},"order":11,},
     {"id":{"name":"sKeiraAttackNoWeaponUppercut","path":"sprites/sKeiraAttackNoWeaponUppercut/sKeiraAttackNoWeaponUppercut.yy",},"order":15,},
     {"id":{"name":"essence_token_add_percent","path":"scripts/essence_token_add_percent/essence_token_add_percent.yy",},"order":2,},

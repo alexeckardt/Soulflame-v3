@@ -37,6 +37,8 @@ function enemy_take_damage() {
 			var chooseAlignment = sign(alignment + choose(0, 0, -1, 1));		
 			essence_token_add_percent(chooseAlignment, manaLost)
 			
+		//Add Corruption
+			corruption_add(alignment);
 		
 		//Knockback
 			var knockbackStrength = damageingObject.knockbackAmount;

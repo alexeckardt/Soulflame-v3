@@ -4,6 +4,47 @@ var guiW = Camera.view_width;
 var guiH = Camera.view_height;
 display_set_gui_size(guiW, guiH)
 
+
+	
+//Feather
+var featherDrawAtY = featherSurfYFromBase;
+var bottomOfFeather = featherDrawAtY + featherSurfDim;
+
+if (!surface_exists(featherSurf)) {
+	
+	//Surface
+	featherSurf = surface_create(featherSurfDim, featherSurfDim);
+	
+} else {
+		
+	//Draw On Surf
+	surface_set_target(featherSurf);
+		
+		//Clear
+		draw_clear_alpha(0, 0);
+		draw_clear(0); //temp
+		
+		//Draw Base Feather
+		draw_sprite(featherSpr, 0, 0, featherYoffset);
+	
+		//Draw Text Above
+		//TEMP
+		
+		draw_text(10, 10, corruptionPercent);
+	
+	
+	surface_reset_target();
+	
+	//Draw On GUI
+	//Outline Shader
+	var surfX = guiW - featherSurfDim + featherSurfXFromBase;
+	draw_surface(featherSurf, surfX, featherDrawAtY);
+	
+	shader_reset();
+	
+}
+
+
 //Draw Essence Tokens
 
 	//Pos per UI scale
@@ -15,7 +56,7 @@ display_set_gui_size(guiW, guiH)
 	for (var i = 0; i < essenceTokensCanHold; i++) {
 	
 		//Decide Positions
-		var tokenyy = tokenRowHeight * i + tokenListBufferY;
+		var tokenyy = tokenRowHeight * i + tokenListBufferY + bottomOfFeather;
 		var tokenxx = (i mod 2 == 1) ? lColumnX : rColumnX;
 	
 		//Check If Empty
@@ -31,6 +72,7 @@ display_set_gui_size(guiW, guiH)
 	
 			var c = c_white;
 			draw_sprite_ext(spr, ind, tokenxx, tokenyy, 1, 1, 0, c, 1);
+			
 			
 		} else {
 
@@ -83,5 +125,3 @@ display_set_gui_size(guiW, guiH)
 		
 	}
 	
-	
-//Draw Feather
