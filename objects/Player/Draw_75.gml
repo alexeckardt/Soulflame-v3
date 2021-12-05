@@ -82,3 +82,6 @@ display_set_gui_size(guiW, guiH)
 		draw_sprite(heartSprite, 0, heartxx, hpY);
 		
 	}
+	
+	
+//Draw Feather

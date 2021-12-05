@@ -1,2 +1,2 @@
 /// @desc
-ds_list_destroy(enemiesHit);
+cleanup_ds_list(enemiesHit);

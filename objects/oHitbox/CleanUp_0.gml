@@ -1,2 +1,2 @@
 /// @desc
-ds_list_destroy(damagesMeeting);
+cleanup_ds_list(damagesMeeting);

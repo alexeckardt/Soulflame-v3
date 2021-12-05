@@ -26,6 +26,10 @@ tokenRowHeight = 13;
 tokenListBufferY = tokenRowHeight;
 heartBorderBuffer = 12;
 
+//Feather
+featherSurf = -1;
+
+
 //Attacks
 weaponUsing = weapon.none;
 basePunchDamage = 1;
