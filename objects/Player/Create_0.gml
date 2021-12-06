@@ -5,7 +5,7 @@
 baseMaxHealth = 5;
 currentMaxHealth = 5;
 hp = 5;
-maxHpAtCorrupt = 3;
+maxHpAtFullCorrupt = 3;
 dead = false;
 
 //Health Display
