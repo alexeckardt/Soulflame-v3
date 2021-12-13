@@ -24,8 +24,8 @@ if (instance_exists(target)) {
 	}
 }
 
-goalX = clamp(goalX, roomEdgeBuffer+halfCamW, room_width-roomEdgeBuffer-halfCamW);
-goalY = clamp(goalY, roomEdgeBuffer+halfCamH, room_height-roomEdgeBuffer-halfCamH);
+goalX = clamp(goalX, roomEdgeBuffer, room_width-roomEdgeBuffer-view_width);
+goalY = clamp(goalY, roomEdgeBuffer, room_height-roomEdgeBuffer-view_height);
 
 x = (goalX);
 y = (goalY);

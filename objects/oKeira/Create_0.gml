@@ -20,7 +20,6 @@ displayWeaponSprite = false;
 displayWeaponParticles = false;
 displayReadyPosForTime = -1;
 
-
 //Speed
 controlHSpeed = 0; //What I'm Controlling
 controlVSpeed = 0; //What I'm Controlling
@@ -60,7 +59,7 @@ halfGravityThreshold = 0.7;
 forceHalfGravity = false;
 allowHalfGravity = true;
 cutVspd = false;
-combatInAirJumpCoefficient = 0.5;
+combatInAirJumpCoefficient = 0.3;
 
 
 //Jump

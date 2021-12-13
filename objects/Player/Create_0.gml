@@ -22,7 +22,7 @@ essenceTokensHolding = 0; //Count of Above
 essenceForToken = 25;
 tokenEdgeBuffer = 18;
 tokenColumnSep = 11;
-tokenRowHeight = 13;
+tokenRowHeight = 15;
 tokenListBufferY = tokenRowHeight div 2;
 heartBorderBuffer = 12;
 
