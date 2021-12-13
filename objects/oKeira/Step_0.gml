@@ -250,7 +250,7 @@ if (wallInDirection != 0) {
 			
 			//Make sure It makes sense to connect to wall
 			if (ydiff > 20 || ydiff < 0 || abs(lastOnFloorAtX-x) > 32) || hasJumpedOffWallSinceOnGround { //Must be at least 2.5 tiles off the ground if ne
-			
+			 
 				//Must be climbable alittle above
 				//Prvent climbable when only feet touching
 				if (place_meeting(x + wallInDirection, y - 20, Solid)) {
@@ -395,8 +395,8 @@ if (jumpTicks > 0) {
 				
 				directionFacing = sign(controlHSpeed);
 			
-				//Cannot Turn Around For A Short Amount of Time if I can't climb stragit
-				airFrictionMultiplierLerp *= canVerticalClimb;
+				//Cannot Turn Around For A Short Amount of Time
+				airFrictionMultiplierLerp = 0.3;
 				
 				hasJumpedOffWallSinceOnGround = true;
 			}

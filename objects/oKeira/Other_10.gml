@@ -35,7 +35,6 @@ switch (STATE) {
 	//Combat Slide
 	case state.combat_slide:	keira_stateaction_sliding_equivalant();break;
 	
-	
 	case state.combat_slide_recover:
 		
 		//Recovery Animation States
@@ -44,6 +43,16 @@ switch (STATE) {
 	break;
 	
 }	
+
+//Botch
+if (haveSlideDamage) {
+	if (STATE != state.combat_slide) {
+		damageObj.allowLifeDecay = true;
+		damageObj.life = -1;
+		haveSlideDamage = false;	
+	}
+}
+
 
 //Reset
 entity_state_reset_on_animation_finish(resetStateOnAnimationFinish);
