@@ -283,6 +283,21 @@ if (wallInDirection != 0) {
 				haveSlideDamage = false;
 			}
 		}
+		
+	//Climbing
+	} else {
+		
+		if (STATE == state.climb) {
+		
+			//Wall Edge Hold
+			if (climbing) {
+				if (!place_meeting(x + wallInDirection, y-24, Solid)) {
+					STATE = state.wall_cling;
+					climbing = true;
+				}
+			}
+			
+		}
 	}
 
 	
@@ -325,8 +340,8 @@ if (jumpTicks > 0) {
 	var walkedOffPlatform = (y - lastOnFloorAtY > 0)
 	var onGroundJump = (onGround || timeOffGround < coyoteeMaxTime*walkedOffPlatform) //&& jumpCooldownTicks < 0;
 	
-	var wallJump = climbing && (timeNotClimbing < wallClimbCoyoteeTime && (mx != lastWallInDirection || !canVerticalClimb));
-	var verticalClimb = climbing && ((canVerticalClimb) && (mx == lastWallInDirection));
+	var wallJump = climbing && (timeNotClimbing < wallClimbCoyoteeTime && mx != lastWallInDirection);
+	var verticalClimb = climbing && ((canVerticalClimb || wallClinging) && (mx == lastWallInDirection));
 	var doubleJump = false;
 	var bounceOffEnemy = bouncingOffEnemy && forceJump;
 	
