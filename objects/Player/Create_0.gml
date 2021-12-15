@@ -44,3 +44,23 @@ featherSurfYFromBase = -5;
 //Attacks
 weaponUsing = weapon.none;
 basePunchDamage = 1;
+
+
+//Weapon Wheel
+selectingWeapon = false;
+weaponWheelJustClosed = false;
+weaponWheelSurf = -1;
+weaponWheelScale = 0;
+weaponHighlighted = weapon.none;
+sameWeaponHighlightedFor = 0;
+lastWeaponHighlighted = weapon.none;
+lastWeaponHighlightedFor = 0;
+
+weaponWheelSpr = sWeaponWheelBackground;
+weaponWheelSize = sprite_get_width(weaponWheelSpr);
+weaponSelectionBubbleSize = 32;
+weaponWheelSurfaceWidth = weaponWheelSize + weaponSelectionBubbleSize*2;
+weaponWheelScaleDispalyThreshold = 0.05;
+
+weaponWheelLerpDisplayingDir = 0;
+weaponWheelLerpDisplayingLen = 0;

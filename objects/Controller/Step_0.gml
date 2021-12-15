@@ -33,10 +33,9 @@ if (usingController) {
 		rightStickVertical	= (gamepad_axis_value(0, gp_axisrv) > 0)
 							- (gamepad_axis_value(0, gp_axisrv) < 0);
 
-		rightStickDirection = point_direction(0, 0, rightStickHorizontal, rightStickVertical);
+		rightStickDirection = point_direction(0, 0, gamepad_axis_value(0, gp_axisrh), gamepad_axis_value(0, gp_axisrv));
 		rightStickHolding = abs(rightStickHorizontal) > 0.05 || abs(rightStickVertical) > 0.05
 		rightStickPressed = gamepad_button_check_pressed(0, gp_stickr);
-
 
 	//Left and Right
 	left = horizontalStick < 0;

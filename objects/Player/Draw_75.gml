@@ -125,3 +125,64 @@ if (!surface_exists(featherSurf)) {
 		
 	}
 	
+//Weapon Wheel
+if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
+	
+		//Draw Surface
+		surface_set_target(weaponWheelSurf);
+			var center = weaponWheelSurfaceWidth div 2;
+	
+			//Clear
+			draw_clear_alpha(0, 0.5);
+			
+			//Draw Ring
+			var wheelBuffer = weaponSelectionBubbleSize;
+			var wheelRadius = weaponWheelSize  div 2;
+			draw_sprite(weaponWheelSpr, 0, wheelBuffer, wheelBuffer)
+			
+			//Draw Weapons in correct slots and positions
+			if (weaponHighlighted != -1) {
+					var sSize = 360 div weapon.height;
+					var startAng = 90 + ((weaponHighlighted - 1) * sSize) + sSize/2;
+					startAng %= 359;
+					draw_pie(center-1, center-1, 1, weapon.height, c_gray, wheelRadius + 5, 1, startAng);
+				}
+	
+			for (var i = 0; i < weapon.height; i++) {
+					//Icon
+					var sSize = 360 div weapon.height;
+					var startAng = 90 + ((i-1) * sSize) + sSize/2;
+					startAng %= 359;
+					
+					//Pos
+					var iconLen = wheelRadius - 16 + 4*(weaponHighlighted == i);
+					var wIconX = center + lengthdir_x(iconLen, startAng + (sSize div 2));
+					var wIconY = center + lengthdir_y(iconLen, startAng + (sSize div 2));
+					
+					//Draw
+					draw_sprite_ext(sWeaponIcons, i, wIconX, wIconY, 1, 1, 0, c_white, 1);	
+			}
+	
+	
+			//Draw Controller Stick Position
+			var zoneRad = weaponWheelSize;
+			var rad = min(0.5, weaponWheelLerpDisplayingLen);
+
+			var stickX = zoneRad * lengthdir_x(rad, weaponWheelLerpDisplayingDir);
+			var stickY = zoneRad * lengthdir_y(rad, weaponWheelLerpDisplayingDir);
+			
+			draw_circle(center+stickX, center+stickY, 10, false);
+			
+			surface_reset_target();
+		
+		
+		//Draw Surface
+		var wheelPosX = (guiW - weaponWheelSurfaceWidth*weaponWheelScale) div 2; //Match Player X in future
+		var wheelPosY = (guiH - weaponWheelSurfaceWidth*weaponWheelScale) div 2; //
+		
+		//Surf
+		draw_surface_ext(weaponWheelSurf, wheelPosX, wheelPosY, weaponWheelScale, weaponWheelScale, 0, c_white, 1)
+	
+	}
+
+draw_text(10, 10, Controller.rightStickDirection)

@@ -13,3 +13,6 @@ var corruptionHpLossBase = floor(abs(corruptionPercent) * (corruptionMaxReductio
 var corruptionHpLoss = clamp(corruptionHpLossBase, 0, corruptionMaxReductionHP);
 
 currentMaxHealth = baseMaxHealth - corruptionHpLoss;
+
+//Weapon Wheel Select
+player_weapon_wheel_step();

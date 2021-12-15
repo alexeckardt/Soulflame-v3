@@ -10,4 +10,6 @@ var ysc = (1 + squishY);
 var sprAnchorAtBottomY = y + (sprite_height - sprite_yoffset)*(-squishY)
 
 
-draw_sprite_ext(sprite_index, image_index, x, sprAnchorAtBottomY, xsc, ysc, 0, c_white, 1)
+draw_sprite_ext(sprite_index, image_index, x, sprAnchorAtBottomY, xsc, ysc, 0, c_white, 1);
+
+draw_text(x, y, Player.weaponUsing);
