@@ -30,6 +30,7 @@ function keira_decide_attack_vars_sword(_nextState) {
 	damageToCollectEssence = false;
 	damageToIncreaseCorruption = false;
 	
+	var baseSoeed = 0.5
 	
 	//Switch Based Off Attack
 	switch (_nextState) {
@@ -47,7 +48,7 @@ function keira_decide_attack_vars_sword(_nextState) {
 			//DOn't go to ready spr
 			readyShow = 0;
 			
-			spd = 0.6;
+			spd = baseSoeed;
 			damageObjConsistants = keira_damage_info_array_create(-20, -16, 85, 25, 1, 0, -0.5, true);
 			
 			adjustDirectionFacingPreDamage = true;
@@ -67,7 +68,7 @@ function keira_decide_attack_vars_sword(_nextState) {
 			//DOn't go to ready spr
 			readyShow = 0;
 			
-			spd = 0.6;
+			spd = baseSoeed;
 			damageObjConsistants = keira_damage_info_array_create(0, -16, 45, 25, 1, 0, -0.5, true);
 			
 			adjustDirectionFacingPreDamage = true;
