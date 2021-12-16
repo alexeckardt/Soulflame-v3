@@ -2,6 +2,11 @@
 
 var time = Game.delta
 
+if (lastWeaponUsing != Player.weaponUsing) {
+	keira_update_movement_sprites();	
+}
+
+
 switch (STATE) {
 	default:
 	

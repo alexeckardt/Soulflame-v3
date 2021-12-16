@@ -93,8 +93,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "No Weapon",
+    "path": "folders/Keira/Sprite/No Weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "sKeiraAttackNoWeaponUppercut",

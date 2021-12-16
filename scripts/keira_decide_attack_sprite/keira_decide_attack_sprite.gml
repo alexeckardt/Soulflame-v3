@@ -17,7 +17,7 @@ function keira_decide_attack_sprite(_nextState) {
 			keira_decide_attack_vars_no_weapon(_nextState);break;
 			
 		case weapon.sword:
-			keira_decide_attack_vars_no_weapon(_nextState);break;
+			keira_decide_attack_vars_sword(_nextState);break;
 
 	}
 	

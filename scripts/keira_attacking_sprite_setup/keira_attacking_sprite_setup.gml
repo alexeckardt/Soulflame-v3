@@ -4,12 +4,15 @@
 // Sets the attacking sprites and speeds, as well as the damage properties
 //Decided in a keira_decide_attack_vars_xxxx call.
 //
-function keira_attacking_sprite_setup(_spr, _weaponspr, _spd, _damage, _damageType, _damageArrayInfo) {
+function keira_attacking_sprite_setup(_spr, _weaponspr, _spd, _damage, _damageType, _damageArrayInfo, readyShow) {
 
 	//Set Keira Vars
 	attackSprite	= _spr;
 	weaponSprite	= _weaponspr;
 	attackSpeed		= _spd;
+	
+	//Visuals
+	showReadyAfterAttackFor = readyShow;
 	
 	//Damage Vars Based off Info Given
 	damageCreateBaseDamage = _damage;

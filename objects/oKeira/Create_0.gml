@@ -13,12 +13,19 @@ runSprite = sKeiraRunNoWeapon; //no animation yet LOL
 slideActivateSprite = sKeiraAttackSlideActivate;
 slideRecoverSprite = sKeiraAttackSlideRecover;
 
+
 //Display
 index_speed = 0;
 weapon_sprite = -1;
 displayWeaponSprite = false;
 displayWeaponParticles = false;
 displayReadyPosForTime = -1;
+showReadyAfterAttackForBase = room_speed*1.5;
+showReadyAfterAttackFor = showReadyAfterAttackForBase;
+
+
+SpriteMap = ds_map_create();
+keira_update_movement_sprites();
 
 //Speed
 controlHSpeed = 0; //What I'm Controlling
@@ -115,6 +122,7 @@ wantToChangeAttackTicks = 0;
 timeForPreAttacks = 8;
 tiltTime = room_speed/4;
 useFrontAttackSprite = false;
+lastWeaponUsing = weapon.height;
 
 //Damage Vars
 damageCreateBaseDamage = 0;

@@ -8,7 +8,7 @@ function keira_stateaction_attack_regular(){
 	//Set Sprite
 		sprite_switch_to(attackSprite);
 		index_speed = attackSpeed;
-		displayReadyPosForTime = room_speed;
+		displayReadyPosForTime = showReadyAfterAttackFor;
 		
 		//Update Direction Facing
 		if (image_index < 1.5) {
