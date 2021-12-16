@@ -10,7 +10,9 @@ function enemy_take_damage() {
 	
 		//LOL!
 		var damageingObject = hitboxTakingDamage.damagingObjectId;
-		//var damageCreator = damageingObject.creator;
+		var damageCreator = damageingObject.creator;
+	
+		var damageFromPlayer = damageCreator == instance_nearest(x, y, oKeira);
 	
 		//Send Info Back To Damage Object
 		if (damageingObject.life > 1) {
@@ -32,13 +34,34 @@ function enemy_take_damage() {
 			var damageDealt = baseDamage;
 			hp -= damageDealt;
 		
+		
 		//Release Essence
+		if (damageingObject.collectEssence) {
 			var manaLost = essenceDropPerDamage * baseDamage;
-			var chooseAlignment = sign(alignment + choose(0, 0, -1, 1));		
-			essence_token_add_percent(chooseAlignment, manaLost)
+			var chooseAlignment = sign(alignment + choose(0, 0, -1, 1));	
 			
-		//Add Corruption
-			corruption_add(alignment);
+			//Release Visual Particles
+						
+			//Essence Addition
+			if (damageFromPlayer) {
+				
+				//Add Tokens To Players
+				essence_token_add_percent(chooseAlignment, manaLost);
+				
+			} else {
+				
+				//Update Enemy Killed Amount (Used for switching corruption for certian enemies)
+				//Unimplemented
+			}	
+				
+		}
+			
+		//Add Corruption To Player
+		if (damageFromPlayer) {
+			if (damageingObject.increasePlayerCorruption) {
+				corruption_add(alignment);
+			}
+		}
 		
 		//Knockback
 			var knockbackStrength = damageingObject.knockbackAmount;
@@ -52,14 +75,17 @@ function enemy_take_damage() {
 			knockbackVSpeed += lengthdir_y(str, dd) + damageingObject.addToVSpeed;
 			
 			
-		//Hit Effect
+		//Hit Effects
 			var ssMulti = (hp <= 0) ? 3 : 1.5
-//screen_shake_with_direction(damageDealt*ssMulti, dd, damageDealt*8)
+			//screen_shake_with_direction(damageDealt*ssMulti, dd, damageDealt*8)
+			
+		//Hit Effect Object
+			
+			
 			
 		//Reset
 		hitboxTakingDamage = noone;
 		invulnerableTicks = 5;
-		
 		
 		//Dead Detect
 		if (!dead) {

@@ -13,6 +13,10 @@ damageType		= 0;
 //status effects
 
 
+//Essence Interaction
+collectEssence = true;
+increasePlayerCorruption = false;
+
 //Edit After Fact
 canDamageEnemies = true;
 sprite_index = sDamageHitbox;

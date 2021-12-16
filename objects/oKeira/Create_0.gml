@@ -135,6 +135,8 @@ damageKnockbackMulti = 0;
 damageKnockbackAddHSpeed = 0;
 damageKnockbackAddVSpeed = 0;
 damageKnockbackAddHspeedRelative = 0;
+damageToIncreaseCorruption = false;
+damageToCollectEssence = false;
 
 haveSlideDamage = false;
 

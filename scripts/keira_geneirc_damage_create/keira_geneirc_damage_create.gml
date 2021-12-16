@@ -23,5 +23,8 @@ function keira_geneirc_damage_create() {
 	if (damageKnockbackAddHspeedRelative) {
 		damageObj.addToHSpeed = damageKnockbackAddHSpeed*directionFacing;} else {
 		damageObj.addToHSpeed = damageKnockbackAddHSpeed;}
+		
+	damageObj.increasePlayerCorruption = damageToIncreaseCorruption;
+	damageObj.collectEssence = damageToCollectEssence;
 
 }

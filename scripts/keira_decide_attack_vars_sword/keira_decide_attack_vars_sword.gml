@@ -11,20 +11,25 @@ function keira_decide_attack_vars_sword(_nextState) {
 	//No Tilts for streamline.
 	//
 	
-	//Multipliers
+	//Damage Properties
 	var hTiltMulti = 1.1;
-	var bD = Player.basePunchDamage * 2;
+	var bD = Player.basePunchDamage * 2; //update this per type of attack
+	var damage = bD;
+	var damageType = damage_type.slash;
+	
+	//Visuals
+	var readyShow = showReadyAfterAttackForBase * 5
 	
 	//Send To Script
 	var spr = readySprite;
 	var weaponOverlaySprite = -1;
 	var spd = 0;
 	var damageObjConsistants = [];
-
-	var readyShow = showReadyAfterAttackForBase * 5
-
-	var damage = bD;
-	var damageType = damage_type.slash;
+	
+	//Default 'Non-Physical' Damage Behaviour
+	damageToCollectEssence = false;
+	damageToIncreaseCorruption = false;
+	
 	
 	//Switch Based Off Attack
 	switch (_nextState) {

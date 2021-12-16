@@ -27,7 +27,22 @@ function keira_attacking_sprite_setup(_spr, _weaponspr, _spd, _damage, _damageTy
 	damageKnockbackAddHSpeed = _damageArrayInfo[i++];
 	damageKnockbackAddVSpeed = _damageArrayInfo[i++];
 	damageKnockbackAddHspeedRelative = _damageArrayInfo[i++];
+	
 
+	//
+	//
+	//
+	
+	//These should be per attack / per whole weapon state
+	//As to simplify gameplay/intuition.
+	//While there may be some exceptions, they are a lot more 'static'
+	//than these PHYSICAL damage properties.
+	
+	
+	//see keira_decide_attack_vars_no_weapon for more.
+	
+		//damageToCollectEssence = true;
+		//damageToIncreaseCorruption = true;
 }
 
 //Temp

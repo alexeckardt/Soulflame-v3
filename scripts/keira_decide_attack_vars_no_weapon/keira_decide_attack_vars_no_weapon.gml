@@ -15,10 +15,16 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 	var spd = 0;
 	var damageObjConsistants = [];
 	
-	var readyShow = showReadyAfterAttackForBase;
 
 	var damage = bD;
 	var damageType = damage_type.impact;
+	
+	//Visual
+	var readyShow = showReadyAfterAttackForBase;
+		
+	//All no weapon attacks should follow these properties
+	damageToCollectEssence = true;
+	damageToIncreaseCorruption = true;
 	
 	//Switch Based Off Attack
 	switch (_nextState) {
@@ -184,7 +190,8 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			
 			break;
 	}
-	
+
+
 	//Do The Setup
 	keira_attacking_sprite_setup(spr, weaponOverlaySprite, spd, damage, damageType, damageObjConsistants, readyShow);
 	
