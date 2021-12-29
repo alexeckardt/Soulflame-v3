@@ -20,7 +20,7 @@ vc = view_camera[0];
 
 //Set the Size of the Camera
 cameraZoom = 1;
-camera_set_view_size(view_camera[0], view_width/cameraZoom, view_height/cameraZoom);
+camera_set_view_size(view_camera[0], view_width/cameraZoom + 1, view_height/cameraZoom + 1);
 display_set_gui_size(view_width, view_height);
 
 view_surf = -1;

@@ -7,8 +7,8 @@ squishY = lerp(squishY, 0, squishReturnSpeed);
 var xsc = directionFacing * (1 + squishX);
 var ysc = (1 + squishY);
 
-var dX = floor(x)
-var sprAnchorAtBottomY = floor(y + (sprite_height - sprite_yoffset)*(-squishY))
+var dX = (x)
+var sprAnchorAtBottomY = (y + (sprite_height - sprite_yoffset)*(-squishY))
 
 //Draw Self
 draw_sprite_ext(sprite_index, image_index, dX, sprAnchorAtBottomY, xsc, ysc, 0, c_white, 1);
