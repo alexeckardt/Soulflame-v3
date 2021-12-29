@@ -1,6 +1,8 @@
 {
   "resources": [
+    {"id":{"name":"Environment","path":"objects/Environment/Environment.yy",},"order":0,},
     {"id":{"name":"Enemy","path":"objects/Enemy/Enemy.yy",},"order":0,},
+    {"id":{"name":"sBkgTree","path":"sprites/sBkgTree/sBkgTree.yy",},"order":1,},
     {"id":{"name":"sprite_switch_to","path":"scripts/sprite_switch_to/sprite_switch_to.yy",},"order":3,},
     {"id":{"name":"sKeiraAttackSlideActivate","path":"sprites/sKeiraAttackSlideActivate/sKeiraAttackSlideActivate.yy",},"order":7,},
     {"id":{"name":"keira_stateaction_attack_running","path":"scripts/keira_stateaction_attack_running/keira_stateaction_attack_running.yy",},"order":5,},
@@ -71,6 +73,7 @@
     {"id":{"name":"keira_stateaction_attack_regular","path":"scripts/keira_stateaction_attack_regular/keira_stateaction_attack_regular.yy",},"order":1,},
     {"id":{"name":"sKeiraAttackSwordHorizontal1","path":"sprites/sKeiraAttackSwordHorizontal1/sKeiraAttackSwordHorizontal1.yy",},"order":6,},
     {"id":{"name":"keira_attacking_sprite_setup","path":"scripts/keira_attacking_sprite_setup/keira_attacking_sprite_setup.yy",},"order":4,},
+    {"id":{"name":"oEmptyFlyingEnemy","path":"objects/oEmptyFlyingEnemy/oEmptyFlyingEnemy.yy",},"order":3,},
     {"id":{"name":"keira_update_movement_sprites","path":"scripts/keira_update_movement_sprites/keira_update_movement_sprites.yy",},"order":7,},
     {"id":{"name":"sHeartBroken","path":"sprites/sHeartBroken/sHeartBroken.yy",},"order":2,},
     {"id":{"name":"Entity","path":"objects/Entity/Entity.yy",},"order":2,},
@@ -158,6 +161,8 @@
     {"folderPath":"folders/Keira/Sprite/No Weapon.yy","order":13,"resourceVersion":"1.0","name":"No Weapon","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Keira/Sprite/Sword.yy","order":14,"resourceVersion":"1.0","name":"Sword","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Keira/Sprite/Sword/Weapon Overlay.yy","order":1,"resourceVersion":"1.0","name":"Weapon Overlay","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Environment.yy","order":19,"resourceVersion":"1.0","name":"Environment","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Entity/Enemy/Obj/Forest.yy","order":1,"resourceVersion":"1.0","name":"Forest","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

@@ -316,7 +316,22 @@ if (wallInDirection != 0) {
 			STATE = state.base;
 		}
 	}
+} else {
+
+	//Allow For Wall Jump, even if Iturned away before I connected
+	if (!onGround) {
+		
+		var v = instance_place(x - directionFacing*3, y + controlVSpeed, Solid)
+		
+		if (v != noone) {
+			wallJumpNotConnectedTimeLeft = wallJumpNotConnectedForgivenessTime;		
+			lastWallMeeting = v;
+			wallInDirection = -directionFacing;
+		}
+	}
+	
 }
+wallJumpNotConnectedTimeLeft -= time;
 
 
 
@@ -345,8 +360,15 @@ if (jumpTicks > 0) {
 	var doubleJump = false;
 	var bounceOffEnemy = bouncingOffEnemy && forceJump;
 	
+	var successfulJumpCheck = onGroundJump || wallJump || verticalClimb|| bounceOffEnemy;
+	
+	//Fail Check
+	if (!successfulJumpCheck) {successfulJumpCheck = wallJumpNotConnectedTimeLeft > 0;}	
+	
+	
+	
 	if (inControl || forceJump) {
-		if (onGroundJump || wallJump || verticalClimb|| bounceOffEnemy) {
+		if (successfulJumpCheck) {
 		
 			//Jump Universal
 			jumpTicks = 0;

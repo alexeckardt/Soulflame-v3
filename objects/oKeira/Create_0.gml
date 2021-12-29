@@ -13,7 +13,6 @@ runSprite = sKeiraRunNoWeapon; //no animation yet LOL
 slideActivateSprite = sKeiraAttackSlideActivate;
 slideRecoverSprite = sKeiraAttackSlideRecover;
 
-
 //Display
 index_speed = 0;
 weapon_sprite = -1;
@@ -22,7 +21,6 @@ displayWeaponParticles = false;
 displayReadyPosForTime = -1;
 showReadyAfterAttackForBase = room_speed*1.5;
 showReadyAfterAttackFor = showReadyAfterAttackForBase;
-
 
 SpriteMap = ds_map_create();
 keira_update_movement_sprites();
@@ -89,6 +87,8 @@ wallJumpAngle = 30;
 hasJumpedOffWallSinceOnGround = false;
 timeNotClimbingBeforeReconnect = room_speed/2;
 wallClingVerticalJumpWallPushOffForce = 0.8
+wallJumpNotConnectedForgivenessTime = room_speed;
+wallJumpNotConnectedTimeLeft = 0; //ticks down. if was to connect to a wall, then refund
 
 //Friction
 doAirFriction =true;
