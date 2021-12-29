@@ -10,7 +10,7 @@ if (updateCam) {
 	var z = 1/cameraZoom
 	
 	//Update Camera Dimensions
-	camera_set_view_size(view_camera[0], view_width*z + 1, view_height*z + 1);	
+	camera_set_view_size(view_camera[0], view_width*z, view_height*z);	
 	display_set_gui_size(view_width*z, view_height*z);
 	
 	//Set Scale
@@ -26,7 +26,7 @@ if (updateCam) {
 
 //Create The Surface
 if (!surface_exists(view_surf)) {
-    view_surf = surface_create(view_width + 1, view_height + 1);
+    view_surf = surface_create(view_width, view_height);
 }
 
 //Update View Surface
