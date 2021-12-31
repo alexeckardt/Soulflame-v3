@@ -33,6 +33,8 @@ targetXoffset = 0;
 targetYoffset = -16;
 trackingSpeed = 0.2;
 
+followSpeed = 0;
+
 lockX = x;
 lockY = y;
 

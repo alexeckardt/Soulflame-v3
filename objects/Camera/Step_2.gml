@@ -3,7 +3,6 @@
 //Update Camera Position
 camera_set_view_pos(view_camera[0], floor(x), floor(y));
 
-
 //Update Camera Dimensions
 if (updateCam) {
 	
@@ -21,8 +20,6 @@ if (updateCam) {
 	
 	updateCam = false;
 }
-
-
 
 //Create The Surface
 if (!surface_exists(view_surf)) {

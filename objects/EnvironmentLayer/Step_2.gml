@@ -1,6 +1,6 @@
 /// @description 
-var cX = Camera.x;
-var cY = Camera.y;
+var cX = floor(Camera.x);
+var cY = floor(Camera.y);
 var cW = Camera.view_width div 2;
 var cH = Camera.view_height div 2;
 
@@ -11,14 +11,14 @@ for (var i = 0; i < paralaxSpriteCount; i++) {
 	
 	//Unpack
 	var objId = sprInfo[0];
-	var sprParalaxMultiX = sprInfo[1];
-	var sprParalaxMultiY = sprInfo[2];
+	var doX = sprInfo[1];
+	var doY = sprInfo[2];
 	var sprOrgX = objId.orgX;
 	var sprOrgY = objId.orgY;
 	
 	//Calculate
-	var xdiff = (cX - sprOrgX + cW)*sprParalaxMultiX;
-	var ydiff = (cY - sprOrgY + cH)*sprParalaxMultiY;
+	var xdiff = (cX - sprOrgX + cW)*doX*paralaxAmount; //+ frac(cX);
+	var ydiff = (cY - sprOrgY + cH)*doY*paralaxAmount; //+ frac(cY);
 	
 	//Readd
 	var newX = sprOrgX - xdiff;

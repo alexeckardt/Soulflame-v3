@@ -18,10 +18,10 @@ if (instance_exists(target)) {
 		var goalD = point_direction(x, y, tX, tY);
 		var goalDist = point_distance(x, y, tX, tY);
 		
-		var smooth = 5;
+		var smooth = 2;
 		
-		goalX += lengthdir_x(goalDist div smooth, goalD);
-		goalY += lengthdir_y(goalDist div smooth, goalD);
+		goalX += round(lengthdir_x(goalDist div smooth, goalD)*100) / 100;
+		goalY += round(lengthdir_y(goalDist div smooth, goalD)*100) / 100;
 		
 	} else {
 

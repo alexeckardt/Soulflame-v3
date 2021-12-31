@@ -6,5 +6,5 @@ display_set_gui_size(view_width, view_height);
 draw_clear(0);
 
 if (surface_exists(view_surf)) {
-	draw_surface(view_surf, -frac(x), -frac(y));
+	draw_surface(view_surf, 0, 0);
 }

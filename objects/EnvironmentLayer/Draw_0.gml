@@ -5,8 +5,8 @@ if (!surface_exists(layerSurf)) {
 	layerSurf = surface_create(Camera.view_width, Camera.view_height);
 }
 
-var surfX = Camera.x;
-var surfY = Camera.y;
+var surfX = floor(Camera.x);
+var surfY = floor(Camera.y);
 
 
 //Swt
@@ -32,7 +32,7 @@ draw_clear_alpha(0, 0);
 		}
 	
 		//Draw Sprite
-		draw_sprite_ext(objId.sprite_index, objId.image_index, floor(objId.x-surfX), floor(objId.y-surfY), 
+		draw_sprite_ext(objId.sprite_index, objId.image_index, (objId.x-surfX), (objId.y-surfY), 
 							objId.image_xscale, objId.image_yscale, objId.image_angle, 
 							objId.image_blend, objId.image_alpha);
 	}
