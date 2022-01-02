@@ -12,6 +12,12 @@ var ay = floor(viewY) - viewY;
 //Background Surf
 if (surface_exists(bkgSurf)) {
 	draw_surface_ext(bkgSurf, 0, 0, 1, 1, 0, c_white, 1);	
+	
+	//Reset Surface
+		surface_set_target(bkgSurf);
+			draw_clear_alpha(c_dkgray, 1);
+		surface_reset_target();
+
 }
 
 //ONLY OVERLAY THE COLOUR

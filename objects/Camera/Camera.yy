@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Meta",
-    "path": "folders/Objects/Meta.yy",
+    "path": "folders/Meta.yy",
   },
   "resourceVersion": "1.0",
   "name": "Camera",
