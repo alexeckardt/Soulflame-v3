@@ -29,6 +29,7 @@ heavyAttackPressed = false;
 block = false;
 blockPressed = false;
 
+updateFullScreen = true;
 
 
 //View Stick

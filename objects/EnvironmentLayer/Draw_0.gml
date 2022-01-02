@@ -5,9 +5,8 @@ if (!surface_exists(layerSurf)) {
 	layerSurf = surface_create(Camera.view_width, Camera.view_height);
 }
 
-var surfX = floor(Camera.x);
-var surfY = floor(Camera.y);
-
+var surfX = (Camera.x);
+var surfY = (Camera.y);
 
 //Swt
 surface_set_target(layerSurf);

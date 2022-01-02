@@ -1,41 +1,43 @@
-/// @desc
-
-//Update Size Of Camera
+/// @description 
 
 updateCam = true;
 
-var goalPixelSize = 4
-view_width = 1920 div goalPixelSize;
-view_height = 1080 div goalPixelSize;
+zoom = 4;
+resolution = 1;
+view_width = 1920 div zoom;
+view_height = 1080 div zoom;
 
-displayHeight = display_get_height()
-windowScale = (displayHeight div view_height) - 1;
 
 //Disable Application Surface
-application_surface_enable(false);
+camera = camera_create();
+vm = matrix_build_lookat(0, 0, -10, 0, 0, 0, 0, 1, 0);
+pm = matrix_build_projection_ortho(view_width, view_height, 1, 3200);
 
-// game_width, game_height are your base resolution (ideally constants)
-vc = view_camera[0];
+viewX = 0;
+viewY = 0;
+follow = oKeira;
 
 
-//Set the Size of the Camera
-cameraZoom = 1;
-camera_set_view_size(view_camera[0], view_width/cameraZoom + 1, view_height/cameraZoom + 1);
-display_set_gui_size(view_width, view_height);
+depth = -20;
+application_surface_draw_enable(false);
 
-view_surf = -1;
+//Turns on in Begin Step; Used to reset camera properties
+view_enabled = false
 
-//
-//
+photoMode = false;
+dragging = false;
+cameraDragX = 0;
+cameraDragY = 0;
 
-target = oKeira;
-targetXoffset = 0;
-targetYoffset = -16;
-trackingSpeed = 0.2;
+lockX = 0;
+lockY = 0;
+panCameraToLock = false;
+panSpeed = 1;
 
-followSpeed = 0;
+//Background Surface
+bkgSurf = -1;
+createdBkgSurface = false;
 
-lockX = x;
-lockY = y;
-
-roomEdgeBuffer = 8;
+//Camera Shake
+screenShakeValuesArray = [0, 0, 0, 0];
+screenShakeMulti = 0;

@@ -79,4 +79,7 @@ if (!usingController) {
 	
 	combatAttack = keyboard_check(ord("X"));
 	combatAttackPressed = keyboard_check_pressed(ord("X"));
+
+	updateFullScreen = keyboard_check_released(vk_f11);
+
 }

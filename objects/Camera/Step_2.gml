@@ -1,30 +1,24 @@
-/// @description 
+/// @description Camera Movement
 
-//Update Camera Position
-camera_set_view_pos(view_camera[0], floor(x), floor(y));
+camera_following();
 
-//Update Camera Dimensions
-if (updateCam) {
-	
-	var z = 1/cameraZoom
-	
-	//Update Camera Dimensions
-	camera_set_view_size(view_camera[0], view_width*z+1, view_height*z+1);	
-	display_set_gui_size(view_width*z, view_height*z);
-	
-	//Set Scale
-	window_set_size(view_width*windowScale, view_height*windowScale);
-	window_center();
-	
-	display_reset(0, false)
-	
-	updateCam = false;
-}
+//camera_photo_mode();
 
-//Create The Surface
-if (!surface_exists(view_surf)) {
-    view_surf = surface_create(view_width + 1, view_height + 1);
-}
+//camera_screen_shake();
 
-//Update View Surface
-view_surface_id[0] = view_surf;
+//Clamp Camera
+var ww = view_width div 2;
+var hh = view_height div 2;
+
+//Clamp
+var horizontalBuffer = 16;
+viewX = clamp(viewX, ww + horizontalBuffer, room_width - horizontalBuffer - ww);
+viewY = clamp(viewY, hh, room_height-hh);
+
+//Set
+x = (viewX - ww);
+y = (viewY - hh);
+
+//Reset Matrix
+vm = matrix_build_lookat(viewX, viewY, -10, viewX, viewY, 0, 0, 1, 0);
+camera_set_view_mat(camera, vm);
