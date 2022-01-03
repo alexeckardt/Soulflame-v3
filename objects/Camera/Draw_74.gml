@@ -9,7 +9,7 @@ var ay = floor(viewY) - viewY;
 //Clear
 //draw_clear_alpha(0, 1);
 
-//Background Surf
+//Background
 if (surface_exists(bkgSurf)) {
 	draw_surface_ext(bkgSurf, 0, 0, 1, 1, 0, c_white, 1);	
 	
@@ -17,18 +17,34 @@ if (surface_exists(bkgSurf)) {
 		surface_set_target(bkgSurf);
 			draw_clear_alpha(c_dkgray, 1);
 		surface_reset_target();
-
 }
 
-//ONLY OVERLAY THE COLOUR
+//Draw Stuff, only overlaying colour
 gpu_set_colorwriteenable(1,1,1,0);
 draw_surface(application_surface, ax*m, ay*m);
 gpu_set_colorwriteenable(1,1,1,1);
+
+//Foreground Paralax
+if (surface_exists(frgSurf)) {
+	draw_surface_ext(frgSurf, 0, 0, 1, 1, 0, c_white, 1);	
+	
+	//Reset Surface
+		surface_set_target(frgSurf);
+			draw_clear_alpha(0, 0);
+		surface_reset_target();
+}
+
+
+
+
 
 //Clear Application Surface
 surface_set_target(application_surface);
 	draw_clear_alpha(0, 0);
 surface_reset_target();
+
+
+
 
 /*
 draw_clear(c_red);

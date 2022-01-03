@@ -36,6 +36,7 @@ panSpeed = 1;
 
 //Background Surface
 bkgSurf = -1;
+frgSurf = -1;
 createdBkgSurface = false;
 
 //Camera Shake

@@ -25,7 +25,6 @@ for (var i = 0; i < s; i++) {
 		var layerObj = instance_create_depth(0, 0, d, EnvironmentLayer);
 		layerObj.paralaxAmount = paralaxMultiplier;
 		
-		
 		//Get All Elements On The Layer
 		var layerElements = layer_get_all_elements(layerId);
 		var elementCount = array_length(layerElements);

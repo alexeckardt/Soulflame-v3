@@ -126,43 +126,37 @@ if (STATE == state.base && abs(controlHSpeed) >= 0.01) {
 	directionFacing = (hSpeedGoal != 0 && inControl) ? sign(hSpeedGoal) : sign(controlHSpeed);
 }
 
+
+
 //Collision
 	//Update Mask
 	mask_index = mask;
 
-//Horizontal Collision
-var moveX = (controlHSpeed)*time
-if (place_meeting(x + moveX, y, Solid)) {
-	
-	//Approach Wall until meeting
-	var sigMoveX = sign(moveX)
-	while(!place_meeting(x+sigMoveX, y, Solid)) {
-		x += sigMoveX;
+
+
+//Ramps
+var range = 5;
+var moveY = (controlVSpeed)*time;
+var moveX = (controlHSpeed)*time;
+
+//Going Down a Ramp
+if (place_meeting(x, y+1, Solid) && !place_meeting(x+moveX, y+1, Solid)) {
+	for (var i = 1; i < range; i++) {
+		if (place_meeting(x+moveX, y+i+1, Solid)) {
+			y += i;
+			break;
+		}
 	}
-	
-	//Impact Splat
-	squishX = -clamp((abs(moveX)-2)/4, 0, 0.5);
-	
-	//Set Wall Direction
-	lastWallInDirection = wallInDirection;
-	wallInDirection = sigMoveX;
-	
-	//Reset Movement Vals
-	moveX = 0;
-	hSpeed = 0;
-	controlHSpeed = 0;
 }
-x += moveX;
-
-
 
 //Vertical Collision
-var moveY = (controlVSpeed)*time;
 if (place_meeting(x, y+moveY, Solid)) {
 
 	//Back Onto Wall
-	while(!place_meeting(x, y+sign(moveY), Solid)) {
-		y += sign(moveY);
+	repeat (floor(abs(moveY))) {
+		if (!place_meeting(x, y+sign(moveY), Solid)) {
+			y += sign(moveY);
+		}
 	}
 	
 	//Slide Around Corner
@@ -199,10 +193,59 @@ if (place_meeting(x, y+moveY, Solid)) {
 y+=moveY;
 
 
-//Collision Detection
-var wasOnGround = onGround;
-groundBelow = instance_place(x, y+1, Solid);
-onGround = (groundBelow != noone)
+		//Ground Collision Detection
+		var wasOnGround = onGround;
+		groundBelow = instance_place(x, y+1, Solid);
+		onGround = (groundBelow != noone)
+
+
+
+//Going Up a Ramp
+if (onGround && place_meeting(x+moveX, y, Solid)) {
+	
+	for (var i = 0.1; i < abs(moveX); i += 0.1) {
+		if (place_meeting(x+sign(moveX)*i, y, Solid) && !place_meeting(x+sign(moveX)*i, y-1, Solid)) {
+			y--;
+		}
+	}
+	
+}
+
+//Horizontal Collision
+if (place_meeting(x + moveX, y, Solid)) {
+	
+	var sigMoveX = sign(moveX);
+	
+	//Back Onto Wall
+	repeat (floor(abs(moveX))) {
+		if (!place_meeting(x+sigMoveX, y, Solid)) {
+			x += sigMoveX;
+		}
+	}
+	
+	//Collision?
+	if (place_meeting(x + sigMoveX, y, Solid)) {
+		//Impact Splat
+		squishX = -clamp((abs(moveX)-2)/4, 0, 0.5);
+	
+		//Set Wall Direction
+		lastWallInDirection = wallInDirection;
+		wallInDirection = sigMoveX;
+	
+		//Reset Movement Vals
+		moveX = 0;
+		hSpeed = 0;
+		controlHSpeed = 0;
+	}
+		
+		
+}
+x += moveX;
+
+
+
+
+
 
 //Land Detection
 if (onGround && !wasOnGround) {

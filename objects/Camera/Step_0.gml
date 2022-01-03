@@ -6,6 +6,7 @@
 if (Controller.updateFullScreen) {
 	window_set_fullscreen(!window_get_fullscreen());
 	display_reset(0, false);
+	Controller.updateFullScreen = false;
 }
 
 //photo Mode

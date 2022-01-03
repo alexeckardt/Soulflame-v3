@@ -48,6 +48,9 @@ climbingGravMulti = 1/3
 lastOnFloorAtY = y;
 lastOnFloorAtX = x;
 
+//Slopes
+maxRampSlope = 1;
+
 //Slide
 slideMaxSpeed = 2.5;
 slideExitSpeedBase = 0.5;

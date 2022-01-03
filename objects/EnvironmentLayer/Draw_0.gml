@@ -1,15 +1,18 @@
 /// @description 
 
-//Surface Create
 
-if (surface_exists(Camera.bkgSurf)) {
+//Choose Surf
+//(Dynamic In case it changed)
+var surf = (paralaxAmount >= 0) ? Camera.frgSurf :  Camera.bkgSurf;
+
+if (surface_exists(surf)) {
 
 	var surfX = (Camera.x);
 	var surfY = (Camera.y);
 	var z = Camera.zoom;
 
 	//Swt
-	surface_set_target(Camera.bkgSurf);
+	surface_set_target(surf);
 
 	//Surface Resets in Background
 

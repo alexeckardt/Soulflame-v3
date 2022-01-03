@@ -1,4 +1,4 @@
 /// @description 
 
-ds_list_destroy(paralaxSprites)
+cleanup_ds_list(paralaxSprites)
 cleanup_surface(layerSurf)
