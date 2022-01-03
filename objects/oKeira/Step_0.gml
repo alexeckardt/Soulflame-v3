@@ -35,7 +35,7 @@ if (timeOffGround > -1) {
 
 	//Controller Input
 	controllerHorizontalMovementInput = Controller.right - Controller.left;
-	var mx = controllerHorizontalMovementInput * inControl;
+	mx = controllerHorizontalMovementInput;
 	
 	//Run Speed
 	var runSpeedMulti = 1;

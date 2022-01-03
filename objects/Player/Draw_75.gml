@@ -205,7 +205,13 @@ draw_text(10, 10, Controller.rightStickDirection);
 	}
 
 	//Position
-	var pSurfX = keira.x - Camera.x;
-	var pSurfY = keira.y - Camera.y;
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_bottom);
+	draw_set_font(fontKeira);
+	
+	var pSurfX = (keira.x - Camera.x);
+	var pSurfY = (keira.y - Camera.y)-18;
 	draw_text(pSurfX, pSurfY, drawingInteractString);
 
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);

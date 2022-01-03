@@ -16,5 +16,5 @@ cutscene_id		= "c_";
 
 myTrigger		= noone;
 
-
+returnControlToPlayer = true;
 moveToX = undefined;

@@ -31,13 +31,18 @@ controlVSpeed = 0; //What I'm Controlling
 hSpeed = 0; //Real, Updates outside
 vSpeed = 0;
 
+//Horitonztal Input
+mx = 0;
+noControlMx = 0;
+
+
 runSpeed = 2.5;
 runningForTime = -1;
 
 //States
 STATE = state.base;
 inControl = true
-noControlMx = 0; //reset
+
 lastNoControlMX = 0;
 directionFacing = 1;
 visualDirectionFacing = 0;

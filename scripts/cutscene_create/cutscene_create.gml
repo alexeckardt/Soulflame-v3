@@ -23,6 +23,7 @@ function cutscene_create(t_scene_info) {
 	
 		inst.cutsceneId = c_persistance_id;
 		inst.playerHasControlDuringCutscene = playerHasControlDuringCutscene;
+		inst.returnControlToPlayer = returnControlToPlayer;
 	
 	//Player
 		keira.inControl = playerHasControlDuringCutscene;

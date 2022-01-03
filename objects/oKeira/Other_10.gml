@@ -47,6 +47,15 @@ switch (STATE) {
 		
 	break;
 	
+	case state.sitdown:
+	case state.sit:
+	case state.situp:
+	
+		//Sit
+		keira_stateaction_sit_states();
+	
+		break;
+	
 }	
 
 //Botch

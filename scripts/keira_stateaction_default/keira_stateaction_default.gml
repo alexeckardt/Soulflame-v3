@@ -5,9 +5,10 @@
 //
 function keira_stateaction_default() {
 	
+	var mmx = (inControl) ? mx : noControlMx;
 	
 	var time = Game.delta;
-	var running = onGround && controllerHorizontalMovementInput != 0 && inControl;		
+	var running = onGround && mmx != 0;		
 		
 	var currentIdleSprite = keira_get_movement_sprite("Idle");
 	var currentReadySprite = keira_get_movement_sprite("IdleReady");

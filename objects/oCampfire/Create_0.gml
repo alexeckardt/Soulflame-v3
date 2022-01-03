@@ -5,6 +5,7 @@ event_inherited();
 var keira = instance_nearest(x, y, oKeira);
 
 isSkipable = false;
+returnControlToPlayer = false;
 t_scene_info = [
 
 	[cutscene_event_wait_time, 0.2],
@@ -14,7 +15,7 @@ t_scene_info = [
 	[cutscene_event_wait_time, 0.2],
 	
 	[cutscene_event_change_variable, keira, "STATE", state.sitdown],
-	[cutscene_event_wait_time, 1.2],
+		[cutscene_event_wait_variable, keira, "STATE", state.sit],
 	
 	[cutscene_event_change_variable, id, "playerSittingHere", true],
 	[cutscene_event_wait_time, 0.2],

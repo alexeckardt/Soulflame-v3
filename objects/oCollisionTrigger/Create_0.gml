@@ -9,3 +9,4 @@ isSkipable = true;
 repeatable = false;
 playerMustBeInControl = true;
 playerHasControlDuringCutscene = false;
+returnControlToPlayer = true;
