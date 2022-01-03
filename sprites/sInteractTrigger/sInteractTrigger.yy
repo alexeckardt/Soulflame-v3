@@ -1,6 +1,6 @@
 {
   "bboxMode": 0,
-  "collisionKind": 0,
+  "collisionKind": 1,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -24,15 +24,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"3119e1ca-5b58-4ac5-a01b-0a741aeac692","path":"sprites/sRampTile/sRampTile.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3119e1ca-5b58-4ac5-a01b-0a741aeac692","path":"sprites/sRampTile/sRampTile.yy",},"LayerId":{"name":"639320ba-d5ea-4431-bb8f-9bb6748b47f4","path":"sprites/sRampTile/sRampTile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sRampTile","path":"sprites/sRampTile/sRampTile.yy",},"resourceVersion":"1.0","name":"3119e1ca-5b58-4ac5-a01b-0a741aeac692","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b4c180b0-39f0-479d-aea5-9e6788dee8e1","path":"sprites/sInteractTrigger/sInteractTrigger.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b4c180b0-39f0-479d-aea5-9e6788dee8e1","path":"sprites/sInteractTrigger/sInteractTrigger.yy",},"LayerId":{"name":"cabfc439-1025-4578-b53e-9cd684e4d4a4","path":"sprites/sInteractTrigger/sInteractTrigger.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sInteractTrigger","path":"sprites/sInteractTrigger/sInteractTrigger.yy",},"resourceVersion":"1.0","name":"b4c180b0-39f0-479d-aea5-9e6788dee8e1","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sRampTile","path":"sprites/sRampTile/sRampTile.yy",},
+    "spriteId": {"name":"sInteractTrigger","path":"sprites/sInteractTrigger/sInteractTrigger.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 30.0,
+    "playbackSpeed": 15.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"5d499a0d-788c-4a8a-943c-6c14854c8745","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3119e1ca-5b58-4ac5-a01b-0a741aeac692","path":"sprites/sRampTile/sRampTile.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"5a431366-94f5-4f81-b406-c87d989b785c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b4c180b0-39f0-479d-aea5-9e6788dee8e1","path":"sprites/sInteractTrigger/sInteractTrigger.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sRampTile","path":"sprites/sRampTile/sRampTile.yy",},
+    "parent": {"name":"sInteractTrigger","path":"sprites/sInteractTrigger/sInteractTrigger.yy",},
     "resourceVersion": "1.3",
-    "name": "sRampTile",
+    "name": "sInteractTrigger",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"639320ba-d5ea-4431-bb8f-9bb6748b47f4","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cabfc439-1025-4578-b53e-9cd684e4d4a4","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Debug.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sRampTile",
+  "name": "sInteractTrigger",
   "tags": [],
   "resourceType": "GMSprite",
 }

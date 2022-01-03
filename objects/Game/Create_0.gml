@@ -2,25 +2,19 @@
 randomize();
 
 //Save File info
-saveFileName = "keira_0.sav";
+saveFileName = "keira.sav";
 gameVersion = 1
 gameSeed = irandom(100);
 
-//Save File
+//Save Tracking
 persistance = ds_map_create();
-
-//Game Settings
-
+date = -1;
 
 //Debug Settings
+showCreationErrors = true;
 viewHitboxes = false;
 viewDamageBoxes = true;
 
 //Game Keep Track Of
 delta = -1;
 delta_scale = 60;
-
-//View
-ideal_camera_width = 320;
-ideal_camera_height = 180;
-ideal_aspect_ratio = 16/9;

@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Debug",
+    "path": "folders/Sprites/Debug.yy",
   },
   "resourceVersion": "1.0",
   "name": "sRuler",

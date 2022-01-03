@@ -20,7 +20,7 @@ if (surface_exists(bkgSurf)) {
 }
 
 //Draw Stuff, only overlaying colour
-gpu_set_colorwriteenable(1,1,1,0);
+gpu_set_colorwriteenable(1,1,1,1);
 draw_surface(application_surface, ax*m, ay*m);
 gpu_set_colorwriteenable(1,1,1,1);
 
