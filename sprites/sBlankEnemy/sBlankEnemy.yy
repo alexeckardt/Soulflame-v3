@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Spr",
-    "path": "folders/Entity/Enemy/Obj/Base/Spr.yy",
+    "path": "folders/Cutscenes/Entity/Enemy/Obj/Base/Spr.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBlankEnemy",

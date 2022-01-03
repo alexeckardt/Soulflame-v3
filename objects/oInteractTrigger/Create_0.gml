@@ -2,9 +2,12 @@
 
 event_inherited();
 
-interactable = true;
-repeatable = true;
 
+repeatable = true;
 interactMessage = "Interact";
+isSkipable = false;
+
 
 activate = false;
+interactable = true;
+playerHasControlDuringCutscene = false;

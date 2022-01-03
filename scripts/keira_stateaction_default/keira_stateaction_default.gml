@@ -7,7 +7,7 @@ function keira_stateaction_default() {
 	
 	
 	var time = Game.delta;
-	var running = onGround && controllerHorizontalMovementInput != 0;		
+	var running = onGround && controllerHorizontalMovementInput != 0 && inControl;		
 		
 	var currentIdleSprite = keira_get_movement_sprite("Idle");
 	var currentReadySprite = keira_get_movement_sprite("IdleReady");
@@ -35,7 +35,12 @@ function keira_stateaction_default() {
 	}
 	
 	//Control
-	var giveControl = (true); //Replace When Cutscenes Appear
+	var giveControl = (true);
+	var cutsceneObj = instance_nearest(x, y, Cutscene);
+	if (cutsceneObj != noone) {
+		giveControl = cutsceneObj.playerHasControlDuringCutscene;
+	}
+	
 	inControl = giveControl;
 	
 	//Update Weapon Sprite

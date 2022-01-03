@@ -3,12 +3,10 @@
   "isCompatibility": false,
   "parent": {
     "name": "Scripts",
-    "path": "folders/Cutscenes/Entity/Enemy/Scripts.yy",
+    "path": "folders/Meta/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "damage_check_if_enemy_hit",
-  "tags": [
-    "combat",
-  ],
+  "name": "point_to_position",
+  "tags": [],
   "resourceType": "GMScript",
 }

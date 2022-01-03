@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Enemy",
-    "path": "folders/Entity/Enemy.yy",
+    "path": "folders/Cutscenes/Entity/Enemy.yy",
   },
   "resourceVersion": "1.0",
   "name": "Enemy",

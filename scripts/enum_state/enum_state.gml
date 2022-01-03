@@ -47,5 +47,7 @@ enum state {
 	
 	combat_recovery, //For Heavy Sprites + Enemies; Generic State
 	
+	sitdown, //visual state
+	
 	height, //states count, used for idle in enemies
 }

@@ -6,7 +6,7 @@
 function cutscene_create(t_scene_info) {
 
 	//Setup
-		keira = instance_nearest(x, y, oKeira);
+		var keira = instance_nearest(x, y, oKeira);
 	
 	//Create
 		var inst = instance_create_depth(0, 0, 0, Cutscene)
@@ -22,9 +22,11 @@ function cutscene_create(t_scene_info) {
 		}
 	
 		inst.cutsceneId = c_persistance_id;
+		inst.playerHasControlDuringCutscene = playerHasControlDuringCutscene;
 	
 	//Player
 		keira.inControl = playerHasControlDuringCutscene;
+		
 
 	//Die If Repeatable		
 	if (!repeatable) {

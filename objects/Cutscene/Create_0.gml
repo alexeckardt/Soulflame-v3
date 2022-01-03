@@ -15,3 +15,6 @@ timer			= 0;
 cutscene_id		= "c_";
 
 myTrigger		= noone;
+
+
+moveToX = undefined;

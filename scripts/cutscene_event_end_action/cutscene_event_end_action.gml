@@ -10,7 +10,6 @@ function cutscene_event_end_action() {
 		
 		//Finish Cutscene
 		
-		
 		//Return
 		var keira = instance_nearest(x, y, oKeira);
 		keira.inControl = true;

@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Base",
-    "path": "folders/Entity/Enemy/Obj/Base.yy",
+    "path": "folders/Cutscenes/Entity/Enemy/Obj/Base.yy",
   },
   "resourceVersion": "1.0",
   "name": "oEmptyFlyingEnemy",

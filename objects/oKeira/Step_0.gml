@@ -35,7 +35,7 @@ if (timeOffGround > -1) {
 
 	//Controller Input
 	controllerHorizontalMovementInput = Controller.right - Controller.left;
-	var mx = controllerHorizontalMovementInput;
+	var mx = controllerHorizontalMovementInput * inControl;
 	
 	//Run Speed
 	var runSpeedMulti = 1;
@@ -45,13 +45,14 @@ if (timeOffGround > -1) {
 	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers;
 	var slidingHspdGoal = slidingInDirection * slideSpeed * hspdGoalsMultipliers;
 
-	//Change Goal Based on State
+	//No Control Movement
 	if (!inControl) {
 		hSpeedGoal = noControlMx * runSpeed * hspdGoalsMultipliers;
 		lastNoControlMX = noControlMx;
 		noControlMx = 0;
 	}
 
+	//Change Goal Based on State
 		//Auto Changes in Hespeed
 		if (STATE = state.combat_slide) { 
 			hSpeedGoal = slidingHspdGoal; 
@@ -123,7 +124,7 @@ if (timeOffGround > -1) {
 
 //Dir Facing
 if (STATE == state.base && abs(controlHSpeed) >= 0.01) {
-	directionFacing = (hSpeedGoal != 0 && inControl) ? sign(hSpeedGoal) : sign(controlHSpeed);
+	directionFacing = (hSpeedGoal != 0) ? sign(hSpeedGoal) : directionFacing;
 }
 
 
@@ -241,10 +242,6 @@ if (place_meeting(x + moveX, y, Solid)) {
 		
 }
 x += moveX;
-
-
-
-
 
 
 //Land Detection
