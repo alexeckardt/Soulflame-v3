@@ -69,7 +69,6 @@ allowHalfGravity = true;
 cutVspd = false;
 combatInAirJumpCoefficient = 0.3;
 
-
 //Jump
 forceJump = false;
 jumpTicks = 0;
@@ -143,3 +142,7 @@ damageToCollectEssence = false;
 
 haveSlideDamage = false;
 
+//Interacting
+interacting = false;
+interactString = "";
+showInteractString = false;

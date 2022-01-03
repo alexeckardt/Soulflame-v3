@@ -31,6 +31,8 @@ blockPressed = false;
 
 updateFullScreen = true;
 
+interactPressed = false;
+
 
 //View Stick
 holdingRightStick = false;

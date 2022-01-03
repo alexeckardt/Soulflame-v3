@@ -16,8 +16,10 @@ function cutscene_create(t_scene_info) {
 		inst.myTrigger = id;
 	
 	//Update Vars
-		inst.scene_info = t_scene_info;
-		event_perform_object(inst, ev_other, ev_user0);
+		with (inst) {
+			scene_info = t_scene_info;
+			event_user(0);
+		}
 	
 		inst.cutsceneId = c_persistance_id;
 	

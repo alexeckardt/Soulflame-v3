@@ -1,4 +1,4 @@
-/// @description 
+ /// @description 
 
 if (!instance_exists(Cutscene)) {
 
@@ -6,9 +6,12 @@ if (!instance_exists(Cutscene)) {
 		
 		if (oKeira.inControl || !playerMustBeInControl) {
 		
-			if (Controller.Interact) {
+			//Wait for Input From Player
+			//(This is done so only one trigger is activated)
+			if (activate) {
 		
 				cutscene_create(t_scene_info);
+				activate = false;
 
 			}
 

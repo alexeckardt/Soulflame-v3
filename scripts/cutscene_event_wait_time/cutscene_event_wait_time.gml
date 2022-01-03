@@ -12,7 +12,7 @@ function cutscene_event_wait_time(seconds) {
 	//Increment
 	if (timer > seconds*room_speed || skipCutscene) {
 		timer = 0;
-		cutscene_end_action();	
+		cutscene_event_end_action();	
 	}
 
 }

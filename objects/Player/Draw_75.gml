@@ -1,11 +1,12 @@
 /// @desc
 
+var keira = instance_nearest(x, y, oKeira);
+
 var guiW = Camera.view_width;
 var guiH = Camera.view_height;
 display_set_gui_size(guiW, guiH)
 
 
-	
 //Feather
 var featherDrawAtY = featherSurfYFromBase;
 var bottomOfFeather = featherDrawAtY + featherSurfDim;
@@ -185,4 +186,26 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 	
 	}
 
-draw_text(10, 10, Controller.rightStickDirection)
+draw_text(10, 10, Controller.rightStickDirection);
+
+
+//Interaction Over Player
+
+	//Update Vars
+	showInteractString = keira.showInteractString;
+	interactString = keira.interactString;
+
+	//Check
+	var sameString	= interactString == drawingInteractString;
+
+	//Alpha (Fade out if Not same or not touching)
+	interactAlpha	= lerp(interactAlpha, showInteractString*sameString, (0.18 + (0.2*(!sameString)))*Game.delta);
+	if (showInteractString && interactAlpha < 0.01) {
+		drawingInteractString = interactString
+	}
+
+	//Position
+	var pSurfX = keira.x - Camera.x;
+	var pSurfY = keira.y - Camera.y;
+	draw_text(pSurfX, pSurfY, drawingInteractString);
+

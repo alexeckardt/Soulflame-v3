@@ -6,7 +6,7 @@ if (scene_info == -1) {
 	scene_info = [[cutscene_event_end_action, ]]
 }
 
-
+   
 //Get Scene
 current_scene = scene_info[scene];
 

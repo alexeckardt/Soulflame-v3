@@ -64,3 +64,12 @@ weaponWheelScaleDispalyThreshold = 0.05;
 
 weaponWheelLerpDisplayingDir = 0;
 weaponWheelLerpDisplayingLen = 0;
+
+//Interacting Display
+interactSurface = -1;
+interactAlpha = 0;
+
+drawingInteractString = "";
+interactString = "";
+showInteractString = false;
+

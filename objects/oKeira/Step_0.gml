@@ -538,6 +538,32 @@ if (STATE == state.hurt) {
 }
 
 
-//Other
+//Interact With Interact Trigger
+interacting = false;
+showInteractString = false;
+if (!instance_exists(Cutscene) && inControl) {
+	if (onGround) {
+	
+		//Check For Trigger
+		var touchingTrigger = instance_place(x, y, oInteractTrigger);
+		if (touchingTrigger != noone) {
+	
+			//Display (Done In Player GUI)
+			showInteractString = true;
+			interactString = touchingTrigger.interactMessage;
+		
+			//Actual Input; send to Trigger
+			if (Controller.interact) {
+			
+				//Send to Trigger
+				touchingTrigger.activate = true;
+			
+			}
+		}
+	}
+}
 
+
+
+//Other
 event_user(0);

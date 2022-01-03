@@ -15,6 +15,3 @@ timer			= 0;
 cutscene_id		= "c_";
 
 myTrigger		= noone;
-
-//Call User Event
-event_user(0);

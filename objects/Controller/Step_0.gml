@@ -24,8 +24,6 @@ if (usingController) {
 		stickDirection = point_direction(0, 0, horizontalStick, verticalStick);
 		stickHolding = abs(horizontalStick) > 0.05 || abs(verticalStick) > 0.05
 
-		
-		
 		//Looking Stick Stuff
 		rightStickHorizontal = (gamepad_axis_value(0, gp_axisrh) > 0)
 							 - (gamepad_axis_value(0, gp_axisrh) < 0);
@@ -52,6 +50,8 @@ if (usingController) {
 	
 	block = gamepad_button_check(0, gp_shoulderl);
 	blockPressed = gamepad_button_check(0, gp_shoulderl);
+
+	interact =  gamepad_button_check_pressed(0, gp_face4);
 
 }
 
@@ -81,5 +81,7 @@ if (!usingController) {
 	combatAttackPressed = keyboard_check_pressed(ord("X"));
 
 	updateFullScreen = keyboard_check_released(vk_f11);
+
+	interact =  keyboard_check_pressed(vk_down);
 
 }
