@@ -37,7 +37,9 @@ noControlMx = 0;
 
 
 runSpeed = 2.5;
+walkSpeed = 1.5;
 runningForTime = -1;
+runNoControl = false;
 
 //States
 STATE = state.base;

@@ -17,6 +17,8 @@ viewX = 0;
 viewY = 0;
 follow = oKeira;
 
+followOffsetX = 0;
+followOffsetY = -2;
 
 depth = -20;
 application_surface_draw_enable(false);
@@ -42,3 +44,6 @@ createdBkgSurface = false;
 //Camera Shake
 screenShakeValuesArray = [0, 0, 0, 0];
 screenShakeMulti = 0;
+
+horizontalBuffer = 16;
+

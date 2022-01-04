@@ -5,7 +5,11 @@
 //
 function keira_stateaction_default() {
 	
-	var mmx = (inControl) ? mx : noControlMx;
+	var mmx = (inControl) ? mx : lastNoControlMX;
+	
+	if (!inControl) {
+		var hi = false;	
+	}
 	
 	var time = Game.delta;
 	var running = onGround && mmx != 0;		

@@ -11,7 +11,6 @@ var ww = view_width div 2;
 var hh = view_height div 2;
 
 //Clamp
-var horizontalBuffer = 16;
 viewX = clamp(viewX, ww + horizontalBuffer, room_width - horizontalBuffer - ww);
 viewY = clamp(viewY, hh, room_height-hh);
 

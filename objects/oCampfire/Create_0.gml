@@ -3,6 +3,7 @@
 event_inherited();
 
 var keira = instance_nearest(x, y, oKeira);
+depth = keira.depth + 5;
 
 isSkipable = false;
 returnControlToPlayer = false;

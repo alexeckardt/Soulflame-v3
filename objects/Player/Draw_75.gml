@@ -200,18 +200,67 @@ draw_text(10, 10, Controller.rightStickDirection);
 
 	//Alpha (Fade out if Not same or not touching)
 	interactAlpha	= lerp(interactAlpha, showInteractString*sameString, (0.18 + (0.2*(!sameString)))*Game.delta);
-	if (showInteractString && interactAlpha < 0.01) {
+	if (interactAlpha < 0.01) {
 		drawingInteractString = interactString
-	}
-
-	//Position
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_bottom);
-	draw_set_font(fontKeira);
+	} else {
+		
+		//Positions & Setup
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_bottom);
+		draw_set_font(fontKeira);
+		
+		var pSurfX = (keira.x - Camera.x);
+		var pSurfY = (keira.y - Camera.y);
+		
+		var textW			= string_width(drawingInteractString) + 5;
+		var edgeOffset		= sprite_get_xoffset(sInteractSprite);
+		var minWidth		= 16; //Constant, Look at sprite
 	
-	var pSurfX = (keira.x - Camera.x);
-	var pSurfY = (keira.y - Camera.y)-18;
-	draw_text(pSurfX, pSurfY, drawingInteractString);
+		var sectionWidth	= max(minWidth, textW)
+		var textEdges = 3;
+	
+		var w				= ceil(sectionWidth + textEdges*2);
+		var h				= sprite_get_height(sInteractSprite);
 
-	draw_set_halign(fa_left);
-	draw_set_valign(fa_top);
+		var anchX		= floor(edgeOffset+2);
+		var anchY		= h
+	
+		var surfX = pSurfX - w div 2;
+	
+		//Create Surface
+			if (!surface_exists(interactSurface)) {
+				interactSurface = surface_create(1, 1)
+			}
+			if (surface_get_width(interactSurface) != w+1)
+			|| (surface_get_height(interactSurface) != h) {
+				surface_resize(interactSurface, w+1, h)
+			}
+	
+		//Surface Enter
+		surface_set_target(interactSurface);
+	
+			draw_clear_alpha(0, 0);
+
+			var c = c_white;
+			var ww = w div 2 - edgeOffset;
+
+			//Draw Sprite Edges
+			draw_sprite_ext(sInteractSprite, 0, ww + edgeOffset + 1,	anchY, 1, 1, 0, c, 1); //The Emblem; in middle
+		
+			draw_sprite_ext(sInteractSprite, 2, edgeOffset,			anchY, 1, 1, 0, c, 1); //Left Edge
+			draw_sprite_ext(sInteractSprite, 3, w - edgeOffset,		anchY, 1, 1, 0, c, 1); //Right Edge
+
+			//Draw Text
+			var tX = textEdges*2+1
+			draw_text_colour(tX, anchY - 6, drawingInteractString, c, c, c, c, 1);
+
+			//Reset Alkignment
+			draw_set_halign(fa_left);
+			draw_set_valign(fa_top);
+			
+		surface_reset_target();
+
+		//Draw Surface
+		draw_surface_ext(interactSurface, surfX, pSurfY - h - 20, 1, 1, 0, c_white, interactAlpha);
+
+	}

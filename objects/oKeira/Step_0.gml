@@ -47,7 +47,8 @@ if (timeOffGround > -1) {
 
 	//No Control Movement
 	if (!inControl) {
-		hSpeedGoal = noControlMx * runSpeed * hspdGoalsMultipliers;
+		var spd = (runNoControl) ? runSpeed : walkSpeed;
+		hSpeedGoal = noControlMx * spd * hspdGoalsMultipliers;
 		lastNoControlMX = noControlMx;
 		noControlMx = 0;
 	}
