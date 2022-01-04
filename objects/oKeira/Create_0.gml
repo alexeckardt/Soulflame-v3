@@ -74,13 +74,13 @@ halfGravityThreshold = 0.7;
 forceHalfGravity = false;
 allowHalfGravity = true;
 cutVspd = false;
-combatInAirJumpCoefficient = 0.3;
+combatInAirJumpCoefficient = 0.4;
 
 //Jump
 forceJump = false;
 jumpTicks = 0;
 jumpCooldownTicks = 0;		
-coyoteeMaxTime = 6;	
+coyoteeMaxTime = 3;	
 allowCoyoteeJump = true;
 bouncingOffEnemy = false;
 preLandJumpsTime = 7			

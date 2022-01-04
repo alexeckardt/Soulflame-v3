@@ -55,7 +55,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 15,
-    "yorigin": 12,
+    "yorigin": 13,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCampfire","path":"sprites/sCampfire/sCampfire.yy",},

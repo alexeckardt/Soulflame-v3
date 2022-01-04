@@ -6,7 +6,7 @@
     "path": "folders/Meta/SaveLoad.yy",
   },
   "resourceVersion": "1.0",
-  "name": "load_game",
+  "name": "Script55",
   "tags": [],
   "resourceType": "GMScript",
 }
