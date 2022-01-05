@@ -1,2 +1,3 @@
 /// @description 
-surface_free_check(bkgSurf);
+cleanup_surface(bkgSurf);
+cleanup_surface(frgSurf);

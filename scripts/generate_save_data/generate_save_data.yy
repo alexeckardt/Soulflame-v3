@@ -6,7 +6,7 @@
     "path": "folders/Meta/SaveLoad.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Script55",
+  "name": "generate_save_data",
   "tags": [],
   "resourceType": "GMScript",
 }

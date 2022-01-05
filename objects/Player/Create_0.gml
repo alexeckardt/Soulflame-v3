@@ -1,5 +1,8 @@
 /// @desc
 
+//
+platinum = 0
+
 
 //Health
 baseMaxHealth = 5;
@@ -15,7 +18,6 @@ heartBoxCol = c_black;
 heartBoxAlpha = 0.5;
 
 //Essence
-
 essenceTokensCanHold = 3;
 essenceTokens = ds_list_create();
 essenceTokensHolding = 0; //Count of Above
@@ -45,7 +47,6 @@ featherSurfYFromBase = -5;
 weaponUsing = weapon.none;
 basePunchDamage = 1;
 
-
 //Weapon Wheel
 selectingWeapon = false;
 weaponWheelJustClosed = false;
@@ -73,3 +74,8 @@ drawingInteractString = "";
 interactString = "";
 showInteractString = false;
 
+//Room Transition
+roomStartPlayerX = 0;
+roomStartPlayerY = 0;
+roomStartPlayerD = 1;
+firstRoom = true;

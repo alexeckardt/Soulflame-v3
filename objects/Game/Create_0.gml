@@ -2,13 +2,13 @@
 randomize();
 
 //Save File info
-saveFileName = "keira.sav";
-gameVersion = 1
+saveSlotName = "keira";
+gameVersion = 1;
 gameSeed = irandom(100);
 
 //Save Tracking
 persistance = ds_map_create();
-date = -1;
+timeInGame = 0;
 
 //Debug Settings
 showCreationErrors = true;
