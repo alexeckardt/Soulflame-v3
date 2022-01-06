@@ -50,7 +50,8 @@ mask_index = sprite_index;
 	random_set_seed(gameObj.gameSeed);
 	alignment = choose(-1, 1);
 	healthyPercent = 0;
-
+	justDamaged = false;
+		
 	//Sprites
 	updatedAlignmentSprites = false; //Updates any sprites on alginment switch or creation
 	
@@ -89,3 +90,6 @@ mask_index = sprite_index;
 	damageKnockbackAddVSpeed = -2;
 	damageKnockbackAddHSpeed = 3;
 	damageKnockbackAddHspeedRelative = true;
+	
+	orgX = x;
+	orgY = y;

@@ -9,7 +9,7 @@ if (justDamaged) {
 }
 
 
-var visibleTarget = enemy_check_target_visible();
+var visibleTarget = enemy_check_target_visible()
 
 //Detection
 if (!seesTarget) {
@@ -25,8 +25,8 @@ if (!seesTarget) {
 			seesTarget = true;
 			detectionTimeLeft = detectionTime;	
 			
-			lastSawTargetX = target.x + targetFollowOffsetX;
-			lastSawTargetY = target.y + targetFollowOffsetY;
+			lastSawTargetX = target.x;
+			lastSawTargetY = target.y;
 		}
 				
 //Reset Detection Times
@@ -41,63 +41,17 @@ var pathX = lastSawTargetX;
 var pathY = lastSawTargetY;
 if (seesTarget) {
 	
-	//Reset Ticks
-	goHome = false;
-	notSeesTargetTime = 0;
-	
 	//Create Path Finder
-	if (point_distance(x, y, target.x, target.y) > pathfinderRegenerateRange*1.5) {
-		
-		//
-		if (abs(x - xprevious) < 0.1 && abs(y - yprevious) < 0.1) {
-			stuckTime += time;
-			
-			//Return Home
-			if (stuckTime > room_speed*4) {
-				stuckTime = 0;
-				seesTarget = false;
-			}
-		} else {
-			stuckTime = 0;	
-		}
-		
-		if (!instance_exists(pathFinder)) {
-			pathFinder = pathfinder_floating_create([lastSawTargetX, lastSawTargetY]);
-		}
-		
+	if (!instance_exists(pathFinder)) {
+		var k = instance_nearest(x, y, oKeira);
+		pathFinder = pathfinder_floating_create([lastSawTargetX, lastSawTargetY]);
+		targetFollowOffsetY = -10;
 	}
-	
+		
 	//Get Path Pos
 	var pos = get_pathfinder_positon(pathFinder, pathfinderRegenerateRange);
 	pathX = pos[0];
 	pathY = pos[1];
-	
-} else {
-	
-	notSeesTargetTime += time;
-	
-	//Fly Home
-	if (notSeesTargetTime > room_speed*3) {
-		if (point_distance(x, y, orgX, orgY) > 10) {
-			
-			goHome = true;
-			lastSawTargetX = orgX;	
-			lastSawTargetY = orgY;	
-			
-			if (!instance_exists(pathFinder)) {
-				pathFinder = pathfinder_floating_create([lastSawTargetX, lastSawTargetY]);
-			}
-			
-			var pos = get_pathfinder_positon(pathFinder, pathfinderRegenerateRange);
-			pathX = pos[0];
-			pathY = pos[1];
-	
-			
-		} else {
-			goHome = false;	
-		}
-	}
-	
 	
 }
 //Pathfinder Exists Under This
@@ -110,23 +64,13 @@ if (pathFinder != noone) {
 	//Update Goal Pos
 		//Give Extra Time
 		inferPathTimeLeft -= time;
-		if (enemy_check_target_visible(target, sightRange*1.5) || goHome) {
+		if (enemy_check_target_visible(target, sightRange*1.5)) {
 			inferPathTimeLeft = inferPathTime;	}
 	
 		//Actually Update Goal Pos
 		if (inferPathTimeLeft > 0) {
-			
-			if (!goHome) {
-				lastSawTargetX = target.x + targetFollowOffsetX;
-				lastSawTargetY = target.y + targetFollowOffsetY;
-			} else {
-				lastSawTargetX = orgX;	
-				lastSawTargetY = orgY;	
-				pathX = orgX;
-				pathY = orgY;
-				goalSpd = maxSpeed/2;
-			}
-			
+			lastSawTargetX = target.x + targetFollowOffsetX;
+			lastSawTargetY = target.y + targetFollowOffsetY;
 		}
 	
 	
@@ -177,5 +121,5 @@ event_user(0);
 
 
 //Speed
-var index_speed_goal = (seesTarget) ? 0.5: 0.1;
+var index_speed_goal = (seesTarget) ? 0.5: 0.2;
 index_speed = lerp(index_speed, index_speed_goal, 0.1*time);

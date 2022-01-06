@@ -16,16 +16,6 @@ if (point_distance(x, y, goToX, goToY) < 2)
 }
 
 //
-//Check Line Of Sight
-//
-if (useLOS && !goingToPosition) {
-	if (!collision_line(creator.x, creator.y, objectFollowing.x, objectFollowing.y, Solid, false, true)) {
-		goToX = objectFollowing.x + posXoffset;
-		goToY = objectFollowing.y - 1 + posYoffset;
-	}
-}
-
-//
 //
 //Create Path
 //

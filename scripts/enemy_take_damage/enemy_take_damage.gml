@@ -5,6 +5,9 @@
 //
 function enemy_take_damage() {
 
+	//Reset
+	justDamaged = false;
+	
 	//Check If a Hitbox has been hit
 	if (hitboxTakingDamage != noone) {
 	
@@ -81,11 +84,11 @@ function enemy_take_damage() {
 			
 		//Hit Effect Object
 			
-			
-			
+
 		//Reset
 		hitboxTakingDamage = noone;
 		invulnerableTicks = 5;
+		justDamaged = true;
 		
 		//Dead Detect
 		if (!dead) {

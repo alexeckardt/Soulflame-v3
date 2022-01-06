@@ -63,7 +63,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 15,
-    "yorigin": 22,
+    "yorigin": 26,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMagpieIdle","path":"sprites/sMagpieIdle/sMagpieIdle.yy",},
