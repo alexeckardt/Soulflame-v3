@@ -4,8 +4,6 @@ event_inherited();
 
 //Mutators
 
-
-
 //Movement Vars
 hSpeedGoal = 0;
 vSpeedGoal = 0;
