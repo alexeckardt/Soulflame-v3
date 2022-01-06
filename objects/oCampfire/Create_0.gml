@@ -20,6 +20,8 @@ t_scene_info = [
 	
 	[cutscene_event_change_variable, id, "playerSittingHere", true],
 	[cutscene_event_wait_time, 0.2],
+	
+	[cutscene_event_save_game, false],
 ]
 
 //Visuals

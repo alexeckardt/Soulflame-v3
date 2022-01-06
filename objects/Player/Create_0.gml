@@ -1,8 +1,5 @@
 /// @desc
 
-//
-platinum = 0
-
 
 //Health
 baseMaxHealth = 5;
@@ -42,7 +39,6 @@ featherYoffset = 0;
 featherSurfXFromBase = 10;
 featherSurfYFromBase = -5;
 
-
 //Attacks
 weaponUsing = weapon.none;
 basePunchDamage = 1;
@@ -79,3 +75,13 @@ roomStartPlayerX = 0;
 roomStartPlayerY = 0;
 roomStartPlayerD = 1;
 firstRoom = true;
+fadeInTransitionInfo = [0,0,0,0,0,0]
+ 
+//Collection
+platinum = 0;
+
+//Respawning
+savePointRoom = "";
+savePointX = 0;
+savePointY = 0;
+savePointD = 0;

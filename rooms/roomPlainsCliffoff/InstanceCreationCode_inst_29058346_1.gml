@@ -1,12 +1,12 @@
 
 interactable = true;
 repeatable = true;
-interactMessage = "Shoot into Sky";
+interactMessage = "Load Save File";
 activate = false;
 
 t_scene_info = [
 
-	[cutscene_event_wait_time, 2],
-	[cutscene_event_change_variable, instance_nearest(x, y, oKeira), "controlVSpeed", -15],
+	[cutscene_event_wait_time, 0.3],
+	[cutscene_event_load_game, false],
 
 ]

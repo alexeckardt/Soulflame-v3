@@ -1,5 +1,5 @@
 
 roomTo	= roomPlainsCliffoff;
 xTo		= 32;
-yTo		= 0;
+yTo		= 330;
 dirFacing = 1;

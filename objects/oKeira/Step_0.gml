@@ -244,6 +244,8 @@ if (place_meeting(x + moveX, y, Solid)) {
 }
 x += moveX;
 
+clamp(x, 0, room_width);
+
 
 //Land Detection
 if (onGround && !wasOnGround) {

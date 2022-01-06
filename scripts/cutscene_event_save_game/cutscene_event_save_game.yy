@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "SaveLoad",
-    "path": "folders/Meta/SaveLoad.yy",
+    "name": "Script",
+    "path": "folders/Cutscenes/Script.yy",
   },
   "resourceVersion": "1.0",
-  "name": "generate_save_data",
+  "name": "cutscene_event_save_game",
   "tags": [],
   "resourceType": "GMScript",
 }
