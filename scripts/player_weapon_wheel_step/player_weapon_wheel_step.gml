@@ -4,6 +4,7 @@
 //
 //
 function player_weapon_wheel_step(){
+
 	
 	//Selecting Weapon
 	if (Controller.rightStickHolding) {
@@ -23,7 +24,6 @@ function player_weapon_wheel_step(){
 		resetingWeaponSelection = true;
 		selectingWeapon = true;
 	}
-	
 	
 	//Select Weapon
 	if (selectingWeapon) {

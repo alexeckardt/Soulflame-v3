@@ -12,7 +12,7 @@ timeInGame = 0;
 
 //Debug Settings
 showCreationErrors = true;
-viewHitboxes = false;
+viewHitboxes = true;
 viewDamageBoxes = true;
 
 //Game Keep Track Of

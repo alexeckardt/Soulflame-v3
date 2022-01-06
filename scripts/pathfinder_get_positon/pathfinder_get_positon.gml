@@ -2,10 +2,10 @@
 //
 //
 //
-function get_pathfinder_positon(argument0, argument1) {
+function pathfinder_get_positon(pathFinder, lengthFromPathStart) {
 
-	if (instance_exists(argument0) && argument0 != -1) {
-		var p = argument0.myPath;
+	if (instance_exists(pathFinder) && pathFinder != noone) {
+		var p = pathFinder.myPath;
 		
 		if (path_exists(p)) {
 			var pathLen = path_get_length(p);
@@ -15,12 +15,12 @@ function get_pathfinder_positon(argument0, argument1) {
 				var pathObjX, pathObjY;
 				
 				//Using Path
-				if (!argument0.pathFailed) {
-					var l = max(argument1, pathLen);
+				if (!pathFinder.pathFailed) {
+					var l = max(lengthFromPathStart, pathLen);
 	
 					//Percentage I Want
-					var point = (argument1 / l);
-						point = clamp(point, 0, argument1);
+					var point = (lengthFromPathStart / l);
+						point = clamp(point, 0, lengthFromPathStart);
 
 					var pathObjX = path_get_x(p, point);
 					var pathObjY = path_get_y(p, point);
@@ -28,8 +28,8 @@ function get_pathfinder_positon(argument0, argument1) {
 				//Using Path Object Position If Path Failed
 				} else {
 					
-					pathObjX = argument0.x;
-					pathObjY = argument0.y;
+					pathObjX = pathFinder.x;
+					pathObjY = pathFinder.y;
 					
 				}
 				
@@ -40,11 +40,11 @@ function get_pathfinder_positon(argument0, argument1) {
 		}
 		
 		//Calculate If I Didn't Above
-		pathObjX = argument0.x;
-		pathObjY = argument0.y;
+		pathObjX = pathFinder.x;
+		pathObjY = pathFinder.y;
 		var pathEndX = path_get_x(p, 1);
 		var pathEndY = path_get_y(p, 1);
-	
+			
 		//PassBack
 		return [pathObjX, pathObjY, pathEndX, pathEndY];
 	}

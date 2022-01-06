@@ -1,154 +1,130 @@
 var time = Game.delta;
+var k = instance_nearest(x, y, oKeira);
 
 //Take Damage 
 enemy_take_damage();
-
 if (justDamaged) {
 	seesTarget = false;	
-	spd = 0;
-}
+	spd = 0;}
 
 
+//
+//
+//Begin Chase Target?
 var visibleTarget = enemy_check_target_visible();
-
-//Detection
 if (!seesTarget) {
 	
-	//Check If Clear Line Of Sight
+	//Timer
+	sinceSeenTarget += time;
+	
+	//See
 	if (visibleTarget) {
-				 
-		//Detect Time
-		detectionTimeLeft -= time;
-
-		//Detected for long enough
-		if (detectionTimeLeft <= 0) {
-			seesTarget = true;
-			detectionTimeLeft = detectionTime;	
-			
-			lastSawTargetX = target.x + targetFollowOffsetX;
-			lastSawTargetY = target.y + targetFollowOffsetY;
-		}
-				
-//Reset Detection Times
-	} else {
-		detectionTimeLeft = detectionTime	
+		seesTarget = true;
+		sinceSeenTarget = 0;
 	}
 }
 
+//Decide Where To Go (Home, Player, Lemming)
 
-//Pathfinding
-var pathX = lastSawTargetX;
-var pathY = lastSawTargetY;
-if (seesTarget) {
-	
-	//Reset Ticks
-	goHome = false;
-	notSeesTargetTime = 0;
-	
-	//Create Path Finder
-	if (point_distance(x, y, target.x, target.y) > pathfinderRegenerateRange*1.5) {
-		
-		//
-		if (abs(x - xprevious) < 0.1 && abs(y - yprevious) < 0.1) {
-			stuckTime += time;
-			
-			//Return Home
-			if (stuckTime > room_speed*4) {
-				stuckTime = 0;
-				seesTarget = false;
-			}
-		} else {
-			stuckTime = 0;	
-		}
-		
-		if (!instance_exists(pathFinder)) {
-			pathFinder = pathfinder_floating_create([lastSawTargetX, lastSawTargetY]);
-		}
-		
-	}
-	
-	//Get Path Pos
-	var pos = get_pathfinder_positon(pathFinder, pathfinderRegenerateRange);
-	pathX = pos[0];
-	pathY = pos[1];
-	
-} else {
-	
-	notSeesTargetTime += time;
-	
-	//Fly Home
-	if (notSeesTargetTime > room_speed*3) {
-		if (point_distance(x, y, orgX, orgY) > 10) {
-			
-			goHome = true;
-			lastSawTargetX = orgX;	
-			lastSawTargetY = orgY;	
-			
-			if (!instance_exists(pathFinder)) {
-				pathFinder = pathfinder_floating_create([lastSawTargetX, lastSawTargetY]);
-			}
-			
-			var pos = get_pathfinder_positon(pathFinder, pathfinderRegenerateRange);
-			pathX = pos[0];
-			pathY = pos[1];
-	
-			
-		} else {
-			goHome = false;	
-		}
-	}
-	
-	
-}
-//Pathfinder Exists Under This
+	//Check Target Visible
+	var playerIsTarget = target == k;
 
+	//End Term Goal Position
+	var EndGoalX = lastSawTargetX;
+	var EndGoalY = lastSawTargetY;
 	
-//Did path Fail?
-var goalSpd = 0;
-if (pathFinder != noone) {
+	//Speed; Move by def
+	var goalSpd = maxSpeed;
 	
-	//Update Goal Pos
-		//Give Extra Time
+	//Check
+	if (seesTarget) {
+	
+		//Don't Return Home
+
+		//Infer Time Path
 		inferPathTimeLeft -= time;
-		if (enemy_check_target_visible(target, sightRange*1.5) || goHome) {
-			inferPathTimeLeft = inferPathTime;	}
+		if (enemy_check_target_visible(target, sightRange*1.5)) {
+			inferPathTimeLeft = inferPathTime;}
 	
 		//Actually Update Goal Pos
 		if (inferPathTimeLeft > 0) {
 			
-			if (!goHome) {
-				lastSawTargetX = target.x + targetFollowOffsetX;
-				lastSawTargetY = target.y + targetFollowOffsetY;
-			} else {
-				lastSawTargetX = orgX;	
-				lastSawTargetY = orgY;	
-				pathX = orgX;
-				pathY = orgY;
-				goalSpd = maxSpeed/2;
+			//Clarify
+			visibleTarget = true;
+			
+			//Update Taarget Position
+			lastSawTargetX = target.x + targetFollowOffsetX;
+			lastSawTargetY = target.y + targetFollowOffsetY;
+			
+			//Set
+			EndGoalX	= lastSawTargetX;
+			EndGoalY	= lastSawTargetY;
+				
+			//Lemming
+			
+			//Stop Moveing; I'm There.
+			if (pathFinder.atEndOfPath) {
+				goalSpd	= 0;
+			}
+		}
+		
+		
+		//Don't Know Where Player Is.
+		if (!visibleTarget) {
+			if (pathFinder.atEndOfPath) {
+				seesTarget = false;
+				goalSpd	= 0;
+			}
+		}
+		
+		
+	} else {
+		
+		//Reached End Of Path
+		goalSpd	= 0;
+		 
+		//Timer until go Home
+		if (sinceSeenTarget > room_speed * 5) {
+			
+			if (point_distance(x, y, orgX, orgY) > 5) {
+				//Go Home
+				EndGoalX	= orgX;
+				EndGoalY	= orgY;
+				goalSpd		= maxSpeed / 2;
+				
+				lastSawTargetX = orgX;
+				lastSawTargetY = orgY;
+			
+				//Reset My Goal Pos Based on Player
+				targetFollowOffsetX = irandom_range(10, 30)*choose(1, -1);
+				targetFollowOffsetY = -30;
 			}
 			
 		}
-	
-	
-	//Regenerate Path
-	pathFinderRegenerationTimeLeft -= time;
-	if (pathFinderRegenerationTimeLeft < 0) {
-		pathFinderRegenerationTimeLeft = pathFinderRegenerationRate;
-		pathfinder_regenerate_path(pathFinder, [lastSawTargetX, lastSawTargetY]);	
+
 	}
-	
-	//Stop Path if I reached End
-	if (instance_exists(pathFinder)) {
-		if (pathFinder.pathFailed) {
-			seesTarget = false;	
-		} else {
-			goalSpd = maxSpeed;	
-		}
-	}
+
+
+//Create Path To Position
+pathfinder_generate_path(pathFinder, [EndGoalX, EndGoalY]);
+
+//Error! Go Directly Above player
+if (pathFinder.pathFailed) {
+	targetFollowOffsetX = 0;
+	targetFollowOffsetY = -10;
 }
 
+
+
+//Get The Pointer Position which will lead me to the goal.
+var p = pathfinder_get_positon(pathFinder, pathfinderRegenerateRange);
+var pointerX = p[0];
+var pointerY = p[1];
+
+
+
 //Move
-	var goalDi = point_direction(x, y, pathX, pathY);
+	var goalDi = point_direction(x, y, pointerX, pointerY);
 	var angleDiff = angle_difference(dirMoving, goalDi);
 	dirMoving -= angleDiff * turningSpeed * time;
 

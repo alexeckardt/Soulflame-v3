@@ -27,14 +27,14 @@ timeLayingOnGroundBeforePop = 0;
 knockbackSlide = 0.1;
 
 //Path
-pathFinder = noone;
+pathFinder = pathfinder_create();
 pathFinderRegenerationRate = 10;
 pathFinderRegenerationTimeLeft = pathFinderRegenerationRate;
 pathfinderRegenerateRange = 15;
 
 //Follow
-lastSawTargetX = 0;
-lastSawTargetY = 0;
+lastSawTargetX = x;
+lastSawTargetY = y;
 targetFollowOffsetX = irandom_range(10, 30)*choose(1, -1);
 targetFollowOffsetY = -30;
 sightRange = 16*8;
@@ -42,10 +42,10 @@ inferPathTime = 10; // Time I can still see target after they vanish from view
 inferPathTimeLeft = inferPathTime;
 
 //Looper
-detectionTime = room_speed/4;
+detectionTime = room_speed/1.5;
 detectionTimeLeft = detectionTime; //must be detected throughout before seesTarget
 
 stuckTime = 0;
-notSeesTargetTime = 0;
+sinceSeenTarget = 0;
 
 goHome = false;

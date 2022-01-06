@@ -17,9 +17,14 @@ goToY = objectFollowing.y;
 posXoffset = 0;
 posYoffset = 0;
 
-useLOS = true;
-
 pathFailed = false;
 
 drawX = 0;
 drawY = 0;
+
+active = false;
+
+atEndOfPath = false;
+
+airborne = false;
+tryToUnstuckAirborne = true;

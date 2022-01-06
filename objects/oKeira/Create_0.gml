@@ -2,7 +2,7 @@
 
 //Setup
 mask = sKeiraIdle;
-hitbox = hitbox_create_alt(oKeiraHitbox, x, y-12, 15, 23, false);
+hitbox = hitbox_create_alt(oKeiraHitbox, x, y-6, 15, 19, false);
 image_speed = 0;
 
 //Sprites

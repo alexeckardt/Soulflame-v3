@@ -6,7 +6,7 @@
     "path": "folders/Cutscenes/Entity/Enemy/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "get_pathfinder_positon",
+  "name": "pathfinder_create",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -30,7 +30,7 @@
     "path": "folders/Cutscenes/Entity/Enemy.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oPathfinderFloating",
+  "name": "oPathFinderSegmentedPointer",
   "tags": [],
   "resourceType": "GMObject",
 }

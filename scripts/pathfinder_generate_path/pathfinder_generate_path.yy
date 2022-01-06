@@ -6,7 +6,7 @@
     "path": "folders/Cutscenes/Entity/Enemy/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "pathfinder_floating_create",
+  "name": "pathfinder_generate_path",
   "tags": [],
   "resourceType": "GMScript",
 }

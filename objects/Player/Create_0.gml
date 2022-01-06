@@ -62,6 +62,11 @@ weaponWheelScaleDispalyThreshold = 0.05;
 weaponWheelLerpDisplayingDir = 0;
 weaponWheelLerpDisplayingLen = 0;
 
+//Weapon Forging or Wheel Display
+displayAllWeapons = false;
+weaponsEquipted = ds_list_create();
+weaponsUnlocked = ds_list_create();
+
 //Interacting Display
 interactSurface = -1;
 interactAlpha = 0;
