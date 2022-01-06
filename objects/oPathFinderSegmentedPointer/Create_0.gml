@@ -27,4 +27,4 @@ active = false;
 atEndOfPath = false;
 
 airborne = false;
-tryToUnstuckAirborne = true;
+tryToUnstuckAirborne = 1;

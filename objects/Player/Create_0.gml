@@ -48,10 +48,10 @@ selectingWeapon = false;
 weaponWheelJustClosed = false;
 weaponWheelSurf = -1;
 weaponWheelScale = 0;
-weaponHighlighted = weapon.none;
-sameWeaponHighlightedFor = 0;
-lastWeaponHighlighted = weapon.none;
-lastWeaponHighlightedFor = 0;
+weaponSlotHighlighted = weapon.none;
+sameweaponSlotHighlightedFor = 0;
+lastWeaponSlotHighlighted = weapon.none;
+lastWeaponSlotHighlightedFor = 0;
 
 weaponWheelSpr = sWeaponWheelBackground;
 weaponWheelSize = sprite_get_width(weaponWheelSpr);
@@ -63,9 +63,11 @@ weaponWheelLerpDisplayingDir = 0;
 weaponWheelLerpDisplayingLen = 0;
 
 //Weapon Forging or Wheel Display
-displayAllWeapons = false;
-weaponsEquipted = ds_list_create();
-weaponsUnlocked = ds_list_create();
+displayAllWeapons	= false;
+maxWeaponsCanHold	= 3;
+weaponsEquipted		= ds_grid_create(maxWeaponsCanHold, 1);
+					ds_grid_clear(weaponsEquipted, -1);
+weaponsUnlocked		= ds_map_create();
 
 //Interacting Display
 interactSurface = -1;

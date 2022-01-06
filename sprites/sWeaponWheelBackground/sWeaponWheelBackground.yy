@@ -27,6 +27,9 @@
     {"compositeImage":{"FrameId":{"name":"df5d283e-edf4-4def-bf8a-dbb5989150ad","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"df5d283e-edf4-4def-bf8a-dbb5989150ad","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"LayerId":{"name":"2a4c24ef-a55a-4266-81fc-dc4018fa2ced","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sWeaponWheelBackground","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"resourceVersion":"1.0","name":"df5d283e-edf4-4def-bf8a-dbb5989150ad","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b3f92883-3e13-4552-bf68-7a67637b8f43","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b3f92883-3e13-4552-bf68-7a67637b8f43","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"LayerId":{"name":"2a4c24ef-a55a-4266-81fc-dc4018fa2ced","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sWeaponWheelBackground","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"resourceVersion":"1.0","name":"b3f92883-3e13-4552-bf68-7a67637b8f43","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sWeaponWheelBackground","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},
@@ -36,12 +39,13 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 2.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"be6ec172-ff23-4a0d-921f-2e095b091255","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"df5d283e-edf4-4def-bf8a-dbb5989150ad","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0df97cc8-6a2b-4db5-991e-8ffe0bdae814","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b3f92883-3e13-4552-bf68-7a67637b8f43","path":"sprites/sWeaponWheelBackground/sWeaponWheelBackground.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
