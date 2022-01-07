@@ -19,6 +19,7 @@ t_scene_info = [
 		[cutscene_event_wait_variable, keira, "STATE", state.sit],
 	
 	[cutscene_event_change_variable, id, "playerSittingHere", true],
+	[cutscene_event_change_variable, id, "lit", true],
 	[cutscene_event_wait_time, 0.2],
 	
 	[cutscene_event_save_game, false],
@@ -27,3 +28,4 @@ t_scene_info = [
 //Visuals
 playerSittingHere = false;
 displayFire = false;
+lit = false;

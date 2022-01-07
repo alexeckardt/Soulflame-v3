@@ -37,7 +37,7 @@ function keira_stateaction_sit_states(){
 		
 		//Exit Condition
 		if (!instance_exists(Cutscene)) {
-			if (mx != 0 || Controller.interactPressed || jumpTicks > 0) {
+			if (mx != 0 || Controller.interactPressed || jumpTicks > 0) && (!Game.someUIopen) {
 			
 				STATE = state.situp;
 				inControl = false;

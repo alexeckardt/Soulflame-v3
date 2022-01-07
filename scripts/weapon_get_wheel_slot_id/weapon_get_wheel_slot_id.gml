@@ -6,11 +6,11 @@ function weapon_get_wheel_slot_id(slotID, useUnlockedWheel = displayAllWeapons) 
 
 	if (useUnlockedWheel) {
 		
-		return slotID;
+		return Player.weaponsUnlocked[| slotID];
 		
 	} else {
 		
-		return weaponsEquipted[# slotID, 0];
+		return Player.weaponsEquipted[# slotID, 0];
 		
 	}
 

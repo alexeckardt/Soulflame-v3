@@ -130,8 +130,8 @@ if (!surface_exists(featherSurf)) {
 if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 		
 		//What I'm Actually Looking At
-		var checkingList = (displayAllWeapons) ? weaponsUnlocked : weaponsEquipted;
-		var listLength = (displayAllWeapons) ? ds_map_size(weaponsUnlocked) : maxWeaponsCanHold;
+		var checkingList = (displayingAllWeapons) ? weaponsUnlocked : weaponsEquipted;
+		var listLength = (displayingAllWeapons) ? ds_list_size(weaponsUnlocked) : maxWeaponsCanHold;
 		
 		//Draw Surface
 		surface_set_target(weaponWheelSurf);
@@ -147,10 +147,12 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 			
 			//Draw Weapons in correct slots and positions
 			if (weaponSlotHighlighted != -1) {
+				
 					var sSize = 360 div listLength;
-					var startAng = 90 + ((weaponSlotHighlighted - 1) * sSize) + sSize/2;
+					var startAng = 90 + ((weaponSlotHighlighted - 1) * sSize) + sSize/2 + weaponWheelAngleOffset;
 					startAng %= 359;
 					draw_pie(center-1, center-1, 1, listLength, c_gray, wheelRadius + 5, 1, startAng);
+					
 				}
 	
 	
@@ -163,7 +165,7 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 				
 					//Bkg
 					var sSize = 360 div listLength;
-					var startAng = 90 + ((i-1) * sSize) + sSize/2;
+					var startAng = 90 + ((i-1) * sSize) + sSize/2 + weaponWheelAngleOffset;
 					startAng %= 359;
 					
 					//Pos
@@ -172,21 +174,21 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 					var wIconY = center + lengthdir_y(iconLen, startAng + (sSize div 2));
 					
 					//Display
-					if (displayAllWeapons) {
+					shader_set(shdEssenceMagic);
+					if (displayingAllWeapons) {
 					
-						//Draw the weaapon if it is unlocked
-						if (weapon_is_unlocked(i)) {
-								
-							draw_sprite_ext(sWeaponIcons, i, wIconX, wIconY, 1, 1, 0, c_white, 1);						
-								
-						}
+						//Draw the weaapon if it is unlocked	
+						var c = essence_get_colour(0);
+						weapon_draw(checkingList[| i], wIconX, wIconY, 1, 0, c, 1);				
 						
 					} else {
 						
 						//Draw the weapon in the SLOT!
-						draw_sprite_ext(sWeaponIcons, checkingList[# i, 0], wIconX, wIconY, 1, 1, 0, c_white, 1);		
-						
+						var essenceModifier = checkingList[# i, 1];
+						var c = essence_get_colour(essenceModifier);
+						weapon_draw(checkingList[# i, 0], wIconX, wIconY, 1, 0, c, 1);	
 					}
+					shader_reset();
 			}
 	
 	

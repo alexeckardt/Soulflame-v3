@@ -53,6 +53,7 @@ if (usingController) {
 
 	interact =  gamepad_button_check_pressed(0, gp_face4);
 
+	uiSelectPressed = gamepad_button_check_pressed(0, gp_face1);
 }
 
 //Keyboard Controller
@@ -83,5 +84,7 @@ if (!usingController) {
 	updateFullScreen = keyboard_check_released(vk_f11);
 
 	interact =  keyboard_check_pressed(vk_down);
+	
+	uiSelectPressed = keyboard_check_pressed(ord("Z"));
 
 }

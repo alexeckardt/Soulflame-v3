@@ -487,7 +487,7 @@ if (jumpTicks > 0) {
 
 
 //Attack Input
-if (Controller.combatAttackPressed) {
+if (Controller.combatAttackPressed && !Player.allowForging) {
 	//Decide Attack
 	keira_decide_attack_state();
 }

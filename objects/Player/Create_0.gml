@@ -64,10 +64,26 @@ weaponWheelLerpDisplayingLen = 0;
 
 //Weapon Forging or Wheel Display
 displayAllWeapons	= false;
+displayingAllWeapons = false;
 maxWeaponsCanHold	= 3;
-weaponsEquipted		= ds_grid_create(maxWeaponsCanHold, 1);
+weaponsEquipted		= ds_grid_create(maxWeaponsCanHold, 2);
 					ds_grid_clear(weaponsEquipted, -1);
-weaponsUnlocked		= ds_map_create();
+					ds_grid_set_region(weaponsEquipted, 0, 1, maxWeaponsCanHold-1, 1, 0);
+					
+weaponsUnlocked		= ds_list_create();
+ds_list_add(weaponsUnlocked, 0, 5, 8);
+
+allowForging		= false;
+weaponForging		= false;
+
+forgingWeaponSlotReplacing = -1;
+forgingWeaponId				= 0;
+forgingWeaponImbuedWith		= 0;
+
+weaponWheelAngleOffset = 0;
+weaponWheelOpenedAsPermanant = false; //if true, the wheel will not close by itself
+weaponWheelPage = 0;	//0-combat wheel,	1-all unlockable weapons,	2-to imbue with?
+
 
 //Interacting Display
 interactSurface = -1;

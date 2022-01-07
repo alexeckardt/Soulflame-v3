@@ -18,3 +18,6 @@ viewDamageBoxes = true;
 //Game Keep Track Of
 delta = -1;
 delta_scale = 60;
+
+//UI
+someUIopen = false;

@@ -47,7 +47,7 @@ mask_index = sprite_index;
 	timeSinceOnGround = 0;
 
 	//Alignment
-	random_set_seed(gameObj.gameSeed);
+	randomize();
 	alignment = choose(-1, 1);
 	healthyPercent = 0;
 	justDamaged = false;

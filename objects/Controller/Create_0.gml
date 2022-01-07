@@ -33,6 +33,7 @@ updateFullScreen = true;
 
 interactPressed = false;
 
+uiSelectPressed = false;
 
 //View Stick
 holdingRightStick = false;
