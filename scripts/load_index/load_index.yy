@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "SaveLoad",
-    "path": "folders/Meta/SaveLoad.yy",
+    "name": "Access",
+    "path": "folders/Meta/SaveLoad/Access.yy",
   },
   "resourceVersion": "1.0",
   "name": "load_index",

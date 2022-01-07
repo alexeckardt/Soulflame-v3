@@ -43,6 +43,7 @@ function player_weapon_wheel_open(){
 			if (Controller.rightStickPressed) {
 				resetingWeaponSelection = true;
 				selectingWeapon = true;
+				weaponSlotUsing = -1;
 			}
 		}
 	

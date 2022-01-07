@@ -6,7 +6,7 @@
     "path": "folders/Meta/SaveLoad/Access.yy",
   },
   "resourceVersion": "1.0",
-  "name": "save_index",
+  "name": "save_index_list",
   "tags": [],
   "resourceType": "GMScript",
 }

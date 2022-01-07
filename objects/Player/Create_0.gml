@@ -41,6 +41,8 @@ featherSurfYFromBase = -5;
 
 //Attacks
 weaponUsing = weapon.none;
+weaponAlignment = 0;
+weaponSlotUsing = -1;
 basePunchDamage = 1;
 
 //Weapon Wheel

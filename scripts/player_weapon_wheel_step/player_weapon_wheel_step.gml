@@ -73,21 +73,21 @@ function player_weapon_wheel_step(){
 				var weaponHasBeenSelected = resetingWeaponSelection || cutsceneExists;
 			
 				//Weapon To Switch To
-				var weaponToSwitchTo = weapon.none;
+				var weaponSlot		= -1;
 			
 				//Only Select
 				if (!weaponHasBeenSelected) {
 					if (sameweaponSlotHighlightedFor > 4) {
 				
 						//Choose this as the weapon
-						weaponToSwitchTo = weapon_get_wheel_slot_id(weaponSlotHighlighted);
+						weaponSlot = weaponSlotHighlighted;
 						weaponHasBeenSelected = true;
 				
 					//Check the Last Weapon (Incase weapon switched when releasing the stick)
 					} else {
 			
 						if (lastWeaponSlotHighlightedFor > 4) {
-							weaponToSwitchTo = weapon_get_wheel_slot_id(lastWeaponSlotHighlighted);
+							weaponSlot = lastWeaponSlotHighlighted;
 							weaponHasBeenSelected = true;
 						}
 					}
@@ -103,10 +103,12 @@ function player_weapon_wheel_step(){
 					selectingWeapon = false;
 			
 					//Check If Different Weapon than Player Was Using
-					if (weaponToSwitchTo != weaponUsing) {
+					if (weaponSlotUsing != weaponSlot || weaponSlotUsing == -1) {
 				
 						//Set As New Weapon
-						weaponUsing = weaponToSwitchTo;
+						weaponUsing = weapon_slot_get_id(weaponSlot);
+						weaponAlignment = weapon_slot_get_alignment(weaponSlot);
+						weaponSlotUsing = weaponSlot;
 				
 						//Transition Animation
 					

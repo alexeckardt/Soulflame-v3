@@ -21,8 +21,9 @@ draw_sprite_ext(sprite_index, image_index, dX, sprAnchorAtBottomY, xsc, ysc, 0, 
 if (weaponSprite != -1) {
 	
 	//Shaders and Such
-
-		draw_sprite_ext(weaponSprite, image_index, dX, sprAnchorAtBottomY, directionFacing, 1, 0, c_white, 1);
-
+		shader_set(shdEssenceMagic);
+		var c = essence_get_colour(Player.weaponAlignment);
+		draw_sprite_ext(weaponSprite, image_index, dX, sprAnchorAtBottomY, directionFacing, 1, 0, c, 1);
+		shader_reset();
 	//Reset
 }

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Access",
-    "path": "folders/Meta/SaveLoad/Access.yy",
+    "name": "Scripts",
+    "path": "folders/Meta/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "save_index",
+  "name": "weapon_slot_get_id",
   "tags": [],
   "resourceType": "GMScript",
 }

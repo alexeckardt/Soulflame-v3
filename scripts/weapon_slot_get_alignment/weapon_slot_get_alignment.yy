@@ -6,7 +6,7 @@
     "path": "folders/Meta/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "weapon_get_wheel_slot_id",
+  "name": "weapon_slot_get_alignment",
   "tags": [],
   "resourceType": "GMScript",
 }

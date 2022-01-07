@@ -9,14 +9,13 @@ function access_save_data(save_data, writing) {
 	if (writing) {
 		index = save_index;
 		map = save_index_map;
-		//list = save_index;
-		//grid = save_index;
+		list = save_index_list;
+		grid = save_index_grid;
 	} else {
 		index = load_index;
 		map = load_index_map;
-		//list = save_index;
-		//list = save_index;
-		//grid = save_index;
+		list = load_index_list;
+		grid = load_index_grid;
 	}
 	
 	///
@@ -31,10 +30,22 @@ function access_save_data(save_data, writing) {
 	//Player	
 	index("platinum",				Player, save_data);
 	index("baseMaxHealth",			Player, save_data);
-	index("corruptionPercent",		Player, save_data);
+	
+		//Weapon
+		grid("weaponsEquipted",			Player, save_data);
+		list("weaponsUnlocked",			Player, save_data);
+		index("weaponUsing",			Player, save_data);
+		index("weaponAlignmnet",		Player, save_data);
+		index("weaponSlotUsing",		Player, save_data);
+	
+		//Essence
+		list("essenceTokens",			Player, save_data);
+		index("corruptionPercent",		Player, save_data);
+	
 	
 	//Game
 	index("timeInGame",				Game, save_data);
+	index("gameSeed",				Game, save_data);
 	
 }
 
