@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Death Peices",
-    "path": "folders/Cutscenes/Entity/Enemy/Obj/Forest/Magpie/Spr/Death Peices.yy",
+    "path": "folders/Entity/Enemy/Obj/Forest/Magpie/Spr/Death Peices.yy",
   },
   "resourceVersion": "1.0",
   "name": "sMagpiePeice3",

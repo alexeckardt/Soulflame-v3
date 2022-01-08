@@ -24,7 +24,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Entity",
-    "path": "folders/Cutscenes/Entity.yy",
+    "path": "folders/Entity.yy",
   },
   "resourceVersion": "1.0",
   "name": "Entity",
