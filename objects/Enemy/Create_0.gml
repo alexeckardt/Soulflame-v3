@@ -67,6 +67,7 @@ mask_index = sprite_index;
 	//Health
 		dead = false;
 		deadTicks = 0;
+		deadStaggerForTime = room_speed/2;
 		autoSwitchToDeadState = true;
 		
 	//Visuals
@@ -90,6 +91,7 @@ mask_index = sprite_index;
 	damageKnockbackAddVSpeed = -2;
 	damageKnockbackAddHSpeed = 3;
 	damageKnockbackAddHspeedRelative = true;
+	deathHeadingDirection = 0;
 	
 	orgX = x;
 	orgY = y;

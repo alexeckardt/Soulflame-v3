@@ -5,10 +5,17 @@ var time = Game.delta;
 x = clamp(x, 0, room_width);
 y = clamp(y, 0, room_height);
 
+//Clean Up Self
+if (!instance_exists(creator)) {
+	instance_destroy();	}
+
+
+
 //
 //
 //Create Path
 //
+
 if (active) {
 	
 	if (!createdPath) {

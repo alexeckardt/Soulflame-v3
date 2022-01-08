@@ -26,7 +26,7 @@ function enum_flower() {
 		somber_rose,
 		skyflower,
 		sunflower,
-		goth_dasiym
+		goth_dasiy,
 		
 	
 	}

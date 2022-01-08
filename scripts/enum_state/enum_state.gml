@@ -10,6 +10,7 @@ enum state {
 	wall_cling,
 	hurt,
 	dead,
+	deadexplode, //for enemies after staggering
 	
 	//Change With Weapons
 	

@@ -13,9 +13,15 @@ function generic_collide_solid() {
 	if (place_meeting(x + moveX, y, Solid)) {
 	
 		//Approach Wall until meeting
-		while(!place_meeting(x+sign(moveX), y, Solid)) {
-			x += sign(moveX);
+		var sigMoveX = sign(moveX);
+	
+		//Back Onto Wall
+		repeat (floor(abs(moveX))) {
+			if (!place_meeting(x+sigMoveX, y, Solid)) {
+				x += sigMoveX;
+			}
 		}
+	
 	
 		//Reset Movement Vals
 		moveX = 0;
@@ -34,8 +40,10 @@ function generic_collide_solid() {
 	if (place_meeting(x, y+moveY, Solid)) {
 
 		//Back Onto Wall
-		while(!place_meeting(x, y+sign(moveY), Solid)) {
-			y += sign(moveY);
+		repeat (floor(abs(moveY))) {
+			if (!place_meeting(x, y+sign(moveY), Solid)) {
+				y += sign(moveY);
+			}
 		}
 	
 		//Slide Around Corner

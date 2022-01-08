@@ -5,6 +5,9 @@ event_inherited();
 //Mutators
 index_speed = 0.3;
 
+STATE = state.base;
+deadStaggerForTime = room_speed/4;
+
 //Movement Vars
 hSpeedGoal = 0;
 vSpeedGoal = 0;
@@ -49,3 +52,5 @@ stuckTime = 0;
 sinceSeenTarget = 0;
 
 goHome = false;
+
+hp = 1; // 5

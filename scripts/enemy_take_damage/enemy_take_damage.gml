@@ -7,6 +7,7 @@ function enemy_take_damage() {
 
 	//Reset
 	justDamaged = false;
+	justDied = false;
 	
 	//Check If a Hitbox has been hit
 	if (hitboxTakingDamage != noone) {
@@ -94,6 +95,8 @@ function enemy_take_damage() {
 		if (!dead) {
 			if (hp <= 0) {
 				dead = true;
+				justDied = true;
+				deathHeadingDirection = dd;
 				
 				//Auto Switch (Stagger)
 				if (autoSwitchToDeadState) {
