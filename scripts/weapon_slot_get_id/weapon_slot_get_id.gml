@@ -2,16 +2,9 @@
 //
 //
 //
-function weapon_slot_get_id(slotID, useUnlockedWheel = displayAllWeapons) {
+function weapon_slot_get_id(slotID) {
 
-	if (useUnlockedWheel) {
-		return Player.weaponsUnlocked[| slotID];
-		
-	} else {
-		
-		if (slotID == -1) {return -1;}
-		return Player.weaponsEquipted[# slotID, 0];
-		
-	}
+	if (slotID == -1) return -1;
+	return Player.weaponsEquipted[# slotID, 0];
 
 }

@@ -62,7 +62,7 @@ function enemy_take_damage() {
 		//Add Corruption To Player
 		if (damageFromPlayer) {
 			if (damageingObject.increasePlayerCorruption) {
-				corruption_add(alignment);
+				corruption_add(alignment, Game.corruption_CollectEssenceIncrease);
 			}
 		}
 		

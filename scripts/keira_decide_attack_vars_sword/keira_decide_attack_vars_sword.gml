@@ -172,9 +172,11 @@ function keira_decide_attack_vars_sword(_nextState) {
 			allowControlOverIndex = 1;
 			
 			//Stay In Air Longer
-			controlVSpeed = min(0, controlVSpeed) + jumpSpeed * combatInAirJumpCoefficient;
 			if (controlVSpeed > 0) {
-				controlVSpeed /= 2;}
+				controlVSpeed = min(0, controlVSpeed) + jumpSpeed * combatInAirJumpCoefficient;
+			} else {
+				controlVSpeed /= 2;
+			}
 			
 			break;
 			

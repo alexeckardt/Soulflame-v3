@@ -2,13 +2,9 @@
 //
 //
 //
-function weapon_slot_get_alignment(slotID, useUnlockedWheel = displayAllWeapons) {
-
+function weapon_slot_get_alignment(slotID) {
 	//Return
-	if (slotID != -1 && !useUnlockedWheel) {
-		return Player.weaponsEquipted[# slotID, 1];
-	}
-	
-	return 0;
+	if (slotID == -1) return 0
+	return Player.weaponsEquipted[# slotID, 1];
 
 }

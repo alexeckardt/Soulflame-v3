@@ -3,7 +3,7 @@
 //
 //
 //
-function corruption_add(alignment) {
+function corruption_add(alignment, base) {
 
 	
 	var playerAlign = sign(round(Player.corruptionPercent * 1000) * 0.001);
@@ -11,7 +11,7 @@ function corruption_add(alignment) {
 	//Any Artifacts to Dampen Corruption?
 	
 	
-	var baseCorruptionAdd = Player.baseCorruptionIncrease*alignment;
+	var baseCorruptionAdd = base*alignment;
 	
 	
 	//
@@ -22,7 +22,8 @@ function corruption_add(alignment) {
 	
 	//Zero Corruption; Pure Cancel
 	if (alignment == 0) {
-		Player.corruptionPercent -= playerAlign*baseCorruptionIncrease / Player.corruptionResistance;}
+		Player.corruptionPercent = playerAlign*max(0, abs(Player.corruptionPercent) - base/Player.corruptionResistance);
+	}
 		
 	
 	//
@@ -32,6 +33,7 @@ function corruption_add(alignment) {
 		Player.corruptionPercent += baseCorruptionAdd / Player.corruptionResistance;	
 	}
 	
+	//
 	//Subtraction of Corruption
 	else if (playerAlign == -alignment) {
 		var oppositeAlignmentCancelCoef = 2;

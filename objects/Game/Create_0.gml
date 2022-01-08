@@ -21,3 +21,9 @@ delta_scale = 60;
 
 //UI
 someUIopen = false;
+
+//Corruption
+corruption_CollectEssenceIncrease		= 1/200;
+corruption_ImbuedWeaponSwingIncrease	= 1/100;
+corruption_WeaponCreationIncrase		= 1/10;
+corruption_HealingIncrease				= 1/5;

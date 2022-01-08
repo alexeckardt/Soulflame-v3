@@ -128,10 +128,11 @@ if (!surface_exists(featherSurf)) {
 	
 //Weapon Wheel
 if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
-		
-		//What I'm Actually Looking At
-		var checkingList = (displayingAllWeapons) ? weaponsUnlocked : weaponsEquipted;
-		var listLength = (displayingAllWeapons) ? ds_list_size(weaponsUnlocked) : maxWeaponsCanHold;
+		//Create Surface for Use
+		if (!surface_exists(weaponWheelSurf)) {
+			var w = weaponWheelSurfaceWidth;
+			weaponWheelSurf = surface_create(w, w);	
+		}
 		
 		//Draw Surface
 		surface_set_target(weaponWheelSurf);
@@ -140,20 +141,23 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 			//Clear
 			draw_clear_alpha(0, 0);
 			
-			//Draw Ring
+			//Draw "Ring"
 			var wheelBuffer = weaponSelectionBubbleSize;
-			var wheelRadius = weaponWheelSize  div 2;
-			draw_sprite(weaponWheelSpr, 0, wheelBuffer, wheelBuffer)
+			var wheelRadius = weaponWheelSize div 2;
 			
-			//Draw Weapons in correct slots and positions
+			var originAngle = weaponWheelArcStartAngleOffset;
+			
+			draw_pie(center-1, center-1, weaponWheelArcLength, 360, c_black, wheelRadius, 1, originAngle);
+			
+			//Draw
+			var sSize = weaponWheelArcLength div weaponWheelSlots;
+			
+			//Draw Selection Arc
 			if (weaponSlotHighlighted != -1) {
-				
-					var sSize = 360 div listLength;
-					var startAng = 90 + ((weaponSlotHighlighted - 1) * sSize) + sSize/2 + weaponWheelAngleOffset;
-					startAng %= 359;
-					draw_pie(center-1, center-1, 1, listLength, c_gray, wheelRadius + 5, 1, startAng);
-					
-				}
+				var startAng = originAngle + ((weaponSlotHighlighted) * sSize);
+				startAng %= 359;
+				draw_pie(center-1, center-1, sSize + wheelSelectionArcIncrease, 360, c_gray, wheelRadius + 5, 1, startAng);
+			}
 	
 	
 			//Remove the Middle
@@ -161,36 +165,77 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 			draw_sprite(weaponWheelSpr, 1, wheelBuffer, wheelBuffer)
 			gpu_set_blendmode(bm_normal);
 	
-			for (var i = 0; i < listLength; i++) {
+	
+			//Draw The Icons
+			for (var i = 0; i < weaponWheelSlots; i++) {
 				
 					//Bkg
-					var sSize = 360 div listLength;
-					var startAng = 90 + ((i-1) * sSize) + sSize/2 + weaponWheelAngleOffset;
+					var startAng = originAngle + (i * sSize) + (sSize div 2);
 					startAng %= 359;
 					
 					//Pos
-					var iconLen = wheelRadius - 16 + 4*(weaponSlotHighlighted == i);
-					var wIconX = center + lengthdir_x(iconLen, startAng + (sSize div 2));
-					var wIconY = center + lengthdir_y(iconLen, startAng + (sSize div 2));
+					var iconLen = wheelRadius - 16 + 4*abs(dsin(startAng))*(weaponSlotHighlighted == i);
+					var wIconX = center + lengthdir_x(iconLen, startAng);
+					var wIconY = center + lengthdir_y(iconLen, startAng);
 					
-					//Display
-					shader_set(shdEssenceMagic);
-					if (displayingAllWeapons) {
+					switch (weaponUipage) {
+
+						//Draw Equipted Weapons + Imbument Colours
+						default:
+						case 0:
+						case 1:
+						
+							var essenceModifier = weapon_slot_get_alignment(i);
+							var c = essence_get_colour(essenceModifier);
+							var weaponId = weapon_slot_get_id(i);
+							
+							shader_set(shdEssenceMagic);
+							weapon_draw(weaponId, wIconX, wIconY, 1, 0, c, 1);	
+							shader_reset();
+						
+						break;
+						
+						//Draw Wepaons
+						case 2:
+						
+							var weaponId = weapon_get_unlocked_slot_id(i);
+							var c = essence_get_colour(0);
+							
+							shader_set(shdEssenceMagic);
+							weapon_draw(weaponId, wIconX, wIconY, 1, 0, c, 1);	
+							shader_reset();
+						
+						break;
 					
-						//Draw the weaapon if it is unlocked	
-						var c = essence_get_colour(0);
-						weapon_draw(checkingList[| i], wIconX, wIconY, 1, 0, c, 1);				
+						//Draw the Icons
+						case 3:
 						
-					} else {
+							var spr = essence_token_get_sprite(i-1);
+							var ind = sprite_get_number(spr)-1;
+							
+							//Draw The Icon
+							draw_sprite_ext(spr, ind, wIconX-1, wIconY-1, 1, 1, 0, c_white, 1);
+							
+						break;
 						
-						//Draw the weapon in the SLOT!
-						var essenceModifier = checkingList[# i, 1];
-						var c = essence_get_colour(essenceModifier);
-						weapon_draw(checkingList[# i, 0], wIconX, wIconY, 1, 0, c, 1);	
-					}
-					shader_reset();
+					}				
 			}
-	
+
+			//Draw Weapon Under Arc Page 3
+			if (weaponUipage == 3) {
+				
+				//Draw The Forge In The Middle if the right colour
+				var c = c_gray;
+				if (weaponSlotHighlighted > -1) {
+					c = essence_get_colour(weaponSlotHighlighted-1);
+				}
+							
+				shader_set(shdEssenceMagic);
+				weapon_draw(forgingWeaponId, center, center, 1, 0, c, 1);	
+				shader_reset();
+							
+			}
+
 	
 			//Draw Controller Stick Position
 			var zoneRad = weaponWheelSize;
@@ -199,8 +244,9 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 			var stickX = zoneRad * lengthdir_x(rad, weaponWheelLerpDisplayingDir);
 			var stickY = zoneRad * lengthdir_y(rad, weaponWheelLerpDisplayingDir);
 			
-			draw_circle(center+stickX, center+stickY, 10, false);
-			
+			//draw_circle(center+stickX, center+stickY, 10, false);
+			//draw_text_colour(center, center, weaponSlotHighlighted, 0,0,0,0, 1);
+							
 			surface_reset_target();
 		
 		

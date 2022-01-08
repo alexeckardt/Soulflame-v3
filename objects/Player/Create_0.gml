@@ -27,8 +27,7 @@ heartBorderBuffer = 12;
 
 //Corruption
 corruptionPercent = 0;
-baseCorruptionIncrease = 1/100;
-corruptionResistance = 1; //divisor of how much essence is added to corruptionMeter on hit
+corruptionResistance = 1; //divisor of how much essence is added to corruptionMeter. Changed with talismans.
 
 //Feather
 featherSurf = -1;
@@ -46,10 +45,19 @@ weaponSlotUsing = -1;
 basePunchDamage = 1;
 
 //Weapon Wheel
-selectingWeapon = false;
+weaponUiOpen = false;
+weaponUipage = 0;	//0-combat wheel,	1=forge slot select wheel	2-all unlockable weapons,	3-to imbue with		4-all weapons?
 weaponWheelJustClosed = false;
 weaponWheelSurf = -1;
 weaponWheelScale = 0;
+
+weaponWheelInteriorDiameter		= 107;
+weaponWheelSlots				= 0;
+weaponWheelArcLength			= 0;
+weaponWheelArcStartAngleOffset	= 0;
+wheelSelectionArcIncrease = 5;
+
+
 weaponSlotHighlighted = weapon.none;
 sameweaponSlotHighlightedFor = 0;
 lastWeaponSlotHighlighted = weapon.none;
@@ -84,7 +92,7 @@ forgingWeaponImbuedWith		= 0;
 
 weaponWheelAngleOffset = 0;
 weaponWheelOpenedAsPermanant = false; //if true, the wheel will not close by itself
-weaponWheelPage = 0;	//0-combat wheel,	1-all unlockable weapons,	2-to imbue with?
+
 
 
 //Interacting Display
