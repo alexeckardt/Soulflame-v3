@@ -29,3 +29,9 @@ t_scene_info = [
 playerSittingHere = false;
 displayFire = false;
 lit = false;
+
+litPercent = 0;
+fireIndex = 0;
+flameFrequencyStrength = 0;
+
+flameColour = c_gray;

@@ -20,9 +20,22 @@ if (surface_exists(bkgSurf)) {
 }
 
 //Draw Stuff, only overlaying colour
+gpu_set_blendenable(true);
 gpu_set_colorwriteenable(1,1,1,1); //may need to be 0 alpha
 draw_surface(application_surface, ax*m, ay*m);
 gpu_set_colorwriteenable(1,1,1,1);
+
+
+//Draw Glowing 
+gpu_set_blendmode(bm_add);
+shader_set(shdEssenceMagic);
+draw_surface(fireSurf, 0, 0);
+		surface_set_target(fireSurf);
+			draw_clear_alpha(0, 0);
+		surface_reset_target();
+shader_reset();
+gpu_set_blendmode(bm_normal);
+
 
 //Foreground Paralax
 if (surface_exists(frgSurf)) {
