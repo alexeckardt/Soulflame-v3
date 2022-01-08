@@ -19,7 +19,7 @@ for (var j = 0; j < vc; j++) {
 	var str = "";
 	for (var i = 0; i < hc; i++) {
 	
-		str += " " + string(grid[# i, j]) + " ";
+		str += " " + string(dsGrid[# i, j]) + " ";
 	
 	}	
 	

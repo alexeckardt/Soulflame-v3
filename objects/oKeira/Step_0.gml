@@ -252,6 +252,10 @@ if (onGround && !wasOnGround) {
 	squishX = squishOffset;
 	squishY = -squishOffset/2;
 	
+	//Land
+	part_dust_create(x-4, y+8, x+4, y+6, 5+moveY);
+			
+	
 	//Reset State
 	if (STATE == state.climb) {
 		STATE = state.base;	}
