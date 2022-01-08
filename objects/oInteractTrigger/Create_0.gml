@@ -4,7 +4,7 @@ event_inherited();
 
 
 repeatable = true;
-interactMessage = "Interact";
+interactMessage = lang_get_text("ui.interact.interact");
 isSkipable = false;
 
 

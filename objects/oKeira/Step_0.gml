@@ -340,6 +340,9 @@ if (wallInDirection != 0) {
 				}
 			}
 			
+			//Cling
+			part_dust_create(x + lastWallInDirection*5, y-10, x + lastWallInDirection*5, y+6, -10);
+			
 		}
 	}
 
@@ -440,6 +443,8 @@ if (jumpTicks > 0) {
 				squishY = squishOffset;
 				
 				wallJump = false;
+				
+				part_dust_create(x-5, y+8, x+5, y+8, 5);
 			}
 
 		
@@ -456,6 +461,8 @@ if (jumpTicks > 0) {
 				wallJump = false;
 				STATE = state.base;
 				wallInDirection = 0; //Resrt wall checks
+				
+				part_dust_create(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
 		
 			}
 		
@@ -479,6 +486,9 @@ if (jumpTicks > 0) {
 				airFrictionMultiplierLerp = 0.3;
 				
 				hasJumpedOffWallSinceOnGround = true;
+				
+				part_dust_create(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
+				
 			}
 		}
 	}

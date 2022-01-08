@@ -1,7 +1,7 @@
 
 interactable = true;
 repeatable = true;
-interactMessage = "Shoot into Sky";
+interactMessage = lang_get_text("ui.interact.silly");
 activate = false;
 
 t_scene_info = [

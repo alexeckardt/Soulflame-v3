@@ -30,6 +30,8 @@ playerSittingHere = false;
 displayFire = false;
 lit = false;
 
+interactMessage = lang_get_text("ui.interact.rest");
+
 litPercent = 0;
 fireIndex = 0;
 flameFrequencyStrength = 0;

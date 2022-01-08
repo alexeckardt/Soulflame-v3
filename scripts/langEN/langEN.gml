@@ -6,10 +6,10 @@ function langEN() {
 	
 	lang[? "c.cutscene_name.example"]       = [["generic text", "c", "s", "v", ]];
 
-	lang[? "ui.interaction.interact"]       = "Interact";
-	lang[? "ui.interaction.listen"]         = "Listen";
-	lang[? "ui.interaction.silly"]          = "Shoot into Sky";
-	lang[? "ui.interaction.rest"]           = "Rest";
+	lang[? "ui.interact.interact"]       = "Interact";
+	lang[? "ui.interact.listen"]         = "Listen";
+	lang[? "ui.interact.silly"]          = "Shoot into Sky!!";
+	lang[? "ui.interact.rest"]           = "Rest";
 
 	lang[? "ui.instruction.back"]           = "Back";
 	lang[? "ui.instruction.select"]         = "Select";

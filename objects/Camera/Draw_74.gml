@@ -37,6 +37,16 @@ shader_reset();
 gpu_set_blendmode(bm_normal);
 
 
+//PARTICLE LAYERS
+//
+if (surface_exists(ParticleViewer.particleSurf)) {
+	draw_surface_ext(ParticleViewer.particleSurf, 0, 0, zoom, zoom, 0, c_white, 1);	
+}
+
+//GLOW PARTICLES
+
+
+
 //Foreground Paralax
 if (surface_exists(frgSurf)) {
 	draw_surface_ext(frgSurf, 0, 0, 1, 1, 0, c_white, 1);	

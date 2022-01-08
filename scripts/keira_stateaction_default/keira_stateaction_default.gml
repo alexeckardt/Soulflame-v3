@@ -25,7 +25,12 @@ function keira_stateaction_default() {
 		index_speed = 0.4;
 		
 		sprite_switch_to(currentRunSprite);
-		spriteKeyIs = "Run"
+		spriteKeyIs = "Run";
+		
+		randomize();
+		if (irandom(100) < 10) {
+			part_dust_create(x-3+hSpeed, y+6, x+3+hSpeed, y+7, choose(1, 2, 3));
+		}
 		
 			
 	} else {
