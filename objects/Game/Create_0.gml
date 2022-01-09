@@ -7,7 +7,7 @@ gameVersion = 1;
 gameSeed = irandom(100);
 
 //Save Tracking
-persistance = ds_map_create();
+persistence = ds_map_create();
 timeInGame = 0;
 
 //Debug Settings
@@ -27,3 +27,6 @@ corruption_CollectEssenceIncrease		= 1/200;
 corruption_ImbuedWeaponSwingIncrease	= 1/100;
 corruption_WeaponCreationIncrase		= 1/10;
 corruption_HealingIncrease				= 1/5;
+
+//Particle Viewer
+particleViewer = noone;

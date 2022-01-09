@@ -39,8 +39,8 @@ gpu_set_blendmode(bm_normal);
 
 //PARTICLE LAYERS
 //
-if (surface_exists(ParticleViewer.particleSurf)) {
-	draw_surface_ext(ParticleViewer.particleSurf, 0, 0, zoom, zoom, 0, c_white, 1);	
+if (surface_exists(Game.particleViewer.particleSurf)) {
+	draw_surface_ext(Game.particleViewer.particleSurf, 0, 0, zoom, zoom, 0, c_white, 1);	
 }
 
 //GLOW PARTICLES
