@@ -6,7 +6,7 @@
     "path": "folders/Particles/Type Objects/Dust.yy",
   },
   "resourceVersion": "1.0",
-  "name": "part_dust_create",
+  "name": "particle_create_dust",
   "tags": [],
   "resourceType": "GMScript",
 }

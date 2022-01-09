@@ -29,7 +29,7 @@ function keira_stateaction_default() {
 		
 		randomize();
 		if (irandom(100) < 10) {
-			part_dust_create(x-3+hSpeed, y+6, x+3+hSpeed, y+7, choose(1, 2, 3));
+			particle_create_dust(x-3+hSpeed, y+6, x+3+hSpeed, y+7, choose(1, 2, 3));
 		}
 		
 			

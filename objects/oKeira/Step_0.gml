@@ -253,7 +253,7 @@ if (onGround && !wasOnGround) {
 	squishY = -squishOffset/2;
 	
 	//Land
-	part_dust_create(x-4, y+8, x+4, y+6, 5+moveY);
+	particle_create_dust(x-4, y+8, x+4, y+6, 5+moveY);
 			
 	
 	//Reset State
@@ -345,7 +345,7 @@ if (wallInDirection != 0) {
 			}
 			
 			//Cling
-			part_dust_create(x + lastWallInDirection*5, y-10, x + lastWallInDirection*5, y+6, -10);
+			particle_create_dust(x + lastWallInDirection*5, y-10, x + lastWallInDirection*5, y+6, -10);
 			
 		}
 	}
@@ -448,7 +448,7 @@ if (jumpTicks > 0) {
 				
 				wallJump = false;
 				
-				part_dust_create(x-5, y+8, x+5, y+8, 5);
+				particle_create_dust(x-5, y+8, x+5, y+8, 5);
 			}
 
 		
@@ -466,7 +466,7 @@ if (jumpTicks > 0) {
 				STATE = state.base;
 				wallInDirection = 0; //Resrt wall checks
 				
-				part_dust_create(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
+				particle_create_dust(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
 		
 			}
 		
@@ -491,7 +491,7 @@ if (jumpTicks > 0) {
 				
 				hasJumpedOffWallSinceOnGround = true;
 				
-				part_dust_create(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
+				particle_create_dust(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
 				
 			}
 		}
