@@ -109,8 +109,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "UI",
-    "path": "folders/Sprites/UI.yy",
+    "name": "Weapon Wheel",
+    "path": "folders/Sprites/UI/Weapon Wheel.yy",
   },
   "resourceVersion": "1.0",
   "name": "sWeaponIcons",

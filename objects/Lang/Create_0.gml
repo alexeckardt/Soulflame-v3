@@ -1,6 +1,6 @@
 /// @description 
 
-langScripts = [langEN, langEN];
+langScripts = [langEN,];
 language = 0;
 
 lang = ds_map_create();

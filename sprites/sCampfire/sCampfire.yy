@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Campfire",
+    "path": "folders/Sprites/Objects/Campfire.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCampfire",
