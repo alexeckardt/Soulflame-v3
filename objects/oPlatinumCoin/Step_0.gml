@@ -20,16 +20,14 @@ if (autoPickup) {
 	//Normal Movement
 	vSpeed += grav;	
 	
+	//Bounce
 	if (place_meeting(x, y+vSpeed, Solid) && vSpeed > 0) {
-		vSpeed = (round(vSpeed * 0.6) div 2) * -2;	
+		vSpeed = (round(vSpeed * (1/sqrt(weight))) div 2) * -2;	
 		hSpeed = lerp(hSpeed, 0, .2);
 		hasHitGroundOnce = true;
 	}
 	
-	//Move
-	x += hSpeed;
-	y += vSpeed;
-	
+	//Collide + Move	
 	generic_collide_solid();
 }
 

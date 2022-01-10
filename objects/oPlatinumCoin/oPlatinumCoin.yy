@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sCoin",
-    "path": "sprites/sCoin/sCoin.yy",
+    "name": "sPlartinumCoin",
+    "path": "sprites/sPlartinumCoin/sPlartinumCoin.yy",
   },
   "solid": false,
   "visible": true,

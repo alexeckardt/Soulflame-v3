@@ -2,7 +2,7 @@
 //
 //
 //
-function platinum_create(xx, yy, amount, spread, minSpeed, maxSpeed) {
+function platinum_create(xx, yy, amount, spread, minSpeed, maxSpeed, goalVector = 0, vectorRange = 180, goalvectorweight = 1) {
 
 	//Tell
 	randomize();
@@ -11,12 +11,21 @@ function platinum_create(xx, yy, amount, spread, minSpeed, maxSpeed) {
 	//Setup
 	var autoPickup = false; //replace with buff
 
-	//Choose Sizes
-	var amountOf25s = irandom_range(0, max(0, (amount div 25) - 1));
-	amount -= amountOf25s * 25;
-	var amountOf5s = irandom_range(0, max(0, (amount div 5)));
+	//Convert to 25s
+	var biasFor25s		= clamp(amount/400, 0, 1);
+	var prebiaschance = random(1);
+	var percentToTurn25	= 1 - bias(prebiaschance, biasFor25s);
+	var amountOf50s = floor((amount / 50) * percentToTurn25);
+	amount -= amountOf50s * 50;
+
+	//Convert to 5s
+	var biasFor5s		= clamp(amount/40, 0, 1);
+		prebiaschance = random(1);
+	var percentToTurn5	= 1 - bias(prebiaschance, biasFor5s);
+	var amountOf5s = floor((amount / 5) * percentToTurn5);
 	amount-= amountOf5s * 5;
 	
+	//
 	//Original Position
 	var spawnX = xx;
 	var spawnY = yy;
@@ -55,11 +64,32 @@ function platinum_create(xx, yy, amount, spread, minSpeed, maxSpeed) {
 	
 	//
 	//Spawn Each coin
-	var tot = amount + amountOf5s + amountOf25s;
+	var tot = amount + amountOf5s + amountOf50s;
 	for (var i = 0; i < tot; i++) {
 	
+	
+		//Create Objects
+		var d = depth - 20;
+		
+		var g;
+		if (amountOf50s > 0) {
+			g = instance_create_depth(xx, yy, d, oPlatinumChunk); 
+			g.value = 50;
+			g.sprite_index = sPlatinumBar
+			amountOf50s--;
+			
+		} else if (amountOf5s > 0) {
+			g = instance_create_depth(xx, yy, d, oPlatinumChunk); 
+			g.value = 5;
+			amountOf5s--;
+			
+		} else {
+			g = instance_create_depth(xx, yy, d, oPlatinumCoin); 
+			g.value = 1;	
+			
+		}
+	
 		//Create platinum
-		var g = instance_create_depth(xx, yy, depth+5, oPlatinumCoin); 
 	
 		//Range Around
 		var newX, newY;
@@ -75,26 +105,21 @@ function platinum_create(xx, yy, amount, spread, minSpeed, maxSpeed) {
 		//Move
 		g.x = newX;
 		g.y = newY;
-	
-		//Update Value if I Should
-		if (amountOf25s > 0) {
-			g.value = 25;
-			amountOf25s--;
-		} else if (amountOf5s > 0) {
-			g.value = 5;
-			amountOf5s--;
-		} else {
-			g.value = 1;	
-		}
 
 		//Get Speed
 		randomize();
 		var speedd = choose(minSpeed, random_range(minSpeed, maxSpeed), maxSpeed);
+		
+		//Set Direction To Move In
 		var dirFromC = point_direction(newX, newY, spawnX, spawnY);
+		var randomRange = goalVector + irandom_range(-vectorRange, vectorRange);
+		
+		var realMoveDirection = point_direction(-lengthdir_x(1, dirFromC), -lengthdir_y(1, dirFromC), 
+												lengthdir_x(goalvectorweight, randomRange), lengthdir_y(goalvectorweight, randomRange))
 	
 		//Update Speeds
-		var hspdd = lengthdir_x(speedd, dirFromC);
-		var vspdd = lengthdir_y(speedd, dirFromC);
+		var hspdd = lengthdir_x(speedd, realMoveDirection);
+		var vspdd = lengthdir_y(speedd, realMoveDirection);
 		g.hSpeed = hspdd;
 		g.vSpeed = vspdd;
 	

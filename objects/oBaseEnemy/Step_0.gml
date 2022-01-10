@@ -6,7 +6,6 @@ enemy_take_damage();
 //Collision
 generic_collide_solid();
 
-
 //(Vertical Motion)
 	if (knockbackVSpeed != 0) {
 		vSpeed += knockbackVSpeed;
@@ -27,7 +26,8 @@ generic_collide_solid();
 	knockbackHSpeed = lerp(knockbackHSpeed, 0, kbFriction);
 	hSpeed = round((controlHSpeed + knockbackHSpeed) * 10) / 10;
 
-
 	
 //Visuals Call
 event_user(0);
+
+enemy_generic_death_timer();

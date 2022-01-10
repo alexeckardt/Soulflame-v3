@@ -10,7 +10,7 @@ if (sparklesToCreate > 0) {
 	if (timer < 0) {
 		
 		//Setup
-		var burstAmount = choose(1, 1, 2);
+		var burstAmount = irandom_range(1, max(1, sparklesToCreate/10));
 		var sys = Game.particleViewer.noblendSys;
 		
 		//Reset

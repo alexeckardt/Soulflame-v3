@@ -10,7 +10,7 @@ mask_index = sprite_index;
 	lesser = false;
 
 	//Health
-	hp = 10;
+	hp = 2;
 
 	//Movement
 	weight = 1;
@@ -24,6 +24,11 @@ mask_index = sprite_index;
 	
 	//Essence
 	essenceDropPerDamage = 6; //A Full Token is 100
+	
+	
+	platinumDrop = 100; //
+	platinumDropRange = 0.1; // +- this percent of the drop rate
+							 // bosses should have 0
 	
 	
 //Other Variables that *Should* be used by each enemy

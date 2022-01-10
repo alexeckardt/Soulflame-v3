@@ -27,7 +27,7 @@ if (damageMeeting != noone) {
 		//Platinum Create
 		randomize();
 		var randPlat = irandom_range(minPlat, maxPlat);
-		platinum_create(x, y-8, choose(minPlat, maxPlat, randPlat), 0.5, 0, 2);
+		platinum_create(x, y-12, choose(minPlat, maxPlat, randPlat), 0.5, 1, 4, 90, 45, 2);
 		
 		//Create Particles
 		particle_create_pot_frag(bbox_left, bbox_top, bbox_right, bbox_bottom+5, 8, potPartTypeSpr, partTypeKey);
