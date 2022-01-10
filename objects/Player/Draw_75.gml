@@ -337,3 +337,32 @@ draw_text(10, 10, Controller.rightStickDirection);
 		draw_surface_ext(interactSurface, surfX, pSurfY - h - 20, 1, 1, 0, c_white, interactAlpha);
 
 	}
+	
+//Platinum
+if (platinumDisplayPercent > 0.01) {
+
+	draw_set_halign(fa_right);
+	draw_set_valign(fa_bottom);
+	draw_set_font(fontKeira);
+	
+	var strh = string_height("|") + 4;
+	
+	var xpos = guiW - featherSurfDim - 5;
+	var ypos = platinumDisplayPercent*strh;
+	
+	//Platinum Balance
+	var c = platinumCol;
+	draw_text_color(xpos, ypos, platinumDisplaying, c, c, c, c, 1);
+
+	//Platinum Adding To Balance
+	if (platinumToAdd != 0) {
+		var c = (platinumToAdd >= 0) ? c : c_red;
+		var s = (platinumToAdd >= 0) ? "+" : "-";
+		
+		var addW = string_width(string(platinumToAdd));
+		
+		draw_text_color(xpos, ypos+strh*platinumDisplayPercent, string(abs(platinumToAdd)), c, c, c, c, 1);
+		draw_text_color(xpos-addW-2, ypos+strh*platinumDisplayPercent, s, c, c, c, c, 1);
+	}
+	
+}

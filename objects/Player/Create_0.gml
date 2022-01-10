@@ -93,8 +93,6 @@ forgingWeaponImbuedWith		= 0;
 weaponWheelAngleOffset = 0;
 weaponWheelOpenedAsPermanant = false; //if true, the wheel will not close by itself
 
-
-
 //Interacting Display
 interactSurface = -1;
 interactAlpha = 0;
@@ -111,7 +109,23 @@ firstRoom = true;
 fadeInTransitionInfo = [0,0,0,0,0,0]
  
 //Collection
-platinum = 0;
+	//Platinum (Real, always the true value)
+	platinum = 0;
+	platinumCol = bgr($a0ceea);
+
+	//Visual (Visual, trys to mimic true)
+	platinumDisplaying = 0;
+	platinumToAdd = 0;
+	platinumCatchUpConstant = 0;
+	platinumDisplayPercent = 0; //0-1 lerp
+	
+	//Times
+	platinumAdditionDisplayTime	= room_speed*2;
+	platinumAdditionDisplayForLeft = platinumAdditionDisplayTime;
+	platinumCountStaticShowFor = room_speed*2;
+	platinumCountStaticShowForLeft = -1;
+	
+	
 
 //Respawning
 savePointRoom = "";

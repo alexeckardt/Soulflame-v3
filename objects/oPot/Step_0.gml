@@ -30,8 +30,10 @@ if (damageMeeting != noone) {
 		platinum_create(x, y-12, choose(minPlat, maxPlat, randPlat), 0.5, 1, 4, 90, 45, 2);
 		
 		//Create Particles
-		particle_create_pot_frag(bbox_left, bbox_top, bbox_right, bbox_bottom+5, 8, potPartTypeSpr, partTypeKey);
 		particle_create_dust(bbox_left, bbox_bottom-5, bbox_right, bbox_bottom+5, 5);
+		if (potPartTypeSpr != undefined) {
+			particle_create_pot_frag(bbox_left, bbox_top, bbox_right, bbox_bottom+5, 8, potPartTypeSpr, partTypeKey);}
+		
 		
 		//Destroy
 		instance_destroy();

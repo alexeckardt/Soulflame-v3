@@ -87,6 +87,6 @@ if (!usingController) {
 	interact =  keyboard_check_pressed(vk_down);
 	
 	uiSelectPressed = keyboard_check_pressed(ord("Z"));
-	uiBackPressed = gamepad_button_check_pressed(0, "C");
+	uiBackPressed = keyboard_check_pressed(ord("C"));
 
 }

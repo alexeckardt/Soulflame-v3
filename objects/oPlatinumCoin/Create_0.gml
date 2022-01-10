@@ -15,7 +15,7 @@ bounceAmplitude = random_range(4/3, 2)
 hSpeed = 0;
 vSpeed = 0;
 
-weight = random_range(1.75, 2);
+weight = random_range(2, 3);
 
 collected = false;
 lifeTick = 0;

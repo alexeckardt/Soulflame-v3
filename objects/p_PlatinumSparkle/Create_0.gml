@@ -2,7 +2,7 @@
 
 event_inherited();
 
-var platinumCol = bgr($a0ceea);
+var platinumCol = Player.platinumCol
 part_type_color1(part_type, platinumCol);
 part_type_sprite(part_type, sPartCoinSparkle, true, true, false);
 part_type_blend(part_type, false);

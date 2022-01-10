@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Loot",
+    "path": "folders/Objects/Loot.yy",
   },
   "resourceVersion": "1.0",
   "name": "oPlatinumChunk",

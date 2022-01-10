@@ -1,6 +1,6 @@
 /// @description Timed Emittion
 
-sparklesToCreate = clamp(sparklesToCreate, 0, 50);
+sparklesToCreate = clamp(sparklesToCreate, 0, 300)
 if (sparklesToCreate > 0) {
 
 	//Timer
@@ -10,12 +10,12 @@ if (sparklesToCreate > 0) {
 	if (timer < 0) {
 		
 		//Setup
-		var burstAmount = irandom_range(1, max(1, sparklesToCreate/10));
+		var burstAmount = irandom_range(1, clamp(sparklesToCreate/10, 1, 30));
 		var sys = Game.particleViewer.noblendSys;
 		
 		//Reset
 		sparklesToCreate -= burstAmount;	
-		timer = room_speed/6; //1/6 second
+		timer = irandom(room_speed div 6); //< 1/6 second
 		
 		//Update Emitter
 		var emitter = Game.particleViewer.noblendEmitter;
