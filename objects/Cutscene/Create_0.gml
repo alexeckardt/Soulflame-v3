@@ -18,3 +18,7 @@ myTrigger		= noone;
 
 returnControlToPlayer = true;
 moveToX = undefined;
+
+//Setup
+myDialouge = instance_create_depth(x, y, depth, Dialouge);
+myDialouge.creator = id;

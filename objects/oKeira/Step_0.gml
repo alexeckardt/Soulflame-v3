@@ -388,8 +388,10 @@ wallJumpNotConnectedTimeLeft -= time;
 
 //Jump
 //
-if (Controller.jump || forceJump) {
-	jumpTicks = preLandJumpsTime;	
+if (!Game.someUIopen) {
+	if (Controller.jump || forceJump) {
+		jumpTicks = preLandJumpsTime;	
+	}
 }
 
 //Check Jump

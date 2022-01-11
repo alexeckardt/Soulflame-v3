@@ -17,6 +17,7 @@ function cutscene_event_end_action() {
 		}
 		
 		//Destroy
+		myDialouge.toDie = true;
 		instance_destroy();
 		exit;
 	}
