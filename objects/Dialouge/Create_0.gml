@@ -19,28 +19,90 @@ dialougeType = dialouge_type.base;
 watingForSetup = true;
 switchedSectionPart = true;
 
-//To Update
+//Dialouge Text
 dialougeTextInfo = [];
-characters = [-1]; //in lang, character will be character 0.
-					//this refers to the index of this array.
-characterSprites = [];
+
+
+//Characters
+characters = ds_map_create();
+characterOrder = []
+characterCount = 0;
+leftGroupSize = 0;
 
 //Answering
 playerAnswer = false;
 answerOptions = [];
 lastPlayerResponse = -1;
+playerOptionHoveringOver = -1;
 
 //Return
 
 //Visual
 textToDisplay = "";
 textDisplaying = "";
-characterTalking = 0;
+effectTimer = 0;
+effectList = ds_list_create();
+updateTexts = false;
+displayFont = fontKeira;
+
+//Textbox
+textboxToBeOpen = false; //wil open close in and out based on this
+textboxOpenTicks = 0;
+textboxOpeningDelay = room_speed / 8;
+
+textLines = [""]
+maxLinesPossible = 4;
+textBoxWidth = floor(Camera.view_width / 1.5);
+textboxTextBuffer = 8;
+maxLineLength = textBoxWidth - 2*textboxTextBuffer;
+longestLineWidth = 0;
+textboxHeight = 0;
+textboxJustOpened = true;
+textboxWritingLines = 0;
+textboxHeightExpanded = false;
+lineHeight = 0;
+
+cameraScreenWidth = Camera.view_width;
+
+centerX = cameraScreenWidth div 2;
+textboxCenterX = centerX;
+textboxGoalX = textboxCenterX;
+
+textboxTalkingY		=  Camera.view_height * 0.9;
+textboxQuestionY	=  Camera.view_height * 0.3;
+textboxY =  textboxTakingY;
+textboxGoalY = textboxTalkingY;
+
+speechBubbleColour = merge_colour(c_dkgray, 0, 0.9);
+textColour = c_white;
+
+//Timers
+cutoff = 0;
+cutoffContinuous = 0; //Even After
+timer = 0;
+textSpeed = 0.3;
+
+characterTalking = noone;
 characterEmotion = 0;
 autoHideOnceSectionComplete = false;
 display = false;
-characterZoom = 3;
+characterPixelGoalSize = 6;
 textZoom = 4;
+characterEdgeGoalPositions = 0.20; //this far away from edge of screen
+
+
+//Pointer
+pointerX = textboxCenterX;
+pointerGoalX = 0;
+pointerWidth = 8;
+pointerYSc = 0;
+
+//Name
+nameX = textboxCenterX;
+pointerNameBuffer = 16;
+
+totalLeftSpriteWidth = 0;
+totalRightSpriteWidth = 0;
 
 //Background
 dialougeBottomFadePercent = 0;

@@ -1,4 +1,4 @@
-// @desc
+//@desc EN Language File Contents.
 //
 //
 //
@@ -19,6 +19,7 @@ function langEN() {
 	lang[? "ui.interact.listen"]                  = "Listen";
 	lang[? "ui.interact.silly"]                   = "Shoot into Sky";
 	lang[? "ui.interact.rest"]                    = "Rest";
+	lang[? "ui.interact.talk"]                    = "Talk";
 
 	lang[? "ui.instruction.back"]                 = "Back";
 	lang[? "ui.instruction.select"]               = "Select";
@@ -40,4 +41,22 @@ function langEN() {
 	lang[? "status.name.0"]                       = "";
 
 	lang[? "beastiary.magpie"]                    = "Magpie";
+
+	lang[? "player.name"]                         = "{te.name}Keira{te.fade}";
+
+	lang[? "char.name.hugo"]                      = "{te.name}Hugo{te.fade}";
+	lang[? "char.name.adaline"]                   = "{te.name}Adaline{te.fade}";
+
+	lang[? "te.fade"]                             = "#!0";
+	lang[? "te.typewritter"]                      = "#!1";
+	lang[? "te.wavy"]                             = "#!2";
+	lang[? "te.shake"]                            = "#!3";
+	lang[? "te.rainbow"]                          = "#!4";
+	lang[? "te.order"]                            = "#!5";
+	lang[? "te.balanced"]                         = "#!6";
+	lang[? "te.chaos"]                            = "#!7";
+	lang[? "te.name"]                             = "#!8";
+	lang[? "te.glyph"]                            = "#!9";
+	lang[? "te.reset"]                            = "{te.fade}";
+	lang[? "test"]                                = [["Hey! Checking if the text works as intended. Let\'s see if {player.name} works", "2", ], ["{te.rainbow}AAAAAAAAAAAA sunshines and rainbows!!!!!!!!!!!!!!!!!!!!!", "1", ], ["{te.shake}Shut up!!", "0", ], ["{te.chaos}I will destroy the world!!", "1", ], ["I actually hate you.", "2", ], ["what.", "1", ]];
 }

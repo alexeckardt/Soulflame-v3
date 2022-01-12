@@ -10,8 +10,11 @@ enum character {
 	
 	//Sprites To Display
 	keira,
-	base,
 	hugo,
+	adaline,
 	
+	
+	base,
+	base2,
 	height,
 }

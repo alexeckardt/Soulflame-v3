@@ -351,7 +351,7 @@ if (platinumDisplayPercent > 0.01) {
 	var ypos = platinumDisplayPercent*strh;
 	
 	//Platinum Balance
-	var c = platinumCol;
+	var c = Game.platinumCol;
 	draw_text_color(xpos, ypos, platinumDisplaying, c, c, c, c, 1);
 
 	//Platinum Adding To Balance

@@ -42,7 +42,7 @@ function lang_get_section(key) {
 		
 		
 		//Create Tail
-		var textSectionInfo;
+		var textSectionInfo = [];
 		textSectionInfo[infoBits-1] = "";
 		array_copy(textSectionInfo, 0, textSectionPart, 1, infoBits);
 	

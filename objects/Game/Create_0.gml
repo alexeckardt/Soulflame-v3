@@ -30,3 +30,10 @@ corruption_HealingIncrease				= 1/5;
 
 //Particle Viewer
 particleViewer = noone;
+
+//Colours
+platinumCol = bgr($a0ceea);
+textOrderCol = bgr($d7b851);
+textBalancedCol = bgr($c1d8da);
+textChaosCol = bgr($8a2db9);
+textDefCol = $6b6b6b;

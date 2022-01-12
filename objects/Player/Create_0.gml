@@ -111,7 +111,6 @@ fadeInTransitionInfo = [0,0,0,0,0,0]
 //Collection
 	//Platinum (Real, always the true value)
 	platinum = 0;
-	platinumCol = bgr($a0ceea);
 
 	//Visual (Visual, trys to mimic true)
 	platinumDisplaying = 0;

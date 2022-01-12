@@ -1,8 +1,8 @@
 // @desc
 //
-//Gets Text from Lang File. Must only be text. (used for menus etc)
 //
-function lang_get_text(key) {
+//
+function lang_get_text_no_pointers(key) {
 
 	//Grab
 	var get = Lang.lang[? key];
@@ -23,11 +23,9 @@ function lang_get_text(key) {
 			
 			//Get Real Text
 			var pointer = string_copy(text, j, endPointerpos-j+1); 
-									//Recursion!
-			var pointerText = lang_get_text(string_copy(pointer, 2, string_length(pointer)-2));
-			
+
 			//Replace
-			text = string_replace(text, pointer, pointerText);
+			text = string_replace(text, pointer, "");
 		}
 		
 		//Return What I Got
