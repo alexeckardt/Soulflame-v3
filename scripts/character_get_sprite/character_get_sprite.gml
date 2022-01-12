@@ -6,15 +6,15 @@ function character_get_sprite(char, emotion) {
 
 	switch (char) {
 		default:
-			return sDialougeBaseShopVender;
+			return sDialogueBaseShopVender;
 		break;
 		
 		case character.keira:
-			return sDialougeKeira;
+			return sDialogueKeira;
 		break;
 			
 		case character.base:
-			return sDialougeBaseShopVender;
+			return sDialogueBaseShopVender;
 		break;
 			
 	}

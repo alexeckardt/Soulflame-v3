@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"b14aee1f-2ffb-4ea1-8e29-b10c78238a84","path":"sprites/sDialougeBaseShopVender/sDialougeBaseShopVender.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b14aee1f-2ffb-4ea1-8e29-b10c78238a84","path":"sprites/sDialougeBaseShopVender/sDialougeBaseShopVender.yy",},"LayerId":{"name":"c05be7b4-3a58-4f03-a5b8-7c0a5a86dbc8","path":"sprites/sDialougeBaseShopVender/sDialougeBaseShopVender.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sDialougeBaseShopVender","path":"sprites/sDialougeBaseShopVender/sDialougeBaseShopVender.yy",},"resourceVersion":"1.0","name":"b14aee1f-2ffb-4ea1-8e29-b10c78238a84","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b14aee1f-2ffb-4ea1-8e29-b10c78238a84","path":"sprites/sDialogueBaseShopVender/sDialogueBaseShopVender.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b14aee1f-2ffb-4ea1-8e29-b10c78238a84","path":"sprites/sDialogueBaseShopVender/sDialogueBaseShopVender.yy",},"LayerId":{"name":"c05be7b4-3a58-4f03-a5b8-7c0a5a86dbc8","path":"sprites/sDialogueBaseShopVender/sDialogueBaseShopVender.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sDialogueBaseShopVender","path":"sprites/sDialogueBaseShopVender/sDialogueBaseShopVender.yy",},"resourceVersion":"1.0","name":"b14aee1f-2ffb-4ea1-8e29-b10c78238a84","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sDialougeBaseShopVender","path":"sprites/sDialougeBaseShopVender/sDialougeBaseShopVender.yy",},
+    "spriteId": {"name":"sDialogueBaseShopVender","path":"sprites/sDialogueBaseShopVender/sDialogueBaseShopVender.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9e9f8840-d453-442e-a2aa-21af8273c19e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b14aee1f-2ffb-4ea1-8e29-b10c78238a84","path":"sprites/sDialougeBaseShopVender/sDialougeBaseShopVender.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"9e9f8840-d453-442e-a2aa-21af8273c19e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b14aee1f-2ffb-4ea1-8e29-b10c78238a84","path":"sprites/sDialogueBaseShopVender/sDialogueBaseShopVender.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 75,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sDialougeBaseShopVender","path":"sprites/sDialougeBaseShopVender/sDialougeBaseShopVender.yy",},
+    "parent": {"name":"sDialogueBaseShopVender","path":"sprites/sDialogueBaseShopVender/sDialogueBaseShopVender.yy",},
     "resourceVersion": "1.3",
-    "name": "sDialougeBaseShopVender",
+    "name": "sDialogueBaseShopVender",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -69,11 +69,11 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Dialouge",
-    "path": "folders/Sprites/Dialouge.yy",
+    "name": "Dialogue",
+    "path": "folders/Sprites/Dialogue.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sDialougeBaseShopVender",
+  "name": "sDialogueBaseShopVender",
   "tags": [],
   "resourceType": "GMSprite",
 }

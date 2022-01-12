@@ -5,10 +5,10 @@
 function langEN() {
 	lang[? "c.cutscene_name.example"]             = [["generic text", "c", "s", "v", ]];
 
-	lang[? "dialouge.randomnpc.greetings"]        = [["Hey There!", "0", ], ["Greetings!", "0", ]];
-	lang[? "dialouge.randomnpc.adventurer0"]      = [["Have you seen a {beastiary.magpie} before?", "0", ], ["People brought them over from the New Continent as pets, but now, they\'re a problem from the local wildlife.", "0", ]];
+	lang[? "Dialogue.randomnpc.greetings"]        = [["Hey There!", "0", ], ["Greetings!", "0", ]];
+	lang[? "Dialogue.randomnpc.adventurer0"]      = [["Have you seen a {beastiary.magpie} before?", "0", ], ["People brought them over from the New Continent as pets, but now, they\'re a problem from the local wildlife.", "0", ]];
 
-	lang[? "dialouge.shopkeeper.main"]            = "Hey There!";
+	lang[? "Dialogue.shopkeeper.main"]            = "Hey There!";
 
 	lang[? "dialoge.answer.shop"]                 = "Shop";
 	lang[? "dialoge.answer.talk"]                 = "Talk";

@@ -8,7 +8,7 @@ var z = Camera.zoom;
 //Draw Background
 display_set_gui_size(w, h);
 
-if (dialougeBottomFadePercent > 0.01) {
+if (DialogueBottomFadePercent > 0.01) {
 
 	//Draw Black Rectangles at Varying Alphas to "Fadeout" Text
 	var fadeTotalHeight = bottomFadeHeight * h;
@@ -16,7 +16,7 @@ if (dialougeBottomFadePercent > 0.01) {
 	var c = bottomFadeColour;
 	for (var i = 0; i < bottomFadeSections; i++) {
 
-		var p = (bottomFadeSections-i) / bottomFadeSections * dialougeBottomFadePercent;
+		var p = (bottomFadeSections-i) / bottomFadeSections * DialogueBottomFadePercent;
 		draw_sprite_ext(sPixel, 0, 0, h-fadeSectionHeight*(i+1), w, fadeSectionHeight, 0, c, p);
 
 	}
@@ -70,7 +70,7 @@ if (dialougeBottomFadePercent > 0.01) {
 		
 		//Speech Bubble Pointer	
 		var pX = pointerX
-		draw_sprite_ext(sDialougeBoxSpeechPointer, 0, pX, tbY, 1, pointerYSc, 0, speechBubbleColour, 1);
+		draw_sprite_ext(sDialogueBoxSpeechPointer, 0, pX, tbY, 1, pointerYSc, 0, speechBubbleColour, 1);
 		
 		//Draw Charachter Name
 		var name = characterTalking.nameStr;
@@ -139,7 +139,7 @@ if (dialougeBottomFadePercent > 0.01) {
 				}
 	
 				//Line
-				dialouge_text_draw_character_with_effect(cc, textX, textY, textEffect % text_effect.height, charDrawing);
+				Dialogue_text_draw_character_with_effect(cc, textX, textY, textEffect % text_effect.height, charDrawing);
 			
 				charDrawing++;
 			

@@ -2,7 +2,7 @@
 //
 //
 //
-function dialouge_text_draw_character_with_effect(char, textX, textY, _effect, charDrawingPosition) {
+function Dialogue_text_draw_character_with_effect(char, textX, textY, _effect, charDrawingPosition) {
 
 	//Char 
 	var cc = char;

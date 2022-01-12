@@ -1,20 +1,20 @@
 /// @description 
 
 //kill Self
-if (!instance_exists(parentDialouge)) {
+if (!instance_exists(parentDialogue)) {
 	instance_destroy();
 }
 
 //Check If Left
-var leftGroupSize = parentDialouge.leftGroupSize
+var leftGroupSize = parentDialogue.leftGroupSize
 var isLeft = orderPosition < leftGroupSize;
 
 //
 //Decide Goal Position. All Calcultions will be in percents of the width of the screen.
-var groupPosition = parentDialouge.characterEdgeGoalPositions;
+var groupPosition = parentDialogue.characterEdgeGoalPositions;
 var gXp = (isLeft) ? groupPosition : 1-groupPosition;
 var myGroupOrder = orderPosition - (!isLeft*leftGroupSize)
-var myGroupSize = (isLeft) ? leftGroupSize : parentDialouge.characterCount - leftGroupSize;
+var myGroupSize = (isLeft) ? leftGroupSize : parentDialogue.characterCount - leftGroupSize;
 
 //Set Position
 goalX = gXp + (myGroupOrder - ((myGroupSize-1) / 2))*0.12;
@@ -24,7 +24,7 @@ goalX = gXp + (myGroupOrder - ((myGroupSize-1) / 2))*0.12;
 //
 
 	//Enter Frame
-	if (parentDialouge.display && enterFrame) {
+	if (parentDialogue.display && enterFrame) {
 		enterFrame = false;
 		enteringFrame = true;
 		x = (isLeft) ? -0.4 : 1.4;}
@@ -36,7 +36,7 @@ goalX = gXp + (myGroupOrder - ((myGroupSize-1) / 2))*0.12;
 	}
 
 	//Exit Frame override
-	if (!parentDialouge.display) {
+	if (!parentDialogue.display) {
 		goalX = (isLeft) ? -0.4 : 1.4;
 		enterFrame = true;
 		enteringFrame = false;	

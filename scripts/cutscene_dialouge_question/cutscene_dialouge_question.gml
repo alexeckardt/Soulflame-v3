@@ -2,24 +2,24 @@
 //
 //
 //
-function cutscene_dialouge_question(mainTextboxKey, playereOptionsLangKeyArray, orderedCharacterArray, allLeftBeforeIndex, hideOnFinish, completelyClearCharacters = false) {
+function cutscene_Dialogue_question(mainTextboxKey, playereOptionsLangKeyArray, orderedCharacterArray, allLeftBeforeIndex, hideOnFinish, completelyClearCharacters = false) {
 
-	//Setup Dialouge for this section.
-	if (myDialouge.watingForSetup) {
+	//Setup Dialogue for this section.
+	if (myDialogue.watingForSetup) {
 		
-		myDialouge.dialougeType = dialouge_type.base;
+		myDialogue.DialogueType = Dialogue_type.base;
 	
 		//Update
-		myDialouge.dialougeTextInfo = dialouge_get_section(mainTextboxKey);
-		myDialouge.characterCount = array_length(orderedCharacterArray);
-		myDialouge.characterOrder = orderedCharacterArray;
-		myDialouge.display = true;
-		myDialouge.sectionComplete = false;
-		myDialouge.hideOnFinish = hideOnFinish;
-		myDialouge.leftGroupSize = allLeftBeforeIndex;
+		myDialogue.DialogueTextInfo = Dialogue_get_section(mainTextboxKey);
+		myDialogue.characterCount = array_length(orderedCharacterArray);
+		myDialogue.characterOrder = orderedCharacterArray;
+		myDialogue.display = true;
+		myDialogue.sectionComplete = false;
+		myDialogue.hideOnFinish = hideOnFinish;
+		myDialogue.leftGroupSize = allLeftBeforeIndex;
 		
 		//Variance
-		myDialouge.playerAnswer = true;
+		myDialogue.askingQuestion = true;
 		
 		//Setup Answers
 		var options = []
@@ -29,31 +29,31 @@ function cutscene_dialouge_question(mainTextboxKey, playereOptionsLangKeyArray, 
 			options[i] = lang_get_text(playereOptionsLangKeyArray[i]);
 		
 		}
-		myDialouge.answerOptions = options;
+		myDialogue.answerOptions = options;
 		
 		
 		//
 		//Setup Characters
 		//Reset Chars
-		if (completelyClearCharacters) {ds_map_clear(myDialouge.characters);}
+		if (completelyClearCharacters) {ds_map_clear(myDialogue.characters);}
 		
-		dialouge_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex);
+		Dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex);
 			
 		//Stop Setup
-		myDialouge.watingForSetup = false;
+		myDialogue.watingForSetup = false;
 		
 	}
 
 	//Wait Until Complete
-	else if (myDialouge.sectionComplete) {
+	else if (myDialogue.sectionComplete) {
 	
 		//Done, Wait For Next
-		myDialouge.watingForSetup = true;
+		myDialogue.watingForSetup = true;
 	
 		//Hide If Needed
 		if (hideOnFinish) {
-			myDialouge.display = false;	
-			myDialouge.textboxHeightExpanded = false;	
+			myDialogue.display = false;	
+			myDialogue.textboxHeightExpanded = false;	
 		}
 	
 		//Finish, Continue

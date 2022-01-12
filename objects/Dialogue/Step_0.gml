@@ -4,8 +4,8 @@
 var time = Game.delta;
 
 //Fade In / Out
-dialougeBottomFadePercent = lerp(dialougeBottomFadePercent, display, 0.2*time);
-if (toDie && dialougeBottomFadePercent < 0.01) {
+DialogueBottomFadePercent = lerp(DialogueBottomFadePercent, display, 0.2*time);
+if (toDie && DialogueBottomFadePercent < 0.01) {
 	Game.someUIopen = false;
 	instance_destroy();
 	exit;
@@ -39,7 +39,7 @@ if (!watingForSetup) {
 			
 			switchedSectionPart = true;
 	
-			if (sectionPart > array_length(dialougeTextInfo)-1) {
+			if (sectionPart > array_length(DialogueTextInfo)-1) {
 				
 				switchedSectionPart = false;
 				sectionComplete = true;
@@ -54,7 +54,7 @@ if (!watingForSetup) {
 	//Set Text On Update
 	if (switchedSectionPart) {
 	
-		var info = dialougeTextInfo[sectionPart];
+		var info = DialogueTextInfo[sectionPart];
 		var text = info[0];
 		var characterInfo = info[1];
 	
@@ -139,7 +139,7 @@ if (!watingForSetup) {
 		updateTexts = true;
 		
 		//Move Textbox Up If Asking Question
-		textboxGoalY = (!playerAnswer) ? textboxTalkingY : textboxQuestionY
+		textboxGoalY = (!askingQuestion) ? textboxTalkingY : textboxQuestionY
 
 	}
 	

@@ -3,7 +3,7 @@
 //
 //
 
-enum dialouge_type {
+enum Dialogue_type {
 
 	base,
 	question,

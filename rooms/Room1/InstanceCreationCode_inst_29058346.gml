@@ -7,6 +7,6 @@ activate = false;
 t_scene_info = [
 
 	[cutscene_event_wait_time, 0.2],
-	[cutscene_dialouge_base, "test", [character.keira, character.base, character.base2], 1, true],
+	[cutscene_Dialogue_base, "test", [character.keira, character.base, character.base2], 1, true],
 
 ]

@@ -2,7 +2,7 @@
 //
 //
 //
-function dialouge_get_section(section) {
+function Dialogue_get_section(section) {
 
 	var defText = lang_get_section(section);
 	

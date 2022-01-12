@@ -2,33 +2,33 @@
 //
 //
 //
-function dialouge_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex) {
+function Dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex) {
 	
 	//
 	//Setup Characters
-	for (var i = 0; i < myDialouge.characterCount; i++) {
+	for (var i = 0; i < myDialogue.characterCount; i++) {
 			
 		var char = orderedCharacterArray[i];
 		var obj;
 			
 		//Check Empty, not already in cutscene.
 		//Only Update
-		if (myDialouge.characters[? char] == undefined) {
+		if (myDialogue.characters[? char] == undefined) {
 				
 			//Create Obj
-			obj = instance_create_depth(x, y, depth+2, oDialougeCharacter);
-			obj.parentDialouge = myDialouge;
+			obj = instance_create_depth(x, y, depth+2, oDialogueCharacter);
+			obj.parentDialogue = myDialogue;
 				
 			//Setup Simple
 			obj.characterId = char;	
 			obj.sprite_index = character_get_sprite(char, 0);	
 			obj.nameStr = character_get_name(char);
-			myDialouge.characters[? char] = obj;
+			myDialogue.characters[? char] = obj;
 				
 		} else {
 			
 			//Grab
-			obj = myDialouge.characters[? char];
+			obj = myDialogue.characters[? char];
 				
 		}
 			

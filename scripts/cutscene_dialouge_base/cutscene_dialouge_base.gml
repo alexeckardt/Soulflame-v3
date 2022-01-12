@@ -1,52 +1,52 @@
 // @desc
 //
-//Setup the Cutscene's Dialouge.
+//Setup the Cutscene's Dialogue.
 //
 //textSection: language dictionary key to access from
 //orderedCharacterArray: array of characters in order from left to right they should be displayed
 //allLeftBeforeIndex: which characters should stick on the left side. if 2, then the first two characters will stick to the left side
-//hideOnFinish: whether or not the Dialouge should appear to close after it is finished.
+//hideOnFinish: whether or not the Dialogue should appear to close after it is finished.
 //
-function cutscene_dialouge_base(textSection, orderedCharacterArray, allLeftBeforeIndex, hideOnFinish, completelyClearCharacters = false) {
+function cutscene_Dialogue_base(textSection, orderedCharacterArray, allLeftBeforeIndex, hideOnFinish, completelyClearCharacters = false) {
 
-	//Setup Dialouge for this section.
-	if (myDialouge.watingForSetup) {
+	//Setup Dialogue for this section.
+	if (myDialogue.watingForSetup) {
 		
-		myDialouge.dialougeType = dialouge_type.base;
+		myDialogue.DialogueType = Dialogue_type.base;
 	
 		//Update
-		myDialouge.dialougeTextInfo = dialouge_get_section(textSection);
-		myDialouge.characterCount = array_length(orderedCharacterArray);
-		myDialouge.characterOrder = orderedCharacterArray;
-		myDialouge.display = true;
-		myDialouge.sectionComplete = false;
-		myDialouge.hideOnFinish = hideOnFinish;
-		myDialouge.leftGroupSize = allLeftBeforeIndex;
+		myDialogue.DialogueTextInfo = Dialogue_get_section(textSection);
+		myDialogue.characterCount = array_length(orderedCharacterArray);
+		myDialogue.characterOrder = orderedCharacterArray;
+		myDialogue.display = true;
+		myDialogue.sectionComplete = false;
+		myDialogue.hideOnFinish = hideOnFinish;
+		myDialogue.leftGroupSize = allLeftBeforeIndex;
 		
-		myDialouge.playerAnswer = false;
+		myDialogue.askingQuestion = false;
 		
 		//
 		//Setup Characters
 		//Reset Chars
-		if (completelyClearCharacters) {ds_map_clear(myDialouge.characters);}
+		if (completelyClearCharacters) {ds_map_clear(myDialogue.characters);}
 		
-		dialouge_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex);
+		Dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex);
 			
 		//Stop Setup
-		myDialouge.watingForSetup = false;
+		myDialogue.watingForSetup = false;
 		
 	}
 
 	//Wait Until Complete
-	else if (myDialouge.sectionComplete) {
+	else if (myDialogue.sectionComplete) {
 	
 		//Done, Wait For Next
-		myDialouge.watingForSetup = true;
+		myDialogue.watingForSetup = true;
 	
 		//Hide If Needed
 		if (hideOnFinish) {
-			myDialouge.display = false;	
-			myDialouge.textboxHeightExpanded = false;	
+			myDialogue.display = false;	
+			myDialogue.textboxHeightExpanded = false;	
 		}
 	
 		//Finish, Continue

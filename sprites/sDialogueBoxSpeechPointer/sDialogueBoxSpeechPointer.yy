@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"7fd6fed3-5003-4e28-ab47-d29d52e3ed2f","path":"sprites/sDialougeBoxSpeechPointer/sDialougeBoxSpeechPointer.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7fd6fed3-5003-4e28-ab47-d29d52e3ed2f","path":"sprites/sDialougeBoxSpeechPointer/sDialougeBoxSpeechPointer.yy",},"LayerId":{"name":"b241fc6a-91ad-48b1-bc2c-9a589827f384","path":"sprites/sDialougeBoxSpeechPointer/sDialougeBoxSpeechPointer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sDialougeBoxSpeechPointer","path":"sprites/sDialougeBoxSpeechPointer/sDialougeBoxSpeechPointer.yy",},"resourceVersion":"1.0","name":"7fd6fed3-5003-4e28-ab47-d29d52e3ed2f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"7fd6fed3-5003-4e28-ab47-d29d52e3ed2f","path":"sprites/sDialogueBoxSpeechPointer/sDialogueBoxSpeechPointer.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"7fd6fed3-5003-4e28-ab47-d29d52e3ed2f","path":"sprites/sDialogueBoxSpeechPointer/sDialogueBoxSpeechPointer.yy",},"LayerId":{"name":"b241fc6a-91ad-48b1-bc2c-9a589827f384","path":"sprites/sDialogueBoxSpeechPointer/sDialogueBoxSpeechPointer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sDialogueBoxSpeechPointer","path":"sprites/sDialogueBoxSpeechPointer/sDialogueBoxSpeechPointer.yy",},"resourceVersion":"1.0","name":"7fd6fed3-5003-4e28-ab47-d29d52e3ed2f","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sDialougeBoxSpeechPointer","path":"sprites/sDialougeBoxSpeechPointer/sDialougeBoxSpeechPointer.yy",},
+    "spriteId": {"name":"sDialogueBoxSpeechPointer","path":"sprites/sDialogueBoxSpeechPointer/sDialogueBoxSpeechPointer.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d9dec50b-b27d-40ee-aad0-984c47f5a0b2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7fd6fed3-5003-4e28-ab47-d29d52e3ed2f","path":"sprites/sDialougeBoxSpeechPointer/sDialougeBoxSpeechPointer.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d9dec50b-b27d-40ee-aad0-984c47f5a0b2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7fd6fed3-5003-4e28-ab47-d29d52e3ed2f","path":"sprites/sDialogueBoxSpeechPointer/sDialogueBoxSpeechPointer.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 6,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sDialougeBoxSpeechPointer","path":"sprites/sDialougeBoxSpeechPointer/sDialougeBoxSpeechPointer.yy",},
+    "parent": {"name":"sDialogueBoxSpeechPointer","path":"sprites/sDialogueBoxSpeechPointer/sDialogueBoxSpeechPointer.yy",},
     "resourceVersion": "1.3",
-    "name": "sDialougeBoxSpeechPointer",
+    "name": "sDialogueBoxSpeechPointer",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -69,11 +69,11 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Dialouge",
-    "path": "folders/Sprites/Dialouge.yy",
+    "name": "Dialogue",
+    "path": "folders/Sprites/Dialogue.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sDialougeBoxSpeechPointer",
+  "name": "sDialogueBoxSpeechPointer",
   "tags": [],
   "resourceType": "GMSprite",
 }

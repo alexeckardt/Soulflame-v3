@@ -20,5 +20,5 @@ returnControlToPlayer = true;
 moveToX = undefined;
 
 //Setup
-myDialouge = instance_create_depth(x, y, depth, Dialouge);
-myDialouge.creator = id;
+myDialogue = instance_create_depth(x, y, depth, Dialogue);
+myDialogue.creator = id;

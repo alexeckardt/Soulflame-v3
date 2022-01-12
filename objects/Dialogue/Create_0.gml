@@ -1,11 +1,11 @@
 /// @description 
 
 //
-//When A Cutscene is created; it will create a companion Dialouge Object.
-//When the Cutscene closes, so does the dialouge.
+//When A Cutscene is created; it will create a companion Dialogue Object.
+//When the Cutscene closes, so does the Dialogue.
 //
-//Using the cutscene_dialouge_use function inside the scene_info,
-//It will update the companion dialouge object with the text from a section.
+//Using the cutscene_Dialogue_use function inside the scene_info,
+//It will update the companion Dialogue object with the text from a section.
 //
 //
 //
@@ -15,12 +15,12 @@ sectionPart = 0;
 sectionComplete = false;
 
 //Setup
-dialougeType = dialouge_type.base;
+DialogueType = Dialogue_type.base;
 watingForSetup = true;
 switchedSectionPart = true;
 
-//Dialouge Text
-dialougeTextInfo = [];
+//Dialogue Text
+DialogueTextInfo = [];
 
 
 //Characters
@@ -30,7 +30,7 @@ characterCount = 0;
 leftGroupSize = 0;
 
 //Answering
-playerAnswer = false;
+askingQuestion = false;
 answerOptions = [];
 lastPlayerResponse = -1;
 playerOptionHoveringOver = -1;
@@ -70,8 +70,8 @@ textboxGoalX = textboxCenterX;
 
 textboxTalkingY		=  Camera.view_height * 0.9;
 textboxQuestionY	=  Camera.view_height * 0.3;
-textboxY =  textboxTakingY;
-textboxGoalY = textboxTalkingY;
+textboxY			=  textboxTalkingY;
+textboxGoalY		= textboxTalkingY;
 
 speechBubbleColour = merge_colour(c_dkgray, 0, 0.9);
 textColour = c_white;
@@ -105,7 +105,7 @@ totalLeftSpriteWidth = 0;
 totalRightSpriteWidth = 0;
 
 //Background
-dialougeBottomFadePercent = 0;
+DialogueBottomFadePercent = 0;
 bottomFadeSections = 40;
 bottomFadeColour = c_black;
 bottomFadeHeight = 0.75;
