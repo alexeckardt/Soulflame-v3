@@ -16,7 +16,11 @@ if (toDie) {
 }
 
 //Get Input
+showTextboxTicksLeft-=time;
 if (!watingForSetup) {
+	
+	//Hide If There's Nothing To Show
+	showTextboxTicksLeft = 10;
 	
 	//Next "Page"
 	var inputReceived = Controller.uiSelectPressed;
@@ -33,7 +37,7 @@ if (!watingForSetup) {
 		//Continue to next "Slide"
 		else {
 			
-			sectionPart++;
+			//Reset Stuff
 			cutoff = 0;
 			cutoffContinuous = 0;
 			effectTimer = 0;
@@ -42,13 +46,35 @@ if (!watingForSetup) {
 			updateTexts = false;
 			
 			switchedSectionPart = true;
-	
-			if (sectionPart > array_length(DialogueTextInfo)-1) {
+
+			//Lock In Answer
+			if (showAnswers) {
+				if (askingQuestion) {
+					if (playerAnsweringHoveringOver != -1) {
 				
-				switchedSectionPart = false;
-				sectionComplete = true;
-				characterTalking = -1;
+						//Force Exit (Maybe Remove This Later)?
+						sectionPart = array_length(DialogueTextInfo);
 				
+						//Set Selected
+						lastPlayerResponse = playerAnsweringHoveringOver;
+						creator.optionSelected = playerAnsweringHoveringOver;
+						creator.optionSelectedText = answerOptions[playerAnsweringHoveringOver];
+					
+					}
+				}
+			}
+			
+			//Section Increase; Continue
+			if (!askingQuestion || playerAnsweringHoveringOver != -1) {
+				
+				sectionPart++;				
+				playerAnsweringHoveringOver = -1;
+				
+				if (sectionPart > array_length(DialogueTextInfo)-1) {
+					switchedSectionPart = false;
+					sectionComplete = true;
+					characterTalking = -1;
+				}
 			}
 			
 		}
@@ -65,21 +91,33 @@ if (!watingForSetup) {
 		//Set Text in Main Box
 		textToDisplay = text;
 	
-		//Set character
+		//
+		//Set character Info
+		//
 		var characterTalkingPosition = real(characterInfo[0]);
-		var characterTalkingId = characterOrder[characterTalkingPosition]
-		characterTalking = characters[? characterTalkingId];
+		if (characterTalkingPosition != -1) {
+			
+			var characterTalkingId = characterOrder[characterTalkingPosition]
+			characterTalking = characters[? characterTalkingId];
+			
+			//Emotion
+			if (array_length(characterInfo) > 1) {
+				characterEmotion = characterInfo[1];
+			} else {
+				characterEmotion = 0;	
+			}
 		
-		//Emotion
-		if (array_length(characterInfo) > 1) {
-			characterEmotion = characterInfo[1];
+			//Update Sprite
+			characterTalking.sprite_index = character_get_sprite(characterTalkingId, characterEmotion);
+
 		} else {
-			characterEmotion = 0;	
+
+			//Noone Talking
+			characterTalking = -1;
+
 		}
 		
-		//Update Sprite
-		characterTalking.sprite_index = character_get_sprite(characterTalkingId, characterEmotion);
-
+		//
 		//Set The Effects
 		ds_list_clear(effectList);
 		for (var effectPos = string_pos("#!", textToDisplay); effectPos != 0; effectPos = string_pos("#!", textToDisplay)) {
@@ -242,13 +280,16 @@ if (instance_exists(characterTalking) && characterTalking != -1) {
 }
 
 //move Box
-textboxCenterX = lerp(textboxCenterX, textboxGoalX, 0.2*time);
-textboxY = lerp(textboxY, textboxGoalY, 0.2*time);
+if (textToDisplay != "") {
+	textboxCenterX = lerp(textboxCenterX, textboxGoalX, 0.2*time);
+	textboxY = lerp(textboxY, textboxGoalY, 0.2*time);
+}
 
 //
 //Increase Height
 textboxOpenTicks -= time;
-var textboxHeightGoal = (textboxWritingLines+1.5) * (lineHeight) * (textboxOpenTicks < 0) * (display);
+var textboxAllowedOpen = (textboxOpenTicks < 0) * (display) * (showTextboxTicksLeft > 0);
+var textboxHeightGoal = (textboxWritingLines+1.5) * (lineHeight) * textboxAllowedOpen;
 textboxHeight = lerp(textboxHeight, textboxHeightGoal, 0.15*time);
 	
 if (!textboxHeightExpanded) {
@@ -259,10 +300,62 @@ if (!textboxHeightExpanded) {
 
 //
 //Asking Question
+var answerCount =  array_length(answerOptions);
+
 if (askingQuestion) {
 
 	//If askingQuestion is true, then the object has been setup.
+	if (showAnswers) {
 	
+		//Wait For Vertical Input
+		var my = Controller.uiDown - Controller.uiUp;
+
+		//Input
+		if (my != 0) {
+			
+			//Switch Direction Time Skip
+			if (my != lastMY) {
+				inputHeldDoneFirstTick = false;
+				lastMY = my;
+			}
+			
+			//First Input Skip
+			if (!inputHeldDoneFirstTick) {
+				inputHeldDoneFirstTick = true;
+				playerAnsweringHoveringOver += my;	
+			}
+			
+			//Time
+			inputTime-=time;
+			
+			//Wait For Time
+			if (inputTime < 0) {
+				
+				//Next
+				playerAnsweringHoveringOver += my
 	
+				//Fast Scroll
+				inputTime = timebetweenInputsMin;
+			}
+			
+			//Clamp
+			playerAnsweringHoveringOver = clamp(playerAnsweringHoveringOver, 0, answerCount-1)
+			
+		} else {
+			
+			//Reset Time If Not Hold
+			inputTime = timeBeforeFastScroll;
+			inputHeldDoneFirstTick = false;
+			
+		}
+		
+	}
 	
 }
+
+draw_set_font(fontKeira);
+var lH = string_height("|") + answerSpacing;
+var askingBoxHeightGoal =  (answerCount+1.5)*lH * askingQuestion;
+askingBoxHeight = lerp(askingBoxHeight, askingBoxHeightGoal, 0.2*time);
+
+showAnswers = (askingBoxHeightGoal > 0) && (abs(askingBoxHeight - askingBoxHeightGoal) < 0.05);

@@ -10,7 +10,7 @@ function cutscene_dialouge_question(mainTextboxKey, playereOptionsLangKeyArray, 
 		myDialogue.DialogueType = Dialogue_type.base;
 	
 		//Update
-		myDialogue.DialogueTextInfo = Dialogue_get_section(mainTextboxKey);
+		myDialogue.DialogueTextInfo = dialogue_get_section(mainTextboxKey);
 		myDialogue.characterCount = array_length(orderedCharacterArray);
 		myDialogue.characterOrder = orderedCharacterArray;
 		myDialogue.display = true;
@@ -22,13 +22,20 @@ function cutscene_dialouge_question(mainTextboxKey, playereOptionsLangKeyArray, 
 		
 		//Variance
 		myDialogue.askingQuestion = true;
+		myDialogue.playerAnsweringHoveringOver = -1;
 		
 		//Setup Answers
-		var options = []
+		draw_set_font(fontKeira); //Answers Options are always in Keira Font
+		var options = [];
 		var s = array_length(playereOptionsLangKeyArray);
-		for (var i = 0; i < s; i++) {
+		myDialogue.askingBoxWidth = myDialogue.askingBoxBaseWidth;
 		
+		for (var i = 0; i < s; i++) {
+	
 			options[i] = lang_get_text(playereOptionsLangKeyArray[i]);
+			var w = string_width(options[i]);
+		
+			myDialogue.askingBoxWidth = max(myDialogue.askingBoxWidth, w + 16);
 		
 		}
 		myDialogue.answerOptions = options;
@@ -51,6 +58,7 @@ function cutscene_dialouge_question(mainTextboxKey, playereOptionsLangKeyArray, 
 	
 		//Done, Wait For Next
 		myDialogue.watingForSetup = true;
+		myDialogue.textSection = "";
 	
 		//Hide If Needed
 		if (hideOnFinish) {

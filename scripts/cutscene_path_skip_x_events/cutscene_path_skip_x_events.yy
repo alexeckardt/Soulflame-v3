@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Dialouge/Scripts.yy",
+    "name": "Script",
+    "path": "folders/Cutscenes/Script.yy",
   },
   "resourceVersion": "1.0",
-  "name": "dialouge_get_section",
+  "name": "cutscene_path_skip_x_events",
   "tags": [],
   "resourceType": "GMScript",
 }

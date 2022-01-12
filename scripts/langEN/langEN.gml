@@ -59,6 +59,10 @@ function langEN() {
 	lang[? "te.glyph"]                            = "#!9";
 	lang[? "te.reset"]                            = "{te.fade}";
 	lang[? "test"]                                = [["Hey! Checking if the text works as intended. Let\'s see what {player.name} has to say.", "2", ], ["Wow, I can talk now.", "0", ], ["{te.rainbow}AAAAAAAAAAAA sunshines and rainbows!!!!!!!!!!!!!!!!!!!!!", "1", ], ["{te.shake}I will destroy the world!!", "1", ], ["I actually hate you.", "2", ], ["what.", "1", ]];
-	lang[? "test2"]                               = [["I\'m staying away from him.", "1", ], ["He creeps me out.", "1", ], ["Same.", "0", ], ["Let\'s get out of here", "1", ]];
+	lang[? "test2"]                               = [["I\'m staying away from him.", "1", ], ["He creeps me out.", "1", ], ["Same.", "0", ], ["Let\'s get out of here.", "1", ]];
 	lang[? "test3"]                               = [["Hey! Come back!", "0", ]];
+	lang[? "test4"]                               = [["...", "0", ], ["I has cookies!", "0", ]];
+	lang[? "test4.option1"]                       = "Take the bait";
+	lang[? "test4.option2"]                       = "Ignore";
+	lang[? "empty"]                               = "";
 }

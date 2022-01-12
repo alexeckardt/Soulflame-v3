@@ -15,7 +15,7 @@ function cutscene_dialouge_base(textSection, orderedCharacterArray, allLeftBefor
 		myDialogue.DialogueType = Dialogue_type.base;
 	
 		//Update
-		myDialogue.DialogueTextInfo = dialouge_get_section(textSection);
+		myDialogue.DialogueTextInfo = dialogue_get_section(textSection);
 		myDialogue.characterCount = array_length(orderedCharacterArray);
 		myDialogue.characterOrder = orderedCharacterArray;
 		myDialogue.display = true;
@@ -44,7 +44,8 @@ function cutscene_dialouge_base(textSection, orderedCharacterArray, allLeftBefor
 	
 		//Done, Wait For Next
 		myDialogue.watingForSetup = true;
-	
+		myDialogue.showTextbox = false;
+		
 		//Hide If Needed
 		if (hideOnFinish) {
 			myDialogue.display = false;	

@@ -64,27 +64,29 @@ if (DialogueBottomFadePercent > 0.01) {
 	display_set_gui_size(w, h);
 
 	//Draw Text Box Background
-	draw_sprite_ext(sPixel, 0, tbX, tbY, textBoxWidth, textboxHeight, 0, speechBubbleColour, 1);
+	if (textToDisplay != "") {
+		
+		//Drae BKG
+		draw_sprite_ext(sPixel, 0, tbX, tbY, textBoxWidth, textboxHeight, 0, speechBubbleColour, 1);
 
-	//Box Accessories
-	if (instance_exists(characterTalking) && characterTalking != -1 && textboxToBeOpen) {
+		//Box Accessories
+		if (instance_exists(characterTalking) && characterTalking != -1 && textboxToBeOpen) {
 		
-		//Speech Bubble Pointer	
-		var pX = pointerX
-		draw_sprite_ext(sDialogueBoxSpeechPointer, 0, pX, tbY, 1, pointerYSc, 0, speechBubbleColour, 1);
+			//Speech Bubble Pointer	
+			var pX = pointerX
+			draw_sprite_ext(sDialogueBoxSpeechPointer, 0, pX, tbY, 1, pointerYSc, 0, speechBubbleColour, 1);
 		
-		//Draw Charachter Name
-		var name = characterTalking.nameStr;
-		var cc = charachter_get_name_colour(characterTalking.characterId);
-		var textY =  tbY - lineHeight div 2;
-		draw_text_colour(nameX, textY, name, cc, cc, cc, cc, 1);
+			//Draw Charachter Name
+			var name = characterTalking.nameStr;
+			var cc = charachter_get_name_colour(characterTalking.characterId);
+			var textY =  tbY - lineHeight div 2;
+			draw_text_colour(nameX, textY, name, cc, cc, cc, cc, 1);
 		
+		}
 	}
 
-
-
 	//
-	//Draw Text
+	//Draw Text in Main Box
 	//
 
 	//Setup
@@ -151,6 +153,46 @@ if (DialogueBottomFadePercent > 0.01) {
 		//Only Draw Lines If they have been revealed
 		} else {
 			break;	
+		}
+	}
+
+	//
+	//
+	//
+	if (askingQuestion) {
+		var answerCount = array_length(answerOptions) 
+		if (answerCount > 0) {
+		
+			var abX = centerX - askingBoxWidth div 2;
+			var abY = textboxTalkingY - askingBoxHeight div 2;
+		
+			//Draw BKG	
+			draw_sprite_ext(sPixel, 0, abX, abY, askingBoxWidth, askingBoxHeight, 0, speechBubbleColour, 1);
+			
+			//Draw Answers
+			if (showAnswers) {
+				
+				//Set Font
+				draw_set_font(fontKeira);
+				draw_set_valign(fa_top);
+				draw_set_halign(fa_middle);
+				var lH = string_height("|") + answerSpacing;
+
+				//Loop Through
+				for (var i = 0; i < answerCount; i++) {
+				
+					//Get Answer
+					var answerStr = answerOptions[i];
+				
+					//Position
+					var answerY = abY + lH*(i+1);
+				
+					//Draw Text
+					var c = (playerAnsweringHoveringOver == i) ? c_white : Game.textDefCol;
+					draw_text_colour(centerX, answerY, answerStr, c, c, c, c, 1)
+				
+				}
+			}
 		}
 	}
 

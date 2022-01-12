@@ -10,9 +10,14 @@
 //
 //
 
+creator = noone;
+
 textSection = "not_set";
 sectionPart = 0;
 sectionComplete = false;
+showTextboxTicksLeft = -1;
+
+parentDialogue = noone;
 
 //Setup
 DialogueType = Dialogue_type.base;
@@ -32,7 +37,20 @@ leftGroupSize = 0;
 askingQuestion = false;
 answerOptions = [];
 lastPlayerResponse = -1;
-playerOptionHoveringOver = -1;
+playerAnsweringHoveringOver = -1;
+askingBoxBaseWidth = 96;
+askingBoxWidth = askingBoxBaseWidth;
+askingBoxHeight = 0;
+showAnswers = false;
+answerSpacing = 1;
+answerSelectedColour = c_white;
+
+//Input
+inputTime = -1;
+lastMY = 0;
+timeBeforeFastScroll = room_speed/2;
+timebetweenInputsMin = room_speed/12;
+inputHeldDoneFirstTick = false;
 
 //Return
 

@@ -22,3 +22,7 @@ moveToX = undefined;
 //Setup
 myDialogue = instance_create_depth(x, y, depth, Dialogue);
 myDialogue.creator = id;
+
+//Diverging Paths
+optionSelected = -1;
+optionSelectedText = "";
