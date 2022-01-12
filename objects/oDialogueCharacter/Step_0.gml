@@ -7,7 +7,8 @@ if (!instance_exists(parentDialogue)) {
 
 //Check If Left
 var leftGroupSize = parentDialogue.leftGroupSize
-var isLeft = orderPosition < leftGroupSize;
+if (!exitFrame) {
+	isLeft = orderPosition < leftGroupSize;}
 
 //
 //Decide Goal Position. All Calcultions will be in percents of the width of the screen.
@@ -24,7 +25,7 @@ goalX = gXp + (myGroupOrder - ((myGroupSize-1) / 2))*0.12;
 //
 
 	//Enter Frame
-	if (parentDialogue.display && enterFrame) {
+	if (parentDialogue.display && enterFrame && !exitFrame) {
 		enterFrame = false;
 		enteringFrame = true;
 		x = (isLeft) ? -0.4 : 1.4;}
@@ -36,7 +37,7 @@ goalX = gXp + (myGroupOrder - ((myGroupSize-1) / 2))*0.12;
 	}
 
 	//Exit Frame override
-	if (!parentDialogue.display) {
+	if (!parentDialogue.display || exitFrame) {
 		goalX = (isLeft) ? -0.4 : 1.4;
 		enterFrame = true;
 		enteringFrame = false;	
@@ -45,3 +46,4 @@ goalX = gXp + (myGroupOrder - ((myGroupSize-1) / 2))*0.12;
 //Slide To Correct Position
 x = lerp(x, goalX, slideSpeed*Game.delta);
 
+var name = nameStr;

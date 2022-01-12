@@ -22,7 +22,6 @@ switchedSectionPart = true;
 //Dialogue Text
 DialogueTextInfo = [];
 
-
 //Characters
 characters = ds_map_create();
 characterOrder = []
@@ -36,6 +35,7 @@ lastPlayerResponse = -1;
 playerOptionHoveringOver = -1;
 
 //Return
+
 
 //Visual
 textToDisplay = "";

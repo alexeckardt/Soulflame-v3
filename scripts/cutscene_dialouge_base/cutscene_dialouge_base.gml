@@ -7,7 +7,7 @@
 //allLeftBeforeIndex: which characters should stick on the left side. if 2, then the first two characters will stick to the left side
 //hideOnFinish: whether or not the Dialogue should appear to close after it is finished.
 //
-function cutscene_Dialogue_base(textSection, orderedCharacterArray, allLeftBeforeIndex, hideOnFinish, completelyClearCharacters = false) {
+function cutscene_dialouge_base(textSection, orderedCharacterArray, allLeftBeforeIndex, hideOnFinish, completelyClearCharacters = false) {
 
 	//Setup Dialogue for this section.
 	if (myDialogue.watingForSetup) {
@@ -15,13 +15,15 @@ function cutscene_Dialogue_base(textSection, orderedCharacterArray, allLeftBefor
 		myDialogue.DialogueType = Dialogue_type.base;
 	
 		//Update
-		myDialogue.DialogueTextInfo = Dialogue_get_section(textSection);
+		myDialogue.DialogueTextInfo = dialouge_get_section(textSection);
 		myDialogue.characterCount = array_length(orderedCharacterArray);
 		myDialogue.characterOrder = orderedCharacterArray;
 		myDialogue.display = true;
 		myDialogue.sectionComplete = false;
 		myDialogue.hideOnFinish = hideOnFinish;
 		myDialogue.leftGroupSize = allLeftBeforeIndex;
+		myDialogue.sectionPart = 0;
+		myDialogue.switchedSectionPart = true;
 		
 		myDialogue.askingQuestion = false;
 		
@@ -30,7 +32,7 @@ function cutscene_Dialogue_base(textSection, orderedCharacterArray, allLeftBefor
 		//Reset Chars
 		if (completelyClearCharacters) {ds_map_clear(myDialogue.characters);}
 		
-		Dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex);
+		dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex);
 			
 		//Stop Setup
 		myDialogue.watingForSetup = false;

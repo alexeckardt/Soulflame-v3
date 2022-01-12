@@ -2,7 +2,13 @@
 //
 //
 //
-function Dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex) {
+function dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex) {
+	
+	//Set All Characters To Exit Frame
+	with (oDialogueCharacter) {
+		exitFrame = true;
+	}
+	
 	
 	//
 	//Setup Characters
@@ -36,6 +42,7 @@ function Dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBe
 		//Set Order To Position
 		obj.orderPosition = i;
 		obj.stickLeft = (i < allLeftBeforeIndex);
+		obj.exitFrame = false;
 			
 	}
 }

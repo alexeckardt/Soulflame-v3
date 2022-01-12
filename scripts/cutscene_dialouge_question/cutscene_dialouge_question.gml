@@ -2,7 +2,7 @@
 //
 //
 //
-function cutscene_Dialogue_question(mainTextboxKey, playereOptionsLangKeyArray, orderedCharacterArray, allLeftBeforeIndex, hideOnFinish, completelyClearCharacters = false) {
+function cutscene_dialouge_question(mainTextboxKey, playereOptionsLangKeyArray, orderedCharacterArray, allLeftBeforeIndex, hideOnFinish, completelyClearCharacters = false) {
 
 	//Setup Dialogue for this section.
 	if (myDialogue.watingForSetup) {
@@ -17,6 +17,8 @@ function cutscene_Dialogue_question(mainTextboxKey, playereOptionsLangKeyArray, 
 		myDialogue.sectionComplete = false;
 		myDialogue.hideOnFinish = hideOnFinish;
 		myDialogue.leftGroupSize = allLeftBeforeIndex;
+		myDialogue.sectionPart = 0;
+		myDialogue.switchedSectionPart = true;
 		
 		//Variance
 		myDialogue.askingQuestion = true;
@@ -37,7 +39,7 @@ function cutscene_Dialogue_question(mainTextboxKey, playereOptionsLangKeyArray, 
 		//Reset Chars
 		if (completelyClearCharacters) {ds_map_clear(myDialogue.characters);}
 		
-		Dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex);
+		dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBeforeIndex);
 			
 		//Stop Setup
 		myDialogue.watingForSetup = false;

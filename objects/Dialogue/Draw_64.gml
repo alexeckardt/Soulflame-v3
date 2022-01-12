@@ -30,7 +30,8 @@ if (DialogueBottomFadePercent > 0.01) {
 
 	//Get Objs
 	var characterObjs = ds_map_values_to_array(characters);
-	for (var i = 0; i < characterCount; i++) {
+	var charachterObjCount = array_length(characterObjs);
+	for (var i = 0; i < charachterObjCount; i++) {
 
 		var obj = characterObjs[i];
 		var spr = obj.sprite_index;

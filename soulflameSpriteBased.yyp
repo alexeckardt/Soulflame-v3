@@ -186,7 +186,7 @@
     {"id":{"name":"keira_stateaction_attack_regular","path":"scripts/keira_stateaction_attack_regular/keira_stateaction_attack_regular.yy",},"order":1,},
     {"id":{"name":"dialouge_text_draw_character_with_effect","path":"scripts/dialouge_text_draw_character_with_effect/dialouge_text_draw_character_with_effect.yy",},"order":2,},
     {"id":{"name":"sKeiraAttackSwordHorizontal1","path":"sprites/sKeiraAttackSwordHorizontal1/sKeiraAttackSwordHorizontal1.yy",},"order":6,},
-    {"id":{"name":"dialouge_cutscene_setup_character_objs","path":"scripts/dialouge_cutscene_setup_character_objs/dialouge_cutscene_setup_character_objs.yy",},"order":5,},
+    {"id":{"name":"dialogue_cutscene_setup_character_objs","path":"scripts/dialogue_cutscene_setup_character_objs/dialogue_cutscene_setup_character_objs.yy",},"order":5,},
     {"id":{"name":"cutscene_dialouge_question","path":"scripts/cutscene_dialouge_question/cutscene_dialouge_question.yy",},"order":13,},
     {"id":{"name":"oConcreteRamp","path":"objects/oConcreteRamp/oConcreteRamp.yy",},"order":6,},
     {"id":{"name":"load_index_list","path":"scripts/load_index_list/load_index_list.yy",},"order":7,},

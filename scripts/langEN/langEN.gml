@@ -5,15 +5,15 @@
 function langEN() {
 	lang[? "c.cutscene_name.example"]             = [["generic text", "c", "s", "v", ]];
 
-	lang[? "Dialogue.randomnpc.greetings"]        = [["Hey There!", "0", ], ["Greetings!", "0", ]];
-	lang[? "Dialogue.randomnpc.adventurer0"]      = [["Have you seen a {beastiary.magpie} before?", "0", ], ["People brought them over from the New Continent as pets, but now, they\'re a problem from the local wildlife.", "0", ]];
+	lang[? "dialogue.randomnpc.greetings"]        = [["Hey There!", "0", ], ["Greetings!", "0", ]];
+	lang[? "dialogue.randomnpc.adventurer0"]      = [["Have you seen a {beastiary.magpie} before?", "0", ], ["People brought them over from the New Continent as pets, but now, they\'re a problem from the local wildlife.", "0", ]];
 
-	lang[? "Dialogue.shopkeeper.main"]            = "Hey There!";
+	lang[? "dialogue.shopkeeper.main"]            = [["Hey There!", "1", ]];
 
-	lang[? "dialoge.answer.shop"]                 = "Shop";
-	lang[? "dialoge.answer.talk"]                 = "Talk";
-	lang[? "dialoge.answer.leave"]                = "Leave";
-	lang[? "dialoge.answer.silly"]                = "Huh?";
+	lang[? "dialogue.answer.shop"]                = "Shop";
+	lang[? "dialogue.answer.talk"]                = "Talk";
+	lang[? "dialogue.answer.leave"]               = "Leave";
+	lang[? "dialogue.answer.silly"]               = "Huh?";
 
 	lang[? "ui.interact.interact"]                = "Interact";
 	lang[? "ui.interact.listen"]                  = "Listen";
@@ -58,5 +58,7 @@ function langEN() {
 	lang[? "te.name"]                             = "#!8";
 	lang[? "te.glyph"]                            = "#!9";
 	lang[? "te.reset"]                            = "{te.fade}";
-	lang[? "test"]                                = [["Hey! Checking if the text works as intended. Let\'s see if {player.name} works", "2", ], ["{te.rainbow}AAAAAAAAAAAA sunshines and rainbows!!!!!!!!!!!!!!!!!!!!!", "1", ], ["{te.shake}Shut up!!", "0", ], ["{te.chaos}I will destroy the world!!", "1", ], ["I actually hate you.", "2", ], ["what.", "1", ]];
+	lang[? "test"]                                = [["Hey! Checking if the text works as intended. Let\'s see what {player.name} has to say.", "2", ], ["Wow, I can talk now.", "0", ], ["{te.rainbow}AAAAAAAAAAAA sunshines and rainbows!!!!!!!!!!!!!!!!!!!!!", "1", ], ["{te.shake}I will destroy the world!!", "1", ], ["I actually hate you.", "2", ], ["what.", "1", ]];
+	lang[? "test2"]                               = [["I\'m staying away from him.", "1", ], ["He creeps me out.", "1", ], ["Same.", "0", ], ["Let\'s get out of here", "1", ]];
+	lang[? "test3"]                               = [["Hey! Come back!", "0", ]];
 }

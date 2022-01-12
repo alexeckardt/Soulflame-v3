@@ -16,3 +16,4 @@ exitFrame = false;
 enteringFrame = false
 
 slideSpeed = 0.1;
+isLeft = false;

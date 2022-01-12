@@ -5,10 +5,14 @@ var time = Game.delta;
 
 //Fade In / Out
 DialogueBottomFadePercent = lerp(DialogueBottomFadePercent, display, 0.2*time);
-if (toDie && DialogueBottomFadePercent < 0.01) {
-	Game.someUIopen = false;
-	instance_destroy();
-	exit;
+if (toDie) {
+	display = false;
+	
+	if (DialogueBottomFadePercent < 0.01) {
+		Game.someUIopen = false;
+		instance_destroy();
+		exit;
+	}
 }
 
 //Get Input
@@ -74,7 +78,7 @@ if (!watingForSetup) {
 		}
 		
 		//Update Sprite
-		characterTalking.sprite_index = character_get_sprite(characterTalkingPosition, characterEmotion);
+		characterTalking.sprite_index = character_get_sprite(characterTalkingId, characterEmotion);
 
 		//Set The Effects
 		ds_list_clear(effectList);
@@ -253,3 +257,12 @@ if (!textboxHeightExpanded) {
 	}
 }
 
+//
+//Asking Question
+if (askingQuestion) {
+
+	//If askingQuestion is true, then the object has been setup.
+	
+	
+	
+}
