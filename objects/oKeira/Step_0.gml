@@ -84,7 +84,7 @@ if (timeOffGround > -1) {
 	
 	
 		//Smooth Friction Amount
-		airFrictionMultiplierLerp = lerp(airFrictionMultiplierLerp, doAirFriction, airFrictionValue/2);
+		airFrictionMultiplierLerp = lerp(airFrictionMultiplierLerp, doAirFriction, airFrictionValue/2*time);
 	
 		//Don't Allow Changes, Basically
 		if (!doAirFriction) {
@@ -93,7 +93,7 @@ if (timeOffGround > -1) {
 		} else {
 		
 			//Smoothly Change Horizontal Speed
-			controlHSpeed = lerp(controlHSpeed, hSpeedGoal, (airFrictionValue + holdingOppositeInAir)*airFrictionMultiplierLerp);
+			controlHSpeed = lerp(controlHSpeed, hSpeedGoal, (airFrictionValue + holdingOppositeInAir)*airFrictionMultiplierLerp*time);
 			//knockbackHSpeed = lerp(knockbackHSpeed, 0, airFrictionValue);
 		}
 
@@ -104,7 +104,7 @@ if (timeOffGround > -1) {
 		airFrictionMultiplierLerp = 1;
 	
 		//Use Ground Friction
-		controlHSpeed = lerp(hSpeed, hSpeedGoal, slideValBase);
+		controlHSpeed = lerp(hSpeed, hSpeedGoal, slideValBase*time);
 		//knockbackHSpeed = lerp(knockbackHSpeed, 0, slideValBase);
 	
 		//On Ground Stuff
@@ -582,4 +582,5 @@ if (!instance_exists(Cutscene) && inControl) {
 
 
 //Other
-event_user(0);
+if (!Game.paused) {
+	event_user(0);}

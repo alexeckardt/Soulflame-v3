@@ -16,11 +16,15 @@ viewHitboxes = false;
 viewDamageBoxes = true;
 
 //Game Keep Track Of
-delta = -1;
+delta = -1; //For InGame
+indepedantDelta = -1; //Global, Always Set
 delta_scale = 60;
 
 //UI
 someUIopen = false;
+uiScale = 1;
+paused = false;
+pauseMenuObj = noone;
 
 //Corruption
 corruption_CollectEssenceIncrease		= 1/200;

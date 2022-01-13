@@ -36,6 +36,9 @@ interactPressed = false;
 uiSelectPressed = false;
 uiBackPressed = false;
 
+//Pause
+pausePressed = false
+
 //View Stick
 holdingRightStick = false;
 

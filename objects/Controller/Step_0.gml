@@ -56,6 +56,8 @@ if (usingController) {
 	uiSelectPressed = gamepad_button_check_pressed(0, gp_face1);
 	uiBackPressed = gamepad_button_check_pressed(0, gp_face2);
 	
+	pausePressed = gamepad_button_check_pressed(0, gp_start);
+	
 	uiUp = (verticalStick < 0);
 	uiDown = (verticalStick > 0);
 }
@@ -91,6 +93,8 @@ if (!usingController) {
 	
 	uiSelectPressed = keyboard_check_pressed(ord("Z"));
 	uiBackPressed = keyboard_check_pressed(ord("C"));
+	
+	pausePressed = keyboard_check_pressed(vk_escape);
 	
 	uiUp = up;
 	uiDown = down;
