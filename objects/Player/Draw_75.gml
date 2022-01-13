@@ -6,6 +6,8 @@ var guiW = Camera.view_width;
 var guiH = Camera.view_height;
 display_set_gui_size(guiW, guiH)
 
+//Exit, No More Draw
+if (Game.paused) exit;
 
 //Feather
 var featherDrawAtY = featherSurfYFromBase;

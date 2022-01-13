@@ -4,7 +4,8 @@
 close = false;
 
 //Pages
-page = 0;
+menu_pages_create();
+page = master_page;
 
 //Selecting
 elementHoverID	= -1;
@@ -30,5 +31,12 @@ displayHeight = Camera.view_height * Game.uiScale;
 	elementYShakeMulti  = 0;
 	elementYShakeTime	= 0;
 	
+//
+//Scrolling
+scrollYOffset = 0;
+	
 //Surface
 menuSurface = -1;
+
+//Visual
+selectedColour = c_white;
