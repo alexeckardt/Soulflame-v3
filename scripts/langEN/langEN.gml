@@ -27,26 +27,36 @@ function langEN() {
 
 	lang[? "ui.tutorial.walljump"]                = "Press Jump when on a wall to preform a Wall Jump";
 
-	lang[? "ui.pausemenu.header.main"]            = "Game Paused";
-	lang[? "ui.pausemenu.settings"]               = "Settings";
-	lang[? "ui.pausemenu.graphics"]               = "Graphics";
-	lang[? "ui.pausemenu.audio"]                  = "Audio";
-	lang[? "ui.pausemenu.resume"]                 = "Resume";
-	lang[? "ui.pausemenu.title"]                  = "Back to Title";
+	lang[? "menu.page.main"]                      = "Game Paused";
+	lang[? "menu.page.options"]                   = "Options";
+	lang[? "menu.page.gamesettings"]              = "Game Settings";
+	lang[? "menu.page.feedback"]                  = "Feedback";
+	lang[? "menu.page.audio"]                     = "Audio";
+	lang[? "menu.page.resume"]                    = "Resume";
+	lang[? "menu.page.back"]                      = "Back";
+	lang[? "menu.page.title"]                     = "Quit to Title";
+	lang[? "menu.page.debugsettings"]             = "Debug Settings";
+
+	lang[? "menu.e.hitboxes"]                     = "Display Hitboxes";
+	lang[? "menu.e.damageBoxes"]                  = "Display Damage Boxes";
+	lang[? "menu.e.paralax"]                      = "Paralax Amount";
+	lang[? "menu.e.paralax.desc"]                 = "(Def: 1) The amount of apparent 3d movement of background and foreground assets.";
+
+	lang[? "menu.s.reume"]                        = "Resume";
+	lang[? "menu.s.resume.desc"]                  = "Closes the Pause Menu and resumes gameplay.";
+
+	lang[? "option.visible"]                      = "Visible";
+	lang[? "option.hidden"]                       = "Hidden";
+	lang[? "option.yes"]                          = "Yes";
+	lang[? "option.no"]                           = "No";
 
 	lang[? "test.don't.change"]                   = [["don\'t change appostraphgies in text", "sko\' f", ]];
-
 	lang[? "flower.name.0"]                       = "Ruby Star Plant";
-
 	lang[? "status.name.0"]                       = "";
-
 	lang[? "beastiary.magpie"]                    = "Magpie";
-
 	lang[? "player.name"]                         = "{te.name}Keira{te.fade}";
-
 	lang[? "char.name.hugo"]                      = "{te.name}Hugo{te.fade}";
 	lang[? "char.name.adaline"]                   = "{te.name}Adaline{te.fade}";
-
 	lang[? "te.fade"]                             = "#!0";
 	lang[? "te.typewritter"]                      = "#!1";
 	lang[? "te.wavy"]                             = "#!2";

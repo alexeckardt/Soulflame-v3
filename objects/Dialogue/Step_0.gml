@@ -203,7 +203,7 @@ if (!watingForSetup) {
 		
 				//Voice
 				//if (!audio_is_playing(voiceSoundId)) {
-					//voiceSoundId = sound_effect_create(voiceSound, 10, basePitch + random_range(-pitchVariation, pitchVariation), 1);
+				//	voiceSoundId = sound_effect_create(voiceSound, 10, basePitch + random_range(-pitchVariation, pitchVariation), 1);
 				//}
 			} 
 		
@@ -218,6 +218,7 @@ if (!watingForSetup) {
 	
 		}
 	
+		//
 		//Effect Timer
 		effectTimer += time;
 	

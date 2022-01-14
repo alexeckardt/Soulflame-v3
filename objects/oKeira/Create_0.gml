@@ -12,6 +12,7 @@ attackSprite = sKeiraAttackNoWeaponPunch0;
 runSprite = sKeiraRunNoWeapon; //no animation yet LOL
 slideActivateSprite = sKeiraAttackSlideActivate;
 slideRecoverSprite = sKeiraAttackSlideRecover;
+weaponSprite = -1;
 
 //Display
 index_speed = 0;

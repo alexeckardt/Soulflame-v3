@@ -1,7 +1,7 @@
 /// @desc
 //Delta
 
-indepedantDelta = delta_time*delta_scale*0.000001;
+indepedentDelta = delta_time*delta_scale*0.000001;
 
 if (Controller.pausePressed) {
 	
@@ -28,7 +28,7 @@ if (Controller.pausePressed) {
 
 
 if (!paused) {
-	delta = indepedantDelta;
+	delta = indepedentDelta;
 	if (delta > 10) {
 		delta = 0.00001;
 	}
@@ -37,4 +37,4 @@ if (!paused) {
 }
 
 //Keep Track Of Time
-timeInGame += indepedantDelta;
+timeInGame += indepedentDelta;

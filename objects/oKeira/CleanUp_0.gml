@@ -1,3 +1,3 @@
 /// @desc
 
-ds_map_destroy(SpriteMap);
+cleanup_ds_map(SpriteMap);

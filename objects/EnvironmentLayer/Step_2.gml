@@ -17,8 +17,8 @@ for (var i = 0; i < paralaxSpriteCount; i++) {
 	var sprOrgY = objId.orgY;
 	
 	//Calculate
-	var xdiff = (cX - sprOrgX + cW)*doX*paralaxAmount;
-	var ydiff = (cY - sprOrgY + cH)*doY*paralaxAmount;
+	var xdiff = (cX - sprOrgX + cW)*doX*paralaxAmount*Game.paralaxScale;
+	var ydiff = (cY - sprOrgY + cH)*doY*paralaxAmount*Game.paralaxScale;
 	
 	//Readd
 	var newX = sprOrgX - xdiff;

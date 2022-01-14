@@ -1,2 +1,2 @@
 /// @desc
-ds_map_destroy(persistance);
+cleanup_ds_map(persistence);

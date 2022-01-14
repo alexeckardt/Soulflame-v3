@@ -10,6 +10,8 @@ function menu_pages_create(){
 	
 	// Run Simple Script on Press:		[displayLangKey", m_e.script_runner, scriptToRun]
 	// Change Variable on Press:		[displayLangKey, m_e.shift_through_indexes, instance, variableName, [whatToDisplayForEachOption]]
+	// Change Slider:					[displayLangKey, m_e.slider, instance, variableName, minValue, maxValue, segments]
+	// Change Page:						["Button Name",	m_e.shift_through_indexes, instance, variableName, [whatToDisplayForEachOption]]
 
 
 	var p = Player.id;
@@ -18,13 +20,65 @@ function menu_pages_create(){
 	master_page = menu_page_create("menu.page.main",
 			[
 	
+				["resume",		m_e.script_runner,	menu_close_menu, []],
+				[],
+				["options",		m_e.page_transfer,	"options_page", ],
+				["feedback",	m_e.page_transfer,	"feedback_bugs_page", ],
+				["statistics",	m_e.page_transfer,	"statistics_page", ],
+				[],
+				["title",		m_e.script_runner,	menu_return_to_title, []],
+			]
+			);
+	
+	options_page = menu_page_create("menu.page.options",
+			[
+				["back",				m_e.page_transfer,	"master_page", ],
+				[],
+				["paralax",				m_e.slider,			g, "paralaxScale",	0, 1.5, 15],
+				[],
+				["settings",			m_e.page_transfer,	"optionspage", ],
+				["audio",				m_e.page_transfer,	"audio_page", ],
+				["debugsettings",		m_e.page_transfer,	"debug_settings_page", ],
+			]
+			);
+	
+	audio_page = menu_page_create("menu.page.audio",
+			[
+				["back",				m_e.page_transfer,	"master_page", ],
+				[],
+			]
+			);
+			
+			
+	debug_settings_page = menu_page_create("menu.page.debugsettings",
+			[
+	
 				//["",						m_e.script_runner,	],
+				["back",				m_e.page_transfer,	"options_page", ],
+				[],
 				["hitboxes",		m_e.shift_through_indexes,	g, "viewHitboxes",		["option.hidden", "option.visible"]],
 				["damageBoxes",		m_e.shift_through_indexes,	g, "viewDamageBoxes",	["option.hidden", "option.visible"]],
+				
 	
 			]
 			);
 				
+	statistics_page = menu_page_create("menu.page.statistics",
+			[
 	
+				["back",				m_e.page_transfer,	"master_page", ],
+				[],
+
+			]
+			);
+			
+	feedback_bugs_page = menu_page_create("menu.page.feedback",
+			[
+	
+				["back",				m_e.page_transfer,	"master_page", ],
+				[],
+	
+			]
+			);
 
 }

@@ -17,7 +17,7 @@ viewDamageBoxes = true;
 
 //Game Keep Track Of
 delta = -1; //For InGame
-indepedantDelta = -1; //Global, Always Set
+indepedentDelta = -1; //Global, Always Set
 delta_scale = 60;
 
 //UI
@@ -41,3 +41,6 @@ textOrderCol = bgr($d7b851);
 textBalancedCol = bgr($c1d8da);
 textChaosCol = bgr($8a2db9);
 textDefCol = $6b6b6b;
+
+//Some Settings
+paralaxScale = 1;

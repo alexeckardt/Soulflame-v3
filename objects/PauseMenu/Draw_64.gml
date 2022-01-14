@@ -9,6 +9,7 @@ var backgroundColour = $030303;
 var pageName = page[0];
 var pageList = page[1];
 
+draw_set_font(menuElementFont);
 
 //
 //Size
@@ -142,6 +143,42 @@ for (var j = 0; j < elementsOnPage; j++) {
 					
 					draw_set_halign(fa_left);
 					draw_text_colour(drawElementRightX, drawY, currentOptionState, c,c,c,c,1);
+					
+					break;
+				
+				
+			//----------------------------------------------------------------
+			
+			case m_e.slider:
+			
+					//Draw Name Right Aligned
+					draw_text_colour(drawElementLeftX, drawY, elementName, c,c,c,c,1);
+					
+					//Upack
+					var objId = elementInfo[3];
+					var varName = elementInfo[4];
+					var minVal = elementInfo[5];
+					var maxVal = elementInfo[6];
+					var segments = elementInfo[7];
+					
+					//Get Value
+					var varValue = variable_instance_get(objId, varName);			
+					var valueSlider = floor((varValue / maxVal) * segments);
+					
+					var sliderSegmentWidth = sliderWidth div segments;
+					var noDoneC = c_dkgray;
+						
+					for (var i = 0; i < segments; i++) {
+					
+						var sliderSegmentC = (i < valueSlider) ? c : noDoneC;
+						var segX = drawElementRightX + i*sliderSegmentWidth;
+						
+						//
+						draw_sprite_ext(sPixel, 0, segX, drawY-2, sliderSegmentWidth, elementHeight, 0, sliderSegmentC, 1);
+					}
+					
+					draw_set_halign(fa_left);
+					draw_text_colour(drawElementRightX + sliderWidth + 3, drawY, string(varValue), c,c,c,c, 1);
 					
 					break;
 				

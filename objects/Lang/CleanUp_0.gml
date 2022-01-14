@@ -1,2 +1,2 @@
 /// @description 
-ds_map_destroy(lang);
+cleanup_ds_map(lang);

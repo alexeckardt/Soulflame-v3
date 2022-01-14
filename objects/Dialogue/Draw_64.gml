@@ -56,7 +56,6 @@ if (DialogueBottomFadePercent > 0.01) {
 	draw_set_valign(fa_top);
 	draw_set_font(displayFont);
 
-
 	var tbX = textboxCenterX - textBoxWidth div 2;
 	var tbY = textboxY - textboxHeight div 2; //+ ;
 	

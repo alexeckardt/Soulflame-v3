@@ -19,6 +19,7 @@ function menu_page_create(_pageName, _elementArray){
 		
 		//Put In List List
 		ds_list_add(ds_list_id, processedelementArray);
+
 	
 	}
 	
