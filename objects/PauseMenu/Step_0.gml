@@ -16,14 +16,15 @@ var pageList = page[1];
 	
 	//Wait For Vertical Input
 	var my = Controller.uiDown - Controller.uiUp;
-
+	var mx = Controller.right - Controller.left;
+	 
 	//On First 
 	if (my != lastMY) {
 		lastMY = my;
 		vScrollResetTime = 100;}
 
 	//Input
-	if (my != 0) {
+	if (my != 0 && mx == 0) {
 			
 		vInputTime -= Game.indepedentDelta;
 		vScrollResetTime -=  Game.indepedentDelta
@@ -58,14 +59,10 @@ var pageList = page[1];
 //Interacting
 if (Controller.uiBackPressed) {
 	
-	//Controller
-	Controller.uiSelectPressed = false;
+	//Force Select
+	Controller.uiSelectPressed = true;
 	
-	//Go Back A Page
-	elementHoverID = 0;
-	var elementInfo = pageList[| elementHoverID];
-	var pageTo = elementInfo[3];
-	page = variable_instance_get(id, pageTo);
+	//Go To Find Index (We assume the first index is a "Back" command)
 	elementHoverID = 0;
 }
 
@@ -124,16 +121,14 @@ if (Controller.uiBackPressed) {
 		
 			//!!
 			if (type == m_e.slider) {
-			
-				var mx = Controller.right - Controller.left;
-			
+					
 				//On First 
 				if (mx != lastMX) {
 					lastMX = mx;
 					hScrollResetTime = 100;}
 
 				//Input
-				if (mx != 0) {
+				if (mx != 0 && my == 0) {
 			
 					hInputTime -= Game.indepedentDelta;
 					hScrollResetTime -=  Game.indepedentDelta

@@ -6,7 +6,7 @@
     {"id":{"name":"particle_type_obj_exists","path":"scripts/particle_type_obj_exists/particle_type_obj_exists.yy",},"order":4,},
     {"id":{"name":"oEnemyPiece","path":"objects/oEnemyPiece/oEnemyPiece.yy",},"order":5,},
     {"id":{"name":"EnvironmentInit","path":"objects/EnvironmentInit/EnvironmentInit.yy",},"order":0,},
-    {"id":{"name":"PauseMenu","path":"objects/PauseMenu/PauseMenu.yy",},"order":9,},
+    {"id":{"name":"PauseMenu","path":"objects/PauseMenu/PauseMenu.yy",},"order":23,},
     {"id":{"name":"save_get_player_position","path":"scripts/save_get_player_position/save_get_player_position.yy",},"order":8,},
     {"id":{"name":"script_execute_alt","path":"scripts/script_execute_alt/script_execute_alt.yy",},"order":0,},
     {"id":{"name":"linear_search_array","path":"scripts/linear_search_array/linear_search_array.yy",},"order":13,},

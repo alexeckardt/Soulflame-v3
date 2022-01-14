@@ -75,13 +75,14 @@ function menu_element_create(_elementInfo) {
 					var minVal						= _elementInfo[4];
 					var maxVal						= _elementInfo[5];
 					var segments					= _elementInfo[6];
+					var asPercent					= _elementInfo[7];
 				
 					//Get Name and Desc
 					var name = lang_get_text("menu.e." + nameSuffix);
 					var desc = lang_get_text("menu.e." + nameSuffix + ".desc");
 					
 					//Repack
-					return [type, name, desc, instanceId, variableName, minVal, maxVal, segments ];
+					return [type, name, desc, instanceId, variableName, minVal, maxVal, segments, asPercent];
 			}
 		
 		}

@@ -160,6 +160,7 @@ for (var j = 0; j < elementsOnPage; j++) {
 					var minVal = elementInfo[5];
 					var maxVal = elementInfo[6];
 					var segments = elementInfo[7];
+					var asPercent = elementInfo[8];
 					
 					//Get Value
 					var varValue = variable_instance_get(objId, varName);			
@@ -178,6 +179,8 @@ for (var j = 0; j < elementsOnPage; j++) {
 					}
 					
 					draw_set_halign(fa_left);
+					if (asPercent) {
+						varValue = string(round(varValue * 100)) + " %";}
 					draw_text_colour(drawElementRightX + sliderWidth + 3, drawY, string(varValue), c,c,c,c, 1);
 					
 					break;

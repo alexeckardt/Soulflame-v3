@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Meta",
-    "path": "folders/Meta.yy",
+    "name": "soulflameSpriteBased",
+    "path": "soulflameSpriteBased.yyp",
   },
   "resourceVersion": "1.0",
   "name": "PauseMenu",

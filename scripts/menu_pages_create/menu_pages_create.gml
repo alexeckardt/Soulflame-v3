@@ -34,7 +34,7 @@ function menu_pages_create(){
 			[
 				["back",				m_e.page_transfer,	"master_page", ],
 				[],
-				["paralax",				m_e.slider,			g, "paralaxScale",	0, 1.5, 15],
+				["paralax",				m_e.slider,			g, "paralaxScale",	0, 1.5, 15, true],
 				[],
 				["settings",			m_e.page_transfer,	"optionspage", ],
 				["audio",				m_e.page_transfer,	"audio_page", ],
