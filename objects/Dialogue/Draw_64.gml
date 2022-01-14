@@ -5,6 +5,8 @@ var h = Camera.view_height;
 
 var z = Camera.zoom;
 
+if (Game.paused) {exit;}
+
 //Draw Background
 display_set_gui_size(w, h);
 

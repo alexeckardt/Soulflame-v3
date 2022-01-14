@@ -12,7 +12,6 @@ draw_set_font(menuElementFont);
 
 //
 //Size
-display_set_gui_size(displayWidth, displayHeight);
 
 //
 //Surface Create & Resize
@@ -239,8 +238,10 @@ for (var j = 0; j < elementsOnPage; j++) {
 surface_reset_target();
 
 //Draw Surfaces
+display_set_gui_size(Camera.view_width, Camera.view_height);
 draw_surface(backgroundSurf, -1, -1);
 
+display_set_gui_size(displayWidth, displayHeight);
 shader_set(shdGreenScreen);
 	draw_surface(menuSurface, -1, -1);
 shader_reset();
