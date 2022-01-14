@@ -25,6 +25,10 @@ tokenRowHeight = 15;
 tokenListBufferY = tokenRowHeight div 2;
 heartBorderBuffer = 12;
 
+//Scale
+uiScale = 1;
+showUI = false;
+
 //Corruption
 corruptionPercent = 0;
 corruptionResistance = 1; //divisor of how much essence is added to corruptionMeter. Changed with talismans.
@@ -33,10 +37,15 @@ corruptionResistance = 1; //divisor of how much essence is added to corruptionMe
 featherSurf = -1;
 featherSurfDim = 64;
 featherSpr = sCorruptionFeather;
+featherInd = 0;
+
 featherYoffset = 0;
 
 featherSurfXFromBase = 10;
 featherSurfYFromBase = -5;
+
+u_pixelW = shader_get_uniform(shdFeatherOutline, "pixelW");
+u_pixelH = shader_get_uniform(shdFeatherOutline, "pixelH");
 
 //Attacks
 weaponUsing = weapon.none;

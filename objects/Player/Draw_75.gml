@@ -1,13 +1,14 @@
 /// @desc
 
 var keira = instance_nearest(x, y, oKeira);
-
-var guiW = Camera.view_width;
-var guiH = Camera.view_height;
-display_set_gui_size(guiW, guiH)
-
 //Exit, No More Draw
 if (Game.paused) exit;
+
+//Set Scale
+var guiW = Camera.view_width / uiScale;
+var guiH = Camera.view_height / uiScale;
+display_set_gui_size(guiW, guiH);
+
 
 //Feather
 var featherDrawAtY = featherSurfYFromBase;
@@ -25,7 +26,7 @@ if (!surface_exists(featherSurf)) {
 		
 		//Clear
 		draw_clear_alpha(0, 0);
-		draw_clear(0); //temp
+		//draw_clear(0); //temp
 		
 		//Draw Base Feather
 		draw_sprite(featherSpr, 0, 0, featherYoffset);
@@ -33,15 +34,24 @@ if (!surface_exists(featherSurf)) {
 		//Draw Text Above
 		//TEMP
 		
-		draw_text(10, 10, corruptionPercent);
+		//draw_text(10, 10, corruptionPercent);
 	
 	
 	surface_reset_target();
 	
 	//Draw On GUI
-	//Outline Shader
+	
 	var surfX = guiW - featherSurfDim + featherSurfXFromBase;
-	draw_surface(featherSurf, surfX, featherDrawAtY);
+	
+	//Outline Shader
+	shader_set(shdFeatherOutline);
+		var shaderTex = surface_get_texture(featherSurf);
+		var texelW = texture_get_texel_width(shaderTex);
+		var texelH = texture_get_texel_height(shaderTex);
+		shader_set_uniform_f(u_pixelW, texelW)
+		shader_set_uniform_f(u_pixelH, texelH)
+	
+		draw_surface(featherSurf, surfX, featherDrawAtY);
 	
 	shader_reset();
 	
@@ -261,7 +271,7 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 	
 	}
 
-draw_text(10, 10, Controller.rightStickDirection);
+//draw_text(10, 10, Controller.rightStickDirection);
 
 
 //Interaction Over Player

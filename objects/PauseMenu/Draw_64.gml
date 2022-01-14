@@ -54,6 +54,7 @@ for (var j = 0; j < elementsOnPage; j++) {
 
 	//Reset Alignment
 	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
 
 	var elementInfo = pageList[| j];
 
@@ -168,7 +169,9 @@ for (var j = 0; j < elementsOnPage; j++) {
 					
 					var sliderSegmentWidth = sliderWidth div segments;
 					var noDoneC = c_dkgray;
-						
+					
+					//
+					//
 					for (var i = 0; i < segments; i++) {
 					
 						var sliderSegmentC = (i < valueSlider) ? c : noDoneC;

@@ -2,6 +2,10 @@
 
 var time = Game.delta
 
+//Squish and Squash
+squishX = lerp(squishX, 0, squishReturnSpeed*time);
+squishY = lerp(squishY, 0, squishReturnSpeed*time);
+
 //Gravity
 if (timeOffGround > -1) {
 

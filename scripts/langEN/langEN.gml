@@ -36,19 +36,33 @@ function langEN() {
 	lang[? "menu.page.back"]                      = "Back";
 	lang[? "menu.page.title"]                     = "Quit to Title";
 	lang[? "menu.page.debugsettings"]             = "Debug Settings";
+	lang[? "menu.page.statistics"]                = "Statistics";
+
+	lang[? "menu.s.reume"]                        = "Resume";
+	lang[? "menu.s.resume.desc"]                  = "Closes the Pause Menu and resumes gameplay.";
 
 	lang[? "menu.e.hitboxes"]                     = "Display Hitboxes";
 	lang[? "menu.e.damageBoxes"]                  = "Display Damage Boxes";
 	lang[? "menu.e.paralax"]                      = "Paralax Amount";
 	lang[? "menu.e.paralax.desc"]                 = "(Def: 1) The amount of apparent 3d movement of background and foreground assets.";
-
-	lang[? "menu.s.reume"]                        = "Resume";
-	lang[? "menu.s.resume.desc"]                  = "Closes the Pause Menu and resumes gameplay.";
+	lang[? "menu.e.showdebug"]                    = "Show Debug Overlay";
+	lang[? "menu.e.showui"]                       = "Show UI";
+	lang[? "menu.e.uiscale"]                      = "UI Scale";
+	lang[? "menu.e.windowmode"]                   = "Window Mode";
+	lang[? "menu.e.frameSkips"]                   = "Visual FPS";
+	lang[? "menu.e.frameSkips.desc"]              = "Increases preformance by reducing the amount of frames being drawn to the screen.";
+	lang[? "menu.e."]                             = "";
 
 	lang[? "option.visible"]                      = "Visible";
 	lang[? "option.hidden"]                       = "Hidden";
 	lang[? "option.yes"]                          = "Yes";
 	lang[? "option.no"]                           = "No";
+	lang[? "option.windowed"]                     = "";
+	lang[? "option.fullscreen"]                   = "";
+	lang[? "option.skip0"]                        = "No Frame Skips (60fps)";
+	lang[? "option.skip1"]                        = "Skip Every Other Frame (30fps)";
+	lang[? "option.skip2"]                        = "Draw every third frame (20fps)";
+	lang[? "option.skip3"]                        = "Draw every fourth frame (15fps)";
 
 	lang[? "test.don't.change"]                   = [["don\'t change appostraphgies in text", "sko\' f", ]];
 	lang[? "flower.name.0"]                       = "Ruby Star Plant";

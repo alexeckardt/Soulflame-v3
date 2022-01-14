@@ -38,3 +38,10 @@ if (!paused) {
 
 //Keep Track Of Time
 timeInGame += indepedentDelta;
+
+//Settings
+show_debug_overlay(showDebugOverlay);
+
+//Frame Skips
+frameSkipCounter++;
+draw_enable_drawevent(frameSkipCounter % (frameSkips+1) == 0);

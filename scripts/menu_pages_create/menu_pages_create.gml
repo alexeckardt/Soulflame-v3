@@ -34,13 +34,18 @@ function menu_pages_create(){
 			[
 				["back",				m_e.page_transfer,	"master_page", ],
 				[],
-				["paralax",				m_e.slider,			g, "paralaxScale",	0, 1.5, 15, true],
+				["showui",				m_e.shift_through_indexes,	p, "showUI",			["option.hidden", "option.visible"]],
+				["uiscale",				m_e.slider,					p, "uiScale",			0.25, 1.5, 5, true],
+				["windowmode",			m_e.shift_through_indexes,	g, "fullscreen",		["option.windowed", "option.fullscreen"]],
+				["frameSkips",			m_e.shift_through_indexes,	g, "frameSkips",		["option.skip0", "option.skip1", "option.skip2", "option.skip3", "option.skip4"]],
 				[],
-				["settings",			m_e.page_transfer,	"optionspage", ],
+				["paralax",				m_e.slider,				g, "paralaxScale",	0, 1.5, 15, true],
+				[],
 				["audio",				m_e.page_transfer,	"audio_page", ],
 				["debugsettings",		m_e.page_transfer,	"debug_settings_page", ],
 			]
 			);
+
 	
 	audio_page = menu_page_create("menu.page.audio",
 			[
@@ -55,6 +60,8 @@ function menu_pages_create(){
 	
 				//["",						m_e.script_runner,	],
 				["back",				m_e.page_transfer,	"options_page", ],
+				[],
+				["showdebug",		m_e.shift_through_indexes,	g, "showDebugOverlay",	["option.hidden", "option.visible"]],
 				[],
 				["hitboxes",		m_e.shift_through_indexes,	g, "viewHitboxes",		["option.hidden", "option.visible"]],
 				["damageBoxes",		m_e.shift_through_indexes,	g, "viewDamageBoxes",	["option.hidden", "option.visible"]],

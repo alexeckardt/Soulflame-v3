@@ -3,10 +3,9 @@
 
 
 //Switch To Full Screen
-if (Controller.updateFullScreen) {
-	window_set_fullscreen(!window_get_fullscreen());
+if (window_get_fullscreen() != Game.fullscreen) {
+	window_set_fullscreen(Game.fullscreen);
 	display_reset(0, false);
-	Controller.updateFullScreen = false;
 }
 
 //photo Mode

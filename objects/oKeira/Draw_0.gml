@@ -1,9 +1,5 @@
 /// @desc
 
-//Squish and Squash
-squishX = lerp(squishX, 0, squishReturnSpeed);
-squishY = lerp(squishY, 0, squishReturnSpeed);
-
 var xsc = directionFacing * (1 + squishX);
 var ysc = (1 + squishY);
 

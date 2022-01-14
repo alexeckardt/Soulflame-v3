@@ -44,3 +44,7 @@ textDefCol = $6b6b6b;
 
 //Some Settings
 paralaxScale = 1;
+showDebugOverlay = false;
+fullscreen = false;
+frameSkips = 0;
+	frameSkipCounter = 0;

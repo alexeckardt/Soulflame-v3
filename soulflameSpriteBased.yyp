@@ -148,6 +148,7 @@
     {"id":{"name":"sBlankEnemy","path":"sprites/sBlankEnemy/sBlankEnemy.yy",},"order":0,},
     {"id":{"name":"particle_create_dust","path":"scripts/particle_create_dust/particle_create_dust.yy",},"order":2,},
     {"id":{"name":"sCorruptionFeather","path":"sprites/sCorruptionFeather/sCorruptionFeather.yy",},"order":0,},
+    {"id":{"name":"shdFeatherOutline","path":"shaders/shdFeatherOutline/shdFeatherOutline.yy",},"order":1,},
     {"id":{"name":"enum_weapon","path":"scripts/enum_weapon/enum_weapon.yy",},"order":3,},
     {"id":{"name":"lang_import_lang","path":"scripts/lang_import_lang/lang_import_lang.yy",},"order":2,},
     {"id":{"name":"sPartCoinSparkle","path":"sprites/sPartCoinSparkle/sPartCoinSparkle.yy",},"order":2,},
