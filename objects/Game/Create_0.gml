@@ -22,7 +22,6 @@ delta_scale = 60;
 
 //UI
 someUIopen = false;
-uiScale = 1;
 paused = false;
 pauseMenuObj = noone;
 
@@ -45,6 +44,6 @@ textDefCol = $6b6b6b;
 //Some Settings
 paralaxScale = 1;
 showDebugOverlay = false;
-fullscreen = false;
+fullscreen = true;
 frameSkips = 0;
 	frameSkipCounter = 0;

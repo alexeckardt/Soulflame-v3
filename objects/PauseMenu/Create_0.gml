@@ -6,6 +6,7 @@ close = false;
 //Pages
 menu_pages_create();
 page = master_page;
+page_varname_one = "master_page";
 
 //Selecting
 elementHoverID	= 0;
@@ -13,8 +14,8 @@ prevElementHoverID	= -1;
 ticksOnSameElement = 0;
 
 //Sizes
-displayWidth =	Camera.view_width * Game.uiScale;
-displayHeight = Camera.view_height * Game.uiScale;
+displayWidth =	Camera.view_width / Player.uiScale;
+displayHeight = Camera.view_height / Player.uiScale;
 
 //
 //Positions
@@ -25,7 +26,6 @@ displayHeight = Camera.view_height * Game.uiScale;
 	elementHeight		= string_height("|");
 	elementSpacing		= 5;
 
-	middleLine			= displayWidth / 2;
 	middleBuffer		= 16;
 
 	//Visual
@@ -36,9 +36,14 @@ displayHeight = Camera.view_height * Game.uiScale;
 //
 //Scrolling
 scrollYOffset = 0;
+scrollYGoal = 0;
 lastMY = 0;
 lastMX = 0;
 inputHeldDoneFirstTick = 0;
+lastElementGoesXHigh = 16;
+barBuffer = 2;
+
+barWidth = 4;
 
 hInputTime = -1;
 vInputTime = -1;
@@ -48,6 +53,11 @@ hScrollResetTime = 0;
 
 //Surface
 menuSurface = -1;
+backgroundSurf = -1;
+surfaceScaleCreatedAt = 0;
 
 //Visual
 selectedColour = c_white;
+backgroundColour = $030303;
+cantscrollBarCol = backgroundColour;
+canscrollBarCol = c_dkgray;

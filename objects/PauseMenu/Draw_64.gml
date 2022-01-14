@@ -4,7 +4,6 @@
 //
 
 //TempVariable Setup
-var backgroundColour = $030303;
 
 var pageName = page[0];
 var pageList = page[1];
@@ -16,10 +15,26 @@ draw_set_font(menuElementFont);
 display_set_gui_size(displayWidth, displayHeight);
 
 //
-//Surface
+//Surface Create & Resize
 if (!surface_exists(menuSurface)){
-	menuSurface = surface_create(Camera.view_width + 2, Camera.view_height + 2);}
-surface_set_target(menuSurface);
+	menuSurface = surface_create(displayWidth + 2, displayHeight + 2);
+}
+	
+if (surface_get_width(menuSurface) != displayWidth + 2) {
+	surface_resize(menuSurface, displayWidth + 2, displayHeight + 2);
+	surfaceScaleCreatedAt = Player.uiScale;
+}
+	
+//
+//Constant Background
+if (!surface_exists(backgroundSurf)){
+	backgroundSurf = surface_create(Camera.view_width+2, Camera.view_height+2);
+}
+	
+	
+
+//Resize
+var middleLine	= displayWidth div 2;
 
 
 //-----------------------------------------------------------------------------------
@@ -27,8 +42,10 @@ surface_set_target(menuSurface);
 //-----------------------------------------------------------------------------------
 
 //Temp
+surface_set_target(backgroundSurf);
 draw_clear_alpha(backgroundColour, 0.8);
 
+surface_reset_target();
 
 //-----------------------------------------------------------------------------------
 //===============================Particles========================
@@ -45,8 +62,29 @@ draw_clear_alpha(backgroundColour, 0.8);
 //===============================Elements===========================================
 //-----------------------------------------------------------------------------------
 
+//Green Screen
+surface_set_target(menuSurface);
+
+draw_clear($00ff00);
+ 
+//Page name
+	draw_set_font(fontExcelsiorLarge);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_top);
+
+	var titleC	= c_dkgray;
+	var titleYY	= 48 / Player.uiScale - scrollYOffset*0.5;
+
+	draw_text_colour(middleLine, titleYY, pageName, titleC,titleC,titleC,titleC,1);
+
+//Elements
+draw_set_font(menuElementFont);
+
 //Scroll Position
-var baseYY = startDrawElementAtY - floor(scrollYOffset);
+var baseYY = (startDrawElementAtY) / Player.uiScale - floor(scrollYOffset);
+
+//Eclipse Title
+draw_sprite_ext(sPixel, 0, 0, baseYY - 5, displayWidth, displayHeight, 0, $00ff00, 1);
 
 //Loop Through Each Elements
 var elementsOnPage = ds_list_size(pageList);
@@ -57,8 +95,6 @@ for (var j = 0; j < elementsOnPage; j++) {
 	draw_set_valign(fa_top);
 
 	var elementInfo = pageList[| j];
-
-
 
 	//Get If Hovering Over
 	var shakee = 0;
@@ -92,8 +128,8 @@ for (var j = 0; j < elementsOnPage; j++) {
 		
 		//Right Align Text On Left Side Of Line (The Element Name)
 		draw_set_halign(fa_right);
-		var drawElementLeftX = middleLine - middleBuffer;
-		var drawElementRightX = middleLine + middleBuffer;
+		var drawElementLeftX = (middleLine - middleBuffer);
+		var drawElementRightX = (middleLine + middleBuffer);
 		
 		//Colour Set
 		var c = (thisElementSelected) ? selectedColour : c_gray;
@@ -195,7 +231,6 @@ for (var j = 0; j < elementsOnPage; j++) {
 	}
 }
 
-
 //-----------------------------------------------------------------------------------
 //===============================DRAW SURFACE===========================================
 //-----------------------------------------------------------------------------------
@@ -203,5 +238,9 @@ for (var j = 0; j < elementsOnPage; j++) {
 //Exit
 surface_reset_target();
 
-//Draw Surface
-draw_surface(menuSurface, 0, 0);
+//Draw Surfaces
+draw_surface(backgroundSurf, -1, -1);
+
+shader_set(shdGreenScreen);
+	draw_surface(menuSurface, -1, -1);
+shader_reset();

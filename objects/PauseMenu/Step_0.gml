@@ -6,8 +6,8 @@ if (close) {
 }
 
 //Scaling
-displayWidth =	Camera.view_width * Game.uiScale;
-displayHeight = Camera.view_height * Game.uiScale;
+displayWidth =	Camera.view_width / Player.uiScale;
+displayHeight = Camera.view_height / Player.uiScale;
 
 //Get
 var pageList = page[1];
@@ -46,8 +46,17 @@ var pageList = page[1];
 			elementHoverID = clamp(newId, 0, elementCount-1)
 
 			//Reset Scroll Time
-			vScrollResetTime = ticksUntilIncreaseOnHold
+			vScrollResetTime = ticksUntilIncreaseOnHold;
 			
+			//Scroll
+			if (page[3] == true) {
+				var hoveringOverY = startDrawElementAtY + (elementHeight+elementSpacing)*elementHoverID;
+				startScrollY = displayHeight*0.6;
+			
+				//ChooSe Goal Y
+				var pageHeight = ds_list_size(pageList) * (elementHeight + elementSpacing);
+				scrollYGoal = clamp(hoveringOverY - startScrollY, 0, max(0, pageHeight - lastElementGoesXHigh));
+			}
 		}	
 	} else {
 		
@@ -55,8 +64,12 @@ var pageList = page[1];
 		
 	}
 	
+	//Scroll
+	scrollYOffset = lerp(scrollYOffset, scrollYGoal, 0.1*Game.indepedentDelta);
+	
 	
 //Interacting
+var resetElementHoveringRetention = false;
 if (Controller.uiBackPressed) {
 	
 	//Force Select
@@ -64,6 +77,7 @@ if (Controller.uiBackPressed) {
 	
 	//Go To Find Index (We assume the first index is a "Back" command)
 	elementHoverID = 0;
+	resetElementHoveringRetention = true;
 }
 
 
@@ -85,8 +99,21 @@ if (Controller.uiBackPressed) {
 					case m_e.page_transfer:
 				
 						var pageTo = elementInfo[3];
-						page = variable_instance_get(id, pageTo);
-						elementHoverID = 0;
+						
+						//Remeber Element Pressed
+						array_set(variable_instance_get(id, page_varname_one), 2, elementHoverID*(!resetElementHoveringRetention));
+						
+						
+						//Go To Next Page
+						page = variable_instance_get(id, pageTo);	
+						page_varname_one = pageTo;
+						
+						//Reget
+						elementHoverID = page[2];
+						scrollYOffset = 0;
+						scrollYGoal = 0;
+						
+						
 					
 						break;
 					
@@ -131,11 +158,14 @@ if (Controller.uiBackPressed) {
 				if (mx != 0 && my == 0) {
 			
 					hInputTime -= Game.indepedentDelta;
-					hScrollResetTime -=  Game.indepedentDelta
+					hScrollResetTime -=  Game.indepedentDelta;
 		
 					//Scroll Slow then Fast
-					var ticksUntilIncreaseOnHold = 3;
+					var ticksUntilIncreaseOnHold = 1;
 					if ((hScrollResetTime < 0) && (hInputTime < 0)) || (hScrollResetTime > ticksUntilIncreaseOnHold) { 
+			
+						//Reset Scroll Time
+						hScrollResetTime = ticksUntilIncreaseOnHold;
 			
 						//Upack
 						var objId = elementInfo[3];
@@ -160,9 +190,6 @@ if (Controller.uiBackPressed) {
 					hInputTime = scrollingHowLongHoldUntilFast
 		
 				}
-			
-				//Reset
-				lastMX = mx;
 					
 			}
 		

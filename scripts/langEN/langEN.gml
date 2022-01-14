@@ -32,13 +32,14 @@ function langEN() {
 	lang[? "menu.page.gamesettings"]              = "Game Settings";
 	lang[? "menu.page.feedback"]                  = "Feedback";
 	lang[? "menu.page.audio"]                     = "Audio";
-	lang[? "menu.page.resume"]                    = "Resume";
+
 	lang[? "menu.page.back"]                      = "Back";
 	lang[? "menu.page.title"]                     = "Quit to Title";
 	lang[? "menu.page.debugsettings"]             = "Debug Settings";
 	lang[? "menu.page.statistics"]                = "Statistics";
 
-	lang[? "menu.s.reume"]                        = "Resume";
+	lang[? "menu.s.resume"]                       = "Resume";
+	lang[? "menu.s.title"]                        = "Quit to Title";
 	lang[? "menu.s.resume.desc"]                  = "Closes the Pause Menu and resumes gameplay.";
 
 	lang[? "menu.e.hitboxes"]                     = "Display Hitboxes";

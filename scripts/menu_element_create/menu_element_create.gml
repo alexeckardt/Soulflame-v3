@@ -39,8 +39,8 @@ function menu_element_create(_elementInfo) {
 					var argsUse = _elementInfo[3];
 				
 					//Name
-					var name = lang_get_text("" + nameSuffix);
-					var desc = lang_get_text("" + nameSuffix + ".desc")
+					var name = lang_get_text("menu.s." + nameSuffix);
+					var desc = lang_get_text("menu.s." + nameSuffix + ".desc")
 				
 					//Repack
 					return [type, name, desc, scriptRun, argsUse];

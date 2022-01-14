@@ -2,7 +2,7 @@
 //
 //Creates A Singular Page
 
-function menu_page_create(_pageName, _elementArray){
+function menu_page_create(_pageName, _elementArray, allowScroll = true){
 
 	//
 	//Create The Page
@@ -24,6 +24,6 @@ function menu_page_create(_pageName, _elementArray){
 	}
 	
 	//Return
-	return [n, ds_list_id]
+	return [n, ds_list_id, 0, allowScroll]
 
 }

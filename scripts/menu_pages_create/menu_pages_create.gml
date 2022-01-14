@@ -27,7 +27,9 @@ function menu_pages_create(){
 				["statistics",	m_e.page_transfer,	"statistics_page", ],
 				[],
 				["title",		m_e.script_runner,	menu_return_to_title, []],
-			]
+			],
+			
+			false
 			);
 	
 	options_page = menu_page_create("menu.page.options",

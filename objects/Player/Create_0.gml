@@ -27,7 +27,7 @@ heartBorderBuffer = 12;
 
 //Scale
 uiScale = 1;
-showUI = false;
+showUI = true;
 
 //Corruption
 corruptionPercent = 0;

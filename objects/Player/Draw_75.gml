@@ -294,8 +294,8 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 		draw_set_valign(fa_bottom);
 		draw_set_font(fontKeira);
 		
-		var pSurfX = (keira.x - Camera.x);
-		var pSurfY = (keira.y - Camera.y);
+		var pSurfX = (keira.x - Camera.x)/uiScale;
+		var pSurfY = (keira.y - Camera.y)/uiScale;
 		
 		var textW			= string_width(drawingInteractString) + 5;
 		var edgeOffset		= sprite_get_xoffset(sInteractSprite);
@@ -346,7 +346,7 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 		surface_reset_target();
 
 		//Draw Surface
-		draw_surface_ext(interactSurface, surfX, pSurfY - h - 20, 1, 1, 0, c_white, interactAlpha);
+		draw_surface_ext(interactSurface, surfX, pSurfY - (h)/uiScale - 19 - 1/uiScale, 1, 1, 0, c_white, interactAlpha);
 
 	}
 	
