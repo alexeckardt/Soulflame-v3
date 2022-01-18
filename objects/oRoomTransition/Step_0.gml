@@ -16,6 +16,7 @@ if (alphaDirection == 1 && alpha > transitionAlphaReq) {
 		
 		//Update Next Room
 		room = nextRoom;
+		draw_texture_flush();
 			
 		//Title Screen
 		//if (roomTo == roomTitle) {	game_restart();	}

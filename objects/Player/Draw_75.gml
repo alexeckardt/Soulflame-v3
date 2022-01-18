@@ -284,7 +284,7 @@ if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 	var sameString	= interactString == drawingInteractString;
 
 	//Alpha (Fade out if Not same or not touching)
-	interactAlpha	= lerp(interactAlpha, showInteractString*sameString, (0.18 + (0.2*(!sameString)))*Game.delta);
+	interactAlpha	= lerp(interactAlpha, showInteractString*sameString, (0.18 + (0.2*(!sameString)))*Game.deltaRatio);
 	if (interactAlpha < 0.01) {
 		drawingInteractString = interactString
 	} else {

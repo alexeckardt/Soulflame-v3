@@ -2,7 +2,7 @@
 //Delta
 
 //deltaGet = delta_time*delta_scale*0.000001;
-var deltaRatio = delta_time / idealDelta
+deltaRatio = delta_time / idealDelta;
 indepedentDelta = clamp(delta_time / idealDelta, minDelta, maxDelta); 
 if (indepedentDelta > deltatracking) {
 	deltatracking = indepedentDelta	;
