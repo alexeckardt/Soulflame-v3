@@ -23,7 +23,7 @@ if (surface_exists(surf)) {
 			//Get Object
 			var sprInfo = paralaxObjList[| i];
 			var objId = sprInfo[0];
-	
+
 			//Set Shader
 			var shader = objId.shader;
 			if (shader != -1) {

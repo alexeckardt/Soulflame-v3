@@ -5,6 +5,7 @@
 function camera_following(){
 	
 	var time = Game.delta;
+	time = 1 //test
 	
 	var ww = view_width div 2;
 	var hh = view_height div 2;
@@ -15,6 +16,7 @@ function camera_following(){
 		
 			var cX = clamp(follow.x + followOffsetX, ww+horizontalBuffer, room_width-horizontalBuffer-ww);
 			var cY = clamp(follow.y + followOffsetY, hh, room_height-hh);
+
 
 			viewX = lerp(viewX, cX, 0.25*time);
 			viewY = lerp(viewY, cY, 0.25*time);

@@ -1,7 +1,15 @@
 /// @desc
 //Delta
 
-indepedentDelta = delta_time*delta_scale*0.000001;
+//deltaGet = delta_time*delta_scale*0.000001;
+var deltaRatio = delta_time / idealDelta
+indepedentDelta = clamp(delta_time / idealDelta, minDelta, maxDelta); 
+if (indepedentDelta > deltatracking) {
+	deltatracking = indepedentDelta	;
+	largestDelta = deltatracking
+} else {
+	deltatracking = lerp(deltatracking, 0, 0.05);	
+}
 
 if (Controller.pausePressed) {
 	
@@ -30,7 +38,7 @@ if (Controller.pausePressed) {
 if (!paused) {
 	delta = indepedentDelta;
 	if (delta > 10) {
-		delta = 0.00001;
+		delta = 0;
 	}
 } else {
 	delta = 0;	

@@ -45,7 +45,7 @@ if (timeOffGround > -1) {
 	var runSpeedMulti = 1;
 
 	//Find Goal
-	var hspdGoalsMultipliers = time * power(0.99, time) * runSpeedMulti;
+	var hspdGoalsMultipliers = runSpeedMulti;
 	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers;
 	var slidingHspdGoal = slidingInDirection * slideSpeed * hspdGoalsMultipliers;
 

@@ -6,7 +6,7 @@
 function generic_collide_solid() {
 
 	var time = Game.delta;
-	var lagDampen = power(0.95, time);
+	var lagDampen = 1//power(0.99, time);
 
 	//Horizontal Collide
 	var moveX = (hSpeed)*time*lagDampen

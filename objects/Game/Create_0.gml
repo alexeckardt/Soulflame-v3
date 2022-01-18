@@ -19,6 +19,13 @@ viewDamageBoxes = true;
 delta = -1; //For InGame
 indepedentDelta = -1; //Global, Always Set
 delta_scale = 60;
+idealDelta = 1/delta_scale * 1000000;
+
+deltatracking = 0;
+largestDelta = 0
+
+minDelta = 0.01;
+maxDelta = 10;
 
 //UI
 someUIopen = false;
