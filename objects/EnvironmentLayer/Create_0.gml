@@ -6,3 +6,7 @@ layerSurf = -1;
 paralaxAmount = 1;
 
 paralaxSmoothing = 0.5;
+
+drawSurfaceBuffer = 16;
+
+surfDrawingOn = -1

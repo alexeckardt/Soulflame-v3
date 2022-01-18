@@ -3,13 +3,19 @@
 
 //Choose Surf
 //(Dynamic In case it changed)
-var surf = (paralaxAmount >= 0) ? Camera.frgSurf :  Camera.bkgSurf;
+surfDrawingOn = (paralaxAmount >= 0) ? Camera.frgSurf :  Camera.bkgSurf;
+var surfaceWidth = 0
+var surfaceHeight = 0;
 
+
+var surf = surfDrawingOn;
 if (surface_exists(surf)) {
 
 	var surfX = (Camera.x);
 	var surfY = (Camera.y);
 	var z = Camera.zoom;
+	surfaceWidth = surface_get_width(surfDrawingOn);
+	surfaceHeight = surface_get_height(surfDrawingOn);
 
 	//Swt
 	surface_set_target(surf);
@@ -24,22 +30,31 @@ if (surface_exists(surf)) {
 			var sprInfo = paralaxObjList[| i];
 			var objId = sprInfo[0];
 
-			//Set Shader
-			var shader = objId.shader;
-			if (shader != -1) {
-				shader_set(shader);	
-			} else {
-				shader_reset();
-			}
-	
-			//Draw Sprite
-			draw_sprite_ext(objId.sprite_index, objId.image_index, (objId.x-surfX)*z, (objId.y-surfY)*z, 
-								objId.image_xscale*z, objId.image_yscale*z, objId.image_angle, 
-								objId.image_blend, objId.image_alpha);
-		}
+			var objW = objId.sprite_width;
+			var objH = objId.sprite_height;
 
-		//Reset Shader
-		shader_reset();
+			//Culling
+			if (objId.x + objW > surfX-drawSurfaceBuffer && objId.x - objW < surfX+surfaceWidth/z+drawSurfaceBuffer) {
+				if (objId.y + objH > surfY-drawSurfaceBuffer && objId.y - objH < surfY+surfaceHeight/z+drawSurfaceBuffer) {
+
+					//Set Shader
+					var shader = objId.shader;
+					if (shader != -1) {
+						shader_set(shader);	
+					}
+	
+					//Draw Sprite
+					draw_sprite_ext(objId.sprite_index, objId.image_index, (objId.x-surfX)*z, (objId.y-surfY)*z, 
+										objId.image_xscale*z, objId.image_yscale*z, objId.image_angle, 
+										objId.image_blend, objId.image_alpha);
+								
+					//Reset Shader For Next Sprite
+					if (shader != -1) {
+						shader_reset();	
+					}
+				}
+			}
+		}
 	
 	//Exit
 	surface_reset_target();
