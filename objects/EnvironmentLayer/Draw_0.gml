@@ -34,8 +34,8 @@ if (surface_exists(surf)) {
 			var objH = objId.sprite_height;
 
 			//Culling
-			if (objId.x + objW > surfX-drawSurfaceBuffer && objId.x - objW < surfX+surfaceWidth/z+drawSurfaceBuffer) {
-				if (objId.y + objH > surfY-drawSurfaceBuffer && objId.y - objH < surfY+surfaceHeight/z+drawSurfaceBuffer) {
+			if (objId.bbox_right > surfX-drawSurfaceBuffer && objId.bbox_left < surfX+surfaceWidth/z+drawSurfaceBuffer) {
+				if (objId.bbox_bottom > surfY-drawSurfaceBuffer && objId.bbox_top < surfY+surfaceHeight/z+drawSurfaceBuffer) {
 
 					//Set Shader
 					var shader = objId.shader;

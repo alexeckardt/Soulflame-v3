@@ -9,8 +9,15 @@ function player_weapon_wheel_open(){
 	if (allowOpen) {
 
 		//Allow for Forging
-		var campfire = instance_nearest(oKeira.x, oKeira.y, oCampfire);
-		var atCampfire = (instance_exists(campfire)) && (campfire.lit && oKeira.STATE = state.sit)
+		var campfire = noone;
+		var atCampfire = false;
+		
+		if (campfire) {
+			campfire = instance_nearest(oKeira.x, oKeira.y, oCampfire);
+			atCampfire = (instance_exists(campfire)) && (campfire.lit && oKeira.STATE = state.sit);
+		}
+			
+		//Check
 		var CutsceneExists = instance_exists(Cutscene);
 		var hasAWeapon = ds_list_size(Player.weaponsUnlocked);
 

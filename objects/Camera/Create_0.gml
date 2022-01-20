@@ -53,3 +53,8 @@ screenShakeMulti = 0;
 horizontalBuffer = 16;
 
 //Run Particles
+lastDeactivateX = -100;
+lastDeactivateY = -100
+
+//Cull Region
+cullCameraBuffer = 16*2;

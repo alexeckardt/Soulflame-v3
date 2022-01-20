@@ -1,1 +1,1 @@
-room = Room1
+room = roomShatterViewingHole

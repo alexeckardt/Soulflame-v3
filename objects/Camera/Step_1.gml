@@ -23,3 +23,19 @@ if (window_get_width() != view_width*zoom
 displayGoalWidth = view_width*zoom;
 displayGoalHeight = view_height*zoom;
 display_set_gui_size(displayGoalWidth, displayGoalHeight);
+
+
+//Culling
+if (point_distance(x, y, lastDeactivateX, lastDeactivateY) > cullCameraBuffer/2) {
+	
+	//Deactivate All
+	instance_deactivate_all(true);
+	instance_activate_object(Important)
+	//instance_activate_object(Important);
+	
+	//Reactivate All
+	instance_activate_region(x-cullCameraBuffer, y-cullCameraBuffer, 
+								view_width + cullCameraBuffer*2, view_height + cullCameraBuffer*2,
+								true);
+								
+}
