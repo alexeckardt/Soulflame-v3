@@ -18,7 +18,7 @@ generic_collide_solid();
 
 
 //Should Chase?
-
+var createDamage = false;
 		
 	//Switch State
 	if (justDamaged && !dead) {
@@ -61,6 +61,8 @@ generic_collide_solid();
 if (STATE == state.chase) {
 
 	//AA
+	createDamage = true;
+	
 	var visibleTarget = enemy_check_target_visible();
 	if (visibleTarget) {
 		if (abs(y - target.y) < 32) {
@@ -74,7 +76,7 @@ if (STATE == state.chase) {
 
 	runWindUpTicksLeft--;
 	if (runWindUpTicksLeft < 0) {
-	
+		
 		//Run At 
 		var wantsToTurnAround = runDirection != goalRunDirection;
 		goalRunDirection = sign(lastSawTargetX - x);
@@ -115,6 +117,8 @@ if (STATE == state.breaking) {
 	runSpeedReal = 0;
 	hSpeedGoal = lerp(hSpeedGoal, 0,  0.05*time); 
 	
+	createDamage = (abs(hSpeedGoal) > 1);
+	
 	//Revert State
 	if (abs(hSpeedGoal) < 0.1) {
 		STATE = state.base;
@@ -133,6 +137,18 @@ if (STATE == state.breaking) {
 	}
 }
 
+//Create Damage
+if (createDamage) {
+	
+	//Create Damage
+	if (!instance_exists(myDamage)) {
+		myDamage = enemy_damage_create(-1, x, y, 8, 8, 3, 2);
+		myDamage.addToHSpeed = hSpeed;
+		myDamage.addToVSpeed = -1;
+	}	
+}
+
+
 
 //Horizontal Motion
 	//Friction
@@ -148,16 +164,8 @@ if (STATE == state.breaking) {
 	//Amount
 	knockbackHSpeed = lerp(knockbackHSpeed, 0, kbFriction);
 	hSpeed = round((controlHSpeed + knockbackHSpeed) * 10) / 10;
-
 	
 //Visuals Call
 event_user(0);
 
 enemy_generic_death_timer();
-
-//Create Damage
-if (!instance_exists(myDamage)) {
-	myDamage = enemy_damage_create(-1, x, y, 8, 8, 3, 2);
-	myDamage.addToHSpeed = hSpeed;
-	myDamage.addToVSpeed = -1;
-}

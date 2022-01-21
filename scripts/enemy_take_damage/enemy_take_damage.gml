@@ -8,6 +8,7 @@ function enemy_take_damage() {
 	//Reset
 	justDamaged = false;
 	justDied = false;
+	timeSinceDamaged += Game.delta;
 	
 	//Check If a Hitbox has been hit
 	if (hitboxTakingDamage != noone) {
@@ -90,6 +91,7 @@ function enemy_take_damage() {
 		hitboxTakingDamage = noone;
 		invulnerableTicks = 5;
 		justDamaged = true;
+		timeSinceDamaged = 0;
 		
 		//Dead Detect
 		if (!dead) {

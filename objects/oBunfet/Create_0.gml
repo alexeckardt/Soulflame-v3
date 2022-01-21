@@ -19,6 +19,7 @@ airFrictionValue = 0;
 
 //Hitbox
 hitbox_create_for_list(hitboxes, x, y-5, 8, 10, false);
+myDamage = noone;
 
 //Custom Variables
 timeLayingOnGroundBeforePop = 0

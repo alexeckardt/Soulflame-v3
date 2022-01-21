@@ -50,6 +50,7 @@ mask_index = sprite_index;
 	onGround = 0;
 	groundBelow = noone
 	timeSinceOnGround = 0;
+	timeSinceDamaged = 0;
 
 	//Alignment
 	randomize();
