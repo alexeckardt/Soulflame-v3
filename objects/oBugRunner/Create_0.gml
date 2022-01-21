@@ -28,9 +28,11 @@ idleSprite = sBugRunnerIdle;
 runSprite = sBugRunnerIdle;
 
 runSpeedReal = 0;
-runSpeedGoal = 2.5;
+runSpeedGoal = 3.5;
 
 runDirection = 0;
+goalRunDirection = 0;
 
 runWindUpTicks = room_speed/4;
+timeToNoticeTarget = room_speed/4;
 runWindUpTicksLeft = runWindUpTicks;

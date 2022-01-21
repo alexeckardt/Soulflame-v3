@@ -30,8 +30,10 @@ if (point_distance(x, y, lastDeactivateX, lastDeactivateY) > cullCameraBuffer/2)
 	
 	//Deactivate All
 	instance_deactivate_all(true);
+	
+	//Reactivate
 	instance_activate_object(Important)
-	//instance_activate_object(Important);
+	instance_activate_object(Solid);
 	
 	//Reactivate All
 	instance_activate_region(x-cullCameraBuffer, y-cullCameraBuffer, 

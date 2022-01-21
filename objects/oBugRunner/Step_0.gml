@@ -27,13 +27,11 @@ generic_collide_solid();
 	
 	if (STATE == state.base) {
 		hSpeedGoal = 0;
+		controlHSpeed = 0;
 		runSpeedReal = 0;
 		
 		var visibleTarget = enemy_check_target_visible();
 		if (!seesTarget) {
-	
-			//Timer
-			sinceSeenTarget += time;
 	
 			//See
 			if (visibleTarget) {
@@ -42,10 +40,15 @@ generic_collide_solid();
 				lastSawTargetX = target.x;	
 				lastSawTargetY = target.y;	
 			}
+		} else {
+		
+			//Timer
+			sinceSeenTarget += time;
+		
 		}
 		
 		
-		if (seesTarget) {
+		if (seesTarget && sinceSeenTarget > timeToNoticeTarget) {
 			if (abs(y - target.y) < 32) {
 				STATE = state.chase;	
 				runWindUpTicksLeft = runWindUpTicks;
@@ -57,51 +60,41 @@ generic_collide_solid();
 //Chase
 if (STATE == state.chase) {
 
+	//AA
+	var visibleTarget = enemy_check_target_visible();
+	if (visibleTarget) {
+		if (abs(y - target.y) < 32) {
+			lastSawTargetX = target.x;	
+			lastSawTargetY = target.y;	
+			
+			runDirection = sign(lastSawTargetX - x);
+		}
+	}
+	
+
 	runWindUpTicksLeft--;
 	if (runWindUpTicksLeft < 0) {
-
-		var visibleTarget = enemy_check_target_visible();
-		if (visibleTarget) {
-			if (abs(y - target.y) < 32) {
-				lastSawTargetX = target.x;	
-				lastSawTargetY = target.y;	
-			
-				directionFacing = sign(lastSawTargetX - x);
-			}
-		}
-	
 	
 		//Run At 
-		runDirection = sign(lastSawTargetX - x);
+		var wantsToTurnAround = runDirection != goalRunDirection;
+		goalRunDirection = sign(lastSawTargetX - x);
 
 		//Speed
 		var speedGoal = runSpeedGoal;
-
-
+		
 		//Stop If I'm close to where I last saw them but they are not there
-		if (point_distance(x, y, lastSawTargetX, lastSawTargetY) < 10 || runDirection != directionFacing) {
+		if (point_distance(x, y, lastSawTargetX, lastSawTargetY) < 10 || wantsToTurnAround) {
 	
-			if (point_distance(x, y, target.x, target.y) > 20) {
-		
-				//Fast Break
-				runSpeedReal /= 1.5;
-				speedGoal = 0;
-		
-			}
-	
-			//Revert
-			if (abs(runSpeedReal) < 0.01) {
-			
-				STATE = state.base;
-				seesTarget = false;
-			
-			}
-	
+			STATE = state.breaking;
+
 		}
 		
-		//Run
+		//
 		runSpeedReal = lerp(runSpeedReal, speedGoal, 0.3*time);
 		hSpeedGoal = lerp(hSpeedGoal, runDirection * runSpeedReal,  0.1*time); 
+	
+		//D Facing
+		directionFacing = sign(hSpeedGoal) != 0 ? sign(hSpeedGoal) : directionFacing;
 	
 		//Bounce
 		if (place_meeting(x+hSpeedGoal, y-10, Solid)) {
@@ -110,13 +103,36 @@ if (STATE == state.chase) {
 			controlHSpeed = -hSpeedGoal*0.7;
 			hSpeedGoal = 0;
 			vSpeed = -3;
+			seesTarget = false;
 			
 		}
-	
-	
 	}
 }
 	
+if (STATE == state.breaking) {
+		
+	//Slow Down (But not really)
+	runSpeedReal = 0;
+	hSpeedGoal = lerp(hSpeedGoal, 0,  0.05*time); 
+	
+	//Revert State
+	if (abs(hSpeedGoal) < 0.1) {
+		STATE = state.base;
+		seesTarget = false;	
+	}	
+	
+	//Bounce
+	if (place_meeting(x+hSpeedGoal, y-10, Solid)) {
+			
+		STATE = state.base;
+		controlHSpeed = -hSpeedGoal*0.7;
+		hSpeedGoal = 0;
+		vSpeed = -3;
+		seesTarget = false;
+			
+	}
+}
+
 
 //Horizontal Motion
 	//Friction
@@ -124,6 +140,9 @@ if (STATE == state.chase) {
 	var kbFriction= (groundBelow != noone) ? groundBelow.traction/3	: airFrictionValue;
 	
 	//Goal
+	if (dead) {
+		controlHSpeed = 0;
+		hSpeedGoal = 0;	}
 	controlHSpeed = lerp(controlHSpeed, hSpeedGoal, hFriction*time);
 
 	//Amount
