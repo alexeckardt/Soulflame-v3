@@ -15,8 +15,10 @@ viewX = clamp(viewX, ww + horizontalBuffer, room_width - horizontalBuffer - ww);
 viewY = clamp(viewY, hh, room_height-hh);
 
 //Set
-x = (viewX - ww);
-y = (viewY - hh);
+realX = (viewX - ww);
+realY = (viewY - hh);
+x = floor(realX);
+y = floor(realY);
 
 //Reset Matrix
 vm = matrix_build_lookat(viewX, viewY, -10, viewX, viewY, 0, 0, 1, 0);

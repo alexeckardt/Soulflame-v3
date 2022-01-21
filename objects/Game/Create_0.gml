@@ -55,3 +55,9 @@ showDebugOverlay = false;
 fullscreen = true;
 frameSkips = 0;
 	frameSkipCounter = 0;
+	
+//Debug Overlay
+debugDrawHOffset = 10;
+debugStartDrawFrom = 40;
+debugVerticalIndex = 0;
+debugVSpacing = 14;

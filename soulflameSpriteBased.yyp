@@ -14,6 +14,7 @@
     {"id":{"name":"save_index_grid","path":"scripts/save_index_grid/save_index_grid.yy",},"order":4,},
     {"id":{"name":"oPlatinumBag","path":"objects/oPlatinumBag/oPlatinumBag.yy",},"order":0,},
     {"id":{"name":"save_game","path":"scripts/save_game/save_game.yy",},"order":0,},
+    {"id":{"name":"game_draw_debug_line","path":"scripts/game_draw_debug_line/game_draw_debug_line.yy",},"order":13,},
     {"id":{"name":"Enemy","path":"objects/Enemy/Enemy.yy",},"order":0,},
     {"id":{"name":"sEnvTreePine0","path":"sprites/sEnvTreePine0/sEnvTreePine0.yy",},"order":1,},
     {"id":{"name":"oAirborneChaseEnemy","path":"objects/oAirborneChaseEnemy/oAirborneChaseEnemy.yy",},"order":2,},

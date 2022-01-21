@@ -11,8 +11,8 @@ var surfaceHeight = 0;
 var surf = surfDrawingOn;
 if (surface_exists(surf)) {
 
-	var surfX = (Camera.x);
-	var surfY = (Camera.y);
+	var surfX = (Camera.realX);
+	var surfY = (Camera.realY);
 	var z = Camera.zoom;
 	surfaceWidth = surface_get_width(surfDrawingOn);
 	surfaceHeight = surface_get_height(surfDrawingOn);

@@ -15,6 +15,8 @@ pm = matrix_build_projection_ortho(view_width, view_height, 1, 3200);
 follow = oKeira;
 viewX = 0;
 viewY = 0;
+realX = 0;
+realY = 0;
 if (instance_exists(follow)) {
 	viewX = follow.x;
 	viewY = follow.y;
