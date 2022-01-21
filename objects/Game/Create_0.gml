@@ -10,11 +10,6 @@ gameSeed = irandom(100);
 persistence = ds_map_create();
 timeInGame = 0;
 
-//Debug Settings
-showCreationErrors = true;
-viewHitboxes = false;
-viewDamageBoxes = true;
-
 //Game Keep Track Of
 delta = -1; //For InGame
 indepedentDelta = -1; //Global, Always Set
@@ -32,6 +27,7 @@ maxDelta = 10;
 someUIopen = false;
 paused = false;
 pauseMenuObj = noone;
+showCreationErrors = true;
 
 //Corruption
 corruption_CollectEssenceIncrease		= 1/200;
@@ -51,7 +47,6 @@ textDefCol = $6b6b6b;
 
 //Some Settings
 paralaxScale = 1;
-showDebugOverlay = false;
 fullscreen = true;
 frameSkips = 0;
 	frameSkipCounter = 0;
@@ -61,3 +56,10 @@ debugDrawHOffset = 10;
 debugStartDrawFrom = 40;
 debugVerticalIndex = 0;
 debugVSpacing = 14;
+
+//Debug Settings
+showDebugOverlay = false;
+
+viewHitboxes = false;
+viewDamageBoxes = false;
+viewAudioEmitters = false;

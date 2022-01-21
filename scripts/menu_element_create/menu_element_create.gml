@@ -48,7 +48,8 @@ function menu_element_create(_elementInfo) {
 				//
 				//
 				case m_e.shift_through_indexes:
-			
+				case m_e.debug_conditional:
+				
 					//Unpack
 					var instanceId					= _elementInfo[2];
 					var variableName				= _elementInfo[3];
@@ -83,6 +84,7 @@ function menu_element_create(_elementInfo) {
 					
 					//Repack
 					return [type, name, desc, instanceId, variableName, minVal, maxVal, segments, asPercent];
+
 			}
 		
 		}

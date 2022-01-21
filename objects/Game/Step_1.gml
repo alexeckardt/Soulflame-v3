@@ -11,6 +11,7 @@ if (indepedentDelta > deltatracking) {
 	deltatracking = lerp(deltatracking, 0, 0.05);	
 }
 
+//
 if (Controller.pausePressed) {
 	
 	//Toggle

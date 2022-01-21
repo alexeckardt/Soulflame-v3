@@ -61,12 +61,14 @@ function menu_pages_create(){
 			[
 	
 				//["",						m_e.script_runner,	],
-				["back",				m_e.page_transfer,	"options_page", ],
+				["back",				m_e.page_transfer,			"options_page", ],
 				[],
 				["showdebug",		m_e.shift_through_indexes,	g, "showDebugOverlay",	["option.hidden", "option.visible"]],
 				[],
-				["hitboxes",		m_e.shift_through_indexes,	g, "viewHitboxes",		["option.hidden", "option.visible"]],
-				["damageBoxes",		m_e.shift_through_indexes,	g, "viewDamageBoxes",	["option.hidden", "option.visible"]],
+				["hitboxes",		m_e.debug_conditional,	g, "viewHitboxes",		["option.hidden", "option.visible"]],
+				["damageBoxes",		m_e.debug_conditional,	g, "viewDamageBoxes",	["option.hidden", "option.visible"]],
+				["audioSource",		m_e.debug_conditional,	g, "viewAudioEmitters",	["option.hidden", "option.visible"]],
+				
 				
 	
 			]

@@ -36,11 +36,33 @@ var pageList = page[1];
 			
 			//Next, Scroll
 			var newId = elementHoverID;
+			var isValid = false;
 			do {
 				newId += my;
+				
+				var outOfBounds = (newId < 0 || newId >= elementCount);
+				if (!outOfBounds) {
+				
+					//
+					//Check If New Pos is Valid
+					var type = pageList[| newId][0];
+					var notEmpty = (type != -1);
+				
+					//Check if Disabled
+						var debugDisabled = (type == m_e.debug_conditional && !Game.showDebugOverlay);
+					var elementEnabled = !debugDisabled; //||
+				
+					//Should Skip this
+					isValid = (notEmpty && elementEnabled);
+				
+				//Reached End; Do NOT Update position
+				} else {
+					newId = elementHoverID;
+					break;
+				}
 			}
 			//Skip Blanks
-			until (newId < 0 || newId >= elementCount) || (pageList[| newId][0] != -1);
+			until (isValid);
 
 			//Set
 			elementHoverID = clamp(newId, 0, elementCount-1)
@@ -78,6 +100,14 @@ if (Controller.uiBackPressed) {
 	//Go To Find Index (We assume the first index is a "Back" command)
 	elementHoverID = 0;
 	resetElementHoveringRetention = true;
+	
+	
+	//SCROLL INSTANT
+	var hoveringOverY = startDrawElementAtY + (elementHeight+elementSpacing)*elementHoverID;
+	startScrollY = displayHeight*0.6;
+	var pageHeight = ds_list_size(pageList) * (elementHeight + elementSpacing);
+	scrollYOffset = clamp(hoveringOverY - startScrollY, 0, max(0, pageHeight - lastElementGoesXHigh));
+			
 }
 
 
@@ -140,6 +170,25 @@ if (Controller.uiBackPressed) {
 						var nextShift = (varValue+1) % array_length(optionsAsLanguageArray);
 						variable_instance_set(objId, varName, nextShift);
 					
+						break;
+						
+					case m_e.debug_conditional:
+				
+						//Upack
+						if (Game.showDebugOverlay) {
+							
+							var objId = elementInfo[3];
+							var varName = elementInfo[4];
+							var optionsAsLanguageArray = elementInfo[5];
+					
+							//Get Value
+							var varValue = variable_instance_get(objId, varName);
+				
+							//Set Value
+							var nextShift = (varValue+1) % array_length(optionsAsLanguageArray);
+							variable_instance_set(objId, varName, nextShift);
+						}
+						
 						break;
 				
 				}

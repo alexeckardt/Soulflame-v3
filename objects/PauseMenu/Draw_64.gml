@@ -163,6 +163,31 @@ for (var j = 0; j < elementsOnPage; j++) {
 				
 			//----------------------------------------------------------------
 			
+			case m_e.debug_conditional:
+			
+					//Choose a new colour for this (Must be active)
+					var c = (thisElementSelected) ? selectedColour : c_gray;
+					c = (!Game.showDebugOverlay) ? c_dkgray : c;
+					
+					//Draw Name Right Aligned
+					draw_text_colour(drawElementLeftX, drawY, elementName, c,c,c,c,1);
+					
+					//Upack
+					var objId = elementInfo[3];
+					var varName = elementInfo[4];
+					
+					//Get Value
+					var varValue = variable_instance_get(objId, varName);
+					var optionsAsLanguageArray = elementInfo[5];
+					var currentOptionState = optionsAsLanguageArray[varValue];
+					
+					draw_set_halign(fa_left);
+					draw_text_colour(drawElementRightX, drawY, currentOptionState, c,c,c,c,1);
+					
+					break;
+					
+			//----------------------------------------------------------------
+			
 			case m_e.shift_through_indexes:
 			
 					//Draw Name Right Aligned

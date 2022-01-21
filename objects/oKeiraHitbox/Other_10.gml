@@ -48,4 +48,9 @@ var knockbackStrength = otherDamage.knockbackAmount;
 	Keira.knockbackHSpeed += lengthdir_x(str, dd) + otherDamage.addToHSpeed;
 	Keira.knockbackVSpeed += lengthdir_y(str, dd) + otherDamage.addToVSpeed;
 	
+	//Minimal
+	if (point_distance(0, 0, Keira.knockbackHSpeed, Keira.knockbackVSpeed) < 0.5) {
+		Keira.knockbackVSpeed += -2;
+	}
+	
 	

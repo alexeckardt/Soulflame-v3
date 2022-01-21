@@ -10,7 +10,7 @@ function lang_get_text(key) {
 	//Must Be Simple
 	if (!is_array(get)) {
 		if (get == undefined) {
-			return "unknown key"
+			return "? " + string(key);
 		}
 		
 		//Replace Any Pointers
