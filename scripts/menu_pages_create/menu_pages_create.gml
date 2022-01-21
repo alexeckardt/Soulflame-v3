@@ -51,7 +51,7 @@ function menu_pages_create(){
 	
 	audio_page = menu_page_create("menu.page.audio",
 			[
-				["back",				m_e.page_transfer,	"master_page", ],
+				["back",				m_e.page_transfer,	"options_page", ],
 				[],
 			]
 			);

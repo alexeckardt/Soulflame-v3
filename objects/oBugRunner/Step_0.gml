@@ -145,7 +145,7 @@ if (createDamage) {
 		var w = 12;
 		myDamage = enemy_damage_create(-1, x-w/2, y-w/2, w, w, 3, 1);
 		myDamage.addToHSpeed = hSpeed;
-		myDamage.addToVSpeed = -1;
+		myDamage.addToVSpeed = -3;
 	}	
 }
 

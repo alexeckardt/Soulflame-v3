@@ -21,10 +21,11 @@ if (timeOffGround > -1) {
 	}
 
 	//Gives Hang Time If Jump is Still Held
-	var mult = (abs(controlVSpeed) < halfGravityThreshold && (Controller.jumpHeld || forceHalfGravity) && allowHalfGravity) ? 0.5 : 1;
+	var doHalfGrav = abs(controlVSpeed) < halfGravityThreshold && (Controller.jumpHeld || forceHalfGravity) && allowHalfGravity;
+	var mult = (doHalfGrav) ? 0.5 : 1;
 	
 	//Add Gravity
-	controlVSpeed = min(controlVSpeed + grav*mult, term);
+	controlVSpeed = min(controlVSpeed + grav*mult*time, term);
 	
 	//Short Jump if Let Go of Jump
 	if (!Controller.jumpHeld && !cutVspd) { //&& controlVSpeed < -halfGravityThreshold
@@ -149,8 +150,8 @@ if (STATE == state.base && abs(controlHSpeed) >= 0.01) {
 
 //Ramps
 var range = 5;
-var moveY = (controlVSpeed + knockbackVSpeed)*time;
-var moveX = (controlHSpeed + knockbackHSpeed)*time;
+var moveY = (controlVSpeed + knockbackVSpeed*time);
+var moveX = (controlHSpeed + knockbackHSpeed)*time; //yes it's different
 
 //Going Down a Ramp
 if (place_meeting(x, y+1, Solid) && !place_meeting(x+moveX, y+1, Solid)) {
