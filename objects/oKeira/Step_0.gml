@@ -155,13 +155,17 @@ if (place_meeting(x, y+1, Solid) && !place_meeting(x+moveX, y+1, Solid)) {
 	}
 }
 
+var collisionPercision = 1/100;
+
 //Vertical Collision
 if (place_meeting(x, y+moveY, Solid)) {
 
 	//Back Onto Wall
-	repeat (floor(abs(moveY))) {
-		if (!place_meeting(x, y+sign(moveY), Solid)) {
-			y += sign(moveY);
+	repeat (ceil(abs(moveY/collisionPercision))) {
+		if (!place_meeting(x, y+sign(moveY)*collisionPercision, Solid)) {
+			y += sign(moveY)*collisionPercision;
+		} else {
+			break;	
 		}
 	}
 	
@@ -223,9 +227,11 @@ if (place_meeting(x + moveX, y, Solid)) {
 	var sigMoveX = sign(moveX);
 	
 	//Back Onto Wall
-	repeat (floor(abs(moveX))) {
-		if (!place_meeting(x+sigMoveX, y, Solid)) {
-			x += sigMoveX;
+	repeat (ceil(abs(moveX/collisionPercision))) {
+		if (!place_meeting(x+sign(moveX)*collisionPercision, y, Solid)) {
+			x += sign(moveX)*collisionPercision;
+		} else {
+			break;	
 		}
 	}
 	
