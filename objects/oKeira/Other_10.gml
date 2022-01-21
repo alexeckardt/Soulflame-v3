@@ -61,9 +61,11 @@ switch (STATE) {
 //Botch
 if (haveSlideDamage) {
 	if (STATE != state.combat_slide) {
-		damageObj.allowLifeDecay = true;
-		damageObj.life = -1;
-		haveSlideDamage = false;	
+		if (instance_exists(damageObj)) {
+			damageObj.allowLifeDecay = true;
+			damageObj.life = -1;
+			haveSlideDamage = false;	
+		}
 	}
 }
 

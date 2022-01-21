@@ -14,7 +14,7 @@ generic_collide_solid();
 		knockbackVSpeed = 0;
 	}
 	//Gravity
-	vSpeed += myGrav;
+	vSpeed += myGrav*time;
 
 
 	//Reach Goal X

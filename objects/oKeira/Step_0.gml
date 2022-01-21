@@ -24,7 +24,7 @@ if (timeOffGround > -1) {
 	var mult = (abs(controlVSpeed) < halfGravityThreshold && (Controller.jumpHeld || forceHalfGravity) && allowHalfGravity) ? 0.5 : 1;
 	
 	//Add Gravity
-	controlVSpeed = min(controlVSpeed + grav*mult*time, term);
+	controlVSpeed = min(controlVSpeed + grav*mult, term);
 	
 	//Short Jump if Let Go of Jump
 	if (!Controller.jumpHeld && !cutVspd) { //&& controlVSpeed < -halfGravityThreshold

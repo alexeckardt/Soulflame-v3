@@ -5,7 +5,7 @@ event_inherited();
 //Mutators
 hp = 2
 platinumDrop = 2
-platinumDropRange = 2;
+platinumDropRange = 0.1;
 
 weight = 0.5
 

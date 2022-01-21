@@ -17,6 +17,7 @@ function enemy_global_death_events(){
 
 	//Drop Platinum
 	var amount = floor(platinumDrop * (1 + random_range(-platinumDropRange, platinumDropRange)));
+	amount = max(0, amount);
 	var currentVel = point_distance(0, 0, hSpeed, vSpeed);
 	var currentDir = point_direction(0, 0, hSpeed, vSpeed);
 	

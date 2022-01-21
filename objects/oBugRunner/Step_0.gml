@@ -14,7 +14,7 @@ generic_collide_solid();
 		knockbackVSpeed = 0;
 	}
 	//Gravity
-	vSpeed += myGrav;
+	vSpeed += myGrav*time;
 
 
 //Should Chase?
@@ -142,7 +142,8 @@ if (createDamage) {
 	
 	//Create Damage
 	if (!instance_exists(myDamage)) {
-		myDamage = enemy_damage_create(-1, x, y, 8, 8, 3, 2);
+		var w = 12;
+		myDamage = enemy_damage_create(-1, x-w/2, y-w/2, w, w, 3, 1);
 		myDamage.addToHSpeed = hSpeed;
 		myDamage.addToVSpeed = -1;
 	}	
@@ -162,7 +163,7 @@ if (createDamage) {
 	controlHSpeed = lerp(controlHSpeed, hSpeedGoal, hFriction*time);
 
 	//Amount
-	knockbackHSpeed = lerp(knockbackHSpeed, 0, kbFriction);
+	knockbackHSpeed = lerp(knockbackHSpeed, 0, kbFriction*time);
 	hSpeed = round((controlHSpeed + knockbackHSpeed) * 10) / 10;
 	
 //Visuals Call

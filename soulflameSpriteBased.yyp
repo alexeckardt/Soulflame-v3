@@ -169,6 +169,7 @@
     {"id":{"name":"ParticleViewer","path":"objects/ParticleViewer/ParticleViewer.yy",},"order":0,},
     {"id":{"name":"load_index_grid","path":"scripts/load_index_grid/load_index_grid.yy",},"order":6,},
     {"id":{"name":"oSpinningRectangle","path":"objects/oSpinningRectangle/oSpinningRectangle.yy",},"order":3,},
+    {"id":{"name":"sBugRunnerBreak","path":"sprites/sBugRunnerBreak/sBugRunnerBreak.yy",},"order":2,},
     {"id":{"name":"sMagpiePeice1","path":"sprites/sMagpiePeice1/sMagpiePeice1.yy",},"order":1,},
     {"id":{"name":"sGroundTileDef","path":"sprites/sGroundTileDef/sGroundTileDef.yy",},"order":3,},
     {"id":{"name":"sWeaponSwordAttackHorizontal0","path":"sprites/sWeaponSwordAttackHorizontal0/sWeaponSwordAttackHorizontal0.yy",},"order":3,},
@@ -407,7 +408,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.7.603",
+    "IDEVersion": "2.3.7.606",
   },
   "resourceVersion": "1.4",
   "name": "soulflameSpriteBased",

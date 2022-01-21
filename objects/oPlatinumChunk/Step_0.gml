@@ -9,7 +9,7 @@ if (hasHitGroundOnce) {
 	
 	
 if (spinNow) {	angSpeed = abs(vSpeed)*hSpeed*10; spinNow = false; }
-angle += angSpeed;
+angle += angSpeed*time;
 angSpeed = lerp(angSpeed, 0, 0.01*time);
 
 if (onGround) {

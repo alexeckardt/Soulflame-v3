@@ -1,9 +1,9 @@
 /// @desc
 
-var xsc = directionFacing * (1 + squishX);
-var ysc = (1 + squishY);
-var dX = (x)
-var sprAnchorAtBottomY = (y + (sprite_height - sprite_yoffset)*(-squishY))
+var xsc = round(10 * directionFacing * (1 + squishX)) / 10;
+var ysc = round(10 * (1 + squishY)) / 10;
+var dX = round(x * 10) / 10;
+var sprAnchorAtBottomY = round(10 * (y + (sprite_height - sprite_yoffset)*(-squishY)))/10;
 var alpha = 1;
 var b = (inControl || !Game.showDebugOverlay) ? c_white : c_red;
 
