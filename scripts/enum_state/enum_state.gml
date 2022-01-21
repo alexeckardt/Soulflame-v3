@@ -52,5 +52,10 @@ enum state {
 	sit, //visual state
 	situp,	 //visual state
 	
+	
+		//ENEMY STATES
+		chase,
+		run,
+	
 	height, //states count, used for idle in enemies
 }

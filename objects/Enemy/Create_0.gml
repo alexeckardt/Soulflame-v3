@@ -68,6 +68,7 @@ mask_index = sprite_index;
 		lastSawTargetY = 0;
 		timeToNoticeTarget = room_speed;
 		timeLeftBeforeNoticeTarget = 0;
+		sinceSeenTarget = 0;
 		
 	//Health
 		dead = false;
