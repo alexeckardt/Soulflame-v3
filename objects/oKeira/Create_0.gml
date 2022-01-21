@@ -105,9 +105,6 @@ doAirFriction =true;
 airFrictionValue = 0.045;
 airFrictionMultiplierLerp = 0;
 
-//knockback
-invulnerableTicks = 0
-
 //Collisions
 onGround = false;
 timeOffGround = 0;
@@ -148,9 +145,22 @@ damageKnockbackAddHspeedRelative = 0;
 damageToIncreaseCorruption = false;
 damageToCollectEssence = false;
 
+
+
 haveSlideDamage = false;
 
 //Interacting
 interacting = false;
 interactString = "";
 showInteractString = false;
+
+//Hurt
+hurtFlinchTime = room_speed / 2;
+invulnerableTime = room_speed;
+hurtTicks = hurtFlinchTime;
+invulnerableTicks = 0;
+invulnerableTicks = 0;
+
+weight = 1.2;
+knockbackHSpeed = 0;
+knockbackVSpeed = 0;

@@ -33,3 +33,4 @@ generic_collide_solid();
 event_user(0);
 
 enemy_generic_death_timer();
+

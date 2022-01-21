@@ -154,3 +154,10 @@ if (STATE == state.breaking) {
 event_user(0);
 
 enemy_generic_death_timer();
+
+//Create Damage
+if (!instance_exists(myDamage)) {
+	myDamage = enemy_damage_create(-1, x, y, 8, 8, 3, 2);
+	myDamage.addToHSpeed = hSpeed;
+	myDamage.addToVSpeed = -1;
+}

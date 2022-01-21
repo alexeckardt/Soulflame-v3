@@ -31,6 +31,12 @@ if (timeOffGround > -1) {
 		controlVSpeed /= 1.6;	
 		cutVspd = true;
 	}
+	
+	//Knockback Vspeed
+	if (knockbackVSpeed != 0) {
+		controlVSpeed += knockbackVSpeed;
+		knockbackVSpeed = 0;
+	}
 }
 
 //
@@ -98,7 +104,7 @@ if (timeOffGround > -1) {
 		
 			//Smoothly Change Horizontal Speed
 			controlHSpeed = lerp(controlHSpeed, hSpeedGoal, (airFrictionValue + holdingOppositeInAir)*airFrictionMultiplierLerp*time);
-			//knockbackHSpeed = lerp(knockbackHSpeed, 0, airFrictionValue);
+
 		}
 
 	//On Ground Frinction
@@ -109,7 +115,6 @@ if (timeOffGround > -1) {
 	
 		//Use Ground Friction
 		controlHSpeed = lerp(hSpeed, hSpeedGoal, slideValBase*time);
-		//knockbackHSpeed = lerp(knockbackHSpeed, 0, slideValBase);
 	
 		//On Ground Stuff
 		allowHalfGravity = true;
@@ -122,6 +127,10 @@ if (timeOffGround > -1) {
 		hasJumpedOffWallSinceOnGround = false;
 	
 	}
+
+	//Knockback Reduce
+	var kbFriction= (groundBelow != noone) ? groundBelow.traction/3		: airFrictionValue;
+	knockbackHSpeed = lerp(knockbackHSpeed, 0, kbFriction);
 	
 	//Round Out
 	controlHSpeed = sign(controlHSpeed) * floor(abs(controlHSpeed) * 100) / 100;
@@ -138,12 +147,10 @@ if (STATE == state.base && abs(controlHSpeed) >= 0.01) {
 	//Update Mask
 	mask_index = mask;
 
-
-
 //Ramps
 var range = 5;
-var moveY = (controlVSpeed)*time;
-var moveX = (controlHSpeed)*time;
+var moveY = (controlVSpeed + knockbackVSpeed)*time;
+var moveX = (controlHSpeed + knockbackHSpeed)*time;
 
 //Going Down a Ramp
 if (place_meeting(x, y+1, Solid) && !place_meeting(x+moveX, y+1, Solid)) {
@@ -553,8 +560,8 @@ if (STATE == state.hurt) {
 	inControl = false;
 	
 	//Reset State
-	hurtTime -= time;
-	if (hurtTime< 0) {
+	hurtTicks -= time;
+	if (hurtTicks< 0) {
 		STATE = state.base;	
 	}
 	

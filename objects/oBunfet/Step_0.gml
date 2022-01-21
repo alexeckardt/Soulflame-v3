@@ -61,7 +61,7 @@ generic_collide_solid();
 //Horizontal Motion
 	//Friction
 	var hFriction = (groundBelow != noone) ? groundBelow.traction		: airFrictionValue;
-	var kbFriction= (groundBelow != noone) ? groundBelow.traction/3	: airFrictionValue;
+	var kbFriction= (groundBelow != noone) ? groundBelow.traction/3		: airFrictionValue;
 	
 	//Goal
 	controlHSpeed = lerp(controlHSpeed, hSpeedGoal, hFriction);

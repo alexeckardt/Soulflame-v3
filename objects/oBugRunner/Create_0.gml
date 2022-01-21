@@ -36,3 +36,5 @@ goalRunDirection = 0;
 runWindUpTicks = room_speed/4;
 timeToNoticeTarget = room_speed/4;
 runWindUpTicksLeft = runWindUpTicks;
+
+myDamage = noone;
