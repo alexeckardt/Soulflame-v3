@@ -81,22 +81,10 @@ if (!freeze) {
 		groundBelow = (onGround) ? instance_place(x, y+1, Solid) : noone
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	angle += angleSpeed;
+	angle += angleSpeed*time;
 
 	//Gravity
-	vSpeed += myGrav;
+	vSpeed += myGrav*time;
 
 	if (onGround) {
 	

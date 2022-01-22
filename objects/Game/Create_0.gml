@@ -20,8 +20,8 @@ idealDelta = 1/delta_scale * 1000000;
 deltatracking = 0;
 largestDelta = 0
 
-minDelta = 0.001;
-maxDelta = 10;
+minDelta = 1; //0.001
+maxDelta = 1; //10
 
 //UI
 someUIopen = false;

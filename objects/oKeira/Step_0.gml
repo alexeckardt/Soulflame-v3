@@ -7,38 +7,40 @@ squishX = lerp(squishX, 0, squishReturnSpeed*time);
 squishY = lerp(squishY, 0, squishReturnSpeed*time);
 
 //Gravity
-if (timeOffGround > -1) {
+
+	vSpeed += controlVSpeed;
+	controlVSpeed = 0;
 
 	//Choose Values
-	var grav = myGrav * ((STATE == state.climb && controlVSpeed > 0) ? climbingGravMulti : 1);
+	var grav = myGrav * ((STATE == state.climb && vSpeed > 0) ? climbingGravMulti : 1);
 	var term = (STATE != state.climb) ? terminalVelocity : climbingTermVel;
 
 	//Stop Vspeed If Clinging To A wall
 	if (STATE == state.wall_cling) {
 		grav = 0;
 		term = 0;
-		controlVSpeed = 0;
+		vSpeed = 0;
 	}
 
 	//Gives Hang Time If Jump is Still Held
-	var doHalfGrav = abs(controlVSpeed) < halfGravityThreshold && (Controller.jumpHeld || forceHalfGravity) && allowHalfGravity;
+	var doHalfGrav = abs(vSpeed) < halfGravityThreshold && (Controller.jumpHeld || forceHalfGravity) && allowHalfGravity;
 	var mult = (doHalfGrav) ? 0.5 : 1;
 	
 	//Add Gravity
-	controlVSpeed = min(controlVSpeed + grav*mult*time, term);
+	vSpeed = min(vSpeed + grav*mult, term*time);
 	
 	//Short Jump if Let Go of Jump
 	if (!Controller.jumpHeld && !cutVspd) { //&& controlVSpeed < -halfGravityThreshold
-		controlVSpeed /= 1.6;	
+		vSpeed /= 1.6;	
 		cutVspd = true;
 	}
 	
 	//Knockback Vspeed
 	if (knockbackVSpeed != 0) {
-		controlVSpeed += knockbackVSpeed;
+		vSpeed += knockbackVSpeed;
 		knockbackVSpeed = 0;
 	}
-}
+
 
 //
 //Horizontal Movement
@@ -150,8 +152,8 @@ if (STATE == state.base && abs(controlHSpeed) >= 0.01) {
 
 //Ramps
 var range = 5;
-var moveY = (controlVSpeed + knockbackVSpeed*time);
-var moveX = (controlHSpeed + knockbackHSpeed)*time; //yes it's different
+var moveY = (vSpeed*time);
+var moveX = (controlHSpeed + knockbackHSpeed)*time;
 
 //Going Down a Ramp
 if (place_meeting(x, y+1, Solid) && !place_meeting(x+moveX, y+1, Solid)) {

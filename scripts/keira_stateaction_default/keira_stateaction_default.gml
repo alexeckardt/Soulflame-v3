@@ -18,7 +18,7 @@ function keira_stateaction_default() {
 	var currentReadySprite = keira_get_movement_sprite("IdleReady");
 	var currentRunSprite = keira_get_movement_sprite("Run");
 	var spriteKeyIs = "Idle";
-		
+			
 	if (running) {
 			
 		displayReadyPosForTime = 0;

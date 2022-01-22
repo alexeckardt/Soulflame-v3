@@ -68,7 +68,7 @@ slideSpeedReduction = 0.05;
 slidingInDirection = 1;
 
 //Gravity & Jumping
-jumpSpeed = -5.5;
+jumpSpeed = -5.8;
 myGrav = 0.3;
 terminalVelocity = 6;
 halfGravityThreshold = 0.7;

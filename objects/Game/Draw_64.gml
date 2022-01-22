@@ -2,6 +2,8 @@
 
 if (showDebugOverlay) {
 	
+	draw_set_colour(c_white);
+	
 	debugScale = Player.uiScale / 2
 	
 	var displayWidth =	Camera.view_width / debugScale;

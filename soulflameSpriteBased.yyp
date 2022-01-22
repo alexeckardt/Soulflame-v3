@@ -151,6 +151,7 @@
     {"id":{"name":"game_persistence_set","path":"scripts/game_persistence_set/game_persistence_set.yy",},"order":12,},
     {"id":{"name":"load_index","path":"scripts/load_index/load_index.yy",},"order":0,},
     {"id":{"name":"p_FireAura","path":"objects/p_FireAura/p_FireAura.yy",},"order":0,},
+    {"id":{"name":"roundn","path":"scripts/roundn/roundn.yy",},"order":3,},
     {"id":{"name":"sKeiraIdle","path":"sprites/sKeiraIdle/sKeiraIdle.yy",},"order":9,},
     {"id":{"name":"sKeiraAttackSlideRecover","path":"sprites/sKeiraAttackSlideRecover/sKeiraAttackSlideRecover.yy",},"order":8,},
     {"id":{"name":"oInteractTrigger","path":"objects/oInteractTrigger/oInteractTrigger.yy",},"order":4,},

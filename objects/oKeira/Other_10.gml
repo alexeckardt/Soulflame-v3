@@ -74,7 +74,12 @@ if (haveSlideDamage) {
 entity_state_reset_on_animation_finish(resetStateOnAnimationFinish);
 resetStateOnAnimationFinish = false;
 
-image_index += index_speed*time/2;
+var deltaIndex = index_speed*time/2;
+if (image_index + deltaIndex > image_number - deltaIndex) {
+	image_index = 0;	
+} else {
+	image_index += deltaIndex;}
+
 //
 //time/2 because the sprites internal image_speed is 30
 //while the goal game speed is 60 (thus half speed)
