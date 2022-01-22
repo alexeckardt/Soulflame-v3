@@ -181,13 +181,13 @@ if (place_meeting(x, y+moveY, Solid)) {
 	
 	//Slide Around Corner
 	var stopVspeed = true;
-	if (controlVSpeed < -1) {
-		if (!place_meeting(x+slideCornerRange+controlHSpeed, y-2+controlVSpeed, Solid)) {
+	if (moveY < -1) {
+		if (!place_meeting(x+slideCornerRange+controlHSpeed, y-2+moveY, Solid)) {
 			controlHSpeed = max(controlHSpeed, 1.5);
 			stopVspeed = false;
 		}
 		
-		if (!place_meeting(x-slideCornerRange+controlHSpeed, y-2+controlVSpeed, Solid)) {
+		if (!place_meeting(x-slideCornerRange+controlHSpeed, y-2+moveY, Solid)) {
 			controlHSpeed = min(controlHSpeed, -1.5);
 			stopVspeed = false;
 		}
@@ -219,6 +219,8 @@ y+=moveY;
 		onGround = (groundBelow != noone)
 
 
+//Update moveX
+moveX = (controlHSpeed + knockbackHSpeed)*time;
 
 //Going Up a Ramp
 if (onGround && place_meeting(x+moveX, y, Solid)) {
@@ -266,7 +268,6 @@ x += moveX;
 
 clamp(x, 0, room_width);
 
-
 //Land Detection
 if (onGround && !wasOnGround) {
 	squishX = squishOffset;
@@ -275,7 +276,6 @@ if (onGround && !wasOnGround) {
 	//Land
 	particle_create_dust(x-4, y+8, x+4, y+6, 5+moveY);
 			
-	
 	//Reset State
 	if (STATE == state.climb) {
 		STATE = state.base;	}
@@ -285,6 +285,10 @@ if (onGround && !wasOnGround) {
 	
 	//Attacks
 	allowCombatAirUp = true;
+	
+	//Land 
+	showLandAnimation = true;
+	runningLandAnimation = (mx != 0);
 }
 
 //

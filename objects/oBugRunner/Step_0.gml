@@ -143,9 +143,9 @@ if (createDamage) {
 	//Create Damage
 	if (!instance_exists(myDamage)) {
 		var w = 12;
-		myDamage = enemy_damage_create(-1, x-w/2, y-w/2, w, w, 3, 1);
-		myDamage.addToHSpeed = hSpeed;
-		myDamage.addToVSpeed = -3;
+		myDamage = enemy_damage_create(-1, x-w/2, y-w/2, w, w, 3, 3);
+		myDamage.addToHSpeed = hSpeed/1.5;
+		myDamage.addToVSpeed = -4;
 	}	
 }
 

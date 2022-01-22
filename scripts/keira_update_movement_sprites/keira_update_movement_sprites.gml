@@ -23,6 +23,9 @@ function keira_update_movement_sprites() {
 			keira_assign_sprite("Climb")
 			keira_assign_sprite("WallHold")
 			
+			keira_assign_sprite("Land", sKeiraLandStanding)
+			keira_assign_sprite("LandRunning", sKeiraLandRunning)
+			
 		
 		break;
 		case weapon.sword:
@@ -30,7 +33,13 @@ function keira_update_movement_sprites() {
 			keira_assign_sprite("Idle",			sKeiraIdleSword,		sWeaponSwordIdle);
 			keira_assign_sprite("IdleReady",	sKeiraIdleReadySword,	sWeaponSwordIdleReady);
 			keira_assign_sprite("Run",			sKeiraRunSword,			sWeaponSwordRun);
-		
+			
+			keira_assign_sprite("Climb")
+			keira_assign_sprite("WallHold")
+			
+			keira_assign_sprite("Land", sKeiraLandStanding)
+			keira_assign_sprite("LandRunning", sKeiraLandRunning)
+			
 	}
 
 

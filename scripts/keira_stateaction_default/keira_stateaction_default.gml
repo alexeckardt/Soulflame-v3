@@ -17,33 +17,130 @@ function keira_stateaction_default() {
 	var currentIdleSprite = keira_get_movement_sprite("Idle");
 	var currentReadySprite = keira_get_movement_sprite("IdleReady");
 	var currentRunSprite = keira_get_movement_sprite("Run");
+	var currentLandStandSprite = keira_get_movement_sprite("Land");
+	var currentLandRunningSprite = keira_get_movement_sprite("LandRunning");
 	var spriteKeyIs = "Idle";
-			
-	if (running) {
-			
-		displayReadyPosForTime = 0;
+		
+	var sprGoal = sprite_index;
+
+	//
+	//
+	//Jumping Animation
+	if (!onGround) {
+		
+		//
+		//
+		var dTo0 = point_distance(vSpeed, 0, 0, 0); 
+		
 		index_speed = 0.4;
 		
-		sprite_switch_to(currentRunSprite);
-		spriteKeyIs = "Run";
+		if (vSpeed <= 0) {
+
+			//
+			//UP
+			if (dTo0 > 2) {
+				
+				//Up Fast
+				sprGoal = (sKeiraJumpUpFast);
+				
+				
+			//SLOW
+			} else {
+				
+				//Up Slow
+				sprGoal = (sKeiraJumpUpSlow);
+			}
 		
-		randomize();
-		if (irandom(100) < 10) {
-			particle_create_dust(x-3+hSpeed, y+6, x+3+hSpeed, y+7, choose(1, 2, 3));
+		//
+		//FALL
+		} else {
+		
+			//Make Sure Not To Transition
+			if (!place_meeting(x, y+3, Solid)) {
+				
+				//FAST
+				if (dTo0 > 2) {
+				
+					//Fast Slow
+					sprGoal = (sKeiraJumpDownFast);
+				
+				
+				//SLOW
+				} else {
+				
+					//Down Slow
+					sprGoal = (sKeiraJumpDownSlow);
+				
+					//Dont Loop Switch Part
+					if (image_index + index_speed > image_number - index_speed) {
+						image_index = 2;	
+					}
+				}
+				
+			}
+		
+			
 		}
-		
-			
+	
+	//On Ground
 	} else {
+		
+		
+		//Running Animation		
+		if (running) {
 			
-		displayReadyPosForTime -= time;
-		var idleSpr		= (displayReadyPosForTime > 0) ? currentReadySprite : currentIdleSprite;
-			spriteKeyIs = (displayReadyPosForTime > 0) ? "IdleReady" : "Idle";
+			displayReadyPosForTime = 0;
+			index_speed = 0.4;
+		
+			sprGoal = (currentRunSprite);
+			spriteKeyIs = "Run";
+		
+			randomize();
+			if (irandom(100) < 10) {
+				particle_create_dust(x-3+hSpeed, y+6, x+3+hSpeed, y+7, choose(1, 2, 3));
+			}
+		
+		
+		//Standing
+		} else {
 			
-		sprite_switch_to(idleSpr);
-		index_speed = 0.2;
+			displayReadyPosForTime -= time;
+			var idleSpr		= (displayReadyPosForTime > 0) ? currentReadySprite : currentIdleSprite;
+				spriteKeyIs = (displayReadyPosForTime > 0) ? "IdleReady" : "Idle";
 			
+			sprGoal = (idleSpr);
+			index_speed = 0.2;
+			
+		}
+
+		//
+		//Land Animation
+		if (showLandAnimation) {
+			
+			//Set Next Goal
+			index_speed = 0.3;
+			sprGoal = (runningLandAnimation) ? currentLandRunningSprite : currentLandStandSprite;
+			
+			
+			//Stop Land Animation on Animation Finish
+			if (sprGoal == sprite_index) {
+				if (image_index + index_speed > image_number - index_speed) {
+					showLandAnimation = false;
+				}
+			}
+			
+		}
+		 
+
+
+
+	//End on Ground
 	}
 	
+	//
+	//
+	sprite_switch_to(sprGoal);
+
 	//Control
 	var giveControl = (true);
 	var cutsceneObj = instance_nearest(x, y, Cutscene);

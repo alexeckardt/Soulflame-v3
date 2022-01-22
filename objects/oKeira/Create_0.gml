@@ -68,7 +68,7 @@ slideSpeedReduction = 0.05;
 slidingInDirection = 1;
 
 //Gravity & Jumping
-jumpSpeed = -5.8;
+jumpSpeed = -6.2;
 myGrav = 0.3;
 terminalVelocity = 6;
 halfGravityThreshold = 0.7;
@@ -121,6 +121,10 @@ squishXGoal = 1;
 squishYGoal = 1;
 squishOffset = 0.3;
 squishReturnSpeed = 0.2;
+
+//Landing
+showLandAnimation = false;
+runningLandAnimation = (mx != 0);
 
 //Weapons & Attacking
 allowControlOverIndex = -1;
