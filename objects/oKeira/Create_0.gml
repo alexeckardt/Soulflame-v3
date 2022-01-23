@@ -99,6 +99,7 @@ timeNotClimbingBeforeReconnect = room_speed/2;
 wallClingVerticalJumpWallPushOffForce = 0.8
 wallJumpNotConnectedForgivenessTime = room_speed;
 wallJumpNotConnectedTimeLeft = 0; //ticks down. if was to connect to a wall, then refund
+climbAttachAnimationPlayed = false;
 
 //Friction
 doAirFriction =true;

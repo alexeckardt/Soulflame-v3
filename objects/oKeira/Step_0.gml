@@ -344,6 +344,7 @@ if (wallInDirection != 0) {
 		//
 		if (!climbing) {
 			STATE = state.base;	
+			climbAttachAnimationPlayed = false;
 		} else {
 		
 		//Enter A Climbing State; Remove Sliding Damage
@@ -388,6 +389,7 @@ if (wallInDirection != 0) {
 		//Exit Climb
 		if (climbing) {
 			STATE = state.base;
+			climbAttachAnimationPlayed = false;
 		}
 	}
 } else {

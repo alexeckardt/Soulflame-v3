@@ -1,7 +1,8 @@
 //
 //DESC:
 //
-//
+//Sorry for the ugly if statement code
+//I don't like it but it's just a longer state machine
 //
 function keira_stateaction_default() {
 	
@@ -19,6 +20,9 @@ function keira_stateaction_default() {
 	var currentRunSprite = keira_get_movement_sprite("Run");
 	var currentLandStandSprite = keira_get_movement_sprite("Land");
 	var currentLandRunningSprite = keira_get_movement_sprite("LandRunning");
+	var currentClimbAttachSprite = keira_get_movement_sprite("ClimbAttach");
+	var currentClimbIdleSprite = keira_get_movement_sprite("ClimbIdle");
+	var currentClimbEdgeHold = keira_get_movement_sprite("ClimbEdgeHold");
 	var spriteKeyIs = "Idle";
 		
 	var sprGoal = sprite_index;
@@ -30,56 +34,96 @@ function keira_stateaction_default() {
 		
 		//
 		//
-		var dTo0 = point_distance(vSpeed, 0, 0, 0); 
-		
-		index_speed = 0.4;
-		
-		if (vSpeed <= 0) {
+		if (STATE == state.climb) {
+			
 
-			//
-			//UP
-			if (dTo0 > 2) {
+			//Attach
+			if (directionFacing == wallInDirection) {
 				
-				//Up Fast
-				sprGoal = (sKeiraJumpUpFast);
+				if (!climbAttachAnimationPlayed) {
+			
+					//Exit
+					sprGoal = currentClimbAttachSprite;
+					index_speed = 0.25;
 				
+					//Reset; Don't play anmation again
+					if (image_index + index_speed >= image_number - index_speed) {
+						climbAttachAnimationPlayed = true;	
+					}
+				} else {
+			
+					//Idle Sprite
+					sprGoal = currentClimbIdleSprite
+					index_speed = 0.1;
+		
+				}
 				
-			//SLOW
-			} else {
-				
-				//Up Slow
-				sprGoal = (sKeiraJumpUpSlow);
 			}
+			
+			
+		} else 
+		if (STATE == state.wall_cling) {
+			
+			//Hold First Frame
+			sprGoal = currentClimbEdgeHold;
+			index_speed = 0;
+			image_index = 0;
+			
+		}
+		else {
+			
+			//
+			var dTo0 = point_distance(vSpeed, 0, 0, 0); 		
+			index_speed = 0.4;
 		
-		//
-		//FALL
-		} else {
-		
-			//Make Sure Not To Transition
-			if (!place_meeting(x, y+3, Solid)) {
-				
-				//FAST
+			if (vSpeed <= 0) {
+
+				//
+				//UP
 				if (dTo0 > 2) {
 				
-					//Fast Slow
-					sprGoal = (sKeiraJumpDownFast);
+					//Up Fast
+					sprGoal = (sKeiraJumpUpFast);
 				
 				
 				//SLOW
 				} else {
 				
-					//Down Slow
-					sprGoal = (sKeiraJumpDownSlow);
-				
-					//Dont Loop Switch Part
-					if (image_index + index_speed > image_number - index_speed) {
-						image_index = 2;	
-					}
+					//Up Slow
+					sprGoal = (sKeiraJumpUpSlow);
 				}
-				
-			}
 		
+			//
+			//FALL
+			} else {
+		
+				//Make Sure Not To Transition
+				if (!place_meeting(x, y+3, Solid)) {
+				
+					//FAST
+					if (dTo0 > 2) {
+				
+						//Fast Slow
+						sprGoal = (sKeiraJumpDownFast);
+				
+				
+					//SLOW
+					} else {
+				
+						//Down Slow
+						sprGoal = (sKeiraJumpDownSlow);
+				
+						//Dont Loop Switch Part
+						if (image_index + index_speed > image_number - index_speed) {
+							image_index = 2;	
+						}
+					}
+				
+				}
 			
+			} 
+		
+		//End Climb
 		}
 	
 	//On Ground
