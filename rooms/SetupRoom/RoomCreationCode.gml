@@ -1,1 +1,2 @@
 room = roomShatterViewingHole
+room = roomLab

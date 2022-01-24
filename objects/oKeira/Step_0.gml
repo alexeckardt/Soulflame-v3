@@ -309,7 +309,8 @@ if (wallInDirection != 0) {
 
 	//Check if techinically climbing
 	var climbing = (STATE == state.climb || STATE == state.wall_cling);
-
+	var wallPosX = x + wallInDirection*8;
+	
 	//Switch To Climb State
 	if (!onGround && !climbing) {
 		
@@ -324,7 +325,7 @@ if (wallInDirection != 0) {
 			 
 				//Must be climbable alittle above
 				//Prvent climbable when only feet touching
-				if (place_meeting(x + wallInDirection, y - 20, Solid)) {
+				if (position_meeting(wallPosX, y-7, Solid)) {
 					STATE = state.climb;	
 					climbing = true;
 				}
@@ -334,7 +335,7 @@ if (wallInDirection != 0) {
 			//Just switched to climbing from not climbing; see if I'm on the edge of a tile
 			//Wall Edge Hold
 			if (climbing) {
-				if (!place_meeting(x + wallInDirection, y-24, Solid)) {
+				if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
 					STATE = state.wall_cling;
 					climbing = true;
 				}
@@ -363,9 +364,10 @@ if (wallInDirection != 0) {
 		
 			//Wall Edge Hold
 			if (climbing) {
-				if (!place_meeting(x + wallInDirection, y-24, Solid)) {
-					STATE = state.wall_cling;
-					climbing = true;
+				if (position_meeting(wallPosX, y-7, Solid)) {
+					if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
+						STATE = state.wall_cling;
+					}
 				}
 			}
 			
@@ -470,7 +472,7 @@ if (jumpTicks > 0) {
 			if (onGroundJump) {
 				
 				var mom = 0; //u
-				controlVSpeed = jumpSpeed + mom; 
+				vSpeed = jumpSpeed + mom; 
 				squishX = -squishOffset;
 				squishY = squishOffset;
 				
@@ -485,7 +487,7 @@ if (jumpTicks > 0) {
 			
 				//Push Away from the wall
 				controlHSpeed = -wallInDirection * wallClingVerticalJumpWallPushOffForce * wallClinging
-				controlVSpeed = wallJumpSpeed; 
+				vSpeed = wallJumpSpeed; 
 				squishX = -squishOffset;
 				squishY = squishOffset;
 		
@@ -507,7 +509,7 @@ if (jumpTicks > 0) {
 				var jumpingAngle = 90 + wallInDirection*wallJumpAngle;
 			
 				controlHSpeed = -lengthdir_x(spd, jumpingAngle);	
-				controlVSpeed = -lengthdir_y(spd, jumpingAngle); 
+				vSpeed = -lengthdir_y(spd, jumpingAngle); 
 			
 				squishX = -squishOffset*1.3;
 				squishY = squishOffset*1.25;
