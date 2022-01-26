@@ -287,7 +287,7 @@ if (onGround && !wasOnGround) {
 	allowCombatAirUp = true;
 	
 	//Land 
-	showLandAnimation = true;
+	showLandAnimation = (STATE == state.base);
 	runningLandAnimation = (mx != 0);
 }
 
@@ -561,24 +561,6 @@ if (nextAttack != state.height) {
 			createdDamage = false;
 		}
 	}
-}
-
-//
-//Hurt State
-if (STATE == state.hurt) {
-	
-	//No Control
-	inControl = false;
-	
-	//Reset State
-	hurtTicks -= time;
-	if (hurtTicks< 0) {
-		STATE = state.base;	
-	}
-	
-} else {
-	//Invulnerability Time Post Damage
-	invulnerableTicks -= time;	
 }
 
 

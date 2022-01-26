@@ -44,7 +44,6 @@ var createDamage = false;
 		
 			//Timer
 			sinceSeenTarget += time;
-		
 		}
 		
 		
@@ -100,7 +99,6 @@ if (STATE == state.chase) {
 	
 		//Bounce
 		if (place_meeting(x+hSpeedGoal, y-10, Solid)) {
-			
 			STATE = state.base;
 			controlHSpeed = -hSpeedGoal*0.7;
 			hSpeedGoal = 0;
@@ -143,13 +141,11 @@ if (createDamage) {
 	//Create Damage
 	if (!instance_exists(myDamage)) {
 		var w = 12;
-		myDamage = enemy_damage_create(-1, x-w/2, y-w/2, w, w, 3, 3);
-		myDamage.addToHSpeed = hSpeed/1.5;
+		myDamage = enemy_damage_create(-1, x-w/2, y-w/2, w, w, 3, 0);
+		myDamage.addToHSpeed = hSpeed*1.5;
 		myDamage.addToVSpeed = -4;
 	}	
 }
-
-
 
 //Horizontal Motion
 	//Friction

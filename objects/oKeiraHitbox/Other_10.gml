@@ -37,12 +37,12 @@ damage_via_owner_destroy(Keira);
 var knockbackStrength = otherDamage.knockbackAmount;
 		
 	//Vector
-	var kbFromX = otherDamage.knockbackFromX - enemyWhoHitMe.hSpeed;
-	var kbFromY = otherDamage.knockbackFromY - enemyWhoHitMe.vSpeed;
-	var dd = point_direction(kbFromX, kbFromY, x, y);
+	var kbFromX = floor(otherDamage.knockbackFromX - enemyWhoHitMe.hSpeed);
+	var kbFromY = floor(otherDamage.knockbackFromY - enemyWhoHitMe.vSpeed);
+	var dd = point_direction(kbFromX, kbFromY, floor(x), floor(y));
 	
 	var enemyVelocity = point_distance(0, 0, enemyWhoHitMe.hSpeed, enemyWhoHitMe.vSpeed);
-	var str = (knockbackStrength + enemyVelocity/2) / Keira.weight;
+	var str = (knockbackStrength + enemyVelocity/2);
 
 	//Add
 	Keira.knockbackHSpeed += lengthdir_x(str, dd) + otherDamage.addToHSpeed;

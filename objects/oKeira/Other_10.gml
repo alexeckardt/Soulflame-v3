@@ -55,6 +55,13 @@ switch (STATE) {
 		keira_stateaction_sit_states();
 	
 		break;
+		
+	case state.hurt:
+	
+		//Sit
+		keira_stateaction_hurt_states();
+	
+		break;
 	
 }	
 
@@ -69,6 +76,12 @@ if (haveSlideDamage) {
 	}
 }
 
+//
+//Hurt State
+if (STATE != state.hurt) {
+	//Invulnerability Time Post Damage
+	invulnerableTicks -= time;	
+}
 
 //Reset
 entity_state_reset_on_animation_finish(resetStateOnAnimationFinish);

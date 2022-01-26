@@ -20,12 +20,14 @@ function keira_update_movement_sprites() {
 			keira_assign_sprite("Run",			sKeiraRunNoWeaponTest);
 			
 			//Not Animated Yet
-			keira_assign_sprite("ClimbAttach",	sKeiraClimbAttatch)
-			keira_assign_sprite("ClimbIdle",	sKeiraClimbIdle)
-			keira_assign_sprite("ClimbEdgeHold", sKeiraClimbEdgeHold);
+			keira_assign_sprite("ClimbAttach",	sKeiraClimbAttatch);
+			keira_assign_sprite("ClimbIdle",	sKeiraClimbIdle);
+			keira_assign_sprite("ClimbEdgeHold", sKeiraClimbEdgeHold);;
 			
-			keira_assign_sprite("Land", sKeiraLandStanding)
-			keira_assign_sprite("LandRunning", sKeiraLandRunning)
+			keira_assign_sprite("Land", sKeiraLandStanding);
+			keira_assign_sprite("LandRunning", sKeiraLandRunning);
+			
+			keira_assign_sprite("Hurt", sKeiraHurt);
 			
 		
 		break;

@@ -12,6 +12,7 @@ function enemy_damage_create(type, _x, _y, w, h, lifeTicks, kbAmount) {
 	obj.image_yscale = h / sprW;
 
 	obj.life = lifeTicks;
+	obj.knockbackAmount = kbAmount;
 	
 	obj.addToHSpeed = 0;
 	obj.addToVSpeed = -1;
