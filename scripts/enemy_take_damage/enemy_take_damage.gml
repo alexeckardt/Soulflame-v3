@@ -85,7 +85,9 @@ function enemy_take_damage() {
 			//screen_shake_with_direction(damageDealt*ssMulti, dd, damageDealt*8)
 			
 		//Hit Effect Object
-			
+		var hitEffectDirection = dd + random_range(-30, 30);
+		var hitEffectScale = clamp(max(sprite_width, sprite_height ) / 32, 0.5, 1.5);
+		hit_effect_create(x, y, hitEffectScale, c_white, hitEffectDirection)
 
 		//Reset
 		hitboxTakingDamage = noone;
