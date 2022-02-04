@@ -2,6 +2,7 @@
 
 //
 close = false;
+display_reset(0, false);
 
 //Pages
 menu_pages_create();

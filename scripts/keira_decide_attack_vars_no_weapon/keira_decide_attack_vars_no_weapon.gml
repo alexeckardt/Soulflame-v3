@@ -35,7 +35,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			damage = bD/2;
 			
 			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
-			spd = 0.8;
+			spd = 0.6;
 			damageObjConsistants = keira_damage_info_array_create(0, -16, 35, 15, 1, 0, -0.5, true);
 			
 			adjustDirectionFacingPreDamage = false;
@@ -193,6 +193,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			//Stay In Air Longer
 			forceHalfGravity = true;
 			vSpeed += 1.5;
+			controlHSpeed = directionFacing * runSpeed * 1.2;
 			
 			break;
 	}

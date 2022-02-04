@@ -5,7 +5,6 @@
 //
 function keira_decide_attack_state(){
 
-	if (inControl) {
 		var stickDeadzone = 0.25;
 		var horizontalAttackReq = abs(Controller.horizontalStick) > stickDeadzone;
 		var running = runningForTime >= tiltTime;
@@ -80,5 +79,5 @@ function keira_decide_attack_state(){
 	
 		//Allow input before current attack is finished.
 		wantToChangeAttackTicks = timeForPreAttacks;
-	}
+		
 }

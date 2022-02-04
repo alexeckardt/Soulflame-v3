@@ -78,6 +78,7 @@ squishY = lerp(squishY, 0, squishReturnSpeed*time);
 	var inAir = !onGround;
 	if (onGround) {
 		slideValBase = (groundBelow != noone) ? groundBelow.traction : 0.3;
+		slideValBase /= (!inControl+1)
 	}
 
 	//Do Friction
@@ -565,7 +566,11 @@ if (nextAttack != state.height) {
 			//Reset Vars
 			nextAttack = state.height;
 			createdDamage = false;
-		}
+		} 
+		
+	//Reset Attack, took too long
+	} else {
+		nextAttack = state.height;	
 	}
 }
 
