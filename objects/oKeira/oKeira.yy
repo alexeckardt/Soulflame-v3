@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sKeiraIdleTest",
-    "path": "sprites/sKeiraIdleTest/sKeiraIdleTest.yy",
+    "name": "sKeiraIdle",
+    "path": "sprites/sKeiraIdle/sKeiraIdle.yy",
   },
   "solid": false,
   "visible": true,

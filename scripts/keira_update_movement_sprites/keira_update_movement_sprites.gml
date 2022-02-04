@@ -15,7 +15,7 @@ function keira_update_movement_sprites() {
 		
 		default:
 			
-			keira_assign_sprite("Idle",			sKeiraIdleTest);
+			keira_assign_sprite("Idle",			sKeiraIdle);
 			keira_assign_sprite("IdleReady",	sKeiraIdleReadyNoWeapon);
 			keira_assign_sprite("Run",			sKeiraRunNoWeaponTest);
 			

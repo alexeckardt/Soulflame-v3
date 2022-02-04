@@ -72,8 +72,6 @@ squishY = lerp(squishY, 0, squishReturnSpeed*time);
 			hSpeedGoal = slidingHspdGoal; 
 		}
 
-
-
 	
 	//Get Friction Values
 	var slideValBase = airFrictionValue;
@@ -94,8 +92,7 @@ squishY = lerp(squishY, 0, squishReturnSpeed*time);
 		if (mx == 0) {
 			holdingOppositeInAir = airFrictionValue
 		}
-	
-	
+
 		//Smooth Friction Amount
 		airFrictionMultiplierLerp = lerp(airFrictionMultiplierLerp, doAirFriction, airFrictionValue/2*time);
 	
@@ -106,7 +103,8 @@ squishY = lerp(squishY, 0, squishReturnSpeed*time);
 		} else {
 		
 			//Smoothly Change Horizontal Speed
-			controlHSpeed = lerp(controlHSpeed, hSpeedGoal, (airFrictionValue + holdingOppositeInAir)*airFrictionMultiplierLerp*time);
+			var airFrictionVal = (inControl) ? airFrictionValue : airFrictionValue/15; //Hold with no control
+			controlHSpeed = lerp(controlHSpeed, hSpeedGoal, (airFrictionVal + holdingOppositeInAir)*airFrictionMultiplierLerp*time);
 
 		}
 
@@ -215,8 +213,15 @@ y+=moveY;
 
 		//Ground Collision Detection
 		var wasOnGround = onGround;
-		groundBelow = instance_place(x, y+1, Solid);
-		onGround = (groundBelow != noone)
+		if (vSpeed >= 0) {
+			groundBelow = instance_place(x, y+1+vSpeed, Solid);
+			onGround = (groundBelow != noone);
+		} else {
+		
+			groundBelow = noone;
+			onGround = false;
+			
+		}
 
 
 //Update moveX
@@ -552,6 +557,7 @@ if (nextAttack != state.height) {
 			//Reset Animation (Otherwise will end if Playing same one)
 			image_index = 0;
 			useFrontAttackSprite = !useFrontAttackSprite;
+			showLandAnimation = false;
 			
 			//Decide Attack Sprites
 			keira_decide_attack_sprite(nextAttack);

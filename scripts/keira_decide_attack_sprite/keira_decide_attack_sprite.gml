@@ -9,7 +9,6 @@ function keira_decide_attack_sprite(_nextState) {
 	allowControlOverIndex = -1;
 	
 	
-
 	switch (Player.weaponUsing) {
 	
 		case weapon.none:

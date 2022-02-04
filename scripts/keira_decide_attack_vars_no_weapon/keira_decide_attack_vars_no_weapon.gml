@@ -32,13 +32,13 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 		default:
 		case state.combat_neutral:
 			
-			damage = bD;
+			damage = bD/2;
 			
 			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
-			spd = 0.75;
+			spd = 0.8;
 			damageObjConsistants = keira_damage_info_array_create(0, -16, 35, 15, 1, 0, -0.5, true);
 			
-			adjustDirectionFacingPreDamage = true;
+			adjustDirectionFacingPreDamage = false;
 			allowControlOverIndex = -1;
 			
 			break;
@@ -67,7 +67,13 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = -1;
 			
-			controlVSpeed = -2
+			//Push Off
+			controlVSpeed = -4;
+			onGround = false;
+			noControlMx = directionFacing;
+			inControl = false;
+			
+			controlHSpeed = directionFacing * runSpeed * 1.6;
 			
 			break;
 		
@@ -115,7 +121,6 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 				
 			damageObjConsistants = keira_damage_info_array_create(-32, -10, 68, 25, 1, 0, -2, true);
 
-				
 			break;
 		
 		//
@@ -151,8 +156,9 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			allowControlOverIndex = 1;
 			
 			//Stay In Air Longer
-			controlVSpeed = min(0, controlVSpeed) + jumpSpeed * combatInAirJumpCoefficient;
-			if (controlVSpeed > 0) {
+			if (controlVSpeed < 0) {
+				controlVSpeed += jumpSpeed * combatInAirJumpCoefficient;
+			} else {
 				controlVSpeed /= 2;}
 			
 			break;

@@ -18,6 +18,7 @@ function keira_stateaction_attack_running() {
 				directionFacing = (h != 0) ? sign(h) : directionFacing;	
 			}
 			
+
 		} else {
 		
 			//Create Damage
@@ -35,18 +36,14 @@ function keira_stateaction_attack_running() {
 		
 		}
 		
+		
 		//
 		//Set Attributes
 		inControl = image_index > allowControlOverIndex;
 		resetStateOnAnimationFinish = true;
 		
 		//Continue to Move During Attack
-		if (image_index < 4) {
+		if (image_index <= 2) {
 			noControlMx = directionFacing;
-		} else {
-			//Slow Down
-			noControlMx = lerp(lastNoControlMX, 0, 0.2);	
-		}
-		
-
+		} 
 }
