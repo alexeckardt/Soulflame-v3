@@ -4,7 +4,7 @@ camera_following();
 
 //camera_photo_mode();
 
-//camera_screen_shake();
+camera_screen_shake();
 
 //Clamp Camera
 var ww = view_width div 2;

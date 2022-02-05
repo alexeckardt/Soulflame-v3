@@ -82,7 +82,7 @@ function enemy_take_damage() {
 			
 		//Hit Effects
 			var ssMulti = (hp <= 0) ? 3 : 1.5
-			//screen_shake_with_direction(damageDealt*ssMulti, dd, damageDealt*8)
+			add_screen_shake_direction(damageDealt*ssMulti, dd, 0.3)
 			
 		//Hit Effect Object
 		var hitEffectDirection = dd + random_range(-30, 30);

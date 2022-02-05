@@ -21,7 +21,7 @@ Player.hp--;
 
 //Hit Effect
 var d = point_direction(otherDamage.x, otherDamage.y, x, y);
-//screen_shake_with_direction(5, d, 10);
+add_screen_shake_direction(8, d, 4);
 
 
 //Player State

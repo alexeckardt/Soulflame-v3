@@ -307,7 +307,7 @@ runningForTime = (running) ? runningForTime + Game.delta : -1;
 
 //Climbing
 timeNotClimbing += time;
-if (wallInDirection != 0) {
+if (wallInDirection != 0 && inControl) {
 
 	//Remeber Wall
 	lastWallInDirection = wallInDirection;
@@ -332,7 +332,7 @@ if (wallInDirection != 0) {
 				//Must be climbable alittle above
 				//Prvent climbable when only feet touching
 				if (position_meeting(wallPosX, y-7, Solid)) {
-					STATE = state.climb;	
+					STATE = state.climb;
 					climbing = true;
 				}
 			}

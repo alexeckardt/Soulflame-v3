@@ -49,7 +49,12 @@ fireSurf = -1;
 createdBkgSurface = false;
 
 //Camera Shake
-screenShakeValuesArray = [0, 0, 0, 0];
+screenXShake = 0
+screenYShake = 0;
+
+screenShakeDir = 0;
+screenShakeLen = 0;
+
 screenShakeMulti = 0;
 
 horizontalBuffer = 16;

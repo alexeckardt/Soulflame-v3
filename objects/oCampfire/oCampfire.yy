@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sCampfire",
-    "path": "sprites/sCampfire/sCampfire.yy",
+    "name": "sCampfireNothing",
+    "path": "sprites/sCampfireNothing/sCampfireNothing.yy",
   },
   "solid": false,
   "visible": true,
