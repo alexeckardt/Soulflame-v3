@@ -24,7 +24,7 @@ if (instance_exists(follow)) {
 
 
 followOffsetX = 0;
-followOffsetY = -2;
+followOffsetY = -8;
 
 depth = -20;
 application_surface_draw_enable(false);
@@ -65,3 +65,9 @@ lastDeactivateY = -100
 
 //Cull Region
 cullCameraBuffer = 16*2;
+
+//Combat Camera
+updateCombatCameraTicks = -1;
+updateCombatCameraEveryNTicks = 5;
+combatCamera = false;
+agressedEnemies = ds_list_create();

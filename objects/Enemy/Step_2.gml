@@ -17,3 +17,6 @@ if (dead) {
 	if (STATE == state.deadexplode) {
 		event_user(2);}
 	}
+	
+//Lerp Camera Weight
+lerpCameraWeight = lerp(lerpCameraWeight, inCombatCamera, 0.1*time);

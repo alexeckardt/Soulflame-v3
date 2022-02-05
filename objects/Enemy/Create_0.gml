@@ -62,7 +62,7 @@ mask_index = sprite_index;
 	updatedAlignmentSprites = false; //Updates any sprites on alginment switch or creation
 	
 	//Targetting
-		target = oKeira;
+		target = instance_nearest(x, y, oKeira);
 		seesTarget = false;
 		sightRange = 320; //20 tiles
 		lastSawTargetX = 0;
@@ -93,12 +93,17 @@ mask_index = sprite_index;
 		index_speed = 0;
 		
 	//Damage
-	createdDamage = false;
-	damageObj = noone;
-	damageKnockbackAddVSpeed = -2;
-	damageKnockbackAddHSpeed = 3;
-	damageKnockbackAddHspeedRelative = true;
-	deathHeadingDirection = 0;
+		createdDamage = false;
+		damageObj = noone;
+		damageKnockbackAddVSpeed = -2;
+		damageKnockbackAddHSpeed = 3;
+		damageKnockbackAddHspeedRelative = true;
+		deathHeadingDirection = 0;
 	
-	orgX = x;
-	orgY = y;
+		orgX = x;
+		orgY = y;
+	
+	//Camera
+		cameraWeight = 1; //How much to pull the camera towards me
+		lerpCameraWeight = 0; //Fadein Fadeout
+		inCombatCamera = false; //Set by camera if I was added to the list.
