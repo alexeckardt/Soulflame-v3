@@ -64,10 +64,13 @@ lastDeactivateX = -100;
 lastDeactivateY = -100
 
 //Cull Region
-cullCameraBuffer = 16*2;
+cullCameraBuffer = 128;
 
 //Combat Camera
 updateCombatCameraTicks = -1;
 updateCombatCameraEveryNTicks = 5;
 combatCamera = false;
 agressedEnemies = ds_list_create();
+
+goalCx = x;
+goalCx = y;

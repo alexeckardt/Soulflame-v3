@@ -45,3 +45,4 @@ hasHitEnemyAllowUpdate = false; //Updates along with above, but is seperate.
 								//
 								//However, if i don't hit another enemy, Damage still reccognizes
 								//that it HAS hit something.
+								

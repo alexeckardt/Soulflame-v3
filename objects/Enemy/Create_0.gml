@@ -107,3 +107,6 @@ mask_index = sprite_index;
 		cameraWeight = 1; //How much to pull the camera towards me
 		lerpCameraWeight = 0; //Fadein Fadeout
 		inCombatCamera = false; //Set by camera if I was added to the list.
+		
+	//Time
+		time = 0; //update beggining tick

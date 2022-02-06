@@ -63,3 +63,4 @@ showDebugOverlay = false;
 viewHitboxes = false;
 viewDamageBoxes = false;
 viewAudioEmitters = false;
+viewCameraDebug = true;

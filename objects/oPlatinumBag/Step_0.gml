@@ -6,8 +6,8 @@ event_inherited();
 if (!decidedIndex) {
 	decidedIndex = true;
 	
-	var xx = (abs(value)+1)*3; //cannot be zero
-	image_index = min(	floor(logn(5,xx)), image_number-1);
+	
+	image_index = platinum_get_bag_index(value);
 	minPlat = value;
 	maxPlat = value;
 	

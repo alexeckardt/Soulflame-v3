@@ -58,9 +58,6 @@ if (surface_exists(frgSurf)) {
 }
 
 
-
-
-
 //Clear Application Surface
 surface_set_target(application_surface);
 	draw_clear_alpha(0, 0);

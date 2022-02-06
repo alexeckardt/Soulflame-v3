@@ -1,4 +1,3 @@
-var time = Game.delta;
 
 //Take Damage 
 enemy_take_damage();

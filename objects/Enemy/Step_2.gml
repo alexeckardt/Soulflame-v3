@@ -1,6 +1,6 @@
 /// @desc
 
-var time = Game.delta;
+//Time set in Settings
 
 //Lower Invulnerablity Ticks
 invulnerableTicks -= time;

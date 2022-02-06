@@ -18,7 +18,7 @@ function camera_following(){
 	var k = oKeira.id;
 
 	//Check for Combat Camera
-	updateCombatCameraTicks++;
+	updateCombatCameraTicks += time;
 	if (updateCombatCameraTicks > updateCombatCameraEveryNTicks) {
 		updateCombatCameraTicks = 0;
 	
@@ -81,6 +81,9 @@ function camera_following(){
 			cX = clamp(followX, ww+horizontalBuffer, room_width-horizontalBuffer-ww);
 			cY = clamp(followY, hh, room_height-hh);
 
+			goalCx = cX;
+			goalCy = cY;
+			
 
 		//COMBAT CAMERA
 		} else {
@@ -88,10 +91,12 @@ function camera_following(){
 			//
 	
 			//COMBAT CAMERA
-			var avgX = 0;
-			var avgY = 0;
+			var playerCamWeight = 1;
+			var avgX = followX*playerCamWeight;
+			var avgY = followY*playerCamWeight;
 	
-			var rolls = 0;
+			var enemiesWeightAdded = 0;
+	
 	
 			//Get Agressed Enemy Positions
 			var listLen = ds_list_size(agressedEnemies);
@@ -102,51 +107,55 @@ function camera_following(){
 		
 				//Get Enemy Position
 				if (!instance_exists(thisEnemy)) continue;
+				
+				//Get Position
 				var enX = thisEnemy.x;
 				var enY = thisEnemy.y;
-				var enDetect = thisEnemy.sightRange;
-		
+
 				//Distances
 				var dd = point_distance(enX, enY, followX, followY);
-				var ignoreRange = enDetect-30;
-			
-				//Choose The Intensity based on dist (smooths in and out)
-				var p = clamp((ignoreRange - dd) / (ignoreRange*1.5), 0, 1); // if outside range, ignore totally
-				var howMuchToIgnore = lerp(1, 1-clamp(thisEnemy.lerpCameraWeight, 0, 1), p) //if p is 1, then ignore my location
-			
+				var minPullDistance = thisEnemy.sightRange;
+				var maxPullDistance = thisEnemy.sightRange div 4;
+				
+				//Percent Pull
+				var diffFromMaxPull = max(0, dd - maxPullDistance);
+				var noPullDistance = abs(minPullDistance-maxPullDistance);
+				var distRatio = (diffFromMaxPull) / (noPullDistance);
+				var percentPull = 1 - clamp( sqrt(distRatio), 0, 1);
+				percentPull *= percentPull; //sqr
+
 				//Get the amount to add to the total pool
-				var addToX = lerp(enX, followX, howMuchToIgnore);
-				var addToY = lerp(enY, followY, howMuchToIgnore);
+				var addToX = lerp(followX, enX, percentPull);
+				var addToY = lerp(followY, enY, percentPull);
 			
 				//Add to the pool
 				var m = thisEnemy.cameraWeight;
 				avgX += addToX*m;
 				avgY += addToY*m;
-				rolls += m;
+				enemiesWeightAdded += m;
 				
 			}
 		
-			//Add Following's Pos but with extra weight to it
-			var weight = 1;
-			avgX += (followX)*weight;
-			avgY += (followY)*weight;
-		
 			//Average the Position based on the rolls
-			avgX = avgX / (rolls+weight);
-			avgY = avgY / (rolls+weight);
+			avgX /= (enemiesWeightAdded + playerCamWeight);
+			avgY /= (enemiesWeightAdded + playerCamWeight);
 	
 	
 			//SAVE
 			cX = clamp(avgX, ww+horizontalBuffer, room_width-horizontalBuffer-ww);
 			cY = clamp(avgY, hh, room_height-hh);
 			//	
+			
+			goalCx = lerp(goalCx, cX, 0.5*time);
+			goalCy = lerp(goalCy, cY, 0.5*time);
+			
 		}
 		
 		//
 		//
 		//Move
-		viewX = lerp(viewX, cX, time/cameraFollowSpeed);
-		viewY = lerp(viewY, cY, time/cameraFollowSpeed);
+		viewX = lerp(viewX, goalCx, time/cameraFollowSpeed);
+		viewY = lerp(viewY, goalCy, time/cameraFollowSpeed);
 		
 	
 	} else {

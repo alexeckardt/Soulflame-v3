@@ -366,6 +366,10 @@ if (platinumDisplayPercent > 0.01) {
 	var c = Game.platinumCol;
 	draw_text_color(xpos, ypos, platinumDisplaying, c, c, c, c, 1);
 
+	//Platinum Bag
+	var platinumBagIndex = platinum_get_bag_index(platinumDisplaying);
+	draw_sprite(sPlatinumBag, platinumBagIndex, xpos - 16, ypos - 2);
+
 	//Platinum Adding To Balance
 	if (platinumToAdd != 0) {
 		var c = (platinumToAdd >= 0) ? c : c_red;

@@ -68,6 +68,7 @@
     {"id":{"name":"keira_stateaction_default","path":"scripts/keira_stateaction_default/keira_stateaction_default.yy",},"order":0,},
     {"id":{"name":"sHitboxArea","path":"sprites/sHitboxArea/sHitboxArea.yy",},"order":1,},
     {"id":{"name":"add_screen_shake","path":"scripts/add_screen_shake/add_screen_shake.yy",},"order":3,},
+    {"id":{"name":"platinum_get_bag_index","path":"scripts/platinum_get_bag_index/platinum_get_bag_index.yy",},"order":21,},
     {"id":{"name":"roomLab","path":"rooms/roomLab/roomLab.yy",},"order":4,},
     {"id":{"name":"string_wrap","path":"scripts/string_wrap/string_wrap.yy",},"order":14,},
     {"id":{"name":"sHumanPots","path":"sprites/sHumanPots/sHumanPots.yy",},"order":0,},
