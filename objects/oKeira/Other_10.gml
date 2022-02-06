@@ -57,6 +57,7 @@ switch (STATE) {
 		break;
 		
 	case state.hurt:
+	case state.hurt_spikes:
 	
 		//Sit
 		keira_stateaction_hurt_states();

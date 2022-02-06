@@ -9,6 +9,7 @@ enum state {
 	climb,
 	wall_cling,
 	hurt,
+	hurt_spikes,
 	dead,
 	deadexplode, //for enemies after staggering
 	

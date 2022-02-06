@@ -14,10 +14,15 @@ function keira_stateaction_hurt_states(){
 	//No Control
 	inControl = false;
 	
+	//Don't Animate
+	showLandAnimation = false;
+	
 	//Reset State
-	hurtTicks -= Game.delta;
-	if (hurtTicks< 0) {
-		STATE = state.base;	
+	if (STATE != state.hurt_spikes) {
+		hurtTicks -= Game.delta;
+		if (hurtTicks< 0) {
+			STATE = state.base;	
+		}
 	}
 
 }

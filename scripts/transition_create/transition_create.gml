@@ -3,9 +3,10 @@
 //
 //
 function transition_create(transitionObj, nextRoom, nextPX, nextPY, nextPD, 
-									alphaDirection, otherinfo0, otherinfo1, otherinfo2) {
+									alphaDirection, otherinfo0, otherinfo1, otherinfo2,
+									force = false) {
 
-	if (!instance_exists(oRoomTransition)) {
+	if (!instance_exists(oRoomTransition) || force) {
 		
 		var obj			= instance_create_depth(x, y, 10, transitionObj);
 		obj.nextRoom	= nextRoom;		

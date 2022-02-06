@@ -4,9 +4,12 @@
 //Teleport Player
 if (!firstRoom) {
 	
-	oKeira.x = roomStartPlayerX;
-	oKeira.y = roomStartPlayerY;
-	oKeira.directionFacing = roomStartPlayerD;
+	var k = oKeira;
+	
+	//Positions
+	k.x = roomStartPlayerX;
+	k.y = roomStartPlayerY;
+	k.directionFacing = roomStartPlayerD;
 	
 	//Make Player Start On Ground
 	var spr = oKeira.sprite_index;
@@ -22,6 +25,10 @@ if (!firstRoom) {
 	var ar = fadeInTransitionInfo;
 	transition_create(ar[0], undefined, 0, 0, 0, -1, ar[1], ar[2], ar[3]);
 	
+	//Spike Position Default
+	k.spikeResetPositionX = k.x;
+	k.spikeResetPositionY = k.y;
+	k.spikeResetPositionD = k.directionFacing;
 	
 }
 firstRoom = false;

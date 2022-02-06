@@ -85,3 +85,7 @@ if (timeSinceDamaged > room_speed) {
 		myDamage.addToVSpeed = -1;
 	}	
 }
+
+
+//Spikes
+enemy_hit_spikes();

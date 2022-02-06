@@ -116,8 +116,8 @@ lastWallInDirection = 0;
 slideCornerRange = 5;
 
 //Squish Squash
-squishX = 1;
-squishY = 1;
+squishX = 0;
+squishY = 0;
 squishXGoal = 1;
 squishYGoal = 1;
 squishOffset = 0.3;
@@ -169,3 +169,12 @@ invulnerableTicks = 0;
 weight = 1.2;
 knockbackHSpeed = 0;
 knockbackVSpeed = 0;
+
+//Spikes
+spikeResetPositionX = x; //position set in Player room Start; this is for first room ( testing )
+spikeResetPositionY = y;
+spikeResetPositionD = 1;
+doSpikesResetPosition = false;
+spikesTimeBeforeResetTransition = room_speed/2;
+spikesTimeLeftBeforeTransition = spikesTimeBeforeResetTransition;
+touchingSpikes = false;

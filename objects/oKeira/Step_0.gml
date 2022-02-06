@@ -13,6 +13,7 @@ squishY = lerp(squishY, 0, squishReturnSpeed*time);
 
 	//Choose Values
 	var grav = myGrav * ((STATE == state.climb && vSpeed > 0) ? climbingGravMulti : 1);
+		grav *= (STATE != state.hurt_spikes)
 	var term = (STATE != state.climb) ? terminalVelocity : climbingTermVel;
 
 	//Stop Vspeed If Clinging To A wall
@@ -599,6 +600,11 @@ if (!instance_exists(Cutscene) && inControl) {
 		}
 	}
 }
+
+
+//Spikes
+keira_spikes_action();
+
 
 
 

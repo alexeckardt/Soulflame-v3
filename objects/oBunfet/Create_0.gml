@@ -35,3 +35,6 @@ hopSpeed = 1;
 
 idleSprite = sBunfetIdle;
 jumpSprite = sBunfetLeap;
+
+sightRange = 160;
+cameraWeight = 0.5;

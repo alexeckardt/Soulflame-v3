@@ -164,4 +164,7 @@ if (createDamage) {
 //Visuals Call
 event_user(0);
 
+//Spikes
+enemy_hit_spikes();
+
 enemy_generic_death_timer();

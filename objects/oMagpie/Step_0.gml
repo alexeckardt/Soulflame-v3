@@ -3,6 +3,7 @@ var k = instance_nearest(x, y, oKeira);
 
 //Take Damage 
 enemy_take_damage();
+
 if (justDamaged) {
 	seesTarget = false;	
 	spd = 0;}
@@ -168,6 +169,9 @@ enemy_generic_death_timer();
 
 //Collision
 generic_collide_solid();
+
+//Spikes
+enemy_hit_spikes();
 	
 //Visuals Call
 event_user(0);

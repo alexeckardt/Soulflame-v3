@@ -368,7 +368,7 @@ if (platinumDisplayPercent > 0.01) {
 
 	//Platinum Bag
 	var platinumBagIndex = platinum_get_bag_index(platinumDisplaying);
-	draw_sprite(sPlatinumBag, platinumBagIndex, xpos - 16, ypos - 2);
+	draw_sprite(sPlatinumBag, platinumBagIndex, xpos - 19, ypos);
 
 	//Platinum Adding To Balance
 	if (platinumToAdd != 0) {
