@@ -26,7 +26,11 @@ function enemy_take_damage() {
 			if (damageingObject.destroyed == false) {
 				damageingObject.enemyHitCount++;
 		
-				ds_list_add(damageingObject.enemiesHit, id);
+				if (ds_exists(damageingObject.enemiesHit, ds_type_list)) {
+					ds_list_add(damageingObject.enemiesHit, id);
+				}
+				
+				//
 				damageingObject.hasHitEnemy = true;
 				damageingObject.hasHitEnemyAllowUpdate = true;
 			}

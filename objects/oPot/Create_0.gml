@@ -2,6 +2,8 @@
 image_index = irandom(image_number);
 image_speed = 0;
 
+depth = oKeira.depth + 5
+
 partTypeKey = "potFragHumans";
 potPartTypeSpr = sHumanPotFragments;
 

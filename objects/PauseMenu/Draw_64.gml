@@ -85,6 +85,8 @@ var baseYY = (startDrawElementAtY) / Player.uiScale - floor(scrollYOffset);
 //Eclipse Title
 draw_sprite_ext(sPixel, 0, 0, baseYY - 5, displayWidth, displayHeight, 0, $00ff00, 1);
 
+selectedColour = essence_get_colour_bright(sin(current_time/100));
+
 //Loop Through Each Elements
 var elementsOnPage = ds_list_size(pageList);
 for (var j = 0; j < elementsOnPage; j++) {
@@ -99,26 +101,13 @@ for (var j = 0; j < elementsOnPage; j++) {
 	var shakee = 0;
 	var thisElementSelected = (elementHoverID == j);
 	if (thisElementSelected) {
-			
+						
 		//Shake
-		if (elementYShakeMulti > 0) {
-			var period = 30 + abs(1-elementYShakeMulti)*100;
-			var sinnes = cos((current_time-elementYShakeTime)/period) * -2;
-				
-			//Shake
-			shakee = sinnes * elementYShakeMulti;
-			
-			//Lower
-			elementYShakeMulti = lerp(elementYShakeMulti, 0, 0.02);
-		}
-		
-		//Colour
-		thisElementSelected = true;
+		shakee = shakeOffset;
 		
 	}
 	//Get Draw Poosition
 	var drawY = baseYY + (elementHeight + elementSpacing)*j + shakee;
-	
 	
 	//Only Draw If Within Screen, Not Below
 	if (drawY > 0 && drawY < displayHeight) {
@@ -159,7 +148,6 @@ for (var j = 0; j < elementsOnPage; j++) {
 					draw_set_halign(fa_center);
 					draw_text_colour(middleLine, drawY, elementName, c,c,c,c,1);
 					break;
-
 				
 			//----------------------------------------------------------------
 			

@@ -62,3 +62,9 @@ selectedColour = c_white;
 backgroundColour = $030303;
 cantscrollBarCol = backgroundColour;
 canscrollBarCol = c_dkgray;
+
+
+shakeOffset = 0;
+shakeAtTime = 0;
+shakePeriod = 70;
+shakeAmplitude = 0;

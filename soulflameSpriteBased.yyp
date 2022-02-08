@@ -33,6 +33,7 @@
     {"id":{"name":"cleanup_ds_list","path":"scripts/cleanup_ds_list/cleanup_ds_list.yy",},"order":7,},
     {"id":{"name":"player_weapon_wheel_select_slot_partial_wheel","path":"scripts/player_weapon_wheel_select_slot_partial_wheel/player_weapon_wheel_select_slot_partial_wheel.yy",},"order":11,},
     {"id":{"name":"keira_get_movement_sprite_weapon","path":"scripts/keira_get_movement_sprite_weapon/keira_get_movement_sprite_weapon.yy",},"order":10,},
+    {"id":{"name":"essence_get_colour_bright","path":"scripts/essence_get_colour_bright/essence_get_colour_bright.yy",},"order":22,},
     {"id":{"name":"sEnvTreeBirch1","path":"sprites/sEnvTreeBirch1/sEnvTreeBirch1.yy",},"order":13,},
     {"id":{"name":"oHitbox","path":"objects/oHitbox/oHitbox.yy",},"order":0,},
     {"id":{"name":"enum_dialouge_type","path":"scripts/enum_dialouge_type/enum_dialouge_type.yy",},"order":6,},

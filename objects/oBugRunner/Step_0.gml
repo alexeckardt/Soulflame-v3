@@ -97,13 +97,15 @@ if (STATE == state.chase) {
 		directionFacing = sign(hSpeedGoal) != 0 ? sign(hSpeedGoal) : directionFacing;
 	
 		//Bounce
-		if (place_meeting(x+hSpeedGoal, y-10, Solid)) {
-			STATE = state.base;
-			controlHSpeed = -hSpeedGoal*0.7;
-			hSpeedGoal = 0;
-			vSpeed = -3;
-			seesTarget = false;
+		if (abs(hSpeed > 1)) {
+			if (place_meeting(x+hSpeedGoal, y-10, Solid)) {
+				STATE = state.base;
+				controlHSpeed = -hSpeedGoal*0.7;
+				hSpeedGoal = 0;
+				vSpeed = -3;
+				seesTarget = false;
 			
+			}
 		}
 	}
 }

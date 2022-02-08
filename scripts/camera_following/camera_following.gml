@@ -55,7 +55,7 @@ function camera_following(){
 	
 	//
 	//Reset On Final Enemy Death
-	if (combatCamera) && (!instance_exists(Enemy)) {
+	if (combatCamera) && (!instance_exists(Enemy) || instance_exists(PauseMenu)) {
 		combatCamera = false;	
 	}
 
@@ -154,8 +154,10 @@ function camera_following(){
 		//
 		//
 		//Move
-		viewX = lerp(viewX, goalCx, time/cameraFollowSpeed);
-		viewY = lerp(viewY, goalCy, time/cameraFollowSpeed);
+		if (time != 0) {
+			viewX = lerp(viewX, goalCx, time/cameraFollowSpeed);
+			viewY = lerp(viewY, goalCy, time/cameraFollowSpeed);
+		}
 		
 	
 	} else {

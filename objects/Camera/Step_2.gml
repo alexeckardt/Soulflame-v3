@@ -1,25 +1,29 @@
 /// @description Camera Movement
 
-camera_following();
+if (Game.delta != 0) {
 
-//camera_photo_mode();
+	camera_following();
 
-camera_screen_shake();
+	//camera_photo_mode();
 
-//Clamp Camera
-var ww = view_width div 2;
-var hh = view_height div 2;
+	camera_screen_shake();
 
-//Clamp
-viewX = clamp(viewX, ww + horizontalBuffer, room_width - horizontalBuffer - ww);
-viewY = clamp(viewY, hh, room_height-hh);
+	//Clamp Camera
+	var ww = view_width div 2;
+	var hh = view_height div 2;
 
-//Set
-realX = (viewX - ww);
-realY = (viewY - hh);
-x = floor(realX);
-y = floor(realY);
+	//Clamp
+	viewX = clamp(viewX, ww + horizontalBuffer, room_width - horizontalBuffer - ww);
+	viewY = clamp(viewY, hh, room_height-hh);
 
-//Reset Matrix
-vm = matrix_build_lookat(viewX, viewY, -10, viewX, viewY, 0, 0, 1, 0);
-camera_set_view_mat(camera, vm);
+	//Set
+	realX = (viewX - ww);
+	realY = (viewY - hh);
+	x = floor(realX);
+	y = floor(realY);
+
+	//Reset Matrix
+	vm = matrix_build_lookat(viewX, viewY, -10, viewX, viewY, 0, 0, 1, 0);
+	camera_set_view_mat(camera, vm);
+
+}

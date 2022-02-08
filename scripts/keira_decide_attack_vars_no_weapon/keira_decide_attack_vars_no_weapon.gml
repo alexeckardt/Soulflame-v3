@@ -69,6 +69,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			
 			//Push Off
 			vSpeed = -4;
+			controlVSpeed = 0;
 			onGround = false;
 			noControlMx = directionFacing;
 			inControl = false;

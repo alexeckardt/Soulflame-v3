@@ -70,6 +70,10 @@ var pageList = page[1];
 			//Reset Scroll Time
 			vScrollResetTime = ticksUntilIncreaseOnHold;
 			
+			//Shake
+			shakeAtTime = current_time;
+			shakeAmplitude = sign(my);
+			
 			//Scroll
 			if (page[3] == true) {
 				var hoveringOverY = startDrawElementAtY + (elementHeight+elementSpacing)*elementHoverID;
@@ -153,6 +157,10 @@ if (Controller.uiBackPressed) {
 						var argsUse = elementInfo[4];
 						script_execute_alt(scriptt, argsUse)
 					
+						shakeAtTime = current_time;
+						shakeAmplitude = -1;
+
+					
 						break;
 					
 					case m_e.shift_through_indexes:
@@ -162,13 +170,16 @@ if (Controller.uiBackPressed) {
 						var varName = elementInfo[4];
 						var optionsAsLanguageArray = elementInfo[5];
 					
-					
 						//Get Value
 						var varValue = variable_instance_get(objId, varName);
 				
 						//Set Value
 						var nextShift = (varValue+1) % array_length(optionsAsLanguageArray);
 						variable_instance_set(objId, varName, nextShift);
+					
+						shakeAtTime = current_time;
+						shakeAmplitude = -0.5;
+					
 					
 						break;
 						
@@ -187,6 +198,9 @@ if (Controller.uiBackPressed) {
 							//Set Value
 							var nextShift = (varValue+1) % array_length(optionsAsLanguageArray);
 							variable_instance_set(objId, varName, nextShift);
+							
+							shakeAtTime = current_time;
+							shakeAmplitude = -0.5;
 						}
 						
 						break;
@@ -215,6 +229,9 @@ if (Controller.uiBackPressed) {
 			
 						//Reset Scroll Time
 						hScrollResetTime = ticksUntilIncreaseOnHold;
+			
+						shakeAtTime = current_time;
+						shakeAmplitude = sign(mx)/2;
 			
 						//Upack
 						var objId = elementInfo[3];
@@ -245,3 +262,7 @@ if (Controller.uiBackPressed) {
 		}
 		
 	}
+	
+//Shake
+shakeOffset = cos((current_time-shakeAtTime) / shakePeriod) * shakeAmplitude * 2;
+shakeAmplitude = lerp(shakeAmplitude, 0, 0.05*Game.indepedentDelta);
