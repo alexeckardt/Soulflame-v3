@@ -1,6 +1,59 @@
 /// @desc
 
+//Always Do
 usingController = gamepad_is_connected(0);
+
+updateFullScreen = keyboard_check_released(vk_f11);
+if (updateFullScreen) {
+	Game.fullscreen = !Game.fullscreen;	
+}
+
+//Command Object Is Typing
+freezeInput = !((!instance_exists(commandInputObj)) || (commandInputObj.ranCommand));
+
+
+if (keyboard_check_pressed(191) && Game.allowCheats) {
+	
+	//
+	//Check if I should Create
+	if (!freezeInput) {
+	
+		//
+		//Create
+		if (instance_exists(commandInputObj)) {
+			instance_destroy(commandInputObj);				
+		}
+			
+		commandInputObj = instance_create_depth(x, y, 0, CommandInput);
+		freezeInput = true;
+	
+	}
+}
+
+//End it with Escape
+if (freezeInput) {
+	if (keyboard_check_pressed(vk_escape)) {
+		instance_destroy(commandInputObj);
+		exit;
+	}
+}
+
+
+
+//Freeze Input
+if (freezeInput) {
+	
+	if (!wasFreezeInput) {
+		reset_keybind_vars();
+	}
+	
+	//Don't Continue
+	exit;
+}
+
+
+//Input Is NOT frozen past this.
+
 
 //Controller Controller (Preferred)
 if (usingController) {
@@ -97,9 +150,4 @@ if (!usingController) {
 	uiUp = up;
 	uiDown = down;
 
-}
-
-updateFullScreen = keyboard_check_released(vk_f11);
-if (updateFullScreen) {
-	Game.fullscreen = !Game.fullscreen;	
 }

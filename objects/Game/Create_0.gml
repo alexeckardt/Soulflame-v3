@@ -60,7 +60,10 @@ debugVSpacing = 14;
 //Debug Settings
 showDebugOverlay = false;
 
+allowCheats = true;
+
 viewHitboxes = false;
 viewDamageBoxes = false;
 viewAudioEmitters = false;
 viewCameraDebug = true;
+doCombatCamera = true;

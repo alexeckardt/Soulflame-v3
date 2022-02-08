@@ -4,46 +4,56 @@
 usingController = gamepad_is_connected(0);
 gamepadDeadzone = 0.3;
 
-horizontalStick = 0;
-hStickTimeInSameInput = 0;
+freezeInput = false;
+wasFreezeInput = false;
 
-verticalStick = 0;
-vStickTimeInSameInput = 0;
+commandInputObj = noone;
 
-stickDirection = 0;
-stickHolding = false;
+function reset_keybind_vars() {
 
+	horizontalStick = 0;
+	hStickTimeInSameInput = 0;
 
-left = false;
-right = false;
+	verticalStick = 0;
+	vStickTimeInSameInput = 0;
 
-jump = false;
-jumpHeld = false;
+	stickDirection = 0;
+	stickHolding = false;
 
-combatAttack = false;
-combatAttackPressed = false;
+	left = false;
+	right = false;
 
-heavyAttack = false;
-heavyAttackPressed = false;
+	jump = false;
+	jumpHeld = false;
 
-block = false;
-blockPressed = false;
+	combatAttack = false;
+	combatAttackPressed = false;
 
-updateFullScreen = true;
+	heavyAttack = false;
+	heavyAttackPressed = false;
 
-interactPressed = false;
+	block = false;
+	blockPressed = false;
 
-uiSelectPressed = false;
-uiBackPressed = false;
+	updateFullScreen = true;
 
-//Pause
-pausePressed = false
+	interactPressed = false;
 
-//View Stick
-holdingRightStick = false;
+	uiSelectPressed = false;
+	uiBackPressed = false;
 
-rightStickHorizontal = 0;
-rightStickVertical = 0;
-rightStickDirection = 0;
-rightStickHolding = false;
-rightStickPressed = false;
+	//Pause
+	pausePressed = false
+
+	//View Stick
+	holdingRightStick = false;
+
+	rightStickHorizontal = 0;
+	rightStickVertical = 0;
+	rightStickDirection = 0;
+	rightStickHolding = false;
+	rightStickPressed = false;
+
+}
+
+reset_keybind_vars();

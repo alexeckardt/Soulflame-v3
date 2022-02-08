@@ -41,7 +41,8 @@ function menu_pages_create(){
 				["windowmode",			m_e.shift_through_indexes,	g, "fullscreen",		["option.windowed", "option.fullscreen"]],
 				["frameSkips",			m_e.shift_through_indexes,	g, "frameSkips",		["option.skip0", "option.skip1", "option.skip2", "option.skip3", "option.skip4"]],
 				[],
-				["paralax",				m_e.slider,				g, "paralaxScale",	0, 1.5, 15, true],
+				["paralax",				m_e.slider,					g, "paralaxScale",	0, 1.5, 15, true],
+				["combatCamera",		m_e.shift_through_indexes,	g, "doCombatCamera",	["option.false", "option.true"]],
 				[],
 				["audio",				m_e.page_transfer,	"audio_page", ],
 				["debugsettings",		m_e.page_transfer,	"debug_settings_page", ],
@@ -69,8 +70,11 @@ function menu_pages_create(){
 				["damageBoxes",		m_e.debug_conditional,	g, "viewDamageBoxes",	["option.hidden", "option.visible"]],
 				["audioSource",		m_e.debug_conditional,	g, "viewAudioEmitters",	["option.hidden", "option.visible"]],
 				
+				[],
 				
-	
+				["commands",		m_e.shift_through_indexes,	g, "allowCheats",	["option.false", "option.true"]],
+				
+
 			]
 			);
 				

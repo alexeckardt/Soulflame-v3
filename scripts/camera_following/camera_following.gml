@@ -18,44 +18,48 @@ function camera_following(){
 	var k = oKeira.id;
 
 	//Check for Combat Camera
-	updateCombatCameraTicks += time;
-	if (updateCombatCameraTicks > updateCombatCameraEveryNTicks) {
-		updateCombatCameraTicks = 0;
+	if (Game.doCombatCamera) {
+		updateCombatCameraTicks += time;
+		if (updateCombatCameraTicks > updateCombatCameraEveryNTicks) {
+			updateCombatCameraTicks = 0;
 	
-		//Reset
-		combatCamera = false;
-		ds_list_clear(agressedEnemies);
+			//Reset
+			combatCamera = false;
+			ds_list_clear(agressedEnemies);
 		
-		//Check For Enemies
-		if (instance_exists(Enemy)) {
-			//var loopChecks = instance_number(pEnemy);
+			//Check For Enemies
+			if (instance_exists(Enemy)) {
+				//var loopChecks = instance_number(pEnemy);
 		
-			//Loop Through all enemies to add them to the list that is agro
-			var list = agressedEnemies;
-			var camFollow = follow;
-			with (Enemy) {
+				//Loop Through all enemies to add them to the list that is agro
+				var list = agressedEnemies;
+				var camFollow = follow;
+				with (Enemy) {
 				
-				inCombatCamera = false;
+					inCombatCamera = false;
 				
-				var dd = point_distance(x, y, camFollow.x, camFollow.y);
-				if (dd < sightRange) {
-					if (cameraWeight > 0) {
-						ds_list_add(list, id);	
-						inCombatCamera = true;
+					var dd = point_distance(x, y, camFollow.x, camFollow.y);
+					if (dd < sightRange) {
+						if (cameraWeight > 0) {
+							ds_list_add(list, id);	
+							inCombatCamera = true;
+						}
 					}
+				
+				
 				}
-				
-				
-			}
 		
-			//Update
-			combatCamera = ds_list_size(list) > 0;	
-		}	
-	}
+				//Update
+				combatCamera = ds_list_size(list) > 0;	
+			}	
+		}
 	
-	//
-	//Reset On Final Enemy Death
-	if (combatCamera) && (!instance_exists(Enemy) || instance_exists(PauseMenu)) {
+		//
+		//Reset On Final Enemy Death
+		if (combatCamera) && (!instance_exists(Enemy) || instance_exists(PauseMenu)) {
+			combatCamera = false;	
+		}
+	} else {
 		combatCamera = false;	
 	}
 
