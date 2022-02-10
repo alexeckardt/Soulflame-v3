@@ -49,7 +49,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			
 			spr = sKeiraAttackNoWeaponHTilt;
 			spd = 0.4;
-			damageObjConsistants = keira_damage_info_array_create(-5, -24, 74, 30, 2.5, 0, -3, true);
+			damageObjConsistants = keira_damage_info_array_create(-5, -24, 54, 30, 2.5, 0, -3, true);
 			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = -1;
@@ -171,7 +171,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			spd = 0.65;
 			
 			var w = 30;
-			damageObjConsistants = keira_damage_info_array_create(-w/2, 8, w, 25, 4, 0, 1, true);
+			damageObjConsistants = keira_damage_info_array_create(-w/2, 8, w, 35, 4, 0, 1, true);
 			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = 1;

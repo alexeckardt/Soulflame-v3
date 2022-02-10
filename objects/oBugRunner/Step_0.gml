@@ -140,12 +140,16 @@ if (STATE == state.breaking) {
 if (createDamage) {
 	
 	//Create Damage
-	if (!instance_exists(myDamage)) {
-		var w = 12;
-		myDamage = enemy_damage_create(-1, x-w/2, y-w/2, w, w, 3, 0);
-		myDamage.addToHSpeed = hSpeed*1.5;
-		myDamage.addToVSpeed = -4;
-	}	
+	if (noDamageAfterHurtTicksLeft <= 0) {
+		if (!instance_exists(myDamage)) {
+			
+			var w = 12;
+			myDamage = enemy_damage_create(-1, x-w/2, y-w/2, w, w, 2, 0);
+			myDamage.addToHSpeed = hSpeed*1.5;
+			myDamage.addToVSpeed = -4;
+			
+		}	
+	}
 }
 
 //Horizontal Motion

@@ -331,7 +331,6 @@
     {"id":{"name":"damage_create_ext","path":"scripts/damage_create_ext/damage_create_ext.yy",},"order":4,},
     {"id":{"name":"sEnvTreeBirch0","path":"sprites/sEnvTreeBirch0/sEnvTreeBirch0.yy",},"order":12,},
     {"id":{"name":"oCollisionTrigger","path":"objects/oCollisionTrigger/oCollisionTrigger.yy",},"order":3,},
-    {"id":{"name":"sKeiraRunNoWeapon","path":"sprites/sKeiraRunNoWeapon/sKeiraRunNoWeapon.yy",},"order":11,},
     {"id":{"name":"sHeartFull","path":"sprites/sHeartFull/sHeartFull.yy",},"order":5,},
     {"id":{"name":"respawn","path":"scripts/respawn/respawn.yy",},"order":9,},
     {"id":{"name":"Cutscene","path":"objects/Cutscene/Cutscene.yy",},"order":1,},

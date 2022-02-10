@@ -10,6 +10,9 @@ function enemy_take_damage() {
 	justDied = false;
 	timeSinceDamaged += Game.delta;
 	
+	//No Damage Ticks
+	noDamageAfterHurtTicksLeft -= Game.delta;
+	
 	//Check If a Hitbox has been hit
 	if (hitboxTakingDamage != noone) {
 	
@@ -95,9 +98,15 @@ function enemy_take_damage() {
 
 		//Reset
 		hitboxTakingDamage = noone;
+			
+		//Reccognizing
 		invulnerableTicks = 5;
 		justDamaged = true;
 		timeSinceDamaged = 0;
+		
+		//Stagger Damage
+		if (noDamageAfterHurtTicksLeft < 0) {
+			noDamageAfterHurtTicksLeft = noDamageAfterHurtTime;}
 		
 		//Dead Detect
 		if (!dead) {

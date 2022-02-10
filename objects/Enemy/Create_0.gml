@@ -102,6 +102,9 @@ mask_index = sprite_index;
 	
 		orgX = x;
 		orgY = y;
+		
+		noDamageAfterHurtTime = room_speed;
+		noDamageAfterHurtTicksLeft = noDamageAfterHurtTime;
 	
 	//Camera
 		cameraWeight = 1; //How much to pull the camera towards me
@@ -110,3 +113,5 @@ mask_index = sprite_index;
 		
 	//Time
 		time = 0; //update beggining tick
+		
+	
