@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 49,
+  "bbox_right": 30,
   "bbox_top": 0,
-  "bbox_bottom": 28,
+  "bbox_bottom": 24,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 50,
-  "height": 29,
+  "width": 31,
+  "height": 25,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,27 +24,27 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"c70eb0e9-cddf-4e89-8c19-24d9489ae253","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c70eb0e9-cddf-4e89-8c19-24d9489ae253","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"8f2a19a6-eb05-4cef-9cbb-bc1c249597e3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"c70eb0e9-cddf-4e89-8c19-24d9489ae253","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"a83feffa-f680-433e-8a5b-9fe50dacc749","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a83feffa-f680-433e-8a5b-9fe50dacc749","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"8f2a19a6-eb05-4cef-9cbb-bc1c249597e3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"a83feffa-f680-433e-8a5b-9fe50dacc749","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"d4b6b58b-57a7-4237-b74b-2f9a49c7fcb4","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d4b6b58b-57a7-4237-b74b-2f9a49c7fcb4","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"8f2a19a6-eb05-4cef-9cbb-bc1c249597e3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"d4b6b58b-57a7-4237-b74b-2f9a49c7fcb4","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"3de1250f-b5f2-44b6-b805-7441c4b8f704","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3de1250f-b5f2-44b6-b805-7441c4b8f704","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"8f2a19a6-eb05-4cef-9cbb-bc1c249597e3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"3de1250f-b5f2-44b6-b805-7441c4b8f704","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"96755964-c2a5-4bb2-9d43-710ae7733d12","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"96755964-c2a5-4bb2-9d43-710ae7733d12","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"8f2a19a6-eb05-4cef-9cbb-bc1c249597e3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"96755964-c2a5-4bb2-9d43-710ae7733d12","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"7806e08a-b6e0-4848-b8e2-e2981821e47e","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7806e08a-b6e0-4848-b8e2-e2981821e47e","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"8f2a19a6-eb05-4cef-9cbb-bc1c249597e3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"7806e08a-b6e0-4848-b8e2-e2981821e47e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"d0bc173f-ee51-47b3-aa77-70ae507044f5","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d0bc173f-ee51-47b3-aa77-70ae507044f5","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"8f2a19a6-eb05-4cef-9cbb-bc1c249597e3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"d0bc173f-ee51-47b3-aa77-70ae507044f5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"86eb4a36-cdb0-4231-867b-05fede5835ef","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"86eb4a36-cdb0-4231-867b-05fede5835ef","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"48579fa4-6e17-46e3-b1ce-9eda056292a8","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"86eb4a36-cdb0-4231-867b-05fede5835ef","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"5e567fda-4750-4ff5-bdc9-76e419115fa3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"5e567fda-4750-4ff5-bdc9-76e419115fa3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"48579fa4-6e17-46e3-b1ce-9eda056292a8","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"5e567fda-4750-4ff5-bdc9-76e419115fa3","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"9edfac47-7d3f-4a7b-86b1-e250dbb5acc3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"9edfac47-7d3f-4a7b-86b1-e250dbb5acc3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"48579fa4-6e17-46e3-b1ce-9eda056292a8","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"9edfac47-7d3f-4a7b-86b1-e250dbb5acc3","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ec9b3d01-a731-4712-9468-ad52d8bb2429","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ec9b3d01-a731-4712-9468-ad52d8bb2429","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"48579fa4-6e17-46e3-b1ce-9eda056292a8","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"ec9b3d01-a731-4712-9468-ad52d8bb2429","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d6ab1ff6-99c0-4f0c-8001-a26d9e4e0629","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d6ab1ff6-99c0-4f0c-8001-a26d9e4e0629","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"48579fa4-6e17-46e3-b1ce-9eda056292a8","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"d6ab1ff6-99c0-4f0c-8001-a26d9e4e0629","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"2b75874b-e6df-4ce0-90a2-2f2643cf37cc","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"2b75874b-e6df-4ce0-90a2-2f2643cf37cc","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"48579fa4-6e17-46e3-b1ce-9eda056292a8","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"2b75874b-e6df-4ce0-90a2-2f2643cf37cc","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"f837e9c8-154a-42cf-9e82-27cbd1410af1","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"f837e9c8-154a-42cf-9e82-27cbd1410af1","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"LayerId":{"name":"48579fa4-6e17-46e3-b1ce-9eda056292a8","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","name":"f837e9c8-154a-42cf-9e82-27cbd1410af1","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},
@@ -59,13 +59,13 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"c4b4311f-f207-4cc8-9855-8b81b30ec814","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c70eb0e9-cddf-4e89-8c19-24d9489ae253","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"3e3a7243-502c-4ab2-b25a-bdd380156342","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a83feffa-f680-433e-8a5b-9fe50dacc749","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"e574ca34-e417-427f-8558-a3bb2c028d02","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d4b6b58b-57a7-4237-b74b-2f9a49c7fcb4","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"34bfa758-b0ff-436b-8006-3ca6d93c779d","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3de1250f-b5f2-44b6-b805-7441c4b8f704","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"79c8b4ec-a66b-45e1-a20d-7885b682f816","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"96755964-c2a5-4bb2-9d43-710ae7733d12","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"8f0e4668-ff74-4e19-80e0-762d43549d8a","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7806e08a-b6e0-4848-b8e2-e2981821e47e","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"ee718f9b-dbc5-4406-8daa-e70860900a65","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d0bc173f-ee51-47b3-aa77-70ae507044f5","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"5be55940-efca-4e12-97b3-d6a86f0248ab","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"86eb4a36-cdb0-4231-867b-05fede5835ef","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"609761d0-5789-4d23-a072-3ef4a6ab61eb","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5e567fda-4750-4ff5-bdc9-76e419115fa3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"5a7be782-9147-4047-8cf0-4c6dcbab4438","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9edfac47-7d3f-4a7b-86b1-e250dbb5acc3","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d10d4169-91b7-4256-b1a8-81b4c79a346a","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ec9b3d01-a731-4712-9468-ad52d8bb2429","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"2927c88a-de1e-44b6-bc28-9a4d54dc8326","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d6ab1ff6-99c0-4f0c-8001-a26d9e4e0629","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b6db7820-8cc6-49f3-90a8-659a079d6d38","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2b75874b-e6df-4ce0-90a2-2f2643cf37cc","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"68a88cab-6340-4500-b575-283884787b5c","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f837e9c8-154a-42cf-9e82-27cbd1410af1","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -78,8 +78,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 19,
-    "yorigin": 20,
+    "xorigin": 17,
+    "yorigin": 19,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},
@@ -89,7 +89,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8f2a19a6-eb05-4cef-9cbb-bc1c249597e3","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"48579fa4-6e17-46e3-b1ce-9eda056292a8","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
