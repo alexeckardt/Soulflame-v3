@@ -75,7 +75,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 9,
-    "yorigin": 19,
+    "yorigin": 20,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackNoWeaponPunch0","path":"sprites/sKeiraAttackNoWeaponPunch0/sKeiraAttackNoWeaponPunch0.yy",},
