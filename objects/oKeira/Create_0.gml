@@ -75,7 +75,7 @@ halfGravityThreshold = 0.7;
 forceHalfGravity = false;
 allowHalfGravity = true;
 cutVspd = false;
-combatInAirJumpCoefficient = 0.8;
+combatInAirJumpCoefficient = 1;
 
 //Jump
 forceJump = false;

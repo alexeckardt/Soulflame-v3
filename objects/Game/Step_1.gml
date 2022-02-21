@@ -48,7 +48,7 @@ if (!paused) {
 	delta = 0;	
 }
 
-if (keyboard_check(vk_f3)) {
+if (keyboard_check_pressed(vk_f3)) {
 	showDebugOverlay = !showDebugOverlay;	
 }
 

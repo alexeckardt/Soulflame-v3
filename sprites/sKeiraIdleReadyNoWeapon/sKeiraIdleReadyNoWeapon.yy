@@ -55,7 +55,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 7,
-    "yorigin": 19,
+    "yorigin": 20,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraIdleReadyNoWeapon","path":"sprites/sKeiraIdleReadyNoWeapon/sKeiraIdleReadyNoWeapon.yy",},
