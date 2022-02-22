@@ -162,6 +162,8 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			} else {
 				controlVSpeed /= 2;}
 			
+			controlVSpeed -= 1;
+			
 			break;
 			
 		case state.combat_air_down:

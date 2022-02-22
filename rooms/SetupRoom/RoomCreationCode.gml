@@ -1,2 +1,2 @@
 room = roomShatterViewingHole
-room = roomLab
+room = roomSurfaceUndergroundTutorial

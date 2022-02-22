@@ -10,12 +10,12 @@
   "bbox_left": 0,
   "bbox_right": 63,
   "bbox_top": 3,
-  "bbox_bottom": 63,
+  "bbox_bottom": 127,
   "HTile": false,
   "VTile": false,
   "For3D": false,
   "width": 64,
-  "height": 64,
+  "height": 128,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"3014e865-67af-42eb-80e2-4dacc94e9ab3","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3014e865-67af-42eb-80e2-4dacc94e9ab3","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"LayerId":{"name":"2ab1c37d-d558-4b5b-9a8e-a20896f80f73","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sTileWoodenSpikes","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"resourceVersion":"1.0","name":"3014e865-67af-42eb-80e2-4dacc94e9ab3","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"8d6cb5aa-973d-43e9-8d2f-034698b27cdc","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"8d6cb5aa-973d-43e9-8d2f-034698b27cdc","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"LayerId":{"name":"2ab1c37d-d558-4b5b-9a8e-a20896f80f73","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTileWoodenSpikes","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"resourceVersion":"1.0","name":"8d6cb5aa-973d-43e9-8d2f-034698b27cdc","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sTileWoodenSpikes","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"290281a6-b4ba-4922-9402-bfd70f798063","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3014e865-67af-42eb-80e2-4dacc94e9ab3","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0730e5a5-b6b0-4778-9dc8-e50f9b3947d2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8d6cb5aa-973d-43e9-8d2f-034698b27cdc","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
