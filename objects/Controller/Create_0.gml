@@ -1,5 +1,7 @@
 /// @desc
 
+controllersConnected = [];
+controllerUsing = -1;
 
 usingController = gamepad_is_connected(0);
 gamepadDeadzone = 0.3;

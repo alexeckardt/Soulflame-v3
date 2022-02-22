@@ -1,7 +1,19 @@
 /// @desc
 
+if (!instance_exists(PauseMenu)) {
+	var gp_num = gamepad_get_device_count();
+	controllerUsing = -1;
+	for (var i = 0; i < gp_num; i++;)
+	{
+		controllersConnected[i] = gamepad_is_connected(i);
+		if (controllersConnected[i] && controllerUsing == -1) {
+			controllerUsing = i;	
+		}
+	}
+}
+
 //Always Do
-usingController = gamepad_is_connected(0);
+usingController = (controllerUsing != -1);
 
 updateFullScreen = keyboard_check_released(vk_f11);
 if (updateFullScreen) {
@@ -58,58 +70,58 @@ if (freezeInput) {
 //Controller Controller (Preferred)
 if (usingController) {
 	//Set Deadzone
-	gamepad_set_axis_deadzone(0, gamepadDeadzone);
+	gamepad_set_axis_deadzone(controllerUsing, gamepadDeadzone);
 
 	//Stick Input Values
 	
 		//Time In Horizontal
 		hStickTimeInSameInput += Game.delta;
 		var hStickLast = horizontalStick;
-		horizontalStick = gamepad_axis_value(0, gp_axislh);
+		horizontalStick = gamepad_axis_value(controllerUsing, gp_axislh);
 		if (hStickLast != horizontalStick) hStickTimeInSameInput = 0;
 	
 		//Time In Vertical
 		vStickTimeInSameInput += Game.delta;
 		var vStickLast = verticalStick;
-		verticalStick = gamepad_axis_value(0, gp_axislv);
+		verticalStick = gamepad_axis_value(controllerUsing, gp_axislv);
 		if (vStickLast != verticalStick) vStickTimeInSameInput = 0;
 	
 		stickDirection = point_direction(0, 0, horizontalStick, verticalStick);
 		stickHolding = abs(horizontalStick) > 0.05 || abs(verticalStick) > 0.05
 
 		//Looking Stick Stuff
-		rightStickHorizontal = (gamepad_axis_value(0, gp_axisrh) > 0)
-							 - (gamepad_axis_value(0, gp_axisrh) < 0);
+		rightStickHorizontal = (gamepad_axis_value(controllerUsing, gp_axisrh) > 0)
+							 - (gamepad_axis_value(controllerUsing, gp_axisrh) < 0);
 							 
-		rightStickVertical	= (gamepad_axis_value(0, gp_axisrv) > 0)
-							- (gamepad_axis_value(0, gp_axisrv) < 0);
+		rightStickVertical	= (gamepad_axis_value(controllerUsing, gp_axisrv) > 0)
+							- (gamepad_axis_value(controllerUsing, gp_axisrv) < 0);
 
-		rightStickDirection = point_direction(0, 0, gamepad_axis_value(0, gp_axisrh), gamepad_axis_value(0, gp_axisrv));
+		rightStickDirection = point_direction(0, 0, gamepad_axis_value(controllerUsing, gp_axisrh), gamepad_axis_value(controllerUsing, gp_axisrv));
 		rightStickHolding = abs(rightStickHorizontal) > 0.05 || abs(rightStickVertical) > 0.05
-		rightStickPressed = gamepad_button_check_pressed(0, gp_stickr);
+		rightStickPressed = gamepad_button_check_pressed(controllerUsing, gp_stickr);
 
 	//Left and Right
 	left = horizontalStick < 0;
 	right = horizontalStick > 0;
 	
-	jump = gamepad_button_check_pressed(0, gp_face1);
-	jumpHeld = gamepad_button_check(0, gp_face1);
+	jump = gamepad_button_check_pressed(controllerUsing, gp_face1);
+	jumpHeld = gamepad_button_check(controllerUsing, gp_face1);
 	
-	combatAttack = gamepad_button_check(0, gp_face3);
-	combatAttackPressed = gamepad_button_check_pressed(0, gp_face3);
+	combatAttack = gamepad_button_check(controllerUsing, gp_face3);
+	combatAttackPressed = gamepad_button_check_pressed(controllerUsing, gp_face3);
 	
-	magicAttack = gamepad_button_check(0, gp_face2);
-	magicAttackPressed = gamepad_button_check_pressed(0, gp_face2);
+	magicAttack = gamepad_button_check(controllerUsing, gp_face2);
+	magicAttackPressed = gamepad_button_check_pressed(controllerUsing, gp_face2);
 	
-	block = gamepad_button_check(0, gp_shoulderl);
-	blockPressed = gamepad_button_check(0, gp_shoulderl);
+	block = gamepad_button_check(controllerUsing, gp_shoulderl);
+	blockPressed = gamepad_button_check(controllerUsing, gp_shoulderl);
 
-	interact =  gamepad_button_check_pressed(0, gp_face4);
+	interact =  gamepad_button_check_pressed(controllerUsing, gp_face4);
 
-	uiSelectPressed = gamepad_button_check_pressed(0, gp_face1);
-	uiBackPressed = gamepad_button_check_pressed(0, gp_face2);
+	uiSelectPressed = gamepad_button_check_pressed(controllerUsing, gp_face1);
+	uiBackPressed = gamepad_button_check_pressed(controllerUsing, gp_face2);
 	
-	pausePressed = gamepad_button_check_pressed(0, gp_start);
+	pausePressed = gamepad_button_check_pressed(controllerUsing, gp_start);
 	
 	uiUp = (verticalStick < 0);
 	uiDown = (verticalStick > 0);
