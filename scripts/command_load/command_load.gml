@@ -3,6 +3,8 @@
 //
 //
 //
-function command_load(){
+function command_load(saveFileName = undefined){
+
+	load_game(saveFileName);
 
 }

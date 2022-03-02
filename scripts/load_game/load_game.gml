@@ -2,10 +2,10 @@
 //
 //
 //
-function load_game(saveFileName = "") {
+function load_game(saveFileName = undefined) {
 
 	//Get Name (If Imported)
-	var save_file_name = (saveFileName == "") ? Game.saveSlotName + ".sav" : saveFileName
+	var save_file_name = (saveFileName == undefined) ? (Game.saveSlotName + ".sav") : saveFileName
 	Game.saveSlotName = string_replace(save_file_name, ".sav", "");
 	
 	//Read File

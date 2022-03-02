@@ -10,12 +10,12 @@
   "bbox_left": 0,
   "bbox_right": 81,
   "bbox_top": 0,
-  "bbox_bottom": 26,
+  "bbox_bottom": 28,
   "HTile": false,
   "VTile": false,
   "For3D": false,
   "width": 82,
-  "height": 27,
+  "height": 29,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,21 +24,21 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"82d7cae6-205a-4ad4-a51f-b19672deb333","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"82d7cae6-205a-4ad4-a51f-b19672deb333","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"6b24f889-b8fa-4f6e-8108-59a57dbb2130","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"82d7cae6-205a-4ad4-a51f-b19672deb333","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"3f35124b-fd73-4ebc-a00b-2b2c85be5030","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3f35124b-fd73-4ebc-a00b-2b2c85be5030","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"6b24f889-b8fa-4f6e-8108-59a57dbb2130","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"3f35124b-fd73-4ebc-a00b-2b2c85be5030","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"66542651-fb4e-4832-8606-0d53d1fe8688","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"66542651-fb4e-4832-8606-0d53d1fe8688","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"6b24f889-b8fa-4f6e-8108-59a57dbb2130","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"66542651-fb4e-4832-8606-0d53d1fe8688","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"d0b8c9ae-af00-4239-8013-95fb61a3bdd0","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d0b8c9ae-af00-4239-8013-95fb61a3bdd0","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"6b24f889-b8fa-4f6e-8108-59a57dbb2130","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"d0b8c9ae-af00-4239-8013-95fb61a3bdd0","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"cc48cc98-61fd-4bc5-9453-6f15479e3765","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cc48cc98-61fd-4bc5-9453-6f15479e3765","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"6b24f889-b8fa-4f6e-8108-59a57dbb2130","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"cc48cc98-61fd-4bc5-9453-6f15479e3765","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"39d8e6eb-ae23-4b0e-a462-b541e18780b5","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"39d8e6eb-ae23-4b0e-a462-b541e18780b5","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"62b88f17-fc26-4fbb-bffd-bdddae748906","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"39d8e6eb-ae23-4b0e-a462-b541e18780b5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"48264793-3c21-4a48-9ebc-120c21089080","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"48264793-3c21-4a48-9ebc-120c21089080","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"62b88f17-fc26-4fbb-bffd-bdddae748906","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"48264793-3c21-4a48-9ebc-120c21089080","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"2d42a613-44fc-4e85-bc46-5e8208a06962","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"2d42a613-44fc-4e85-bc46-5e8208a06962","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"62b88f17-fc26-4fbb-bffd-bdddae748906","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"2d42a613-44fc-4e85-bc46-5e8208a06962","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"31427c1f-9105-4828-b1e5-7ee7e85ace85","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"31427c1f-9105-4828-b1e5-7ee7e85ace85","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"62b88f17-fc26-4fbb-bffd-bdddae748906","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"31427c1f-9105-4828-b1e5-7ee7e85ace85","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"769a2e12-fb8f-45a2-be46-0721982cd6ab","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"769a2e12-fb8f-45a2-be46-0721982cd6ab","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"LayerId":{"name":"62b88f17-fc26-4fbb-bffd-bdddae748906","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","name":"769a2e12-fb8f-45a2-be46-0721982cd6ab","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},
@@ -53,11 +53,11 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"dff23eef-5f0a-40fc-b448-ae37a054640b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"82d7cae6-205a-4ad4-a51f-b19672deb333","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"c7327e9e-01a9-46cf-9202-b3889e5457f9","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3f35124b-fd73-4ebc-a00b-2b2c85be5030","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"83837523-c87f-4f8f-a81e-e3e840c55f69","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"66542651-fb4e-4832-8606-0d53d1fe8688","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"ff1b14f2-3e45-4b27-8848-674e4f17af68","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d0b8c9ae-af00-4239-8013-95fb61a3bdd0","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"b9aacaf7-f3ff-4e2a-8578-4a65cb126af8","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cc48cc98-61fd-4bc5-9453-6f15479e3765","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b92253a2-4621-4116-8de4-2098fa96346a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"39d8e6eb-ae23-4b0e-a462-b541e18780b5","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e528523f-84f0-490c-be7e-f4dc49ad1f47","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"48264793-3c21-4a48-9ebc-120c21089080","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1f37ed71-771d-4c10-a95d-b12dd5d6803e","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2d42a613-44fc-4e85-bc46-5e8208a06962","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"888699bf-1dc5-4c1c-98a2-45ec4e4f820f","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"31427c1f-9105-4828-b1e5-7ee7e85ace85","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1926b8b2-be5e-4b83-9b7f-29f30193dc04","Key":4.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"769a2e12-fb8f-45a2-be46-0721982cd6ab","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -70,8 +70,8 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 34,
-    "yorigin": 21,
+    "xorigin": 35,
+    "yorigin": 20,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},
@@ -81,7 +81,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6b24f889-b8fa-4f6e-8108-59a57dbb2130","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"62b88f17-fc26-4fbb-bffd-bdddae748906","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

@@ -87,13 +87,13 @@ displayingAllWeapons = false;
 maxWeaponsCanHold	= 3;
 weaponsEquipted		= ds_grid_create(maxWeaponsCanHold, 2);
 					ds_grid_clear(weaponsEquipted, -1);
-					ds_grid_set_region(weaponsEquipted, 0, 1, maxWeaponsCanHold-1, 1, 0);
+					ds_grid_set_region(weaponsEquipted, 0, 1, maxWeaponsCanHold-1, 1, 0);			
 					
 weaponsUnlocked		= ds_list_create();
 ds_list_add(weaponsUnlocked, 0, 5, 8);
 
-allowForging		= false;
-weaponForging		= false;
+allowForging		= true; //
+weaponForging		= true; //
 
 forgingWeaponSlotReplacing = -1;
 forgingWeaponId				= 0;

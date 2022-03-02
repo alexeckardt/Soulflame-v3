@@ -75,7 +75,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 34,
-    "yorigin": 6,
+    "yorigin": 4,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWeaponSwordRun","path":"sprites/sWeaponSwordRun/sWeaponSwordRun.yy",},
