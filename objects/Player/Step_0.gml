@@ -52,3 +52,14 @@ player_weapon_wheel_step();
 		} 
 	
 	}
+	
+//
+//
+//Interact Alpha
+
+	//Check
+	var sameString	= interactString == drawingInteractString;
+
+	//Alpha (Fade out if Not same or not touching)
+	interactAlpha	= lerp(interactAlpha, showInteractString*sameString, (0.18 + (0.2*(!sameString)))*Game.deltaRatio);
+	
