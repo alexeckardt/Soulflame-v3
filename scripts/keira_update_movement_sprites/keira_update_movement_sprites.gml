@@ -28,6 +28,7 @@ function keira_update_movement_sprites() {
 			keira_assign_sprite("LandRunning", sKeiraLandRunning);
 			
 			keira_assign_sprite("Hurt", sKeiraHurt);
+			keira_assign_sprite("Dead", sKeiraDeathHitFrame);
 			
 		
 		break;
@@ -45,6 +46,7 @@ function keira_update_movement_sprites() {
 			keira_assign_sprite("LandRunning", sKeiraLandRunning)
 			
 			keira_assign_sprite("Hurt", sKeiraHurt);
+			keira_assign_sprite("Dead", sKeiraDeathHitFrame);
 			
 	}
 

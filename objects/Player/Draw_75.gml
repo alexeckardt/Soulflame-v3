@@ -112,6 +112,7 @@ if (!surface_exists(featherSurf)) {
 		//Position
 		var heartSprite = sHeartFull
 		var heartxx = (i + 0.5)*heartWidthOffset;
+		var heartyy = hpY;
 		
 		//Decide Sprite
 		//Regular Health Display
@@ -133,8 +134,14 @@ if (!surface_exists(featherSurf)) {
 		
 		}
 		
+		//Shakey Shakey
+		if (hp == 1 && i == 0) {
+			heartxx += choose(-1, 1);
+			heartyy += choose(-1, 1);
+		}	
+		
 		//Draw
-		draw_sprite(heartSprite, 0, heartxx, hpY);
+		draw_sprite(heartSprite, 0, heartxx, heartyy);
 		
 	}
 	

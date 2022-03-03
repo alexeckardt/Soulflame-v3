@@ -64,6 +64,13 @@ switch (STATE) {
 	
 		break;
 	
+	case state.dead:
+	
+		//Sit
+		keira_stateaction_dead_state();
+	
+		break;
+	
 }	
 
 //Botch

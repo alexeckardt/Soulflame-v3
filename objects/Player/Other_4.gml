@@ -30,5 +30,14 @@ if (!firstRoom) {
 	k.spikeResetPositionY = k.y;
 	k.spikeResetPositionD = k.directionFacing;
 	
+	//Dead Respawn
+	if (loadRoomAsRespawn) {
+		loadRoomAsRespawn = false;
+		hp = baseMaxHealth;
+		
+		//Check If Campfire Near; Sit Down Near It.
+		
+	}
+	
 }
 firstRoom = false;

@@ -1,7 +1,6 @@
 /// @description Camera Other
 
 
-
 //Switch To Full Screen
 if (window_get_fullscreen() != Game.fullscreen) {
 	window_set_fullscreen(Game.fullscreen);

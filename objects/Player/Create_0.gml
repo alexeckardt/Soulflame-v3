@@ -140,3 +140,9 @@ savePointRoom = "";
 savePointX = 0;
 savePointY = 0;
 savePointD = 0;
+
+//Dead
+loadRoomAsRespawn = false;
+deadFadeOut = false;
+deadTimeBeforeFadeOut = room_speed*1.5;
+deadFadeOutTicks = deadTimeBeforeFadeOut;

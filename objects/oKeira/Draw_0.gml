@@ -8,7 +8,7 @@ var alpha = 1;
 var b = (inControl || !Game.showDebugOverlay) ? c_white : c_red;
 
 //Invulnerable Ticks Alpha
-if (invulnerableTicks > 0) {
+if (invulnerableTicks > 0 && !dead) {
 	alpha = sin(current_time/30)/2 + 0.5;
 	b = merge_colour(c_black, merge_colour(c_black, b, 0.5), alpha);
 }

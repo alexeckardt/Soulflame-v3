@@ -178,3 +178,6 @@ doSpikesResetPosition = false;
 spikesTimeBeforeResetTransition = room_speed/2;
 spikesTimeLeftBeforeTransition = spikesTimeBeforeResetTransition;
 touchingSpikes = false;
+
+//Dead
+dead = false;

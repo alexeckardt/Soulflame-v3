@@ -14,6 +14,12 @@ var corruptionHpLoss = clamp(corruptionHpLossBase, 0, corruptionMaxReductionHP);
 
 currentMaxHealth = baseMaxHealth - corruptionHpLoss;
 
+
+//Death
+player_do_death();
+
+
+
 //Weapon Wheel Select
 player_weapon_wheel_step();
 

@@ -21,7 +21,13 @@ function keira_stateaction_hurt_states(){
 	if (STATE != state.hurt_spikes) {
 		hurtTicks -= Game.delta;
 		if (hurtTicks< 0) {
-			STATE = state.base;	
+			
+			if (!dead) {
+				STATE = state.base;	
+			} else {
+				STATE = state.dead;	
+			}
+			
 		}
 	}
 
