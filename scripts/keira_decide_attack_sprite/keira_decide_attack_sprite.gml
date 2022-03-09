@@ -7,6 +7,7 @@ function keira_decide_attack_sprite(_nextState) {
 
 	//info based on sprite
 	allowControlOverIndex = -1;
+	allowNextAttackAfterIndex = -1;
 	
 	
 	switch (Player.weaponUsing) {

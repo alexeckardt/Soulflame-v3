@@ -57,7 +57,7 @@ squishY = lerp(squishY, 0, squishReturnSpeed*time);
 	//Find Goal
 	var hspdGoalsMultipliers = runSpeedMulti;
 	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers;
-	var slidingHspdGoal = slidingInDirection * slideSpeed * hspdGoalsMultipliers;
+
 
 	//No Control Movement
 	if (!inControl) {
@@ -70,12 +70,17 @@ squishY = lerp(squishY, 0, squishReturnSpeed*time);
 	//Change Goal Based on State
 		//Auto Changes in Hespeed
 		if (STATE = state.combat_slide) { 
+			var slidingHspdGoal = slidingInDirection * slideSpeed * hspdGoalsMultipliers;
 			hSpeedGoal = slidingHspdGoal; 
+		}
+		if (onGround && Player.weaponUsing = weapon.sword
+			&& (STATE == state.combat_neutral || STATE == state.combat_running) ) {
+			hSpeedGoal /= 2;
 		}
 
 	
 	//Get Friction Values
-	var slideValBase = airFrictionValue;
+	var slideValBase = airFrictionValue; 
 	var inAir = !onGround;
 	if (onGround) {
 		slideValBase = (groundBelow != noone) ? groundBelow.traction : 0.3;
@@ -552,10 +557,11 @@ if (nextAttack != state.height) {
 	
 	//Allow for input of attacks before "begun" current attack
 	wantToChangeAttackTicks -= time;
-	if (wantToChangeAttackTicks > 0) { //This might be backwards
+	if (wantToChangeAttackTicks >= 0) { //This might be backwards
 		
 		//Make Sure Attack is finished
-		if (STATE == state.base) {
+		var quickAnim = (image_index >= allowNextAttackAfterIndex) && allowNextAttackAfterIndex != -1;
+		if (STATE == state.base || quickAnim) {
 			
 			//Set New Attack
 			STATE = nextAttack;

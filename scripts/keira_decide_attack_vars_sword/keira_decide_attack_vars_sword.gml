@@ -38,7 +38,8 @@ function keira_decide_attack_vars_sword(_nextState) {
 		
 		default:
 		case state.combat_neutral:
-			
+		case state.combat_running:
+
 			damage = bD;
 
 			//Should Attack Upwards?
@@ -50,34 +51,15 @@ function keira_decide_attack_vars_sword(_nextState) {
 			readyShow = 0;
 			
 			spd = baseSoeed;
-			damageObjConsistants = keira_damage_info_array_create(-20, -16, 85, 25, kbM, 0, -0.5, true);
+			damageObjConsistants = keira_damage_info_array_create(-20, -16, 75, 25, kbM, 0, -0.5, true);
 			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = 2;
+			allowNextAttackAfterIndex = 4; //allow instant switch, low recovery time
 
 			break;
 		
-		case state.combat_running:
-			
-			damage = bD;
 
-			//Should Attack Upwards?
-
-			spr = (useFrontAttackSprite) ? sKeiraAttackSwordHorizontal0 : sKeiraAttackSwordHorizontal1;
-			weaponOverlaySprite = (useFrontAttackSprite) ? sWeaponSwordAttackHorizontal0 : sWeaponSwordAttackHorizontal1
-			
-			//DOn't go to ready spr
-			readyShow = 0;
-			
-			spd = baseSoeed;
-			damageObjConsistants = keira_damage_info_array_create(0, -16, 45, 25, kbM, 0, -0.5, true);
-			
-			adjustDirectionFacingPreDamage = true;
-			allowControlOverIndex = 0;
-			
-			controlHSpeed /= 2;
-
-			break;
 		
 		case state.combat_htilt:
 		

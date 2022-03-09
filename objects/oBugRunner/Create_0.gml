@@ -3,7 +3,7 @@
 event_inherited();
 
 //Mutators
-hp = 4
+hp = 6
 platinumDrop = 5
 platinumDropRange = 0.5;
 sightRange = 16*8;

@@ -13,6 +13,7 @@ runSprite = sKeiraRunNoWeaponTest;
 slideActivateSprite = sKeiraAttackSlideActivate;
 slideRecoverSprite = sKeiraAttackSlideRecover;
 weaponSprite = -1;
+allowNextAttackAfterIndex = -1;
 
 //Display
 index_speed = 0;
