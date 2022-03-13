@@ -4,13 +4,35 @@ event_inherited();
 
 //Update
 if (playerSittingHere) {
-	//
+	
+	
+	//Sit Up; Exit Events
 	if (oKeira.STATE == state.situp) {
 		//Stop Sitting Here
 		playerSittingHere = false;
 			
 		//Save Again
 		save_game(true, false); //*Temporary*
+	}
+	
+	//
+	//Sitting Events
+	else {
+		
+		//Heal Player
+		if (Player.hp < Player.currentMaxHealth) {
+		
+			//Timer
+			healTicks -= Game.delta;
+			
+			//Heal After Time
+			if (healTicks < 0) {
+				healTicks = healTime;	
+				Player.hp++;
+			}
+			
+		}
+			
 	}
 	
 }

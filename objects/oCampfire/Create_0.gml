@@ -37,3 +37,6 @@ fireIndex = 0;
 flameFrequencyStrength = 0;
 
 flameColour = c_gray;
+
+healTicks = 0;
+healTime = room_speed/6;
