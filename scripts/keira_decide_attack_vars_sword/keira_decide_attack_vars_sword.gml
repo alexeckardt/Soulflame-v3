@@ -18,7 +18,7 @@ function keira_decide_attack_vars_sword(_nextState) {
 	var damageType = damage_type.slash;
 	
 	//Visuals
-	var readyShow = showReadyAfterAttackForBase * 5
+	var readyShow = 0;//showReadyAfterAttackForBase * 5
 	
 	//Send To Script
 	var spr = readySprite;
@@ -60,15 +60,14 @@ function keira_decide_attack_vars_sword(_nextState) {
 
 			break;
 		
-
-		
-		
 		case state.combat_up:
 		
 			damage = bD*hTiltMulti;
 		
-			spr = sKeiraAttackNoWeaponUppercut;
-			spd = 0.4;
+			spr = sKeiraAttackSwordUp;
+			weaponOverlaySprite = sWeaponSwordAttackUp;
+			
+			spd = baseSoeed;
 			damageObjConsistants = keira_damage_info_array_create(-12, -50, 38, 44, kbM*.5, 0.2, -6, true);
 			
 			adjustDirectionFacingPreDamage = false;

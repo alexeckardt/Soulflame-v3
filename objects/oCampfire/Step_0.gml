@@ -35,7 +35,7 @@ if (playerSittingHere) {
 			
 	} else {
 		
-		//Error
+		//Error; Typicall through load
 		playerSittingHere = false;
 			
 	}

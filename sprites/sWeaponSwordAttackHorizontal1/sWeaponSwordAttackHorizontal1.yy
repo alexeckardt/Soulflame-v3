@@ -71,7 +71,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 35,
-    "yorigin": 21,
+    "yorigin": 22,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},
