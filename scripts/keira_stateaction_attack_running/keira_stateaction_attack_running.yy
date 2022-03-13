@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "stateactions",
-    "path": "folders/Keira/Scripts/stateactions.yy",
+    "name": "Attacks",
+    "path": "folders/Keira/Scripts/stateactions/Attacks.yy",
   },
   "resourceVersion": "1.0",
   "name": "keira_stateaction_attack_running",

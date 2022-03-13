@@ -3,7 +3,7 @@
 //
 //
 //
-function keira_stateaction_down_air(){
+function keira_stateaction_attack_down_air(){
 
 	//Set Sprite
 	sprite_switch_to(attackSprite);

@@ -16,19 +16,28 @@ enum state {
 	//Change With Weapons
 	
 	combat_neutral,			//Quick Jabs and Round House Kicks
-	combat_htilt,			//Heavy Punch / Kicks
+	
+	//Held, Normal
 	combat_running,			//Running Attack with small recovery
-	combat_up,				//Punch Upwards
-	combat_down,			//Punch Downwards
-	
-	combat_slide,			//Slide
-	combat_slide_recover,	//Recover
-	
 	combat_air_neutral,		//
 	combat_air_horizontal,	//Front House Kick
 	combat_air_up,			//Sky Upper Cut (To Hit Things Above)
 	combat_air_down,			//Kick Jump (If Hits enemy it will jump again)
+	combat_up,				//Punch Upwards
+	combat_down,			//Punch Downwards
 	
+	//As Tilt
+	combat_htilt,			//Heavy Punch / Kicks
+	combat_up_tilt,			//Punch Upwards
+	combat_down_tilt,		//Punch Downwards
+	combat_air_htilt,			//Heavy Punch / Kicks
+	combat_air_up_tilt,			//Punch Upwards
+	combat_air_down_tilt,		//Punch Downwards
+	
+	combat_slide,			//Slide
+	combat_slide_recover,	//Recover
+	
+
 	
 	//Constant
 	

@@ -31,6 +31,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 		
 		default:
 		case state.combat_neutral:
+		case state.combat_down:
 			
 			damage = bD/2;
 			
@@ -79,6 +80,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			break;
 		
 		case state.combat_up:
+		case state.combat_up_tilt:
 		
 			damage = bD*hTiltMulti;
 		
@@ -110,7 +112,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 				
 			break;
 			
-		case state.combat_down:
+		case state.combat_down_tilt:
 		
 			damage = bD;
 		

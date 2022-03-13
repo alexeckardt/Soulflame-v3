@@ -12,8 +12,11 @@ function keira_decide_attack_state(){
 						//Take H Momentum into account here
 		var runAttack = running && horizontalAttackReq;
 		var doHTilt = horizontalAttackReq && Controller.hStickTimeInSameInput <= tiltTime;
-		var upAttack = (Controller.verticalStick) < -stickDeadzone && Controller.vStickTimeInSameInput < tiltTime;
-		var downAttack = (Controller.verticalStick) > stickDeadzone && Controller.vStickTimeInSameInput < tiltTime;
+		
+		var vTilt = Controller.vStickTimeInSameInput < tiltTime;
+		
+		var upAttack = (Controller.verticalStick) < -stickDeadzone;
+		var downAttack = (Controller.verticalStick) > stickDeadzone;
 
 		if (timeOffGround < 3) {
 		
@@ -29,7 +32,12 @@ function keira_decide_attack_state(){
 			}
 		
 			if (upAttack) {
-				nextAttack = state.combat_up;	
+				
+				if (!vTilt) {
+					nextAttack = state.combat_up;	
+				} else {
+					nextAttack = state.combat_up_tilt;	
+				}
 			}
 		
 		
@@ -38,7 +46,12 @@ function keira_decide_attack_state(){
 				if (running) {
 					nextAttack = state.combat_slide;
 				} else {
-					nextAttack = state.combat_down;	
+					
+					if (!vTilt) {
+						nextAttack = state.combat_down;	
+					} else {
+						nextAttack = state.combat_down_tilt;	
+					}
 				}
 			}
 		
@@ -52,7 +65,13 @@ function keira_decide_attack_state(){
 			//Air Attacks
 			if (upAttack) {
 				if (allowCombatAirUp) {
-					nextAttack = state.combat_air_up;
+					
+					if (!vTilt) {
+						nextAttack = state.combat_air_up;
+					} else {
+						nextAttack = state.combat_air_up_tilt;
+					}
+					
 					allowCombatAirUp = false;
 				}
 			
@@ -62,7 +81,12 @@ function keira_decide_attack_state(){
 				if (running && place_meeting(x, y+vSpeed+16, Solid)) {
 					nextAttack = state.combat_slide;
 				} else {
-					nextAttack = state.combat_air_down;
+					if (!vTilt) {
+						nextAttack = state.combat_air_down;
+					} else {
+						nextAttack = state.combat_air_down_tilt;
+					}
+					
 				}
 			
 			} else 

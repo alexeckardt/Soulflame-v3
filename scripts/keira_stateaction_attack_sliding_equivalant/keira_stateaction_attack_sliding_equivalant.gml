@@ -3,7 +3,7 @@
 //
 //
 //
-function keira_stateaction_sliding_equivalant() {
+function keira_stateaction_attack_sliding_equivalant() {
 	
 	sprite_switch_to(attackSprite);
 	index_speed = attackSpeed;

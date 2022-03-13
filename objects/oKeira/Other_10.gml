@@ -16,14 +16,31 @@ switch (STATE) {
 	break;
 	
 	//
-	//Base
+	//Basekeira_stateaction_attack_down_air();break;
+	
+	///
+	//
+	/// Comat States -- These Should Affect the movement or behaviour DURING STATE
+	///		Initial State movements (such as air combat gives a small jump)
+	///		Should be handeled on state switch.
+	//
+	///
+	
 	case state.combat_neutral:
-	case state.combat_htilt:
-	case state.combat_up:
-	case state.combat_air_up:
 	case state.combat_air_neutral:
-	case state.combat_air_horizontal:
+	
+	case state.combat_up:
+	case state.combat_up_tilt:
+	case state.combat_air_up:
+	case state.combat_air_up_tilt:
+	
+	case state.combat_htilt:
+	
+	case state.combat_air_horizontal:	
+	case state.combat_air_htilt:
+	
 	case state.combat_down:
+	case state.combat_down_tilt:
 	
 		//Ideally, All of the above will have their own stateaction;
 		//where different events playout based on the weapon
@@ -35,17 +52,16 @@ switch (STATE) {
 	case state.combat_running:	keira_stateaction_attack_running();break;
 	
 	//Air down
-	case state.combat_air_down:	keira_stateaction_down_air();break;
+	case state.combat_air_down:	
+	case state.combat_air_down_tilt: keira_stateaction_attack_down_air();break;
 	
 	//Combat Slide
-	case state.combat_slide:	keira_stateaction_sliding_equivalant();break;
+	case state.combat_slide:	keira_stateaction_attack_sliding_equivalant();break;
 	
-	case state.combat_slide_recover:
-		
-		//Recovery Animation States
-		keira_stateaction_slide_recover_equivalant();
-		
-	break;
+	//Recovery Animation States
+	case state.combat_slide_recover: keira_stateaction_attack_slide_recover_equivalant();break;
+	
+	
 	
 	case state.sitdown:
 	case state.sit:
