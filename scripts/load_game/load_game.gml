@@ -2,7 +2,7 @@
 //
 //
 //
-function load_game(saveFileName = undefined) {
+function load_game(saveFileName = undefined, startTransition = true) {
 
 	//Get Name (If Imported)
 	var save_file_name = (saveFileName == undefined) ? (Game.saveSlotName + ".sav") : saveFileName
@@ -45,11 +45,13 @@ function load_game(saveFileName = undefined) {
 	ds_map_destroy(global_save_data);
 	
 	//Transition To Room
-	transition_create(
-		oTransitionFade, 
-		asset_get_index(Player.savePointRoom), Player.savePointX, Player.savePointY, Player.savePointD, 
-		1, c_black, undefined, undefined);
-		
+	if (startTransition) { 
+		transition_create(
+			oTransitionFade, 
+			asset_get_index(Player.savePointRoom), Player.savePointX, Player.savePointY, Player.savePointD, 
+			1, c_black, undefined, undefined);
+	}
+
 	show_debug_message("Load");
 		
 	return undefined

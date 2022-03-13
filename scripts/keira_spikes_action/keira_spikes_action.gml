@@ -39,6 +39,7 @@ function keira_spikes_action() {
 					//Take Damage
 					if (spikeTouching.dealDamage) {	
 						Player.hp--;
+						Player.dead = Player.hp <= 0
 						add_screen_shake_direction(5, point_direction(0, 0, vSpeed, hSpeed), 0.5);
 					}
 		
@@ -80,27 +81,34 @@ function keira_spikes_action() {
 	//Resetting Position?
 	if (doSpikesResetPosition) {
 	
-		//Timer
-		spikesTimeLeftBeforeTransition -= Game.delta;
-		if (spikesTimeLeftBeforeTransition < 0) {
+		//If Dead, Let Dead Handle It
+		if (!Player.dead) {
+			
+			//Timer
+			spikesTimeLeftBeforeTransition -= Game.delta;
+			if (spikesTimeLeftBeforeTransition < 0) {
 	
-			//Create Transition
-			var transition = transition_create(oTransitionFade, room, 
-				spikeResetPositionX, spikeResetPositionY, spikeResetPositionD,
-				1, c_black, -1, -1);
+				//Create Transition
+				var transition = transition_create(oTransitionFade, room, 
+					spikeResetPositionX, spikeResetPositionY, spikeResetPositionD,
+					1, c_black, -1, -1);
 	
-			//See If Actually Created; else redo this on next tick
-			if (instance_exists(transition)) {
+				//See If Actually Created; else redo this on next tick
+				if (instance_exists(transition)) {
 				
-				//Don't switch rooms
-				transition.switchRooms = false;
+					//Don't switch rooms on hit
+					//Load on death
+					transition.switchRooms = false;
 
-				//Reset Vars; 
-				spikesTimeLeftBeforeTransition = spikesTimeBeforeResetTransition;
-				doSpikesResetPosition = false;
+					//Reset Vars; 
+					spikesTimeLeftBeforeTransition = spikesTimeBeforeResetTransition;
+					doSpikesResetPosition = false;
+
 				
+				}
+
 			}
-
+		
 		}
 		
 	}

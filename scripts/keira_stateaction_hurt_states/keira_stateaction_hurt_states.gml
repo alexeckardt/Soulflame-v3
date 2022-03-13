@@ -18,9 +18,9 @@ function keira_stateaction_hurt_states(){
 	showLandAnimation = false;
 	
 	//Reset State
-	if (STATE != state.hurt_spikes) {
+	if (STATE != state.hurt_spikes || dead) {
 		hurtTicks -= Game.delta;
-		if (hurtTicks< 0) {
+		if (hurtTicks < 0) {
 			
 			if (!dead) {
 				STATE = state.base;	
@@ -30,5 +30,4 @@ function keira_stateaction_hurt_states(){
 			
 		}
 	}
-
 }

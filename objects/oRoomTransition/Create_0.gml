@@ -15,3 +15,5 @@ alpha = 0;
 otherinfo0 = 0;
 otherinfo1 = 0;
 otherinfo2 = 0;
+
+loadInstead = false;

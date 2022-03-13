@@ -39,11 +39,21 @@ function player_do_death(){
 			
 			if (!instance_exists(oRoomTransition)) {
 				
+				//Get Room
+				var roomToId = asset_get_index(Player.savePointRoom);
+
 				//Fade Transition To Save Point
-				transition_create(
+				var roomTransition = transition_create(
 					oTransitionFade, 
-					asset_get_index(Player.savePointRoom), Player.savePointX, Player.savePointY, Player.savePointD, 
+					roomToId, Player.savePointX, Player.savePointY, Player.savePointD, 
 					1, c_black, undefined, undefined);
+				
+				//Error Handel
+				if (roomToId == -1) {
+					roomTransition.loadInstead = true;	
+				}
+				
+				
 					
 				//Reset
 				deadFadeOut = false;
