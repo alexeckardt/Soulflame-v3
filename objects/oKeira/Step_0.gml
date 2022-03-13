@@ -6,6 +6,20 @@ var time = Game.delta
 squishX = lerp(squishX, 0, squishReturnSpeed*time);
 squishY = lerp(squishY, 0, squishReturnSpeed*time);
 
+//Prelims
+var transitionPlaying = instance_nearest(x, y, oRoomTransition);
+if (transitionPlaying != noone) {
+	if (transitionPlaying.freezePlayer) {
+		inControl = false;
+	}
+}
+
+//
+//
+//
+
+
+
 //Gravity
 
 	vSpeed += controlVSpeed;
@@ -57,7 +71,6 @@ squishY = lerp(squishY, 0, squishReturnSpeed*time);
 	//Find Goal
 	var hspdGoalsMultipliers = runSpeedMulti;
 	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers;
-
 
 	//No Control Movement
 	if (!inControl) {
