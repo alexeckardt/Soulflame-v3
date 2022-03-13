@@ -39,6 +39,7 @@ function keira_decide_attack_vars_sword(_nextState) {
 		default:
 		case state.combat_neutral:
 		case state.combat_running:
+		case state.combat_htilt:
 
 			damage = bD;
 
@@ -60,19 +61,6 @@ function keira_decide_attack_vars_sword(_nextState) {
 			break;
 		
 
-		
-		case state.combat_htilt:
-		
-			damage = bD*hTiltMulti;
-			
-			spr = sKeiraAttackNoWeaponHTilt;
-			spd = 0.4;
-			damageObjConsistants = keira_damage_info_array_create(-5, -24, 74, 30, kbM*2.5, 0, -3, true);
-			
-			adjustDirectionFacingPreDamage = true;
-			allowControlOverIndex = -1;
-			
-			break;
 		
 		
 		case state.combat_up:

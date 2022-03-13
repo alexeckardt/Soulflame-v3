@@ -19,6 +19,7 @@ if (instance_exists(Entity)) {
 				timeShook = current_time;
 			
 				shakeDir = -entityNearest.directionFacing;
+				myAngle = shakeDir*15*(abs(entityNearest.hSpeed)/4);
 			}
 		}
 	} else {
@@ -50,6 +51,7 @@ if (shakeIntensity > 0) {
 
 //Update Angle
 image_angle = myAngle + shake + ambientMovment;
+myAngle = lerp(myAngle, 0, Game.delta/100);
 
 //Destroy If Nessesary
 if (onStart < 1) {

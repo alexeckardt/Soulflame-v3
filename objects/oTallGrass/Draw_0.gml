@@ -1,5 +1,9 @@
 /// @description Draw As Particle
 
+draw_sprite_ext(sprite_index, image_index, x, y,
+							image_xscale, image_yscale, image_angle, image_blend, 1);
+							
+/*
 var surf = ParticleViewer.particleSurf;
 
 if (surface_exists(surf)) {

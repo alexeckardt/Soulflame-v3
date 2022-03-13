@@ -16,12 +16,14 @@ if (alphaDirection == 1 && alpha > transitionAlphaReq) {
 		
 		
 		//Update Next Room
-		room = nextRoom;
-		draw_texture_flush();
+		if (nextRoom != -1) {
+			room = nextRoom;
+			draw_texture_flush();
 			
-		//
-		//Prep Transition Fade In
-		Player.fadeInTransitionInfo = [object_index, otherinfo0, otherinfo1, otherinfo2];
+			//
+			//Prep Transition Fade In
+			Player.fadeInTransitionInfo = [object_index, otherinfo0, otherinfo1, otherinfo2];
+		}
 
 		//Title Screen
 		//if (roomTo == roomTitle) {	game_restart();	}
