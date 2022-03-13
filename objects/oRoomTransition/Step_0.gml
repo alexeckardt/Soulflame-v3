@@ -69,7 +69,10 @@ if (alphaDirection == 1 && alpha > transitionAlphaReq) {
 		
 		//Create Corresponding Fade in
 		var t = transition_create(object_index, undefined, 0, 0, 0, -1, otherinfo0, otherinfo1, otherinfo2, true);
+		
+		//F
 		t.freezePlayer = true;
+		
 	}
 
 	//Destroy Me

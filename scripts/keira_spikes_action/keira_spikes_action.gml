@@ -70,10 +70,10 @@ function keira_spikes_action() {
 	if (STATE == state.hurt_spikes) {
 		//Slow Down In Spikes
 		var spd = 0.34;
-		//controlHSpeed = lerp(controlHSpeed, 0, spd*Game.delta);	
-		hSpeed = lerp(hSpeed, 0, spd*Game.delta);	
-		controlVSpeed =	0;
-		vSpeed =		lerp(vSpeed,		0, spd*Game.delta);
+		controlHSpeed	= lerp(controlHSpeed, 0, spd*Game.delta);	
+		hSpeed			= lerp(hSpeed, 0, spd*Game.delta);	
+		controlVSpeed	= 0;
+		vSpeed			= lerp(vSpeed,		0, spd*Game.delta);
 	}
 	
 	//Keep Track

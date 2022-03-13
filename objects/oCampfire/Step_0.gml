@@ -17,7 +17,7 @@ if (playerSittingHere) {
 	
 	//
 	//Sitting Events
-	else {
+	else if (oKeira.STATE == state.sit) {
 		
 		//Heal Player
 		if (Player.hp < Player.currentMaxHealth) {
@@ -32,6 +32,11 @@ if (playerSittingHere) {
 			}
 			
 		}
+			
+	} else {
+		
+		//Error
+		playerSittingHere = false;
 			
 	}
 	
