@@ -20,3 +20,4 @@ if (dead) {
 	
 //Lerp Camera Weight
 lerpCameraWeight = lerp(lerpCameraWeight, inCombatCamera, 0.1*time);
+knockbackResistanceMulti = lerp(knockbackResistanceMulti, 1, 0.001*time);

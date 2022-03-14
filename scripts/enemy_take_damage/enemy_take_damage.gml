@@ -83,8 +83,9 @@ function enemy_take_damage() {
 			var str = (knockbackStrength) / weight;
 
 			//Add
-			knockbackHSpeed += lengthdir_x(str, dd) + damageingObject.addToHSpeed;
-			knockbackVSpeed += lengthdir_y(str, dd) + damageingObject.addToVSpeed;
+			knockbackHSpeed += (lengthdir_x(str, dd) + damageingObject.addToHSpeed)*knockbackResistanceMulti;
+			knockbackVSpeed += (lengthdir_y(str, dd) + damageingObject.addToVSpeed)*knockbackResistanceMulti;
+			knockbackResistanceMulti /= 1.5;
 			
 			
 		//Hit Effects

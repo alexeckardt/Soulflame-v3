@@ -44,6 +44,8 @@ mask_index = sprite_index;
 		controlVSpeed = 0;
 		knockbackHSpeed = 0; //Hspd Added To Knockback
 		knockbackVSpeed = 0;
+		knockbackResistanceMulti = 1;
+		knockbackResistanceAdd = 0;
 		hSpeed = 0; //Comboination
 		vSpeed = 0;
 
