@@ -147,6 +147,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			break;
 		
 		case state.combat_air_up:
+		case state.combat_air_up_tilt:
 			
 			damage = bD*1.2;
 			spr = sKeiraAttackNoWeaponUppercut;
@@ -169,6 +170,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			break;
 			
 		case state.combat_air_down:
+		case state.combat_air_down_tilt:
 			
 			damage = bD*1.2;
 			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
@@ -186,6 +188,7 @@ function keira_decide_attack_vars_no_weapon(_nextState) {
 			break;
 			
 		case state.combat_air_horizontal:
+		case state.combat_air_htilt:
 			
 			damage = bD*hTiltMulti;
 			spr = sKeiraAttackNoWeaponRunning;

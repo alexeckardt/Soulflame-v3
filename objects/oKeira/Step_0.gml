@@ -560,13 +560,19 @@ if (jumpTicks > 0) {
 
 
 //Attack Input
-if (Controller.combatAttackPressed && !Player.allowForging) {
+//Allow input before current attack is finished.
+if (Controller.combatAttackPressed) {
+	wantToChangeAttackTicks = timeForPreAttacks;
+	nextAttack = state.combat_empty;
+}
+		
+if (wantToChangeAttackTicks > 0 && !Player.allowForging) {
 	//Decide Attack
 	keira_decide_attack_state();
 }
 
 //Switch To Attack
-if (nextAttack != state.height) {
+if (nextAttack != state.combat_empty) {
 	
 	//Allow for input of attacks before "begun" current attack
 	wantToChangeAttackTicks -= time;

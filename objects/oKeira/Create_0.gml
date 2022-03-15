@@ -130,7 +130,7 @@ runningLandAnimation = (mx != 0);
 
 //Weapons & Attacking
 allowControlOverIndex = -1;
-nextAttack = 0;
+nextAttack = state.combat_empty;
 wantToChangeAttackTicks = 0;
 timeForPreAttacks = 8;
 tiltTime = room_speed/4;

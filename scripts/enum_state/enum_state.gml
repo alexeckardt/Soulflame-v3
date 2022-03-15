@@ -18,6 +18,9 @@ enum state {
 	combat_neutral,			//Quick Jabs and Round House Kicks
 	
 	//Held, Normal
+	
+	combat_empty, //Reset State for next attacks
+	
 	combat_running,			//Running Attack with small recovery
 	combat_air_neutral,		//
 	combat_air_horizontal,	//Front House Kick
