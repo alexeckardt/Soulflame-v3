@@ -11,10 +11,13 @@ function keira_decide_attack_state() {
 	var aerial = timeOffGround > 3;
 
 	//Direction Checked
-	var stickDeadzone = 0.25;
-	var upAttack = (Controller.verticalStick) < -stickDeadzone;
-	var downAttack = (Controller.verticalStick) > stickDeadzone;
-	var horizontalAttack = abs(Controller.horizontalStick) > stickDeadzone;
+	var vstickDeadzone = 0.2;
+	var hstickDeadzone = 0.35;
+	var upAttack = (Controller.verticalStick) < -vstickDeadzone;
+	var downAttack = (Controller.verticalStick) > vstickDeadzone;
+	var horizontalAttack = abs(Controller.horizontalStick) > hstickDeadzone;
+
+	var running = runningForTime >= tiltTime;
 
 	//Tilts
 	var vTilt = Controller.vStickTimeInSameInput < tiltTime;
@@ -89,6 +92,10 @@ function keira_decide_attack_state() {
 			testAttack = combat_state_set(	state.combat_down, state.combat_down_tilt, 
 								state.combat_air_down, state.combat_air_down_tilt, 
 								aerial, vTilt);
+								
+			if (running && onGround && jumpTicks <= 0) {
+				testAttack = state.combat_slide;		
+			}
 								
 		}
 		
