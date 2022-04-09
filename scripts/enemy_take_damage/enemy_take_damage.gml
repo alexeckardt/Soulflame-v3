@@ -50,7 +50,8 @@ function enemy_take_damage() {
 		//Release Essence
 		if (damageingObject.collectEssence) {
 			var manaLost = essenceDropPerDamage * baseDamage;
-			var chooseAlignment = sign(alignment + choose(0, 0, -1, 1));	
+			var randomoffset = choose(0, 0, -1, 1) * Player.collectBalanceEssence;
+			var chooseAlignment = sign(alignment + randomoffset);	
 			
 			//Release Visual Particles
 						

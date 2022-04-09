@@ -25,6 +25,9 @@ tokenRowHeight = 15;
 tokenListBufferY = tokenRowHeight div 2;
 heartBorderBuffer = 12;
 
+//Game
+collectBalanceEssence = false;
+
 //Scale
 uiScale = 1;
 showUI = true;
