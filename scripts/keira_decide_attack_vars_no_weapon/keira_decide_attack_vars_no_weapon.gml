@@ -24,8 +24,8 @@ function keira_decide_attack_vars_no_weapon(_nextState, damageStruct) {
 	damageStruct.damage = bD;
 	damageStruct.damageType = damage_type.impact;
 	//All no weapon attacks should follow these properties
-	damageStruct.damageToCollectEssence = true;
-	damageStruct.damageToIncreaseCorruption = true;
+	damageStruct.collectEssence = true;
+	damageStruct.increaseCorruption = true;
 
 	
 	//

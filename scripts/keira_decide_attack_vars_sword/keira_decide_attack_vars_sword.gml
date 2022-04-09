@@ -27,8 +27,8 @@ function keira_decide_attack_vars_sword(_nextState, damageStruct) {
 	damageStruct.damage = bD;
 	damageStruct.damageType = damage_type.slash;
 	//Default 'Non-Physical' Damage Behaviour
-	damageStruct.damageToCollectEssence = false;
-	damageStruct.damageToIncreaseCorruption = false;
+	damageStruct.collectEssence = false;
+	damageStruct.increaseCorruption = false;
 	
 	
 	
