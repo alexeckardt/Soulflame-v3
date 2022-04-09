@@ -26,11 +26,6 @@ function keira_stateaction_attack_regular(){
 				
 				keira_geneirc_damage_create();
 				
-				//Add Vector
-				damageObj.addToVSpeed = damageKnockbackAddVSpeed;
-				if (damageKnockbackAddHspeedRelative) {
-					damageObj.addToHSpeed = damageKnockbackAddHSpeed*directionFacing;} else {
-					damageObj.addToHSpeed = damageKnockbackAddHSpeed;}
 			}
 		
 		}

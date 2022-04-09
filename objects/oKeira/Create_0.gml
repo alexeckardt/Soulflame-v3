@@ -138,21 +138,7 @@ useFrontAttackSprite = false;
 lastWeaponUsing = weapon.height;
 
 //Damage Vars
-damageCreateBaseDamage = 0;
-damageCreateDamageType = 0;
-damageCreateXoffset	= 0;
-damageCreateYoffset	= 0;
-damageCreateWidth	= 0;
-damageCreateHeight	= 0;
-damageKnockbackMulti = 0;
-damageKnockbackAddHSpeed = 0;
-damageKnockbackAddVSpeed = 0;
-damageKnockbackAddHspeedRelative = 0;
-damageToIncreaseCorruption = false;
-damageToCollectEssence = false;
-
-
-
+damageToCreateStruct = -1;
 haveSlideDamage = false;
 
 //Interacting

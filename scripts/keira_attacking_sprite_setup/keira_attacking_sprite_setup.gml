@@ -4,7 +4,7 @@
 // Sets the attacking sprites and speeds, as well as the damage properties
 //Decided in a keira_decide_attack_vars_xxxx call.
 //
-function keira_attacking_sprite_setup(_spr, _weaponspr, _spd, _damage, _damageType, _damageArrayInfo, readyShow) {
+function keira_attacking_sprite_setup(_spr, _weaponspr, _spd, readyShow) {
 
 	//Set Keira Vars
 	attackSprite	= _spr;
@@ -13,20 +13,6 @@ function keira_attacking_sprite_setup(_spr, _weaponspr, _spd, _damage, _damageTy
 	
 	//Visuals
 	showReadyAfterAttackFor = readyShow;
-	
-	//Damage Vars Based off Info Given
-	damageCreateBaseDamage = _damage;
-	damageCreateDamageType = _damage;
-	
-	var i = 0;
-	damageCreateXoffset	= _damageArrayInfo[i++];
-	damageCreateYoffset	= _damageArrayInfo[i++];
-	damageCreateWidth	= _damageArrayInfo[i++];
-	damageCreateHeight	= _damageArrayInfo[i++];
-	damageKnockbackMulti = _damageArrayInfo[i++];
-	damageKnockbackAddHSpeed = _damageArrayInfo[i++];
-	damageKnockbackAddVSpeed = _damageArrayInfo[i++];
-	damageKnockbackAddHspeedRelative = _damageArrayInfo[i++];
 	
 
 	//
@@ -46,7 +32,16 @@ function keira_attacking_sprite_setup(_spr, _weaponspr, _spd, _damage, _damageTy
 }
 
 //Temp
-function keira_damage_info_array_create(xoff, yoff, width, height, knockbackMuti, hSpeedAdd, vSpeedAdd, relativeHAdd) {
+function keira_damage_update_struct(damageStruct, xoff, yoff, width, height, knockbackMuti, hSpeedAdd, vSpeedAdd, relativeHAdd) {
 	
-	return [xoff, yoff, width, height, knockbackMuti, hSpeedAdd, vSpeedAdd,relativeHAdd];	
+	damageStruct.xoff = xoff;
+	damageStruct.yoff = yoff;
+	damageStruct.w = width;
+	damageStruct.h = height;
+	
+	damageStruct.knockback = knockbackMuti;
+	damageStruct.knockbackAddH = hSpeedAdd;
+	damageStruct.knockbackAddV = vSpeedAdd;
+	
+	damageStruct.knockbackHRelative = relativeHAdd;
 }

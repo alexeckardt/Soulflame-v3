@@ -3,7 +3,7 @@
 //Decices the Spirtes and the Damage Properties of the next Attack, then calls
 //the setup function
 //
-function keira_decide_attack_vars_sword(_nextState) {
+function keira_decide_attack_vars_sword(_nextState, damageStruct) {
 	
 	
 	//
@@ -11,27 +11,26 @@ function keira_decide_attack_vars_sword(_nextState) {
 	//No Tilts for streamline.
 	//
 	
-	//Damage Properties
+	//Multipliers (Reuse)
+	var baseSoeed = 0.4
+	var kbM = 1.4;
 	var hTiltMulti = 1.1;
 	var bD = Player.basePunchDamage * 2; //update this per type of attack
-	var damage = bD;
-	var damageType = damage_type.slash;
-	
-	//Visuals
-	var readyShow = 0;//showReadyAfterAttackForBase * 5
 	
 	//Send To Script
 	var spr = readySprite;
 	var weaponOverlaySprite = -1;
 	var spd = 0;
-	var damageObjConsistants = [];
+	var readyShow = 0;//showReadyAfterAttackForBase * 5 //Don't go to ready sprite
 	
+	//Damage Properties
+	damageStruct.damage = bD;
+	damageStruct.damageType = damage_type.slash;
 	//Default 'Non-Physical' Damage Behaviour
-	damageToCollectEssence = false;
-	damageToIncreaseCorruption = false;
+	damageStruct.damageToCollectEssence = false;
+	damageStruct.damageToIncreaseCorruption = false;
 	
-	var baseSoeed = 0.4
-	var kbM = 1.4;
+	
 	
 	//Switch Based Off Attack
 	switch (_nextState) {
@@ -41,22 +40,18 @@ function keira_decide_attack_vars_sword(_nextState) {
 		case state.combat_running:
 		case state.combat_htilt:
 
-			damage = bD;
-
 			//Should Attack Upwards?
 
 			spr = (useFrontAttackSprite) ? sKeiraAttackSwordHorizontal0 : sKeiraAttackSwordHorizontal1;
 			weaponOverlaySprite = (useFrontAttackSprite) ? sWeaponSwordAttackHorizontal0 : sWeaponSwordAttackHorizontal1
-			
-			//DOn't go to ready spr
-			readyShow = 0;
-			
 			spd = baseSoeed;
-			damageObjConsistants = keira_damage_info_array_create(-20, -16, 75, 25, kbM, 0, -0.5, true);
-			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = 2;
 			allowNextAttackAfterIndex = 4; //allow instant switch, low recovery time
+			
+			
+			keira_damage_update_struct(damageStruct, -20, -16, 75, 25, kbM, 0, -0.5, true);
+			
 
 			break;
 		
@@ -65,51 +60,47 @@ function keira_decide_attack_vars_sword(_nextState) {
 		case state.combat_air_up_tilt:
 		case state.combat_air_up:
 		
-			damage = bD*hTiltMulti;
-		
+			//Visual and Control
 			spr = sKeiraAttackSwordUp;
 			weaponOverlaySprite = sWeaponSwordAttackUp;
-			
 			spd = baseSoeed;
-			damageObjConsistants = keira_damage_info_array_create(-12, -50, 38, 44, kbM*.5, 0.2, -6, true);
-			
 			adjustDirectionFacingPreDamage = false;
 			allowControlOverIndex = 4;
 			
+			//Damage
+			damageStruct.damage = bD*hTiltMulti;
+			keira_damage_update_struct(damageStruct, -12, -50, 38, 44, kbM*.5, 0.2, -6, true);
 			//controlVSpeed += jumpSpeed/8
 			
 			break;
 		
 		case state.combat_slide:
 		
-			damage = bD*1.25;
-		
+			//Sprite + Control
 			spr = sKeiraAttackSlide;
 			spd = 0.5;
-			
 			adjustDirectionFacingPreDamage = false;
 			allowControlOverIndex = -1;
 			slidingInDirection = directionFacing;
 			slideSpeed = slideMaxSpeed;
 			slideExitSpeed = slideExitSpeedBase;
-				
-			damageObjConsistants = keira_damage_info_array_create(-15, -10, 38, 25, kbM*0.5, slidingInDirection*3, -1.5, false);
+			
+			//Damage
+			damageStruct.damage = bD*1.25;
+			keira_damage_update_struct(damageStruct, -15, -10, 38, 25, kbM*0.5, slidingInDirection*3, -1.5, false);
 				
 			break;
 			
 		case state.combat_down:
 		
-			damage = bD;
-		
 			spr = sKeiraAttackNoWeaponGroundSweep;
 			spd = 0.5;
-			
 			adjustDirectionFacingPreDamage = false;
 			allowControlOverIndex = -1;
 				
-			damageObjConsistants = keira_damage_info_array_create(-32, -10, 68, 25, kbM, 0, -2, true);
-
 				
+			keira_damage_update_struct(damageStruct, -32, -10, 68, 25, kbM, 0, -2, true);
+
 			break;
 		
 		//
@@ -118,14 +109,15 @@ function keira_decide_attack_vars_sword(_nextState) {
 		
 		case state.combat_air_neutral:
 			
-			damage = bD*1.2;
-			
+			//Control
 			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
 			spd = 0.65;
-			damageObjConsistants = keira_damage_info_array_create(0, -16, 35, 15, kbM, 0, -0.5, true);
-			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = 2;
+			
+			//Damage
+			damageStruct.damage = bD*1.2;
+			keira_damage_update_struct(damageStruct, 0, -16, 35, 15, kbM, 0, -0.5, true);
 		
 			//Stay In Air Longer
 			forceHalfGravity = true;
@@ -135,31 +127,33 @@ function keira_decide_attack_vars_sword(_nextState) {
 			
 		case state.combat_air_down:
 			
-			damage = bD*1.2;
+			//Spr
 			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
 			spd = 0.65;
-			
-			var w = 30;
-			damageObjConsistants = keira_damage_info_array_create(-w/2, 13, w, 35, 4, 0, 1, true);
-			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = 1;
-		
+			
+			//Damage
+			damageStruct.damage = bD*1.2;
+			var w = 30;
+			keira_damage_update_struct(damageStruct, -w/2, 13, w, 35, 4, 0, 1, true);
+
 			//Stay In Air Longer
 			forceHalfGravity = true;
-			
 			break;
 			
 		case state.combat_air_horizontal:
 			
-			damage = bD*hTiltMulti;
+			//Sprite and Control
 			spr = sKeiraAttackNoWeaponRunning;
 			spd = 0.4;
-			damageObjConsistants = keira_damage_info_array_create(-5, -16, 74,30, kbM*4, 0, -1, true);
-			
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = -1;
-		
+			
+			
+			damageStruct.damage = bD*hTiltMulti;
+			keira_damage_update_struct(damageStruct, -5, -16, 74,30, kbM*4, 0, -1, true);
+			
 			//Stay In Air Longer
 			forceHalfGravity = true;
 			vSpeed += 1.5;
@@ -167,7 +161,11 @@ function keira_decide_attack_vars_sword(_nextState) {
 			break;
 	}
 	
+	
 	//Do The Setup
 	keira_attacking_sprite_setup(spr, weaponOverlaySprite, spd, damage, damageType, damageObjConsistants, readyShow);
+	
+	//Save the Damage Struct
+	damageToCreateStruct = damageStruct;
 	
 }
