@@ -22,7 +22,7 @@ function keira_stateaction_attack_sliding_equivalant() {
 		
 		haveSlideDamage = true;
 				
-		keira_geneirc_damage_create();
+		keira_generic_damage_create();
 			
 		damageObj.allowLifeDecay = false;
 		damageObj.followCreator = true;

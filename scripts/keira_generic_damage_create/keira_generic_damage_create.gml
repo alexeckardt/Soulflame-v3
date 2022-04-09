@@ -3,7 +3,7 @@
 //
 //
 //
-function keira_geneirc_damage_create() {
+function keira_generic_damage_create() {
 
 	//Grab Struct
 	var damageStruct = damageToCreateStruct;

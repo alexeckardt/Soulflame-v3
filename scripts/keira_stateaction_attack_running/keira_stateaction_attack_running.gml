@@ -26,7 +26,7 @@ function keira_stateaction_attack_running() {
 				createdDamage = true;
 				
 				//Create Damage
-				keira_geneirc_damage_create();
+				keira_generic_damage_create();
 				
 			}
 		

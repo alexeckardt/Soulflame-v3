@@ -24,7 +24,7 @@ function keira_stateaction_attack_down_air(){
 		if (!createdDamage) {
 			createdDamage = true;
 				
-			keira_geneirc_damage_create();
+			keira_generic_damage_create();
 				
 		} else {
 				

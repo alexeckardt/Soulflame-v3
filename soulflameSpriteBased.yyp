@@ -342,7 +342,7 @@
     {"id":{"name":"sBunfetIdle","path":"sprites/sBunfetIdle/sBunfetIdle.yy",},"order":0,},
     {"id":{"name":"sBunfetDead","path":"sprites/sBunfetDead/sBunfetDead.yy",},"order":2,},
     {"id":{"name":"oKeira","path":"objects/oKeira/oKeira.yy",},"order":0,},
-    {"id":{"name":"keira_geneirc_damage_create","path":"scripts/keira_geneirc_damage_create/keira_geneirc_damage_create.yy",},"order":6,},
+    {"id":{"name":"keira_generic_damage_create","path":"scripts/keira_generic_damage_create/keira_generic_damage_create.yy",},"order":6,},
     {"id":{"name":"enemy_global_death_events","path":"scripts/enemy_global_death_events/enemy_global_death_events.yy",},"order":10,},
     {"id":{"name":"oGrassArea","path":"objects/oGrassArea/oGrassArea.yy",},"order":23,},
     {"id":{"name":"sHitEffectMedium","path":"sprites/sHitEffectMedium/sHitEffectMedium.yy",},"order":0,},
