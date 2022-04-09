@@ -51,6 +51,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oPlatinumBag","path":"objects/oPlatinumBag/oPlatinumBag.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":841.0,"y":448.0,"resourceVersion":"1.0","name":"inst_28176F37","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oPlatinumBag","path":"objects/oPlatinumBag/oPlatinumBag.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":817.0,"y":448.0,"resourceVersion":"1.0","name":"inst_75DD5B42","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oGrassArea","path":"objects/oGrassArea/oGrassArea.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":6.0,"scaleY":4.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":576.0,"y":704.0,"resourceVersion":"1.0","name":"inst_41B21455","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oCloth","path":"objects/oCloth/oCloth.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":496.0,"y":672.0,"resourceVersion":"1.0","name":"inst_4329C2FA","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"tileShatter","path":"tilesets/tileShatter/tileShatter.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":75,"SerialiseHeight":57,"TileSerialiseData":[
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,
@@ -211,6 +212,7 @@
     {"name":"inst_28176F37","path":"rooms/roomLab/roomLab.yy",},
     {"name":"inst_75DD5B42","path":"rooms/roomLab/roomLab.yy",},
     {"name":"inst_41B21455","path":"rooms/roomLab/roomLab.yy",},
+    {"name":"inst_4329C2FA","path":"rooms/roomLab/roomLab.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

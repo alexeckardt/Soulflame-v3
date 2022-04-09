@@ -23,10 +23,6 @@ function keira_decide_attack_state() {
 	var vTilt = Controller.vStickTimeInSameInput < tiltTime;
 	var hTilt = Controller.hStickTimeInSameInput < tiltTime;
 
-	if (hTilt) {
-		var wow = true;	
-	}
-
 	//Base
 	var testAttack = (!aerial) ? state.combat_neutral : state.combat_air_neutral;
 	
