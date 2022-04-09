@@ -44,8 +44,9 @@ mask_index = sprite_index;
 		controlVSpeed = 0;
 		knockbackHSpeed = 0; //Hspd Added To Knockback
 		knockbackVSpeed = 0;
-		knockbackResistanceMulti = 1;
+		knockbackResistanceMulti = 1; //Subsequent Hits lower resistance (so they stay)
 		knockbackResistanceAdd = 0;
+		doKnockback = true; //all enemies should have knockback
 		hSpeed = 0; //Comboination
 		vSpeed = 0;
 

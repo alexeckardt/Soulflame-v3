@@ -80,7 +80,7 @@ function enemy_take_damage() {
 		
 			//Vector
 			var dd = point_direction(damageingObject.knockbackFromX, damageingObject.knockbackFromY, x, y);
-			var str = (knockbackStrength) / weight;
+			var str = (knockbackStrength) / weight * doKnockback;
 
 			//Add
 			knockbackHSpeed += (lengthdir_x(str, dd) + damageingObject.addToHSpeed)*knockbackResistanceMulti;

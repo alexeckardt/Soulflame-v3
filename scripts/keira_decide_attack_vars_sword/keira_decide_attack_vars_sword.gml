@@ -69,7 +69,7 @@ function keira_decide_attack_vars_sword(_nextState, damageStruct) {
 			
 			//Damage
 			damageStruct.damage = bD*hTiltMulti;
-			keira_damage_update_struct(damageStruct, -12, -50, 38, 44, kbM*.5, 0.2, -6, true);
+			keira_damage_update_struct(damageStruct, -12, -58, 32, 68, kbM*.5, 0.2, -6, true);
 			//controlVSpeed += jumpSpeed/8
 			
 			break;
@@ -160,10 +160,9 @@ function keira_decide_attack_vars_sword(_nextState, damageStruct) {
 			
 			break;
 	}
-	
-	
+
 	//Do The Setup
-	keira_attacking_sprite_setup(spr, weaponOverlaySprite, spd, damage, damageType, damageObjConsistants, readyShow);
+	keira_attacking_sprite_setup(spr, weaponOverlaySprite, spd, readyShow);
 	
 	//Save the Damage Struct
 	damageToCreateStruct = damageStruct;
