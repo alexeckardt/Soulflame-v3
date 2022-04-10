@@ -9,16 +9,24 @@ maxHpAtFullCorrupt = 3;
 dead = false;
 
 //Healing
-ticksToRestoreHeart = room_speed;
+ticksToRestoreHeart = room_speed/2;
 healTicks = ticksToRestoreHeart;
 healTokenCost = 1;
 lastHealingAlignment = 0;
+healingHeartNumber = 0;
 
 //Health Display
 healthDisplayY = 8;
 heartWidthOffset = 20;
 heartBoxCol = c_black;
 heartBoxAlpha = 0.5;
+
+drawHealthFire = false;
+drawingHealthFire = false;
+healthFireSpeed = 0.3;
+healthFireExtinguishLastFrame = sprite_get_number(sHeartFlameFizzle)-1;
+healthFireExtinguishTicks = 0;
+heartFireUnderHealingNumber = true; //if false, all will draw fire
 
 //Essence
 essenceTokensCanHold = 3;

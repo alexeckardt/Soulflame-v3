@@ -11,17 +11,22 @@ function player_heal(){
 		//Make Sure we are inside the heal animation loop
 		if (oKeira.healPlayLoopAnimation) {
 			
+			//Draw Fire
+			drawHealthFire = true;
+			drawingHealthFire = true;
+			healthFireExtinguishTicks = 0;
+			
 			//Time Increase
 			healTicks -= Game.delta;
-			
+
 			//Once a tick is done
 			if (healTicks < 0) {
 				
 				//Reset Counter
 				healTicks = ticksToRestoreHeart;
 				
-				//Increase Health
-				if (hp < currentMaxHealth) {
+				//Attempt To Heal The Current Heart
+				if (healingHeartNumber >= hp) {
 					
 					//Increase Health
 					hp++;
@@ -35,9 +40,13 @@ function player_heal(){
 					if (!player_allowed_to_heal()) {
 						oKeira.STATE = state.heal_exit;
 					}
+					
 				}
 				
+				//Move To Next Attempt
+				healingHeartNumber++;
 			}
+				
 			
 		}
 		
@@ -45,6 +54,10 @@ function player_heal(){
 	
 		//Reset Counter
 		healTicks = ticksToRestoreHeart;
+		
+		//Reccognize Fire should stop
+		drawHealthFire = false;
+		healthFireExtinguishTicks += Game.delta;
 	
 	}
 	

@@ -77,9 +77,6 @@ if (!surface_exists(featherSurf)) {
 		
 			//Draw Token
 			var token = essenceTokens[| i];
-			var alignment = token.alignment;
-			var perent = token.percent;
-	
 			var spr = token.sprite;
 			var ind = token.index;
 	
@@ -139,7 +136,30 @@ if (!surface_exists(featherSurf)) {
 			heartyy += choose(-1, 1);
 		}	
 		
-		//Draw
+		//
+		//Health Flame
+		if (drawingHealthFire) {
+			if (i < healingHeartNumber || !heartFireUnderHealingNumber) {
+			
+				//Sprite
+				var heartFlameSprite = sHeartFlameLoop;
+				var ind = current_time/100 + 30*i;
+				
+				//Procedurally Etinguish Flames
+				if (healthFireExtinguishTicks > i*0.3) { 
+					heartFlameSprite = sHeartFlameFizzle;
+					ind = min((healthFireExtinguishTicks-i*healthFireSpeed)*0.3, healthFireExtinguishLastFrame);
+				
+				}
+				
+				//Draw Flame
+				draw_sprite(heartFlameSprite, ind, heartxx, heartyy);
+			
+			}
+		}
+		
+		///
+		//Draw Heart
 		draw_sprite(heartSprite, 0, heartxx, heartyy);
 		
 	}
