@@ -77,11 +77,7 @@ if (!surface_exists(featherSurf)) {
 		
 			//Draw Token
 			var token = essenceTokens[| i];
-			var spr = token.sprite;
-			var ind = token.index;
-	
-			var c = c_white;
-			draw_sprite_ext(spr, ind, tokenxx, tokenyy, 1, 1, 0, c, 1);
+			token.draw(tokenxx, tokenyy);
 			
 		} else {
 

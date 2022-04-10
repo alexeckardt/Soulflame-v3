@@ -29,6 +29,9 @@ function essence_token_add_percent(_alignment, _integerPercent) {
 				
 					//Add To Token
 					token.percent += tokenAddingToPercent;
+					
+					//Glow (a little at under 100; glow ALOT at 100%)
+					token.flash();
 				}
 			}	
 		} else {
@@ -51,6 +54,7 @@ function essence_token_add_percent(_alignment, _integerPercent) {
 			var newToken = new EssenceToken(_alignment);
 			newToken.percent = min(100, percentLeftToAdd);
 			percentLeftToAdd -= newToken.percent;
+			newToken.flash();
 			
 			//Add new token to list
 			ds_list_add(list, newToken);
