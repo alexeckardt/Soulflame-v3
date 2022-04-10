@@ -10,25 +10,34 @@ function essence_token_add_percent(_alignment, _integerPercent) {
 
 	//List
 	var list = Player.essenceTokens;
-		
+	var temporaryTokenCount = 0; //If any found marked deleted, allow me to add another token PAST the count.
+	
 	//Mutate Current List
 	for (var i = 0; i < Player.essenceTokensHolding; i++) {
 				
 		//Read Token
 		var token = list[| i];
 				
-		//Found a Suitable Token Slot
-		if (token.alignment == _alignment) {
-			if (token.percent < 100) {
+		//Check a Suitable Token Slot
+		if (!token.markedAsDeleted) {
+			if (token.alignment == _alignment) {
+				if (token.percent < 100) {
 				
-				//Calculate amount to Add to token
-				var tokenAddingToPercent = clamp(percentLeftToAdd, 0, 100-currentTokensPercent);
-				percentLeftToAdd -= tokenAddingToPercent;
+					//Calculate amount to Add to token
+					var tokenAddingToPercent = clamp(percentLeftToAdd, 0, 100-token.percent);
+					percentLeftToAdd -= tokenAddingToPercent;
 				
-				//Add To Token
-				token.percent += tokenAddingToPercent;
-			}
-		}	
+					//Add To Token
+					token.percent += tokenAddingToPercent;
+				}
+			}	
+		} else {
+		
+			//Found a temporary token; allow me to temporarily overload the tokens
+			//as i know this will be deleted soon
+			temporaryTokenCount++;
+			
+		}
 	}
 	
 	
@@ -36,7 +45,7 @@ function essence_token_add_percent(_alignment, _integerPercent) {
 	while (percentLeftToAdd > 0) {
 			
 		//If Space Available
-		if (Player.essenceTokensHolding < Player.essenceTokensCanHold) {
+		if (Player.essenceTokensHolding < Player.essenceTokensCanHold + temporaryTokenCount) {
 			
 			//Create a new token
 			var newToken = new EssenceToken(_alignment);

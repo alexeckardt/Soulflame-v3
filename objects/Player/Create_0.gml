@@ -11,6 +11,8 @@ dead = false;
 //Healing
 ticksToRestoreHeart = room_speed;
 healTicks = ticksToRestoreHeart;
+healTokenCost = 1;
+lastHealingAlignment = 0;
 
 //Health Display
 healthDisplayY = 8;

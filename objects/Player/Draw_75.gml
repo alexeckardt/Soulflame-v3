@@ -64,7 +64,7 @@ if (!surface_exists(featherSurf)) {
 	var lColumnX = guiW - tokenEdgeBuffer;
 	var rColumnX = lColumnX - tokenColumnSep;
 
-	//Loop and Draw
+	//Loop and Draw only the allowed amount of tokens
 	var tokenCount = ds_list_size(essenceTokens);
 	for (var i = 0; i < essenceTokensCanHold; i++) {
 	
@@ -76,16 +76,15 @@ if (!surface_exists(featherSurf)) {
 		if (i < tokenCount) {
 		
 			//Draw Token
-			var tokenInfo = essenceTokens[| i];
-			var alignment = tokenInfo[0];
-			var perent = tokenInfo[1];
+			var token = essenceTokens[| i];
+			var alignment = token.alignment;
+			var perent = token.percent;
 	
-			var spr = essence_token_get_sprite(alignment);
-			var ind = (perent / 100) * (sprite_get_number(spr)-1);
+			var spr = token.sprite;
+			var ind = token.index;
 	
 			var c = c_white;
 			draw_sprite_ext(spr, ind, tokenxx, tokenyy, 1, 1, 0, c, 1);
-			
 			
 		} else {
 

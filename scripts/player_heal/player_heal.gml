@@ -27,10 +27,12 @@ function player_heal(){
 					hp++;
 					
 					//Remove Token
+					var v = essence_token_consume(healTokenCost);
+					lastHealingAlignment = v;
 					
 					//Check If Condition Is Met
 					//Exit State is good here as it is a forced exit.
-					if (hp >= currentMaxHealth) {
+					if (!player_allowed_to_heal()) {
 						oKeira.STATE = state.heal_exit;
 					}
 				}

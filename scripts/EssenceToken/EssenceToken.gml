@@ -8,7 +8,10 @@ function EssenceToken(_alignment) constructor {
 	alignment = _alignment;
 	percent = 0;
 	
-	sprite = -1;
-	markedToDelete = false;
+	sprite = essence_token_get_sprite(_alignment);
+	animate = false;
+	index = 0;
+	
+	markedAsDeleted = false;
 
 }

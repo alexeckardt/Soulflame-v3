@@ -7,13 +7,13 @@ function command_health(_action, _value) {
 
 	//Prelim
 	if (_action == undefined) { _action = "heal" } 
-	_value = real(_value);
+	if (_value != undefined) { _value = real(_value);}
 	
 	switch(_action) {
 		
 		case "set":
 			
-			Player.hp = command_verify_number(_value, 1, player.maxhp);
+			Player.hp = command_verify_number(_value, 1, Player.maxhp);
 			outputMessage = "Health Set to " + string(floor(Player.hp));
 			
 			break;
@@ -29,6 +29,7 @@ function command_health(_action, _value) {
 			outputMessage = "Health Restored.";
 			
 			break;
+			
 		case "hurt":
 		case "subtract":
 		case "lose":

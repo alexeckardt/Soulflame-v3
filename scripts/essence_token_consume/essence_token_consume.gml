@@ -57,8 +57,17 @@ function essence_token_consume(count) {
 	//
 	//Mark the tokens to be deleted
 	for (var i = 0; i < count; i++) {
+		
+		//Get ID to remove
 		var toRemoveID = toDeleteList[| i];
-		list[| toRemoveID].markedToDelete = true;
+		
+		//Mark Them as being deleted
+		var tokenRemove = list[| toRemoveID];
+		tokenRemove.markedAsDeleted = true;
+		tokenRemove.percent = 0;
+		tokenRemove.sprite = essence_token_get_sprite_consumption(tokenRemove.alignment);
+		tokenRemove.index = 0;
+		
 		
 		//Keep Track
 		tokenCombinedAlignment += list[| toRemoveID].alignment;
