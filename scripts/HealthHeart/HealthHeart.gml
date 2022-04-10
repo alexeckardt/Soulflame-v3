@@ -121,6 +121,7 @@ function HealthHeart(posnum, _fullsprite = sHeartFull, _brokenSprite = sHeartBro
 		fireExtinguishing = true;
 		fireIndex = 0;
 		brightnessTo = 0;
+		lightFireInTicks = -1; //don't light if gearing up for it
 		
 	};
 	

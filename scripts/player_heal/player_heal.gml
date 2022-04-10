@@ -90,8 +90,8 @@ function player_heal(){
 				var heart = heartList[| i];
 				
 				if (heart.drawFireBehind) {
-					heart.extinguish_fire();
-				}
+					heart.extinguish_fire();}
+				heart.lightFireInTicks = -1;
 			}
 			
 		}

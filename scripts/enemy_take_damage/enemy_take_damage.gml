@@ -84,8 +84,8 @@ function enemy_take_damage() {
 			var str = (knockbackStrength) / weight * doKnockback;
 
 			//Add
-			knockbackHSpeed += (lengthdir_x(str, dd) + damageingObject.addToHSpeed)*knockbackResistanceMulti;
-			knockbackVSpeed += (lengthdir_y(str, dd) + damageingObject.addToVSpeed)*knockbackResistanceMulti;
+			knockbackHSpeed += (lengthdir_x(str, dd) + damageingObject.addToHSpeed)*knockbackResistanceMulti / weight*doKnockback;
+			knockbackVSpeed += (lengthdir_y(str, dd) + damageingObject.addToVSpeed)*knockbackResistanceMulti / weight*doKnockback;
 			knockbackResistanceMulti /= 1.5;
 			
 			
