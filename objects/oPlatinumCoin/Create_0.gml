@@ -10,7 +10,7 @@ yoffset = irandom_range(-2, 2);
 
 bounceOffset = irandom(300);
 bounceTime = irandom_range(500, 900)
-bounceAmplitude = random_range(4/3, 2)
+bounceAmplitude = random_range(4/3, 2);
 
 hSpeed = 0;
 vSpeed = 0;
@@ -28,3 +28,5 @@ grav = 0.2;
 timeSinceOnGround = 0;
 knockbackHSpeed = 0;
 knockbackVSpeed = 0;
+
+bounceEnergyLossMultiplier = 4;

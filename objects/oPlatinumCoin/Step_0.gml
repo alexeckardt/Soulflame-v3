@@ -22,7 +22,7 @@ if (autoPickup) {
 	
 	//Bounce
 	if (place_meeting(x, y+vSpeed, Solid) && vSpeed > 0) {
-		vSpeed = (round(vSpeed * (1/sqrt(weight))) div 2) * -2;	
+		vSpeed = (round(vSpeed * (1/sqrt(weight))) div bounceEnergyLossMultiplier) * -bounceEnergyLossMultiplier;	
 		hSpeed = lerp(hSpeed, 0, .2);
 		hasHitGroundOnce = true;
 	}

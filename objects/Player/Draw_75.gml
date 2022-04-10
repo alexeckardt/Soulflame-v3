@@ -329,7 +329,8 @@ if (platinumDisplayPercent > 0.01) {
 	draw_set_valign(fa_bottom);
 	draw_set_font(fontKeira);
 	
-	var strh = string_height("|") + 4;
+	var strh = string_height("|") + 7;
+	var strw = string_width("0")*floor(log10(platinumDisplaying)) + 4; //how many digits?
 	
 	var xpos = guiW - featherSurfDim - 5;
 	var ypos = platinumDisplayPercent*strh;
@@ -340,7 +341,7 @@ if (platinumDisplayPercent > 0.01) {
 
 	//Platinum Bag
 	var platinumBagIndex = platinum_get_bag_index(platinumDisplaying);
-	draw_sprite(sPlatinumBag, platinumBagIndex, xpos - 19, ypos);
+	draw_sprite(sPlatinumBagUI, platinumBagIndex, xpos - strw - 2, ypos);
 
 	//Platinum Adding To Balance
 	if (platinumToAdd != 0) {
