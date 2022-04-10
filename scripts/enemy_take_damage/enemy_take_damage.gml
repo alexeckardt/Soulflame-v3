@@ -23,7 +23,7 @@ function enemy_take_damage() {
 		var damageFromPlayer = damageCreator == instance_nearest(x, y, oKeira);
 	
 		//Send Info Back To Damage Object
-		if (damageingObject.life > 1) {
+		if (damageingObject.life > 1 && instance_exists(damageingObject)) {
 			
 			//Not If Destroyed 
 			if (damageingObject.destroyed == false) {

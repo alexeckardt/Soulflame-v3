@@ -594,13 +594,16 @@ if (nextAttack != state.combat_empty) {
 			keira_decide_attack_sprite(nextAttack);
 			
 			//Reset Vars
-			nextAttack = state.height;
+			nextAttack = state.combat_empty;
 			createdDamage = false;
+			
+			//Botch
+			wantToChangeAttackTicks = -1;
 		} 
 		
 	//Reset Attack, took too long
 	} else {
-		nextAttack = state.height;	
+		nextAttack = state.combat_empty;	
 	}
 }
 
