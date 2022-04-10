@@ -24,9 +24,10 @@ heartWidthOffset = 20;
 heartBoxCol = c_black;
 heartBoxAlpha = 0.5;
 
+healing = false;
 drawHealthFire = false;
 drawingHealthFire = false;
-healthFireSpeed = 0.3;
+healthFireSpeed = 0.2;
 healthFireExtinguishLastFrame = sprite_get_number(sHeartFlameFizzle)-1;
 healthFireExtinguishTicks = 0;
 heartFireUnderHealingNumber = true; //if false, all will draw fire

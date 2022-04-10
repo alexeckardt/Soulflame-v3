@@ -19,13 +19,17 @@ function HealthHeart(posnum, _fullsprite = sHeartFull, _brokenSprite = sHeartBro
 	drawFireBehind = false;
 	fireIndex = 0;
 	
-	brightnessTo = 0;
 	fireExtinguishing = false;
 	
 	shakeAmount = 0;
 	broken = false;
 	
-	fireAlignment = 0;
+	lightFireInTicks = -1;
+	
+	//Overlay
+	overlayBlend = c_white;
+	overlayBrightness = 0;
+	brightnessTo = 0;
 	
 	
 	static update = function( ) {
@@ -35,7 +39,18 @@ function HealthHeart(posnum, _fullsprite = sHeartFull, _brokenSprite = sHeartBro
 		yoffset = random_range(-shakeAmount, shakeAmount);
 		
 		//Lerp To Correct Brightness
-		index = lerp(index, brightnessTo*(sprite_get_number(sprite)-1), 0.3);
+		overlayBrightness = lerp(overlayBrightness, brightnessTo, 0.2);
+		
+		//Light Fire
+		if (lightFireInTicks > 0) {
+			lightFireInTicks -= Game.delta;
+			
+			if (floor(lightFireInTicks) == 0) {
+				light_fire_events();
+			}
+		}
+		
+		
 		
 		//Update Fire n Such
 		if (drawFireBehind) {
@@ -60,8 +75,8 @@ function HealthHeart(posnum, _fullsprite = sHeartFull, _brokenSprite = sHeartBro
 		
 		broken = false;
 		brightnessTo = 0;
+		overlayBrightness = 1;
 		sprite = fullSprite;
-		index = (sprite_get_number(sprite)-1);
 		
 	}
 	
@@ -69,21 +84,32 @@ function HealthHeart(posnum, _fullsprite = sHeartFull, _brokenSprite = sHeartBro
 		
 		shakeAmount = 1;
 		broken = true;
-		brightnessTo = 0.5;
+		overlayBrightness = 0.1;
+		brightnessTo = 0;
 		
 		sprite = brokenSprite;
 		
 	};
 
 	//Start drawing Fire
-	static light_fire = function() {
+	static light_fire = function(delay) {
 		
+		lightFireInTicks = delay;
+		if (delay <= 0) {
+			light_fire_events();
+		}
+		
+	};
+	static light_fire_events = function() {
+	
 		drawFireBehind = true;
 		fireExtinguishing = false;
-		index = sprite_get_number(sprite)-1; //Max Brightness
+		lightFireInTicks = -1;
 		
+		//Flash
 		brightnessTo = 0.5; //Go Down
-		
+		overlayBrightness = 1;
+	
 	};
 	
 	//Extinguish the Fire
@@ -96,6 +122,51 @@ function HealthHeart(posnum, _fullsprite = sHeartFull, _brokenSprite = sHeartBro
 		fireIndex = 0;
 		brightnessTo = 0;
 		
+	};
+	
+	static set_fire_col = function(_col) {
+		overlayBlend = _col;}	
+	static set_fire_col_alignment = function(align) {
+		set_fire_col(essence_get_colour_bright(align));
+	}
+	
+	//Draw
+	static draw = function(basex, basey) {
+		
+		//Position
+		basex += xoffset;
+		basey += yoffset;
+		if (Player.hp == 1 && heartPosition == 0) {
+		basex += choose(-1, 1);
+		basey += choose(-1, 1);}	
+
+		//
+		//Health Flame
+		if (drawFireBehind) {
+						
+			//
+			//Get Fire Spr Info
+			var firespr = (!fireExtinguishing) ? sHeartFlameLoop : sHeartFlameFizzle;
+				
+			//
+			//Draw Flame
+			draw_sprite_ext(firespr, fireIndex, basex, basey, 1, 1, 0, overlayBlend, 1);
+				
+		}
+		
+		///
+		//Draw Heart
+		draw_sprite(sprite, index, basex, basey);
+		
+		//Overlay
+		if (overlayBrightness > 0.01) {
+			gpu_set_blendmode(bm_add);
+			gpu_set_fog(1, overlayBlend, 0, 0);
+			draw_sprite_ext(sprite, index, basex, basey, 1, 1, 0, 0, overlayBrightness);
+			gpu_set_fog(0,0,0,0);
+			gpu_set_blendmode(bm_normal);
+		}
+	
 	};
 
 }

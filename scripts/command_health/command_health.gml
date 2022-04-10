@@ -13,7 +13,7 @@ function command_health(_action, _value) {
 		
 		case "set":
 			
-			Player.hp = command_verify_number(_value, 1, Player.maxhp);
+			Player.hp = command_verify_number(_value, 1);
 			outputMessage = "Health Set to " + string(floor(Player.hp));
 			
 			break;

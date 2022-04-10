@@ -108,47 +108,10 @@ if (!surface_exists(featherSurf)) {
 		//Get Heart
 		var heart = heartList[| i];
 		
-		//Position
-		var heartxx = (i + 0.5)*heartWidthOffset + heart.xoffset;
-		var heartyy = hpY + heart.yoffset;
+		var heartxx = (i + 0.5)*heartWidthOffset;
+		var heartyy = hpY;
 		
-		//Shakey Shakey
-		if (hp == 1 && i == 0) {
-			heartxx += choose(-1, 1);
-			heartyy += choose(-1, 1);
-		}	
-
-
-		//Visuals
-		var spr = heart.sprite;
-		var ind = heart.index;
-		
-		var drawFire = heart.drawFireBehind;
-
-		
-		//
-		//Health Flame
-		if (drawFire) {
-			
-			//
-			//Unpack More
-			var fireIndex = heart.fireIndex;
-			var fireExtinguish = heart.fireExtinguishing;
-			var flameColour = essence_get_colour_bright(heart.fireAlignment);
-				
-			//
-			//Get Spr
-			var spr = (!fireExtinguish) ? sHeartFlameLoop : sHeartFlameFizzle;
-				
-			//
-			//Draw Flame
-			draw_sprite_ext(spr, fireIndex, heartxx, heartyy, 1, 1, 0, flameColour, 1);
-				
-		}
-		
-		///
-		//Draw Heart
-		draw_sprite(spr, ind, heartxx, heartyy);
+		heart.draw(heartxx, heartyy);
 		
 	}
 	

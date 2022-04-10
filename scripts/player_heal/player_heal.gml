@@ -11,6 +11,23 @@ function player_heal(){
 		//Make Sure we are inside the heal animation loop
 		if (oKeira.healPlayLoopAnimation) {
 			
+			//Start
+			if (!healing) {
+				healing = true;
+				
+				var heartAlblazdDelay = 7;
+				lastHealingAlignment = 0;
+				
+				var hearts = ds_list_size(heartList);
+				for (var i = 1; i < hearts; i++) {
+					var heart = heartList[| i];
+					heart.set_fire_col_alignment(0);
+					heart.light_fire(i*heartAlblazdDelay);
+				}
+			
+			}
+			
+			
 			//Draw Fire
 			drawHealthFire = true;
 			drawingHealthFire = true;
@@ -44,6 +61,10 @@ function player_heal(){
 				}
 				
 				//Move To Next Attempt
+				//Animate
+				var heartToMend = heartList[| healingHeartNumber];
+				heartToMend.set_fire_col_alignment(lastHealingAlignment);
+				heartToMend.extinguish_fire();
 				healingHeartNumber++;
 			}
 				
@@ -58,6 +79,22 @@ function player_heal(){
 		//Reccognize Fire should stop
 		drawHealthFire = false;
 		healthFireExtinguishTicks += Game.delta;
+		
+		//Stop Healing
+		if (healing) {
+			healing = false;	
+				
+			//Make Rest of Fire Go Away
+			var hearts = ds_list_size(heartList);
+			for (var i = 0; i < hearts; i++) {
+				var heart = heartList[| i];
+				
+				if (heart.drawFireBehind) {
+					heart.extinguish_fire();
+				}
+			}
+			
+		}
 	
 	}
 	
