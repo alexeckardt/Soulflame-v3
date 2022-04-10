@@ -8,6 +8,9 @@ hp = 5;
 maxHpAtFullCorrupt = 3;
 dead = false;
 
+heartList = ds_list_create();
+
+
 //Healing
 ticksToRestoreHeart = room_speed/2;
 healTicks = ticksToRestoreHeart;

@@ -103,64 +103,52 @@ if (!surface_exists(featherSurf)) {
 	draw_sprite_ext(sHeartBackgroundEdge, 0,-1+healthBoxWidth,	hpY, 1,					1, 0, heartBoxCol, heartBoxAlpha);
 	
 	//Draw Hearts
-	for (var i = 0; i < baseMaxHealth; i++) {
+	for (var i = 0; i < currentMaxHealth; i++) {
+		
+		//Get Heart
+		var heart = heartList[| i];
 		
 		//Position
-		var heartSprite = sHeartFull
-		var heartxx = (i + 0.5)*heartWidthOffset;
-		var heartyy = hpY;
-		
-		//Decide Sprite
-		//Regular Health Display
-		if (i < currentMaxHealth) {
-			
-			//Broken Hearts, This heart is over the amount of hp I have
-			if (i >= hp) {
-				heartSprite = sHeartBroken;
-			}
-				
-		//Hearts Over the current max health	
-		} else {
-			
-			//Corrupted Hearts
-			switch (sign(corruptionPercent)) {
-				case -1: heartSprite = sHeartCorruptedChaos;break;	
-				case +1: heartSprite = sHeartCorruptedOrder;break;	
-			}
-		
-		}
+		var heartxx = (i + 0.5)*heartWidthOffset + heart.xoffset;
+		var heartyy = hpY + heart.yoffset;
 		
 		//Shakey Shakey
 		if (hp == 1 && i == 0) {
 			heartxx += choose(-1, 1);
 			heartyy += choose(-1, 1);
 		}	
+
+
+		//Visuals
+		var spr = heart.sprite;
+		var ind = heart.index;
+		
+		var drawFire = heart.drawFireBehind;
+
 		
 		//
 		//Health Flame
-		if (drawingHealthFire) {
-			if (i < healingHeartNumber || !heartFireUnderHealingNumber) {
+		if (drawFire) {
 			
-				//Sprite
-				var heartFlameSprite = sHeartFlameLoop;
-				var ind = current_time/100 + 30*i;
+			//
+			//Unpack More
+			var fireIndex = heart.fireIndex;
+			var fireExtinguish = heart.fireExtinguishing;
+			var flameColour = essence_get_colour_bright(heart.fireAlignment);
 				
-				//Procedurally Etinguish Flames
-				if (healthFireExtinguishTicks > i*0.3) { 
-					heartFlameSprite = sHeartFlameFizzle;
-					ind = min((healthFireExtinguishTicks-i*healthFireSpeed)*0.3, healthFireExtinguishLastFrame);
+			//
+			//Get Spr
+			var spr = (!fireExtinguish) ? sHeartFlameLoop : sHeartFlameFizzle;
 				
-				}
+			//
+			//Draw Flame
+			draw_sprite_ext(spr, fireIndex, heartxx, heartyy, 1, 1, 0, flameColour, 1);
 				
-				//Draw Flame
-				draw_sprite(heartFlameSprite, ind, heartxx, heartyy);
-			
-			}
 		}
 		
 		///
 		//Draw Heart
-		draw_sprite(heartSprite, 0, heartxx, heartyy);
+		draw_sprite(spr, ind, heartxx, heartyy);
 		
 	}
 	

@@ -16,6 +16,8 @@ currentMaxHealth = baseMaxHealth - corruptionHpLoss;
 
 player_heal();
 
+player_modify_hearts();
+
 //Death
 player_do_death();
 
