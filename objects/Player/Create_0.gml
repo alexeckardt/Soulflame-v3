@@ -8,6 +8,10 @@ hp = 5;
 maxHpAtFullCorrupt = 3;
 dead = false;
 
+//Healing
+ticksToRestoreHeart = room_speed;
+healTicks = ticksToRestoreHeart;
+
 //Health Display
 healthDisplayY = 8;
 heartWidthOffset = 20;

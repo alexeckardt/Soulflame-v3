@@ -55,6 +55,8 @@ function reset_keybind_vars() {
 	rightStickDirection = 0;
 	rightStickHolding = false;
 	rightStickPressed = false;
+	
+	healHolding = false;
 
 }
 

@@ -4,12 +4,7 @@
 var s = ds_list_size(points);
 for (var i = 0; i < s; i++) {
 	
-	point = points[| i];
-	
-	var pointLinks = point.linkCount;
-	for (var j = 0; j < pointLinks; j++) {
-		delete point.links[| j];
-	}
+	var point = points[| i];
 	
 	//Destroy Link
 	ds_list_destroy(point.links);

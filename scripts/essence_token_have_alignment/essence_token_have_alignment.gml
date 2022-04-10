@@ -2,7 +2,7 @@
 //
 //
 //
-function essence_token_have(_alignment) {
+function essence_token_have_alignment(_alignment) {
 
 	var list = Player.essenceTokens;
 		

@@ -86,6 +86,14 @@ switch (STATE) {
 		keira_stateaction_dead_state();
 	
 		break;
+		
+	case state.heal:
+	case state.heal_exit:
+	
+		//Sit
+		keira_stateaction_heals();
+	
+		break;
 	
 }	
 

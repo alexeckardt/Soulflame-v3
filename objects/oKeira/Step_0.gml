@@ -604,6 +604,9 @@ if (nextAttack != state.combat_empty) {
 	}
 }
 
+//
+//Other Input
+keira_healing_checks();
 
 //Interact With Interact Trigger
 interacting = false;
@@ -633,8 +636,6 @@ if (!instance_exists(Cutscene) && inControl) {
 
 //Spikes
 keira_spikes_action();
-
-
 
 
 //Other

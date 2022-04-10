@@ -15,25 +15,25 @@ function essence_token_add_percent(_alignment, _integerPercent) {
 	//Index
 	while (percentLeftToAdd > 0) {
 		
-		var c = ds_list_size(list);
+		var tokensHolding = Player.essenceTokensHolding
 	
 		//Loop Through End Of List to find a token slot with correct assignmet
 		//Otherwise Assume Last Slot		
-		var indexToUpdate = c;
+		var indexToUpdate = tokensHolding;
 		var currentTokensPercent = 0;
 		
-		if (c > 0) {
-			for (var i = 0; i < c; i++) {
-				var tokenInfo = list[| i];
-		
-				var tokenAlignment = tokenInfo[0];
-				var tokenPercent = tokenInfo[1];
+		if (tokensHolding > 0) {
+			for (var i = 0; i < tokensHolding; i++) {
+				
+				//Read Token
+				var token = list[| i];
 				
 				//Found a Suitable Token Slot
-				if (tokenAlignment == _alignment) {
-					if (tokenPercent < 100) {
+				if (token.alignment == _alignment) {
+					if (token.percent < 100) {
 						indexToUpdate = i;	
-						currentTokensPercent = tokenPercent;
+						currentTokensPercent = token.percent;
+						break;
 					}
 				}	
 			}

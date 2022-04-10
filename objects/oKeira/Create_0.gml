@@ -168,3 +168,6 @@ touchingSpikes = false;
 
 //Dead
 dead = false;
+
+//Healing
+healPlayLoopAnimation = false;

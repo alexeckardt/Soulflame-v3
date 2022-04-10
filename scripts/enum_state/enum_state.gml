@@ -55,6 +55,9 @@ enum state {
 	special_air_up,			// Rocket Boost Upwards (A Second Double Jump Option)
 	special_air_down,		// Ground Pound
 	
+	//Spells
+	heal,
+	heal_exit,
 	dash,
 	
 	blocking, // Hold, Blocks Incoming Attacks if correct type vs weapon

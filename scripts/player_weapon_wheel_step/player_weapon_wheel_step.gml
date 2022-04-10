@@ -140,7 +140,7 @@ function player_weapon_wheel_step(){
 					var forgingImbueingGoal = (weaponSlotHighlighted - 1) % 3;
 					
 					//Check if can Imbue
-					if (essence_token_have(forgingImbueingGoal) || forgingImbueingGoal == 0) {
+					if (essence_token_have_alignment(forgingImbueingGoal) || forgingImbueingGoal == 0) {
 						
 						forgingWeaponImbuedWith = forgingImbueingGoal;
 						

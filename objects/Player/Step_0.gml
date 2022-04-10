@@ -15,6 +15,10 @@ var corruptionHpLoss = clamp(corruptionHpLossBase, 0, corruptionMaxReductionHP);
 currentMaxHealth = baseMaxHealth - corruptionHpLoss;
 
 
+player_heal();
+
+
+
 //Death
 player_do_death();
 
