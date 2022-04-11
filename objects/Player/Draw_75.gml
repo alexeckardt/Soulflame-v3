@@ -9,7 +9,6 @@ var guiW = Camera.view_width / uiScale;
 var guiH = Camera.view_height / uiScale;
 display_set_gui_size(guiW, guiH);
 
-
 //Feather
 var featherDrawAtY = featherSurfYFromBase;
 var bottomOfFeather = featherDrawAtY + featherSurfDim;
@@ -44,16 +43,16 @@ if (!surface_exists(featherSurf)) {
 	var surfX = guiW - featherSurfDim + featherSurfXFromBase;
 	
 	//Outline Shader
-	shader_set(shdFeatherOutline);
-		var shaderTex = surface_get_texture(featherSurf);
-		var texelW = texture_get_texel_width(shaderTex);
-		var texelH = texture_get_texel_height(shaderTex);
-		shader_set_uniform_f(u_pixelW, texelW)
-		shader_set_uniform_f(u_pixelH, texelH)
+	//shader_set(shdFeatherOutline);
+		//var shaderTex = surface_get_texture(featherSurf);
+		//var texelW = texture_get_texel_width(shaderTex);
+		//var texelH = texture_get_texel_height(shaderTex);
+		//shader_set_uniform_f(u_pixelW, texelW)
+		//shader_set_uniform_f(u_pixelH, texelH)
 	
 		draw_surface(featherSurf, surfX, featherDrawAtY);
 	
-	shader_reset();
+	//shader_reset();
 	
 }
 

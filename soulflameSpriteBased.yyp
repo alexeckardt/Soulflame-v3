@@ -68,6 +68,7 @@
     {"id":{"name":"cutscene_path_skip_x_events","path":"scripts/cutscene_path_skip_x_events/cutscene_path_skip_x_events.yy",},"order":15,},
     {"id":{"name":"oBugRunner","path":"objects/oBugRunner/oBugRunner.yy",},"order":1,},
     {"id":{"name":"sWeaponForgingPositionIcon","path":"sprites/sWeaponForgingPositionIcon/sWeaponForgingPositionIcon.yy",},"order":2,},
+    {"id":{"name":"roomChasmLeftPool","path":"rooms/roomChasmLeftPool/roomChasmLeftPool.yy",},"order":3,},
     {"id":{"name":"Importing Language","path":"notes/Importing Language/Importing Language.yy",},"order":0,},
     {"id":{"name":"command_tp","path":"scripts/command_tp/command_tp.yy",},"order":10,},
     {"id":{"name":"particle_create_platinum_sparkle_around_player","path":"scripts/particle_create_platinum_sparkle_around_player/particle_create_platinum_sparkle_around_player.yy",},"order":1,},
@@ -407,6 +408,7 @@
     {"roomId":{"name":"roomLab","path":"rooms/roomLab/roomLab.yy",},},
     {"roomId":{"name":"roomEmpty","path":"rooms/roomEmpty/roomEmpty.yy",},},
     {"roomId":{"name":"roomSurfaceUndergroundTutorial","path":"rooms/roomSurfaceUndergroundTutorial/roomSurfaceUndergroundTutorial.yy",},},
+    {"roomId":{"name":"roomChasmLeftPool","path":"rooms/roomChasmLeftPool/roomChasmLeftPool.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
