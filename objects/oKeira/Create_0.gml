@@ -89,7 +89,8 @@ preLandJumpsTime = 7
 bounceJumpCoefficient = 0.7;
 
 //Climbing
-wallClimbCoyoteeTime = 6	
+wallClimbCoyoteeTime = 5;	
+wallJumped = false;
 canVerticalClimb = false;  //current control variable ; replace later
 timeNotClimbing = -1;
 climbingTermVel = 0.5;

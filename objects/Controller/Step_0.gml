@@ -123,6 +123,8 @@ if (usingController) {
 	
 	pausePressed = gamepad_button_check_pressed(controllerUsing, gp_start);
 	
+	healHolding = gamepad_button_check(controllerUsing, gp_padd);
+	
 	uiUp = (verticalStick < 0);
 	uiDown = (verticalStick > 0);
 }
@@ -160,6 +162,7 @@ if (!usingController) {
 	pausePressed = keyboard_check_pressed(vk_escape);
 	
 	healHolding = keyboard_check(ord("R"));
+
 	
 	uiUp = up;
 	uiDown = down;

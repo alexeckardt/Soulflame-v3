@@ -233,7 +233,6 @@ if (place_meeting(x, y+moveY, Solid)) {
 }
 y+=moveY;
 
-
 		//Ground Collision Detection
 		var wasOnGround = onGround;
 		if (vSpeed >= 0) {
@@ -354,9 +353,12 @@ if (wallInDirection != 0 && inControl) {
 			 
 				//Must be climbable alittle above
 				//Prvent climbable when only feet touching
-				if (position_meeting(wallPosX, y-7, Solid)) {
+				if (position_meeting(wallPosX, y-7, Solid)) {	
 					STATE = state.climb;
 					climbing = true;
+					directionFacing = wallInDirection;
+					
+					wallJumped = false;
 				}
 			}
 		
@@ -367,6 +369,9 @@ if (wallInDirection != 0 && inControl) {
 				if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
 					STATE = state.wall_cling;
 					climbing = true;
+					directionFacing = wallInDirection;
+					
+					wallJumped = false;
 				}
 			}
 		}
@@ -375,6 +380,7 @@ if (wallInDirection != 0 && inControl) {
 		if (!climbing) {
 			STATE = state.base;	
 			climbAttachAnimationPlayed = false;
+			wallJumped = false;
 		} else {
 		
 		//Enter A Climbing State; Remove Sliding Damage
@@ -448,6 +454,10 @@ wallJumpNotConnectedTimeLeft -= time;
 if (!Game.someUIopen) {
 	if (Controller.jump || forceJump) {
 		jumpTicks = preLandJumpsTime;	
+		
+		if (!onGround) {
+			var i = 0;	
+		}
 	}
 }
 
@@ -458,21 +468,24 @@ if (jumpTicks > 0) {
 	jumpTicks -= time;
 	
 	var wallClinging = (STATE == state.wall_cling);
-	var climbing = (STATE == state.climb || wallClinging);
+	var climbingCheck = !wallJumped && (STATE == state.climb || wallClinging || timeNotClimbing < wallClimbCoyoteeTime);
+	
+	var wasOnWall = place_meeting(x - mx*4, y, Solid);
+	var willBeOnWall = place_meeting(x + sign(controlHSpeed)*2, y, Solid) && !climbingCheck;
 
 	//Coyottee Time AND Wait for until on ground.
 	var walkedOffPlatform = (y - lastOnFloorAtY > 0)
 	var onGroundJump = (onGround || timeOffGround < coyoteeMaxTime*walkedOffPlatform) //&& jumpCooldownTicks < 0;
 	
-	var wallJump = climbing && (timeNotClimbing < wallClimbCoyoteeTime && mx != lastWallInDirection);
-	var verticalClimb = climbing && ((canVerticalClimb || wallClinging) && (mx == lastWallInDirection));
+	var wallJump = (climbingCheck || willBeOnWall) && (wasOnWall && mx != lastWallInDirection || (mx == 0 && !canVerticalClimb));
+	var verticalClimb = climbingCheck && ((canVerticalClimb || wallClinging) && (mx == lastWallInDirection));
 	var doubleJump = false;
 	var bounceOffEnemy = bouncingOffEnemy && forceJump;
 	
 	var successfulJumpCheck = onGroundJump || wallJump || verticalClimb|| bounceOffEnemy;
 	
 	//Fail Check
-	if (!successfulJumpCheck) {successfulJumpCheck = wallJumpNotConnectedTimeLeft > 0;}	
+	//if (!successfulJumpCheck) {successfulJumpCheck = wallJumpNotConnectedTimeLeft > 0;}	
 	
 	
 	
@@ -514,6 +527,8 @@ if (jumpTicks > 0) {
 			//Jump Straight Up
 			if (verticalClimb || wallClinging) {
 			
+				wallJumped = true;
+			
 				//Push Away from the wall
 				controlHSpeed = -wallInDirection * wallClingVerticalJumpWallPushOffForce * wallClinging
 				vSpeed = wallJumpSpeed; 
@@ -533,9 +548,12 @@ if (jumpTicks > 0) {
 			//Jump Off Wall 
 			if (wallJump) {
 			
+				wallJumped = true;
+			
 				//Decide Vector
+				var d = lastWallInDirection;
 				var spd = wallJumpSpeed;
-				var jumpingAngle = 90 + wallInDirection*wallJumpAngle;
+				var jumpingAngle = 90 + d*wallJumpAngle;
 			
 				controlHSpeed = -lengthdir_x(spd, jumpingAngle);	
 				vSpeed = -lengthdir_y(spd, jumpingAngle); 
@@ -550,7 +568,7 @@ if (jumpTicks > 0) {
 				
 				hasJumpedOffWallSinceOnGround = true;
 				
-				particle_create_dust(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
+				particle_create_dust(x+d*5, y-4, x+d*5, y+4, 8);
 				
 			}
 		}
