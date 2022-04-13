@@ -528,7 +528,7 @@ if (jumpTicks > 0) {
 			if (verticalClimb || wallClinging) {
 			
 				wallJumped = true;
-			
+	
 				//Push Away from the wall
 				controlHSpeed = -wallInDirection * wallClingVerticalJumpWallPushOffForce * wallClinging
 				vSpeed = wallJumpSpeed; 
@@ -550,8 +550,8 @@ if (jumpTicks > 0) {
 			
 				wallJumped = true;
 			
-				//Decide Vector
-				var d = lastWallInDirection;
+				//Decide Vector				
+				var d = (willBeOnWall) ? sign(controlHSpeed) : lastWallInDirection;
 				var spd = wallJumpSpeed;
 				var jumpingAngle = 90 + d*wallJumpAngle;
 			
