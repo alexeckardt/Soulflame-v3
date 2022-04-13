@@ -482,6 +482,10 @@ if (jumpTicks > 0) {
 	var doubleJump = false;
 	var bounceOffEnemy = bouncingOffEnemy && forceJump;
 	
+	//Update Wall Jump
+	wallJump = wallJump || (wallClinging && mx == -wallInDirection);
+	
+	//Check
 	var successfulJumpCheck = onGroundJump || wallJump || verticalClimb|| bounceOffEnemy;
 	
 	//Fail Check
@@ -522,33 +526,15 @@ if (jumpTicks > 0) {
 				
 				particle_create_dust(x-5, y+8, x+5, y+8, 5);
 			}
-
-		
-			//Jump Straight Up
-			if (verticalClimb || wallClinging) {
 			
-				wallJumped = true;
-	
-				//Push Away from the wall
-				controlHSpeed = -wallInDirection * wallClingVerticalJumpWallPushOffForce * wallClinging
-				vSpeed = wallJumpSpeed; 
-				squishX = -squishOffset;
-				squishY = squishOffset;
-		
-				//Stop
-				wallJump = false;
-				STATE = state.base;
-				wallInDirection = 0; //Resrt wall checks
-				
-				particle_create_dust(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
-		
-			}
-		
-		
 			//Jump Off Wall 
 			if (wallJump) {
 			
 				wallJumped = true;
+				
+				//Exit Edge Cling
+				wallClinging = false;
+				STATE = state.climb
 			
 				//Decide Vector				
 				var d = (willBeOnWall) ? sign(controlHSpeed) : lastWallInDirection;
@@ -570,6 +556,26 @@ if (jumpTicks > 0) {
 				
 				particle_create_dust(x+d*5, y-4, x+d*5, y+4, 8);
 				
+			}
+		
+			//Jump Straight Up
+			if (verticalClimb || wallClinging) {
+			
+				wallJumped = true;
+	
+				//Push Away from the wall
+				controlHSpeed = -wallInDirection * wallClingVerticalJumpWallPushOffForce * wallClinging
+				vSpeed = wallJumpSpeed; 
+				squishX = -squishOffset;
+				squishY = squishOffset;
+		
+				//Stop
+				wallJump = false;
+				STATE = state.base;
+				wallInDirection = 0; //Resrt wall checks
+				
+				particle_create_dust(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
+		
 			}
 		}
 	}
