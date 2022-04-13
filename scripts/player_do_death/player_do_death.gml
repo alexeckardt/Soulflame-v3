@@ -25,7 +25,6 @@ function player_do_death(){
 		//Preform A Dead Reset
 		loadRoomAsRespawn = true;
 		
-		
 	}
 	
 	
@@ -52,8 +51,6 @@ function player_do_death(){
 				if (roomToId == -1) {
 					roomTransition.loadInstead = true;	
 				}
-				
-				
 					
 				//Reset
 				deadFadeOut = false;

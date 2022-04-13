@@ -32,10 +32,15 @@ if (!firstRoom) {
 	
 	//Dead Respawn
 	if (loadRoomAsRespawn) {
+		
 		loadRoomAsRespawn = false;
 		hp = baseMaxHealth;
 		
 		//Check If Campfire Near; Sit Down Near It.
+		
+		//Reset
+		ds_list_clear(essenceTokens);
+		essenceTokensHolding = 0;
 		
 	}
 	
