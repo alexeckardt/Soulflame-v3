@@ -112,7 +112,7 @@ function platinum_create(xx, yy, amount, spread, minSpeed, maxSpeed, goalVector 
 		
 		//Set Direction To Move In
 		var dirFromC = point_direction(newX, newY, spawnX, spawnY);
-		var randomRange = goalVector + irandom_range(-vectorRange, vectorRange);
+		var randomRange = goalVector + irandom_range(-vectorRange, vectorRange)*random(1);
 		
 		var realMoveDirection = point_direction(-lengthdir_x(1, dirFromC), -lengthdir_y(1, dirFromC), 
 												lengthdir_x(goalvectorweight, randomRange), lengthdir_y(goalvectorweight, randomRange))

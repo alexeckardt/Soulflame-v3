@@ -18,7 +18,8 @@ if (autoPickup) {
 	
 {
 	//Normal Movement
-	vSpeed += grav;	
+	vSpeed += grav;
+	hSpeed = lerp(hSpeed, 0, 1/weight/10*Game.delta);
 	
 	//Bounce
 	if (place_meeting(x, y+vSpeed, Solid) && vSpeed > 0) {
