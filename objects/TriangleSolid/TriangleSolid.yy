@@ -1,15 +1,12 @@
 {
-  "spriteId": {
-    "name": "sRampTileLong",
-    "path": "sprites/sRampTileLong/sRampTileLong.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "TriangleSolid",
-    "path": "objects/TriangleSolid/TriangleSolid.yy",
+    "name": "Solid",
+    "path": "objects/Solid/Solid.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -31,7 +28,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oConcreteRampLong",
+  "name": "TriangleSolid",
   "tags": [],
   "resourceType": "GMObject",
 }

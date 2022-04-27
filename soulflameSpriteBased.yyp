@@ -370,6 +370,7 @@
     {"id":{"name":"keira_generic_damage_create","path":"scripts/keira_generic_damage_create/keira_generic_damage_create.yy",},"order":6,},
     {"id":{"name":"enemy_global_death_events","path":"scripts/enemy_global_death_events/enemy_global_death_events.yy",},"order":10,},
     {"id":{"name":"oGrassArea","path":"objects/oGrassArea/oGrassArea.yy",},"order":23,},
+    {"id":{"name":"TriangleSolid","path":"objects/TriangleSolid/TriangleSolid.yy",},"order":24,},
     {"id":{"name":"shd_shadow","path":"shaders/shd_shadow/shd_shadow.yy",},"order":1,},
     {"id":{"name":"sHitEffectMedium","path":"sprites/sHitEffectMedium/sHitEffectMedium.yy",},"order":0,},
     {"id":{"name":"sKeiraClimbAttatch","path":"sprites/sKeiraClimbAttatch/sKeiraClimbAttatch.yy",},"order":10,},
