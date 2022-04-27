@@ -8,6 +8,10 @@ function command_room(_roomName) {
 	//Verify
 	command_verify_exists(_roomName, 0);
 
+	if (_roomName == "reset") {
+		room_restart();	
+	}
+
 	//Get Room ID
 	var roomID = asset_get_index(_roomName);
 	
