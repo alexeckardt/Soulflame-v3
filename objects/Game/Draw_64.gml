@@ -22,6 +22,9 @@ if (showDebugOverlay) {
 		debugVerticalIndex++;
 	game_draw_debug_line("R", room_get_name(room), true);
 	game_draw_debug_line("P", [oKeira.x, oKeira.y], true);
+	game_draw_debug_line("C", [Camera.x, Camera.y], true);
+	game_draw_debug_line("M", [mouse_x, mouse_y], true);
+	game_draw_debug_line("Mr", [mouse_x-Camera.x, mouse_y-Camera.y], true);
 
 
 
