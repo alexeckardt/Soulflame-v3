@@ -6,13 +6,13 @@ function Quad(_vb,_x1,_y1,_x2,_y2){
 
 	//Upper triangle
 	vertex_position_3d(_vb,_x1,_y1,0);
-	vertex_position_3d(_vb,_x1,_y1,1); //repositioned vertex
-	vertex_position_3d(_vb,_x2,_y2,0);
+	vertex_position_3d(_vb,_x1,_y1,2); //repositioned vertex
+	vertex_position_3d(_vb,_x2,_y2,1);
 	
 	//Lower Triangle
-	vertex_position_3d(_vb,_x1,_y1,1); //repositioned vertex
-	vertex_position_3d(_vb,_x2,_y2,0);
-	vertex_position_3d(_vb,_x2,_y2,1); //repositioned vertex
+	vertex_position_3d(_vb,_x1,_y1,2); //repositioned vertex
+	vertex_position_3d(_vb,_x2,_y2,1);
+	vertex_position_3d(_vb,_x2,_y2,3); //repositioned vertex
 }
 
 //Construct the vertex buffer with every wall
@@ -22,12 +22,11 @@ var _vb = vb;
 with(Solid){
 	
 	if (isTriangle) {
-		var mid_x = (3*x + sprite_width)/3;
-		var mid_y = (3*y + 2*sprite_height)/3;
+		var mid_x = (2*x + sprite_width)/2;
+		var mid_y = (2*y + sprite_height)/2;
 		
-		Quad(_vb,x,y+sprite_height,mid_x,mid_y);
+		Quad(_vb,x,y+sprite_height,x+sprite_width,y);
 		Quad(_vb,x+sprite_width,y+sprite_height,mid_x,mid_y);
-		Quad(_vb,x+sprite_width,y,mid_x,mid_y);
 	}
 	else 
 	{
@@ -39,5 +38,5 @@ vertex_end(vb);
 
 
 if (mouse_check_button_pressed(mb_left)) {
-	instance_create_depth(mouse_x, mouse_y, depth, Light);	
+	instance_create_depth(mouse_x, mouse_y, lightDepthLayer, Light);	
 }

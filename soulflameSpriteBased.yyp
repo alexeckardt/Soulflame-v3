@@ -14,7 +14,6 @@
     {"id":{"name":"script_execute_alt","path":"scripts/script_execute_alt/script_execute_alt.yy",},"order":0,},
     {"id":{"name":"linear_search_array","path":"scripts/linear_search_array/linear_search_array.yy",},"order":13,},
     {"id":{"name":"sEnvForgroundGrass1","path":"sprites/sEnvForgroundGrass1/sEnvForgroundGrass1.yy",},"order":11,},
-    {"id":{"name":"shd_shadsurf","path":"shaders/shd_shadsurf/shd_shadsurf.yy",},"order":2,},
     {"id":{"name":"save_index_grid","path":"scripts/save_index_grid/save_index_grid.yy",},"order":4,},
     {"id":{"name":"oPlatinumBag","path":"objects/oPlatinumBag/oPlatinumBag.yy",},"order":0,},
     {"id":{"name":"save_game","path":"scripts/save_game/save_game.yy",},"order":0,},

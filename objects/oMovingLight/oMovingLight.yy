@@ -25,8 +25,9 @@
   ],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"colour","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"$FF3BFF00","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"colour","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"$FFFFFFFF","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"size","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"80","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"fov","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"360","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Lighting",

@@ -26,6 +26,7 @@ if (surface_exists(bkgSurf)) {
 draw_surface(application_surface, ax*m, ay*m);
 //gpu_set_colorwriteenable(1,1,1,1);
 
+
 //Draw Glowing 
 gpu_set_blendmode(bm_add);
 shader_set(shdEssenceMagic);

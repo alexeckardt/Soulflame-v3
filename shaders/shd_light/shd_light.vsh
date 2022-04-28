@@ -1,6 +1,8 @@
 attribute vec3 in_Position;                  // (x,y,z)
 attribute vec4 in_Colour;                    // (r,g,b,a)
+attribute vec2 in_TextureCoord;              // (u,v)
 
+varying vec2 v_vTexcoord;
 varying vec2 pos;
 varying vec4 col;
 
@@ -9,4 +11,5 @@ void main(){
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;
 	pos = in_Position.xy;
 	col = in_Colour;
+    v_vTexcoord = in_TextureCoord;
 }
