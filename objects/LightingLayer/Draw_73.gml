@@ -35,10 +35,13 @@ if (!surface_exists(fakeAppSurf)) {
 }
 
 //Draw App Surface, Scaled 1:1 Pixels
+gpu_set_colorwriteenable(1,1,1,1);
 surface_set_target(fakeAppSurf);
+gpu_set_blendmode(bm_normal);
 	draw_clear_alpha(0,0);
 	draw_surface_ext(application_surface, 0, 0, izoom, izoom, 0, c_white, 1);
 surface_reset_target();
+gpu_set_colorwriteenable(1,1,1,1);
 
 var _fakeAppSurf = fakeAppSurf;
 
@@ -94,3 +97,4 @@ surface_set_target(lightLayerSurf);
 surface_reset_target();
 
 matrix_set(matrix_world, matrix_build(0, 0, 0, 0, 0, 0, 1, 1, 1));
+gpu_set_blendmode(bm_normal);

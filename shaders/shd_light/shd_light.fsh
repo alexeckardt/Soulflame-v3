@@ -13,7 +13,7 @@ uniform float u_fov; //fov
 
 void main(){
 	vec2 dis = pos - u_pos;
-	float str = 1./(sqrt(dis.x*dis.x + dis.y*dis.y + zz*zz)-zz)*u_str; //strength of light is the inverse distance
+	float str = 1./(sqrt(dis.x*dis.x + dis.y*dis.y + zz*zz)-zz+1.-u_str); //strength of light is the inverse distance
 	float dir = radians(u_dir);
 	float hfov = radians(u_fov)*0.5;
 	

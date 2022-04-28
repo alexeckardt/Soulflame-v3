@@ -2,7 +2,7 @@
 
 display_set_gui_size(view_width*zoom, view_height*zoom);
 
-var m = 0;
+var m = 1;
 var ax = floor(viewX) - viewX;
 var ay = floor(viewY) - viewY;
 
@@ -27,17 +27,26 @@ if (surface_exists(bkgSurf)) {
 
 display_set_gui_size(view_width, view_height);
 
-draw_surface(LightingLayer.fakeAppSurf, -ax*m, -ay*m);
+surface_set_target(gameLayerSurf);
+	draw_clear_alpha(0,0);
+	
+	draw_surface(LightingLayer.fakeAppSurf, 0, 0);
 
-gpu_set_colorwriteenable(1,1,1,0);
-gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha);
-draw_surface(LightingLayer.lightLayerSurf, -ax*m, -ay*m);
-gpu_set_blendmode(bm_normal);
-gpu_set_colorwriteenable(1,1,1,1);
+	gpu_set_colorwriteenable(1,1,1,0);
+	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha);
+	draw_surface(LightingLayer.lightLayerSurf, 0, 0);
+	gpu_set_blendmode(bm_normal);
+	gpu_set_colorwriteenable(1,1,1,1);
+	
+surface_reset_target();
 
+draw_surface(gameLayerSurf, 0, 0);
+
+
+display_set_gui_size(view_width*zoom, view_height*zoom);
 
 //Draw Glowing 
-gpu_set_blendmode(bm_add);
+gpu_set_blendmode(bm_normal);
 shader_set(shdEssenceMagic);
 draw_surface(fireSurf, 0, 0);
 		surface_set_target(fireSurf);
@@ -47,16 +56,15 @@ shader_reset();
 gpu_set_blendmode(bm_normal);
 
 
+//
 //PARTICLE LAYERS
 //
+display_set_gui_size(view_width, view_height);
 if (surface_exists(Game.particleViewer.particleSurf)) {
-	draw_surface(Game.particleViewer.particleSurf, 0, 0);
+	draw_surface_ext(Game.particleViewer.particleSurf, 0, 0, 1, 1, 0, c_white, 1);
 }
 
 //GLOW PARTICLES
-
-
-
 
 display_set_gui_size(view_width*zoom, view_height*zoom);
 

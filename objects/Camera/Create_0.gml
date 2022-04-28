@@ -29,7 +29,7 @@ followOffsetY = -8;
 depth = -20;
 application_surface_draw_enable(false);
 
-fakeAppSurf = -1;
+gameLayerSurf = -1;
 
 //Turns on in Begin Step; Used to reset camera properties
 view_enabled = false
