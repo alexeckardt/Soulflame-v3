@@ -1,3 +1,0 @@
-/// @description 
-
-if (!enable) exit;

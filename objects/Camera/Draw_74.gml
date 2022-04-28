@@ -39,16 +39,19 @@ gpu_set_colorwriteenable(1,1,1,1);
 surface_set_target(fakeAppSurf);
 gpu_set_blendmode(bm_normal);
 	draw_clear_alpha(0,0);
+	
+	//App Surf
 	draw_surface_ext(application_surface, 0, 0, izoom, izoom, 0, c_white, 1);
 	
+	//Draw Particles w Lighting in mind
 	if (surface_exists(Game.particleViewer.particleSurf)) {
 		draw_surface_ext(Game.particleViewer.particleSurf, 0, 0, 1, 1, 0, c_white, 1);
 	}
 	
-	
 surface_reset_target();
 gpu_set_colorwriteenable(1,1,1,1);
 
+//Save For Later
 var _fakeAppSurf = fakeAppSurf;
 
 //-------------------------------
@@ -64,19 +67,18 @@ if (!surface_exists(lightLayerSurf)) {
 //Draw In Lighting Surf
 surface_set_target(lightLayerSurf);
 
-
 	//Translate All
 	matrix_set(matrix_world, matrix_build(-_cx, -_cy, 0, 0, 0, 0, 1, 1, 1));
 
 	//Draw Bkg At 0,0 on surf (clear other)
-	draw_clear_alpha(0,0);
-	draw_surface_ext(_fakeAppSurf, _cx, _cy, 1, 1, 0, ambientLightingColour, ambientBrightnesssValue);
+	draw_clear_alpha(ambientLightingColour,0);
+	draw_surface_ext(_fakeAppSurf, _cx, _cy, 1, 1, 0, c_white, ambientBrightnesssValue);
 
 	//Turn on the Zbuffer (3D)
 	with(Light){
 
-		var fx = round(x);
-		var fy = round(y);
+		var fx = (x);
+		var fy = (y);
 
 		//Draw the shadows (AKA light blockers)
 		gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_one);
@@ -95,27 +97,28 @@ surface_set_target(lightLayerSurf);
 	
 		//draw_sprite_ext(sPixel,1,_cx, _cy,worldCamW,worldCamH,0, colour, 1); //canvas for drawing the light
 		draw_surface_ext(_fakeAppSurf,_cx, _cy, 1, 1, 0, colour, 1);
-	
 	}
 	shader_reset();
-	
 surface_reset_target();
-
 matrix_set(matrix_world, matrix_build(0, 0, 0, 0, 0, 0, 1, 1, 1));
-gpu_set_blendmode(bm_normal);
+
 
 //Combine Lighting Layer + App Surface Onto Single Surface
 //
+gpu_set_blendmode(bm_normal);
 surface_set_target(gameLayerSurf);
 	draw_clear_alpha(0,0);
 	
+	//Base
 	draw_surface(fakeAppSurf, 0, 0);
 
+	//Lighting
 	gpu_set_colorwriteenable(1,1,1,0);
 	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha);
 	draw_surface(lightLayerSurf, 0, 0);
 	gpu_set_blendmode(bm_normal);
 	gpu_set_colorwriteenable(1,1,1,1);
+	
 surface_reset_target();
 
 //
@@ -198,8 +201,6 @@ if (surface_exists(frgSurf)) {
 surface_set_target(application_surface);
 	draw_clear_alpha(0, 0);
 surface_reset_target();
-
-
 
 
 /*

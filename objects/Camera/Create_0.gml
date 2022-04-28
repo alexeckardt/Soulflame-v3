@@ -29,8 +29,6 @@ followOffsetY = -8;
 depth = -20;
 application_surface_draw_enable(false);
 
-gameLayerSurf = -1;
-
 //Turns on in Begin Step; Used to reset camera properties
 view_enabled = false
 
@@ -102,12 +100,13 @@ vb = vertex_create_buffer();
 //
 lightLayerSurf = -1;
 fakeAppSurf = -1;
+gameLayerSurf = -1;
 
-ambientBrightnesssValue = 2.0; // 1 = no shadows, 0 max shadows
+ambientBrightnesssValue = 0.1; // 1 = no shadows, 0 max shadows
 ambientLightingColour = c_black;
 
-lightDepthLayer = depth + 1;
-instance_create_depth(0, 0, lightDepthLayer, oMovingLight);
+lightDepthLayer = depth + 10;
+//instance_create_depth(0, 0, lightDepthLayer, oMovingLight);
 
 
 enable = true;

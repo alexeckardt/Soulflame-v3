@@ -14,7 +14,7 @@ function camera_following(){
 	var time = Game.delta;
 	
 	//Speed
-	var cameraFollowSpeed = 4;
+	var cameraFollowSpeed = 1;
 	
 	//Keira
 	var k = oKeira.id;

@@ -86,7 +86,6 @@
     {"id":{"name":"platinum_get_bag_index","path":"scripts/platinum_get_bag_index/platinum_get_bag_index.yy",},"order":21,},
     {"id":{"name":"roomLab","path":"rooms/roomLab/roomLab.yy",},"order":3,},
     {"id":{"name":"string_wrap","path":"scripts/string_wrap/string_wrap.yy",},"order":14,},
-    {"id":{"name":"LightingLayer","path":"objects/LightingLayer/LightingLayer.yy",},"order":3,},
     {"id":{"name":"camera_photo_mode","path":"scripts/camera_photo_mode/camera_photo_mode.yy",},"order":5,},
     {"id":{"name":"sHumanPots","path":"sprites/sHumanPots/sHumanPots.yy",},"order":0,},
     {"id":{"name":"sKeiraJumpUpSlow","path":"sprites/sKeiraJumpUpSlow/sKeiraJumpUpSlow.yy",},"order":4,},
