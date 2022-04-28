@@ -7,10 +7,10 @@ var worldCamH = (Camera.view_height) + 1;
 var _vb = vb;
 
 //Camera Pos
-cX = Camera.x;
-cY = Camera.y;
-var _cx = cX;
-var _cy = cY;
+cX = Camera.realX;
+cY = Camera.realY;
+var _cx = (cX);
+var _cy = (cY);
 
 //Uniform Imports
 var _u_pos = u_pos;
@@ -66,16 +66,20 @@ surface_set_target(lightLayerSurf);
 	//Turn on the Zbuffer (3D)
 	with(Light){
 
+		var fx = round(x);
+		var fy = round(y);
+
+
 		//Draw the shadows (AKA light blockers)
 		gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_one);
 		shader_set(shd_shadow);
-		shader_set_uniform_f(_u_pos2,x,y);
+		shader_set_uniform_f(_u_pos2,fx,fy);
 		vertex_submit(_vb,pr_trianglelist,-1);
 	
 		//Draw the Light Source
 		gpu_set_blendmode_ext_sepalpha(bm_inv_dest_alpha, bm_one, bm_zero, bm_zero);
 		shader_set(shd_light);
-			shader_set_uniform_f(_u_pos,x,y);
+			shader_set_uniform_f(_u_pos,fx,fy);
 			shader_set_uniform_f(_u_zz,size);
 			shader_set_uniform_f(_u_str,str);
 			shader_set_uniform_f(_u_dir,dir);

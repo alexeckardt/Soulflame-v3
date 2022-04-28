@@ -4,7 +4,7 @@ if (Game.delta != 0) {
 
 	camera_following();
 
-	//camera_photo_mode();
+	camera_photo_mode();
 
 	camera_screen_shake();
 

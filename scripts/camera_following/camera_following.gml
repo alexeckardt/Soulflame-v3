@@ -4,6 +4,8 @@
 //
 function camera_following(){
 	
+	if (photoMode) return 0;
+	
 	//Dimention
 	var ww = view_width div 2;
 	var hh = view_height div 2;
