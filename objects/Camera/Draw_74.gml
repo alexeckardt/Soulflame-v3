@@ -23,8 +23,17 @@ if (surface_exists(bkgSurf)) {
 //gpu_set_blendenable(true);
 
 //gpu_set_colorwriteenable(1,1,1,1); //may need to be 0 alpha
-draw_surface(application_surface, ax*m, ay*m);
 //gpu_set_colorwriteenable(1,1,1,1);
+
+display_set_gui_size(view_width, view_height);
+
+draw_surface(LightingLayer.fakeAppSurf, -ax*m, -ay*m);
+
+gpu_set_colorwriteenable(1,1,1,0);
+gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha);
+draw_surface(LightingLayer.lightLayerSurf, -ax*m, -ay*m);
+gpu_set_blendmode(bm_normal);
+gpu_set_colorwriteenable(1,1,1,1);
 
 
 //Draw Glowing 
@@ -41,12 +50,15 @@ gpu_set_blendmode(bm_normal);
 //PARTICLE LAYERS
 //
 if (surface_exists(Game.particleViewer.particleSurf)) {
-	draw_surface_ext(Game.particleViewer.particleSurf, 0, 0, zoom, zoom, 0, c_white, 1);	
+	draw_surface(Game.particleViewer.particleSurf, 0, 0);
 }
 
 //GLOW PARTICLES
 
 
+
+
+display_set_gui_size(view_width*zoom, view_height*zoom);
 
 //Foreground Paralax
 if (surface_exists(frgSurf)) {
@@ -57,7 +69,6 @@ if (surface_exists(frgSurf)) {
 			draw_clear_alpha(0, 0);
 		surface_reset_target();
 }
-
 
 //Clear Application Surface
 surface_set_target(application_surface);

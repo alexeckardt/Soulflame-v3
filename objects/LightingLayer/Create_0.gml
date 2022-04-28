@@ -18,6 +18,7 @@ vb = vertex_create_buffer();
 
 //
 lightLayerSurf = -1;
+fakeAppSurf = -1;
 
 ambientBrightnesssValue = 2.0; // 1 = no shadows, 0 max shadows
 ambientLightingColour = c_black;
@@ -27,3 +28,5 @@ cY = 0;
 
 lightDepthLayer = depth + 1;
 instance_create_depth(0, 0, lightDepthLayer, oMovingLight);
+
+enable = true;
