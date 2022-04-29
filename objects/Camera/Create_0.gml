@@ -96,7 +96,7 @@ u_range				= shader_get_uniform(shd_light, "u_range");
 fakeAppSurf = -1;
 lightLayerSurf = -1;
 
-maxDarknessOpacity = 0.9;
+maxDarknessOpacity = 1;
 maxDarknessOpacityTo = maxDarknessOpacity;
 
 shadowColour = 0;

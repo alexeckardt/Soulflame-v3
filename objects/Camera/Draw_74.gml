@@ -98,7 +98,6 @@ surface_set_target(lightLayerSurf);
 			shader_set_uniform_f(_u_dir, dir);
 			shader_set_uniform_f(_u_str, str);
 			shader_set_uniform_f(_u_falloff, falloff);
-			shader_set_uniform_f(_u_range, range);
 			
 			//Draw Light as overlay on surface
 			draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, colour, 1);

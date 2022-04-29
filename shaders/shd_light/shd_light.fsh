@@ -1,23 +1,30 @@
 varying vec2 pos; //current pixel position
-varying vec2 v_vTexcoord;
 varying vec4 col;
+varying vec2 v_vTexcoord;
 
 uniform vec2 u_pos; //light souce position
 uniform float u_zz; //light point size
 uniform float u_dir; //light beam direction
 uniform float u_fov; //light beam fov
+uniform float u_falloff; //distance light travels basically
 uniform float u_str;
-uniform float u_range; //distance multiplier
-uniform float u_falloff;
 
-
+//Define
 #define PI 3.1415926538
-const float spotlight_harshness = 5.;
+#define spotlight_harshness 3.
+#define scale 4.
+#define cutoff 0.0005
 
 void main() {
 	
-	vec2 dis = pos - u_pos;
-	float str = u_range / (sqrt(dis.x*dis.x + dis.y*dis.y + u_zz*u_zz) - u_zz + 1. - u_str);
+	vec2 dis = (pos - u_pos) / scale;
+	
+	//Determine Strength Of Light
+	float str_base = 1.0 / (sqrt(dis.x*dis.x + dis.y*dis.y + u_zz*u_zz) - u_zz + 1. - u_str);
+	
+	//Cutoff Light if it's value is UNder the cutoff value
+	float str = str_base * floor(min(str_base + 1. - cutoff, 1.));
+	
 	float dir = radians(u_dir);
 	float hfov = radians(u_fov) * 0.5;
 	
@@ -33,9 +40,6 @@ void main() {
 		str *= clamp(1. - (adis / hfov) * spotlight_harshness, 0., 1.);	
 	}
 	
-	//Get Exisitng Pixel
 	vec4 frag = texture2D( gm_BaseTexture, v_vTexcoord );
-	
-	//Set New Pixel
-    gl_FragColor = col * vec4(vec3(str), 1.) * frag;
+    gl_FragColor = col * vec4(vec3(pow(str,u_falloff)), 1.) * frag;
 }

@@ -54,7 +54,7 @@ if (lit) {
 
 	myLight.active = true;
 	myLight.colour = flameColour;
-	myLight.str = (0.8 + 0.1*flameFrequencyStrength) * litPercent
-	myLight.size = (lightBaseSize + 30*flameFrequencyStrength) * litPercent
-	myLight.range = 5;
+	myLight.str = (0.3 + 0.1*flameFrequencyStrength) * litPercent
+	myLight.size = (300 + 30*flameFrequencyStrength) * litPercent
+	myLight.falloff = 0.8; //fall off 
 }
