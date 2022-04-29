@@ -37,6 +37,8 @@
   },
   "resourceVersion": "1.0",
   "name": "Camera",
-  "tags": [],
+  "tags": [
+    "light",
+  ],
   "resourceType": "GMObject",
 }

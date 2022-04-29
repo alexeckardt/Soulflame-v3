@@ -8,6 +8,6 @@ if (litPercent > 0.001) {
 	gpu_set_blendmode(bm_normal);
 
 	//shader_set(shdEssenceMagic);
-	draw_sprite_magic(sFire, fireIndex, x, y-11, litPercent, litPercent, 0, flameColour, 1 + flameFrequencyStrength, 0.4);
+	draw_sprite_magic(sFire, fireIndex, x, y+flameYoffset, litPercent, litPercent, 0, flameColour, 1 + flameFrequencyStrength, 0.4);
 	//shader_reset();
 }

@@ -6,6 +6,8 @@
   },
   "resourceVersion": "1.0",
   "name": "shd_light",
-  "tags": [],
+  "tags": [
+    "light",
+  ],
   "resourceType": "GMShader",
 }

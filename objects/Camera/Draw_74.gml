@@ -86,21 +86,25 @@ surface_set_target(lightLayerSurf);
 	with(Light) {
 
 		//pos
-		var xx = (x - _cx) * cZoom;
-		var yy = (y - _cy) * cZoom;
-	
-		//update light vars
-		shader_set_uniform_f(_u_pos, xx, yy);
-		shader_set_uniform_f(_u_zz, size);
-		shader_set_uniform_f(_u_fov, fov);
-		shader_set_uniform_f(_u_dir, dir);
-		shader_set_uniform_f(_u_str, str);
-		shader_set_uniform_f(_u_falloff, falloff);
-		shader_set_uniform_f(_u_range, range);
+		if (active) {
 			
-		//Draw Light as overlay on surface
-		draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, colour, 1);
-		lightsDrawnLocal++;
+			var xx = (x - _cx) * cZoom;
+			var yy = (y - _cy) * cZoom;
+	
+			//update light vars
+			shader_set_uniform_f(_u_pos, xx, yy);
+			shader_set_uniform_f(_u_zz, size);
+			shader_set_uniform_f(_u_fov, fov);
+			shader_set_uniform_f(_u_dir, dir);
+			shader_set_uniform_f(_u_str, str);
+			shader_set_uniform_f(_u_falloff, falloff);
+			shader_set_uniform_f(_u_range, range);
+			
+			//Draw Light as overlay on surface
+			draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, colour, 1);
+			lightsDrawnLocal++;
+			
+		}
 			
 	}
 	

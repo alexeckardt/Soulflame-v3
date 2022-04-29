@@ -36,6 +36,8 @@
   },
   "resourceVersion": "1.0",
   "name": "oMovingLight",
-  "tags": [],
+  "tags": [
+    "light",
+  ],
   "resourceType": "GMObject",
 }

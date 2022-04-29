@@ -119,6 +119,7 @@
     {"id":{"name":"sKeiraAttackNoWeaponUppercut","path":"sprites/sKeiraAttackNoWeaponUppercut/sKeiraAttackNoWeaponUppercut.yy",},"order":5,},
     {"id":{"name":"essence_token_add_percent","path":"scripts/essence_token_add_percent/essence_token_add_percent.yy",},"order":2,},
     {"id":{"name":"inside_camera_cull_region","path":"scripts/inside_camera_cull_region/inside_camera_cull_region.yy",},"order":1,},
+    {"id":{"name":"light_source_create","path":"scripts/light_source_create/light_source_create.yy",},"order":0,},
     {"id":{"name":"command_ability","path":"scripts/command_ability/command_ability.yy",},"order":1,},
     {"id":{"name":"oPathFinderSegmentedPointer","path":"objects/oPathFinderSegmentedPointer/oPathFinderSegmentedPointer.yy",},"order":4,},
     {"id":{"name":"keira_stateaction_hurt_states","path":"scripts/keira_stateaction_hurt_states/keira_stateaction_hurt_states.yy",},"order":7,},
@@ -506,8 +507,11 @@
     {"folderPath":"folders/Entity/Enemy/Obj/Base/Empty.yy","order":4,"resourceVersion":"1.0","name":"Empty","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Keira/Sprite/Spells.yy","order":17,"resourceVersion":"1.0","name":"Spells","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Rooms/Chasm.yy","order":6,"resourceVersion":"1.0","name":"Chasm","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Lighting.yy","order":28,"resourceVersion":"1.0","name":"Lighting","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Lighting.yy","order":28,"resourceVersion":"1.0","name":"Lighting","tags":[
+        "light",
+      ],"resourceType":"GMFolder",},
     {"folderPath":"folders/Lighting/Shaders.yy","order":1,"resourceVersion":"1.0","name":"Shaders","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Lighting/Scripts.yy","order":3,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

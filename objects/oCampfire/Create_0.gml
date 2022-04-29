@@ -40,3 +40,8 @@ flameColour = c_gray;
 
 healTicks = 0;
 healTime = room_speed/6;
+
+flameYoffset = -11;
+myLight = light_source_create(x, y+flameYoffset, false);
+
+lightBaseSize = 100;
