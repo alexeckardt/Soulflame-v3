@@ -2,9 +2,16 @@
 
 var t = Game.delta;
 
+//Emit Particles
+if (partScript == -1) {
+	var scrp = (sign(align) == -1) ? particle_create_essence_glob_chaos : particle_create_essence_glob_order;
+	partScript = scrp;
+}
+partScript(x, y, x, y, 1);
+
+//Movement
 switch (phase) {
 	
-	default:
 	case 0:
 	
 		//Move
@@ -34,6 +41,12 @@ switch (phase) {
 	//-------------------------------------------------------------------	
 	case 2:
 	
+		//Exit
+		if (!instance_exists(target) || target == noone) {
+			phase++;
+			break;
+		}
+	
 		//Direction
 		var goalDir = point_direction(x, y, target.x, target.y);
 		var angleDiff = angle_difference(goalDir, travelDirection);
@@ -62,5 +75,25 @@ switch (phase) {
 		}
 	
 	break;
-
+	//-------------------------------------------------------------
+	//
+	//Fade Out State
+	//
+	default:
+	
+		//Continue Moving
+		x += lengthdir_x(travelSpeed, travelDirection)*t;
+		y += lengthdir_y(travelSpeed, travelDirection)*t;
+	
+		//Fade out + darken
+		var lS = 0.1*t;
+		size = lerp(size, 0, lS);
+		colour = merge_colour(colour, 0, lS);
+		
+		//Die
+		if (size < 0.05) {
+			instance_destroy();	
+		}
+	
+	break;
 }

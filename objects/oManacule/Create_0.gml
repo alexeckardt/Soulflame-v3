@@ -22,3 +22,5 @@ directionLerpSpeed = 50; //decreases to 1 in phase 3
 col = 0;
 
 gobbleRadius = 0; //increases so no weird zooming goes on
+
+partScript = -1; //Set Script
