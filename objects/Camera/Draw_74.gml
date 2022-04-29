@@ -23,8 +23,16 @@ if (surface_exists(bkgSurf)) {
 //gpu_set_blendenable(true);
 
 //gpu_set_colorwriteenable(1,1,1,1); //may need to be 0 alpha
-draw_surface(application_surface, ax*m, ay*m);
+//draw_surface(application_surface, ax*m, ay*m);
 //gpu_set_colorwriteenable(1,1,1,1);
+
+
+gpu_set_colorwriteenable(1,1,1,0);
+//gpu_set_blendmode(bm_add);
+draw_surface_ext(LightingLayer.lightLayerSurf, 0, 0, 1, 1, 0, c_white, 1);	
+//gpu_set_blendmode(bm_normal);
+gpu_set_colorwriteenable(1,1,1,1);
+
 
 //Draw Glowing 
 gpu_set_blendmode(bm_add);
