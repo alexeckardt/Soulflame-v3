@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "TriangleSolid",
-    "path": "objects/TriangleSolid/TriangleSolid.yy",
+    "name": "Solid",
+    "path": "objects/Solid/Solid.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
