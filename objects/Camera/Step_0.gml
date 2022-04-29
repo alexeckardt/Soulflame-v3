@@ -1,6 +1,5 @@
 /// @description Camera Other
 
-
 //Switch To Full Screen
 if (window_get_fullscreen() != Game.fullscreen) {
 	window_set_fullscreen(Game.fullscreen);
@@ -12,4 +11,22 @@ if (keyboard_check_pressed(vk_f8)) {
 	photoMode = !photoMode;
 	x = viewX;
 	y = viewY;
+}
+
+
+//
+//
+//  LIGHTING
+//
+//
+
+//Darkness
+maxDarknessOpacity = lerp(maxDarknessOpacity, maxDarknessOpacityTo, 0.2);
+
+//Return To Room Default
+//lightingIntensityTo = lerp(lightingIntensityTo, lightingIntensityRoomDefault, lightingIntensityToSpeed);
+//lightingIntensityTo = clamp(lightingIntensityTo, 0, 1);
+
+if (mouse_check_button_pressed(mb_left)) {
+	instance_create_depth(mouse_x, mouse_y, lightDepth, Light);	
 }
