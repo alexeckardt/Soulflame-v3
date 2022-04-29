@@ -74,9 +74,9 @@ if (!surface_exists(lightLayerSurf)) {
 surface_set_target(lightLayerSurf);
 
 	//Prep
-	draw_clear_alpha(0, 0);
-	draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
-	draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, shadowColour, maxDarknessOpacity);
+	draw_clear_alpha(shadowColour, 1);
+	draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1-maxDarknessOpacity);
+	//draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, shadowColour, maxDarknessOpacity);
 	
 	//Setup Light Drawing
 	gpu_set_blendmode(bm_add);

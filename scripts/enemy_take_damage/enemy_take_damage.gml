@@ -53,8 +53,11 @@ function enemy_take_damage() {
 			var randomoffset = choose(0, 0, -1, 1) * Player.collectBalanceEssence;
 			var chooseAlignment = sign(alignment + randomoffset);	
 			
+			var manaculesToRelease = clamp(power(manaLost, 0.5) + irandom_range(-1, 1), 0, 8);
+			
 			//Release Visual Particles
-						
+			essence_create_homing_object(hitboxTakingDamage.x, hitboxTakingDamage.y, 5, manaculesToRelease, chooseAlignment, damageCreator);	
+							
 			//Essence Addition
 			if (damageFromPlayer) {
 				
