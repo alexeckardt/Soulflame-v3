@@ -28,5 +28,5 @@ maxDarknessOpacity = lerp(maxDarknessOpacity, maxDarknessOpacityTo, 0.2);
 //lightingIntensityTo = clamp(lightingIntensityTo, 0, 1);
 
 if (mouse_check_button_pressed(mb_left)) {
-	instance_create_depth(mouse_x, mouse_y, lightDepth, Light);	
+	instance_create_depth(mouse_x, mouse_y, lightDepth, Light);
 }

@@ -4,6 +4,8 @@
 //
 function camera_following(){
 	
+	if (photoMode) return 0;
+	
 	//Dimention
 	var ww = view_width div 2;
 	var hh = view_height div 2;
@@ -12,7 +14,7 @@ function camera_following(){
 	var time = Game.delta;
 	
 	//Speed
-	var cameraFollowSpeed = 4;
+	var cameraFollowSpeed = 1;
 	
 	//Keira
 	var k = oKeira.id;

@@ -7,4 +7,3 @@ meta_object_create(EnvironmentInit, 10);
 meta_object_create(Paths, 10);
 
 Game.particleViewer = meta_object_create(ParticleViewer, 6);
-
