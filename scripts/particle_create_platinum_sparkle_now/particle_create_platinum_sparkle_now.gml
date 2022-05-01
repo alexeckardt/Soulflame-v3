@@ -21,6 +21,10 @@ function particle_create_platinum_sparkle_now(x1, y1, x2, y2, amount) {
 
 		//Emit Particles
 		part_emitter_burst(sys, emitter, type, amount);
+		
+		//Light Particles
+			create_platinum_light_particles(1,x1,x2,y1,y2);
+		
 	}
 	
 }

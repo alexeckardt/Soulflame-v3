@@ -105,3 +105,6 @@ cX = 0;
 cY = 0;
 
 lightDepth = 25;
+
+renderedLights = 0;
+MaxLights = 200; //Try To Keep Under

@@ -7,7 +7,7 @@ if (partScript == -1) {
 	var scrp = (sign(align) == -1) ? particle_create_essence_glob_chaos : particle_create_essence_glob_order;
 	partScript = scrp;
 }
-partScript(x, y, x, y, 1);
+partScript(x, y, x, y, 1); //body
 
 //Movement
 switch (phase) {
@@ -71,7 +71,7 @@ switch (phase) {
 		
 			//End
 			instance_destroy();
-		
+
 		}
 	
 	break;
@@ -96,4 +96,25 @@ switch (phase) {
 		}
 	
 	break;
+}
+
+///
+///
+///
+///
+///
+
+randomize();
+var emitOne = random(100) < 5 + travelSpeed; //5 percent per frame
+if (emitOne) {
+
+	var newspd = random_range(0.25, 0.8);
+	var life = irandom_range(40, 90);
+			
+	var part = light_source_particle_light_create(x, y, newspd, 180, 180, life, colour, 0);
+	part.doGravity = false;
+			
+	part.spdIncrease = -0.05;
+	part.spdAbsolute = true;
+	
 }

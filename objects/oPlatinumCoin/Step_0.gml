@@ -32,9 +32,6 @@ if (autoPickup) {
 	generic_collide_solid();
 }
 
-
-
-
 //Collect Money
 if (collected) {
 	
@@ -45,4 +42,19 @@ if (collected) {
 	//var snds = [sndPlatinumPickup0, sndPlatinumPickup1];
 	//sound_effect_create(snds, 2, choose(0.8, 0.9, 1, 1.1, 1.2), 0.6);
 	instance_destroy();
+}
+
+//Emit
+randomize();
+var emitOne = (random(100) < 1);
+if (emitOne) {
+	
+	//Lag Prevent
+	if (instance_number(Light) < 80) {
+		emitOne = random(instance_count) < 10;
+	}
+		
+	if (emitOne) {
+		create_platinum_light_particles( emitOne, x - 2, x + 2, y - 2, y + 2, 0.25);
+	}
 }

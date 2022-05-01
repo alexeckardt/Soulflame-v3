@@ -117,6 +117,7 @@ surface_set_target(lightLayerSurf);
 	
 surface_reset_target();
 
+renderedLights = lightsDrawnLocal;
 
 //
 //

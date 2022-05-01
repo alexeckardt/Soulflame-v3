@@ -24,20 +24,20 @@
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"falloff","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"1.3","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"str","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"0.5","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"size","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"20","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"size","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"8","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"str","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"0.3","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Lighting",
+    "path": "folders/Lighting.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oManacule",
-  "tags": [],
+  "name": "oSimpleParticleLight",
+  "tags": [
+    "light",
+  ],
   "resourceType": "GMObject",
 }
