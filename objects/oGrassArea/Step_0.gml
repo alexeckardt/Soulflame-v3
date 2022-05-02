@@ -10,7 +10,7 @@ for (var i = 0; i < c; i++) {
 	var xx = x + i/density;
 	var yy = y + sprite_height + hOff
 	
-	instance_create_depth(xx, yy, oKeira.depth - hOff*3, grassType);
+	instance_create_depth(xx, yy, oKeira.depth - hOff*3 - 2, grassType);
 
 }
 

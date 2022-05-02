@@ -124,6 +124,10 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oBlackoutSolid","path":"objects/oBlackoutSolid/oBlackoutSolid.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":58.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_332B6EC9","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oBlackoutSolid","path":"objects/oBlackoutSolid/oBlackoutSolid.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":592.0,"y":592.0,"resourceVersion":"1.0","name":"inst_60AB33C8","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oBlackoutSolid","path":"objects/oBlackoutSolid/oBlackoutSolid.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":4.0,"scaleY":8.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":624.0,"y":416.0,"resourceVersion":"1.0","name":"inst_6A76ED92","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[
+            {"propertyId":{"name":"shadow_strength","path":"objects/oLightingControl/oLightingControl.yy",},"objectId":{"name":"oLightingControl","path":"objects/oLightingControl/oLightingControl.yy",},"value":"0.5","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"shadow_colour","path":"objects/oLightingControl/oLightingControl.yy",},"objectId":{"name":"oLightingControl","path":"objects/oLightingControl/oLightingControl.yy",},"value":"$FF000000","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"oLightingControl","path":"objects/oLightingControl/oLightingControl.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":688.0,"y":368.0,"resourceVersion":"1.0","name":"inst_53FB756A","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":600,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"assets":[
         {"spriteId":{"name":"sEnvTreeMaple0","path":"sprites/sEnvTreeMaple0/sEnvTreeMaple0.yy",},"headPosition":0.0,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"animationSpeed":1.0,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":208.0,"y":432.0,"resourceVersion":"1.0","name":"graphic_5D6A40B6","tags":[],"resourceType":"GMRSpriteGraphic",},
@@ -242,6 +246,7 @@
     {"name":"inst_332B6EC9","path":"rooms/roomLab/roomLab.yy",},
     {"name":"inst_60AB33C8","path":"rooms/roomLab/roomLab.yy",},
     {"name":"inst_6A76ED92","path":"rooms/roomLab/roomLab.yy",},
+    {"name":"inst_53FB756A","path":"rooms/roomLab/roomLab.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
