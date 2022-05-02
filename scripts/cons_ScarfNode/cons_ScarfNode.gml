@@ -20,19 +20,26 @@ function cons_ScarfNode(_x, _y) constructor {
 		
 		var t = Game.delta;
 		
-		//Save
+		//Get Speed
 		var hSpeed = lastx - xx;
 		var vSpeed = lasty - yy;
+
+		var currentdir = point_direction(0, 0, hSpeed, vSpeed);
+		var currentvel = point_distance(0, 0, hSpeed, vSpeed);
 	
-		var hSway = 0;
-		var vSway = 0;
+		var hSway = lengthdir_y(currentvel/2, currentdir) * sin(current_time/100);
+		var vSway = lengthdir_x(currentvel/2, currentdir) * cos(current_time/100);
+	
+		//Get Total Direction
+		var netDir = point_direction(0, 0, hSpeed + lengthdir_x(offsetDis, offsetDir), vSpeed + lengthdir_y(offsetDis, offsetDir));
+		var netDis = point_distance(0, 0, hSpeed + lengthdir_x(offsetDis, offsetDir), vSpeed + lengthdir_y(offsetDis, offsetDir));
 
 		//Choose New Position
-		var goalX = lastX + lengthdir_x(offsetDis, offsetDir) + hSawy;
-		var goalY = lastY + lengthdir_y(offsetDis, offsetDir) + vSway;
+		var goalX = lastX + lengthdir_x(netDis, netDir) + hSway //+ hSpeed;
+		var goalY = lastY + lengthdir_y(netDis, netDir) + vSway //+ vSpeed;
 	
 		//Switch My Segment's Position
-		var ls = 0.4*t;
+		var ls = 0.5*t;
 		
 		lastx = xx;
 		lasty = yy

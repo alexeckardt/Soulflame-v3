@@ -23,7 +23,7 @@ function keira_scarf_surf_draw() {
 
 	//Clear Surface
 	draw_clear_alpha(0, 0);
-	draw_clear_alpha(c_red, 1);
+	//draw_clear_alpha(c_red, 1);
 
 	//Get Position
 	var lastX = anchorX;
