@@ -4,6 +4,15 @@
 //
 function keira_scarf_update_nodes() {
 
+	//Decide Fall Direction
+	var maxVel = 10;
+	var velocity = min(maxVel, point_distance(hSpeed, vSpeed, 0, 0));
+	var movingDir = point_direction(hSpeed, vSpeed, 0, 0);
+	
+	//Switch Dir
+	scarfFallDirection += angle_difference(scarfFallRestDirection, scarfFallDirection) / 20;
+	scarfFallDirection += angle_difference(movingDir, scarfFallDirection) * (velocity/maxVel)
+
 	var list = scarfNodes;
 	
 	//ReConstruct List

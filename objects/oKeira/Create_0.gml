@@ -174,9 +174,10 @@ dead = false;
 healPlayLoopAnimation = false;
 
 //Scarf
-scarfLength = 5;
+scarfLength = 4;
 scarfNodeSep = 2.5;
-scarfFallDirection = -90;
+scarfFallRestDirection = 270;
+scarfFallDirection = scarfFallRestDirection;
 scarfNodes = keira_scarf_construct_list(scarfLength);
 
 scarfMainOffsetX = 0;

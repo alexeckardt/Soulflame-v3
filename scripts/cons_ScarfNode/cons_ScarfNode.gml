@@ -17,36 +17,36 @@ function cons_ScarfNode(_x, _y) constructor {
 	//Move
 	//
 	static update_pos = function(lastX, lastY) {
-		
+				
+		//Time
 		var t = Game.delta;
 		
 		//Get Speed
 		var hSpeed = lastx - xx;
 		var vSpeed = lasty - yy;
+		var currentvel = point_distance(hSpeed, vSpeed, 0, 0);
+		var currentdir = point_direction(hSpeed, vSpeed, 0, 0);
 
-		var currentdir = point_direction(0, 0, hSpeed, vSpeed);
-		var currentvel = point_distance(0, 0, hSpeed, vSpeed);
+		//Base Position
+		var disToGoal = point_distance(xx, yy, lastX, lastY);
+		var realDis = offsetDis / (disToGoal+1);
+		var fromLastOffsetX = lengthdir_x(realDis, offsetDir);
+		var fromLastOffsetY = lengthdir_y(realDis, offsetDir);
 	
-		var hSway = lengthdir_y(currentvel/2, currentdir) * sin(current_time/100);
+		//Sway Amount
+		var hSway = lengthdir_y(currentvel/2, currentdir) * sin(current_time/33);
 		var vSway = lengthdir_x(currentvel/2, currentdir) * cos(current_time/100);
-	
-		//Get Total Direction
-		var netDir = point_direction(0, 0, hSpeed + lengthdir_x(offsetDis, offsetDir), vSpeed + lengthdir_y(offsetDis, offsetDir));
-		var netDis = point_distance(0, 0, hSpeed + lengthdir_x(offsetDis, offsetDir), vSpeed + lengthdir_y(offsetDis, offsetDir));
 
 		//Choose New Position
-		var goalX = lastX + lengthdir_x(netDis, netDir) + hSway //+ hSpeed;
-		var goalY = lastY + lengthdir_y(netDis, netDir) + vSway //+ vSpeed;
+		var goalX = lastX + fromLastOffsetX + hSway + hSpeed;
+		var goalY = lastY + fromLastOffsetY + vSway + vSpeed;
 	
 		//Switch My Segment's Position
-		var ls = 0.5*t;
+		var ls = 0.3*t;
 		
 		lastx = xx;
 		lasty = yy
-		
-		xx = lerp(xx, goalX, ls);
-		yy = lerp(yy, goalY, ls);
-		
+
 	};
 	
 	//

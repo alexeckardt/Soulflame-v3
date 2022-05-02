@@ -5,9 +5,7 @@
 //	https://gamedevelopment.tutsplus.com/tutorials/simulate-tearable-cloth-and-ragdolls-with-simple-verlet-integration--gamedev-519
 //
 
-
-
-function VerletPoint(_xx, _yy) constructor {
+function VerletPoint(_xx, _yy, _id = 0, _mass = 1) constructor {
 	
 	xx = _xx;
 	yy = _yy;
@@ -17,7 +15,8 @@ function VerletPoint(_xx, _yy) constructor {
 	
 	locked = false;
 	
-	pointId = 0; //Save For ID + Linking
+	pointId = _id; //Save For ID + Linking
+	mass = _mass;
 	
 	static drawPrimative = function() {
 		var c = (locked) ? c_lime : c_white;

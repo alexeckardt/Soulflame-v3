@@ -183,6 +183,7 @@
     {"id":{"name":"sHeartFlameLoop","path":"sprites/sHeartFlameLoop/sHeartFlameLoop.yy",},"order":6,},
     {"id":{"name":"sShatterTallGrassShort","path":"sprites/sShatterTallGrassShort/sShatterTallGrassShort.yy",},"order":0,},
     {"id":{"name":"sRuler","path":"sprites/sRuler/sRuler.yy",},"order":6,},
+    {"id":{"name":"oScarf","path":"objects/oScarf/oScarf.yy",},"order":5,},
     {"id":{"name":"sWeaponSwordIdle","path":"sprites/sWeaponSwordIdle/sWeaponSwordIdle.yy",},"order":0,},
     {"id":{"name":"keira_scarf_surf_draw","path":"scripts/keira_scarf_surf_draw/keira_scarf_surf_draw.yy",},"order":3,},
     {"id":{"name":"command_health","path":"scripts/command_health/command_health.yy",},"order":2,},
