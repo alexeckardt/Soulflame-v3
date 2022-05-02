@@ -12,16 +12,6 @@ cY = Camera.realY;
 var _cx = cX;
 var _cy = cY;
 
-//Uniform Imports
-var _u_pos	= u_pos;
-var _u_dir	= u_dir;
-var _u_str	= u_str;
-var _u_fov	= u_fov;
-var _u_zz	= u_zz;
-var _u_falloff = u_falloff;
-var _u_range = u_range;
-//Clear
-//draw_clear_alpha(0, 1);
 
 //---------------------------------------------
 //
@@ -82,30 +72,8 @@ surface_set_target(lightLayerSurf);
 	gpu_set_blendmode(bm_add);
 	shader_set(shd_light);
 
-	//Draw Each Light
-	with(Light) {
-
-		//pos
-		if (active) {
-			
-			var xx = (x - _cx) * cZoom;
-			var yy = (y - _cy) * cZoom;
-	
-			//update light vars
-			shader_set_uniform_f(_u_pos, xx, yy);
-			shader_set_uniform_f(_u_zz, size);
-			shader_set_uniform_f(_u_fov, fov);
-			shader_set_uniform_f(_u_dir, dir);
-			shader_set_uniform_f(_u_str, str);
-			shader_set_uniform_f(_u_falloff, falloff);
-			
-			//Draw Light as overlay on surface
-			draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, colour, 1);
-			lightsDrawnLocal++;
-			
-		}
-			
-	}
+		//Draw Each Light
+		renderedLights = camera_draw_lights(cZoom, _cx, _cy, _fakeAppSurf);
 	
 	shader_reset();
 	
@@ -116,8 +84,6 @@ surface_set_target(lightLayerSurf);
 	gpu_set_blendmode(bm_normal);
 	
 surface_reset_target();
-
-renderedLights = lightsDrawnLocal;
 
 //
 //

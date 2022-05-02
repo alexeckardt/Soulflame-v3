@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Lighting/Scripts.yy",
+    "name": "Camera",
+    "path": "folders/Scripts/Camera.yy",
   },
   "resourceVersion": "1.0",
-  "name": "light_source_particle_light_create",
+  "name": "camera_draw_lights",
   "tags": [],
   "resourceType": "GMScript",
 }

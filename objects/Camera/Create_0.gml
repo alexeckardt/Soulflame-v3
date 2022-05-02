@@ -81,6 +81,9 @@ goalCx = y;
 //
 //
 
+lightDepth = 25;
+pointLightController = instance_create_depth(x, y, lightDepth, oPointLightController);
+
 //Shader uniform variable setup
 u_pos				= shader_get_uniform(shd_light, "u_pos");
 
@@ -104,7 +107,7 @@ shadowColour = 0;
 cX = 0;
 cY = 0;
 
-lightDepth = 25;
+
 
 renderedLights = 0;
 MaxLights = 200; //Try To Keep Under
