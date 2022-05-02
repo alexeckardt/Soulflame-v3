@@ -172,3 +172,20 @@ dead = false;
 
 //Healing
 healPlayLoopAnimation = false;
+
+//Scarf
+scarfLength = 5;
+scarfNodeSep = 2.5;
+scarfFallDirection = -45;
+scarfNodes = keira_scarf_construct_list(scarfLength);
+
+scarfMainOffsetX = 0;
+scarfMainOffsetY = -10;
+
+scarfSurface = -1;
+scarfCol = bgr($321e21);
+drawScarf = true;
+scarfSurfW = 64;
+
+scarfAmbientWindForce = 0;
+scarfAmbientWindDir = 0;

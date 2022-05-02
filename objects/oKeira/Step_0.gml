@@ -18,8 +18,6 @@ if (transitionPlaying != noone) {
 //
 //
 
-
-
 //Gravity
 
 	vSpeed += controlVSpeed;
@@ -664,6 +662,8 @@ if (!instance_exists(Cutscene) && inControl) {
 //Spikes
 keira_spikes_action();
 
+//Scarf
+keira_scarf_update_nodes();
 
 //Other
 if (!Game.paused) {
