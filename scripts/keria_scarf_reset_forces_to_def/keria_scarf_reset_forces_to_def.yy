@@ -6,7 +6,7 @@
     "path": "folders/Keira/Scripts/scarf.yy",
   },
   "resourceVersion": "1.0",
-  "name": "cons_ScarfNode",
+  "name": "keria_scarf_reset_forces_to_def",
   "tags": [],
   "resourceType": "GMScript",
 }

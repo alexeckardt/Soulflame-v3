@@ -2,18 +2,18 @@
 
 event_inherited();
 
-scarfLength = 7;
+creator = noone;
 
-restingDistances = 2.5;
+scarfLength = 6;
+
+restingDistances = 1.8;
 mass = 1.15;
-
-scarfRestingXoffset = -1; //switches with directionFacing
-scarfRestingYoffset = -8;
 
 gravStr = 0.3;
 gravDir = 270;
 
-
+netForce = new Vector2();
+netForce.set(lengthdir_x(gravStr, gravDir), lengthdir_y(gravStr, gravDir));
 
 //
 //

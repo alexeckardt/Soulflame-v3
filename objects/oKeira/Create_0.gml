@@ -174,17 +174,18 @@ dead = false;
 healPlayLoopAnimation = false;
 
 //Scarf
-scarfLength = 4;
-scarfNodeSep = 2.5;
-scarfFallRestDirection = 270;
-scarfFallDirection = scarfFallRestDirection;
-scarfNodes = keira_scarf_construct_list(scarfLength);
 
-scarfMainOffsetX = 0;
-scarfMainOffsetY = -10;
+scarfId = instance_create_depth(x, y, depth - 2, oScarf); //should update after movement
+scarfId.creator = id;
+
+scarfMainOffsetX = -3;
+scarfMainOffsetY = -7;
+
+scarfAnchorPosX = 0;
+scarfAnchorPosY = 0;
 
 scarfSurface = -1;
-scarfCol = bgr($321e21);
+scarfCol = bgr($121315);
 drawScarf = true;
 scarfSurfW = 64;
 

@@ -1,14 +1,21 @@
-
-var time = Game.delta;
+//Destroy
+if (!instance_exists(creator)) {
+	instance_destroy();
+}
 
 //Move
-var k = oKeira.id;
-x = k.x + scarfRestingXoffset * k.directionFacing;
-y = k.y + scarfRestingYoffset;
+var time = Game.delta;
+
+x = creator.scarfAnchorPosX;
+y = creator.scarfAnchorPosY;
 
 //Anchor to Me
 points[| 0].xx = x;
 points[| 0].yy = y;
+
+//Prep Force
+var netForceStr = netForce.length();
+netForce = netForce.normalized();
 
 //Update Points
 for (var i = 0; i < pointCount; i++) {
@@ -25,8 +32,8 @@ for (var i = 0; i < pointCount; i++) {
 		var vSpeed = (p.yy - p.prevY) * time;
 
 		//Intertia
-		p.xx += (hSpeed + lengthdir_x(gravStr, gravDir) * time * time) / p.mass;
-		p.yy += (vSpeed + lengthdir_y(gravStr, gravDir) * time * time) / p.mass;
+		p.xx += (hSpeed + netForce.xx * netForceStr * time * time) / p.mass;
+		p.yy += (vSpeed + netForce.yy * netForceStr * time * time) / p.mass;
 		
 		//Down
 		p.prevX = beforeX;
@@ -69,6 +76,4 @@ for (var j = 0; j < iterations; j++) { //stableize
 	}
 }
 
-//Reset Grav
-gravStr = 0.3;
-gravDir = 270;
+keria_scarf_reset_forces_to_def();
