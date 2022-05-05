@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sInteractSprite","path":"sprites/sInteractSprite/sInteractSprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sInteractSprite",
     "tags": [],
     "resourceType": "GMSequence",

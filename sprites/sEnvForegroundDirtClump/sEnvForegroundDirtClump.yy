@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvForegroundDirtClump","path":"sprites/sEnvForegroundDirtClump/sEnvForegroundDirtClump.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvForegroundDirtClump",
     "tags": [],
     "resourceType": "GMSequence",

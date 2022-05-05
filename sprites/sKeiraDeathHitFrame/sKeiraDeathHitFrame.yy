@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraDeathHitFrame","path":"sprites/sKeiraDeathHitFrame/sKeiraDeathHitFrame.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraDeathHitFrame",
     "tags": [],
     "resourceType": "GMSequence",

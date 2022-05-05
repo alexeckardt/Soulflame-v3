@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMagpieIdle","path":"sprites/sMagpieIdle/sMagpieIdle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMagpieIdle",
     "tags": [],
     "resourceType": "GMSequence",

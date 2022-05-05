@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTileForestGrasses","path":"sprites/sTileForestGrasses/sTileForestGrasses.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTileForestGrasses",
     "tags": [],
     "resourceType": "GMSequence",

@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlatinumBagUI","path":"sprites/sPlatinumBagUI/sPlatinumBagUI.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlatinumBagUI",
     "tags": [],
     "resourceType": "GMSequence",

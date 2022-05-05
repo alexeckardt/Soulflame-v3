@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHiddenAreaRoomSprite","path":"sprites/sHiddenAreaRoomSprite/sHiddenAreaRoomSprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHiddenAreaRoomSprite",
     "tags": [],
     "resourceType": "GMSequence",

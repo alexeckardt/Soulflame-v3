@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnterMarker","path":"sprites/sEnterMarker/sEnterMarker.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnterMarker",
     "tags": [],
     "resourceType": "GMSequence",

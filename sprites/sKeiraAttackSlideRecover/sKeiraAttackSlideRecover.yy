@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackSlideRecover","path":"sprites/sKeiraAttackSlideRecover/sKeiraAttackSlideRecover.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraAttackSlideRecover",
     "tags": [],
     "resourceType": "GMSequence",

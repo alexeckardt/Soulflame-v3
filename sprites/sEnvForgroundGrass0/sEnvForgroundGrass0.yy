@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvForgroundGrass0","path":"sprites/sEnvForgroundGrass0/sEnvForgroundGrass0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvForgroundGrass0",
     "tags": [],
     "resourceType": "GMSequence",

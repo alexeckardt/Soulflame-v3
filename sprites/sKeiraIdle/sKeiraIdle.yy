@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraIdle","path":"sprites/sKeiraIdle/sKeiraIdle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraIdle",
     "tags": [],
     "resourceType": "GMSequence",

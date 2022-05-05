@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTileWoodenSpikes","path":"sprites/sTileWoodenSpikes/sTileWoodenSpikes.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTileWoodenSpikes",
     "tags": [],
     "resourceType": "GMSequence",

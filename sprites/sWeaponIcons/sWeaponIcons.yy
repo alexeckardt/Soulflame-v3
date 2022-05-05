@@ -99,7 +99,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWeaponIcons","path":"sprites/sWeaponIcons/sWeaponIcons.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWeaponIcons",
     "tags": [],
     "resourceType": "GMSequence",

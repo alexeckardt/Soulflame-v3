@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvCaveSpike0","path":"sprites/sEnvCaveSpike0/sEnvCaveSpike0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvCaveSpike0",
     "tags": [],
     "resourceType": "GMSequence",

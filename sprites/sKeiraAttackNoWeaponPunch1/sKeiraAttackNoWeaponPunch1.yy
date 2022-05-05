@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackNoWeaponPunch1","path":"sprites/sKeiraAttackNoWeaponPunch1/sKeiraAttackNoWeaponPunch1.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraAttackNoWeaponPunch1",
     "tags": [],
     "resourceType": "GMSequence",

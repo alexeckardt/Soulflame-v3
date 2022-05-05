@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraHurt","path":"sprites/sKeiraHurt/sKeiraHurt.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraHurt",
     "tags": [],
     "resourceType": "GMSequence",

@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHeartFull","path":"sprites/sHeartFull/sHeartFull.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHeartFull",
     "tags": [],
     "resourceType": "GMSequence",

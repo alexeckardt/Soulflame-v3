@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sDialogueKeira","path":"sprites/sDialogueKeira/sDialogueKeira.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sDialogueKeira",
     "tags": [],
     "resourceType": "GMSequence",

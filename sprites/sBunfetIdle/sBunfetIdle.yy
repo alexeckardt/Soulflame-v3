@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBunfetIdle","path":"sprites/sBunfetIdle/sBunfetIdle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBunfetIdle",
     "tags": [],
     "resourceType": "GMSequence",

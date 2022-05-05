@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWeaponSwordAttackHorizontal1","path":"sprites/sWeaponSwordAttackHorizontal1/sWeaponSwordAttackHorizontal1.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWeaponSwordAttackHorizontal1",
     "tags": [],
     "resourceType": "GMSequence",

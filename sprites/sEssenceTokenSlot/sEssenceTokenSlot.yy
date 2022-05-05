@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEssenceTokenSlot","path":"sprites/sEssenceTokenSlot/sEssenceTokenSlot.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEssenceTokenSlot",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraOrg","path":"sprites/sKeiraOrg/sKeiraOrg.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraOrg",
     "tags": [],
     "resourceType": "GMSequence",

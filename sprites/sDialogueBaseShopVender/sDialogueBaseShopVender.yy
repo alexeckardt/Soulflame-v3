@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sDialogueBaseShopVender","path":"sprites/sDialogueBaseShopVender/sDialogueBaseShopVender.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sDialogueBaseShopVender",
     "tags": [],
     "resourceType": "GMSequence",

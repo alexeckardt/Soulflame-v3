@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvForegrounSpikes0","path":"sprites/sEnvForegrounSpikes0/sEnvForegrounSpikes0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvForegrounSpikes0",
     "tags": [],
     "resourceType": "GMSequence",

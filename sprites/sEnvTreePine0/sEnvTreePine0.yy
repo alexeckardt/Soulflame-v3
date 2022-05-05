@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvTreePine0","path":"sprites/sEnvTreePine0/sEnvTreePine0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvTreePine0",
     "tags": [],
     "resourceType": "GMSequence",

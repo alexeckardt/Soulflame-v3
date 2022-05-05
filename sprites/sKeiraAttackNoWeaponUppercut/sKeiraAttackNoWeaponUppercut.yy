@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackNoWeaponUppercut","path":"sprites/sKeiraAttackNoWeaponUppercut/sKeiraAttackNoWeaponUppercut.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraAttackNoWeaponUppercut",
     "tags": [],
     "resourceType": "GMSequence",

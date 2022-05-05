@@ -28,7 +28,7 @@ function cons_ScarfNode(_x, _y) constructor {
 		var vSway = 0;
 
 		//Choose New Position
-		var goalX = lastX + lengthdir_x(offsetDis, offsetDir) + hSawy;
+		var goalX = lastX + lengthdir_x(offsetDis, offsetDir) + hSway;
 		var goalY = lastY + lengthdir_y(offsetDis, offsetDir) + vSway;
 	
 		//Switch My Segment's Position

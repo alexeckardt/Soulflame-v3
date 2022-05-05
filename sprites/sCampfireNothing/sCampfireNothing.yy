@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCampfireNothing","path":"sprites/sCampfireNothing/sCampfireNothing.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCampfireNothing",
     "tags": [],
     "resourceType": "GMSequence",

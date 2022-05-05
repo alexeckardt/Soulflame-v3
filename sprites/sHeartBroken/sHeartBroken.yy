@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHeartBroken","path":"sprites/sHeartBroken/sHeartBroken.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHeartBroken",
     "tags": [],
     "resourceType": "GMSequence",

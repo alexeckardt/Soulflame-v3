@@ -91,7 +91,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackNoWeaponRunning","path":"sprites/sKeiraAttackNoWeaponRunning/sKeiraAttackNoWeaponRunning.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraAttackNoWeaponRunning",
     "tags": [],
     "resourceType": "GMSequence",

@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraRunSword","path":"sprites/sKeiraRunSword/sKeiraRunSword.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraRunSword",
     "tags": [],
     "resourceType": "GMSequence",

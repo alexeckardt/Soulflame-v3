@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBunfetDead","path":"sprites/sBunfetDead/sBunfetDead.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBunfetDead",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBlankEnemy","path":"sprites/sBlankEnemy/sBlankEnemy.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBlankEnemy",
     "tags": [],
     "resourceType": "GMSequence",

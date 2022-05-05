@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraRunNoWeaponTest","path":"sprites/sKeiraRunNoWeaponTest/sKeiraRunNoWeaponTest.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraRunNoWeaponTest",
     "tags": [],
     "resourceType": "GMSequence",

@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackSlide","path":"sprites/sKeiraAttackSlide/sKeiraAttackSlide.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraAttackSlide",
     "tags": [],
     "resourceType": "GMSequence",

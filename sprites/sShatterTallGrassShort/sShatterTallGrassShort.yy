@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sShatterTallGrassShort","path":"sprites/sShatterTallGrassShort/sShatterTallGrassShort.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sShatterTallGrassShort",
     "tags": [],
     "resourceType": "GMSequence",

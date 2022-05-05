@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sRampTile","path":"sprites/sRampTile/sRampTile.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sRampTile",
     "tags": [],
     "resourceType": "GMSequence",

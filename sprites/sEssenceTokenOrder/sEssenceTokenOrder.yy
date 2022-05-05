@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEssenceTokenOrder","path":"sprites/sEssenceTokenOrder/sEssenceTokenOrder.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEssenceTokenOrder",
     "tags": [],
     "resourceType": "GMSequence",

@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBunfetLeap","path":"sprites/sBunfetLeap/sBunfetLeap.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBunfetLeap",
     "tags": [],
     "resourceType": "GMSequence",

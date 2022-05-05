@@ -95,7 +95,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHumanPotFragments","path":"sprites/sHumanPotFragments/sHumanPotFragments.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHumanPotFragments",
     "tags": [],
     "resourceType": "GMSequence",

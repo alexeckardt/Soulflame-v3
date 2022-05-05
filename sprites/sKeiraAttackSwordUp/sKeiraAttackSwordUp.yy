@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackSwordUp","path":"sprites/sKeiraAttackSwordUp/sKeiraAttackSwordUp.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraAttackSwordUp",
     "tags": [],
     "resourceType": "GMSequence",

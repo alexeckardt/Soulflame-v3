@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sDialogueBoxSpeechPointer","path":"sprites/sDialogueBoxSpeechPointer/sDialogueBoxSpeechPointer.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sDialogueBoxSpeechPointer",
     "tags": [],
     "resourceType": "GMSequence",

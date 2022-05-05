@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvChasm7Pillar","path":"sprites/sEnvChasm7Pillar/sEnvChasm7Pillar.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvChasm7Pillar",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBlackoutSolidTile","path":"sprites/sBlackoutSolidTile/sBlackoutSolidTile.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBlackoutSolidTile",
     "tags": [],
     "resourceType": "GMSequence",

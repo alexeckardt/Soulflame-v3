@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHeartCorruptedChaos","path":"sprites/sHeartCorruptedChaos/sHeartCorruptedChaos.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHeartCorruptedChaos",
     "tags": [],
     "resourceType": "GMSequence",

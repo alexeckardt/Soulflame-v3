@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraIdleReadyNoWeapon","path":"sprites/sKeiraIdleReadyNoWeapon/sKeiraIdleReadyNoWeapon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraIdleReadyNoWeapon",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvTreeBig0","path":"sprites/sEnvTreeBig0/sEnvTreeBig0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvTreeBig0",
     "tags": [],
     "resourceType": "GMSequence",

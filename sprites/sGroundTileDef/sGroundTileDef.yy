@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sGroundTileDef","path":"sprites/sGroundTileDef/sGroundTileDef.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sGroundTileDef",
     "tags": [],
     "resourceType": "GMSequence",

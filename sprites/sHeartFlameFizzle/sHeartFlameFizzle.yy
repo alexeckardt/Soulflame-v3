@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHeartFlameFizzle","path":"sprites/sHeartFlameFizzle/sHeartFlameFizzle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHeartFlameFizzle",
     "tags": [],
     "resourceType": "GMSequence",

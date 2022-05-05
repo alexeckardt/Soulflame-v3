@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWeaponSwordAttackUp","path":"sprites/sWeaponSwordAttackUp/sWeaponSwordAttackUp.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWeaponSwordAttackUp",
     "tags": [],
     "resourceType": "GMSequence",

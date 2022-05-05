@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHeartCorruptedOrder","path":"sprites/sHeartCorruptedOrder/sHeartCorruptedOrder.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHeartCorruptedOrder",
     "tags": [],
     "resourceType": "GMSequence",

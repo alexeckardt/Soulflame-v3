@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMagpiePeice1","path":"sprites/sMagpiePeice1/sMagpiePeice1.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMagpiePeice1",
     "tags": [],
     "resourceType": "GMSequence",

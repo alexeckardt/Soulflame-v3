@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sLightingControl","path":"sprites/sLightingControl/sLightingControl.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sLightingControl",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraClimbEdgeHold","path":"sprites/sKeiraClimbEdgeHold/sKeiraClimbEdgeHold.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraClimbEdgeHold",
     "tags": [],
     "resourceType": "GMSequence",

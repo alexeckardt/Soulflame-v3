@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvTreeBirch0","path":"sprites/sEnvTreeBirch0/sEnvTreeBirch0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvTreeBirch0",
     "tags": [],
     "resourceType": "GMSequence",

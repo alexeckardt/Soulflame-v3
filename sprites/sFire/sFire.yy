@@ -295,7 +295,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sFire","path":"sprites/sFire/sFire.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sFire",
     "tags": [],
     "resourceType": "GMSequence",

@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWeaponForgingPositionIcon","path":"sprites/sWeaponForgingPositionIcon/sWeaponForgingPositionIcon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWeaponForgingPositionIcon",
     "tags": [],
     "resourceType": "GMSequence",

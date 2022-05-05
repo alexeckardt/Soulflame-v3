@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHitEffectMedium","path":"sprites/sHitEffectMedium/sHitEffectMedium.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHitEffectMedium",
     "tags": [],
     "resourceType": "GMSequence",

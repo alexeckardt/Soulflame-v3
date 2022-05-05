@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSpikeArea","path":"sprites/sSpikeArea/sSpikeArea.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSpikeArea",
     "tags": [],
     "resourceType": "GMSequence",

@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraHealEnd","path":"sprites/sKeiraHealEnd/sKeiraHealEnd.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraHealEnd",
     "tags": [],
     "resourceType": "GMSequence",

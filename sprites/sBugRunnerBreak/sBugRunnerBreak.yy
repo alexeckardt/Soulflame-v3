@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBugRunnerBreak","path":"sprites/sBugRunnerBreak/sBugRunnerBreak.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBugRunnerBreak",
     "tags": [],
     "resourceType": "GMSequence",

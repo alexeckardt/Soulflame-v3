@@ -91,7 +91,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlatinumChunk","path":"sprites/sPlatinumChunk/sPlatinumChunk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlatinumChunk",
     "tags": [],
     "resourceType": "GMSequence",

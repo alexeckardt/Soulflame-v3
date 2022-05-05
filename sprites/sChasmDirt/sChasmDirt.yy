@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sChasmDirt","path":"sprites/sChasmDirt/sChasmDirt.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sChasmDirt",
     "tags": [],
     "resourceType": "GMSequence",

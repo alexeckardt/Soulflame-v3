@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackNoWeaponHTilt","path":"sprites/sKeiraAttackNoWeaponHTilt/sKeiraAttackNoWeaponHTilt.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraAttackNoWeaponHTilt",
     "tags": [],
     "resourceType": "GMSequence",

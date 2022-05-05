@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraLandRunning","path":"sprites/sKeiraLandRunning/sKeiraLandRunning.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraLandRunning",
     "tags": [],
     "resourceType": "GMSequence",

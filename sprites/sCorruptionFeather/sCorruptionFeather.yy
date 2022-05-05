@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCorruptionFeather","path":"sprites/sCorruptionFeather/sCorruptionFeather.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCorruptionFeather",
     "tags": [],
     "resourceType": "GMSequence",

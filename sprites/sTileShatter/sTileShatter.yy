@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTileShatter","path":"sprites/sTileShatter/sTileShatter.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTileShatter",
     "tags": [],
     "resourceType": "GMSequence",

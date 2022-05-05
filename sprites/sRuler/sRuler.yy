@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sRuler","path":"sprites/sRuler/sRuler.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sRuler",
     "tags": [],
     "resourceType": "GMSequence",

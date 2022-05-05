@@ -99,7 +99,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlatinumBar","path":"sprites/sPlatinumBar/sPlatinumBar.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlatinumBar",
     "tags": [],
     "resourceType": "GMSequence",

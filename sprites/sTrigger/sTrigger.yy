@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTrigger","path":"sprites/sTrigger/sTrigger.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTrigger",
     "tags": [],
     "resourceType": "GMSequence",

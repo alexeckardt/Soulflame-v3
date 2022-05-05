@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvForegroundDirtBall0","path":"sprites/sEnvForegroundDirtBall0/sEnvForegroundDirtBall0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvForegroundDirtBall0",
     "tags": [],
     "resourceType": "GMSequence",

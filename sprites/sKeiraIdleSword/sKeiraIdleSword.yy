@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraIdleSword","path":"sprites/sKeiraIdleSword/sKeiraIdleSword.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraIdleSword",
     "tags": [],
     "resourceType": "GMSequence",

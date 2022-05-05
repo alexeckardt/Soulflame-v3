@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEnvTreeMaple0","path":"sprites/sEnvTreeMaple0/sEnvTreeMaple0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEnvTreeMaple0",
     "tags": [],
     "resourceType": "GMSequence",

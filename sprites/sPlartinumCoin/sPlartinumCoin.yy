@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlartinumCoin","path":"sprites/sPlartinumCoin/sPlartinumCoin.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlartinumCoin",
     "tags": [],
     "resourceType": "GMSequence",

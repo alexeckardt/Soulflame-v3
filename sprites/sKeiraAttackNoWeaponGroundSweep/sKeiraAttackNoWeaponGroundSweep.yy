@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackNoWeaponGroundSweep","path":"sprites/sKeiraAttackNoWeaponGroundSweep/sKeiraAttackNoWeaponGroundSweep.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraAttackNoWeaponGroundSweep",
     "tags": [],
     "resourceType": "GMSequence",

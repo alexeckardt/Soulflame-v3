@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraAttackSwordHorizontal0","path":"sprites/sKeiraAttackSwordHorizontal0/sKeiraAttackSwordHorizontal0.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraAttackSwordHorizontal0",
     "tags": [],
     "resourceType": "GMSequence",

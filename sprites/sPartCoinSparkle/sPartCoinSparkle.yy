@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPartCoinSparkle","path":"sprites/sPartCoinSparkle/sPartCoinSparkle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPartCoinSparkle",
     "tags": [],
     "resourceType": "GMSequence",

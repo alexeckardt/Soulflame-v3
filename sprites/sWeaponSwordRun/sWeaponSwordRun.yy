@@ -79,7 +79,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWeaponSwordRun","path":"sprites/sWeaponSwordRun/sWeaponSwordRun.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWeaponSwordRun",
     "tags": [],
     "resourceType": "GMSequence",

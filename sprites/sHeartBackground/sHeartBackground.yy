@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHeartBackground","path":"sprites/sHeartBackground/sHeartBackground.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHeartBackground",
     "tags": [],
     "resourceType": "GMSequence",

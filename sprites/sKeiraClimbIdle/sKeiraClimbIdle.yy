@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraClimbIdle","path":"sprites/sKeiraClimbIdle/sKeiraClimbIdle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraClimbIdle",
     "tags": [],
     "resourceType": "GMSequence",

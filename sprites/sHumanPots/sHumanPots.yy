@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHumanPots","path":"sprites/sHumanPots/sHumanPots.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHumanPots",
     "tags": [],
     "resourceType": "GMSequence",

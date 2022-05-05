@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraSitDown","path":"sprites/sKeiraSitDown/sKeiraSitDown.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraSitDown",
     "tags": [],
     "resourceType": "GMSequence",

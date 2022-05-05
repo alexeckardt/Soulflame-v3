@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHitboxArea","path":"sprites/sHitboxArea/sHitboxArea.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHitboxArea",
     "tags": [],
     "resourceType": "GMSequence",

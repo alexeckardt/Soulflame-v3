@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraJumpUpSlow","path":"sprites/sKeiraJumpUpSlow/sKeiraJumpUpSlow.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraJumpUpSlow",
     "tags": [],
     "resourceType": "GMSequence",

@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEssenceTokenBalance","path":"sprites/sEssenceTokenBalance/sEssenceTokenBalance.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEssenceTokenBalance",
     "tags": [],
     "resourceType": "GMSequence",

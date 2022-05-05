@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBugRunnerIdle","path":"sprites/sBugRunnerIdle/sBugRunnerIdle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBugRunnerIdle",
     "tags": [],
     "resourceType": "GMSequence",

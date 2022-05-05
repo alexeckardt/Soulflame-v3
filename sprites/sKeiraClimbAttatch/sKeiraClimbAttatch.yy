@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeiraClimbAttatch","path":"sprites/sKeiraClimbAttatch/sKeiraClimbAttatch.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeiraClimbAttatch",
     "tags": [],
     "resourceType": "GMSequence",

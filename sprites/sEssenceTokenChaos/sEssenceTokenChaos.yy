@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEssenceTokenChaos","path":"sprites/sEssenceTokenChaos/sEssenceTokenChaos.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEssenceTokenChaos",
     "tags": [],
     "resourceType": "GMSequence",

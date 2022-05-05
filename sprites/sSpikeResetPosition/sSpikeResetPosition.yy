@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSpikeResetPosition","path":"sprites/sSpikeResetPosition/sSpikeResetPosition.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSpikeResetPosition",
     "tags": [],
     "resourceType": "GMSequence",

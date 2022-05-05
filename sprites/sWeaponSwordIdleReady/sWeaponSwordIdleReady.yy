@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWeaponSwordIdleReady","path":"sprites/sWeaponSwordIdleReady/sWeaponSwordIdleReady.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWeaponSwordIdleReady",
     "tags": [],
     "resourceType": "GMSequence",
