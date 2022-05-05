@@ -16,6 +16,7 @@ function menu_pages_create(){
 
 	var p = Player.id;
 	var g = Game.id;
+	var c = Camera.id;
 
 	master_page = menu_page_create("menu.page.main",
 			[
@@ -69,6 +70,7 @@ function menu_pages_create(){
 				["hitboxes",		m_e.debug_conditional,	g, "viewHitboxes",		["option.hidden", "option.visible"]],
 				["damageBoxes",		m_e.debug_conditional,	g, "viewDamageBoxes",	["option.hidden", "option.visible"]],
 				["audioSource",		m_e.debug_conditional,	g, "viewAudioEmitters",	["option.hidden", "option.visible"]],
+				["lighting",		m_e.debug_conditional,	c, "drawLighting",		["option.disable", "option.enable"]],
 				
 				[],
 				

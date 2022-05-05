@@ -107,7 +107,7 @@ shadowColour = 0;
 cX = 0;
 cY = 0;
 
-
-
 renderedLights = 0;
 MaxLights = 200; //Try To Keep Under
+
+drawLighting = false;

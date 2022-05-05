@@ -63,6 +63,8 @@ if (!surface_exists(lightLayerSurf)) {
 //Set
 surface_set_target(lightLayerSurf);
 
+if (drawLighting) {
+
 	//Prep
 	draw_clear_alpha(shadowColour, 1);
 	draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1-maxDarknessOpacity);
@@ -75,15 +77,23 @@ surface_set_target(lightLayerSurf);
 		//Draw Each Light
 		renderedLights = camera_draw_lights(cZoom, _cx, _cy, _fakeAppSurf);
 	
-	shader_reset();
+		shader_reset();
 	
-	//Cut Out No Alphas
-	//gpu_set_blendmode_ext_sepalpha(bm_dest_colour, bm_zero, bm_inv_src_alpha, bm_src_alpha);
-	gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_zero);
+		//Cut Out No Alphas
+		//gpu_set_blendmode_ext_sepalpha(bm_dest_colour, bm_zero, bm_inv_src_alpha, bm_src_alpha);
+		gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_zero);
+		draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
+		gpu_set_blendmode(bm_normal);
+	
+} else {
+	
+	draw_clear_alpha(0, 0);
 	draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
-	gpu_set_blendmode(bm_normal);
+	
+}
 	
 surface_reset_target();
+
 
 //
 //
