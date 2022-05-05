@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "scarf",
-    "path": "folders/Keira/Scripts/scarf.yy",
+    "name": "Camera",
+    "path": "folders/Scripts/Camera.yy",
   },
   "resourceVersion": "1.0",
-  "name": "cons_ScarfNode",
+  "name": "camera_draw_lights",
   "tags": [],
   "resourceType": "GMScript",
 }

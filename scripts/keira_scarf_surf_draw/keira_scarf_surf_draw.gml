@@ -10,8 +10,8 @@ function keira_scarf_surf_draw() {
 		scarfSurface = surface_create(surfW*2, surfW*2);}
 
 	//Anchor position
-	var anchorX = x + scarfMainOffsetX;
-	var anchorY = y + scarfMainOffsetY;
+	var anchorX = scarfAnchorPosX;
+	var anchorY = scarfAnchorPosY;
 	
 	//Const to position all nodes correctly onto the surface
 	var surfOffsetX = anchorX - surfW;
@@ -23,22 +23,27 @@ function keira_scarf_surf_draw() {
 
 	//Clear Surface
 	draw_clear_alpha(0, 0);
-	draw_clear_alpha(c_red, 1);
+	//draw_clear_alpha(c_red, 1);
 
 	//Get Position
 	var lastX = anchorX;
 	var lastY = anchorY;
 
+	//Get Info From Scarf
+	var scarf = scarfId;
+	var nodeCount = scarf.pointCount;
+	var nodeList = scarf.points;
+	
 	//Draw Scarf Nodes
-	for (var i = 1; i < ds_list_size(scarfNodes); i++) {
+	for (var i = 1; i < nodeCount; i++) {
 		
-		var node = scarfNodes[| i];
+		var node = nodeList[| i];
 		
 		//Positions to draw
-		var pos1X = node.xx-surfOffsetX;
-		var pos1Y = node.yy-surfOffsetY;
-		var pos2X = lastX-surfOffsetX;
-		var pos2Y = lastY-surfOffsetY;
+		var pos1X = (node.xx-surfOffsetX);
+		var pos1Y = (node.yy-surfOffsetY);
+		var pos2X = (lastX-surfOffsetX);
+		var pos2Y = (lastY-surfOffsetY);
 
 		//Draw Segment
 		draw_sprite_ext(sPixel, 0, pos1X, pos1Y, 2, 2, 0, scarfCol, 1);

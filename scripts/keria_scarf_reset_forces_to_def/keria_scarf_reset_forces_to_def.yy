@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Lighting/Scripts.yy",
+    "name": "scarf",
+    "path": "folders/Keira/Scripts/scarf.yy",
   },
   "resourceVersion": "1.0",
-  "name": "light_source_particle_light_create",
+  "name": "keria_scarf_reset_forces_to_def",
   "tags": [],
   "resourceType": "GMScript",
 }

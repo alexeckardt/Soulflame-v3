@@ -13,7 +13,7 @@ function create_platinum_light_particles(_am, x1, x2, y1, y2, spdMulti = 1) {
 			
 		var c = merge_colour(Game.platinumCol, c_aqua, 0.5);
 			
-		var part = light_source_particle_light_create(xx, yy, spd, 180, 180, life, c, 0);
+		var part = point_light_create(xx, yy, spd, 180, 180, life, c, 0);
 		part.doGravity = true;
 		part.gravStr = 0.001;
 		part.gravDir = -90;

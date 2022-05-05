@@ -1,7 +1,12 @@
 /// @desc Create Verlet Object
 
-clothWidth = 5;
-clothHeight = 5;
+
+clothWidth = 15;
+clothHeight = 15;
+
+chanceToRemoveConnection = 2; //percent
+
+allowMouseToCutEdges = true;
 
 // midWidth: amount to translate the curtain along x-axis for it to be centered
 // (curtainWidth * restingDistances) = curtain's pixel width
@@ -12,6 +17,10 @@ for (var j = 0; j < clothHeight; j++) { // due to the way PointMasss are attache
 		
 	    var pointmass = new VerletPoint(x + i * restingDistances, y + j * restingDistances);
 		pointmass.pointId = j*clothHeight + i;
+	 
+		ds_list_add(points, pointmass);
+		pointCount++;
+	  
 	  
 	    // attach to 
 	    // x - 1  and
@@ -21,24 +30,22 @@ for (var j = 0; j < clothHeight; j++) { // due to the way PointMasss are attache
 	    //  |    |    |
 	    //  *<---*<---*<-..
 	    //
-	    // PointMass attachTo parameters: PointMass PointMass, float restingDistance, float stiffness
-	    // try disabling the next 2 lines (the if statement and attachTo part) to create a hairy effect
+	    // attach to left
+		randomize();
 	    if (i != 0) {
-			add_link(pointmass, points[| pointmass.pointId-1]);}
+			if (irandom(100) > chanceToRemoveConnection) {
+				add_link(pointmass, points[| pointmass.pointId-1]);}}
 			
-	    // the index for the PointMasss are one dimensions, 
-	    // so we convert x,y coordinates to 1 dimension using the formula y*width+x  
+	    // pin all to row above
+		randomize();
 	    if (j != 0){
-			var aboveId = pointmass.pointId - clothWidth;
-			add_link(pointmass, points[| aboveId]);}
+			if (irandom(100) > chanceToRemoveConnection) {
+				var aboveId = pointmass.pointId - clothWidth;
+				add_link(pointmass, points[| aboveId]);}}
 			
-      
 	    // we pin the very top PointMasss to where they are
 	    if (j == 0) {
-	    pointmass.pinned = true;}
-        
-	    // add to PointMass array  
-	    ds_list_add(points, pointmass);
-		pointCount++;
+	    pointmass.locked = true;}
+
 	}
 }

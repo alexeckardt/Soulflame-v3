@@ -6,7 +6,7 @@
     "path": "folders/Keira/Scripts/scarf.yy",
   },
   "resourceVersion": "1.0",
-  "name": "keira_scarf_construct_list",
+  "name": "keira_scarf_update",
   "tags": [],
   "resourceType": "GMScript",
 }

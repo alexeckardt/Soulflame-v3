@@ -663,7 +663,7 @@ if (!instance_exists(Cutscene) && inControl) {
 keira_spikes_action();
 
 //Scarf
-keira_scarf_update_nodes();
+keira_scarf_update();
 
 //Other
 if (!Game.paused) {
