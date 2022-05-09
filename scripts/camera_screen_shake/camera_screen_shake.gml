@@ -16,8 +16,8 @@ function camera_screen_shake() {
 	}
 
 	//Move
-	viewX += screenXShake + lengthdir_x(screenShakeLen, screenShakeDir);
-	viewY += screenYShake + lengthdir_y(screenShakeLen, screenShakeDir);
+	viewX += floor(screenXShake + lengthdir_x(screenShakeLen, screenShakeDir));
+	viewY += floor(screenYShake + lengthdir_y(screenShakeLen, screenShakeDir));
 
 	//Slowly Pull Back In
 	screenShakeLen = lerp(screenShakeLen, 0, 0.03*time);

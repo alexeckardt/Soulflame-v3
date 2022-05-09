@@ -37,7 +37,7 @@ gpu_set_blendmode(bm_normal);
 	
 	//Draw Particles
 	if (surface_exists(Game.particleViewer.particleSurf)) {
-		draw_surface_ext(Game.particleViewer.particleSurf, 0, 0, zoom, zoom, 0, c_white, 1);	
+		draw_surface_ext(Game.particleViewer.particleSurf, 0, 0, 1, 1, 0, c_white, 1);	
 	}
 	
 surface_reset_target();

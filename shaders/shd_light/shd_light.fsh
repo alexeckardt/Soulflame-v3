@@ -12,7 +12,7 @@ uniform float u_str;
 //Define
 #define PI 3.1415926538
 #define spotlight_harshness 3.
-#define scale 4.
+#define scale 1.
 #define cutoff 0.0005
 
 void main() {
