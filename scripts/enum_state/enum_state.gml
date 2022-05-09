@@ -73,6 +73,7 @@ enum state {
 		chase,
 		run,
 		breaking,
+		bounce,
 	
 	height, //states count, used for idle in enemies
 }

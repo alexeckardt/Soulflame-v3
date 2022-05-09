@@ -8,7 +8,7 @@ resetBounceWhenInAir = true;
 funnyBounceChance = 10;
 
 weight = 0.5;			// for slidng and interaction with player
-bounceEnergyRetain = 0.5; //keep half of all v energy
+bounceEnergyRetain = 0.2; //keep half of all v energy
 
 pushResistance = 0.06;
 

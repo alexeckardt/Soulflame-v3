@@ -38,4 +38,16 @@ runWindUpTicks = room_speed/4;
 timeToNoticeTarget = room_speed/4;
 runWindUpTicksLeft = runWindUpTicks;
 
+breakSpeed = 0.07;
+
 myDamage = noone;
+
+function bug_runner_bounce() {
+
+	STATE = state.bounce;
+	controlHSpeed = -controlHSpeed*0.4;
+	hSpeedGoal = controlHSpeed;
+	vSpeed = -2;
+	seesTarget = false;
+
+}

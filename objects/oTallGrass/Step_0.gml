@@ -18,8 +18,9 @@ if (instance_exists(Entity)) {
 				shakeIntensity = maxInensity;
 				timeShook = current_time;
 			
-				shakeDir = -entityNearest.directionFacing;
-				myAngle = shakeDir*15*(abs(entityNearest.hSpeed)/4);
+				var moveX = (entityNearest.hSpeed) * random(1);
+				shakeDir = -sign(moveX);
+				myAngle = shakeDir*15*(abs(moveX)/4);
 			}
 		}
 	} else {
