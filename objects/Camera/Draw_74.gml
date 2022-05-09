@@ -115,7 +115,7 @@ display_set_gui_size(view_width, view_height);
 gpu_set_colorwriteenable(1,1,1,0);
 draw_surface_ext(lightLayerSurf, -frac(realX), -frac(realY), 1, 1, 0, c_white, 1);	
 gpu_set_colorwriteenable(1,1,1,1);
-
+display_set_gui_size(view_width*zoom, view_height*zoom);
 
 //anything below is above game layer
 //Draw Glowing 
