@@ -66,4 +66,4 @@ viewHitboxes = false;
 viewDamageBoxes = false;
 viewAudioEmitters = false;
 viewCameraDebug = true;
-doCombatCamera = true;
+doCombatCamera = false;

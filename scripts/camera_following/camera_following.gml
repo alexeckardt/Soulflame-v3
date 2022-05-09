@@ -14,7 +14,7 @@ function camera_following(){
 	var time = Game.delta;
 	
 	//Speed
-	var cameraFollowSpeed = 1;
+	var cameraFollowSpeed = 4;
 	
 	//Keira
 	var k = oKeira.id;
@@ -161,21 +161,27 @@ function camera_following(){
 		//
 		//Move
 		if (time != 0) {
-			viewX = lerp(viewX, goalCx, time/cameraFollowSpeed);
-			viewY = lerp(viewY, goalCy, time/cameraFollowSpeed);
+			var viewXd = lerp(viewX, goalCx, time/cameraFollowSpeed) - viewX;
+			var viewYd = lerp(viewY, goalCy, time/cameraFollowSpeed) - viewY;
+			
+			viewX += floor(viewXd);
+			viewY += floor(viewYd);
 		}
 		
 	
 	} else {
 	
 		//Move To Locked position
-		var bS = 0.1;
+		var bS = 0.01;
 		var lerpP = bS + (1-bS)*(!panCameraToLock)
 		viewX = lerp(viewX, lockX, lerpP*time);
 		viewY = lerp(viewY, lockY, lerpP*time);
 
 	}
 	
+	var z = 1000;
+	viewX = round(viewX * z) / z;
+	viewY = round(viewY * z) / z;
 	
 	/*
 

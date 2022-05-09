@@ -22,8 +22,8 @@ if (Game.delta != 0) {
 	x = floor(realX);
 	y = floor(realY);
 
-	//Reset Matrix
-	vm = matrix_build_lookat(viewX, viewY, -10, viewX, viewY, 0, 0, 1, 0);
-	camera_set_view_mat(camera, vm);
+	//Move Camera
+	camera_set_view_pos(view_camera[0], x, y);
+	view_surface_id[0] = view_surf;
 
 }

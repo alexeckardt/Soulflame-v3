@@ -5,5 +5,6 @@ cleanup_surface(fireSurf);
 
 cleanup_surface(fakeAppSurf);
 cleanup_surface(lightLayerSurf);
+cleanup_surface(view_surf);
 
 cleanup_ds_list(agressedEnemies);

@@ -5,8 +5,9 @@ display_set_gui_size(view_width*zoom, view_height*zoom);
 
 //Lighting Imports
 var cZoom = Camera.zoom;
-var worldCamW = Camera.view_width*cZoom + 1;
-var worldCamH = Camera.view_height*cZoom + 1;
+var cRes = 1;
+var worldCamW = Camera.view_width*cRes + 1;
+var worldCamH = Camera.view_height*cRes + 1;
 cX = Camera.realX;
 cY = Camera.realY;
 var _cx = cX;
@@ -32,7 +33,7 @@ gpu_set_blendmode(bm_normal);
 
 	//Draw App Surface
 	draw_clear_alpha(0, 0);
-	draw_surface_ext(application_surface, 0, 0, 1, 1, 0, c_white, 1);
+	draw_surface_ext(view_surf, 0, 0, 1, 1, 0, c_white, 1);
 	
 	//Draw Particles
 	if (surface_exists(Game.particleViewer.particleSurf)) {
@@ -70,7 +71,7 @@ if (drawLighting) {
 	shader_set(shd_light);
 
 		//Draw Each Light
-		renderedLights = camera_draw_lights(cZoom, _cx, _cy, _fakeAppSurf);
+		renderedLights = camera_draw_lights(cRes, _cx, _cy, _fakeAppSurf);
 	
 		shader_reset();
 	
@@ -110,8 +111,9 @@ if (surface_exists(bkgSurf)) {
 
 
 //GAME LAYER
+display_set_gui_size(view_width, view_height);
 gpu_set_colorwriteenable(1,1,1,0);
-draw_surface_ext(lightLayerSurf, 0, 0, 1, 1, 0, c_white, 1);	
+draw_surface_ext(lightLayerSurf, -frac(realX), -frac(realY), 1, 1, 0, c_white, 1);	
 gpu_set_colorwriteenable(1,1,1,1);
 
 
@@ -142,7 +144,7 @@ if (surface_exists(frgSurf)) {
 
 
 //Clear Application Surface
-surface_set_target(application_surface);
+surface_set_target(view_surf);
 	draw_clear_alpha(0, 0);
 surface_reset_target();
 

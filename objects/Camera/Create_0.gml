@@ -7,10 +7,10 @@ resolution = 1;
 view_width = 1920 div zoom;
 view_height = 1080 div zoom;
 
-//Disable Application Surface
+//Camera
 camera = camera_create();
 vm = matrix_build_lookat(0, 0, -10, 0, 0, 0, 0, 1, 0);
-pm = matrix_build_projection_ortho(view_width, view_height, 1, 3200);
+//pm = matrix_build_projection_ortho(view_width, view_height, 1, 3200);
 
 follow = oKeira;
 viewX = 0;
@@ -28,9 +28,10 @@ followOffsetY = -8;
 
 depth = -20;
 application_surface_draw_enable(false);
+view_surf = -1;
 
 //Turns on in Begin Step; Used to reset camera properties
-view_enabled = false
+view_enabled = false;
 
 photoMode = false;
 dragging = false;
