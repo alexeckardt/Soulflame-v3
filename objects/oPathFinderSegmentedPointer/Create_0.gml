@@ -28,6 +28,8 @@ atEndOfPath = false;
 
 airborne = false;
 tryToUnstuckAirborne = 1;
+notAirborneTryToDropPointsToFloor = true;
+dropPointsWithinXTiles = 3;
 
 deleteUnneccesaryPoints = true;
 pathPointsSignificantDistance = 64;

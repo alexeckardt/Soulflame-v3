@@ -157,32 +157,40 @@ if (active) {
 						//Check If In Air
 						if (!position_meeting(pointX, pointY + 16, Solid)) {
 						
-							for (var dir = -2; dir < 3; dir++) {
+							//Increasing Radius, Find Best Point
+							for (var rad = 1; rad < 3; rad++) {
 								
-								if (!addedNewPoint && dir != 0) {
+								//If added, skip. (break only does one exit
+								if (!addedNewPoint) {
+								
+									//Flip Flop Direction
+									for (var dir = -1; dir < 2; dir += 2) {
+								
+										//Check If There is a solid next to point (either side)
+										if (position_meeting(pointX + 16*dir*rad, pointY, Solid)) {
 									
-									//Check If There is a solid next to point (either side)
-									if (position_meeting(pointX + 16*dir, pointY, Solid)) {
-									
-										//Loop
-										for (var j = 1; j < platformDetectEmptyWithinTiles; j++) {
+											//Loop
+											for (var j = 1; j < platformDetectEmptyWithinTiles; j++) {
 										
-											//See if solid ends above me
-											if (!position_meeting(pointX + 16*dir, pointY - j*16, Solid)) {
+												var checkX = pointX + 16*dir*rad;
+												var checkY = pointY - j*16;
 										
-												//Add if does, landable position
-												path_insert_point(myPath, i+1, pointX + 16*dir, pointY - j*16, pointSpd);
+												//See if solid ends above me
+												if (!position_meeting(checkX, checkY, Solid)) {
 										
-												//reccognize point!
-												addedNewPoint = true;
-												i++;
-												break;
+													//Add if does, landable position
+													path_insert_point(myPath, i+1, checkX, checkY, pointSpd);
+										
+													//reccognize point!
+													i++;
+													break;
+										
+												}
 										
 											}
-										
-										}
 									
-									}	
+										}	
+									}
 								}
 	
 							}
@@ -190,9 +198,38 @@ if (active) {
 						}
 					}
 
-				
-				
-				
+					if (notAirborneTryToDropPointsToFloor) {
+						
+						//Point List
+						var points = path_get_number(myPath);;
+						for (var i = 1; i < points-1; i++) { //-1 becayse 
+	
+							//Get Point
+							var pointX		= path_get_point_x(myPath, i);
+							var pointY		= path_get_point_y(myPath, i);
+							var pointSpd	= path_get_point_speed(myPath, i);
+						
+							//Check Within 3 tiles
+							for (var j = 0; j < dropPointsWithinXTiles; j++) {
+						
+								//New Y Pos
+								var newY = pointY + j*16;
+									
+								//Check Colliding
+								var newPosOnGround = position_meeting(pointX, newY + 16, Solid);
+								if (newPosOnGround) {
+							
+									//Update Point to be on ground
+									if (j != 0) {
+										path_change_point(myPath, i, pointX, newY, firstPointSp); }
+									break;
+								
+								}
+							
+							}
+						}
+					}
+		
 				}
 				//
 				//

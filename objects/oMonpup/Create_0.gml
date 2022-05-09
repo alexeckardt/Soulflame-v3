@@ -50,12 +50,41 @@ inferPlayerPosTimeLeft = -1;
 toJumpVspeed = 0;
 toJumpHspeed = 0;
 toJumpToX = 0; // must land there before
-jumpingToX = false;
-lastSTATE = state.base;
+jumpingDirection = 0;
 inAirFromJump = true;
+
+landingTicks = 10;
+landingTicksLeft = -1;
+
 
 targetingTarget = false;
 
 closeEnoughPathXRange = 8;
 
 timeUntilJump = 0;
+
+function jump_to_position(checkX, checkY) {
+
+	//Decide The Distances I need to jump for
+	var xDist = abs(x - checkX) + (bbox_right - bbox_left)*1.5; //put me in the middle of my bounding box
+	var yDist = abs(checkY - y) + 16; //how high i have to jump (-5 for a little buffer)
+				
+	//Decide Speed
+	var hspdd = max(1, abs(hSpeed));
+	toJumpHspeed = hspdd;
+				
+	//Jump & Clamp (formula for how much jump force i need)
+	toJumpVspeed = (-yDist*hspdd)/(xDist) - (myGrav*xDist)/(2*hspdd);
+	toJumpVspeed = clamp(toJumpVspeed, -6.8, -0.5);
+					
+	jumped = true;
+	STATE = state.jumping;
+	
+	jumpingDirection = point_to_position(checkX);
+	toJumpToX = checkX + jumpingDirection*8;
+				
+	//Decide Time Jumping Takes
+	timeUntilJump = abs(toJumpVspeed) * 2;
+	inAirFromJump = false;
+
+}
