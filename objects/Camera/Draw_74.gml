@@ -77,8 +77,8 @@ if (drawLighting) {
 		shader_reset();
 	
 		//Cut Out No Alphas
-		//gpu_set_blendmode_ext_sepalpha(bm_dest_colour, bm_zero, bm_inv_src_alpha, bm_src_alpha);
-		gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_zero);
+		if (fastLighting) gpu_set_blendmode_ext_sepalpha(bm_dest_colour, bm_zero, bm_inv_src_alpha, bm_src_alpha);
+		else gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_zero);
 		draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
 		gpu_set_blendmode(bm_normal);
 	

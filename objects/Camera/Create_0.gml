@@ -16,10 +16,6 @@ if (idealWidth & 1) idealWidth++; //Check Odd
 view_width = idealWidth;
 view_height = idealHeight;
 
-
-
-
-
 //Camera
 camera = view_camera[0];
 view_surf = -1;
@@ -123,3 +119,5 @@ renderedLights = 0;
 MaxLights = 200; //Try To Keep Under
 
 drawLighting = true;
+
+fastLighting = false;
