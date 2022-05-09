@@ -38,3 +38,9 @@ if (weaponSprite != -1) {
 		shader_reset();
 	//Reset
 }
+
+if (Game.showDebugOverlay) {
+
+	draw_text(x, y-10, STATE);
+
+}

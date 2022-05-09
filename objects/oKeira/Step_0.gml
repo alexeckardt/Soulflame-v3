@@ -532,7 +532,7 @@ if (jumpTicks > 0) {
 				
 				//Exit Edge Cling
 				wallClinging = false;
-				STATE = state.climb
+				STATE = state.base
 			
 				//Decide Vector				
 				var d = (willBeOnWall) ? sign(controlHSpeed) : lastWallInDirection;
