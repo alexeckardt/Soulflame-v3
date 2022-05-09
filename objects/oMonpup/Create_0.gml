@@ -30,7 +30,7 @@ idleSprite = sMonpupIdle;
 decidedPouncePosition = false;
 pounceX = 0;
 pounceRad = 32;
-maxJumpTiles = 5;
+maxJumpTiles = 6;
 
 runSpeed = 1.5;
 
@@ -49,6 +49,13 @@ inferPlayerPosTimeLeft = -1;
 //Jump
 toJumpVspeed = 0;
 toJumpHspeed = 0;
+toJumpToX = 0; // must land there before
+jumpingToX = false;
 lastSTATE = state.base;
+inAirFromJump = true;
+
+targetingTarget = false;
+
+closeEnoughPathXRange = 8;
 
 timeUntilJump = 0;

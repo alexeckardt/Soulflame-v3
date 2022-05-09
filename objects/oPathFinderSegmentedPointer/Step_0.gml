@@ -9,8 +9,6 @@ y = clamp(y, 0, room_height);
 if (!instance_exists(creator)) {
 	instance_destroy();	}
 
-
-
 //
 //
 //Create Path
@@ -31,16 +29,72 @@ if (active) {
 		}
 	
 		//Position Self
-		x = creator.x;
-		y = creator.y;
+		if (instance_exists(creator)) {
+			x = creator.x;
+			y = creator.y;
+			
+		} else {
+		
+			instance_destroy();
+		
+		}
 	
 		//Distance Req
 		var d = point_distance(x, y, goToX, goToY);
 		if (d > 8) {
 		
-			//Create Path'
+				//Create Path
 				if (path_exists(myPath)) {
 				var pathMaker = mp_grid_path(Paths.grid, myPath, x, y, goToX, goToY, true);
+		
+		
+				//Optimize
+				if (deleteUnneccesaryPoints) {
+					
+					//Access Path Info
+					
+					var points = path_get_number(myPath);;
+					for (var i = 1; i < points-1; i++) { //-1 becayse 
+	
+						var lastPointX		= path_get_point_x(myPath, i-1);
+						var lastPointY		= path_get_point_y(myPath, i-1);
+						
+						var nextPointX		= path_get_point_x(myPath, i+1);
+						var nextPointY		= path_get_point_y(myPath, i+1);
+		
+						//Check If Colliding There
+						if (!collision_line(lastPointX, lastPointY, nextPointX, nextPointY, Solid, 1, 1)) {
+						
+							//If too close
+							var dis = point_distance(lastPointX, lastPointY, nextPointX, nextPointY);
+							if (dis < pathPointsSignificantDistance) {
+							
+								//Marker Pointless
+								path_delete_point(myPath, i);
+								i--;
+								points--;
+								
+							}
+							
+						}
+					}
+
+				}
+		
+				if (pushFirstPointBasedOnCreatorFatness) {
+					
+					var firstPointX		= path_get_point_x(myPath, 0);
+					var firstPointY		= path_get_point_y(myPath, 0);
+					var firstPointSp	= path_get_point_speed(myPath, 0);
+					
+					var bbox_w = abs(creator.bbox_right - creator.bbox_left)
+					var offset = creator.directionFacing * bbox_w div 4; // small enough amount
+					
+					path_change_point(myPath, 0, firstPointX + offset, firstPointY, firstPointSp);
+					
+					
+				}
+		
 		
 				//Optimize; Avoid Solids at the first dfew points to prevent getting stuck
 				if (airborne && tryToUnstuckAirborne) {
@@ -84,6 +138,68 @@ if (active) {
 					}
 				
 				}
+			
+			
+				//
+				//Attempt and Find Landable Platforms Near Any Airborne Points
+				//
+				if (!airborne) {
+					
+					var points = path_get_number(myPath);
+					for (var i = 1; i < points-1; i++) {
+	
+						var pointX		= path_get_point_x(myPath, i);
+						var pointY		= path_get_point_y(myPath, i);
+						var pointSpd	= path_get_point_speed(myPath, i);
+						
+						var addedNewPoint = false;
+						
+						//Check If In Air
+						if (!position_meeting(pointX, pointY + 16, Solid)) {
+						
+							for (var dir = -2; dir < 3; dir++) {
+								
+								if (!addedNewPoint && dir != 0) {
+									
+									//Check If There is a solid next to point (either side)
+									if (position_meeting(pointX + 16*dir, pointY, Solid)) {
+									
+										//Loop
+										for (var j = 1; j < platformDetectEmptyWithinTiles; j++) {
+										
+											//See if solid ends above me
+											if (!position_meeting(pointX + 16*dir, pointY - j*16, Solid)) {
+										
+												//Add if does, landable position
+												path_insert_point(myPath, i+1, pointX + 16*dir, pointY - j*16, pointSpd);
+										
+												//reccognize point!
+												addedNewPoint = true;
+												i++;
+												break;
+										
+											}
+										
+										}
+									
+									}	
+								}
+	
+							}
+							
+						}
+					}
+
+				
+				
+				
+				}
+				//
+				//
+				//
+				//
+				
+
 			
 				//Path Exists?
 				if (pathMaker) {

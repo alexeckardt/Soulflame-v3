@@ -230,6 +230,7 @@
     {"id":{"name":"shdFeatherOutline","path":"shaders/shdFeatherOutline/shdFeatherOutline.yy",},"order":1,},
     {"id":{"name":"roomShatterViewingHole","path":"rooms/roomShatterViewingHole/roomShatterViewingHole.yy",},"order":5,},
     {"id":{"name":"oMonpup","path":"objects/oMonpup/oMonpup.yy",},"order":1,},
+    {"id":{"name":"pathfinder_check_landable_position","path":"scripts/pathfinder_check_landable_position/pathfinder_check_landable_position.yy",},"order":16,},
     {"id":{"name":"enum_weapon","path":"scripts/enum_weapon/enum_weapon.yy",},"order":3,},
     {"id":{"name":"oSpikeResetMarker","path":"objects/oSpikeResetMarker/oSpikeResetMarker.yy",},"order":20,},
     {"id":{"name":"sKeiraAttackSwordUp","path":"sprites/sKeiraAttackSwordUp/sKeiraAttackSwordUp.yy",},"order":6,},

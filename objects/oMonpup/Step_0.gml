@@ -57,16 +57,74 @@ if (STATE == state.base) {
 if (STATE == state.ready_attack) {
 
 	//Generate Path To Player
-	pathfinder_generate_path(pathFinder, [lastSawTargetX, lastSawTargetY]);
+	if (targetingTarget) {
+		pathfinder_generate_path(pathFinder, [lastSawTargetX, lastSawTargetY]);
+	}
 	
 	//Get Where I want to Go
 	var p = pathfinder_get_positon(pathFinder, pathfinderRegenerateRange);
 	var pathPointX = p[0];
 	var pathPointY = p[1];
 	
-	//Move to Goal!
-	hSpeedGoal = point_to_position(pathPointX) * runSpeed;
-	allowJumpWalls = true
+		//Move to Goal!
+		var walkDir = sign(point_to_position(pathPointX)*2 + directionFacing);
+		hSpeedGoal = walkDir * runSpeed * (point_distance(lastSawTargetY, lastSawTargetX, x, y) > closeEnoughPathXRange) * (vSpeed > -3);
+		allowJumpWalls = true
+	
+		//If Path Point is DIRECTLY above me
+		if (abs(pathPointX - x) < closeEnoughPathXRange && pathPointY < y - pathfinderRegenerateRange + 3) {
+			
+			//See if there is a nearby future path in which I can land on
+			var toLandOnPath = pathfinder_check_landable_position(32, (maxJumpTiles+1) * 16);
+			if (is_array(toLandOnPath)) {
+			
+				//x, y of where I want to land
+				var ppX = toLandOnPath[0];
+				var ppY = toLandOnPath[1];
+				
+				//Make this my path I want
+				targetingTarget = false;
+				pathfinder_generate_path(pathFinder, [ppX, ppY]);
+				
+				var yHeight = ppY - y;
+				var xDist = abs(ppX - x);
+				var fromPlatformDir = sign(ppX - x);
+			
+				//Calc how fast I need to go
+				if (!place_meeting(x + fromPlatformDir * 3, y + yHeight + 16, Solid)) { //yhiehg
+					
+					if (onGround) {
+						toJumpVspeed = (yHeight - 8)/(xDist) - (myGrav*xDist)/(2);
+						toJumpVspeed = clamp(toJumpVspeed, -6.8, -0.5);
+						toJumpHspeed = sign(ppX - x) * 0.5
+						jumpingToX = true;
+						
+						//goal jump x
+						toJumpToX = ppX;
+						
+						lastSTATE = STATE;
+						STATE = state.jumping;
+						allowJumpWalls = 0;
+					
+						hSpeedGoal = 0;
+						controlHSpeed = 0;
+					
+						timeUntilJump = abs(toJumpVspeed) * 2;
+						inAirFromJump = false;
+					}
+					
+				} else {
+				
+					//Move out from under
+					hSpeedGoal = sign(-fromPlatformDir + directionFacing);
+				
+				}
+				
+			}
+			
+		}
+	
+	
 	
 	//If I'm Close Enough
 	if (point_distance(x, y, target.x+target.hSpeed, target.y+target.vSpeed) < pounceRad && seesTarget) {
@@ -86,12 +144,41 @@ if (STATE == state.jumping) {
 	
 	if (timeUntilJump < 0) {
 		
-		vSpeed = toJumpVspeed;
-		hSpeedGoal = toJumpHspeed;
-		controlHSpeed = toJumpHspeed;
+		if (!inAirFromJump) {
+			vSpeed = toJumpVspeed;
+			hSpeedGoal = toJumpHspeed;
+			controlHSpeed = toJumpHspeed;
+		}
 		
-		STATE = lastSTATE;
+		//Stop The Jump
+		if (jumpingToX) {
+			
+			//Move in Air
+			if (vSpeed > -3) {
+				hSpeedGoal = point_to_position(toJumpToX);
+				controlHSpeed = point_to_position(toJumpToX);
+			}
+			
+			//Slow Dwo
+			if (sign(toJumpToX - x+controlHSpeed*2) != sign(toJumpHspeed)) {
+				//Slow Down
+				hSpeedGoal = 0;
+			}
+			
+			//Make Sure to land
+			if (onGround && !inAirFromJump) {
+				jumpingToX = false;
+				STATE = lastSTATE;
+				inAirFromJump = false;
+			}
+			
+		} else {
+			STATE = lastSTATE;	
+			inAirFromJump = false;
+		}
 		
+		//STATE = lastSTATE;
+		inAirFromJump = true;
 	}
 	
 
@@ -135,9 +222,11 @@ if (onGround && allowJumpWalls) {
 				jumped = true;
 				lastSTATE = STATE;
 				STATE = state.jumping;
+				jumpingToX = false;
 				
 				//Decide Time Jumping Takes
 				timeUntilJump = abs(toJumpVspeed) * 2;
+				inAirFromJump = false;
 				
 				break;	
 			}

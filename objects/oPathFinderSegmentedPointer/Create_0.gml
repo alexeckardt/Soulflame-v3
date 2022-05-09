@@ -28,3 +28,10 @@ atEndOfPath = false;
 
 airborne = false;
 tryToUnstuckAirborne = 1;
+
+deleteUnneccesaryPoints = true;
+pathPointsSignificantDistance = 64;
+
+platformDetectEmptyWithinTiles = 2;
+
+pushFirstPointBasedOnCreatorFatness = true;
