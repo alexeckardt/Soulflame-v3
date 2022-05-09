@@ -17,8 +17,8 @@
   "width": 17,
   "height": 18,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "tg_Chasm",
+    "path": "texturegroups/tg_Chasm",
   },
   "swatchColours": null,
   "gridX": 0,

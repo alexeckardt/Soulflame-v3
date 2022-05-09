@@ -17,8 +17,8 @@
   "width": 21,
   "height": 30,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "tg_Player",
+    "path": "texturegroups/tg_Player",
   },
   "swatchColours": null,
   "gridX": 0,

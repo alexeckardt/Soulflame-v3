@@ -17,8 +17,8 @@
   "includeTTF": false,
   "TTFName": "",
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "tg_Cutscenes",
+    "path": "texturegroups/tg_Cutscenes",
   },
   "ascenderOffset": 2,
   "ascender": 0,

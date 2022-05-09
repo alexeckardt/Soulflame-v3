@@ -1,3 +1,3 @@
 room = roomShatterViewingHole
-room = roomSurfaceUndergroundTutorial
-room = roomLab;
+room = roomChasmLeftPool
+//room = roomLab;

@@ -17,8 +17,8 @@
   "width": 12,
   "height": 6,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "tg_Cutscenes",
+    "path": "texturegroups/tg_Cutscenes",
   },
   "swatchColours": null,
   "gridX": 0,

@@ -17,8 +17,8 @@
   "width": 7,
   "height": 7,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "tg_Common",
+    "path": "texturegroups/tg_Common",
   },
   "swatchColours": null,
   "gridX": 0,

@@ -17,8 +17,8 @@
   "width": 67,
   "height": 80,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "tg_Overworld",
+    "path": "texturegroups/tg_Overworld",
   },
   "swatchColours": null,
   "gridX": 0,
