@@ -75,17 +75,5 @@ event_user(0);
 
 enemy_generic_death_timer();
 
-//Create Damage
-if (timeSinceDamaged > room_speed) {
-		//Create Damage
-	if (!instance_exists(myDamage)) {
-		var w = 8;
-		myDamage = enemy_damage_create(-1, x-w/2, y-w/2, w, w, 3, 1);
-		myDamage.addToHSpeed = hSpeed/4;
-		myDamage.addToVSpeed = -1;
-	}	
-}
-
-
 //Spikes
 enemy_hit_spikes();
