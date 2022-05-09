@@ -12,11 +12,13 @@ if (!view_enabled) {
 }
 
 //Match Screen Size
-if (window_get_width() != view_width*zoom
-&& window_get_height() != view_height*zoom) {
+if (window_has_focus()) {
+	if (window_get_width() != view_width*zoom
+	&& window_get_height() != view_height*zoom) {
 	
-	window_set_size(view_width * zoom, view_height * zoom);
-	surface_resize(application_surface, view_width*zoom, view_height*zoom);
+		window_set_size(view_width*zoom, view_height*zoom);
+		surface_resize(application_surface, view_width*zoom, view_height*zoom);
+	}
 }
 
 //Set

@@ -4,6 +4,10 @@
 //
 function camera_draw_lights(cZoom, _cx, _cy, _fakeAppSurf) {
 
+	//s
+	var surfW = surface_get_width(lightLayerSurf);
+	var surfH = surface_get_height(lightLayerSurf);
+
 	//Uniform Imports
 	var _u_pos	= u_pos;
 	var _u_dir	= u_dir;
@@ -11,7 +15,6 @@ function camera_draw_lights(cZoom, _cx, _cy, _fakeAppSurf) {
 	var _u_fov	= u_fov;
 	var _u_zz	= u_zz;
 	var _u_falloff = u_falloff;
-	var _u_range = u_range;
 
 	//Count
 	var iterations = 0;
@@ -36,7 +39,8 @@ function camera_draw_lights(cZoom, _cx, _cy, _fakeAppSurf) {
 			shader_set_uniform_f(_u_falloff, falloff);
 			
 			//Draw Light as overlay on surface
-			draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, colour, 1);
+			//draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, colour, 1);
+			draw_sprite_ext(sPixel, 0, 0, 0, surfW, surfH, 0, colour, 1);
 			iterations++;
 			
 		}
@@ -62,7 +66,8 @@ function camera_draw_lights(cZoom, _cx, _cy, _fakeAppSurf) {
 		shader_set_uniform_f(_u_falloff, pointLight.falloff);
 			
 		//Draw Light as overlay on surface
-		draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, pointLight.colour, 1);
+		//draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, pointLight.colour, 1);
+		draw_sprite_ext(sPixel, 0, 0, 0, surfW, surfH, 0, pointLight.colour, 1);
 		iterations++;
 	}
 

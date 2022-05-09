@@ -19,11 +19,12 @@ var _cy = cY;
 //
 //------------------------------------------------
 
-//Create Surf
-if (!surface_exists(fakeAppSurf)) {
-	fakeAppSurf = surface_create(worldCamW-1, worldCamH-1);
-}
+//
+//Create Surfaces
+if (!surface_exists(fakeAppSurf)) { fakeAppSurf = surface_create(worldCamW, worldCamH); }
+if (!surface_exists(lightLayerSurf)) { lightLayerSurf = surface_create(worldCamW,worldCamH); }
 
+//
 //Draw App Surface, Scaled 1:1 Pixels
 gpu_set_colorwriteenable(1,1,1,1);
 surface_set_target(fakeAppSurf);
@@ -54,12 +55,6 @@ var _fakeAppSurf = fakeAppSurf;
 //Keep Track
 var lightsDrawnLocal = 0;
 
-//Create Surface
-if (!surface_exists(lightLayerSurf)) {
-	lightLayerSurf = surface_create(worldCamW,worldCamH);	
-}
-
-
 //Set
 surface_set_target(lightLayerSurf);
 
@@ -87,6 +82,7 @@ if (drawLighting) {
 	
 } else {
 	
+	//
 	draw_clear_alpha(0, 0);
 	draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
 	
