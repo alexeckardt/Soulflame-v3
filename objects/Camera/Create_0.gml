@@ -2,15 +2,29 @@
 
 updateCam = true;
 
+//Sizes
 zoom = 4;
 resolution = 1;
-view_width = 1920 div zoom;
-view_height = 1080 div zoom;
+
+//Get Ideal Resolution
+idealWidth = 540;
+idealHeight = 270;
+aspectRatio = display_get_width() / display_get_height();
+idealWidth = round(idealHeight * aspectRatio);
+if (idealWidth & 1) idealWidth++; //Check Odd
+
+view_width = idealWidth;
+view_height = idealHeight;
+
+
+
+
 
 //Camera
 camera = view_camera[0];
 view_surf = -1;
 application_surface_enable(false);
+
 
 hasSetup = false;
 
