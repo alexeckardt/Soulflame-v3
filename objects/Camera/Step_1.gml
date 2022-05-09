@@ -1,13 +1,7 @@
 /// @description Camera Setup & Resets
 
-//Create View Surf
 var goalW = view_width+1;
 var goalH = view_height+1;
-if (!surface_exists(view_surf)) {
-	view_surf = surface_create(goalW, goalH);
-	}
-
-view_surface_id[0] = view_surf;
 
 //Resize Window + Camera
 if (window_has_focus() || !hasSetup) {
@@ -33,7 +27,6 @@ if (point_distance(x, y, lastDeactivateX, lastDeactivateY) > cullCameraBuffer/2)
 	instance_activate_region(x-cullCameraBuffer, y-cullCameraBuffer, 
 								view_width + cullCameraBuffer*2, view_height + cullCameraBuffer*2,
 								true);
-	
 	//
 	//Reactivate Necessary
 	instance_activate_object(Important);

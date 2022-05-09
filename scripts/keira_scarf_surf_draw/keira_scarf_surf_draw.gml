@@ -31,6 +31,12 @@ function keira_scarf_surf_draw() {
 
 	//Get Info From Scarf
 	var scarf = scarfId;
+	
+	if (!instance_exists(scarf)) {
+		surface_reset_target();
+		return 0; 
+	}
+	
 	var nodeCount = scarf.pointCount;
 	var nodeList = scarf.points;
 	

@@ -52,6 +52,17 @@ if (keyboard_check_pressed(vk_f3)) {
 	showDebugOverlay = !showDebugOverlay;	
 }
 
+if (showDebugOverlay) {
+	if (keyboard_check_pressed(ord("H")) && devMode) {
+		var yy = clamp(round(oKeira.y), -32, room_height+32);
+		var str = "roomTo = " + string(room_get_name(room)) 
+				+ ";\nxTo = " + string(round(oKeira.x)) 
+				+ ";\nyTo = " + string(yy) 
+				+ ";\ndirFacing = " + string(sign(oKeira.directionFacing));
+		clipboard_set_text(str);	
+	}
+}
+
 
 //Keep Track Of Time
 timeInGame += indepedentDelta;

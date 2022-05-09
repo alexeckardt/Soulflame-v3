@@ -175,8 +175,7 @@ healPlayLoopAnimation = false;
 
 //Scarf
 
-scarfId = instance_create_depth(x, y, depth - 2, oScarf); //should update after movement
-scarfId.creator = id;
+scarfId = noone;
 
 scarfMainOffsetX = -3;
 scarfMainOffsetY = -7;

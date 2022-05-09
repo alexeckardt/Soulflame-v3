@@ -19,7 +19,9 @@ view_height = idealHeight;
 //Camera
 camera = view_camera[0];
 view_surf = -1;
-application_surface_enable(false);
+application_surface_enable(true);
+application_surface_draw_enable(false);
+view_visible = true;
 
 
 hasSetup = false;

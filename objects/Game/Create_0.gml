@@ -58,6 +58,7 @@ debugVerticalIndex = 0;
 debugVSpacing = 14;
 
 //Debug Settings
+devMode = true;
 showDebugOverlay = false;
 
 allowCheats = true;

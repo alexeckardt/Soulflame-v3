@@ -37,7 +37,6 @@ var _fakeAppSurf = view_surf;
 //-----------------------------------
 
 //Keep Track
-var lightsDrawnLocal = 0;
 
 //Set
 surface_set_target(lightLayerSurf);
@@ -46,29 +45,35 @@ if (drawLighting) {
 
 	//Prep
 	draw_clear_alpha(shadowColour, 1);
-	draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1-maxDarknessOpacity);
-	//draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, shadowColour, maxDarknessOpacity);
 	
-	//Setup Light Drawing
-	gpu_set_blendmode(bm_add);
-	shader_set(shd_light);
+	if (surface_exists(_fakeAppSurf)) {
+		draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1-maxDarknessOpacity);
+		//draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, shadowColour, maxDarknessOpacity);
+	
+		//Setup Light Drawing
+		gpu_set_blendmode(bm_add);
+		shader_set(shd_light);
 
-		//Draw Each Light
-		renderedLights = camera_draw_lights(cRes, _cx, _cy, _fakeAppSurf);
+			//Draw Each Light
+			renderedLights = camera_draw_lights(cRes, _cx, _cy, _fakeAppSurf);
 	
-		shader_reset();
+			shader_reset();
 	
-		//Cut Out No Alphas
-		if (fastLighting) gpu_set_blendmode_ext_sepalpha(bm_dest_colour, bm_zero, bm_inv_src_alpha, bm_src_alpha);
-		else gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_zero);
-		draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
-		gpu_set_blendmode(bm_normal);
+			//Cut Out No Alphas
+			if (fastLighting) gpu_set_blendmode_ext_sepalpha(bm_dest_colour, bm_zero, bm_inv_src_alpha, bm_src_alpha);
+			else gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_zero);
+			draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
+			gpu_set_blendmode(bm_normal);
+	}
 	
 } else {
 	
 	//
 	draw_clear_alpha(0, 0);
-	draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
+	
+	if (surface_exists(_fakeAppSurf)) {
+		draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
+	}
 	
 }
 	
@@ -123,9 +128,11 @@ if (surface_exists(frgSurf)) {
 
 
 //Clear Application Surface
-surface_set_target(view_surf);
-	draw_clear_alpha(0, 0);
-surface_reset_target();
+if (surface_exists(view_surf)) {
+	surface_set_target(view_surf);
+		draw_clear_alpha(0, 0);
+	surface_reset_target();
+}
 
 
 /*

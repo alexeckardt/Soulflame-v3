@@ -1,0 +1,1 @@
+directionFacing = 1;

@@ -2,6 +2,11 @@
 if (!instance_exists(creator)) {
 	instance_destroy();
 }
+//I am no longer wanted
+if (creator.scarfId != id) {
+	instance_destroy();
+	exit;}
+
 
 //Move
 var time = Game.delta;

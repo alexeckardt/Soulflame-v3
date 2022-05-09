@@ -129,74 +129,7 @@ if (STATE == state.ready_attack) {
 		
 	}
 	
-	//
-	//Check if should attack
-	//
-	
-	if (seesTarget && abs(y - lastSawTargetY) < 16 && abs(x - lastSawTargetX) < pounceRad) {
-	
-		if (onGround) {
-			STATE = state.bounce;
-			timeUntilJump = abs(toJumpVspeed) * 2;
-			inAirFromJump = false;
-			jumpingDirection = point_to_position(target.x);
-		}
-	}
-	
 }
-
-//
-//bounce -- pounce on target
-if (STATE == state.bounce) {
-		
-	//
-	//Prep Jump
-	//
-	if (timeUntilJump > 0) {
-		
-		//Stop
-		hSpeedGoal = 0;
-		
-		//Timer
-		timeUntilJump--;
-	
-	//
-	//JUMP!
-	//
-	} else {
-	
-		//
-		//Jump V Speed
-		if (!inAirFromJump) {
-			
-			//Bounce
-			var d = min(abs(x - target.x), pounceRad*3) * jumpingDirection;
-			
-			vSpeed = pounceJumpSpeed;
-			var gHspeed = (-d*myGrav)/(2*vSpeed) * ((point_to_position(target.x) != jumpingDirection)+1);;
-			hSpeedGoal = gHspeed;
-			controlHSpeed = gHspeed;
-			
-			//Don't Fly
-			inAirFromJump = true;
-			onGround = false;
-			
-			
-		} else {
-		
-			//In Air
-			if (onGround) {
-				STATE = state.land;
-				landingTicksLeft = landingTicks*3;
-			}
-			
-		}
-	}
-		
-		
-}
-
-
 
 //
 //jumping state -- move to a predefined x position at some velocity

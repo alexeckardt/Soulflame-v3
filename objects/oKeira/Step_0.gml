@@ -187,61 +187,66 @@ if (place_meeting(x, y+1, Solid) && !place_meeting(x+moveX, y+1, Solid)) {
 var collisionPercision = 1/100;
 
 //Vertical Collision
-if (place_meeting(x, y+moveY, Solid)) {
+var vCollideSolid = instance_place(x, y+moveY, Solid);
+if (vCollideSolid) {
 
-	//Back Onto Wall
-	repeat (ceil(abs(moveY/collisionPercision))) {
-		if (!place_meeting(x, y+sign(moveY)*collisionPercision, Solid)) {
-			y += sign(moveY)*collisionPercision;
-		} else {
-			break;	
-		}
-	}
-	
-	//Slide Around Corner
-	var stopVspeed = true;
-	if (moveY < -1) {
-		if (!place_meeting(x+slideCornerRange+controlHSpeed, y-2+moveY, Solid)) {
-			controlHSpeed = max(controlHSpeed, 1.5);
-			stopVspeed = false;
-		}
+	//Not Oneway
+	var underOneway = vCollideSolid.oneway && bbox_bottom >= vCollideSolid.y;
+	if (!underOneway) {
 		
-		if (!place_meeting(x-slideCornerRange+controlHSpeed, y-2+moveY, Solid)) {
-			controlHSpeed = min(controlHSpeed, -1.5);
-			stopVspeed = false;
+		//Back Onto Wall
+		repeat (ceil(abs(moveY/collisionPercision))) {
+			if (!place_meeting(x, y+sign(moveY)*collisionPercision, Solid)) {
+				y += sign(moveY)*collisionPercision;
+			} else {
+				break;	
+			}
 		}
+	
+		//Slide Around Corner
+		var stopVspeed = true;
+		if (moveY < -1) {
+			if (!place_meeting(x+slideCornerRange+controlHSpeed, y-2+moveY, Solid)) {
+				controlHSpeed = max(controlHSpeed, 1.5);
+				stopVspeed = false;
+			}
 		
-		//Squish on Head Hurt
-		if (stopVspeed) {
-			squishX = squishOffset * 1.5;
-			squishY = -squishOffset * 0.3;
+			if (!place_meeting(x-slideCornerRange+controlHSpeed, y-2+moveY, Solid)) {
+				controlHSpeed = min(controlHSpeed, -1.5);
+				stopVspeed = false;
+			}
+		
+			//Squish on Head Hurt
+			if (stopVspeed) {
+				squishX = squishOffset * 1.5;
+				squishY = -squishOffset * 0.3;
+			}
 		}
-	}
 	
-
-	//Reset Speed
-	moveY = 0;
-	
-	if (stopVspeed) {
+		//Reset Speed
 		moveY = 0;
-		vSpeed = 0;
-		controlVSpeed = 0;
-		allowHalfGravity = false;
+	
+		if (stopVspeed) {
+			moveY = 0;
+			vSpeed = 0;
+			controlVSpeed = 0;
+			allowHalfGravity = false;
+		}
 	}
 }
 y+=moveY;
 
 		//Ground Collision Detection
-		var wasOnGround = onGround;
-		if (vSpeed >= 0) {
-			groundBelow = instance_place(x, y+1+vSpeed, Solid);
-			onGround = (groundBelow != noone);
-		} else {
+	var wasOnGround = onGround;
+	if (vSpeed >= 0) {
+		groundBelow = instance_place(x, y+1+vSpeed, Solid);
+		onGround = (groundBelow != noone);
+	} else {
 		
-			groundBelow = noone;
-			onGround = false;
+		groundBelow = noone;
+		onGround = false;
 			
-		}
+	}
 
 
 //Update moveX
@@ -260,35 +265,38 @@ if (onGround && place_meeting(x+moveX, y, Solid)) {
 }
 
 //Horizontal Collision
-if (place_meeting(x + moveX, y, Solid)) {
+var hCollide = instance_place(x + moveX, y, Solid);
+if (hCollide != noone) {
 	
 	var sigMoveX = sign(moveX);
 	
-	//Back Onto Wall
-	repeat (ceil(abs(moveX/collisionPercision))) {
-		if (!place_meeting(x+sign(moveX)*collisionPercision, y, Solid)) {
-			x += sign(moveX)*collisionPercision;
-		} else {
-			break;	
+	//If One way, Ignore
+	if (!hCollide.oneway) {
+		
+		//Back Onto Wall
+		repeat (ceil(abs(moveX/collisionPercision))) {
+			if (!place_meeting(x+sign(moveX)*collisionPercision, y, Solid)) {
+				x += sign(moveX)*collisionPercision;
+			} else {
+				break;	
+			}
 		}
-	}
 	
-	//Collision?
-	if (place_meeting(x + sigMoveX, y, Solid)) {
-		//Impact Splat
-		squishX = -clamp((abs(moveX)-2)/4, 0, 0.5);
+		//Collision?
+		if (place_meeting(x + sigMoveX, y, Solid)) {
+			//Impact Splat
+			squishX = -clamp((abs(moveX)-2)/4, 0, 0.5);
 	
-		//Set Wall Direction
-		lastWallInDirection = wallInDirection;
-		wallInDirection = sigMoveX;
+			//Set Wall Direction
+			lastWallInDirection = wallInDirection;
+			wallInDirection = sigMoveX;
 	
-		//Reset Movement Vals
-		moveX = 0;
-		hSpeed = 0;
-		controlHSpeed = 0;
-	}
-		
-		
+			//Reset Movement Vals
+			moveX = 0;
+			hSpeed = 0;
+			controlHSpeed = 0;
+		}
+	}		
 }
 x += moveX;
 
