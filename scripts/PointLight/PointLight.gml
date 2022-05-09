@@ -58,8 +58,8 @@ function PointLight(_x, _y) constructor {
 		life -= t;
 
 		//Mutate Movement
-		spd += random_range(-spdWiggle, spdWiggle) + spdIncrease;
-		dir += random_range(-dirWiggle, dirWiggle) + dirIncrease;
+		spd += (random_range(-spdWiggle, spdWiggle) + spdIncrease)*t;
+		dir += (random_range(-dirWiggle, dirWiggle) + dirIncrease)*t;
 
 		//Save For Use
 		var spdUsing = spd;
@@ -72,7 +72,7 @@ function PointLight(_x, _y) constructor {
 		if (doGravity) {
 	
 			//Increase Grav Strength
-			gravPull += gravStr;
+			gravPull += gravStr*t*t;
 	
 			//Combine Vectors
 			var hcomponent = lengthdir_x(spdUsing, dirUsing) + lengthdir_x(gravPull, gravDir);
@@ -109,7 +109,7 @@ function PointLight(_x, _y) constructor {
 		//
 		//
 		//
-		index += index_speed;
+		index += index_speed*t;
 	
 	};
 	
