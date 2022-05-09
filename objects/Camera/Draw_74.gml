@@ -23,25 +23,12 @@ draw_surface(view_surf, 0, 0);
 
 //
 //Create Surfaces
-if (!surface_exists(fakeAppSurf)) { fakeAppSurf = surface_create(worldCamW, worldCamH); }
 if (!surface_exists(lightLayerSurf)) { lightLayerSurf = surface_create(worldCamW,worldCamH); }
 
-//
-//Draw App Surface, Scaled 1:1 Pixels
-gpu_set_colorwriteenable(1,1,1,1);
-surface_set_target(fakeAppSurf);
-gpu_set_blendmode(bm_normal);
-
-	//Draw App Surface
-	draw_clear_alpha(0, 0);
-	draw_surface(view_surf, 0, 0);
-	
-surface_reset_target();
-gpu_set_colorwriteenable(1,1,1,1);
 
 //We draw with Fake App Surf because we combine other layers that should
 //Be affected with lighting
-var _fakeAppSurf = fakeAppSurf;
+var _fakeAppSurf = view_surf;
 
 //-----------------------------------
 //

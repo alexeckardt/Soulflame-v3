@@ -104,7 +104,6 @@ u_falloff			= shader_get_uniform(shd_light, "u_falloff");
 u_str				= shader_get_uniform(shd_light, "u_str");
 
 //
-fakeAppSurf = -1;
 lightLayerSurf = -1;
 
 maxDarknessOpacity = 1;
