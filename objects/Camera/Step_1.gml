@@ -1,30 +1,23 @@
 /// @description Camera Setup & Resets
 
+//Create View Surf
 var goalW = view_width+1;
 var goalH = view_height+1;
-
-//Create View Surf
 if (!surface_exists(view_surf)) {
-	view_surf = surface_create(goalW, goalH);	
-}
-
-
-if (!view_enabled) {
-	camera_set_view_size(view_camera[0], goalW, goalH);
-	view_set_visible(0, true);
-
-	view_enabled = true;
-}
+	view_surf = surface_create(goalW, goalH);
+	}
 
 view_surface_id[0] = view_surf;
 
-//Match Screen Size
-if (window_has_focus()) {
+//Resize Window + Camera
+if (window_has_focus() || !hasSetup) {
 	if (window_get_width() != view_width*zoom
-	&& window_get_height() != view_height*zoom) {
+	&& window_get_height() != view_height*zoom) || !hasSetup {
 	
 		window_set_size(view_width*zoom, view_height*zoom);
-		view_enabled = false;
+		camera_set_view_size(view_camera[0], goalW, goalH);
+		
+		hasSetup = true;
 		
 	}
 }

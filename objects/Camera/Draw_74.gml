@@ -13,6 +13,7 @@ cY = Camera.realY;
 var _cx = cX;
 var _cy = cY;
 
+draw_surface(view_surf, 0, 0);
 
 //---------------------------------------------
 //
@@ -33,7 +34,7 @@ gpu_set_blendmode(bm_normal);
 
 	//Draw App Surface
 	draw_clear_alpha(0, 0);
-	draw_surface_ext(view_surf, 0, 0, 1, 1, 0, c_white, 1);
+	draw_surface(view_surf, 0, 0);
 	
 	//Draw Particles
 	if (surface_exists(Game.particleViewer.particleSurf)) {
@@ -112,7 +113,7 @@ if (surface_exists(bkgSurf)) {
 
 //GAME LAYER
 display_set_gui_size(view_width, view_height);
-gpu_set_colorwriteenable(1,1,1,0);
+gpu_set_colorwriteenable(1,1,1,1);
 draw_surface_ext(lightLayerSurf, -frac(realX), -frac(realY), 1, 1, 0, c_white, 1);	
 gpu_set_colorwriteenable(1,1,1,1);
 display_set_gui_size(view_width*zoom, view_height*zoom);
