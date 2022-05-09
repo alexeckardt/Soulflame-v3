@@ -36,11 +36,6 @@ gpu_set_blendmode(bm_normal);
 	draw_clear_alpha(0, 0);
 	draw_surface(view_surf, 0, 0);
 	
-	//Draw Particles
-	if (surface_exists(Game.particleViewer.particleSurf)) {
-		draw_surface_ext(Game.particleViewer.particleSurf, 0, 0, 1, 1, 0, c_white, 1);	
-	}
-	
 surface_reset_target();
 gpu_set_colorwriteenable(1,1,1,1);
 
@@ -128,10 +123,6 @@ draw_surface(fireSurf, 0, 0);
 		surface_reset_target();
 shader_reset();
 gpu_set_blendmode(bm_normal);
-
-
-//GLOW PARTICLES
-
 
 //Foreground Paralax
 if (surface_exists(frgSurf)) {

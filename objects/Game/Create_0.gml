@@ -36,7 +36,7 @@ corruption_WeaponCreationIncrase		= 1/10;
 corruption_HealingIncrease				= 1/5;
 
 //Particle Viewer
-particleViewer = noone;
+particleController = noone;
 
 //Colours
 platinumCol = bgr($a0ceea);

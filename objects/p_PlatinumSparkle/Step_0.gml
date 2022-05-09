@@ -11,14 +11,14 @@ if (sparklesToCreate > 0) {
 		
 		//Setup
 		var burstAmount = irandom_range(1, clamp(sparklesToCreate/10, 1, 30));
-		var sys = Game.particleViewer.noblendSys;
+		var sys = Game.particleController.noblendSys;
 		
 		//Reset
 		sparklesToCreate -= burstAmount;	
 		timer = irandom(room_speed div 6); //< 1/6 second
 		
 		//Get objs
-		var emitter = Game.particleViewer.noblendEmitter;
+		var emitter = Game.particleController.noblendEmitter;
 		var k = oKeira.id;
 		
 		//pos

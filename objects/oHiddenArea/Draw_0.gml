@@ -1,6 +1,6 @@
 /// @description Draw As Particle
 
-var surf = ParticleViewer.particleSurf;
+var surf = particleController.particleSurf;
 
 if (surface_exists(surf)) {
 

@@ -235,7 +235,7 @@
     {"id":{"name":"sDoor","path":"sprites/sDoor/sDoor.yy",},"order":9,},
     {"id":{"name":"sRampTile","path":"sprites/sRampTile/sRampTile.yy",},"order":4,},
     {"id":{"name":"player_allowed_to_heal","path":"scripts/player_allowed_to_heal/player_allowed_to_heal.yy",},"order":26,},
-    {"id":{"name":"ParticleViewer","path":"objects/ParticleViewer/ParticleViewer.yy",},"order":0,},
+    {"id":{"name":"ParticleController","path":"objects/ParticleController/ParticleController.yy",},"order":0,},
     {"id":{"name":"load_index_grid","path":"scripts/load_index_grid/load_index_grid.yy",},"order":6,},
     {"id":{"name":"oSpinningRectangle","path":"objects/oSpinningRectangle/oSpinningRectangle.yy",},"order":3,},
     {"id":{"name":"sBugRunnerBreak","path":"sprites/sBugRunnerBreak/sBugRunnerBreak.yy",},"order":2,},

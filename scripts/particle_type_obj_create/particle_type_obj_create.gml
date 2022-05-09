@@ -8,7 +8,7 @@ function particle_type_obj_create(pObjId, key) {
 	var obj = instance_create_depth(x, y, -5, pObjId);
 	
 	//Save
-	Game.particleViewer.particleTypeObjs[? key] = obj;
+	Game.particleController.particleTypeObjs[? key] = obj;
 	
 	//Return
 	return obj;

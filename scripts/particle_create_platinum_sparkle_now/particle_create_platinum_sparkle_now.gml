@@ -5,9 +5,9 @@
 function particle_create_platinum_sparkle_now(x1, y1, x2, y2, amount) {
 
 	//System
-	if (Game.particleViewer.allowParticleSpawning) {
+	if (Game.particleController.allowParticleSpawning) {
 		
-		var sys = Game.particleViewer.noblendSys;
+		var sys = Game.particleController.noblendSys;
 	
 		//Create Particle Type if DNE
 		var key = "coin";
@@ -15,7 +15,7 @@ function particle_create_platinum_sparkle_now(x1, y1, x2, y2, amount) {
 		var type = particle_type_obj_get_type(key);
 	
 		//Update Emitter
-		var emitter = Game.particleViewer.noblendEmitter;
+		var emitter = Game.particleController.noblendEmitter;
 		part_emitter_region(sys, emitter, x1, x2, y1, y2, 
 								ps_shape_rectangle, ps_distr_linear);
 
