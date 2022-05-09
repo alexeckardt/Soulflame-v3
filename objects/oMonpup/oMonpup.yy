@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sBugRunnerIdle",
-    "path": "sprites/sBugRunnerIdle/sBugRunnerIdle.yy",
+    "name": "sMonpupIdle",
+    "path": "sprites/sMonpupIdle/sMonpupIdle.yy",
   },
   "solid": false,
   "visible": true,
@@ -33,11 +33,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "BugRunner",
-    "path": "folders/Entity/Enemy/Obj/Chasm/BugRunner.yy",
+    "name": "Monpup",
+    "path": "folders/Entity/Enemy/Obj/Chasm/Monpup.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oBugRunner",
+  "name": "oMonpup",
   "tags": [],
   "resourceType": "GMObject",
 }

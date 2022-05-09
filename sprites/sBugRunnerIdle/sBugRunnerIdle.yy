@@ -82,7 +82,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Spr",
-    "path": "folders/Entity/Enemy/Obj/Shatter/BugRunner/Spr.yy",
+    "path": "folders/Entity/Enemy/Obj/Chasm/BugRunner/Spr.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBugRunnerIdle",

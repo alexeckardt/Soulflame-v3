@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sBugRunnerIdle",
-    "path": "sprites/sBugRunnerIdle/sBugRunnerIdle.yy",
+    "name": "sBlankEnemy",
+    "path": "sprites/sBlankEnemy/sBlankEnemy.yy",
   },
   "solid": false,
   "visible": true,
@@ -26,18 +26,15 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":12,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "BugRunner",
-    "path": "folders/Entity/Enemy/Obj/Chasm/BugRunner.yy",
+    "name": "Base",
+    "path": "folders/Entity/Enemy/Obj/Base.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oBugRunner",
+  "name": "oEmptyEnemy",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -74,6 +74,8 @@ enum state {
 		run,
 		breaking,
 		bounce,
+		ready_attack,
+		jumping,
 	
 	height, //states count, used for idle in enemies
 }

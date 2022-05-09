@@ -90,7 +90,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Spr",
-    "path": "folders/Entity/Enemy/Obj/Shatter/Bunfet/Spr.yy",
+    "path": "folders/Entity/Enemy/Obj/Chasm/Bunfet/Spr.yy",
   },
   "resourceVersion": "1.0",
   "name": "sBunfetLeap",

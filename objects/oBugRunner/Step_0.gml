@@ -29,12 +29,8 @@ if (STATE == state.base) {
 	if (!seesTarget) {
 	
 		//See
-		if (visibleTarget) {
-			seesTarget = true;
-			sinceSeenTarget = 0;
-			lastSawTargetX = target.x;	
-			lastSawTargetY = target.y;	
-		}
+		enemy_generic_update_see_target();
+	
 	} else {
 		
 		//Timer

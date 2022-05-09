@@ -34,7 +34,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Bunfet",
-    "path": "folders/Entity/Enemy/Obj/Shatter/Bunfet.yy",
+    "path": "folders/Entity/Enemy/Obj/Chasm/Bunfet.yy",
   },
   "resourceVersion": "1.0",
   "name": "oBunfet",
