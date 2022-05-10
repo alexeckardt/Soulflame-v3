@@ -272,10 +272,11 @@ if (onGround && place_meeting(x+moveX, y, Solid)) {
 //Horizontal Collision
 var currentHCollide = instance_place(x + moveX, y, Solid)
 var actualHCollide = noone;
+var insideOneway = false;
 if (currentHCollide != noone) {
 	
 	var sigMoveX = sign(moveX);
-	var hbbox_width = (bbox_right - bbox_left) div 2 + 0.5;
+	var hbbox_width = (bbox_right - bbox_left) div 2;
 
 	//Back Onto Wall
 	var freeSpot = true;
@@ -288,8 +289,11 @@ if (currentHCollide != noone) {
 		//If that is solid, don't let me int
 		if (currentHCollide.oneway) {
 
+			insideOneway = true;
+
 			//Get the wall I am guarrenteed to be collding with
-			var hCollider2 = instance_position(x+sign(moveX)*hbbox_width, y, Solid);
+			var checkXdist = (directionFacing == 1) ? hbbox_width : hbbox_width + 2; //for the life of me i can't figure out why <-- bad botch
+			var hCollider2 = instance_position(floor(x)+sign(moveX)*(checkXdist), y, Solid);
 			
 			//Check If Other wall is solid. If so, stop.
 			if (instance_exists(hCollider2)) {
@@ -414,12 +418,15 @@ if (wallInDirection != 0 && inControl) {
 					//Wall Edge Hold
 					if (climbing) {
 						if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
-							STATE = state.wall_cling;
-							wallClingingonto = instance_position(wallPosX, y-7, Solid);
-							climbing = true;
-							directionFacing = wallInDirection;
+							
+							if (!insideOneway) {
+								STATE = state.wall_cling;
+								wallClingingonto = instance_position(wallPosX, y-7, Solid);
+								climbing = true;
+								directionFacing = wallInDirection;
 					
-							wallJumped = false;
+								wallJumped = false;
+							}
 						}
 					}
 				}
@@ -452,7 +459,7 @@ if (wallInDirection != 0 && inControl) {
 				if (climbing) {
 					if (position_meeting(wallPosX, y-7, Solid)) {
 						if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
-							if (!lastWallMeeting.oneway) {
+							if (!insideOneway) {
 								STATE = state.wall_cling;
 								wallClingingonto = instance_position(wallPosX, y-7, Solid);
 							}

@@ -68,7 +68,7 @@ timeUntilJump = 0;
 function jump_to_position(checkX, checkY) {
 
 	//Decide The Distances I need to jump for
-	var xDist = abs(x - checkX) + (bbox_right - bbox_left)*1.5; //put me in the middle of my bounding box
+	var xDist = abs(x - checkX) + 3; //put me in the middle of my bounding box
 	var yDist = abs(checkY - y) + 16; //how high i have to jump (-5 for a little buffer)
 				
 	//Decide Speed

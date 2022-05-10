@@ -137,7 +137,7 @@ if (STATE == state.ready_attack) {
 	
 		if (onGround) {
 			STATE = state.bounce;
-			timeUntilJump = abs(toJumpVspeed) * 2;
+			timeUntilJump = 30;
 			inAirFromJump = false;
 			jumpingDirection = point_to_position(target.x);
 		}

@@ -17,8 +17,6 @@ controlVSpeed = 0;
 
 airFrictionValue = 0;
 
-
-
 //Hitbox
 hitbox_create_for_list(hitboxes, x, y, 16, 16, false);
 

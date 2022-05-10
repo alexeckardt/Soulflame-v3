@@ -10,8 +10,8 @@ function keira_scarf_update(){
 	if (!instance_exists(scarf)) {
 		
 		//Don't Create if out of bounds
-		if (x > 0 && x < room_width) {
-			if (y > 0 && y < room_height) {
+		if (x >= 0 && x <= room_width) {
+			if (y >= 0 && y <= room_height) {
 				scarfId = instance_create_depth(x, y, depth - 2, oScarf); 
 				scarfId.creator = id;
 				scarf = scarfId;
