@@ -244,7 +244,17 @@ y+=moveY;
 	//Ground Collision Detection
 	var wasOnGround = onGround;
 	if (vSpeed >= 0) {
-		groundBelow = vCollideSolid;
+		groundBelow = instance_place(x, y+1+vSpeed, Solid);
+		
+		//Don't set ground below if inside a one way unless i'm on it
+		if (instance_exists(groundBelow)) {
+			if (groundBelow.oneway) {
+				if (bbox_bottom >= groundBelow.y) {
+					groundBelow = noone;
+				}
+			}
+		}
+
 		onGround = (groundBelow != noone);
 	} else {
 		
