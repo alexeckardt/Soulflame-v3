@@ -37,6 +37,7 @@ vSpeed = 0;
 mx = 0;
 noControlMx = 0;
 
+a = 12;
 
 runSpeed = 2.5;
 walkSpeed = 1.5;
@@ -102,6 +103,9 @@ wallClingVerticalJumpWallPushOffForce = 0.8
 wallJumpNotConnectedForgivenessTime = room_speed;
 wallJumpNotConnectedTimeLeft = 0; //ticks down. if was to connect to a wall, then refund
 climbAttachAnimationPlayed = false;
+
+wallClingingonto = noone;
+lastWallMeetingInstance = noone;
 
 //Friction
 doAirFriction =true;

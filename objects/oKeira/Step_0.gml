@@ -191,7 +191,7 @@ var vCollideSolid = instance_place(x, y+moveY, Solid);
 if (vCollideSolid) {
 
 	//Not Oneway
-	var underOneway = vCollideSolid.oneway && bbox_bottom >= vCollideSolid.y;
+	var underOneway = vCollideSolid.oneway && (bbox_bottom >= vCollideSolid.y);
 	if (!underOneway) {
 		
 		//Back Onto Wall
@@ -205,6 +205,7 @@ if (vCollideSolid) {
 	
 		//Slide Around Corner
 		var stopVspeed = true;
+		
 		if (moveY < -1) {
 			if (!place_meeting(x+slideCornerRange+controlHSpeed, y-2+moveY, Solid)) {
 				controlHSpeed = max(controlHSpeed, 1.5);
@@ -232,14 +233,18 @@ if (vCollideSolid) {
 			controlVSpeed = 0;
 			allowHalfGravity = false;
 		}
+		
+	} else {
+		//Reset, Don't count as floor
+		vCollideSolid = noone;	
 	}
 }
 y+=moveY;
 
-		//Ground Collision Detection
+	//Ground Collision Detection
 	var wasOnGround = onGround;
 	if (vSpeed >= 0) {
-		groundBelow = instance_place(x, y+1+vSpeed, Solid);
+		groundBelow = vCollideSolid;
 		onGround = (groundBelow != noone);
 	} else {
 		
@@ -265,38 +270,69 @@ if (onGround && place_meeting(x+moveX, y, Solid)) {
 }
 
 //Horizontal Collision
-var hCollide = instance_place(x + moveX, y, Solid);
-if (hCollide != noone) {
+var currentHCollide = instance_place(x + moveX, y, Solid)
+var actualHCollide = noone;
+if (currentHCollide != noone) {
 	
 	var sigMoveX = sign(moveX);
+	var hbbox_width = (bbox_right - bbox_left) div 2 + 0.5;
+
+	//Back Onto Wall
+	var freeSpot = true;
+	repeat (ceil(abs(moveX/collisionPercision))) {
+			
+		//Check If Free Location
+		freeSpot = !place_meeting(x+sign(moveX)*collisionPercision, y, currentHCollide);
 	
-	//If One way, Ignore
-	if (!hCollide.oneway) {
-		
-		//Back Onto Wall
-		repeat (ceil(abs(moveX/collisionPercision))) {
-			if (!place_meeting(x+sign(moveX)*collisionPercision, y, Solid)) {
-				x += sign(moveX)*collisionPercision;
-			} else {
-				break;	
+		//If I am a oneway, check for some other solid directly next to me & compare
+		//If that is solid, don't let me int
+		if (currentHCollide.oneway) {
+
+			//Get the wall I am guarrenteed to be collding with
+			var hCollider2 = instance_position(x+sign(moveX)*hbbox_width, y, Solid);
+			
+			//Check If Other wall is solid. If so, stop.
+			if (instance_exists(hCollider2)) {
+				if (!hCollider2.oneway) {
+					freeSpot = false;
+					actualHCollide = hCollider2;
+					break;
+				}
 			}
+			
+			//Otherwise; Treat as Empty
+			freeSpot = true;
 		}
-	
-		//Collision?
-		if (place_meeting(x + sigMoveX, y, Solid)) {
-			//Impact Splat
-			squishX = -clamp((abs(moveX)-2)/4, 0, 0.5);
-	
-			//Set Wall Direction
-			lastWallInDirection = wallInDirection;
-			wallInDirection = sigMoveX;
-	
-			//Reset Movement Vals
-			moveX = 0;
-			hSpeed = 0;
-			controlHSpeed = 0;
+				
+		//
+		//Move Partial
+		if (freeSpot) {
+			x += sign(moveX)*collisionPercision;
+		} else {
+			actualHCollide = currentHCollide;
+			break;	
 		}
-	}		
+	}
+	
+	//Collision Happened?
+	if (!freeSpot) {
+		
+		//Impact Splat
+		squishX = -clamp((abs(moveX)-2)/4, 0, 0.5);
+	
+		//Set Wall Direction
+		lastWallInDirection = wallInDirection;
+		wallInDirection = sigMoveX;
+		
+		//Reset
+		hSpeed = 0;
+		controlHSpeed = 0;
+	}	
+	
+	//
+	//Don't Duplicate Movement
+	moveX = 0;
+	
 }
 x += moveX;
 
@@ -339,91 +375,103 @@ if (wallInDirection != 0 && inControl) {
 
 	//Remeber Wall
 	lastWallInDirection = wallInDirection;
-	lastWallMeeting = instance_place(x + wallInDirection, y, Solid)
+	lastWallMeetingInstance = (actualHCollide != noone) ? actualHCollide : lastWallMeetingInstance;
+	lastWallMeeting = instance_place(x + wallInDirection, y, lastWallMeetingInstance); //save even if no longer doing h collision
 
 	//Check if techinically climbing
 	var climbing = (STATE == state.climb || STATE == state.wall_cling);
 	var wallPosX = x + wallInDirection*8;
 	
 	//Switch To Climb State
-	if (!onGround && !climbing) {
+	if (instance_exists(lastWallMeeting)) {
 		
-		//Only switch to climbing if not being "used" by player
-		if (STATE == state.base) {
+		if (!onGround && !climbing) {
+		
+			if (!lastWallMeeting.oneway) {
+		
+				//Only switch to climbing if not being "used" by player
+				if (STATE == state.base) {
 			
-			//Get ydifference
-			var ydiff = lastOnFloorAtY - y;
+					//Get ydifference
+					var ydiff = lastOnFloorAtY - y;
 			
-			//Make sure It makes sense to connect to wall
-			if (ydiff > 20 || ydiff < 0 || abs(lastOnFloorAtX-x) > 32) || hasJumpedOffWallSinceOnGround { //Must be at least 2.5 tiles off the ground if ne
+					//Make sure It makes sense to connect to wall
+					if (ydiff > 20 || ydiff < 0 || abs(lastOnFloorAtX-x) > 32) || hasJumpedOffWallSinceOnGround { //Must be at least 2.5 tiles off the ground if ne
 			 
-				//Must be climbable alittle above
-				//Prvent climbable when only feet touching
-				if (position_meeting(wallPosX, y-7, Solid)) {	
-					STATE = state.climb;
-					climbing = true;
-					directionFacing = wallInDirection;
+						//Must be climbable alittle above
+						//Prvent climbable when only feet touching
+						if (position_meeting(wallPosX, y-7, Solid)) {	
+							STATE = state.climb;
+							climbing = true;
+							directionFacing = wallInDirection;
 					
-					wallJumped = false;
-				}
-			}
+							wallJumped = false;
+						}
+					}
 		
 		
-			//Just switched to climbing from not climbing; see if I'm on the edge of a tile
-			//Wall Edge Hold
-			if (climbing) {
-				if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
-					STATE = state.wall_cling;
-					climbing = true;
-					directionFacing = wallInDirection;
+					//Just switched to climbing from not climbing; see if I'm on the edge of a tile
+					//Wall Edge Hold
+					if (climbing) {
+						if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
+							STATE = state.wall_cling;
+							wallClingingonto = instance_position(wallPosX, y-7, Solid);
+							climbing = true;
+							directionFacing = wallInDirection;
 					
-					wallJumped = false;
-				}
-			}
-		}
-		//
-		//
-		if (!climbing) {
-			STATE = state.base;	
-			climbAttachAnimationPlayed = false;
-			wallJumped = false;
-		} else {
-		
-		//Enter A Climbing State; Remove Sliding Damage
-			//Set State To Recovery State
-			if (haveSlideDamage) {
-				damageObj.allowLifeDecay = true;
-				damageObj.life = -1;
-				haveSlideDamage = false;
-			}
-		}
-		
-	//Climbing
-	} else {
-		
-		if (STATE == state.climb) {
-		
-			//Wall Edge Hold
-			if (climbing) {
-				if (position_meeting(wallPosX, y-7, Solid)) {
-					if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
-						STATE = state.wall_cling;
+							wallJumped = false;
+						}
 					}
 				}
+			
+				//
+				//
+				if (!climbing) {
+					STATE = state.base;	
+					climbAttachAnimationPlayed = false;
+					wallJumped = false;
+				} else {
+		
+				//Enter A Climbing State; Remove Sliding Damage
+					//Set State To Recovery State
+					if (haveSlideDamage) {
+						damageObj.allowLifeDecay = true;
+						damageObj.life = -1;
+						haveSlideDamage = false;
+					}
+				}
+		
+			}	
+		
+		//Climbing
+		} else {
+		
+			if (STATE == state.climb) {
+		
+				//Wall Edge Hold
+				if (climbing) {
+					if (position_meeting(wallPosX, y-7, Solid)) {
+						if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
+							if (!lastWallMeeting.oneway) {
+								STATE = state.wall_cling;
+								wallClingingonto = instance_position(wallPosX, y-7, Solid);
+							}
+						}
+					}
+				}
+			
+				//Cling
+				particle_create_dust(x + lastWallInDirection*5, y-10, x + lastWallInDirection*5, y+6, -10);
+			
 			}
-			
-			//Cling
-			particle_create_dust(x + lastWallInDirection*5, y-10, x + lastWallInDirection*5, y+6, -10);
-			
 		}
-	}
 
+		//Reset Tracking Of Time
+		if (climbing) {
+			timeNotClimbing = -1;
+		}
 	
-	//Reset Tracking Of Time
-	if (climbing) {
-		timeNotClimbing = -1;
 	}
-	
 	
 	//Reset STATE
 	if (lastWallMeeting == noone) {
@@ -435,6 +483,8 @@ if (wallInDirection != 0 && inControl) {
 			climbAttachAnimationPlayed = false;
 		}
 	}
+	
+	
 } else {
 
 	//Allow For Wall Jump, even if Iturned away before I connected
@@ -446,6 +496,15 @@ if (wallInDirection != 0 && inControl) {
 			wallJumpNotConnectedTimeLeft = wallJumpNotConnectedForgivenessTime;		
 			lastWallMeeting = v;
 			wallInDirection = -directionFacing;
+		}
+	}
+	
+	//
+	//Stop clinging if I get pushed off corner (error case)
+	if (STATE == state.wall_cling) {	
+		if (!place_meeting(x + wallInDirection*2, y, wallClingingonto)) {
+			STATE = state.base;
+			wallClingingonto = noone;
 		}
 	}
 	
@@ -476,8 +535,15 @@ if (jumpTicks > 0) {
 	var wallClinging = (STATE == state.wall_cling);
 	var climbingCheck = !wallJumped && (STATE == state.climb || wallClinging || timeNotClimbing < wallClimbCoyoteeTime);
 	
-	var wasOnWall = place_meeting(x - mx*4, y, Solid);
-	var willBeOnWall = place_meeting(x + sign(controlHSpeed)*2, y, Solid) && !climbingCheck;
+	var pastWall = instance_place(x - mx*4, y, Solid);
+	var futureWall = instance_place(x + sign(controlHSpeed)*2, y, Solid);
+	
+	var wasOnWall = pastWall != noone;
+	var willBeOnWall = futureWall != noone && !climbingCheck;
+
+		//Dpn't Jump off one way walls
+		if (wasOnWall) {wasOnWall = !pastWall.oneway}
+		if (willBeOnWall) {willBeOnWall = !futureWall.oneway}
 
 	//Coyottee Time AND Wait for until on ground.
 	var walkedOffPlatform = (y - lastOnFloorAtY > 0)
@@ -553,14 +619,17 @@ if (jumpTicks > 0) {
 				squishX = -squishOffset*1.3;
 				squishY = squishOffset*1.25;
 				
-				directionFacing = sign(controlHSpeed);
+				var newd = sign(controlHSpeed);
+				directionFacing = newd != 0 ? newd : directionFacing;
 			
 				//Cannot Turn Around For A Short Amount of Time
 				airFrictionMultiplierLerp = 0.3;
-				
 				hasJumpedOffWallSinceOnGround = true;
 				
 				particle_create_dust(x+d*5, y-4, x+d*5, y+4, 8);
+				
+				//Forget Wall
+				wallClingingonto = noone;
 				
 			}
 		
@@ -581,6 +650,8 @@ if (jumpTicks > 0) {
 				wallInDirection = 0; //Resrt wall checks
 				
 				particle_create_dust(x+wallInDirection*5, y-4, x+wallInDirection*5, y+4, 8);
+				
+				wallClingingonto = noone;
 		
 			}
 		}
