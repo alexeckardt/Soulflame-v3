@@ -184,7 +184,14 @@ if (place_meeting(x, y+1, Solid) && !place_meeting(x+moveX, y+1, Solid)) {
 	}
 }
 
+
+//Setup Collision
 var collisionPercision = 1/100;
+
+//Deactivate All One ways that are above my feet
+var top = 32;
+instance_deactivate_object(OneWaySolid);
+instance_activate_region(x - 30, bbox_bottom+15, 60, top, true);
 
 //Vertical Collision
 var vCollideSolid = instance_place(x, y+moveY, Solid);
@@ -282,50 +289,23 @@ if (onGround && place_meeting(x+moveX, y, Solid)) {
 //Horizontal Collision
 var currentHCollide = instance_place(x + moveX, y, Solid)
 var actualHCollide = noone;
-var insideOneway = false;
 if (currentHCollide != noone) {
-	
-	var sigMoveX = sign(moveX);
-	var hbbox_width = (bbox_right - bbox_left) div 2;
 
 	//Back Onto Wall
 	var freeSpot = true;
 	repeat (ceil(abs(moveX/collisionPercision))) {
 			
-		//Check If Free Location
-		freeSpot = !place_meeting(x+sign(moveX)*collisionPercision, y, currentHCollide);
-	
-		//If I am a oneway, check for some other solid directly next to me & compare
-		//If that is solid, don't let me int
-		if (currentHCollide.oneway) {
-
-			insideOneway = true;
-
-			//Get the wall I am guarrenteed to be collding with
-			var checkXdist = (directionFacing == 1) ? hbbox_width : hbbox_width + 2; //for the life of me i can't figure out why <-- bad botch
-			var hCollider2 = instance_position(floor(x)+sign(moveX)*(checkXdist), y, Solid);
-			
-			//Check If Other wall is solid. If so, stop.
-			if (instance_exists(hCollider2)) {
-				if (!hCollider2.oneway) {
-					freeSpot = false;
-					actualHCollide = hCollider2;
-					break;
-				}
+		//Back Onto Wall
+		repeat (ceil(abs(moveX/collisionPercision))) {
+			if (!place_meeting(x+sign(moveX)*collisionPercision, y, Solid)) {
+				x += sign(moveX)*collisionPercision;
+			} else {
+				freeSpot = false;
+				actualHCollide = instance_place(x+sign(moveX)*collisionPercision, y, Solid);
+				break;	
 			}
-			
-			//Otherwise; Treat as Empty
-			freeSpot = true;
 		}
-				
-		//
-		//Move Partial
-		if (freeSpot) {
-			x += sign(moveX)*collisionPercision;
-		} else {
-			actualHCollide = currentHCollide;
-			break;	
-		}
+		
 	}
 	
 	//Collision Happened?
@@ -336,7 +316,7 @@ if (currentHCollide != noone) {
 	
 		//Set Wall Direction
 		lastWallInDirection = wallInDirection;
-		wallInDirection = sigMoveX;
+		wallInDirection = sign(moveX);
 		
 		//Reset
 		hSpeed = 0;
@@ -349,7 +329,6 @@ if (currentHCollide != noone) {
 	
 }
 x += moveX;
-
 clamp(x, 0, room_width);
 
 //Land Detection
@@ -429,14 +408,12 @@ if (wallInDirection != 0 && inControl) {
 					if (climbing) {
 						if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
 							
-							if (!insideOneway) {
-								STATE = state.wall_cling;
-								wallClingingonto = instance_position(wallPosX, y-7, Solid);
-								climbing = true;
-								directionFacing = wallInDirection;
+							STATE = state.wall_cling;
+							wallClingingonto = instance_position(wallPosX, y-7, Solid);
+							climbing = true;
+							directionFacing = wallInDirection;
 					
-								wallJumped = false;
-							}
+							wallJumped = false;
 						}
 					}
 				}
@@ -469,10 +446,8 @@ if (wallInDirection != 0 && inControl) {
 				if (climbing) {
 					if (position_meeting(wallPosX, y-7, Solid)) {
 						if (!position_meeting(wallPosX, y-12, Solid) || !position_meeting(wallPosX, y-14, Solid)) { //no solid at head
-							if (!insideOneway) {
-								STATE = state.wall_cling;
-								wallClingingonto = instance_position(wallPosX, y-7, Solid);
-							}
+							STATE = state.wall_cling;
+							wallClingingonto = instance_position(wallPosX, y-7, Solid);
 						}
 					}
 				}

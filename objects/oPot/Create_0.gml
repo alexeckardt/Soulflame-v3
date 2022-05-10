@@ -1,4 +1,4 @@
-/// @description 
+ /// @description 
 image_index = irandom(image_number);
 image_speed = 0;
 
@@ -10,18 +10,7 @@ potPartTypeSpr = sHumanPotFragments;
 checkedAlreadyDestroyed = false;
 
 //name
-var roomname = string(room_get_name(room));
-var potcreatedcount = 0;
-
-//Check how many names have been created
-with (oPot) {
-	if (variable_instance_exists(id, "storename")) {
-		potcreatedcount++;
-	}
-}
-
-//Create
-storename = roomname + ".pot." + string(potcreatedcount);
+storename = game_persistence_create_name_room_specific("pot");
 
 //Change Per Type
 minPlat = 1;

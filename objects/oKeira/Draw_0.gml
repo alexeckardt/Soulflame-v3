@@ -12,8 +12,6 @@ var b = (inControl || !Game.showDebugOverlay) ? c_white : c_red;
 //Scarf Draw Before Any Shaders / Effects
 keira_scarf_surf_draw();
 
-
-
 //Invulnerable Ticks Alpha
 if (invulnerableTicks > 0 && !dead) {
 	var fakealpha = sin(current_time/30)/2 + 0.5;

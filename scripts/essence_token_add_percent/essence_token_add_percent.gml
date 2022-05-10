@@ -13,7 +13,8 @@ function essence_token_add_percent(_alignment, _integerPercent) {
 	var temporaryTokenCount = 0; //If any found marked deleted, allow me to add another token PAST the count.
 	
 	//Mutate Current List
-	for (var i = 0; i < Player.essenceTokensHolding; i++) {
+	var c = ds_list_size( Player.essenceTokensHolding );
+	for (var i = 0; i < c; i++) {
 				
 		//Read Token
 		var token = list[| i];
@@ -61,6 +62,7 @@ function essence_token_add_percent(_alignment, _integerPercent) {
 			
 			//Counter Increase
 			Player.essenceTokensHolding++;
+			c++;
 			
 		//No More Space;; Exit
 		} else {
