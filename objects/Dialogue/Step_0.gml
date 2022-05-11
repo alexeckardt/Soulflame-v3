@@ -70,6 +70,7 @@ if (!watingForSetup) {
 				sectionPart++;				
 				playerAnsweringHoveringOver = -1;
 				
+				
 				if (sectionPart > array_length(DialogueTextInfo)-1) {
 					switchedSectionPart = false;
 					sectionComplete = true;
@@ -83,7 +84,7 @@ if (!watingForSetup) {
 	//
 	//Set Text On Update
 	if (switchedSectionPart) {
-	
+		
 		var info = DialogueTextInfo[sectionPart];
 		var text = info[0];
 		var characterInfo = info[1];
@@ -94,27 +95,36 @@ if (!watingForSetup) {
 		//
 		//Set character Info
 		//
-		var characterTalkingPosition = real(characterInfo[0]);
-		if (characterTalkingPosition != -1) {
+		if (!hasCharacters) {
 			
-			var characterTalkingId = characterOrder[characterTalkingPosition]
-			characterTalking = characters[? characterTalkingId];
-			
-			//Emotion
-			if (array_length(characterInfo) > 1) {
-				characterEmotion = characterInfo[1];
-			} else {
-				characterEmotion = 0;	
-			}
-		
-			//Update Sprite
-			characterTalking.sprite_index = character_get_sprite(characterTalkingId, characterEmotion);
-
-		} else {
-
 			//Noone Talking
 			characterTalking = -1;
+			
+		} else {
+		
+			var characterTalkingPosition = real(characterInfo[0]);
+			if (characterTalkingPosition == -1) {
+				
+				//Noone Talking
+				characterTalking = -1;
+			
+			} else {
+				
+				//Someone Talking
+				var characterTalkingId = characterOrder[characterTalkingPosition]
+				characterTalking = characters[? characterTalkingId];
+			
+				//Emotion
+				if (array_length(characterInfo) > 1) {
+					characterEmotion = characterInfo[1];
+				} else {
+					characterEmotion = 0;	
+				}
+		
+				//Update Sprite
+				characterTalking.sprite_index = character_get_sprite(characterTalkingId, characterEmotion);
 
+			} 
 		}
 		
 		//

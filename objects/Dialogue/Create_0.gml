@@ -32,6 +32,7 @@ characters = ds_map_create();
 characterOrder = []
 characterCount = 0;
 leftGroupSize = 0;
+hasCharacters = false;
 
 //Answering
 askingQuestion = false;

@@ -16,12 +16,9 @@ function cutscene_dialouge_base(textSection, orderedCharacterArray, allLeftBefor
 	
 		//Update
 		myDialogue.DialogueTextInfo = dialogue_get_section(textSection);
-		myDialogue.characterCount = array_length(orderedCharacterArray);
-		myDialogue.characterOrder = orderedCharacterArray;
 		myDialogue.display = true;
 		myDialogue.sectionComplete = false;
 		myDialogue.hideOnFinish = hideOnFinish;
-		myDialogue.leftGroupSize = allLeftBeforeIndex;
 		myDialogue.sectionPart = 0;
 		myDialogue.switchedSectionPart = true;
 		

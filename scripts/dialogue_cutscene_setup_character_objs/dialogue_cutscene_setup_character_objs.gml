@@ -9,6 +9,13 @@ function dialogue_cutscene_setup_character_objs(orderedCharacterArray, allLeftBe
 		exitFrame = true;
 	}
 	
+	//
+	//Get Counts
+	myDialogue.characterCount = array_length(orderedCharacterArray);
+	myDialogue.characterOrder = orderedCharacterArray;
+	myDialogue.leftGroupSize = allLeftBeforeIndex;
+			
+	myDialogue.hasCharacters = myDialogue.characterCount != 0;
 	
 	//
 	//Setup Characters
