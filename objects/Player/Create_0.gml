@@ -1,6 +1,5 @@
 /// @desc
 
-
 //Health
 baseMaxHealth = 5;
 currentMaxHealth = 5;

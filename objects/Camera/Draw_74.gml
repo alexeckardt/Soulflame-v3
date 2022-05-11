@@ -9,7 +9,7 @@ var cRes = 1;
 var worldCamW = Camera.view_width*cRes + 1;
 var worldCamH = Camera.view_height*cRes + 1;
 cX = Camera.realX;
-cY = Camera.realY;
+cY = Camera.realY ;
 var _cx = cX;
 var _cy = cY;
 

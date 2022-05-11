@@ -93,8 +93,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Locks",
-    "path": "folders/Sprites/Objects/Locks.yy",
+    "name": "Fragments",
+    "path": "folders/Particles/Type Objects/Fragments.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSwordLockFragments",

@@ -1,6 +1,6 @@
 // @desc
 //
-//
+//Get text from lang file and REMOVE the pointers. Only get the actual text found within them.
 //
 function lang_get_text_no_pointers(key) {
 

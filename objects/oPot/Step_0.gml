@@ -32,7 +32,7 @@ if (damageMeeting != noone) {
 		//Create Particles
 		particle_create_dust(bbox_left, bbox_bottom-5, bbox_right, bbox_bottom+5, 5);
 		if (potPartTypeSpr != undefined) {
-			particle_create_pot_frag(bbox_left, bbox_top, bbox_right, bbox_bottom+5, 8, potPartTypeSpr, partTypeKey);}
+			particle_create_frag(bbox_left, bbox_top, bbox_right, bbox_bottom+5, 8, potPartTypeSpr, partTypeKey);}
 		
 		//Light Particles
 		create_platinum_light_particles(choose(1, 1, 2, 3), bbox_left, bbox_right, bbox_top, bbox_bottom);

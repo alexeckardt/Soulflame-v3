@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Pots",
-    "path": "folders/Particles/Type Objects/Pots.yy",
+    "name": "Scripts",
+    "path": "folders/Meta/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "particle_create_pot_frag",
+  "name": "string_get_keybinds",
   "tags": [],
   "resourceType": "GMScript",
 }

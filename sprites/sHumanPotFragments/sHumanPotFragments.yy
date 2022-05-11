@@ -105,8 +105,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Pots",
-    "path": "folders/Particles/Type Objects/Pots.yy",
+    "name": "Fragments",
+    "path": "folders/Particles/Type Objects/Fragments.yy",
   },
   "resourceVersion": "1.0",
   "name": "sHumanPotFragments",

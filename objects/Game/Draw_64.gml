@@ -29,9 +29,6 @@ if (showDebugOverlay) {
 	game_draw_debug_line("M", [mouse_x, mouse_y], true);
 	game_draw_debug_line("Mr", [mouse_x-Camera.x, mouse_y-Camera.y], true);
 
-
-
-
 	//
 	//CAMERA
 	//

@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "p__ParentParticle",
-    "path": "objects/p__ParentParticle/p__ParentParticle.yy",
+    "name": "Important",
+    "path": "objects/Important/Important.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -22,15 +22,18 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Pots",
-    "path": "folders/Particles/Type Objects/Pots.yy",
+    "name": "Meta",
+    "path": "folders/Meta.yy",
   },
   "resourceVersion": "1.0",
-  "name": "p_PotFragments",
+  "name": "Instruction",
   "tags": [],
   "resourceType": "GMObject",
 }

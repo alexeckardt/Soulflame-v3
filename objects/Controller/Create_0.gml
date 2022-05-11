@@ -11,6 +11,8 @@ wasFreezeInput = false;
 
 commandInputObj = noone;
 
+iconPage = 0;
+
 function reset_keybind_vars() {
 
 	horizontalStick = 0;

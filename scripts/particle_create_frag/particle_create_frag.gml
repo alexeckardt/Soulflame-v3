@@ -2,7 +2,7 @@
 //
 //
 //
-function particle_create_pot_frag(x1, y1, x2, y2, amount, spr, key) {
+function particle_create_frag(x1, y1, x2, y2, amount, spr, key) {
 
 	if (Game.particleController.allowParticleSpawning) {
 		
@@ -14,7 +14,7 @@ function particle_create_pot_frag(x1, y1, x2, y2, amount, spr, key) {
 		
 			//Create & Save
 			if (obj == undefined) {
-				obj = particle_type_obj_create(p_PotFragments, key);
+				obj = particle_type_obj_create(p_Fragments, key);
 			
 				//Modify The Type Based on Parameters
 				part_type_sprite(obj.part_type, spr, false, false, true);
@@ -22,9 +22,6 @@ function particle_create_pot_frag(x1, y1, x2, y2, amount, spr, key) {
 
 		//Get Type
 		var type = particle_type_obj_get_type(key);
-	
-
-	
 	
 		//
 		//Update Emitter

@@ -10,13 +10,13 @@ function command_tp(_x, _y){
 	if (_y == undefined) {
 		
 		oKeira.y = 0;
-		if (_x == "right") {	oKeira.x = room_width-16;	}
-		if (_x == "left") {	oKeira.x = 16;	} 
+		if (_x == "right") {	oKeira.x = room_width-32; oKeira.directionFacing = -1;	}
+		if (_x == "left") {	oKeira.x = 32;oKeira.directionFacing = 1; } 
 		
 		for (var testY = 0; testY < room_height; testY+=16) {
 		
-			if (!place_meeting(oKeira.x, testY, Solid)) {
-				if (place_meeting(oKeira.x, testY+16, Solid)) {
+			if (!position_meeting(oKeira.x, testY, Solid)) {
+				if (position_meeting(oKeira.x, testY+16, Solid)) {
 					oKeira.y = testY;
 					break;
 				}

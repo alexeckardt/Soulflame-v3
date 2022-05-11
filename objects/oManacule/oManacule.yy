@@ -33,8 +33,8 @@
     {"propertyId":{"name":"size","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"20","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Objs",
+    "path": "folders/Objects/Objs.yy",
   },
   "resourceVersion": "1.0",
   "name": "oManacule",

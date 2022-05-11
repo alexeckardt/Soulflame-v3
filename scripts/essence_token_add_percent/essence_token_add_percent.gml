@@ -13,7 +13,7 @@ function essence_token_add_percent(_alignment, _integerPercent) {
 	var temporaryTokenCount = 0; //If any found marked deleted, allow me to add another token PAST the count.
 	
 	//Mutate Current List
-	var c = ds_list_size( Player.essenceTokensHolding );
+	var c = ds_list_size( list );
 	for (var i = 0; i < c; i++) {
 				
 		//Read Token

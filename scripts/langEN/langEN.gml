@@ -32,15 +32,13 @@ function langEN() {
 	lang[? "menu.page.gamesettings"]              = "Game Settings";
 	lang[? "menu.page.feedback"]                  = "Feedback";
 	lang[? "menu.page.audio"]                     = "Audio";
-
 	lang[? "menu.page.back"]                      = "Back";
-	lang[? "menu.page.title"]                     = "Quit to Title";
 	lang[? "menu.page.debugsettings"]             = "Debug Settings";
 	lang[? "menu.page.statistics"]                = "Statistics";
 
 	lang[? "menu.s.resume"]                       = "Resume";
-	lang[? "menu.s.title"]                        = "Quit to Title";
 	lang[? "menu.s.resume.desc"]                  = "Closes the Pause Menu and resumes gameplay.";
+	lang[? "menu.s.title"]                        = "Quit to Title";
 
 	lang[? "menu.e.hitboxes"]                     = "Display Hitboxes";
 	lang[? "menu.e.damageBoxes"]                  = "Display Damage Boxes";
@@ -58,20 +56,26 @@ function langEN() {
 	lang[? "option.hidden"]                       = "Hidden";
 	lang[? "option.yes"]                          = "Yes";
 	lang[? "option.no"]                           = "No";
-	lang[? "option.windowed"]                     = "";
-	lang[? "option.fullscreen"]                   = "";
+	lang[? "option.windowed"]                     = "Windowed";
+	lang[? "option.fullscreen"]                   = "Fullscreen";
 	lang[? "option.skip0"]                        = "No Frame Skips (60fps)";
 	lang[? "option.skip1"]                        = "Skip Every Other Frame (30fps)";
 	lang[? "option.skip2"]                        = "Draw every third frame (20fps)";
 	lang[? "option.skip3"]                        = "Draw every fourth frame (15fps)";
 
 	lang[? "test.don't.change"]                   = [["don\'t change appostraphgies in text", "sko\' f", ]];
+
 	lang[? "flower.name.0"]                       = "Ruby Star Plant";
+
 	lang[? "status.name.0"]                       = "";
+
 	lang[? "beastiary.magpie"]                    = "Magpie";
+
 	lang[? "player.name"]                         = "{te.name}Keira{te.fade}";
+
 	lang[? "char.name.hugo"]                      = "{te.name}Hugo{te.fade}";
 	lang[? "char.name.adaline"]                   = "{te.name}Adaline{te.fade}";
+
 	lang[? "te.fade"]                             = "#!0";
 	lang[? "te.typewritter"]                      = "#!1";
 	lang[? "te.wavy"]                             = "#!2";
@@ -83,11 +87,18 @@ function langEN() {
 	lang[? "te.name"]                             = "#!8";
 	lang[? "te.glyph"]                            = "#!9";
 	lang[? "te.reset"]                            = "{te.fade}";
+
 	lang[? "test"]                                = [["Hey! Checking if the text works as intended. Let\'s see what {player.name} has to say.", "2", ], ["Wow, I can talk now.", "0", ], ["{te.rainbow}AAAAAAAAAAAA sunshines and rainbows!!!!!!!!!!!!!!!!!!!!!", "1", ], ["{te.shake}I will destroy the world!!", "1", ], ["I actually hate you.", "2", ], ["what.", "1", ]];
 	lang[? "test2"]                               = [["I\'m staying away from him.", "1", ], ["He creeps me out.", "1", ], ["Same.", "0", ], ["Let\'s get out of here.", "1", ]];
 	lang[? "test3"]                               = [["Hey! Come back!", "0", ]];
 	lang[? "test4"]                               = [["...", "0", ], ["I has cookies!", "0", ]];
 	lang[? "test4.option1"]                       = "Take the bait";
 	lang[? "test4.option2"]                       = "Ignore";
+
+	lang[? "healstatue.inspect"]                  = "\"Restore\" is written prominently.";
+
+	lang[? "instruction.essence_gather"]          = "Collect Essence through damaging infected objects or enemies with physical contact.";
+	lang[? "instruction.heal"]                    = "Press ^heal to Restore health by consuming essence. ";
+
 	lang[? "empty"]                               = "";
 }
