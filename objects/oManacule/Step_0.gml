@@ -109,7 +109,7 @@ var emitOne = random(100) < 5 + travelSpeed; //5 percent per frame
 if (emitOne) {
 
 	var newspd = random_range(0.25, 0.8);
-	var life = irandom_range(1/newspd, 2/newspd)*room_speed;
+	var life = irandom_range(0.5/newspd, 1.2/newspd)*room_speed;
 			
 	var part = point_light_create(x, y, newspd, 180, 180, life, colour, 0);
 	part.doGravity = false;

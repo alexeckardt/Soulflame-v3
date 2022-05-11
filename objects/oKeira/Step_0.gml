@@ -714,17 +714,21 @@ if (!instance_exists(Cutscene) && inControl) {
 		var touchingTrigger = instance_place(x, y, oInteractTrigger);
 		if (touchingTrigger != noone) {
 	
-			//Display (Done In Player GUI)
-			showInteractString = true;
-			interactString = touchingTrigger.interactMessage;
+			if (touchingTrigger.interactable) {
+				
+				//Display (Done In Player GUI)
+				showInteractString = true;
+				interactString = touchingTrigger.interactMessage;
 		
-			//Actual Input; send to Trigger
-			if (Controller.interact) {
+				//Actual Input; send to Trigger
+				if (Controller.interact) {
 			
-				//Send to Trigger
-				touchingTrigger.activate = true;
+					//Send to Trigger
+					touchingTrigger.activate = true;
 			
+				}
 			}
+		
 		}
 	}
 }

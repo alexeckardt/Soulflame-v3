@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sCorruptedRootChaos",
-    "path": "sprites/sCorruptedRootChaos/sCorruptedRootChaos.yy",
+    "name": "sCorruptedRootOrder",
+    "path": "sprites/sCorruptedRootOrder/sCorruptedRootOrder.yy",
   },
   "solid": false,
   "visible": true,
@@ -34,7 +34,7 @@
     "path": "folders/Objects/Objs/Essence.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oCorruptedRootChaos",
+  "name": "oCorruptedRootOrder",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -6,7 +6,8 @@ function cutscene_event_end_action() {
 
 	scene++;
 	
-	if (scene > array_length(scene_info)-1) {
+	var scene_count = array_length(scene_info);
+	if (scene > scene_count-1) {
 		
 		//Finish Cutscene
 		
@@ -18,6 +19,7 @@ function cutscene_event_end_action() {
 		
 		//Destroy
 		myDialogue.toDie = true;
+		dead = true;
 		instance_destroy();
 		exit;
 	}

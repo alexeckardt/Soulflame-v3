@@ -20,7 +20,7 @@ essenceGivePerHit = 0; //decreases total per hit.
 
 //Position	
 bbox_w = (bbox_right - bbox_left) div 2;
-bbox_h = (bbox_right - bbox_left) div 2;
+bbox_h = (bbox_bottom - bbox_top) div 2;
 
 //Shake
 
@@ -28,6 +28,11 @@ onHitShakeSet = 2;
 shakeIntensity = 0;
 shakeReturnSpeed = 0.1;
 shakeAngleToo = true;
+
+myLight = noone;
+lightRetSpeed = 0.1;
+lightBaseSize = max(sprite_width, sprite_height)*7;
+lightBaseStr = 0.3;
 
 
 function drop_essence(_am) {
@@ -58,5 +63,9 @@ function drop_essence(_am) {
 		part.spdAbsolute = true;
 
 	}
+	
+	//Light Flash
+	myLight.size = lightBaseSize + 32;
+	myLight.str = lightBaseStr + 0.2;
 
 }

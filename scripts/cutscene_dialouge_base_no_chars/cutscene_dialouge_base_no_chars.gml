@@ -25,8 +25,7 @@ function cutscene_dialouge_base_no_chars(textSection, hideOnFinish) {
 		//
 		//Setup Characters
 		//Reset Chars
-		if (completelyClearCharacters) {ds_map_clear(myDialogue.characters);}
-		
+		ds_map_clear(myDialogue.characters);
 		myDialogue.characterCount = 0;
 		myDialogue.hasCharacters = false;
 			

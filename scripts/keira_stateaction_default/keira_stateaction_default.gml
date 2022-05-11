@@ -70,7 +70,7 @@ function keira_stateaction_default() {
 			index_speed = 0;
 			image_index = 0;
 			
-		}
+		} else
 		if (STATE == state.look_up) {
 		
 			sprGoal = currentLookUpSprite;

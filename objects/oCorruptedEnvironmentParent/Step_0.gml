@@ -1,9 +1,5 @@
 /// @description 
 
-
-
-
-
 var damageMeeting = instance_place(x, y, oDamage);
 
 //Check Persistance
@@ -16,7 +12,16 @@ if (!checkedAlreadyDestroyed) {
 	var get = game_persistence_check(storename);
 	if (!is_undefined(get)) {
 		instance_destroy();
+		exit;
 	}
+	
+	//I have not been destroyed
+	
+	//Create Light
+	myLight = instance_create_depth(x, y, Camera.lightDepth, oDecayableLight);
+	myLight.colour = essence_get_colour_emission(essenceType);
+	myLight.size = lightBaseSize;
+	myLight.str = lightBaseStr;
 }
 
 
@@ -50,6 +55,9 @@ if (damageMeeting != noone && Player.allowEssenceCollection) {
 				//if (potPartTypeSpr != undefined) {
 				//	particle_create_frag(bbox_left, bbox_top, bbox_right, bbox_bottom+5, 8, potPartTypeSpr, partTypeKey);}
 		
+				//Destroy Light
+				myLight.decay = true;
+		
 				//Destroy
 				instance_destroy();
 		
@@ -71,3 +79,7 @@ if (damageMeeting != noone && Player.allowEssenceCollection) {
 
 //Shake Dampen
 shakeIntensity = lerp(shakeIntensity, 0, shakeReturnSpeed*Game.delta);
+
+//Light
+myLight.size = lerp(myLight.size, lightBaseSize, lightRetSpeed*Game.delta);
+myLight.str = lerp(myLight.str, lightBaseStr, lightRetSpeed*Game.delta);

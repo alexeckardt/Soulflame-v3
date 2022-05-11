@@ -32,7 +32,7 @@
     "path": "folders/Objects/Objs/Essence/Template.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oCorruptedEnvironmentTemplate",
+  "name": "oCorruptedEnvironmentParent",
   "tags": [],
   "resourceType": "GMObject",
 }

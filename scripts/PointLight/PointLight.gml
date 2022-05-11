@@ -27,7 +27,7 @@ function PointLight(_x, _y) constructor {
 	
 	spd = 0;
 	spdWiggle = 0;
-	spdAbs = true;
+	spdAbsolute = true;
 	spdIncrease = 0;
 	
 	doGravity = false;

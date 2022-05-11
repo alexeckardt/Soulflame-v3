@@ -18,7 +18,8 @@ if (DialogueBottomFadePercent > 0.01) {
 	var c = bottomFadeColour;
 	for (var i = 0; i < bottomFadeSections; i++) {
 
-		var p = (bottomFadeSections-i) / bottomFadeSections * DialogueBottomFadePercent;
+		//Percent
+		var p = (bottomFadeSections-i) / bottomFadeSections * DialogueBottomFadePercent * hasCharacters;
 		draw_sprite_ext(sPixel, 0, 0, h-fadeSectionHeight*(i+1), w, fadeSectionHeight, 0, c, p);
 
 	}

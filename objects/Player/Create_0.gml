@@ -9,8 +9,8 @@ dead = false;
 
 heartList = ds_list_create();
 
-
 //Healing
+allowHealing = false;
 ticksToRestoreHeart = room_speed/2;
 healTicks = ticksToRestoreHeart;
 healTokenCost = 1;
