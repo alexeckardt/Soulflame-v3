@@ -30,8 +30,6 @@ function keira_decide_attack_vars_sword(_nextState, damageStruct) {
 	damageStruct.collectEssence = false;
 	damageStruct.increaseCorruption = false;
 	
-	
-	
 	//Switch Based Off Attack
 	switch (_nextState) {
 		

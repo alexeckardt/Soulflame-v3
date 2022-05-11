@@ -13,6 +13,7 @@ display_set_gui_size(guiW, guiH);
 var featherDrawAtY = featherSurfYFromBase;
 var bottomOfFeather = featherDrawAtY + featherSurfDim;
 
+if (allowEssenceCollection) {
 if (!surface_exists(featherSurf)) {
 	
 	//Surface
@@ -55,10 +56,12 @@ if (!surface_exists(featherSurf)) {
 	//shader_reset();
 	
 }
+}
 
 
 //Draw Essence Tokens
-
+if (allowEssenceCollection) {
+	
 	//Pos per UI scale
 	var lColumnX = guiW - tokenEdgeBuffer;
 	var rColumnX = lColumnX - tokenColumnSep;
@@ -87,29 +90,30 @@ if (!surface_exists(featherSurf)) {
 		}
 
 	}
-
+}
 
 //Draw Health
-	var hpY = healthDisplayY;
-	var healthBoxWidth = (baseMaxHealth + 1) * (heartWidthOffset);
+var hpY = healthDisplayY;
+var healthBoxWidth = (baseMaxHealth + 1) * (heartWidthOffset);
 
-	//Background
-	draw_sprite_ext(sHeartBackground, 0,	-1,					hpY, healthBoxWidth,	1, 0, heartBoxCol, heartBoxAlpha);
-	draw_sprite_ext(sHeartBackgroundEdge, 0,-1+healthBoxWidth,	hpY, 1,					1, 0, heartBoxCol, heartBoxAlpha);
+//Background
+draw_sprite_ext(sHeartBackground, 0,	-1,					hpY, healthBoxWidth,	1, 0, heartBoxCol, heartBoxAlpha);
+draw_sprite_ext(sHeartBackgroundEdge, 0,-1+healthBoxWidth,	hpY, 1,					1, 0, heartBoxCol, heartBoxAlpha);
 	
-	//Draw Hearts
-	for (var i = 0; i < currentMaxHealth; i++) {
+//Draw Hearts
+for (var i = 0; i < currentMaxHealth; i++) {
 		
-		//Get Heart
-		var heart = heartList[| i];
+	//Get Heart
+	var heart = heartList[| i];
 		
-		var heartxx = (i + 0.5)*heartWidthOffset;
-		var heartyy = hpY;
+	var heartxx = (i + 0.5)*heartWidthOffset;
+	var heartyy = hpY;
 		
-		heart.draw(heartxx, heartyy);
+	heart.draw(heartxx, heartyy);
 		
-	}
-	
+}
+
+
 //Weapon Wheel
 if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {
 		//Create Surface for Use

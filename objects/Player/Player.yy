@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sHealingStatue",
+    "path": "sprites/sHealingStatue/sHealingStatue.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

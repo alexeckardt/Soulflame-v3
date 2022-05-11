@@ -30,6 +30,8 @@ function keira_update_movement_sprites() {
 			keira_assign_sprite("Hurt", sKeiraHurt);
 			keira_assign_sprite("Dead", sKeiraDeathHitFrame);
 			
+			keira_assign_sprite("LookUp", sKeiraLookUp);
+			
 		
 		break;
 		case weapon.sword:
@@ -47,6 +49,8 @@ function keira_update_movement_sprites() {
 			
 			keira_assign_sprite("Hurt", sKeiraHurt);
 			keira_assign_sprite("Dead", sKeiraDeathHitFrame);
+			
+			keira_assign_sprite("LookUp", sKeiraLookUp);
 			
 	}
 

@@ -41,7 +41,6 @@ enum state {
 	combat_slide_recover,	//Recover
 	
 
-	
 	//Constant
 	
 	//Magic Moves, Require Mana and Skill Unlock
@@ -77,6 +76,7 @@ enum state {
 		ready_attack,
 		jumping,
 		land,
+		look_up,
 	
 	height, //states count, used for idle in enemies
 }

@@ -95,7 +95,8 @@ function langEN() {
 	lang[? "test4.option1"]                       = "Take the bait";
 	lang[? "test4.option2"]                       = "Ignore";
 
-	lang[? "healstatue.inspect"]                  = "\"Restore\" is written prominently.";
+	lang[? "healstatue.inspect"]                  = [["This statue has writing underneath it.", "0", ], ["Somehow, like before, you are able to read it!", "0", ], ["\"Channel the earth, restore your marks through fire\".", "0", ], ["\"Restore\" is written prominently.", "0", ]];
+	lang[? "healstatue.inspect.2"]                = [["Maybe touching it will trigger something like before...", "0", ]];
 
 	lang[? "instruction.essence_gather"]          = "Collect Essence through damaging infected objects or enemies with physical contact.";
 	lang[? "instruction.heal"]                    = "Press ^heal to Restore health by consuming essence. ";

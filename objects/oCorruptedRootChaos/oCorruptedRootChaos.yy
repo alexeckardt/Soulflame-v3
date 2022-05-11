@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "sHealingStatue",
-    "path": "sprites/sHealingStatue/sHealingStatue.yy",
+    "name": "sCorruptedRootChaos",
+    "path": "sprites/sCorruptedRootChaos/sCorruptedRootChaos.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oInteractTrigger",
-    "path": "objects/oInteractTrigger/oInteractTrigger.yy",
+    "name": "oCorruptedEnvironmentTemplate",
+    "path": "objects/oCorruptedEnvironmentTemplate/oCorruptedEnvironmentTemplate.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,16 +25,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Story",
-    "path": "folders/Objects/Story.yy",
+    "name": "Essence",
+    "path": "folders/Objects/Objs/Essence.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oHealingStatue",
+  "name": "oCorruptedRootChaos",
   "tags": [],
   "resourceType": "GMObject",
 }

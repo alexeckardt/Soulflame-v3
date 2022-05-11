@@ -43,6 +43,7 @@ tokenListBufferY = tokenRowHeight div 2;
 heartBorderBuffer = 12;
 
 //Game
+allowEssenceCollection = false; //default action
 collectBalanceEssence = false;
 
 //Scale
