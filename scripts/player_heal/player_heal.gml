@@ -58,6 +58,9 @@ function player_heal(){
 						oKeira.STATE = state.heal_exit;
 					}
 					
+					//Reccognize
+					instruction_complete("heal");
+					
 				}
 				
 				//Move To Next Attempt

@@ -1,1 +1,1 @@
-instructionTextKey =  "instruction.heal"
+instructionKey =  "heal"

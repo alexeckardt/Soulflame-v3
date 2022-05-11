@@ -1,6 +1,10 @@
 /// @description
 
-instructionTextKey = "";
+//CC
+instructionKey = "";
+
+
+//
 
 surf = -1;
 
@@ -16,3 +20,15 @@ stringToDraw = "";
 keybind_info_list = -1;
 
 viewW = -1;
+
+persistenceKey = -1; //is set
+
+//Fadein
+completed = false;
+obstructionAlpha = 0;
+
+u_threshold = shader_get_uniform(shd_ShowUnderValue, "threshold");
+
+wipeSprite = sInstructionWipeMask;
+tileWidth = 64;
+

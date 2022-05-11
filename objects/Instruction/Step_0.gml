@@ -2,7 +2,10 @@
 
 if (!createdInstructionText) {
 	
-	var text = lang_get_text(instructionTextKey);
+	//Create Key
+	persistenceKey = "instruction." + instructionKey;
+	
+	var text = lang_get_text(persistenceKey);	
 	var struct = string_prep_string_for_keybinds_draw(text);
 	
 	//Save
@@ -23,4 +26,20 @@ if (!createdInstructionText) {
 	//Don't Repeat
 	createdInstructionText = true;
 
+}
+
+
+///
+//Animate
+obstructionAlpha = lerp(obstructionAlpha, !completed, 0.1*Game.delta);
+
+//Dead after Animation Finished
+if (completed && obstructionAlpha < 0) {
+	
+	//Complete the Task
+	game_persistence_check(persistenceKey);
+	
+	//Finish
+	instance_destroy();
+	
 }
