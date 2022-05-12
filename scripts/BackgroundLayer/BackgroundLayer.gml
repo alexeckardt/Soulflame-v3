@@ -28,6 +28,8 @@ function BackgroundLayer() constructor {
 	
 	spriteWidth = 1;
 	spriteHeight = 1;
+	
+	drawObstruction = false;
 
 	static update = function() {
 	
@@ -55,7 +57,19 @@ function BackgroundLayer() constructor {
 		var camY = Camera.viewY;
 	
 		var sprYoffset = sprite_get_yoffset(sprite);
-		var yy = drawY + yoffset - camY*vParalaxAmount - camY;
+		var yy = drawY + yoffset + camY*(vParalaxAmount - 1);
+
+		if (drawObstruction) {
+		
+			//Stretch
+			draw_sprite_part_ext(sprite, index, 0, 0, 1, 1, 0, 0,
+					camW*zoom,	max(0, yy),	c_white, 1);
+					
+			draw_sprite_part_ext(sprite, index, 0, 0, 1, 1, 0, yy+spriteHeight*zoom, 
+					camW*zoom,	max(0, (camH*zoom - spriteHeight*zoom - yy)),	c_white, 1);
+			
+		}
+
 
 		//Setup
 		gpu_set_blendmode(blendMode);
@@ -63,7 +77,7 @@ function BackgroundLayer() constructor {
 			//Loop X
 			for (var i = -spriteWidth*zoom; i < (camW + spriteWidth)*zoom; i += spriteWidth*zoom) {
 
-				var xx = drawX + xoffset + i + camX*hParalaxAmount - camX;
+				var xx = drawX + xoffset + i + camX*(hParalaxAmount - 1);
 				draw_sprite_ext(sprite, index, xx, yy, zoom, zoom, 0, c_white, 1);
 
 			}	

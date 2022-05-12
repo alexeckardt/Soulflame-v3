@@ -112,6 +112,7 @@
     {"id":{"name":"sEnvForgroundGrass0","path":"sprites/sEnvForgroundGrass0/sEnvForgroundGrass0.yy",},"order":10,},
     {"id":{"name":"character_get_sprite","path":"scripts/character_get_sprite/character_get_sprite.yy",},"order":0,},
     {"id":{"name":"oEmptyEnemy","path":"objects/oEmptyEnemy/oEmptyEnemy.yy",},"order":0,},
+    {"id":{"name":"cutscene_event_set_persistence","path":"scripts/cutscene_event_set_persistence/cutscene_event_set_persistence.yy",},"order":19,},
     {"id":{"name":"menu_close_menu","path":"scripts/menu_close_menu/menu_close_menu.yy",},"order":19,},
     {"id":{"name":"sKeiraDeathOverlay","path":"sprites/sKeiraDeathOverlay/sKeiraDeathOverlay.yy",},"order":0,},
     {"id":{"name":"sKeiraLandRunning","path":"sprites/sKeiraLandRunning/sKeiraLandRunning.yy",},"order":9,},

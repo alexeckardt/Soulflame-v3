@@ -29,11 +29,7 @@
 //
 //
 
-//Init
-backColTop = c_black; 
-backColMid = c_black;
-backColBot = c_black;
-
+//Poses
 globalXoffset = locationObj.backgroundGlobalXoffset;
 globalYoffset = locationObj.backgroundGlobalYoffset;
 

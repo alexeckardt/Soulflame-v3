@@ -69,12 +69,15 @@ first_activate_scene = [
 	[cutscene_event_wait_time, 1],
 	[cutscene_event_change_variable, Player.id, "allowEssenceCollection", true],
 	[cutscene_event_change_variable, Player.id, "allowHealing", true],
-	[cutscene_event_create_instruction, "essence_gather"],
-	
 	[cutscene_event_save_game, true],
+	
 	[cutscene_event_change_variable, id, "glow", false],
 	[cutscene_event_change_variable, id, "glowbyProx", true],
 	[cutscene_event_change_variable, Player.id, "showHearts", true],
+	
+	[cutscene_event_wait_time, 3],
+	[cutscene_event_create_instruction, "essence_gather"],
+	[cutscene_event_set_persistence, persistenceId, true],
 	
 ];
 

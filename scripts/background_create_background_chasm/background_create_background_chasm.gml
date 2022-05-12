@@ -4,17 +4,22 @@
 //
 function background_create_background_chasm() {
 
-	function chasm_simple_create_layer(list, spr, ind, pamount) {
-		ds_list_insert(list, 0 ,
-				background_create_layer_struct(
+	function chasm_simple_create_layer(list, spr, ind, pamount, vpamount) {
+		
+		var newLayer = background_create_layer_struct(
 						spr, 
-						ind--, 
+						ind, 
 						0,
-						new BackgroundParalaxAmount(.5, .1, false, false, true, false),
+						new BackgroundParalaxAmount(pamount, vpamount, false, false, true, false),
 						globalXoffset, 
 						globalYoffset
-					)
-				);	
+					);
+					
+		//Draw Obstruction 
+		newLayer.drawObstruction = (ind == sprite_get_number(spr)-1)
+		
+		ds_list_insert(list, 0, newLayer);	
+				
 	}
 
 	//List Adding
@@ -25,19 +30,11 @@ function background_create_background_chasm() {
 	var spr = sBackgroundChasm;
 	var ind = sprite_get_number(spr)-1;
 	
-	//
-	//Do the Backgrounds!
-	//
-	
-	backColTop = bgr($0c0906);
-	backColMid = 0;
-	backColBot = bgr($0c0906);
-	
 	//Base Bkg
 	
-	chasm_simple_create_layer(list, spr, ind--, .5);		
-	chasm_simple_create_layer(list, spr, ind--, .6);		
-	chasm_simple_create_layer(list, spr, ind--, .8);
-	chasm_simple_create_layer(list, spr, ind--, .9);
-	chasm_simple_create_layer(list, spr, ind--, .99);
+	chasm_simple_create_layer(list, spr, ind--, .5, .6);		
+	chasm_simple_create_layer(list, spr, ind--, .6, .7);		
+	chasm_simple_create_layer(list, spr, ind--, .8, .8);
+	chasm_simple_create_layer(list, spr, ind--, .9, .9);
+	chasm_simple_create_layer(list, spr, ind--, .99, .99);
 }

@@ -38,7 +38,7 @@ obstructionAlpha = lerp(obstructionAlpha, !completed && timeLeftbeforeshow < 0, 
 if (completed && obstructionAlpha < 0.01) {
 	
 	//Complete the Task
-	game_persistence_check(persistenceKey);
+	game_persistence_set(persistenceKey, true);
 	
 	//Finish
 	instance_destroy();

@@ -22,7 +22,7 @@ function background_create_layer_struct(_sprite, _index, _index_speed, _paralaxA
 	delete _paralaxAmountStruct;
 	
 	struct.xoffset = _xoffset;
-	struct.xoffset = _yoffset;
+	struct.yoffset = _yoffset;
 	
 	//Return
 	return struct;

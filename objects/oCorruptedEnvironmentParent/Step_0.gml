@@ -88,10 +88,12 @@ myLight.str = lerp(myLight.str, lightBaseStr, lightRetSpeed*Game.delta);
 //Emit Randomly
 if (random(100) < 3) {
 
+	var sec = room_speed;
+
 	var xx = irandom_range(bbox_left-10, bbox_right+10);
 	var yy = irandom_range(bbox_top, bbox_bottom);
 	var spd = random_range(0, 0.2);
-	var life = irandom_range(126, 568);
+	var life = irandom_range(0.2*sec, 1*sec);
 			
 	var c = essence_get_colour_emission(essenceType);
 			
