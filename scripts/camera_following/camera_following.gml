@@ -77,8 +77,8 @@ function camera_following(){
 		var cY = 0;
 		
 		//Goals
-		var followX = follow.x + followOffsetX;
-		var followY = follow.y + followOffsetY;
+		var followX = follow.x + floor(followOffsetX);
+		var followY = follow.y + floor(followOffsetY);
 	
 		//NORMAL FOLLOWING
 		if (!combatCamera) {

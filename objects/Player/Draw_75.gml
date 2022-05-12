@@ -14,6 +14,7 @@ var featherDrawAtY = featherSurfYFromBase;
 var bottomOfFeather = featherDrawAtY + featherSurfDim;
 
 if (allowEssenceCollection) {
+	
 if (!surface_exists(featherSurf)) {
 	
 	//Surface
@@ -41,7 +42,7 @@ if (!surface_exists(featherSurf)) {
 	
 	//Draw On GUI
 	
-	var surfX = guiW - featherSurfDim + featherSurfXFromBase;
+	var surfX = guiW + featherSurfXFromBase - featherSurfDim*featherHideOffsetPercent;
 	
 	//Outline Shader
 	//shader_set(shdFeatherOutline);
@@ -63,7 +64,7 @@ if (!surface_exists(featherSurf)) {
 if (allowEssenceCollection) {
 	
 	//Pos per UI scale
-	var lColumnX = guiW - tokenEdgeBuffer;
+	var lColumnX = guiW - tokenEdgeBuffer + tokenColumnSep*2*(1-tokenHideOffsetPercent);
 	var rColumnX = lColumnX - tokenColumnSep;
 
 	//Loop and Draw only the allowed amount of tokens
@@ -93,7 +94,7 @@ if (allowEssenceCollection) {
 }
 
 //Draw Health
-var hpY = healthDisplayY;
+var hpY = healthDisplayY - heartsShowOffsetPercent*(healthBarHeight+healthDisplayY);
 var healthBoxWidth = (baseMaxHealth + 1) * (heartWidthOffset);
 
 //Background

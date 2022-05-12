@@ -31,10 +31,11 @@ if (!createdInstructionText) {
 
 ///
 //Animate
-obstructionAlpha = lerp(obstructionAlpha, !completed, 0.1*Game.delta);
+timeLeftbeforeshow -= Game.delta;
+obstructionAlpha = lerp(obstructionAlpha, !completed && timeLeftbeforeshow < 0, 0.1*Game.delta);
 
 //Dead after Animation Finished
-if (completed && obstructionAlpha < 0) {
+if (completed && obstructionAlpha < 0.01) {
 	
 	//Complete the Task
 	game_persistence_check(persistenceKey);

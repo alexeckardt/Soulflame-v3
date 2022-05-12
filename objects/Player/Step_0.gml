@@ -76,3 +76,9 @@ player_update_essence_tokens();
 	//Alpha (Fade out if Not same or not touching)
 	interactAlpha	= lerp(interactAlpha, showInteractString*sameString, (0.18 + (0.2*(!sameString)))*Game.deltaRatio);
 	
+//
+//
+//Show and Hide UI parts
+featherHideOffsetPercent = lerp(featherHideOffsetPercent, allowEssenceCollection, 0.1*Game.delta);
+tokenHideOffsetPercent = lerp(tokenHideOffsetPercent, allowEssenceCollection, 0.1*Game.delta);
+heartsShowOffsetPercent = lerp(heartsShowOffsetPercent, !showHearts, 0.1*Game.delta);

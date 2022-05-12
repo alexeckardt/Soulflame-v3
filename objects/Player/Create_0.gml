@@ -1,6 +1,8 @@
 /// @desc
 
 //Health
+showHearts = true;
+heartsShowOffsetPercent = 0;
 baseMaxHealth = 5;
 currentMaxHealth = 5;
 hp = 5;
@@ -8,6 +10,8 @@ maxHpAtFullCorrupt = 3;
 dead = false;
 
 heartList = ds_list_create();
+healthBarHeight = 20;
+
 
 //Healing
 allowHealing = false;
@@ -41,6 +45,7 @@ tokenColumnSep = 11;
 tokenRowHeight = 15;
 tokenListBufferY = tokenRowHeight div 2;
 heartBorderBuffer = 12;
+tokenHideOffsetPercent = 0; //shown
 
 //Game
 allowEssenceCollection = false; //default action
@@ -61,6 +66,7 @@ featherSpr = sCorruptionFeather;
 featherInd = 0;
 
 featherYoffset = 0;
+featherHideOffsetPercent = 0; //shown
 
 featherSurfXFromBase = 10;
 featherSurfYFromBase = -5;

@@ -36,9 +36,13 @@ if (instance_exists(follow)) {
 	viewY = follow.y;
 }
 
+deffollowOffsetX = 0;
+deffollowOffsetY = -8;
 
-followOffsetX = 0;
-followOffsetY = -8;
+followOffsetX = deffollowOffsetX;
+followOffsetY = deffollowOffsetY;
+
+
 
 depth = -20;
 view_surf = -1;

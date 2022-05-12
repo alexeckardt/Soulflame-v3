@@ -32,3 +32,4 @@ u_threshold = shader_get_uniform(shd_ShowUnderValue, "threshold");
 wipeSprite = sInstructionWipeMask;
 tileWidth = 64;
 
+timeLeftbeforeshow = -1; //set on creation. timer before the instruction shows

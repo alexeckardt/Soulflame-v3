@@ -1,7 +1,7 @@
 /// @description
 
 //Don't Draw pre maturley
-if (createdInstructionText) {
+if (createdInstructionText && timeLeftbeforeshow < 0) {
 
 	//Create Surface
 	if (!surface_exists(surf)) {
@@ -12,7 +12,6 @@ if (createdInstructionText) {
 	
 	surface_set_target(surf);
 	//------------------------------
-
 
 		var w = display_get_gui_width();
 		var h = display_get_gui_height();
@@ -27,7 +26,7 @@ if (createdInstructionText) {
 
 		//String
 		var orgStr = stringToDraw;
-		var stringY = h/2 + 20;
+		var stringY = h/2 + 32;
 		var warpString = string_wrap(orgStr, w/2);
 	
 		//Center String

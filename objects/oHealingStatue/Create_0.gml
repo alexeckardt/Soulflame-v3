@@ -35,6 +35,7 @@ first_activate_scene = [
 	//Position keira
 	//
 	[cutscene_event_change_variable, id, "interactable", false],
+	[cutscene_event_change_variable, Player.id, "showHearts", false],
 	
 	[cutscene_event_wait_time, 0.25],
 	[cutscene_event_move_entity_to_position, k, x-24, false, 2],
@@ -60,6 +61,7 @@ first_activate_scene = [
 	//Activate Stone
 	[cutscene_event_change_variable, id, "glow", true],
 	[cutscene_event_wait_time, 1],
+	[cutscene_event_change_variable, Player.id, "hp", 4],
 	
 	//Cool Effects to show keira get's something in memory
 
@@ -71,7 +73,8 @@ first_activate_scene = [
 	
 	[cutscene_event_save_game, true],
 	[cutscene_event_change_variable, id, "glow", false],
-	[cutscene_event_change_variable, id, "glowbyProx", true]
+	[cutscene_event_change_variable, id, "glowbyProx", true],
+	[cutscene_event_change_variable, Player.id, "showHearts", true],
 	
 ];
 

@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "sCorruptedRootChaos",
-    "path": "sprites/sCorruptedRootChaos/sCorruptedRootChaos.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "oCorruptedEnvironmentParent",
-    "path": "objects/oCorruptedEnvironmentParent/oCorruptedEnvironmentParent.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -23,17 +17,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Essence",
-    "path": "folders/Objects/Objs/Essence.yy",
+    "name": "Meta",
+    "path": "folders/Meta.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oCorruptedRootChaos",
+  "name": "Background",
   "tags": [],
   "resourceType": "GMObject",
 }

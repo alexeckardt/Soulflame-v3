@@ -56,7 +56,7 @@ function drop_essence(_am) {
 			
 		var c = essence_get_colour_emission(essenceType);
 			
-		var part = point_light_create(xx, yy, spd, 90, 0, life, c, 0);
+		var part = point_light_create(xx, yy, spd, 90, 20, life, c, 0);
 		part.doGravity = false;
 			
 		part.spdIncrease = random_range(0, 0.03);
