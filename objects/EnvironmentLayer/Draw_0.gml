@@ -3,7 +3,7 @@
 
 //Choose Surf
 //(Dynamic In case it changed)
-surfDrawingOn = (paralaxAmount >= 0) ? Camera.frgSurf :  Camera.bkgSurf;
+surfDrawingOn = (paralaxAmount >= 0) ? Camera.frgSurf : Camera.bkgSurf;
 var surfaceWidth = 0
 var surfaceHeight = 0;
 

@@ -17,6 +17,10 @@ delta_scale = 60;
 deltaRatio = 0;
 idealDelta = 1/delta_scale * 1000000;
 
+//
+locationName = "";
+changedLocationInfo = false;
+
 deltatracking = 0;
 largestDelta = 0
 

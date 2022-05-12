@@ -26,12 +26,12 @@ if (createdInstructionText && timeLeftbeforeshow < 0) {
 
 		//String
 		var orgStr = stringToDraw;
-		var stringY = h/2 + 32;
-		var warpString = string_wrap(orgStr, w/2);
+		var warpString = string_wrap(orgStr, w * .9);
 	
 		//Center String
 		var xposToDraw = (w - string_width(warpString)) div 2;
-	
+		var stringY = h/2 - 32 - string_height(warpString);
+			
 		//Draw String
 		draw_text_with_keybinds(xposToDraw, stringY, stringToDraw, keybind_info_list, c_white, 1);
 	

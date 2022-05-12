@@ -83,3 +83,22 @@ shakeIntensity = lerp(shakeIntensity, 0, shakeReturnSpeed*Game.delta);
 //Light
 myLight.size = lerp(myLight.size, lightBaseSize, lightRetSpeed*Game.delta);
 myLight.str = lerp(myLight.str, lightBaseStr, lightRetSpeed*Game.delta);
+
+//
+//Emit Randomly
+if (random(100) < 3) {
+
+	var xx = irandom_range(bbox_left-10, bbox_right+10);
+	var yy = irandom_range(bbox_top, bbox_bottom);
+	var spd = random_range(0, 0.2);
+	var life = irandom_range(126, 568);
+			
+	var c = essence_get_colour_emission(essenceType);
+			
+	var part = point_light_create(xx, yy, spd, 90, 20, life, c, 0);
+	part.doGravity = false;
+			
+	part.spdIncrease = random_range(0, 0.03);
+	part.spdAbsolute = true;
+
+}
