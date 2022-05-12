@@ -408,6 +408,7 @@
     {"id":{"name":"langEN","path":"scripts/langEN/langEN.yy",},"order":0,},
     {"id":{"name":"sBlackoutSolidTile","path":"sprites/sBlackoutSolidTile/sBlackoutSolidTile.yy",},"order":12,},
     {"id":{"name":"bgr","path":"scripts/bgr/bgr.yy",},"order":1,},
+    {"id":{"name":"sWater","path":"sprites/sWater/sWater.yy",},"order":30,},
     {"id":{"name":"sHeartCorruptedOrder","path":"sprites/sHeartCorruptedOrder/sHeartCorruptedOrder.yy",},"order":4,},
     {"id":{"name":"essence_get_colour","path":"scripts/essence_get_colour/essence_get_colour.yy",},"order":15,},
     {"id":{"name":"cutscene_check","path":"scripts/cutscene_check/cutscene_check.yy",},"order":5,},
@@ -469,6 +470,7 @@
     {"id":{"name":"p_Fragments","path":"objects/p_Fragments/p_Fragments.yy",},"order":1,},
     {"id":{"name":"oBunfet","path":"objects/oBunfet/oBunfet.yy",},"order":1,},
     {"id":{"name":"keira_stateaction_attack_slide_recover_equivalant","path":"scripts/keira_stateaction_attack_slide_recover_equivalant/keira_stateaction_attack_slide_recover_equivalant.yy",},"order":3,},
+    {"id":{"name":"oWater","path":"objects/oWater/oWater.yy",},"order":0,},
     {"id":{"name":"sTrigger","path":"sprites/sTrigger/sTrigger.yy",},"order":7,},
     {"id":{"name":"sSwordLockVines","path":"sprites/sSwordLockVines/sSwordLockVines.yy",},"order":0,},
     {"id":{"name":"oConcreteGround","path":"objects/oConcreteGround/oConcreteGround.yy",},"order":1,},
@@ -619,6 +621,7 @@
     {"folderPath":"folders/Objects/Objs/Essence/Template.yy","order":0,"resourceVersion":"1.0","name":"Template","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Meta/BackgroundScripts.yy","order":12,"resourceVersion":"1.0","name":"BackgroundScripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Bkg.yy","order":6,"resourceVersion":"1.0","name":"Bkg","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Water.yy","order":32,"resourceVersion":"1.0","name":"Water","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

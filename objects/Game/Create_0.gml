@@ -9,6 +9,7 @@ gameSeed = irandom(100);
 //Save Tracking
 persistence = ds_map_create();
 timeInGame = 0;
+inGameTicks = 0;
 
 //Game Keep Track Of
 delta = -1; //For InGame

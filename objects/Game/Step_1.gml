@@ -66,6 +66,7 @@ if (showDebugOverlay) {
 
 //Keep Track Of Time
 timeInGame += indepedentDelta;
+inGameTicks += delta;
 
 //Settings
 show_debug_overlay(showDebugOverlay);
