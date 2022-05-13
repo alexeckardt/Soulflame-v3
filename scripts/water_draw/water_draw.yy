@@ -1,11 +1,12 @@
 {
-  "type": 1,
+  "isDnD": false,
+  "isCompatibility": false,
   "parent": {
     "name": "Water",
     "path": "folders/Objects/Water.yy",
   },
   "resourceVersion": "1.0",
-  "name": "shd_WaterShape",
+  "name": "water_draw",
   "tags": [],
-  "resourceType": "GMShader",
+  "resourceType": "GMScript",
 }

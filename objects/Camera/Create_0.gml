@@ -126,3 +126,10 @@ MaxLights = 200; //Try To Keep Under
 drawLighting = true;
 
 fastLighting = false;
+
+//water
+water_displacement_sampler = shader_get_sampler_index(shd_WaterDistort, "displacementMap");
+water_time_uniform = shader_get_uniform(shd_WaterDistort, "time");
+
+waterDistortSurf = -1;
+waterCameraDistortOffsetScale = 0;

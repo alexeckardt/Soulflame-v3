@@ -3,83 +3,6 @@
 //Size
 display_set_gui_size(view_width*zoom, view_height*zoom);
 
-//Lighting Imports
-var cZoom = Camera.zoom;
-var cRes = 1;
-var worldCamW = Camera.view_width*cRes + 1;
-var worldCamH = Camera.view_height*cRes + 1;
-cX = Camera.realX;
-cY = Camera.realY ;
-var _cx = cX;
-var _cy = cY;
-
-//draw_surface(view_surf, 0, 0);
-
-//---------------------------------------------
-//
-// GAME LAYER CREATE
-//
-//------------------------------------------------
-
-//
-//Create Surfaces
-if (!surface_exists(lightLayerSurf)) { lightLayerSurf = surface_create(worldCamW,worldCamH); }
-
-
-//We draw with Fake App Surf because we combine other layers that should
-//Be affected with lighting
-var _fakeAppSurf = view_surf;
-
-//-----------------------------------
-//
-// LIGHTING
-//
-//-----------------------------------
-
-//Keep Track
-
-//Set
-surface_set_target(lightLayerSurf);
-
-if (drawLighting) {
-
-	//Prep
-	draw_clear_alpha(shadowColour, 1);
-	
-	if (surface_exists(_fakeAppSurf)) {
-		draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1-maxDarknessOpacity);
-		//draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, shadowColour, maxDarknessOpacity);
-	
-		//Setup Light Drawing
-		gpu_set_blendmode(bm_add);
-		shader_set(shd_light);
-
-			//Draw Each Light
-			renderedLights = camera_draw_lights(cRes, _cx, _cy, _fakeAppSurf);
-	
-			shader_reset();
-	
-			//Cut Out No Alphas
-			if (fastLighting) gpu_set_blendmode_ext_sepalpha(bm_dest_colour, bm_zero, bm_inv_src_alpha, bm_src_alpha);
-			else gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_zero);
-			draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
-			gpu_set_blendmode(bm_normal);
-	}
-	
-} else {
-	
-	//
-	draw_clear_alpha(0, 0);
-	
-	if (surface_exists(_fakeAppSurf)) {
-		draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
-	}
-	
-}
-	
-surface_reset_target();
-
-
 //
 //
 // DRAW TO SCREEN
@@ -126,7 +49,7 @@ if (surface_exists(frgSurf)) {
 		surface_reset_target();
 }
 
-
+//
 //Clear Application Surface
 if (surface_exists(view_surf)) {
 	surface_set_target(view_surf);
@@ -134,6 +57,13 @@ if (surface_exists(view_surf)) {
 	surface_reset_target();
 }
 
+/*
+if (surface_exists(lightLayerSurf)) {
+	surface_set_target(lightLayerSurf);
+		draw_clear_alpha(0, 0);
+	surface_reset_target();
+}
+*/
 
 /*
 draw_clear(c_red);

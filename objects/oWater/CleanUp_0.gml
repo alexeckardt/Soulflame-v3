@@ -31,3 +31,5 @@ if (ds_exists(links, ds_type_list)) {
 
 delete pointmassLeft;
 delete pointmassRight;
+
+cleanup_surface(waterSurf);
