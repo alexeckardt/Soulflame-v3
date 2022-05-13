@@ -13,7 +13,7 @@ cY = Camera.realY ;
 var _cx = cX;
 var _cy = cY;
 
-draw_surface(view_surf, 0, 0);
+//draw_surface(view_surf, 0, 0);
 
 //---------------------------------------------
 //

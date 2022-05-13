@@ -22,7 +22,7 @@ restingDistances = 4;
 surfaceTension = 1/10;
 
 hSpeedCoefficient = 0.8;
-vSpeedCoefficient = 0.5;
+vSpeedCoefficient = 0.7;
 
 basicWaveAmplitude = 0.15; //remeber that the drag forces it back
 wavePeriodMultiplier = 0.25;
@@ -63,3 +63,16 @@ points[| 0].doCollision = false;
 //Connect Points
 add_link( points[| 0], pointmassLeft, 1);
 add_link( pointmassRight,points[| pointCount-1], 1);
+
+//
+//
+//Vertexes
+vertex_format_begin();
+vertex_format_add_position();
+vf = vertex_format_end();
+vb = vertex_create_buffer();
+wroteToBuffer = false;
+
+//Water Surf
+waterSurf = -1;
+waterSurfaceEdgeBuffer = 32;

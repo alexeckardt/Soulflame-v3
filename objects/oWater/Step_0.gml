@@ -20,8 +20,14 @@ for (var i = 0; i < pointCount; i++) {
 			//Collision Force
 			var entityTouching = instance_position(p.xx, p.yy, Entity);
 			if (entityTouching != noone) {
-				hSpeed += entityTouching.hSpeed * hSpeedCoefficient * time;
+				
+				var dirFromEntity = point_direction(entityTouching.x, entityTouching.y, p.xx, p.yy);
+				
 				vSpeed += entityTouching.vSpeed * vSpeedCoefficient * time;
+				hSpeed += entityTouching.hSpeed * hSpeedCoefficient * time;
+				
+				hSpeed += lengthdir_x(entityTouching.vSpeed/3, dirFromEntity);
+				
 			}
 			
 			
@@ -88,3 +94,25 @@ for (var j = 0; j < iterations; j++) { //stableize
 			
 	}
 }
+
+//
+//Add to Vertex Buffer
+
+//Get positions
+var ybottom = y + sprite_height;
+
+//Add Positions
+vertex_begin(vb, vf);
+	for (var i = 0; i < pointCount; i++) {
+		var p = points[| i];
+
+		vertex_position(vb, p.xx, p.yy);
+		vertex_position(vb, p.xx, ybottom);
+	
+	}
+	
+	vertex_position(vb, x+sprite_width, y);
+	vertex_position(vb, x+sprite_width, ybottom);
+			
+vertex_end(vb);
+wroteToBuffer = true;
