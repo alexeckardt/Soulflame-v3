@@ -1,13 +1,22 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-uniform sampler2D displacementMap;
 uniform float time;
+uniform float waveFreqY;
+uniform float waveAmplitude;
+
+uniform vec4 myDims; //(x, y, w, h) == (x, y, z, a)
+uniform vec4 camDims; //(x, y, w, h) == (x, y, z, a)
+
 
 void main() {
-    vec2 time_offset = vec2(time, -time / 2.0) / 4.0;
-    vec4 displace = texture2D(displacementMap, v_vTexcoord + time_offset);
-    float brightness = ((displace.r + displace.g + displace.b) / 3.0) - 0.5;
-    vec2 offset = vec2(brightness, 0.0) / 32.0;
+	
+	//Calculate My Position based on my pos on the camera
+	vec2 onScreenCoord = vec2((myDims.x - camDims.x) / camDims.z, (myDims.y - camDims.y) / camDims.a);
+	
+	float xx = sin(-time + (v_vTexcoord.y-onScreenCoord.y)*waveFreqY);
+	float displaceXOffset = xx*xx * waveAmplitude;
+	
+    vec2 offset = vec2(displaceXOffset, 0.0);
     gl_FragColor = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord + offset);
 }

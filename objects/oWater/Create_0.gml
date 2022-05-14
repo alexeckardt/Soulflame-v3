@@ -27,6 +27,15 @@ vSpeedCoefficient = 0.7;
 basicWaveAmplitude = 0.15; //remeber that the drag forces it back
 wavePeriodMultiplier = 0.25;
 
+visualWaveSpeed = 1/50;
+visualWaveFreq = 20 * (sprite_height / 64); //consistant through testing
+visualWaveAmp = 1/132;
+
+blendcol = bgr($47c6de);
+
+topRestCol = bgr($2a5e56);
+topTurbulantCol = bgr($bdefe7);
+
 var waterSurfaceSegments = sprite_width div  restingDistances;
 
 // Since this our fabric is basically a grid of points, we have two loops

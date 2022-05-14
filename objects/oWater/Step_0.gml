@@ -28,6 +28,9 @@ for (var i = 0; i < pointCount; i++) {
 				
 				hSpeed += lengthdir_x(entityTouching.vSpeed/3, dirFromEntity);
 				
+				//Upset
+				p.upsetP += point_distance(0, 0, vSpeed, hSpeed)/4;
+				
 			}
 			
 			
@@ -68,6 +71,10 @@ for (var i = 0; i < pointCount; i++) {
 		//Down
 		p.prevX = beforeX;
 		p.prevY = beforeY;	
+		
+		//Change Col
+		p.upsetP = lerp(p.upsetP, 0, 0.3*Game.delta);
+		p.c = merge_colour(topRestCol, topTurbulantCol, clamp(p.upsetP, 0, 1));
 	}
 }
 
@@ -81,6 +88,7 @@ for (var j = 0; j < iterations; j++) { //stableize
 		var centreY = (link.p1.yy + link.p2.yy) / 2;
 	
 		var linkDir = point_direction(link.p2.xx, link.p2.yy, link.p1.xx, link.p1.yy);
+		link.distancebeforeforce = point_distance(link.p2.xx, link.p2.yy, link.p1.xx, link.p1.yy);
 		var linkDirxcomp = lengthdir_x(1, linkDir);
 		var linkDirycomp = lengthdir_y(1, linkDir);
 	
@@ -103,14 +111,22 @@ var ybottom = y + sprite_height;
 
 //Add Positions
 vertex_begin(vb, vf);
+
+	//
+	vertex_position(vb, x, y);
+	vertex_position(vb, x, ybottom);
+	
 	for (var i = 0; i < pointCount; i++) {
 		var p = points[| i];
 
-		vertex_position(vb, p.xx, p.yy);
-		vertex_position(vb, p.xx, ybottom);
+		var xx = clamp(p.xx, x, x+sprite_width);
+
+		vertex_position(vb, xx, p.yy);
+		vertex_position(vb, xx, ybottom);
 	
 	}
 	
+	//
 	vertex_position(vb, x+sprite_width, y);
 	vertex_position(vb, x+sprite_width, ybottom);
 			
