@@ -18,6 +18,14 @@ if (transitionPlaying != noone) {
 //
 //
 
+//Water
+var waterMeeting = instance_position(x, y, oWater);
+inWater = (waterMeeting != noone);
+if (inWater) {
+	waterDepth = abs(y - waterMeeting.y);
+	waterDepthPercent = clamp(waterDepth / waterDragRange, 0, 1);
+}
+
 //Gravity
 
 	vSpeed += controlVSpeed;
@@ -38,6 +46,17 @@ if (transitionPlaying != noone) {
 	//Gives Hang Time If Jump is Still Held
 	var doHalfGrav = abs(vSpeed) < halfGravityThreshold && (Controller.jumpHeld || forceHalfGravity) && allowHalfGravity;
 	var mult = (doHalfGrav) ? 0.5 : 1;
+	
+	//Water
+	if (inWater) {
+		grav = waterGrav;
+		term = lerp(waterTerm, waterMaxTerm, waterDepthPercent);
+		
+		if (abs(vSpeed) > term) {
+			vSpeed = lerp(vSpeed, vSpeed*sign(vSpeed), 0.05*time); 
+		}
+	}
+	
 	
 	//Add Gravity
 	vSpeed = min(vSpeed + grav*mult, term*time);
@@ -63,11 +82,8 @@ if (transitionPlaying != noone) {
 	controllerHorizontalMovementInput = Controller.right - Controller.left;
 	mx = controllerHorizontalMovementInput;
 	
-	//Run Speed
-	var runSpeedMulti = 1;
-
 	//Find Goal
-	var hspdGoalsMultipliers = runSpeedMulti;
+	var hspdGoalsMultipliers = keira_decide_hspeed_goal_multi();
 	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers;
 
 	//No Control Movement

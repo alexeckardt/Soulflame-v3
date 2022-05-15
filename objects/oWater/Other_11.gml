@@ -55,7 +55,6 @@ function water_generate_godray() {
 	 
 	//Position
 	var xx = irandom(sprite_width)+ waterSurfaceEdgeBuffer div 2;
-	var yy = 0;
 	
 	//Size
 	var w = irandom_range(4, 10);

@@ -198,6 +198,7 @@
     {"id":{"name":"enum_essence","path":"scripts/enum_essence/enum_essence.yy",},"order":2,},
     {"id":{"name":"keybind_draw_keyboard_icon","path":"scripts/keybind_draw_keyboard_icon/keybind_draw_keyboard_icon.yy",},"order":35,},
     {"id":{"name":"oFollowingEnemy","path":"objects/oFollowingEnemy/oFollowingEnemy.yy",},"order":2,},
+    {"id":{"name":"keira_decide_hspeed_goal_multi","path":"scripts/keira_decide_hspeed_goal_multi/keira_decide_hspeed_goal_multi.yy",},"order":13,},
     {"id":{"name":"damage_create","path":"scripts/damage_create/damage_create.yy",},"order":5,},
     {"id":{"name":"oMovingLight","path":"objects/oMovingLight/oMovingLight.yy",},"order":2,},
     {"id":{"name":"Sprite128","path":"sprites/Sprite128/Sprite128.yy",},"order":29,},

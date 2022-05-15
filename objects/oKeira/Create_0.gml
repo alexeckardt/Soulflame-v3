@@ -58,6 +58,21 @@ climbingGravMulti = 1/3
 lastOnFloorAtY = y;
 lastOnFloorAtX = x;
 
+//Water
+inWater = false;
+waterDepth = 0;
+waterDepthPercent = 0;
+
+waterTerm = 2;
+waterMaxTerm = 0.3;
+
+waterMinDrag = 0.6;
+waterDrag = 0.3;
+
+waterGrav = 0.05;
+waterDragRange = 64;
+
+
 //Slopes
 maxRampSlope = 1;
 
