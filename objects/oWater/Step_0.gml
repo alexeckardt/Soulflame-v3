@@ -132,3 +132,10 @@ vertex_begin(vb, vf);
 			
 vertex_end(vb);
 wroteToBuffer = true;
+
+//
+//Upate Godrays
+for (var i = 0; i < godrayCount; i++) {
+	godrays[| i].update();
+}
+

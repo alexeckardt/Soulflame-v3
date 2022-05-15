@@ -1,4 +1,4 @@
-/// @description 
+/// @description Verlet
 
 function VerletPoint(_xx, _yy, _id = 0, _mass = 1) constructor {
 	

@@ -85,3 +85,7 @@ wroteToBuffer = false;
 //Water Surf
 waterSurf = -1;
 waterSurfaceEdgeBuffer = 32;
+
+//
+//Godrays
+event_user(1);

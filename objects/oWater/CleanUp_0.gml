@@ -33,3 +33,5 @@ delete pointmassLeft;
 delete pointmassRight;
 
 cleanup_surface(waterSurf);
+
+cleanup_ds_list_for_structs(godrays);
