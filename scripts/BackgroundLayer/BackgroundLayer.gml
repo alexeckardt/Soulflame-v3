@@ -62,11 +62,13 @@ function BackgroundLayer() constructor {
 		if (drawObstruction) {
 		
 			//Stretch
+			//top
 			draw_sprite_part_ext(sprite, index, 0, 0, 1, 1, 0, 0,
 					camW*zoom,	max(0, yy),	c_white, 1);
-					
+				
+			//bottom
 			draw_sprite_part_ext(sprite, index, 0, 0, 1, 1, 0, yy+spriteHeight*zoom, 
-					camW*zoom,	max(0, (camH*zoom - spriteHeight*zoom - yy)),	c_white, 1);
+					camW*zoom,	max(0, (camH*zoom - spriteHeight*zoom - yy))+zoom,	c_white, 1);
 			
 		}
 

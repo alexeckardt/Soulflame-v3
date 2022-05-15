@@ -1,7 +1,7 @@
 /// @description Reset Background Surf
 
 if (!surface_exists(bkgSurf)) {
-	bkgSurf = surface_create(view_width*zoom, view_height*zoom);
+	bkgSurf = surface_create((view_width+1)*zoom, (view_height+1)*zoom);
 	createdBkgSurface = true;
 	
 	surface_set_target(bkgSurf);
@@ -10,7 +10,7 @@ if (!surface_exists(bkgSurf)) {
 }
 
 if (!surface_exists(frgSurf)) {
-	frgSurf = surface_create(view_width*zoom, view_height*zoom);
+	frgSurf = surface_create((view_width+1)*zoom, (view_height+1)*zoom);
 	createdBkgSurface = true;
 	
 	surface_set_target(frgSurf);

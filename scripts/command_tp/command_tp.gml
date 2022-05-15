@@ -33,11 +33,11 @@ function command_tp(_x, _y){
 	//
 	//Realtive Transfer
 	if is_string(_x) && (string_pos("~", _x) == 1) { 
-		_x = real(_x); 
+		_x = real(string_copy(_x, 2, string_length(_x)-1)); 
 		_x = oKeira.x + _x;
 	}
 	if is_string(_y) && (string_pos("~", _y) == 1) { 
-		_y = real(_y);
+		_y = real(string_copy(_y, 2, string_length(_y)-1)); 
 		_y = oKeira.x + _y;
 	}
 	

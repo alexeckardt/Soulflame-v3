@@ -21,6 +21,11 @@ function VerletPoint(_xx, _yy, _id = 0, _mass = 1) constructor {
 	c = 0;
 	upsetP = 0;
 	
+	lastHspeed = 0; //used to add to adjacent nodes
+	lastVspeed = 0;
+	hSpeedToAdd = 0;
+	vSpeedToAdd = 0;
+	
 	static drawPrimative = function() {
 		var c = (locked) ? c_lime : c_white;
 		draw_circle_color(xx, yy, 2, c, c, false);	

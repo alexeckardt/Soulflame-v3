@@ -148,7 +148,8 @@ function keira_stateaction_default() {
 		
 			randomize();
 			if (irandom(100) < 10) {
-				particle_create_dust(x-3+hSpeed, y+6, x+3+hSpeed, y+7, choose(1, 2, 3));
+				if (!inWater) {
+				particle_create_dust(x-3+hSpeed, y+6, x+3+hSpeed, y+7, choose(1, 2, 3));}
 			}
 		
 		

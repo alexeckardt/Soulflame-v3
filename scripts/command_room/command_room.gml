@@ -10,6 +10,7 @@ function command_room(_roomName) {
 
 	if (_roomName == "reset") {
 		room_restart();	
+		firstRoom = true;
 	}
 
 	//Get Room ID
@@ -17,7 +18,11 @@ function command_room(_roomName) {
 	
 	//Move or say error
 	if (roomID != -1) {
+		
 		room = (roomID);
+		firstRoom = true;
+		
+		
 	} else {
 		outputMessage = "Room with that name was not found.";	
 	}

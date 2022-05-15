@@ -1,5 +1,7 @@
 /// @desc Godray
 
+drawGodrays = true;
+
 godrays = ds_list_create();
 
 godrayDropAngle = 240;

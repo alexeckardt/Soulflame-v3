@@ -353,6 +353,7 @@
     {"id":{"name":"dialogue_cutscene_setup_character_objs","path":"scripts/dialogue_cutscene_setup_character_objs/dialogue_cutscene_setup_character_objs.yy",},"order":5,},
     {"id":{"name":"keira_stateaction_heals","path":"scripts/keira_stateaction_heals/keira_stateaction_heals.yy",},"order":10,},
     {"id":{"name":"camera_screen_shake","path":"scripts/camera_screen_shake/camera_screen_shake.yy",},"order":2,},
+    {"id":{"name":"roomChasmFallPool","path":"rooms/roomChasmFallPool/roomChasmFallPool.yy",},"order":6,},
     {"id":{"name":"sSwordLockFragments","path":"sprites/sSwordLockFragments/sSwordLockFragments.yy",},"order":3,},
     {"id":{"name":"oCorruptedRootOrder","path":"objects/oCorruptedRootOrder/oCorruptedRootOrder.yy",},"order":2,},
     {"id":{"name":"cutscene_dialouge_question","path":"scripts/cutscene_dialouge_question/cutscene_dialouge_question.yy",},"order":13,},
@@ -513,6 +514,7 @@
     {"roomId":{"name":"roomChasmUnderPassage","path":"rooms/roomChasmUnderPassage/roomChasmUnderPassage.yy",},},
     {"roomId":{"name":"roomChasmTemplate","path":"rooms/roomChasmTemplate/roomChasmTemplate.yy",},},
     {"roomId":{"name":"roomChasmHealingStatue","path":"rooms/roomChasmHealingStatue/roomChasmHealingStatue.yy",},},
+    {"roomId":{"name":"roomChasmFallPool","path":"rooms/roomChasmFallPool/roomChasmFallPool.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
