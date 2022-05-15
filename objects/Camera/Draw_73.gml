@@ -1,11 +1,11 @@
 /// @description Render the Game Stage
 
-var cZoom = Camera.zoom;
+var cZoom = zoom;
 var cRes = 1;
-var worldCamW = Camera.view_width*cRes + 1;
-var worldCamH = Camera.view_height*cRes + 1;
-cX = Camera.realX;
-cY = Camera.realY ;
+var worldCamW = view_width*cRes + 1;
+var worldCamH = view_height*cRes + 1;
+cX = realX;
+cY = realY;
 var _cx = cX;
 var _cy = cY;
 
@@ -57,8 +57,8 @@ if (drawLighting) {
 			//Cut Out No Alphas
 			if (fastLighting) gpu_set_blendmode_ext_sepalpha(bm_dest_colour, bm_zero, bm_inv_src_alpha, bm_src_alpha);
 			else gpu_set_blendmode_ext_sepalpha(bm_zero, bm_one, bm_one, bm_zero);
-			draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
-			gpu_set_blendmode(bm_normal);
+				draw_surface_ext(_fakeAppSurf, 0, 0, 1, 1, 0, c_white, 1);
+				gpu_set_blendmode(bm_normal);
 	}
 	
 } else {

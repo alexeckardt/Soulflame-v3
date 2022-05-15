@@ -27,7 +27,9 @@ if (Game.delta != 0) {
 	var goalH = view_height+1;
 	if (!surface_exists(view_surf)) {view_surf = surface_create(goalW, goalH);}
 	if (!surface_exists(effective_view_surf)) {effective_view_surf = surface_create(goalW, goalH);}
-
+	
+	var w = camera_get_view_width(view_camera[0]);
+	
 	camera_set_view_pos(view_camera[0], x, y);
 	view_surface_id[0] = view_surf;
 

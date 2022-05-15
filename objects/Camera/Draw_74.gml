@@ -1,7 +1,7 @@
 /// @description 
 
 //Size
-display_set_gui_size(view_width*zoom, view_height*zoom);
+display_set_gui_size(idealWidth*zoom, idealHeight*zoom);
 
 //
 //
@@ -9,8 +9,7 @@ display_set_gui_size(view_width*zoom, view_height*zoom);
 //
 //
 
-//
-//Background
+
 if (surface_exists(bkgSurf)) {
 	draw_surface_ext(bkgSurf, 0, 0, 1, 1, 0, c_white, 1);	
 	
@@ -26,7 +25,7 @@ display_set_gui_size(view_width, view_height);
 gpu_set_colorwriteenable(1,1,1,1);
 draw_surface_ext(lightLayerSurf, -frac(realX), -frac(realY), 1, 1, 0, c_white, 1);	
 gpu_set_colorwriteenable(1,1,1,1);
-display_set_gui_size(view_width*zoom, view_height*zoom);
+display_set_gui_size(idealWidth*zoom, idealHeight*zoom);
 
 //anything below is above game layer
 //Draw Glowing 

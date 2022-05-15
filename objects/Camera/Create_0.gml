@@ -9,9 +9,8 @@ resolution = 1;
 //Get Ideal Resolution
 idealWidth = 540;
 idealHeight = 270;
-aspectRatio = display_get_width() / display_get_height();
-idealWidth = round(idealHeight * aspectRatio);
-if (idealWidth & 1) idealWidth++; //Check Odd
+
+calculateViewDimentions = true;
 
 view_width = idealWidth;
 view_height = idealHeight;

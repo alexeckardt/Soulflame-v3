@@ -7,6 +7,7 @@ if (Game.paused) exit;
 //Set Scale
 var guiW = Camera.view_width / uiScale;
 var guiH = Camera.view_height / uiScale;
+
 display_set_gui_size(guiW, guiH);
 
 //Feather
