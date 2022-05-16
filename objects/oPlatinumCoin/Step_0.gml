@@ -26,6 +26,7 @@ if (autoPickup) {
 		vSpeed = (round(vSpeed * (1/sqrt(weight))) div bounceEnergyLossMultiplier) * -bounceEnergyLossMultiplier;	
 		hSpeed = lerp(hSpeed, 0, .2);
 		hasHitGroundOnce = true;
+		shouldDealDamage = false;
 	}
 	
 	//Collide + Move	
@@ -57,4 +58,22 @@ if (emitOne) {
 	if (emitOne) {
 		create_platinum_light_particles( emitOne, x - 2, x + 2, y - 2, y + 2, 0.25);
 	}
+}
+
+//Damage
+if (shouldDealDamage) {
+
+	//Create Damage
+	if (!instance_exists(myDamage) || myDamage == noone) {
+		myDamage = damage_create_ext(damage_type.untyped, 1, x, y, 2, 2);
+		myDamage.canDamageEnemies = false;
+	}
+	
+} else {
+	
+	//Destroy Damage
+	if (instance_exists(myDamage)) {
+		instance_destroy(myDamage);	
+	}
+	
 }

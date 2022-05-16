@@ -31,7 +31,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Magpie",
-    "path": "folders/Entity/Enemy/Obj/Forest/Magpie.yy",
+    "path": "folders/Entity/Enemy/Obj/Chasm/Magpie.yy",
   },
   "resourceVersion": "1.0",
   "name": "oAirborneChaseEnemy",

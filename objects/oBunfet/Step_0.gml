@@ -38,6 +38,10 @@ generic_collide_solid();
 		
 		//DO a little hop towards the goal i want to go to
 		if (onGround) {
+			
+			//Stop dealing damage if was (dropped from Magpie)
+			shouldDealDamage = false;
+			
 			jumpingTicks -= time;
 			if (jumpingTicks < 0) {
 			
@@ -77,3 +81,22 @@ enemy_generic_death_timer();
 
 //Spikes
 enemy_hit_spikes();
+
+
+//Fall
+if (shouldDealDamage) {
+
+	//Create Damage
+	if (!instance_exists(myDamage) || myDamage == noone) {
+		myDamage = damage_create_ext(damage_type.untyped, 1, x, y, 2, 2);
+		myDamage.canDamageEnemies = false;
+	}
+		
+} else {
+	
+	//Destroy Damage
+	if (instance_exists(myDamage)) {
+		instance_destroy(myDamage);	
+	}
+	
+}

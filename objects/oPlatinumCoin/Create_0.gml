@@ -30,3 +30,8 @@ knockbackHSpeed = 0;
 knockbackVSpeed = 0;
 
 bounceEnergyLossMultiplier = 4;
+
+shouldDealDamage = false;
+myDamage = noone;
+
+autoPickup = false;

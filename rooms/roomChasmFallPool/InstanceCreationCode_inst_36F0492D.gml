@@ -1,1 +1,1 @@
-drawGodrays = false;
+drawGodrays = true;

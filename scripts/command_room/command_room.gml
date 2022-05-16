@@ -7,10 +7,11 @@ function command_room(_roomName) {
 
 	//Verify
 	command_verify_exists(_roomName, 0);
-
+	
+		
 	if (_roomName == "reset") {
-		room_restart();	
 		firstRoom = true;
+		room_restart();	
 	}
 
 	//Get Room ID
@@ -18,9 +19,8 @@ function command_room(_roomName) {
 	
 	//Move or say error
 	if (roomID != -1) {
-		
-		room = (roomID);
 		firstRoom = true;
+		room = (roomID);
 		
 		
 	} else {

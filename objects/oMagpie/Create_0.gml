@@ -18,19 +18,19 @@ spd = 0;
 maxSpeed = 1.5;
 move = true;
 turningSpeed = 0.1;
+goalSpd = 0;
 
 airFrictionValue = 0;
 
 //Hitbox
 hitbox_create_for_list(hitboxes, x, y, 20, 30, true);
 
-
 //Custom Variables
 timeLayingOnGroundBeforePop = 0;
 knockbackSlide = 0.1;
 
 //Path
-pathFinder = pathfinder_create();
+pathFinder = pathfinder_create(true);
 pathFinderRegenerationRate = 10;
 pathFinderRegenerationTimeLeft = pathFinderRegenerationRate;
 pathfinderRegenerateRange = 15;
@@ -40,7 +40,7 @@ lastSawTargetX = x;
 lastSawTargetY = y;
 targetFollowOffsetX = irandom_range(10, 30)*choose(1, -1);
 targetFollowOffsetY = -30;
-sightRange = 16*8;
+sightRange = 16*12;
 inferPathTime = 10; // Time I can still see target after they vanish from view
 inferPathTimeLeft = inferPathTime;
 
@@ -53,4 +53,30 @@ sinceSeenTarget = 0;
 
 goHome = false;
 
-hp = 1; // 5
+hp = 5; // 5
+
+//Coin
+goingToPickup = false;
+holdingDroppable = false;
+holdingBunfet = false;
+coinHoldingValue = 1;
+maxCoinPickupValue = 2;
+
+reloadAreaX = 0;
+reloadAreaY = 0;
+reloadIsABunfet = false;
+reloadAreaDecided = false;
+reloadInstance = false;
+
+reloadingTicksWait = 32;
+attackingTicksWait = room_speed*1.5;
+reloadingTicksTimeLeft = reloadingTicksWait;
+
+holdPickupXoffset = 1;
+holdPickupYoffset = -5;
+
+//Dropping
+droppingOff = false;
+hoverOverDropPlayerY = -40;
+
+event_user(0);

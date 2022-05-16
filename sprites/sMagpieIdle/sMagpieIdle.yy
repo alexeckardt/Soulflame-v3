@@ -78,7 +78,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Spr",
-    "path": "folders/Entity/Enemy/Obj/Forest/Magpie/Spr.yy",
+    "path": "folders/Entity/Enemy/Obj/Chasm/Magpie/Spr.yy",
   },
   "resourceVersion": "1.0",
   "name": "sMagpieIdle",

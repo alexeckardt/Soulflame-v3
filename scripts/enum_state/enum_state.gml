@@ -77,6 +77,8 @@ enum state {
 		jumping,
 		land,
 		look_up,
+		reloading,
+		attack,
 	
 	height, //states count, used for idle in enemies
 }

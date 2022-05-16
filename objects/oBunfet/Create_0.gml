@@ -38,3 +38,6 @@ jumpSprite = sBunfetLeap;
 
 sightRange = 160;
 cameraWeight = 0.5;
+
+shouldDealDamage = false;
+myDamage = noone;

@@ -5,8 +5,9 @@ image_xscale = hitboxWidth / sprW;
 image_yscale = hitboxHeight / sprW; 
 
 //Damage Collision
-var canTakeDamage = creator.invulnerableTicks < 0 && !hitboxLocked;
+if (!instance_exists(creator)) exit;
 
+var canTakeDamage = creator.invulnerableTicks < 0 && !hitboxLocked;
 if (canTakeDamage) {
 	if (instance_exists(oDamage)) {
 	

@@ -46,8 +46,8 @@ function Godray(_width, _height, c, _swayAmp, _swayPeriod, _startAlpha, nodeAtta
 		
 		//Position
 		var t = Game.timeInGame + swayPeriodOffset;
-		drawX = nodeattach.xx - surfX + sin(t / swayPeriod)*swayAmp;
-		drawStartY = nodeattach.yy - surfY - 5;
+		drawX = lerp(drawX, nodeattach.xx - surfX + sin(t / swayPeriod)*swayAmp, 0.2*Game.delta);
+		drawStartY = lerp(drawStartY, nodeattach.yy - surfY - 5, 0.2*Game.delta);
 
 		//Shimmer Alpha
 		ticksUntilAlphaFlip -= Game.delta;
