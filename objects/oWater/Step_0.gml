@@ -136,6 +136,6 @@ wroteToBuffer = true;
 //
 //Upate Godrays
 for (var i = 0; i < godrayCount; i++) {
-	godrays[| i].update();
+	godrays[| i].update(points, surfX, surfY);
 }
 

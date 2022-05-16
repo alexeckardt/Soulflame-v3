@@ -12,7 +12,7 @@ function water_draw_godray(edgeBuffer) {
 	
 		//Draw
 		for (var i = 0; i < s; i++) {
-			l[| i].draw(edgeBuffer, godrayXstep);
+			l[| i].draw(edgeBuffer);
 		}
 		
 	}

@@ -64,8 +64,8 @@ function water_draw(){
 					waterSurf = surface_create(sprite_width+b, sprite_height+b);}
 
 				//Surf
-				var surfX = x-waterSurfaceEdgeBuffer;
-				var surfY = y-waterSurfaceEdgeBuffer;
+				surfX = x-waterSurfaceEdgeBuffer;
+				surfY = y-waterSurfaceEdgeBuffer;
 	
 				//Set Surface
 				surface_set_target(waterSurf);
