@@ -65,7 +65,8 @@ if (shouldDealDamage) {
 
 	//Create Damage
 	if (!instance_exists(myDamage) || myDamage == noone) {
-		myDamage = damage_create_ext(damage_type.untyped, 1, x, y, 2, 2);
+		var s = sprite_get_width(sprite_index) * 1.2;
+		myDamage = damage_create_ext(damage_type.untyped, 1, x - s / 2, y, s, s*2);
 		myDamage.canDamageEnemies = false;
 	}
 	

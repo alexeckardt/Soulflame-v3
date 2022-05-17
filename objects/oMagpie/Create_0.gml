@@ -54,13 +54,16 @@ sinceSeenTarget = 0;
 goHome = false;
 
 hp = 5; // 5
+platinumDrop = 5;
 
 //Coin
+canFindPickup = false;
 goingToPickup = false;
 holdingDroppable = false;
 holdingBunfet = false;
 coinHoldingValue = 1;
 maxCoinPickupValue = 2;
+coinHoldingSprite = platinum_get_coin_sprite(0);
 
 reloadAreaX = 0;
 reloadAreaY = 0;
@@ -68,12 +71,14 @@ reloadIsABunfet = false;
 reloadAreaDecided = false;
 reloadInstance = false;
 
-reloadingTicksWait = 32;
+bunfetHp = 0;
+
+reloadingTicksWait = room_speed*2;
 attackingTicksWait = room_speed*1.5;
 reloadingTicksTimeLeft = reloadingTicksWait;
 
-holdPickupXoffset = 1;
-holdPickupYoffset = -5;
+holdPickupXoffset = 4;
+holdPickupYoffset = -3;
 
 //Dropping
 droppingOff = false;

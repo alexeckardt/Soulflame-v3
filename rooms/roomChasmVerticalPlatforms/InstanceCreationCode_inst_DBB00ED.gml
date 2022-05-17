@@ -1,4 +1,4 @@
-roomTo = roomChasmLeftPool;
-xTo = 36;
-yTo = 329;
+roomTo = roomChasmWhispIntro;
+xTo = 32;
+yTo = 441;
 dirFacing = 1

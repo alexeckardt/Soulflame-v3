@@ -35,3 +35,4 @@ shouldDealDamage = false;
 myDamage = noone;
 
 autoPickup = false;
+

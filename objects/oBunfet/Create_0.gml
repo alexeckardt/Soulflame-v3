@@ -41,3 +41,8 @@ cameraWeight = 0.5;
 
 shouldDealDamage = false;
 myDamage = noone;
+
+dropped = false;
+droppedSprite = sBunfetFall;
+
+showHurt = false;

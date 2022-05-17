@@ -5,6 +5,7 @@ enemy_take_damage();
 ramp_behaviour()
 
 //Collision
+lastVspeed = vSpeed;
 generic_collide_solid();
 
 //(Vertical Motion)
@@ -39,22 +40,53 @@ generic_collide_solid();
 		//DO a little hop towards the goal i want to go to
 		if (onGround) {
 			
-			//Stop dealing damage if was (dropped from Magpie)
-			shouldDealDamage = false;
+			if (!showHurt) {
 			
-			jumpingTicks -= time;
-			if (jumpingTicks < 0) {
+				//Stop dealing damage if was (dropped from Magpie)
+				if (!dropped) {
+				
+					shouldDealDamage = false;
+				
+					jumpingTicks -= time;
+					if (jumpingTicks < 0) {
 			
+						jumpingTicks = room_speed*2;
+						vSpeed = -2;
+			
+						var cD = sign(goToX - x);
+						controlHSpeed = cD * hopSpeed;
+						directionFacing = (cD != 0) ? cD : directionFacing;
+		
+						jumped = true;
+		
+					}
+				
+				//
+				//Land after Drop
+				} else {
+			
+					vSpeed = -4;
+					dropped = false;
+					showHurt = true;
+				
+				}
+			
+			} else {
+			
+				//Reset; Exit Dropped Loop
+				showHurt = false;
+				shouldDealDamage = false;
+				dropped = false;
 				jumpingTicks = room_speed*2;
+				
+				sprite_index = idleSprite;
+				image_index = 0;
+				index_speed = 0.05;
+				
 				vSpeed = -2;
-			
-				var cD = sign(goToX - x);
-				controlHSpeed = cD * hopSpeed;
-				directionFacing = (cD != 0) ? cD : directionFacing;
-		
-				jumped = true;
-		
+				
 			}
+			
 		} else {
 			jumped = false;	
 		}
@@ -88,9 +120,12 @@ if (shouldDealDamage) {
 
 	//Create Damage
 	if (!instance_exists(myDamage) || myDamage == noone) {
-		myDamage = damage_create_ext(damage_type.untyped, 1, x, y, 2, 2);
+		myDamage = damage_create_ext(damage_type.untyped, 1, x, y, 16, 16);
 		myDamage.canDamageEnemies = false;
 	}
+		
+	//Don't Take Damage
+	invulnerableTicks = 2;
 		
 } else {
 	

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sPlatinumChunk",
-    "path": "sprites/sPlatinumChunk/sPlatinumChunk.yy",
+    "name": "sPlatinumBar",
+    "path": "sprites/sPlatinumBar/sPlatinumBar.yy",
   },
   "solid": false,
   "visible": true,

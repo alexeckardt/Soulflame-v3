@@ -13,5 +13,6 @@ checkedAlreadyDestroyed = false;
 storename = game_persistence_create_name_room_specific("pot");
 
 //Change Per Type
-minPlat = 1;
-maxPlat = 3;
+value = irandom_range(0, 2);
+valueLast = -1;
+valueChanged = false; //Used for any children

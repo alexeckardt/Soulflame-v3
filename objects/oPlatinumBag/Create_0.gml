@@ -3,8 +3,7 @@
 event_inherited();
 
 decidedIndex = false;
-value = 0;
-
 potPartTypeSpr = undefined; //No Fragment Particles
-
 emitLight = true;
+
+storename = game_persistence_create_name_room_specific("pot_bag");

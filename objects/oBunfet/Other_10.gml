@@ -24,3 +24,11 @@ if (sprite_index == jumpSprite) {
 	}
 
 }
+
+if (dropped) {
+	sprite_index = droppedSprite;	
+}
+
+if (showHurt) {
+	sprite_index = sBunfetDead;	
+}

@@ -2,7 +2,7 @@
 
 function magpie_decide_reload_target() {
 	
-	reloadInstance = instance_nearest(x, y, oPlatinumBag);
+	reloadInstance = instance_nearest(x, y, oPot);
 	
 	if (reloadInstance != noone) {
 	
@@ -18,8 +18,14 @@ function magpie_decide_reload_target() {
 		if (reloadInstance != noone) {
 			
 			reloadIsABunfet = true;
+			reloadAreaX = reloadInstance.x;
+			reloadAreaY = reloadInstance.y;
 			
-		} 
+		} else {
+			
+			STATE = state.blocking; //hiding state
+			
+		}
 	
 	}
 

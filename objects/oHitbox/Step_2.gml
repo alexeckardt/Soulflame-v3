@@ -1,7 +1,7 @@
 /// @desc Update Position
 
 //Move With Creator
-if (creator != noone) {
+if (instance_exists(creator) && creator != noone) {
 	
 	var roundTo = .1;
 	x = round((creator.x + xoffset)/roundTo) * roundTo;

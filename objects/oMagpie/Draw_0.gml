@@ -11,13 +11,14 @@ if (holdingDroppable) {
 	if (reloadIsABunfet) {
 	
 		//
-		draw_sprite_ext(sBunfetIdle, 0, xx, yy, directionFacing, 1, 0, c_white, 1);
+		var ind = Game.inGameTicks / 10;
+		draw_sprite_ext(sBunfetSquirm, ind, xx, yy, directionFacing, 1, 0, c_white, 1);
 	
 	} else {
 		
 		//Coin
-		var ind = Game.timeInGame / 100;
-		draw_sprite_ext(sPlatinumCoin, ind, xx, yy, 1, 1, 0, c_white, 1);
+		var ind = Game.inGameTicks / 10;
+		draw_sprite_ext(coinHoldingSprite, ind, xx, yy, 1, 1, 0, c_white, 1);
 		
 	}
 	
