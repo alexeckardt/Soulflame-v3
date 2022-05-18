@@ -42,7 +42,7 @@ if (STATE == state.base) {
 	goalSpd = 0;
 	
 	//Decide Where To Go (Home, Player, Lemming)
-	if (holdingDroppable) {
+	if (holdingDroppable || !droppableExists) {
 
 		//Moving
 		goingToPickup = false;
@@ -79,7 +79,7 @@ if (STATE == state.base) {
 			
 				//Set
 				EndGoalX	= lastSawTargetX;
-				EndGoalY	= lastSawTargetY + hoverOverDropPlayerY;
+				EndGoalY	= lastSawTargetY + hoverOverDropPlayerY * holdingDroppable;
 				
 				//Lemming
 			
@@ -136,8 +136,8 @@ if (STATE == state.base) {
 			
 			goalSpd = maxSpeed;
 		
-			//Haben't Decided what my goal is
-			if (!goingToPickup) {
+			//When I haven't Decided what my goal is
+			if (!goingToPickup || !instance_exists(reloadInstance) && droppableExists) {
 				magpie_decide_reload_target();	
 				goingToPickup = true;
 			}
@@ -169,7 +169,7 @@ if (STATE == state.base) {
 	//Error! Go Directly Above player
 	if (pathFinder.pathFailed) {
 		targetFollowOffsetX = 0;
-		targetFollowOffsetY = -32;
+		targetFollowOffsetY = -5;
 	}
 
 	//
@@ -408,3 +408,15 @@ if (STATE == state.attack) {
 //Speed
 var index_speed_goal = 0.2*(spd / maxSpeed) + 0.1
 index_speed = lerp(index_speed, index_speed_goal, 0.1*time);
+
+//Create Damage
+if (!instance_exists(myDamage)) {
+			
+	var w = 18;
+	var h = 12;
+	myDamage = enemy_damage_create(-1, x-w/2, y-h, w, h, 2, 1);
+	myDamage.canDamageEnemies = false; //don't damage Bunfets
+
+}	
+
+

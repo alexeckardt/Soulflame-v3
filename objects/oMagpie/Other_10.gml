@@ -23,7 +23,9 @@ function magpie_decide_reload_target() {
 			
 		} else {
 			
-			STATE = state.blocking; //hiding state
+			STATE = state.base; //hiding state
+			droppableExists = false;
+			holdingDroppable = false;
 			
 		}
 	

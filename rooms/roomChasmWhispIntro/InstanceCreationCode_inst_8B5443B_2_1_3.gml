@@ -1,4 +1,4 @@
-roomTo = roomChasmUnderHotspring;
-xTo = 1233;
-yTo = 601;
+roomTo = roomChasmVerticalPlatforms;
+xTo = 568;
+yTo = 121;
 dirFacing = -1

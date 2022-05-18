@@ -3,6 +3,7 @@
 isEllipse = false;
 creator = noone;
 
+autoMoveToOwner = true;
 xoffset = 0;
 yoffset = 0;
 hitboxWidth = 16;
@@ -20,3 +21,4 @@ damagesMeeting = ds_list_create();
 damagingObjectId = noone;
 
 isPlayerHitbox = false;
+

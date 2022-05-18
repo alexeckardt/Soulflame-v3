@@ -69,7 +69,7 @@ showDebugOverlay = false;
 allowCheats = true;
 
 viewHitboxes = false;
-viewDamageBoxes = false;
+viewDamageBoxes = true;
 viewAudioEmitters = false;
 viewCameraDebug = true;
 doCombatCamera = false;

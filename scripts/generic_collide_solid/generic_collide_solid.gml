@@ -3,14 +3,14 @@
 //
 //
 //
-function generic_collide_solid() {
+function generic_collide_solid(collider = Solid) {
 
 	var time = Game.delta;
 	var lagDampen = 1//power(0.99, time);
 
 	//Horizontal Collide
 	var moveX = (hSpeed)*time*lagDampen
-	var hCollideSolid = instance_place(x + moveX, y, Solid);
+	var hCollideSolid = instance_place(x + moveX, y, collider);
 	if (hCollideSolid != noone) {
 	
 		//Don't H Collide on one way solids
@@ -21,7 +21,7 @@ function generic_collide_solid() {
 	
 			//Back Onto Wall
 			repeat (floor(abs(moveX))) {
-				if (!place_meeting(x+sigMoveX, y, Solid)) {
+				if (!place_meeting(x+sigMoveX, y, collider)) {
 					x += sigMoveX;
 				}
 			}
@@ -42,7 +42,7 @@ function generic_collide_solid() {
 	timeSinceOnGround += time;
 	var moveY = (vSpeed)*time*lagDampen;
 	
-	var vCollideSolid = instance_place(x, y+moveY, Solid);
+	var vCollideSolid = instance_place(x, y+moveY, collider);
 	if (vCollideSolid != noone) {
 
 		//Collide in certian direction
@@ -51,32 +51,17 @@ function generic_collide_solid() {
 			
 			//Back Onto Wall
 			repeat (floor(abs(moveY))) {
-				if (!place_meeting(x, y+sign(moveY), Solid)) {
+				if (!place_meeting(x, y+sign(moveY), collider)) {
 					y += sign(moveY);
 				}
 			}
 	
-			//Slide Around Corner
-			/*
-			var stopVspeed = true;
-			if (vSpeed < -1) {
-				if (!place_meeting(x+slideCornerRange+hSpeed, y-2+vSpeed, Solid)) {
-					hSpeed = 2;
-					stopVspeed = false;
-				}
-		
-				if (!place_meeting(x-slideCornerRange+hSpeed, y-2+vSpeed, Solid)) {
-					hSpeed = -2;
-					stopVspeed = false;
-				}
-			}*/
-
 			//Reset Speed
 			moveY = 0;
 			vSpeed = 0;
-		} else {
-		var hi = 0;	
+			
 		}
+		
 	}
 	y+=moveY;
 

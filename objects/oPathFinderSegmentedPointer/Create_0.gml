@@ -1,5 +1,7 @@
 /// @description 
 
+asBackgroundPath = false;
+
 myPath = path_add();
 path_set_kind(myPath, 1);
 path_set_precision(myPath, 8);

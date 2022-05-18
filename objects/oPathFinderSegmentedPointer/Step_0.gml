@@ -45,11 +45,12 @@ if (active) {
 		
 				//Create Path
 				if (path_exists(myPath)) {
-				var pathMaker = mp_grid_path(Paths.grid, myPath, x, y, goToX, goToY, true);
-		
+				
+				var gridUsing = (asBackgroundPath) ? Paths.bkg_grid : Paths.solid_grid;
+				var pathMaker = mp_grid_path(gridUsing, myPath, x, y, goToX, goToY, true);
 		
 				//Optimize
-				if (deleteUnneccesaryPoints) {
+				if (deleteUnneccesaryPoints && !asBackgroundPath) {
 					
 					//Access Path Info
 					
@@ -99,31 +100,28 @@ if (active) {
 				//Optimize; Avoid Solids at the first dfew points to prevent getting stuck
 				if (airborne && tryToUnstuckAirborne) {
 				
-					var dsgrid = Paths.dsGrid;
+					var xsum = 0;
+					var ysum = 0;
+					var tot = 0;
 				
 					//Access Path Info
 					var firstPointX		= path_get_point_x(myPath, 0);
 					var firstPointY		= path_get_point_y(myPath, 0);
 					var firstPointSp	= path_get_point_speed(myPath, 0);
 				
-					var xInGrid = clamp(firstPointX div 16, 1, ds_grid_width(dsgrid));
-					var yInGrid = clamp(firstPointY div 16, 1, ds_grid_height(dsgrid));
-				
-					var xsum = 0;
-					var ysum = 0;
-					var tot = 0;
-				
 					for (var j = 0; j < 3; j++) {
 						for (var i = 0; i < 3; i++) {
 					
 							//Get Surrounding Grid
-							var tileInGrid = dsgrid[# xInGrid + i - 1, yInGrid + j - 1];
+							var solidThere = position_meeting(	firstPointX + (i-1)*16, 
+																firstPointY + (i-1)*16,
+																Solid );
 					
 							//If There is to be a collision there
-							if (tileInGrid == -1) {
+							if (solidThere) {
 								xsum += (i-1);
 								ysum += (j-1);
-								tot += 1;
+								tot++;
 							}
 					
 						}	

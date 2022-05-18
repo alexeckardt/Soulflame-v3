@@ -1,3 +1,6 @@
 /// @description 
-mp_grid_destroy(grid);
-ds_grid_destroy(dsGrid);
+mp_grid_destroy(solid_grid);
+
+if (bkgGridCreated) {
+	mp_grid_destroy(solid_grid);
+}

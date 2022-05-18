@@ -1,3 +1,3 @@
 /// @desc
-if (Game.viewDamageBoxes) {
+if (Game.viewDamageBoxes && Game.showDebugOverlay) {
 	draw_self();}

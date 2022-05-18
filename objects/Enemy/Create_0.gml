@@ -109,6 +109,8 @@ mask_index = sprite_index;
 		noDamageAfterHurtTime = room_speed;
 		noDamageAfterHurtTicksLeft = noDamageAfterHurtTime;
 	
+		justDamagedTarget = false;
+	
 	//Camera
 		cameraWeight = 1; //How much to pull the camera towards me
 		lerpCameraWeight = 0; //Fadein Fadeout

@@ -1,6 +1,7 @@
 /// @description 
 
-if (Game.showDebugOverlay && Game.devMode) {
+var override = false;
+if (Game.showDebugOverlay && Game.devMode) || override {
 
 	if (path_exists(myPath)) {
 	

@@ -39,7 +39,7 @@ pathfinderRegenerateRange = 15;
 lastSawTargetX = x;
 lastSawTargetY = y;
 targetFollowOffsetX = irandom_range(10, 30)*choose(1, -1);
-targetFollowOffsetY = -30;
+targetFollowOffsetY = -5;
 sightRange = 16*12;
 inferPathTime = 10; // Time I can still see target after they vanish from view
 inferPathTimeLeft = inferPathTime;
@@ -84,4 +84,8 @@ holdPickupYoffset = -3;
 droppingOff = false;
 hoverOverDropPlayerY = -40;
 
+droppableExists = true;
+
 event_user(0);
+
+myDamage = noone;

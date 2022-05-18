@@ -35,7 +35,7 @@ function pathfinder_get_positon(pathFinder, lengthFromPathStart) {
 				
 				var pathEndX = path_get_x(p, 1);
 				var pathEndY = path_get_y(p, 1);
-				return [pathObjX, pathObjY, pathEndX, pathEndY];
+				return [pathObjX, pathObjY, pathEndX, pathEndY, true];
 			}
 		}
 		
@@ -46,10 +46,10 @@ function pathfinder_get_positon(pathFinder, lengthFromPathStart) {
 		var pathEndY = path_get_y(p, 1);
 			
 		//PassBack
-		return [pathObjX, pathObjY, pathEndX, pathEndY];
+		return [pathObjX, pathObjY, pathEndX, pathEndY, false];
 	}
 	
 	//No Pathfinder, Return Default Vlaues
-	return [x, y, -1, -1];
+	return [x, y, -1, -1, false];
 
 }

@@ -31,6 +31,7 @@ if (canTakeDamage) {
 				
 						//Get Damage
 						damagingObjectId = dmgObj;
+						dmgObj.creator.justDamagedTarget = true;
 						
 						//Take Damage
 						event_user(0);
