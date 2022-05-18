@@ -11,3 +11,4 @@ meta_object_create(Lang, 2);
 
 //Go To Room (Meta is created once);
 room = Room1;
+

@@ -5,16 +5,18 @@
 function access_save_data(save_data, writing) {
 	
 	//Get Scripts To Run for different data structures
-	var index, map, list, grid;
+	var index, map, list, grid, list_c;
 	if (writing) {
 		index = save_index;
 		map = save_index_map;
 		list = save_index_list;
+		list_c = save_index_list_json;
 		grid = save_index_grid;
 	} else {
 		index = load_index;
 		map = load_index_map;
 		list = load_index_list;
+		list_c = load_index_list_json;
 		grid = load_index_grid;
 	}
 	
@@ -38,8 +40,11 @@ function access_save_data(save_data, writing) {
 		index("weaponAlignmnet",		Player, save_data);
 		index("weaponSlotUsing",		Player, save_data);
 	
+		
 		//Essence
-		list("essenceTokens",			Player, save_data);
+		index("allowEssenceCollection", Player, save_data);
+		index("allowHealing",			Player, save_data);
+		list_c("essenceTokens",			Player, save_data);
 		index("corruptionPercent",		Player, save_data);
 	
 	

@@ -81,7 +81,7 @@ if (allowEssenceCollection) {
 		
 			//Draw Token
 			var token = essenceTokens[| i];
-			if (token != undefined) token.draw(tokenxx, tokenyy);
+			if (token != undefined) essence_token_draw(token, tokenxx, tokenyy);
 			
 		} else {
 
