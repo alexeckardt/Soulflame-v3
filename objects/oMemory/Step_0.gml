@@ -6,7 +6,7 @@ if (!checkedAlreadyDestroyed) {
 	checkedAlreadyDestroyed = true;
 	
 	//Destroy Self If Already
-	var get = game_persistence_check(storename);
+	var get = game_persistence_check(map_id);
 	if (!is_undefined(get)) {
 		instance_destroy();
 	}
