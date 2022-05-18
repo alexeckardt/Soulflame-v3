@@ -37,8 +37,8 @@
     {"propertyId":{"name":"colour","path":"objects/Light/Light.yy",},"objectId":{"name":"Light","path":"objects/Light/Light.yy",},"value":"$FFFFFF7A","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Objs",
-    "path": "folders/Objects/Objs.yy",
+    "name": "Story",
+    "path": "folders/Objects/Story.yy",
   },
   "resourceVersion": "1.0",
   "name": "oWisp",

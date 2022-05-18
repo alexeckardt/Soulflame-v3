@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objs",
-    "path": "folders/Objects/Objs.yy",
+    "name": "Story",
+    "path": "folders/Objects/Story.yy",
   },
   "resourceVersion": "1.0",
   "name": "oWispTarget",

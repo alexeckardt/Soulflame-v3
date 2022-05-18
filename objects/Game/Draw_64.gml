@@ -17,14 +17,18 @@ if (showDebugOverlay) {
 	draw_set_font(-1);
 	
 	debugVerticalIndex = 0;
+	game_draw_debug_line_header("", true);
+	game_draw_debug_line_header("", true);
 	game_draw_debug_line_header("Preformance", true);
 	game_draw_debug_line("DT", largestDelta, true);
 	game_draw_debug_line("I", instance_count, true);
 	game_draw_debug_line("L", Camera.renderedLights, true);
+	game_draw_debug_line("F", [fps, fps_real], true);
 		debugVerticalIndex++;
 	game_draw_debug_line_header("Positions", true);
 	game_draw_debug_line("R", room_get_name(room), true);
 	game_draw_debug_line("P", [oKeira.x, oKeira.y], true);
+	game_draw_debug_line("Pv", [oKeira.hSpeed, oKeira.vSpeed], true);
 	game_draw_debug_line("C", [Camera.x, Camera.y], true);
 	game_draw_debug_line("M", [mouse_x, mouse_y], true);
 	game_draw_debug_line("Mr", [mouse_x-Camera.x, mouse_y-Camera.y], true);

@@ -31,7 +31,7 @@ switch (phase) {
 		//Zoom Off
 		if (d < shootOffRange) {
 			phase++;
-			travelDirection = point_direction(target.x, target.y, x, y) + irandom_range(-30, 30);
+			travelDirection = point_direction(target.x, target.y, x, y);
 			travelSpeed = 1;
 		} else {
 			
@@ -67,13 +67,21 @@ switch (phase) {
 			break;
 		}
 	
+		//Block Ahead
+		var xahead = x + lengthdir_x(travelSpeed, travelDirection);
+		var yahead = y + lengthdir_y(travelSpeed, travelDirection);
+		var aheadSolid = position_meeting(xahead, yahead, Solid);
+	
 		//Direction
 		var goalDir = point_direction(x, y, target.x, target.y);
 		var angleDiff = angle_difference(goalDir, travelDirection);
 		
-		//Speed Up
+		//Speed Up (or down, if solid in way
 		var turnPercent = abs(abs(angleDiff) - 90) / 90;
 		var spdTo = turnPercent * zoomMaxSpeed;
+		
+		if (aheadSolid) {
+			spdTo /= 4;}
 		
 		//Change Dir
 		travelDirection += t * angleDiff / directionLerpSpeed;
@@ -90,6 +98,7 @@ switch (phase) {
 		if (point_distance(x, y, target.x, target.y) < gobbleRadius + travelSpeed) {
 		
 			//End
+			game_persistence_set(storename, 1);
 			instance_destroy();
 
 		}
