@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Token Scripts",
-    "path": "folders/Scripts/Token Scripts.yy",
+    "name": "Script",
+    "path": "folders/Cutscenes/Script.yy",
   },
   "resourceVersion": "1.0",
-  "name": "essence_token_flashRecoverSpeed",
+  "name": "cutscene_wait_instruction",
   "tags": [],
   "resourceType": "GMScript",
 }

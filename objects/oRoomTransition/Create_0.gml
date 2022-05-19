@@ -6,7 +6,7 @@ nextPX = 0;
 nextPY = 0;
 nextPD = 1;
 fadeSpeed = 0.08;
-transitionAlphaReq = 1.5;
+transitionAlphaReq = 2;
 
 
 alphaDirection = 1;

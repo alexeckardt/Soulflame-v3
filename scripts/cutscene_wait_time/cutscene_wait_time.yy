@@ -6,7 +6,7 @@
     "path": "folders/Cutscenes/Script.yy",
   },
   "resourceVersion": "1.0",
-  "name": "cutscene_event_wait_instruction",
+  "name": "cutscene_wait_time",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -5,12 +5,17 @@ map_id = "map_Chasm_0";
 checkedAlreadyDestroyed = false;
 
 //Visiblity
-shouldActivate = false;
+active = false;
 
 //Anim
 fireOn = false;
 alp = 0;
 alpTo = alp;
+
+//activate
+activateByProx = true;
+activateRange = 300;
+activateMaxAlphaRad = 100;
 
 //Lights
 

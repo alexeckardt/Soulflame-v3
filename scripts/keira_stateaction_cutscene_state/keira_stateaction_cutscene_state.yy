@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Token Scripts",
-    "path": "folders/Scripts/Token Scripts.yy",
+    "name": "stateactions",
+    "path": "folders/Keira/Scripts/stateactions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "essence_token_flashRecoverSpeed",
+  "name": "keira_stateaction_cutscene_state",
   "tags": [],
   "resourceType": "GMScript",
 }

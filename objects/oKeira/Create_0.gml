@@ -193,19 +193,18 @@ dead = false;
 healPlayLoopAnimation = false;
 
 //Scarf
-
 scarfId = noone;
-
 scarfMainOffsetX = -3;
 scarfMainOffsetY = -7;
-
 scarfAnchorPosX = 0;
 scarfAnchorPosY = 0;
-
 scarfSurface = -1;
 scarfCol = bgr($121315);
 drawScarf = true;
 scarfSurfW = 64;
-
 scarfAmbientWindForce = 0;
 scarfAmbientWindDir = 0;
+
+//Cutscene
+cutsceneStateSprite = sKeiraIdle;
+cutsceneStateIndexSpeed = 0.1;

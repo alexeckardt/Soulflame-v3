@@ -39,7 +39,6 @@ function access_save_data(save_data, writing) {
 		index("weaponUsing",			Player, save_data);
 		index("weaponAlignmnet",		Player, save_data);
 		index("weaponSlotUsing",		Player, save_data);
-	
 		
 		//Essence
 		index("allowEssenceCollection", Player, save_data);
@@ -47,11 +46,10 @@ function access_save_data(save_data, writing) {
 		list_c("essenceTokens",			Player, save_data);
 		index("corruptionPercent",		Player, save_data);
 	
-	
 	//Game
 	index("timeInGame",				Game, save_data);
 	index("gameSeed",				Game, save_data);
-	
+	map("persistence",				Game, save_data);
 }
 
 

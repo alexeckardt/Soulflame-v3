@@ -2,7 +2,7 @@
 //
 //
 //
-function cutscene_event_wait_instruction() {
+function cutscene_wait_instruction() {
 
 	//Wait
 	if (!instance_exists(Instruction)) {

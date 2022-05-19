@@ -94,6 +94,13 @@ switch (STATE) {
 		keira_stateaction_heals();
 	
 		break;
+		
+	case state.cutscene_pause_on_end_anim:
+	case state.cutscene_loop_animation:
+	
+		keira_stateaction_cutscene_state();
+	
+		break;
 	
 }	
 

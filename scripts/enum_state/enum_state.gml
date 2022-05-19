@@ -67,6 +67,8 @@ enum state {
 	sit, //visual state
 	situp,	 //visual state
 	
+	cutscene_pause_on_end_anim,
+	cutscene_loop_animation,
 	
 		//ENEMY STATES
 		chase,

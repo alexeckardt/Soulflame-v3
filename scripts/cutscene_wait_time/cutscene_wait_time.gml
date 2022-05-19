@@ -4,7 +4,7 @@
 //
 //Skip Functionality: Nothing.
 //
-function cutscene_event_wait_time(seconds) {
+function cutscene_wait_time(seconds) {
 
 	//Increment Timer
 	timer += Game.delta;
