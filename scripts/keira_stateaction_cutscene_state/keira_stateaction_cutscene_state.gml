@@ -9,13 +9,29 @@ function keira_stateaction_cutscene_state() {
 	index_speed = 0;
 	inControl = false;
 
-	//Animate Until End OR if Looping
 	var tempIndSpeed = cutsceneStateIndexSpeed*Game.delta;	
-	if (image_index + tempIndSpeed < image_number - tempIndSpeed
-	|| STATE == state.cutscene_loop_animation) {
-		
+
+	//Animate Loop
+	if (STATE == state.cutscene_loop_animation) {
 		image_index += tempIndSpeed;
+	
+	//Animate Until End
+	} else {
 		
-	} 
+		//Positive Animation
+		if (tempIndSpeed > 0) {
+			if (image_index + tempIndSpeed < sprite_get_number(cutsceneStateSprite) - tempIndSpeed) {
+				image_index += tempIndSpeed;
+			} 
+			
+		//Negative Anumation
+		} else {
+	
+			if (image_index + tempIndSpeed > abs(tempIndSpeed)) {
+				image_index += tempIndSpeed;
+			}
+			
+		}
+	}
 
 }

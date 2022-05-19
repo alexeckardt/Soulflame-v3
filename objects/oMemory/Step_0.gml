@@ -25,7 +25,7 @@ if (activateByProx && !active) {
 		
 		//Percent to be shown based on distance
 		var p = (keiraDistance - activateMaxAlphaRad) / (activateRange - activateMaxAlphaRad)
-		alpTo = p;
+		alpTo = clamp(1 - p, 0, 1);
 		
 		if (p >= 0.999) {
 			active = true;	

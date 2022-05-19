@@ -78,7 +78,6 @@ enum state {
 		ready_attack,
 		jumping,
 		land,
-		look_up,
 		reloading,
 		attack,
 	

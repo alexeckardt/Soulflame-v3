@@ -42,7 +42,8 @@ first_activate_scene = [
 	[cutscene_wait_time, 0.1],
 	[cutscene_event_change_variable, k, "directionFacing", 1],
 	[cutscene_wait_time, 0.1],
-	[cutscene_event_keira_set_state, state.look_up],
+	[cutscene_event_keira_set_cutscene_sprite, sKeiraLookUp, 0, 0],
+	
 	
 	//
 	//Inspect

@@ -132,6 +132,7 @@
     {"id":{"name":"menu_close_menu","path":"scripts/menu_close_menu/menu_close_menu.yy",},"order":19,},
     {"id":{"name":"sKeiraDeathOverlay","path":"sprites/sKeiraDeathOverlay/sKeiraDeathOverlay.yy",},"order":0,},
     {"id":{"name":"sKeiraLandRunning","path":"sprites/sKeiraLandRunning/sKeiraLandRunning.yy",},"order":9,},
+    {"id":{"name":"sKeiraCutsceneTouchWisp","path":"sprites/sKeiraCutsceneTouchWisp/sKeiraCutsceneTouchWisp.yy",},"order":1,},
     {"id":{"name":"EnvironmentSpriteComponent","path":"objects/EnvironmentSpriteComponent/EnvironmentSpriteComponent.yy",},"order":8,},
     {"id":{"name":"OneWaySolid","path":"objects/OneWaySolid/OneWaySolid.yy",},"order":8,},
     {"id":{"name":"keybind_get_controller_icon_sheet_id","path":"scripts/keybind_get_controller_icon_sheet_id/keybind_get_controller_icon_sheet_id.yy",},"order":34,},

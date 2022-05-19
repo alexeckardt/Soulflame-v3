@@ -23,7 +23,6 @@ function keira_stateaction_default() {
 	var currentClimbAttachSprite = keira_get_movement_sprite("ClimbAttach");
 	var currentClimbIdleSprite = keira_get_movement_sprite("ClimbIdle");
 	var currentClimbEdgeHold = keira_get_movement_sprite("ClimbEdgeHold");
-	var currentLookUpSprite = keira_get_movement_sprite("LookUp");
 	var spriteKeyIs = "Idle";
 		
 	var sprGoal = sprite_index;
@@ -70,14 +69,7 @@ function keira_stateaction_default() {
 			index_speed = 0;
 			image_index = 0;
 			
-		} else
-		if (STATE == state.look_up) {
-		
-			sprGoal = currentLookUpSprite;
-			index_speed = 0;
-			
-		}
-		else {
+		} else {
 			
 			//
 			var dTo0 = point_distance(vSpeed, 0, 0, 0); 		
