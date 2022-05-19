@@ -27,26 +27,30 @@ if (surface_exists(surf)) {
 		for (var i = 0; i < s; i++) {
 	
 			//Get Object
-			var sprInfo = paralaxObjList[| i];
-			var objId = sprInfo[0];
+			var structObj = paralaxObjList[| i];
 
-			var objW = objId.sprite_width;
-			var objH = objId.sprite_height;
+			//var objW = structObj.sprWidth;
+			//var objH = structObj.sprHeight;
+			var objx = structObj.xx;
+			var objy = structObj.yy;
+			
+			var leftX = structObj.xx - structObj.xoffset;
+			var leftY = structObj.yy - structObj.yoffset;
 
 			//Culling
-			if (objId.bbox_right > surfX-drawSurfaceBuffer && objId.bbox_left < surfX+surfaceWidth/z+drawSurfaceBuffer) {
-				if (objId.bbox_bottom > surfY-drawSurfaceBuffer && objId.bbox_top < surfY+surfaceHeight/z+drawSurfaceBuffer) {
+			if (leftX+structObj.leftbbox < surfX+(surfaceWidth/z)+drawSurfaceBuffer && leftX+structObj.rightbbox > surfX-drawSurfaceBuffer) {
+				if (leftY+structObj.topbbox < surfY+(surfaceHeight/z)+drawSurfaceBuffer && leftY+structObj.bottombbox > surfY-drawSurfaceBuffer) {
 
 					//Set Shader
-					var shader = objId.shader;
+					var shader = structObj.shader;
 					if (shader != -1) {
 						shader_set(shader);	
 					}
 	
 					//Draw Sprite
-					draw_sprite_ext(objId.sprite_index, objId.image_index, (objId.x-surfX)*z, (objId.y-surfY)*z, 
-										objId.image_xscale*z, objId.image_yscale*z, objId.image_angle, 
-										objId.image_blend, objId.image_alpha);
+					draw_sprite_ext(structObj.sprite, structObj.index, (objx-surfX)*z, (objy-surfY)*z, 
+										structObj.xscale*z, structObj.yscale*z, structObj.rot, 
+										structObj.blend, structObj.alpha);
 								
 					//Reset Shader For Next Sprite
 					if (shader != -1) {

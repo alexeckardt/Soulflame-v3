@@ -12,8 +12,8 @@ for (var i = 0; i < s; i++) {
 	
 	var d = layer_get_depth(layerId);
 	
-	var doX = true//string_last_pos("X", layername) != 0;
-	var doY = true//string_last_pos("Y", layername) != 0;
+	var doX = true;
+	var doY = true;
 	
 	//If Name has ParalaxLayer in it
 	if (string_pos("Env", layername)) {
@@ -34,28 +34,26 @@ for (var i = 0; i < s; i++) {
 			var elementID = layerElements[j];
 				
 			//Create Element Object
-			var object_id = instance_create_depth(
+			var struct_id = new EnvironmentObj(
 									layer_sprite_get_x(elementID),
-									layer_sprite_get_y(elementID),
-									d,
-									EnvironmentSprite);
+									layer_sprite_get_y(elementID));
 			
 			//Setup Object
-			object_id.sprite_index = layer_sprite_get_sprite(elementID);
-			object_id.image_index = layer_sprite_get_index(elementID);
-			object_id.sprite_speed = layer_sprite_get_speed(elementID);
-			object_id.image_blend = layer_sprite_get_blend(elementID)
-			object_id.image_angle = layer_sprite_get_angle(elementID)
-			object_id.image_alpha =layer_sprite_get_alpha(elementID)
-			object_id.image_xscale =layer_sprite_get_xscale(elementID)
-			object_id.image_yscale =layer_sprite_get_yscale(elementID)
+			struct_id.set_sprite(layer_sprite_get_sprite(elementID));
+
+			struct_id.index = layer_sprite_get_index(elementID);
+			struct_id.index_speed = layer_sprite_get_speed(elementID);
+			struct_id.blend = layer_sprite_get_blend(elementID)
+			struct_id.rot = layer_sprite_get_angle(elementID)
+			struct_id.alpha =layer_sprite_get_alpha(elementID)
+			struct_id.xscale =layer_sprite_get_xscale(elementID)
+			struct_id.yscale =layer_sprite_get_yscale(elementID)
 			
-				
 			//Add Info to the List
 			ds_list_add(
-				layerObj.paralaxObjList, [object_id, doX, doY]);
+				layerObj.paralaxObjList, struct_id);
 			
-			//Destroy Layer Sprite (No Need)
+			//Destroy Layer Sprite (No Need; We delegated it to the struct)
 			layer_sprite_destroy(elementID)
 	
 			//Increase Count
