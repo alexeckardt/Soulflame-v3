@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"784a9947-6425-4e9c-93ce-6b6aa5ee0186","path":"sprites/sChasmDirt/sChasmDirt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"784a9947-6425-4e9c-93ce-6b6aa5ee0186","path":"sprites/sChasmDirt/sChasmDirt.yy",},"LayerId":{"name":"3f7b124c-de08-4fec-b4a3-e1e206c85256","path":"sprites/sChasmDirt/sChasmDirt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sChasmDirt","path":"sprites/sChasmDirt/sChasmDirt.yy",},"resourceVersion":"1.0","name":"784a9947-6425-4e9c-93ce-6b6aa5ee0186","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"a9e8b174-11c6-41b5-b98e-d140bef58709","path":"sprites/sChasmDirt/sChasmDirt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"a9e8b174-11c6-41b5-b98e-d140bef58709","path":"sprites/sChasmDirt/sChasmDirt.yy",},"LayerId":{"name":"3f7b124c-de08-4fec-b4a3-e1e206c85256","path":"sprites/sChasmDirt/sChasmDirt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sChasmDirt","path":"sprites/sChasmDirt/sChasmDirt.yy",},"resourceVersion":"1.0","name":"a9e8b174-11c6-41b5-b98e-d140bef58709","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sChasmDirt","path":"sprites/sChasmDirt/sChasmDirt.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a9723482-06ef-42fb-ae7c-6908416b392a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"784a9947-6425-4e9c-93ce-6b6aa5ee0186","path":"sprites/sChasmDirt/sChasmDirt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"2314036e-bf7b-4b56-b3bf-cf16a2879dc7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a9e8b174-11c6-41b5-b98e-d140bef58709","path":"sprites/sChasmDirt/sChasmDirt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,

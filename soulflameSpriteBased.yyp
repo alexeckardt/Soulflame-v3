@@ -178,6 +178,7 @@
     {"id":{"name":"particle_type_obj_get_obj","path":"scripts/particle_type_obj_get_obj/particle_type_obj_get_obj.yy",},"order":6,},
     {"id":{"name":"oMagpie","path":"objects/oMagpie/oMagpie.yy",},"order":0,},
     {"id":{"name":"sHiddenAreaRoomSprite","path":"sprites/sHiddenAreaRoomSprite/sHiddenAreaRoomSprite.yy",},"order":15,},
+    {"id":{"name":"roomChasmRightHotspring","path":"rooms/roomChasmRightHotspring/roomChasmRightHotspring.yy",},"order":9,},
     {"id":{"name":"oRoomTransition","path":"objects/oRoomTransition/oRoomTransition.yy",},"order":0,},
     {"id":{"name":"character_get_name","path":"scripts/character_get_name/character_get_name.yy",},"order":3,},
     {"id":{"name":"sKeiraAttackNoWeaponPunch1","path":"sprites/sKeiraAttackNoWeaponPunch1/sKeiraAttackNoWeaponPunch1.yy",},"order":3,},
@@ -553,6 +554,7 @@
     {"roomId":{"name":"roomChasmFallPool","path":"rooms/roomChasmFallPool/roomChasmFallPool.yy",},},
     {"roomId":{"name":"roomChasmMagpiePlatform","path":"rooms/roomChasmMagpiePlatform/roomChasmMagpiePlatform.yy",},},
     {"roomId":{"name":"roomChasmHotSpring","path":"rooms/roomChasmHotSpring/roomChasmHotSpring.yy",},},
+    {"roomId":{"name":"roomChasmRightHotspring","path":"rooms/roomChasmRightHotspring/roomChasmRightHotspring.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

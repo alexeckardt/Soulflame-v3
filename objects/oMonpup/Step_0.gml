@@ -46,7 +46,7 @@ var allowJumpWalls = false;
 if (STATE == state.base) {
 
 	//Hunt Bunfets
-	
+	myGrav = 0.3;
 
 	//Check For Detection
 	if (seesTarget) {
@@ -172,6 +172,7 @@ if (STATE == state.bounce) {
 			//Bounce
 			var d = min(abs(x - target.x), pounceRad*3) * jumpingDirection;
 			
+			myGrav = 0.6;
 			vSpeed = pounceJumpSpeed;
 			var gHspeed = (-d*myGrav)/(2*vSpeed) * ((point_to_position(target.x) != jumpingDirection)+1);;
 			hSpeedGoal = gHspeed;
@@ -188,6 +189,7 @@ if (STATE == state.bounce) {
 			if (onGround) {
 				STATE = state.land;
 				landingTicksLeft = landingTicks*3;
+				myGrav = 0.3;
 			}
 			
 		}

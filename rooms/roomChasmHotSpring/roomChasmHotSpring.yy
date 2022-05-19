@@ -24,6 +24,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oWisp","path":"objects/oWisp/oWisp.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":272.0,"y":240.0,"resourceVersion":"1.0","name":"inst_12862FA3","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oWispTarget","path":"objects/oWispTarget/oWispTarget.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":438.0,"y":257.0,"resourceVersion":"1.0","name":"inst_5174A276","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oCollisionTrigger","path":"objects/oCollisionTrigger/oCollisionTrigger.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":5.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":240.0,"y":192.0,"resourceVersion":"1.0","name":"inst_27C1B99B","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oDoor","path":"objects/oDoor/oDoor.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":5.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":944.0,"y":256.0,"resourceVersion":"1.0","name":"inst_58324AC3","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Important","tags":[],"resourceType":"GMRInstanceLayer",},
     {"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[
         {"assets":[
@@ -202,6 +203,7 @@
     {"name":"inst_12862FA3","path":"rooms/roomChasmHotSpring/roomChasmHotSpring.yy",},
     {"name":"inst_5174A276","path":"rooms/roomChasmHotSpring/roomChasmHotSpring.yy",},
     {"name":"inst_27C1B99B","path":"rooms/roomChasmHotSpring/roomChasmHotSpring.yy",},
+    {"name":"inst_58324AC3","path":"rooms/roomChasmHotSpring/roomChasmHotSpring.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
