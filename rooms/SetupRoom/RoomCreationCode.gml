@@ -1,3 +1,3 @@
 room = roomShatterViewingHole
-room = roomChasmVerticalPlatforms;
-room = roomLab;
+room = roomChasmRightHotspring;
+//room = roomLab;

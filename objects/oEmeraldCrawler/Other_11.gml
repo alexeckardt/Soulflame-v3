@@ -23,7 +23,7 @@ if (!createdNodes) {
 		var struct = new LinkedSpriteNode(bodySprite, i, xx, yy, 0.2);
 		
 		//Each gets a hit box, add to my hitbox list
-		struct.hitboxid = hitbox_create_for_list(hitboxes, 0, 0, 4, 4, true);
+		struct.hitboxid = hitbox_create_for_list(hitboxes, 0, 0, 8, 8, true);
 		struct.hitboxid.autoMoveToOwner = false;
 			
 		//Add

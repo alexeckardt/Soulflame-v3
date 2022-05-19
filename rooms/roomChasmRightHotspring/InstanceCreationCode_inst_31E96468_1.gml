@@ -1,4 +1,4 @@
-roomTo = roomChasmHealingStatue;
-xTo = 1088;
-yTo = 265;
+roomTo = roomChasmHotSpring;
+xTo = 928;
+yTo = 329;
 dirFacing = -1

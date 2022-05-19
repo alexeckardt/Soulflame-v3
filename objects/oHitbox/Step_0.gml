@@ -4,9 +4,11 @@
 image_xscale = hitboxWidth / sprW; 
 image_yscale = hitboxHeight / sprW; 
 
-//Damage Collision
+//Skip checks if my parent doesn't exists
+//NOTE: This means that Hitboxes MUST be destroyed by their creators.
 if (!instance_exists(creator)) exit;
 
+//Damage Collision
 var canTakeDamage = creator.invulnerableTicks < 0 && !hitboxLocked;
 if (canTakeDamage) {
 	if (instance_exists(oDamage)) {

@@ -22,7 +22,7 @@ turningSpeed = 0.1;
 airFrictionValue = 0;
 
 //Hitbox
-hitbox_create_for_list(hitboxes, x, y, 20, 30, true);
+hitbox_create_for_list(hitboxes, x, y, 15, 15, true);
 
 //
 //Custom Variables
@@ -59,7 +59,8 @@ headSprite = sEmeraldCrawlerHead;
 bodySprite = sEmeraldCrawlerBody;
 
 myDamage = noone;
-damageResetTicks = room_speed/2;
+damageResetTicksOnHit = room_speed/2;
+damageResetTicksOnDamageTarget = room_speed*2;
 damageResetTicksLeft = 0;
 
 orbitX = x;
@@ -76,6 +77,6 @@ bodyNodeCount = 5;
 bodyNodeSeperation = 7;
 
 //
-hp = 7;
+hp = 5;
 platinumDrop = 7;
 platinumDropRange = .5;

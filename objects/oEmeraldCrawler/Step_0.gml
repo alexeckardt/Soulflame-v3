@@ -9,7 +9,7 @@ enemy_take_damage();
 
 if (justDamaged) {
 	seesTarget = false;	
-	damageResetTicksLeft = damageResetTicks/2; //don't damage player
+	damageResetTicksLeft = max(damageResetTicksLeft, damageResetTicksOnHit); //don't damage player
 	spd = 0;}
 	
 //
@@ -232,7 +232,7 @@ if (damageResetTicksLeft < 0) {
 }
 //Reset Timer
 if (justDamagedTarget) {
-	damageResetTicksLeft = damageResetTicks;	
+	damageResetTicksLeft = damageResetTicksOnDamageTarget;	
 }
 
 //No Collide
