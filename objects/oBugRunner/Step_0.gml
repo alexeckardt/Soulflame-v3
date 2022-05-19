@@ -115,7 +115,14 @@ if (STATE == state.chase) {
 	
 		//Decide the direction I want to run in
 		runDirection = goalRunDirection;
-		directionFacing = runDirection;
+	
+		//Exit
+		if (runDirection == 0) {
+			STATE = state.base;
+		} else {
+			//Turn and Face
+			directionFacing = runDirection;	
+		}
 	
 	}
 }

@@ -172,7 +172,7 @@ if (STATE == state.bounce) {
 			//Bounce
 			var d = min(abs(x - target.x), pounceRad*3) * jumpingDirection;
 			
-			myGrav = 0.6;
+			myGrav = 0.4;
 			vSpeed = pounceJumpSpeed;
 			var gHspeed = (-d*myGrav)/(2*vSpeed) * ((point_to_position(target.x) != jumpingDirection)+1);;
 			hSpeedGoal = gHspeed;

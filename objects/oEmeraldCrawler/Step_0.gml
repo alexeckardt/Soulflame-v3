@@ -223,8 +223,8 @@ damageResetTicksLeft--;
 if (damageResetTicksLeft < 0) {
 	if (!instance_exists(myDamage)) {
 			
-		var w = 8;
-		var h = 8;
+		var w = 12;
+		var h = 12;
 		myDamage = enemy_damage_create(-1, x-w/2, y-h/2, w, h, 2, 1);
 		myDamage.canDamageEnemies = false; //don't damage Bunfets
 

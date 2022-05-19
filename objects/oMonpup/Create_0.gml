@@ -27,10 +27,10 @@ idleSprite = sMonpupIdle;
 
 decidedPouncePosition = false;
 pounceX = 0;
-pounceRad = 80;
+pounceRad = 128;
 maxJumpTiles = 6;
 
-pounceJumpSpeed = -6.5;
+pounceJumpSpeed = -8.5;
 
 runSpeed = 1.5;
 

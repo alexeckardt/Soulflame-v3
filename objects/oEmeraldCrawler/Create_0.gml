@@ -59,7 +59,7 @@ headSprite = sEmeraldCrawlerHead;
 bodySprite = sEmeraldCrawlerBody;
 
 myDamage = noone;
-damageResetTicks = room_speed*2;
+damageResetTicks = room_speed/2;
 damageResetTicksLeft = 0;
 
 orbitX = x;

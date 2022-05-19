@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"sPixel","path":"sprites/sPixel/sPixel.yy",},"order":11,},
     {"id":{"name":"sEnvCaveSpike2","path":"sprites/sEnvCaveSpike2/sEnvCaveSpike2.yy",},"order":20,},
+    {"id":{"name":"roomChasmRightPool","path":"rooms/roomChasmRightPool/roomChasmRightPool.yy",},"order":10,},
     {"id":{"name":"sEnvTreeMaple0","path":"sprites/sEnvTreeMaple0/sEnvTreeMaple0.yy",},"order":2,},
     {"id":{"name":"enum_character","path":"scripts/enum_character/enum_character.yy",},"order":5,},
     {"id":{"name":"cleanup_ds_list_for_structs","path":"scripts/cleanup_ds_list_for_structs/cleanup_ds_list_for_structs.yy",},"order":26,},
@@ -555,6 +556,7 @@
     {"roomId":{"name":"roomChasmMagpiePlatform","path":"rooms/roomChasmMagpiePlatform/roomChasmMagpiePlatform.yy",},},
     {"roomId":{"name":"roomChasmHotSpring","path":"rooms/roomChasmHotSpring/roomChasmHotSpring.yy",},},
     {"roomId":{"name":"roomChasmRightHotspring","path":"rooms/roomChasmRightHotspring/roomChasmRightHotspring.yy",},},
+    {"roomId":{"name":"roomChasmRightPool","path":"rooms/roomChasmRightPool/roomChasmRightPool.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
