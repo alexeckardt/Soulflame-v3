@@ -37,6 +37,7 @@ function keira_decide_attack_vars_sword(_nextState, damageStruct) {
 		case state.combat_neutral:
 		case state.combat_running:
 		case state.combat_reversal_tilt:
+		case state.combat_forward_tilt:
 
 			//Should Attack Upwards?
 

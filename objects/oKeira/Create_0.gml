@@ -51,6 +51,8 @@ inControl = true
 lastNoControlMX = 0;
 directionFacing = 1;
 visualDirectionFacing = 0;
+lastDirectionFacing = 1;
+timeFacingSameDirection = -1;
 resetStateOnAnimationFinish = false;
 
 //Climbing
@@ -92,7 +94,7 @@ halfGravityThreshold = 0.7;
 forceHalfGravity = false;
 allowHalfGravity = true;
 cutVspd = false;
-combatInAirJumpCoefficient = 1;
+combatInAirJumpCoefficient = 0.6;
 
 //Jump
 forceJump = false;
@@ -156,6 +158,8 @@ timeForPreAttacks = 8;
 tiltTime = room_speed/4;
 useFrontAttackSprite = false;
 lastWeaponUsing = weapon.height;
+hTiltTimeThreshold = room_speed / 2;
+timeSinceLastAttack = 0;
 
 //Damage Vars
 damageToCreateStruct = -1;

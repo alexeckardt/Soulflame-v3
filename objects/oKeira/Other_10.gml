@@ -35,6 +35,7 @@ switch (STATE) {
 	case state.combat_air_up_tilt:
 	
 	case state.combat_reversal_tilt:
+	case state.combat_forward_tilt:
 	
 	case state.combat_air_horizontal:	
 	case state.combat_air_htilt:

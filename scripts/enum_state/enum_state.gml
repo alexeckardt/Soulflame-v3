@@ -16,6 +16,7 @@ enum state {
 	//Change With Weapons
 	
 	combat_neutral,			//Quick Jabs and Round House Kicks
+	combat_neutral_combo_finisher, //after succesfull hits preform
 	
 	//Held, Normal
 	
@@ -30,7 +31,7 @@ enum state {
 	combat_down,			//Punch Downwards
 	
 	//As Tilt
-	combat_side_tilt,		//Heavy Punch / Kicks
+	combat_forward_tilt,		//Heavy Punch / Kicks
 	combat_reversal_tilt,	//Heavy Punch / Kicks RIGHT after you turn around
 	combat_up_tilt,			//Punch Upwards
 	combat_down_tilt,		//Punch Downwards

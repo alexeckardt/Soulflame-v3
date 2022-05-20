@@ -173,6 +173,9 @@ if (inWater) {
 
 //Dir Facing
 if (STATE == state.base && abs(controlHSpeed) >= 0.01) {
+	
+
+	//Set
 	directionFacing = (hSpeedGoal != 0) ? sign(hSpeedGoal) : directionFacing;
 }
 
@@ -374,7 +377,7 @@ if (onGround && !wasOnGround) {
 //
 //Run Detection
 var countAsRunThreshhold = 1.5;
-var running = abs(hSpeed) > runSpeed - countAsRunThreshhold;
+var running = abs(hSpeed) > runSpeed - countAsRunThreshhold && STATE == state.base;
 runningForTime = (running) ? runningForTime + Game.delta : -1;
 
 
@@ -683,6 +686,14 @@ if (Controller.combatAttackPressed) {
 if (wantToChangeAttackTicks > 0 && !Player.allowForging) {
 	//Decide Attack
 	keira_decide_attack_state();
+} else {
+
+	//Increment the Time since the last attack
+	//DO NOT increment when deciding above because
+	//some attacks use this as a check;
+	//and if the edge is razor thing it could skrew with the state
+	timeSinceLastAttack++;
+
 }
 
 //Switch To Attack
@@ -713,6 +724,10 @@ if (nextAttack != state.combat_empty) {
 			
 			//Botch
 			wantToChangeAttackTicks = -1;
+			
+			//Timing
+			timeSinceLastAttack = -1;
+			runningForTime = -1;
 		} 
 		
 	//Reset Attack, took too long
@@ -752,6 +767,13 @@ if (!instance_exists(Cutscene) && inControl) {
 		
 		}
 	}
+}
+
+//Time Direction Facing
+timeFacingSameDirection++;
+if (lastDirectionFacing != directionFacing) {
+	timeFacingSameDirection = -1;
+	lastDirectionFacing = directionFacing
 }
 
 

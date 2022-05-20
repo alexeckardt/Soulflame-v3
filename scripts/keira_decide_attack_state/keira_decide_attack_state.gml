@@ -5,8 +5,6 @@
 //
 function keira_decide_attack_state() {
 
-
-
 	//Check
 	var aerial = timeOffGround > 3;
 
@@ -66,11 +64,55 @@ function keira_decide_attack_state() {
 		//Check Horizontal
 		if (horizontalAttack) {
 			
-			testAttack = combat_state_set(	state.combat_running, state.combat_reversal_tilt, 
-								state.combat_air_horizontal, state.combat_air_htilt, 
-								aerial, hTilt);
+			//Normal			
+			if (aerial) {
 			
-		}
+				if (hTilt) {
+					testAttack = state.combat_air_htilt;
+				} else {
+					testAttack = state.combat_air_horizontal;
+				}
+			
+			
+			//
+			//
+			//
+			} else {
+			
+				//Base -- If all fail
+				testAttack = state.combat_neutral;
+			
+			
+				//Running
+				if (running) {
+					testAttack = state.combat_running;	
+					
+				} else {
+					
+					
+					if (hTilt) {
+						
+						//Decide to do a big punch forward to clear space
+						if (timeSinceLastAttack < hTiltTimeThreshold) {
+							testAttack = state.combat_forward_tilt;
+						}
+						
+						//Turned Around Really Quickly
+						if (timeFacingSameDirection < hTiltTimeThreshold) {
+							testAttack = state.combat_reversal_tilt;
+						}
+						
+					}
+					
+						
+				}
+					
+					
+			}
+			
+		//End horizontal
+		}			
+			
 		
 		//Up
 		if (upAttack) 

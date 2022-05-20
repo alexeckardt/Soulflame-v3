@@ -37,7 +37,6 @@ function keira_decide_attack_vars_no_weapon(_nextState, damageStruct) {
 		case state.combat_neutral:
 		case state.combat_down:
 			
-			
 			//Update Sprite + Control
 			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
 			spd = 0.6;
@@ -48,9 +47,13 @@ function keira_decide_attack_vars_no_weapon(_nextState, damageStruct) {
 			damageStruct.damage = bD/2;
 			keira_damage_update_struct(damageStruct, 0, -16, 35, 15, 1, 0, -0.5, true);
 			
+			//move alittle
+			hSpeed += 0.5*directionFacing;
+			
 			break;
 		
 		case state.combat_reversal_tilt:
+		case state.combat_forward_tilt:
 
 			//Update Sprite + Control
 			spr = sKeiraAttackNoWeaponHTilt;
@@ -166,14 +169,17 @@ function keira_decide_attack_vars_no_weapon(_nextState, damageStruct) {
 			var vAdd = -4 + min(controlVSpeed, 0)
 			keira_damage_update_struct(damageStruct,-12, -50, 38, 44, 1.5, 0, vAdd, true);
 			
-			
+
 			//Stay In Air Longer
-			if (controlVSpeed < 0) {
-				controlVSpeed += jumpSpeed * combatInAirJumpCoefficient;
+			if (vSpeed < 0) {
+				
+				//How much force to get to consistant speed
+				var goalVspeed = jumpSpeed * (1.5);
+				var spdPLost = (jumpSpeed - vSpeed)/jumpSpeed;
+				
+				vSpeed = goalVspeed - sqrt(spdPLost)*jumpSpeed //jumpspeed negativ
 			} else {
-				controlVSpeed /= 2;}
-			
-			controlVSpeed -= 1;
+				vSpeed /= 2;}
 			
 			break;
 			
