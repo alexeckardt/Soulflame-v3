@@ -66,7 +66,7 @@ function keira_decide_attack_state() {
 		//Check Horizontal
 		if (horizontalAttack) {
 			
-			testAttack = combat_state_set(	state.combat_running, state.combat_htilt, 
+			testAttack = combat_state_set(	state.combat_running, state.combat_reversal_tilt, 
 								state.combat_air_horizontal, state.combat_air_htilt, 
 								aerial, hTilt);
 			
@@ -122,7 +122,7 @@ function keira_decide_attack_state() {
 			nextAttack = state.combat_neutral;
 		
 			if (doHTilt) {
-				nextAttack = state.combat_htilt;
+				nextAttack = state.combat_reversal_tilt;
 			
 			} else
 			if (runningForTime > tiltTime) {

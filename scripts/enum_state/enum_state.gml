@@ -30,7 +30,8 @@ enum state {
 	combat_down,			//Punch Downwards
 	
 	//As Tilt
-	combat_htilt,			//Heavy Punch / Kicks
+	combat_side_tilt,		//Heavy Punch / Kicks
+	combat_reversal_tilt,	//Heavy Punch / Kicks RIGHT after you turn around
 	combat_up_tilt,			//Punch Upwards
 	combat_down_tilt,		//Punch Downwards
 	combat_air_htilt,			//Heavy Punch / Kicks

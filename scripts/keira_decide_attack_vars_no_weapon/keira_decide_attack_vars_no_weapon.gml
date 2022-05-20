@@ -50,7 +50,7 @@ function keira_decide_attack_vars_no_weapon(_nextState, damageStruct) {
 			
 			break;
 		
-		case state.combat_htilt:
+		case state.combat_reversal_tilt:
 
 			//Update Sprite + Control
 			spr = sKeiraAttackNoWeaponHTilt;
