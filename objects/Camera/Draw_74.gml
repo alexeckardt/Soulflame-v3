@@ -15,7 +15,7 @@ if (surface_exists(bkgSurf)) {
 	
 	//Reset Surface
 		surface_set_target(bkgSurf);
-			draw_clear_alpha(c_dkgray, 1);
+			draw_clear_alpha(c_red, 1);
 		surface_reset_target();
 }
 

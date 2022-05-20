@@ -46,3 +46,6 @@ if (!firstRoom) {
 	
 }
 firstRoom = false;
+
+//Other
+Game.inventoryOpen = false;

@@ -162,9 +162,10 @@ if (!usingController) {
 	pausePressed = keyboard_check_pressed(vk_escape);
 	
 	healHolding = keyboard_check(ord("R"));
-
-	
 	uiUp = up;
 	uiDown = down;
+	
+	mapPressed = keyboard_check_pressed(ord("M"));
+	inventoryPressed = keyboard_check_pressed(ord("I"));
 
 }

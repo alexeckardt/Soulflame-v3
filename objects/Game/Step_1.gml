@@ -14,29 +14,15 @@ if (indepedentDelta > deltatracking) {
 }
 
 //
-if (Controller.pausePressed) {
-	
-	//Toggle
-	paused = !paused;
-	someUIopen = paused;
-	
-	//Paused
-	if (paused) {
-	
-		if (!instance_exists(pauseMenuObj)) {
-			pauseMenuObj = instance_create_depth(x, y, 0, PauseMenu);	
-		}
+//Instance Spawning (UI stuff)
+//
 
-	
-	} else {
-	
-		pauseMenuObj.close = true;
-		pauseMenuObj = noone;
-	
-	}
-		
-}
+event_user(1);
 
+
+//
+//Timing
+//
 
 if (!paused) {
 	delta = roundn(indepedentDelta, 4);

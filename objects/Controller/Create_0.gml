@@ -59,6 +59,10 @@ function reset_keybind_vars() {
 	rightStickPressed = false;
 	
 	healHolding = false;
+	
+	//
+	mapPressed = false;
+	inventoryPressed = false;
 
 }
 

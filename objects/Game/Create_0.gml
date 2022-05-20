@@ -33,6 +33,8 @@ someUIopen = false;
 paused = false;
 pauseMenuObj = noone;
 showCreationErrors = true;
+inventoryOpen = false;
+inventoryObj = noone;
 
 //Corruption
 corruption_CollectEssenceIncrease		= 1/200;
