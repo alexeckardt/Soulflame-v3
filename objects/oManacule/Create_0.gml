@@ -4,7 +4,6 @@ event_inherited();
 align = 0;
 target = noone;
 
-
 randomize();
 
 //Movement
@@ -15,6 +14,7 @@ travelDirection = emitDirection;
 travelSpeed = random_range(2.5, 3);
 zoomMaxSpeed = 6 + random_range(-1, 1);
 holdTime = random(10); //Time in the stasis part
+pauseBeforeEmitTime = 0; //Time before shooting out
 
 directionLerpSpeed = 50; //decreases to 1 in phase 3
 

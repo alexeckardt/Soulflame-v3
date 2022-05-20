@@ -160,6 +160,7 @@ lastWeaponUsing = weapon.height;
 //Damage Vars
 damageToCreateStruct = -1;
 haveSlideDamage = false;
+lastEnemyDamagedMe = noone; //set by hitbox
 
 //Interacting
 interacting = false;

@@ -8,14 +8,14 @@ function save_get_player_position(isNewSave) {
 	//Get Positions
 	if (!isNewSave) {
 		savepointRoom	= room_get_name(room);
-		savepointX		= oKeira.x;
-		savepointY		= oKeira.y;
+		savepointX		= floor(oKeira.x);
+		savepointY		= floor(oKeira.y);
 		savepointD		= oKeira.directionFacing;
 	} else {
-		savepointRoom	= 0//room_get_name(room);
-		savepointX		= 0//oKeira.x;
-		savepointY		= 0//oKeira.y;
-		savepointD		= 0//oKeira.directionFacing;
+		savepointRoom	= 0;//room_get_name(room);
+		savepointX		= 0;//oKeira.x;
+		savepointY		= 0;//oKeira.y;
+		savepointD		= 0;//oKeira.directionFacing;
 	}
 	
 	//Create Map

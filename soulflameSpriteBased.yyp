@@ -234,6 +234,7 @@
     {"id":{"name":"cutscene_wait_instruction","path":"scripts/cutscene_wait_instruction/cutscene_wait_instruction.yy",},"order":18,},
     {"id":{"name":"BackgroundParalaxAmount","path":"scripts/BackgroundParalaxAmount/BackgroundParalaxAmount.yy",},"order":6,},
     {"id":{"name":"enemy_generic_death_timer","path":"scripts/enemy_generic_death_timer/enemy_generic_death_timer.yy",},"order":11,},
+    {"id":{"name":"sDialogueWhiskchief","path":"sprites/sDialogueWhiskchief/sDialogueWhiskchief.yy",},"order":3,},
     {"id":{"name":"draw_text_with_keybinds","path":"scripts/draw_text_with_keybinds/draw_text_with_keybinds.yy",},"order":28,},
     {"id":{"name":"oDecayableLight","path":"objects/oDecayableLight/oDecayableLight.yy",},"order":6,},
     {"id":{"name":"sKeiraOrg","path":"sprites/sKeiraOrg/sKeiraOrg.yy",},"order":11,},

@@ -25,6 +25,15 @@ function player_do_death(){
 		//Preform A Dead Reset
 		loadRoomAsRespawn = true;
 		
+		//
+		//Emit Manacules
+		var targett = k.lastEnemyDamagedMe;
+		var c = ds_list_size(essenceTokens);
+		for (var i = 0; i < c; i++) {
+			var token = essenceTokens[| i];
+			essence_create_homing_object(k.x, k.y, 5, ceil(token.percent / 20), token.alignment, targett, false);
+		}
+		
 	}
 	
 	

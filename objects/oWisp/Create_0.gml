@@ -19,6 +19,7 @@ col = 0;
 gobbleRadius = 0; //increases so no weird zooming goes on
 
 storename = game_persistence_create_name_room_specific("wisp");
+saveToPersistence = true; //can be ignored for cutscenes
 checkedAlreadyDestroyed = false;
 
 goalX = x;
@@ -30,3 +31,5 @@ image_speed = 0.5;
 
 interactRange = 128;
 shootOffRange = 32;
+
+

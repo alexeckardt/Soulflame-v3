@@ -15,15 +15,20 @@ switch (phase) {
 	case 0:
 	
 		//Move
-		x += lengthdir_x(travelSpeed, travelDirection)*t;
-		y += lengthdir_y(travelSpeed, travelDirection)*t;
+		pauseBeforeEmitTime -= t;
+		if (pauseBeforeEmitTime < 0) {
+			
+			//Moe
+			x += lengthdir_x(travelSpeed, travelDirection)*t;
+			y += lengthdir_y(travelSpeed, travelDirection)*t;
 
-		//Slow Down
-		travelSpeed -= 0.05*t
+			//Slow Down
+			travelSpeed -= 0.05*t
 	
-		if (travelSpeed < 0.001) {
-			phase++;
-			travelSpeed = 0;
+			if (travelSpeed < 0.001) {
+				phase++;
+				travelSpeed = 0;
+			}
 		}
 		
 	break;

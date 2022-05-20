@@ -98,7 +98,9 @@ switch (phase) {
 		if (point_distance(x, y, target.x, target.y) < gobbleRadius + travelSpeed) {
 		
 			//End
-			game_persistence_set(storename, 1);
+			if (saveToPersistence) {
+				game_persistence_set(storename, 1);}
+				
 			instance_destroy();
 
 		}

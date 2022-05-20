@@ -18,11 +18,11 @@ if (otherDamage.life > 0) {
 			
 //Take Damage
 Player.hp--;
+oKeira.lastEnemyDamagedMe = otherDamage.creator;
 
 //Hit Effect
 var d = point_direction(otherDamage.x, otherDamage.y, x, y);
 add_screen_shake_direction(8, d, 4);
-
 
 //Player State
 Keira.STATE = state.hurt;

@@ -36,6 +36,9 @@ function enemy_take_damage() {
 				//
 				damageingObject.hasHitEnemy = true;
 				damageingObject.hasHitEnemyAllowUpdate = true;
+				
+				whoDamagedMeLast = damageCreator;
+				
 			}
 		}
 	
@@ -49,14 +52,16 @@ function enemy_take_damage() {
 		
 		//Release Essence
 		if (damageingObject.collectEssence) {
+			
 			var manaLost = essenceDropPerDamage * baseDamage;
 			var randomoffset = choose(0, 0, -1, 1) * Player.collectBalanceEssence;
 			var chooseAlignment = sign(alignment + randomoffset);	
 			
-			var manaculesToRelease = clamp(power(manaLost, 0.5) + irandom_range(-1, 1), 0, 8);
+			var manaculesToRelease = floor(clamp(power(manaLost, 0.5) + irandom_range(-1, 1), 0, 8));
 			
 			//Release Visual Particles
-			essence_create_homing_object(hitboxTakingDamage.x, hitboxTakingDamage.y, 5, manaculesToRelease, chooseAlignment, damageCreator);	
+			if (hp > 0) {
+				essence_create_homing_object(hitboxTakingDamage.x, hitboxTakingDamage.y, 5, manaculesToRelease, chooseAlignment, damageCreator, 1);	}	
 							
 			//Essence Addition
 			if (damageFromPlayer) {
@@ -71,6 +76,8 @@ function enemy_take_damage() {
 			}	
 				
 		}
+		//Store
+		shouldEmitEssenceOnDeath = damageingObject.collectEssence;
 			
 		//Add Corruption To Player
 		if (damageFromPlayer) {

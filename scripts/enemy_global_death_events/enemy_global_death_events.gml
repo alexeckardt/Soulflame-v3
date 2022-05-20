@@ -20,9 +20,19 @@ function enemy_global_death_events(){
 	amount = max(0, amount);
 	var currentVel = point_distance(0, 0, hSpeed, vSpeed);
 	var currentDir = point_direction(0, 0, hSpeed, vSpeed);
-	
 	var vel = max(2, currentVel);
-	
 	platinum_create(centerbboxX, centerbboxY, amount, 5, vel/2, vel, currentDir, 10, vel/3);
 
+	//
+	//Essence
+	if (shouldEmitEssenceOnDeath) {
+		
+		//Manacules
+		var manaculeCount = floor(sqrt(maxhealth) + irandom(2));
+		essence_create_homing_object(x, y, 5, manaculeCount, alignment, whoDamagedMeLast, false);
+	
+		//Drop Essence Gl If Needed
+		var chanceToSpawnSoul = 0;
+	
+	}
 }

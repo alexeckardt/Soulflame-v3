@@ -11,6 +11,7 @@ mask_index = sprite_index;
 
 	//Health
 	hp = 2;
+	maxhealth = hp;
 
 	//Movement
 	weight = 1;
@@ -23,7 +24,7 @@ mask_index = sprite_index;
 	resistedDamageTypes = [];
 	
 	//Essence
-	essenceDropPerDamage = 6; //A Full Token is 100
+	essenceDropPerDamage = 11; //A Full Token is 100
 	
 	
 	platinumDrop = 100; //
@@ -59,7 +60,11 @@ mask_index = sprite_index;
 	randomize();
 	alignment = choose(-1, 1);
 	healthyPercent = 0;
+	shouldEmitEssenceOnDeath = true;
+	
+	//
 	justDamaged = false;
+	whoDamagedMeLast = noone;
 		
 	//Sprites
 	updatedAlignmentSprites = false; //Updates any sprites on alginment switch or creation

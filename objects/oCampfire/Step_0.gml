@@ -10,7 +10,7 @@ if (playerSittingHere) {
 		//Stop Sitting Here
 		playerSittingHere = false;
 			
-		//Save Again
+		//Save Game
 		save_game(true, false); //*Temporary*
 	}
 	
