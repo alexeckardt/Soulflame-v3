@@ -6,7 +6,7 @@
     "path": "folders/Meta/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "draw_keybind",
+  "name": "draw_keybind_from_string_id",
   "tags": [],
   "resourceType": "GMScript",
 }

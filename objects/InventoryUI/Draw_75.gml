@@ -15,7 +15,6 @@ gpu_set_blendmode_proper();
 var darkenScreenHeight = h*openAlpha;
 draw_sprite_ext(sPixel, 0, 0, (h - darkenScreenHeight) div 2, w, darkenScreenHeight, 0, 0, inventoryBkgAlpha);
 
-
 //
 if (!surface_exists(invenSurf))	invenSurf = surface_create(w, h);	
 
@@ -70,7 +69,7 @@ surface_set_target(invenSurf);
 	//	Draw Keybinds to show how to transition left or right through pages
 	//
 
-	
+	draw_keybind_from_string_id()
 
 
 surface_reset_target();
