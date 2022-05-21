@@ -29,6 +29,7 @@ t_scene_info = [
 playerSittingHere = false;
 displayFire = false;
 lit = false;
+playerWASSittingHere = false;
 
 interactMessage = lang_get_text("ui.interact.rest");
 

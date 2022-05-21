@@ -6,6 +6,7 @@ function enum_flower() {
 
 	enum flower {
 	
+		//Buffs
 		lapis_radiance,
 		scarlet_fawn,
 		fuchsia_lily,
@@ -16,6 +17,8 @@ function enum_flower() {
 		summer_floral,
 		rose_sunflower,
 		violet_lily,	
+	
+		//Debugs + Associated Flowers (If ever get)
 	
 	}
 

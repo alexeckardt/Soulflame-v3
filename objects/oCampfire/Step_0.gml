@@ -31,6 +31,18 @@ if (playerSittingHere) {
 			}
 			
 		}
+		
+		//
+		//Sitdown Events (Run only once)
+		if (!playerWASSittingHere) {
+		
+			//Realize
+			playerWASSittingHere = true;
+			
+			//Update Effects
+			effect_update_time_left();
+		
+		}
 			
 	} else {
 		
@@ -39,7 +51,10 @@ if (playerSittingHere) {
 			
 	}
 	
-}
+} else {
+	//Set
+	playerWASSittingHere = false;
+}	
 
 litPercent = lerp(litPercent, lit, 0.2*Game.delta);
 

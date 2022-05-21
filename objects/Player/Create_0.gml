@@ -173,3 +173,7 @@ loadRoomAsRespawn = false;
 deadFadeOut = false;
 deadTimeBeforeFadeOut = room_speed*1.5;
 deadFadeOutTicks = deadTimeBeforeFadeOut;
+
+//Flowers
+flowersHave = ds_list_create();
+effectList = ds_list_create();
