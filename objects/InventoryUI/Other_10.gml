@@ -69,7 +69,7 @@ if (hoveringItemId != -1) {
 	//Desc
 	var descY = nameY + string_height(nameY) + textVerticalBuffer;
 	draw_text_color(secCentreX, descY, textItemDesc, c, c, c, c, 1);
-
+	
 }
 
 //

@@ -3,7 +3,7 @@
 //
 //
 //
-function FlowerEffect(_flower) {
+function FlowerEffect(_flower) constructor {
 	
 	effect = _flower;
 	campfiresLeft = 1;

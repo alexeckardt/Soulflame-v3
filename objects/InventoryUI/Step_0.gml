@@ -89,4 +89,66 @@ if (page == 0) {
 		}
 	}
 	
+} else
+if (page == 1) {
+	
+} else
+if (page == 2) {
+	
+} else
+if (page == 3) {
+	
+	//
+	var mx = Controller.right - Controller.left;
+	
+	//Move Holding Not Instant
+	ticksBeforeNextMoveLeft--;
+	if (flowerScrollMovingDir != mx) {
+		//Bring Time Back to the original hold value
+		ticksBeforeNextMove = ticksBeforeNextMoveResetVal; //reset
+		flowerScrollMovingDir = mx;
+	}	
+	
+	//Actually Scroll
+	if (flowerScrollMovingDir != 0) {
+		
+		//Check if good time
+		if (ticksBeforeNextMoveLeft < 0) {
+
+			//Lower the Time for the next move; reset timer
+			ticksBeforeNextMove -= 1;
+			ticksBeforeNextMoveLeft = ticksBeforeNextMove;
+		
+			//Move in Direction & Clamp
+			flowerCollectedHighlighting += flowerScrollMovingDir;
+			var c = ds_list_size(Player.flowersHave);
+			flowerCollectedHighlighting = clamp(flowerCollectedHighlighting, -1, c-1);
+			
+			//
+			//Get Other Info
+			var newFlowerId = Player.flowersHave[| flowerCollectedHighlighting];
+			var tempStruct = flower_create_effect_struct(newFlowerId, 0); //no mutator right now;
+			flowerStringFlowerName = lang_get_text("flower." + string(newFlowerId) + ".name");
+			flowerStringFlowerDesc = lang_get_text("flower." + string(newFlowerId) + ".desc");
+			flowerEffectEffect = "";
+			flowerEffectLocation = "";
+			flowerEffectPersistence = tempStruct.campfiresLeft;
+			
+			//
+			//Wrap Font
+			draw_set_font(fontKeira);
+			flowerDescWrapLength = string_width(flowerStringFlowerName) + flowerEffectIconSpriteWidth + flowerNameIconXoffset*2;
+			flowerStringFlowerDesc = string_wrap(flowerStringFlowerDesc, flowerDescWrapLength);
+			
+			//Remove
+			delete tempStruct;
+			
+		}
+	}
+	
+	//Lerp Smootly
+	flowerCollectedHighlightingSmooth = 
+		lerp(flowerCollectedHighlightingSmooth, flowerCollectedHighlighting, 0.3*time);
+	
+	
 }

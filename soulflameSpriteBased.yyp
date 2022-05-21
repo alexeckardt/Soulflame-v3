@@ -515,6 +515,7 @@
     {"id":{"name":"effect_has","path":"scripts/effect_has/effect_has.yy",},"order":2,},
     {"id":{"name":"choose_weighted","path":"scripts/choose_weighted/choose_weighted.yy",},"order":0,},
     {"id":{"name":"oKeira","path":"objects/oKeira/oKeira.yy",},"order":0,},
+    {"id":{"name":"inventory_page_flower_draw_stats","path":"scripts/inventory_page_flower_draw_stats/inventory_page_flower_draw_stats.yy",},"order":1,},
     {"id":{"name":"keria_scarf_reset_forces_to_def","path":"scripts/keria_scarf_reset_forces_to_def/keria_scarf_reset_forces_to_def.yy",},"order":5,},
     {"id":{"name":"sKeiraAttackNoWeaponDownAir","path":"sprites/sKeiraAttackNoWeaponDownAir/sKeiraAttackNoWeaponDownAir.yy",},"order":12,},
     {"id":{"name":"sCorruptedRootChaos","path":"sprites/sCorruptedRootChaos/sCorruptedRootChaos.yy",},"order":0,},

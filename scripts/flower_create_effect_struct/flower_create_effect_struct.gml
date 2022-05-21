@@ -7,7 +7,7 @@ function flower_create_effect_struct(flowerType, mutator) {
 
 
 	//Create struct
-	var struct = FlowerEffect(flowerType);
+	var struct = new FlowerEffect(flowerType);
 	struct.mutatorAdded = mutator;
 
 	//Stats

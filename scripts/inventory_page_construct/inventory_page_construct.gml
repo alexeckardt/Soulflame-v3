@@ -12,6 +12,7 @@ function inventory_page_construct(page){
 		
 		case 0:
 		
+			//Reset
 			inventory_create_item_list();
 			cursorX = w div 2;
 			cursorY = h div 2;
@@ -22,7 +23,11 @@ function inventory_page_construct(page){
 		case 2:
 			break;
 		case 3:
-			game_persistence_set("sword", 1);	
+
+			//Reset Position
+			flowerCollectedHighlightingSmooth = -1
+			flowerCollectedHighlighting = -1;
+			
 			break;
 			
 	}

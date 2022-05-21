@@ -33,6 +33,7 @@ headerKeybindYPos = headerHeight div 2;
 //
 highlightedColour = c_white;
 unhighlightedColour = c_dkgray;
+darkColour = $222222;
 
 //Edges
 drawEdgeHBuffer = 12;
@@ -69,14 +70,48 @@ textVerticalBuffer = 10;
 
 
 
+//
+//
+//ARTIFACTS
+
+
+
 
 //
 //
 //FLOWERS
 
+subpage = 0;
+flowerCollectedHighlighting = -1;
+flowerCollectedHighlightingSmooth = -1; //animated
+flowerCollectedListSprite = sinventoryFlowerIcon;
+flowerEffectIconSprite = sUIFlowerEffectIcon;
+flowerCollectedListSpriteSep = sprite_get_width(flowerCollectedListSprite) + 1;
+flowerEffectIconSpriteWidth = sprite_get_width(flowerEffectIconSprite);
 
+flowerNameIconXoffset = 3;
 
+ticksBeforeNextMoveResetVal = 10;
+ticksBeforeNextMove = ticksBeforeNextMoveResetVal;
+ticksBeforeNextMoveLeft = -1;
+flowerScrollMovingDir = 0;
 
-//
-//
-//ARTIFACTS
+flowerStringNoFlower = lang_get_text("inventory.flower.none_selected");
+flowerStringFlowerInfoEffect = lang_get_text("inventory.flower.effect");
+flowerStringFlowerInfoLocation = lang_get_text("inventory.flower.location");
+flowerStringFlowerInfoPersistence = lang_get_text("inventory.flower.persistence");
+flowerStringAddtoFlame = lang_get_text("inventory.flower.add_to_flame");
+flowerStringAddMutator = lang_get_text("inventory.flower.add_mutator");
+
+//Gotten On Switch
+flowerStringFlowerName = "";
+flowerStringFlowerDesc = "";
+flowerStringFlowerEffect = "";
+flowerStringFlowerLocation = "";
+flowerStringFlowerPersistence = "";
+
+flowerInfoSideSep = 5;
+flowerDescWrapLength = 0;
+
+mutatorSelected = 0;
+
