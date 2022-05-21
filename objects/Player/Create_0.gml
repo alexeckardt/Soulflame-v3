@@ -178,6 +178,9 @@ deadFadeOutTicks = deadTimeBeforeFadeOut;
 flowersHave = ds_list_create();
 effectList = ds_list_create();
 
+effectSprite = sUIFlowerEffectIcon;
+effectSpriteSep = 2 + sprite_get_width(effectSprite);
+
 effect_add(flower.lapis_radiance, 2);
 effect_add(flower.lapis_radiance, 1);
 effect_add(flower.lapis_radiance+3, 0);

@@ -115,6 +115,14 @@ for (var i = 0; i < currentMaxHealth; i++) {
 		
 }
 
+//Effects
+var c = ds_list_size(effectList);
+var effectSpotX = 5;
+var effectSpotY = hpY + healthBarHeight + 3; 
+for (var i = 0; i < c; i++) {
+	var effect = effectList[| i].effect;
+	draw_sprite(sUIFlowerEffectIcon, effect, effectSpotX + effectSpriteSep*i, effectSpotY);
+}
 
 //Weapon Wheel
 if (weaponWheelScale > weaponWheelScaleDispalyThreshold) {

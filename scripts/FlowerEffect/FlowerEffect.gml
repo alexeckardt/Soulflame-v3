@@ -18,10 +18,6 @@ function FlowerEffect(_flower) constructor {
 	
 		var percentUsed= campfiresLeft / campfiresLeftOrg;
 		
-		if (mutatorAdded != 0) {
-			draw_sprite(sInventoryFlowerMutators, mutatorAdded, xx + 2, yy + 2);
-		}
-	
 		//Base
 		var spr = sinventoryFlowerIcon;
 		draw_sprite(spr, effect, xx, yy);
@@ -34,7 +30,10 @@ function FlowerEffect(_flower) constructor {
 		var h = sprite_get_height(spr);
 		draw_sprite_part_ext(spr, effect, 0, 0, w, h*(1-percentUsed), xx-xof, yy-yof, 1, 1, c_dkgray, 1);
 	
-		
+		if (mutatorAdded != 0) {
+			draw_sprite(sUIFlowerMutationIcon, mutatorAdded, xx + 2, yy + 2);
+		}
+	
 	}
 
 }
