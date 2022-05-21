@@ -23,9 +23,9 @@ function keybind_get_keyboard_string_from_string(keybindStr) {
 			return Controller.interactKey;
 			
 		case "uiLeftPage":
-			return Controller.interactKey;
+			return Controller.inventoryLeftPageKey;
 		case "uiRightPage":
-			return Controller.interactKey;
+			return Controller.inventoryRightPageKey;
 			
 	}
 

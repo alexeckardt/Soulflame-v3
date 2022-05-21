@@ -13,8 +13,6 @@ function keybind_draw_controller_icon(xx, yy, keybind) {
 	var iconY = controllerIconId div iconww;
 	
 	//Draw
-	var correctionX = -9;
-	var correctionY = -18;
-	draw_sprite_part(sControllerIconSheets, Controller.iconPage, iconX*iconww, iconY*iconww, iconww, iconww, xx+correctionX, yy+correctionY);
+	draw_sprite_part(sControllerIconSheets, Controller.iconPage, iconX*iconww, iconY*iconww, iconww, iconww, xx, yy);
 
 }

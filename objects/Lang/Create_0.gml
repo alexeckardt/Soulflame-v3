@@ -17,3 +17,8 @@ keyStringRCTRL	= "Rctrl";
 keyStringTAB	= "TAB"
 keyStringLSHIFT	= "Lshft";
 keyStringRSHIFT	= "Rshft";
+
+keyStringDownArrow = "Down";
+keyStringUpArrow = "Up";
+keyStringLeftArrow = "Left";
+keyStringRightArrow = "Right";

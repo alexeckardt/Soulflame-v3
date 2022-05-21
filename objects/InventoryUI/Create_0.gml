@@ -26,10 +26,16 @@ headerBuffer = 4;
 headerHeight = sprite_get_height(headerSprites) + 2*headerBuffer;
 
 headerHighlightedSpriteXoffset = 0;
-headerSpriteSeperation = 128;
+headerSpriteSeperation = 90;
 
 headerKeybindYPos = headerHeight div 2;
 
 //
 highlightedColour = c_white;
-unhighlightedColour = c_gray;
+unhighlightedColour = c_dkgray;
+
+//Edges
+drawEdgeBuffer = 4;
+
+//Lines
+sectionDividerLineEdgeBuffer = 10;

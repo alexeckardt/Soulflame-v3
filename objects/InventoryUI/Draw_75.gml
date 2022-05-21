@@ -63,17 +63,24 @@ surface_set_target(invenSurf);
 	draw_text_colour(xx, iconDrawY+1, pageName, 
 			highlightedColour, highlightedColour, highlightedColour, highlightedColour, 1);
 
-
-
 	//
 	//	Draw Keybinds to show how to transition left or right through pages
 	//
 
-	draw_keybind_from_string_id()
+	var buff = 15;
+	draw_keybind_from_string_id(buff, headerKeybindYPos, "uiLeftPage", false);
+	draw_keybind_from_string_id(w-buff, headerKeybindYPos, "uiRightPage", false);
+
+
+	//
+	//	Preform Events
+	//
+	
+	event_user(page);
 
 
 surface_reset_target();
 
 //
 //Draw Surface
-draw_surface(invenSurf, 0, 0);
+draw_surface_ext(invenSurf, 0, (h - darkenScreenHeight) div 2, 1, openAlpha, 0, c_white, 1);

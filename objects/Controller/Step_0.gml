@@ -127,6 +127,8 @@ if (usingController) {
 	
 	uiUp = (verticalStick < 0);
 	uiDown = (verticalStick > 0);
+	
+	//inventoryPageLeft = 
 }
 
 //Keyboard Controller
@@ -167,5 +169,7 @@ if (!usingController) {
 	
 	mapPressed = keyboard_check_pressed(ord(mapKey));
 	inventoryPressed = keyboard_check_pressed(ord(inventoryKey));
-
+	
+	inventoryPageLeft = keyboard_check_pressed(ord(inventoryLeftPageKey));
+	inventoryPageRight = keyboard_check_pressed(ord(inventoryRightPageKey));
 }

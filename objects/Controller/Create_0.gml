@@ -64,6 +64,9 @@ function reset_keybind_vars() {
 	mapPressed = false;
 	inventoryPressed = false;
 
+	inventoryPageLeft = false;
+	inventoryPageRight = false;
+
 }
 
 reset_keybind_vars();
@@ -85,3 +88,6 @@ pauseKey = vk_escape;
 healKey = "R";
 mapKey = "M";
 inventoryKey = "I";
+
+inventoryLeftPageKey = "C";
+inventoryRightPageKey = "V";
