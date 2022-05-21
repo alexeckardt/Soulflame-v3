@@ -118,7 +118,7 @@ for (var i = 0; i < currentMaxHealth; i++) {
 //Effects
 var c = ds_list_size(effectList);
 var effectSpotX = 5;
-var effectSpotY = hpY + healthBarHeight + 3; 
+var effectSpotY = healthDisplayY + 12;
 for (var i = 0; i < c; i++) {
 	var effect = effectList[| i].effect;
 	draw_sprite(sUIFlowerEffectIcon, effect, effectSpotX + effectSpriteSep*i, effectSpotY);
