@@ -1,1 +1,0 @@
-drawGodrays = false;

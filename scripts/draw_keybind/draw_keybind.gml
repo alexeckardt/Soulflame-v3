@@ -2,7 +2,7 @@
 //
 //
 //
-function draw_keybind(xx, yy, keybind) {
+function draw_keybind_from_string_id(xx, yy, keybind) {
 
 	//
 	//

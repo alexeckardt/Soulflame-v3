@@ -132,10 +132,10 @@ if (usingController) {
 //Keyboard Controller
 if (!usingController) {
 	
-	left = keyboard_check(vk_left);
-	right = keyboard_check(vk_right);
-	var	up = keyboard_check(vk_up);
-	var down = keyboard_check(vk_down);
+	left = keyboard_check(leftKey);
+	right = keyboard_check(rightKey);
+	var	up = keyboard_check(upKey);
+	var down = keyboard_check(downKey);
 	
 	hStickTimeInSameInput += Game.delta;
 	var hStickLast = horizontalStick;
@@ -148,24 +148,24 @@ if (!usingController) {
 	verticalStick = down - up;
 	if (vStickLast != verticalStick) vStickTimeInSameInput = 0;
 	
-	jump = keyboard_check_pressed(ord("Z"));
-	jumpHeld = keyboard_check(ord("Z"));
+	jump = keyboard_check_pressed(ord(jumpKey));
+	jumpHeld = keyboard_check(ord(jumpKey));
 	
-	combatAttack = keyboard_check(ord("X"));
-	combatAttackPressed = keyboard_check_pressed(ord("X"));
+	combatAttack = keyboard_check(ord(combatKey));
+	combatAttackPressed = keyboard_check_pressed(ord(combatKey));
 
-	interact =  keyboard_check_pressed(vk_down);
+	interact =  keyboard_check_pressed(interactKey);
 	
-	uiSelectPressed = keyboard_check_pressed(ord("Z"));
-	uiBackPressed = keyboard_check_pressed(ord("C"));
+	uiSelectPressed = keyboard_check_pressed(ord(uiSelectKey));
+	uiBackPressed = keyboard_check_pressed(ord(uiBackKey));
 	
-	pausePressed = keyboard_check_pressed(vk_escape);
+	pausePressed = keyboard_check_pressed(pauseKey);
 	
-	healHolding = keyboard_check(ord("R"));
+	healHolding = keyboard_check(ord(healKey));
 	uiUp = up;
 	uiDown = down;
 	
-	mapPressed = keyboard_check_pressed(ord("M"));
-	inventoryPressed = keyboard_check_pressed(ord("I"));
+	mapPressed = keyboard_check_pressed(ord(mapKey));
+	inventoryPressed = keyboard_check_pressed(ord(inventoryKey));
 
 }

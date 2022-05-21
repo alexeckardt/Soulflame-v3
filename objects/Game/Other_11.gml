@@ -48,7 +48,8 @@ if (c.inventoryPressed || c.mapPressed) {
 		//Summon New One
 		inventoryObj = instance_create_depth(x, y, Player.depth - 10, InventoryUI);	
 		inventoryObj.page = pageTo; //0 if inventory, 1 if map
-		
+		inventoryObj.pageLast = pageTo;
+				
 		//Reccognize
 		inventoryOpen = true;
 	
@@ -65,7 +66,7 @@ if (c.inventoryPressed || c.mapPressed) {
 			
 				//0 if inventory, 1 if map
 				inventoryObj.page = pageTo; 
-				inventoryObj.pageLast = pageTo;
+
 				
 				//Do not close Inventory
 				closeinven = false;

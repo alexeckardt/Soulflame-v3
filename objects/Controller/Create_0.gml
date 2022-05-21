@@ -67,3 +67,21 @@ function reset_keybind_vars() {
 }
 
 reset_keybind_vars();
+
+
+//
+//Keys
+//
+leftKey = vk_left;
+rightKey = vk_right;
+upKey = vk_up;
+downKey = vk_down;
+jumpKey = "Z";
+combatKey = "X";
+interactKey = vk_down;
+uiSelectKey = "Z";
+uiBackKey = "C";
+pauseKey = vk_escape;
+healKey = "R";
+mapKey = "M";
+inventoryKey = "I";

@@ -24,13 +24,9 @@ if (createdInstructionText && timeLeftbeforeshow < 0) {
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
 
-		//String
-		var orgStr = stringToDraw;
-		var warpString = string_wrap(orgStr, w * .9);
-	
 		//Center String
-		var xposToDraw = (w - string_width(warpString)) div 2;
-		var stringY = h/2 - 32 - string_height(warpString);
+		var xposToDraw = (w - string_width(stringToDraw)) div 2;
+		var stringY = h/2 - 32 - string_height(stringToDraw);
 			
 		//Draw String
 		draw_text_with_keybinds(xposToDraw, stringY, stringToDraw, keybind_info_list, c_white, 1);
@@ -44,7 +40,7 @@ if (createdInstructionText && timeLeftbeforeshow < 0) {
 	
 						//Draw Sprite Tiled over Text, and wipe it away
 						for (var i = 0; i < display_get_width(); i+=tileWidth) {
-							var ysc = string_height(orgStr) / tileWidth + 0.6;
+							var ysc = string_height(stringToDraw) / tileWidth + 0.6;
 							draw_sprite_ext(wipeSprite, 0, i, stringY-12, 1, ysc, 0, c_white, 1);
 						}
 					

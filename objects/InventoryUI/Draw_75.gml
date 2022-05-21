@@ -23,11 +23,11 @@ if (!surface_exists(invenSurf))	invenSurf = surface_create(w, h);
 surface_set_target(invenSurf);
 
 	//Clear
-	draw_clear_alpha(0, 0); //We use Shader to remove all black
+	draw_clear_alpha(0, 0); //We use Shader to remove all blaick
 	
 	//Draw Header Bkg
-	var drawCol = c_aqua; //Set to black
-	draw_sprite_ext(sPixel, 0, 0, 0, w, headerHeight, 0, drawCol, 1);
+	var headerCol = 0; //Set to black
+	draw_sprite_ext(sPixel, 0, 0, 0, w, headerHeight, 0, headerCol, 1);
 	
 	//Debug
 	
@@ -63,6 +63,14 @@ surface_set_target(invenSurf);
 	//Draw Text
 	draw_text_colour(xx, iconDrawY+1, pageName, 
 			highlightedColour, highlightedColour, highlightedColour, highlightedColour, 1);
+
+
+
+	//
+	//	Draw Keybinds to show how to transition left or right through pages
+	//
+
+	
 
 
 surface_reset_target();

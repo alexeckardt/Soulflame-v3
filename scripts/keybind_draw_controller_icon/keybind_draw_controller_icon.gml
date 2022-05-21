@@ -5,7 +5,7 @@
 function keybind_draw_controller_icon(xx, yy, keybind) {
 
 	//Get
-	var controllerIconId = keybind_get_controller_icon_sheet_id(keybind);
+	var controllerIconId = keybind_get_controller_icon_sheet_id_from_string(keybind);
 	
 	//Position
 	var iconww = 18;

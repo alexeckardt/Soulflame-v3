@@ -20,12 +20,11 @@ if (!createdInstructionText) {
 	viewW = Camera.view_width;
 	
 	//Format Properlly
-	stringToDraw = string_wrap(stringToDraw, viewW/2);
+	stringToDraw = string_wrap(stringToDraw, viewW * 0.66);
 	stringToDraw = string_replace(stringToDraw, "&!", "  ");
 	
 	//Don't Repeat
 	createdInstructionText = true;
-
 }
 
 

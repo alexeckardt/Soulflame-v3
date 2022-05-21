@@ -6,7 +6,7 @@
     "path": "folders/Meta/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "keybind_get_controller_icon_sheet_id",
+  "name": "keybind_get_keyboard_string_from_string",
   "tags": [],
   "resourceType": "GMScript",
 }
