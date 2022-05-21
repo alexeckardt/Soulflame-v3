@@ -6,30 +6,16 @@ function enum_flower() {
 
 	enum flower {
 	
-		scarlet_star,
-		fireweed,
-		fire_lily,
-		cobat_iris,
-		natures_slipper,
-		pearl_trillium,
-		
-		
-		magenta_sacifrage,
-		summerbloom,
-		cavern_avens,
-		scorpion_plant,
-		large_violet,
-		wind_crocus,
-		houndwood,
-		pinkie_rose,
-	
-		golden_ridge,
-		lavender_stalk,
-		somber_rose,
-		skyflower,
-		sunflower,
-		goth_dasiy,
-		
+		lapis_radiance,
+		scarlet_fawn,
+		fuchsia_lily,
+		amber_trillium,
+		sun_violet,
+		diamond_daisy,
+		aquamarine_star,
+		summer_floral,
+		rose_sunflower,
+		violet_lily,	
 	
 	}
 
