@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Meta/Scripts.yy",
+    "name": "String",
+    "path": "folders/Meta/Scripts/String.yy",
   },
   "resourceVersion": "1.0",
   "name": "string_reverse",

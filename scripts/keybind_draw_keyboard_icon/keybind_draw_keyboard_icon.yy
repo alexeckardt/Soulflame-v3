@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Meta/Scripts.yy",
+    "name": "Keybinds",
+    "path": "folders/Meta/Scripts/Keybinds.yy",
   },
   "resourceVersion": "1.0",
   "name": "keybind_draw_keyboard_icon",

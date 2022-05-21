@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Meta/Scripts.yy",
+    "name": "Draw",
+    "path": "folders/Meta/Scripts/Draw.yy",
   },
   "resourceVersion": "1.0",
   "name": "gpu_set_blendmode_proper",
