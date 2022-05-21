@@ -1,3 +1,3 @@
 room = roomShatterViewingHole
 room = roomChasmRightHotspring;
-//room = roomLab;
+room = roomLab;
