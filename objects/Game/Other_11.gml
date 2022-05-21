@@ -4,32 +4,47 @@ var c = Controller.id;
 
 if (c.pausePressed) {
 	
-	//Toggle
-	paused = !paused;
+	if (!(instance_exists(InventoryUI) && !paused)) {
 	
-	//
-	//Paused
-	if (paused) {
+		//Toggle
+		paused = !paused;
+	
+		//
+		//Paused
+		if (paused) {
 		
-		//Create Pause
-		if (!instance_exists(pauseMenuObj)) {
-			pauseMenuObj = instance_create_depth(x, y, 0, PauseMenu);	
-		}
+			//Create Pause
+			if (!instance_exists(pauseMenuObj)) {
+				pauseMenuObj = instance_create_depth(x, y, 0, PauseMenu);	
+			}
 			
+		} else {
+		
+			//Close and Dereference
+			pauseMenuObj.close = true;
+			pauseMenuObj = noone;
+
+		}	
+	
 	} else {
 		
-		//Close and Dereference
-		pauseMenuObj.close = true;
-		pauseMenuObj = noone;
-
-	}	
+		//Set to Close
+		if (instance_exists(inventoryObj)) {
+			inventoryObj.close = true;
+		}
+			
+		//Dereference
+		inventoryObj = noone;
+		inventoryOpen = false;
+		
+	}
 }
 
 //
 //
 //
 
-if (c.inventoryPressed || c.mapPressed) {
+if (!paused && (c.inventoryPressed || c.mapPressed)) {
 	
 	var pageTo = c.mapPressed
 	
