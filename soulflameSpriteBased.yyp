@@ -501,6 +501,7 @@
     {"id":{"name":"choose_weighted","path":"scripts/choose_weighted/choose_weighted.yy",},"order":0,},
     {"id":{"name":"oKeira","path":"objects/oKeira/oKeira.yy",},"order":0,},
     {"id":{"name":"keria_scarf_reset_forces_to_def","path":"scripts/keria_scarf_reset_forces_to_def/keria_scarf_reset_forces_to_def.yy",},"order":5,},
+    {"id":{"name":"sKeiraAttackNoWeaponDownAir","path":"sprites/sKeiraAttackNoWeaponDownAir/sKeiraAttackNoWeaponDownAir.yy",},"order":12,},
     {"id":{"name":"sCorruptedRootChaos","path":"sprites/sCorruptedRootChaos/sCorruptedRootChaos.yy",},"order":0,},
     {"id":{"name":"keira_generic_damage_create","path":"scripts/keira_generic_damage_create/keira_generic_damage_create.yy",},"order":5,},
     {"id":{"name":"enemy_global_death_events","path":"scripts/enemy_global_death_events/enemy_global_death_events.yy",},"order":10,},

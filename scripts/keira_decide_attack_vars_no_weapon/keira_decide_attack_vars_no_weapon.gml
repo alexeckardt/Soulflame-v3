@@ -187,8 +187,8 @@ function keira_decide_attack_vars_no_weapon(_nextState, damageStruct) {
 		case state.combat_air_down_tilt:
 			
 			//Sprite + Control
-			spr = (useFrontAttackSprite) ? sKeiraAttackNoWeaponPunch0 : sKeiraAttackNoWeaponPunch1;
-			spd = 0.65;
+			spr = sKeiraAttackNoWeaponDownAir;
+			spd = 0.4;
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = 1;
 		

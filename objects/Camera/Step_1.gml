@@ -7,8 +7,12 @@ var goalH = view_height+1;
 //Switch To Full Screen
 if (window_get_fullscreen() != Game.fullscreen) {
 	window_set_fullscreen(Game.fullscreen);
-	display_reset(0, false);
 	calculateViewDimentions = true;
+	
+	//Reset Pos
+	if (!Game.fullscreen) {
+		display_reset(0, false);	
+	}
 }
 
 //
