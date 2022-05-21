@@ -1,7 +1,9 @@
 /// @description 
 
-image_index += index_speed*Game.delta;
-lifeTick += Game.delta;
+var time = Game.delta;
+
+image_index += index_speed*time;
+lifeTick += time;
 
 var k = oKeira.id;
 
@@ -18,11 +20,11 @@ if (autoPickup) {
 	
 {
 	//Normal Movement
-	vSpeed += grav;
-	hSpeed = lerp(hSpeed, 0, 1/weight/10*Game.delta);
+	vSpeed += grav*time;
+	hSpeed = lerp(hSpeed, 0, 1/weight/10*time);
 	
 	//Bounce
-	if (place_meeting(x, y+vSpeed, Solid) && vSpeed > 0) {
+	if (place_meeting(x, y+vSpeed, Solid) && vSpeed > 0 && time != 0) {
 		vSpeed = (round(vSpeed * (1/sqrt(weight))) div bounceEnergyLossMultiplier) * -bounceEnergyLossMultiplier;	
 		hSpeed = lerp(hSpeed, 0, .2);
 		hasHitGroundOnce = true;

@@ -62,6 +62,31 @@ if (page == 0) {
 	cursorX = clamp(cursorX + mx*cursorSpeed, leftSide, rightSide);
 	cursorY = clamp(cursorY + my*cursorSpeed, topSide, bottomSide);
 	
-	hoveringItemId = inventory_check_item_hovering();
+	//Check who I'm hovering
+	var hovering = inventory_check_item_hovering();
+	
+	//Switch if Not Same
+	if (hoveringItemId != hovering) {
+		hoveringItemId = hovering;
+		
+		//Update Display
+		if (hoveringItemId != -1) {
+	
+			if (ds_exists(itemList, ds_type_list)) {
+	
+				var struct = itemList[| hoveringItemId];
+				var key = "inventory.item." + struct.key;
+		
+				//Get
+				textItemName = lang_get_text(key + ".name");
+				textItemDesc = lang_get_text(key + ".desc");
+		
+				//Wrap on Switch
+				textItemDesc = string_wrap(textItemDesc, textDrawingMaxWidth);
+				
+			}
+	
+		}
+	}
 	
 }

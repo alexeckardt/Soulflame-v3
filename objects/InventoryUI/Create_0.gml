@@ -52,9 +52,16 @@ inventory_create_item_list();
 cursorX = Camera.view_width div 2;
 cursorY = Camera.view_height div 2;
 cursorSpeed = 2;
+hoveringItemId = -1;
 
 sectionPositions = [0, 0, 0];
 selectBuffer = 2;
+
+//dis
+textDrawingMaxWidth = 100; //for wrapping strings ; set in draw (incase it is updated)
+textItemName = "";
+textItemDesc = "";
+textVerticalBuffer = 10;
 
 //
 //
