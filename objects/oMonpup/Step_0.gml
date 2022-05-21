@@ -249,7 +249,10 @@ if (STATE == state.jumping) {
 //Damage
 if (justDamaged && !dead) {
 	STATE = state.land;
-	landingTicksLeft = landingTicks;
+	
+	if (landingTicks < -10) {
+		landingTicksLeft = landingTicks;
+	}
 }
 
 //
@@ -315,3 +318,18 @@ if (onGround && allowJumpWalls) {
 
 //Visuals Call
 event_user(0);
+
+//
+//
+//
+
+//Create Damage
+if (!instance_exists(myDamage)) {
+			
+	var w = 18;
+	var h = 12;
+	myDamage = enemy_damage_create(-1, x-w/2, y-h/2, w, h, 2, 1);
+	myDamage.canDamageEnemies = false; //don't damage Bunfets
+
+}	
+

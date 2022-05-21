@@ -32,6 +32,8 @@ maxJumpTiles = 6;
 
 pounceJumpSpeed = -8.5;
 
+myDamage = noone
+
 runSpeed = 1.5;
 
 //Path

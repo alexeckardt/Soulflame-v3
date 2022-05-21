@@ -6,7 +6,6 @@ if (c.pausePressed) {
 	
 	//Toggle
 	paused = !paused;
-	someUIopen = paused;
 	
 	//
 	//Paused
@@ -93,4 +92,6 @@ if (c.inventoryPressed || c.mapPressed) {
 	
 }
 
-
+//
+//
+someUIopen = paused || inventoryOpen;

@@ -139,6 +139,9 @@ if (!usingController) {
 	var	up = keyboard_check(upKey);
 	var down = keyboard_check(downKey);
 	
+	uiUp = up;
+	uiDown = up;
+	
 	hStickTimeInSameInput += Game.delta;
 	var hStickLast = horizontalStick;
 	horizontalStick = right - left;

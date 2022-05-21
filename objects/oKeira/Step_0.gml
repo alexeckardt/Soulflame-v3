@@ -80,11 +80,11 @@ if (inWater) {
 
 	//Controller Input
 	controllerHorizontalMovementInput = Controller.right - Controller.left;
-	mx = controllerHorizontalMovementInput;
+	mx = controllerHorizontalMovementInput*(!Game.someUIopen);
 	
 	//Find Goal
 	var hspdGoalsMultipliers = keira_decide_hspeed_goal_multi();
-	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers * (!Game.someUIopen);
+	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers;
 
 	//No Control Movement
 	if (!inControl) {

@@ -1,5 +1,8 @@
 /// @desc
 
+//
+if (instance_exists(PauseMenu)) exit;
+
 //Set One to One
 var w = Camera.view_width;
 var h = Camera.view_height;
@@ -12,7 +15,7 @@ display_set_gui_size(w,h);
 //Get
 gpu_set_blendmode_proper();
 
-var darkenScreenHeight = h*openAlpha;
+var darkenScreenHeight = ceil(h*openAlpha) + 2;
 draw_sprite_ext(sPixel, 0, 0, (h - darkenScreenHeight) div 2, w, darkenScreenHeight, 0, 0, inventoryBkgAlpha);
 
 //
@@ -40,7 +43,7 @@ surface_set_target(invenSurf);
 		var icon = (page + i + pageNumber) mod pageNumber;
 		
 		var c = (i == 0) ? highlightedColour : unhighlightedColour;
-		
+
 		draw_sprite_ext(headerSprites, icon, xx, iconDrawY, 1, 1, 0, c, 1);
 
 	}

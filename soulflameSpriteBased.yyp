@@ -464,6 +464,7 @@
     {"id":{"name":"sEmptyWeaponIcon","path":"sprites/sEmptyWeaponIcon/sEmptyWeaponIcon.yy",},"order":0,},
     {"id":{"name":"camera_following","path":"scripts/camera_following/camera_following.yy",},"order":0,},
     {"id":{"name":"roomChasmUnderPassage","path":"rooms/roomChasmUnderPassage/roomChasmUnderPassage.yy",},"order":3,},
+    {"id":{"name":"inventory_check_item_hovering","path":"scripts/inventory_check_item_hovering/inventory_check_item_hovering.yy",},"order":5,},
     {"id":{"name":"command_essence","path":"scripts/command_essence/command_essence.yy",},"order":4,},
     {"id":{"name":"keira_decide_attack_vars_no_weapon","path":"scripts/keira_decide_attack_vars_no_weapon/keira_decide_attack_vars_no_weapon.yy",},"order":0,},
     {"id":{"name":"weapon_draw","path":"scripts/weapon_draw/weapon_draw.yy",},"order":0,},

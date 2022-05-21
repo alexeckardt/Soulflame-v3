@@ -35,7 +35,41 @@ highlightedColour = c_white;
 unhighlightedColour = c_dkgray;
 
 //Edges
-drawEdgeBuffer = 4;
+drawEdgeHBuffer = 12;
+drawEdgeVBuffer = 4;
 
 //Lines
-sectionDividerLineEdgeBuffer = 10;
+sectionDividerLineEdgeBuffer = 25;
+
+
+//
+//
+//ITEMS
+
+itemList = ds_list_create();
+inventory_create_item_list();
+
+cursorX = Camera.view_width div 2;
+cursorY = Camera.view_height div 2;
+cursorSpeed = 2;
+
+sectionPositions = [0, 0, 0];
+selectBuffer = 2;
+
+//
+//
+//MAP
+
+
+
+
+//
+//
+//FLOWERS
+
+
+
+
+//
+//
+//ARTIFACTS
