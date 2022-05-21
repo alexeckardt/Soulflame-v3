@@ -84,7 +84,7 @@ if (inWater) {
 	
 	//Find Goal
 	var hspdGoalsMultipliers = keira_decide_hspeed_goal_multi();
-	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers;
+	var hSpeedGoal = mx * runSpeed * hspdGoalsMultipliers * (!Game.someUIopen);
 
 	//No Control Movement
 	if (!inControl) {
@@ -379,8 +379,6 @@ if (onGround && !wasOnGround) {
 var countAsRunThreshhold = 1.5;
 var running = abs(hSpeed) > runSpeed - countAsRunThreshhold && STATE == state.base;
 runningForTime = (running) ? runningForTime + Game.delta : -1;
-
-
 
 //Climbing
 timeNotClimbing += time;
@@ -678,7 +676,7 @@ if (jumpTicks > 0) {
 
 //Attack Input
 //Allow input before current attack is finished.
-if (Controller.combatAttackPressed) {
+if (Controller.combatAttackPressed) && (!Game.someUIopen) {
 	wantToChangeAttackTicks = timeForPreAttacks;
 	nextAttack = state.combat_empty;
 }
