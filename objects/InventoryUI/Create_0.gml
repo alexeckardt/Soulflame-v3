@@ -97,6 +97,7 @@ ticksBeforeNextMoveLeft = -1;
 flowerScrollMovingDir = 0;
 
 flowerStringNoFlower = lang_get_text("inventory.flower.none_selected");
+flowerStringNotAtCampfire = lang_get_text("inventory.flower.no_campfire");
 flowerStringFlowerInfoEffect = lang_get_text("inventory.flower.effect");
 flowerStringFlowerInfoLocation = lang_get_text("inventory.flower.location");
 flowerStringFlowerInfoPersistence = lang_get_text("inventory.flower.persistence");

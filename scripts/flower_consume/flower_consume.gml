@@ -10,10 +10,7 @@ function flower_consume(idInCollectedList, mutator) {
 	var flowerType = list[| idInCollectedList];
 	
 	//Create the struct
-	var flowerEffect = flower_create_effect_struct(flowerType, mutator);
-	
-	//Add to effect
-	ds_list_add(Player.effectList, flowerEffect);
+	effect_add(flowerType, mutator);
 	
 	//Finish + Consume
 	ds_list_delete(list, idInCollectedList);

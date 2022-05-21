@@ -19,7 +19,7 @@ function effect_update_time_left() {
 			struct.campfiresLeft--;
 			
 			//No More Time
-			if (struct.campfiresLeft < 0) {
+			if (struct.campfiresLeft <= 0) {
 				
 				//Delete
 				delete struct;

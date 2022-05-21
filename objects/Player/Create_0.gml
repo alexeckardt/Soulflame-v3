@@ -177,3 +177,8 @@ deadFadeOutTicks = deadTimeBeforeFadeOut;
 //Flowers
 flowersHave = ds_list_create();
 effectList = ds_list_create();
+
+effect_add(flower.lapis_radiance, 2);
+effect_add(flower.lapis_radiance, 1);
+effect_add(flower.lapis_radiance+3, 0);
+

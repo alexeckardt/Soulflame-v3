@@ -60,8 +60,9 @@ switch (subpage) {
 		//
 		
 	}
-	
-	
+		
+	//Draw Top
+	inventory_page_flower_draw_effect_list(centreX, topDrawing + flowerCollectedListSpriteSep);	
 	
 	
 	

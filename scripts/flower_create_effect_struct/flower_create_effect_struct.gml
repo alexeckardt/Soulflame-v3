@@ -49,6 +49,7 @@ function flower_create_effect_struct(flowerType, mutator) {
 	//Save
 	struct.effectiveness = baseMulti;
 	struct.campfiresLeft = baseTime;
+	struct.campfiresLeftOrg = baseTime;
 	
 	//Return
 	return struct;
