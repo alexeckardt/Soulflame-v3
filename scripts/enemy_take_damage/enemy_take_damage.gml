@@ -53,7 +53,11 @@ function enemy_take_damage() {
 		//Release Essence
 		if (damageingObject.collectEssence) {
 			
-			var manaLost = essenceDropPerDamage * baseDamage;
+				//1.0, 1.25, 1.5;
+			var manaGainMulti = 1 + effect_get_multiplier(flower.scarlet_fawn)/4;
+				
+			
+			var manaLost = essenceDropPerDamage * baseDamage * manaGainMulti;
 			var randomoffset = choose(0, 0, -1, 1) * Player.collectBalanceEssence;
 			var chooseAlignment = sign(alignment + randomoffset);	
 			

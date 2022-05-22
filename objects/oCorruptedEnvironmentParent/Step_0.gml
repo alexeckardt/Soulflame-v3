@@ -64,8 +64,14 @@ if (damageMeeting != noone && Player.allowEssenceCollection) {
 			} else {
 			
 				//Per Hit
-				drop_essence(essenceGivePerHit);
-				essenceToGive -= essenceGivePerHit;
+				//Multiply Am (%100 at 0, 200% at 1, 260% at 2)
+				var additionalAmount = effect_get_multiplier(flower.scarlet_fawn);
+				var am = 1 + roundn(log2(1 + additionalAmount), 10);
+	
+				var consume = essenceGivePerHit*am;
+	
+				drop_essence(consume);
+				essenceToGive = max(essenceToGive-essenceGivePerHit, 0);
 
 			}
 		

@@ -51,7 +51,7 @@ player_weapon_wheel_step();
 //Essence
 
 var baseEssence = essenceTokensCanHoldBase;
-essenceTokensCanHold = baseEssence + effect_get_multiplier(flower.scarlet_fawn);
+essenceTokensCanHold = baseEssence + effect_get_multiplier(flower.rose_sunflower);
 
 player_update_essence_tokens();
 
