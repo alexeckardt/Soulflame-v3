@@ -40,11 +40,19 @@ function access_save_data(save_data, writing) {
 		index("weaponAlignmnet",		Player, save_data);
 		index("weaponSlotUsing",		Player, save_data);
 		
+		//Health
+		index("baseMaxHealth",			Player, save_data);
+		
 		//Essence
 		index("allowEssenceCollection", Player, save_data);
 		index("allowHealing",			Player, save_data);
 		list_c("essenceTokens",			Player, save_data);
 		index("corruptionPercent",		Player, save_data);
+		index("essenceTokensCanHoldBase",		Player, save_data);
+	
+		//Effects
+		list_c("effectList", Player, save_data);
+		list("flowersHave", Player, save_data);
 	
 	//Game
 	index("timeInGame",				Game, save_data);

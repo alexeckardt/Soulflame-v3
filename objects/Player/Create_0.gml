@@ -4,10 +4,11 @@
 showHearts = true;
 heartsShowOffsetPercent = 0;
 baseMaxHealth = 5;
-currentMaxHealth = 5;
 hp = 5;
 maxHpAtFullCorrupt = 3;
 dead = false;
+
+heartCount = 0; //The actual max health;
 
 heartList = ds_list_create();
 healthBarHeight = 20;
@@ -36,7 +37,8 @@ healthFireExtinguishTicks = 0;
 heartFireUnderHealingNumber = true; //if false, all will draw fire
 
 //Essence
-essenceTokensCanHold = 3;
+essenceTokensCanHoldBase = 3;
+essenceTokensCanHold = essenceTokensCanHoldBase;
 essenceTokens = ds_list_create();
 essenceTokensHolding = 0; //Count of Above
 essenceForToken = 25;

@@ -3,9 +3,9 @@
 //
 //
 //
-function HealthHeart(posnum, _fullsprite = sHeartFull, _brokenSprite = sHeartBroken) constructor {
+function HealthHeart(_fullsprite = sHeartFull, _brokenSprite = sHeartBroken) constructor {
 
-	heartPosition = posnum;
+	heartPosition = 0;
 
 	xoffset = 0;
 	yoffset = 0;
@@ -30,6 +30,10 @@ function HealthHeart(posnum, _fullsprite = sHeartFull, _brokenSprite = sHeartBro
 	overlayBlend = c_white;
 	overlayBrightness = 0;
 	brightnessTo = 0;
+	
+	//0 == regular base health
+	//1 == unregular Lapis Flower Buff Heart
+	heartType = 0;
 	
 	
 	static update = function( ) {
@@ -170,4 +174,15 @@ function HealthHeart(posnum, _fullsprite = sHeartFull, _brokenSprite = sHeartBro
 	
 	};
 
+}
+
+//
+//Alternates
+//
+function BlueHealthHeart() : HealthHeart() constructor
+{
+fullSprite = sHeartFullLapisFlower;
+brokenSprite = sHeartBrokenLapisFlower;
+sprite = fullSprite;
+heartType = 1;
 }

@@ -13,7 +13,7 @@ function inventory_page_flower_draw_effect_list(centreX, centreY){
 		var off = i - ((c-1) / 2);
 		
 		var effect = list[| i];
-		effect.draw(centreX + off*flowerCollectedListSpriteSep, centreY);
+		flower_effect_draw(effect, centreX + off*flowerCollectedListSpriteSep, centreY);
 		
 	}
 

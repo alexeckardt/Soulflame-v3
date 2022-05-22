@@ -103,7 +103,7 @@ draw_sprite_ext(sHeartBackground, 0,	-1,					hpY, healthBoxWidth,	1, 0, heartBox
 draw_sprite_ext(sHeartBackgroundEdge, 0,-1+healthBoxWidth,	hpY, 1,					1, 0, heartBoxCol, heartBoxAlpha);
 	
 //Draw Hearts
-for (var i = 0; i < currentMaxHealth; i++) {
+for (var i = 0; i < heartCount; i++) {
 		
 	//Get Heart
 	var heart = heartList[| i];

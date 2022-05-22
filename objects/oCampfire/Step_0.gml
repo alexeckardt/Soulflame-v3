@@ -19,7 +19,7 @@ if (playerSittingHere) {
 	else if (oKeira.STATE == state.sit) {
 		
 		//Heal Player
-		if (Player.hp < Player.currentMaxHealth) {
+		if (Player.hp < Player.heartCount) {
 		
 			//Timer
 			healTicks -= Game.delta;

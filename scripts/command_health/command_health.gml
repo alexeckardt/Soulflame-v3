@@ -25,7 +25,7 @@ function command_health(_action, _value) {
 			break;
 		case "heal":
 		
-			Player.hp = Player.currentMaxHealth;
+			Player.hp = Player.heartCount;
 			outputMessage = "Health Restored.";
 			
 			break;
