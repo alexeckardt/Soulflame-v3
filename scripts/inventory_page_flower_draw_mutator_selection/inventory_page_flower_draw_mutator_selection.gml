@@ -27,7 +27,12 @@ function inventory_page_flower_draw_mutator_selection(selectX, selectY) {
 		
 	}
 	
-	
+	//Draw Mutator Name
+	var str = flowerStringMutatorAdding;
+	var c = unhighlightedColour;
+	draw_set_valign(fa_top);
+	draw_set_halign(fa_center);
+	draw_text_color(selectX, selectY + mutatorSpriteSep div 2 + 2, str, c, c, c, c, 1);
 	
 	//
 	//Draw the Selection Box

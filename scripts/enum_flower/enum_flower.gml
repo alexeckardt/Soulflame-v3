@@ -12,14 +12,17 @@ function enum_flower() {
 		fuchsia_lily,
 		amber_trillium,
 		sun_violet,
-		diamond_daisy,
+		cloud_daisy,
 		aquamarine_star,
 		summer_floral,
 		rose_sunflower,
 		violet_lily,	
 	
-		//Debugs + Associated Flowers (If ever get)
-	
+		//Debuffs + Associated Flowers (If ever get)
+
+		
+		//All Below are effects that are
+		height,
 	}
 
 }

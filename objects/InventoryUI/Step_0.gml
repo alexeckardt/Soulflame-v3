@@ -107,9 +107,6 @@ if (page == 1) {
 } else
 if (page == 2) {
 	
-} else
-if (page == 3) {
-	
 	//
 	var redetermineEffectInfo = false;
 	var mx = Controller.right - Controller.left;
@@ -180,6 +177,7 @@ if (page == 3) {
 		flowerEffectEffect = "";
 		flowerEffectLocation = "";
 		flowerEffectPersistence = tempStruct.campfiresLeft;
+		flowerStringMutatorAdding = lang_get_text("inventory.flower.mutator_name." + string(mutatorSelected));
 		
 		//Remove Created
 		delete tempStruct;	
@@ -218,8 +216,9 @@ if (page == 3) {
 		
 		//
 		//Back
-		if (Controller.uiBackPressed) {
-					subpage = 1;
+		if (Controller.uiBackPressed || Controller.combatAttackPressed) {
+			subpage = 0;
+			mutatorSelected = 0;
 		}
 		
 		//
@@ -247,5 +246,13 @@ if (page == 3) {
 	
 	//Selection Effect
 	selectedFlowerYoffset = lerp(selectedFlowerYoffset, 0, 0.1*time);
+	
+} else
+if (page == 3) {
+	
+	
+}else
+if (page == 4) {
+	
 	
 }

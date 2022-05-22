@@ -379,6 +379,7 @@
     {"id":{"name":"keira_stateaction_sit_states","path":"scripts/keira_stateaction_sit_states/keira_stateaction_sit_states.yy",},"order":6,},
     {"id":{"name":"background_create_layer_struct","path":"scripts/background_create_layer_struct/background_create_layer_struct.yy",},"order":1,},
     {"id":{"name":"particle_create_frag","path":"scripts/particle_create_frag/particle_create_frag.yy",},"order":0,},
+    {"id":{"name":"shd_removeBlack","path":"shaders/shd_removeBlack/shd_removeBlack.yy",},"order":4,},
     {"id":{"name":"sMagpiePeice2","path":"sprites/sMagpiePeice2/sMagpiePeice2.yy",},"order":2,},
     {"id":{"name":"sSpikeResetPosition","path":"sprites/sSpikeResetPosition/sSpikeResetPosition.yy",},"order":14,},
     {"id":{"name":"Controller","path":"objects/Controller/Controller.yy",},"order":2,},

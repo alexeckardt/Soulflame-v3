@@ -181,9 +181,11 @@ effectList = ds_list_create();
 effectSprite = sUIFlowerEffectIcon;
 effectSpriteSep = 2 + sprite_get_width(effectSprite);
 
-effect_add(flower.lapis_radiance, 1);
-effect_add(flower.scarlet_fawn, 2);
-effect_add(flower.lapis_radiance+3, 0);
-
+var i = 0;
+repeat (flower.height) {
+	effect_add(i, 1);
+	flower_collect(i);
+	i++;
+}
 lastCampfireSatAtId = "";
 

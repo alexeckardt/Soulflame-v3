@@ -86,4 +86,6 @@ surface_reset_target();
 
 //
 //Draw Surface
+shader_set(shd_removeBlack);
 draw_surface_ext(invenSurf, 0, (h - darkenScreenHeight) div 2, 1, openAlpha, 0, c_white, 1);
+shader_reset();

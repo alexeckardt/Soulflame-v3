@@ -7,7 +7,7 @@ close = false;
 openAlpha = 0;
 
 page = 0;
-pageNames = ["Items", "Map", "Artifacts", "Flowers"];
+pageNames = ["Items", "Map", "Flowers", "Artifacts", "Weapons"];
 pageNumber = array_length(pageNames);
 pageLast = page;
 
@@ -108,9 +108,11 @@ flowerStringFlowerInfoEffect = lang_get_text("inventory.flower.effect");
 flowerStringFlowerInfoLocation = lang_get_text("inventory.flower.location");
 flowerStringFlowerInfoPersistence = lang_get_text("inventory.flower.persistence");
 flowerStringAddtoFlame = lang_get_text("inventory.flower.add_to_flame");
+flowerStringCancelSelection = lang_get_text("inventory.flower.cancel_selection");
 flowerStringAddMutator = lang_get_text("inventory.flower.add_mutator");
 flowerStringNoEffects = lang_get_text("inventory.flower.no_active_effects");
 flowerStringAlreadyHaveEffect = lang_get_text("inventory.flower.effect_already_have");
+flowerStringAddMutator = lang_get_text("inventory.flower.add_mutators");
 
 alreadyHasEffectHovering = false;
 
@@ -120,6 +122,7 @@ flowerStringFlowerDesc = "";
 flowerStringFlowerEffect = "";
 flowerStringFlowerLocation = "";
 flowerStringFlowerPersistence = "";
+flowerStringMutatorAdding = "";
 
 flowerInfoSideSep = 5;
 flowerDescWrapLength = 0;

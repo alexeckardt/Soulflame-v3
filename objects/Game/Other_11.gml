@@ -76,12 +76,11 @@ if (!paused && (c.inventoryPressed || c.mapPressed)) {
 		if (instance_exists(inventoryObj)) {
 		
 			//Switch Inventory Page
-			if (inventoryObj.page != pageTo) {
+			if (inventoryObj.page != pageTo && pageTo != 0) {
 			
 				//0 if inventory, 1 if map
 				inventoryObj.page = pageTo; 
 
-				
 				//Do not close Inventory
 				closeinven = false;
 				

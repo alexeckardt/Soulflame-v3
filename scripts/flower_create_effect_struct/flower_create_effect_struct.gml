@@ -26,22 +26,40 @@ function flower_create_effect_struct(flowerType, mutator) {
 			baseTime	= 1 + addedBone;
 			break;
 		case flower.scarlet_fawn:
+			baseMulti	= 1 + addedHeart;
+			baseTime	= 1 + addedBone;
 			break;
 		case flower.fuchsia_lily:
+			baseMulti	= 1;
+			baseTime	= 1 + addedBone;
 			break;
 		case flower.amber_trillium:
+			baseMulti	= 1;
+			baseTime	= 1 + addedBone*2;
 			break;
 		case flower.sun_violet:
+			baseMulti	= 1 + addedHeart;
+			baseTime	= 1 + addedBone;
 			break;
-		case flower.diamond_daisy:
+		case flower.cloud_daisy:
+			baseMulti	= 1 + addedHeart*2;
+			baseTime	= 1 + addedBone;
 			break;
 		case flower.aquamarine_star:
+			baseMulti	= 1;
+			baseTime	= 1 + addedBone*2;
 			break;
 		case flower.summer_floral:
+			baseMulti	= 1 + addedHeart;
+			baseTime	= 1 + addedBone;
 			break;
 		case flower.rose_sunflower:
+			baseMulti	= 1 + addedHeart;
+			baseTime	= 1 + addedBone;
 			break;
 		case flower.violet_lily	:
+			baseMulti	= 1 + addedHeart;
+			baseTime	= 1 + addedBone;
 			break;
 		
 	}
