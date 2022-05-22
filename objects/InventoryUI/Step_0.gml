@@ -12,14 +12,11 @@ if (close && openAlpha < 0.01) {
 	instance_destroy();
 }
 
-
 //
-//Increment
+//Increment Pages
 if (Controller.inventoryPageLeft)	page--;
 if (Controller.inventoryPageRight)	page++;
 
-
-//
 if (page != pageLast) {
 		
 	var testDir1 = page - pageLast;
@@ -38,10 +35,25 @@ if (page != pageLast) {
 	
 	//Store
 	pageLast = page;	
+	subpage = 0;
 }
 
 headerHighlightedSpriteXoffset = lerp(headerHighlightedSpriteXoffset, 0, 0.3*time);
 
+//
+//
+//
+
+//See if At Campfire (For Flower and Artifacts)
+nearLitCampfire = false;
+if (instance_exists(oCampfire)) {
+	var camp = instance_nearest(oKeira.x, oKeira.y, oCampfire);
+	if (point_distance(oKeira.x, oKeira.y, camp.x, camp.y) < campfireRange) {
+		if (camp.lit) {
+			nearLitCampfire = true;
+		}
+	}
+}
 
 //
 //
@@ -99,6 +111,7 @@ if (page == 2) {
 if (page == 3) {
 	
 	//
+	var redetermineEffectInfo = false;
 	var mx = Controller.right - Controller.left;
 	
 	//Move Holding Not Instant
@@ -119,36 +132,120 @@ if (page == 3) {
 			ticksBeforeNextMove -= 1;
 			ticksBeforeNextMoveLeft = ticksBeforeNextMove;
 		
-			//Move in Direction & Clamp
-			flowerCollectedHighlighting += flowerScrollMovingDir;
-			var c = ds_list_size(Player.flowersHave);
-			flowerCollectedHighlighting = clamp(flowerCollectedHighlighting, -1, c-1);
+			//PAGE DIFF
+			if (subpage == 0) {
+		
+				//Move in Direction & Clamp
+				flowerCollectedHighlighting += flowerScrollMovingDir;
+				var c = ds_list_size(Player.flowersHave);
+				flowerCollectedHighlighting = clamp(flowerCollectedHighlighting, -1, c-1);
 			
-			//
-			//Get Other Info
-			var newFlowerId = Player.flowersHave[| flowerCollectedHighlighting];
-			var tempStruct = flower_create_effect_struct(newFlowerId, 0); //no mutator right now;
-			flowerStringFlowerName = lang_get_text("flower." + string(newFlowerId) + ".name");
-			flowerStringFlowerDesc = lang_get_text("flower." + string(newFlowerId) + ".desc");
-			flowerEffectEffect = "";
-			flowerEffectLocation = "";
-			flowerEffectPersistence = tempStruct.campfiresLeft;
-			
-			//
-			//Wrap Font
-			draw_set_font(fontKeira);
-			flowerDescWrapLength = string_width(flowerStringFlowerName) + flowerEffectIconSpriteWidth + flowerNameIconXoffset*2;
-			flowerStringFlowerDesc = string_wrap(flowerStringFlowerDesc, flowerDescWrapLength);
-			
-			//Remove
-			delete tempStruct;
+				//
+				//Get Other Info
+				var newFlowerId = Player.flowersHave[| flowerCollectedHighlighting];
+
+				flowerStringFlowerName = lang_get_text("flower." + string(newFlowerId) + ".name");
+				flowerStringFlowerDesc = lang_get_text("flower." + string(newFlowerId) + ".desc");
+				
+				redetermineEffectInfo = true;
+				
+				//
+				//Wrap Font
+				draw_set_font(fontKeira);
+				flowerDescWrapLength = string_width(flowerStringFlowerName) + flowerEffectIconSpriteWidth + flowerNameIconXoffset*2;
+				flowerStringFlowerDesc = string_wrap(flowerStringFlowerDesc, flowerDescWrapLength);
+				
+			} else 
+			if (subpage == 1) {
+				
+				//Mutator Incement
+				mutatorSelected += flowerScrollMovingDir;
+				mutatorSelected = clamp(mutatorSelected, 0, mutatorCount-1);	
+				
+				redetermineEffectInfo = true;
+				
+			}
 			
 		}
 	}
 	
-	//Lerp Smootly
-	flowerCollectedHighlightingSmooth = 
-		lerp(flowerCollectedHighlightingSmooth, flowerCollectedHighlighting, 0.3*time);
+	//
+	//Reco
+	var flowerHoveringId = Player.flowersHave[| flowerCollectedHighlighting];;
+	if (redetermineEffectInfo) {
+			
+		//Temp
+		var tempStruct = flower_create_effect_struct(flowerHoveringId, mutatorSelected);
+		
+		flowerEffectEffect = "";
+		flowerEffectLocation = "";
+		flowerEffectPersistence = tempStruct.campfiresLeft;
+		
+		//Remove Created
+		delete tempStruct;	
+	}
+	//
 	
+	//Verify Stuff
+	alreadyHasEffectHovering = effect_has(flowerHoveringId);
+	
+	//
+	//Per Subpage
+	if (subpage == 0) {
+		
+		//Lerp Smootly (Animate selection)
+		flowerCollectedHighlightingSmooth = 
+			lerp(flowerCollectedHighlightingSmooth, flowerCollectedHighlighting, 0.3*time);
+		
+		//Switch Subpage
+		if (Controller.uiSelectPressed) {
+			if (nearLitCampfire) {
+				if (flowerCollectedHighlighting != -1) {
+					if (!alreadyHasEffectHovering) {
+						subpage = 1;
+						selectedFlowerYoffset = -12;
+					}
+				}
+			}
+		}
+
+		
+	} else 
+	if (subpage == 1) {
+		
+		//Animate Smoothly
+		mutatorSelectedSmooth = lerp(mutatorSelectedSmooth, mutatorSelected, 0.3*time);
+		
+		//
+		//Back
+		if (Controller.uiBackPressed) {
+					subpage = 1;
+		}
+		
+		//
+		//SAVE EFFECT + ADD IT!!!!
+		//Make sure all are required again
+		if (Controller.uiSelectPressed) {
+			if (nearLitCampfire) {
+				if (flowerCollectedHighlighting != -1) {
+					
+					//Consume
+					flower_consume(flowerCollectedHighlighting, mutatorSelected);
+					
+					//Re-Clamp Positon
+					var c = ds_list_size(Player.flowersHave);
+					flowerCollectedHighlighting = clamp(flowerCollectedHighlighting, -1, c-1);
+					mutatorSelected = 0;
+					
+					//Return
+					subpage = 0;
+					
+				}
+			}
+		}
+	}
+	
+	//Selection Effect
+	selectedFlowerYoffset = lerp(selectedFlowerYoffset, 0, 0.1*time);
 	
 }

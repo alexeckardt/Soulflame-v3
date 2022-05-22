@@ -81,16 +81,15 @@ function inventory_page_flower_draw_stats(i, topLeftX, topLeftY, drawLeftSide = 
 		draw_text_colour(iconX - flowerNameIconXoffset, topLeftY, flowerStringFlowerName,
 							nameCol, nameCol, nameCol, nameCol, 1);
 		
+		//Draw Flower Description
 		var descCol = unhighlightedColour;
 		draw_text_colour(topLeftX, topLeftY + lineHeight, flowerStringFlowerDesc,
 							descCol, descCol, descCol, descCol, 1);
 		
 		//
 		//Draw Sprite Again
-		//flowerDescWrapLength
-		
-		//
-		
-		
+		var off = sprite_get_width(sinventoryFlowerIcon) div 2;
+		draw_sprite(sinventoryFlowerIcon, flowerId, topLeftX - flowerDescWrapLength -off, topLeftY+lineHeight*1);
+				
 	}
 }

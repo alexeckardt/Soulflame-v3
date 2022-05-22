@@ -4,7 +4,7 @@
 //
 //
 function flower_effect_draw(struct, xx, yy) {
-	
+
 	with (struct) {
 	
 		var percentUsed= campfiresLeft / campfiresLeftOrg;

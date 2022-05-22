@@ -34,6 +34,7 @@ headerKeybindYPos = headerHeight div 2;
 highlightedColour = c_white;
 unhighlightedColour = c_dkgray;
 darkColour = $222222;
+darkErrorColour = bgr($4c0000);
 
 //Edges
 drawEdgeHBuffer = 12;
@@ -42,6 +43,10 @@ drawEdgeVBuffer = 4;
 //Lines
 sectionDividerLineEdgeBuffer = 25;
 
+//
+//Campfire
+nearLitCampfire = false;
+campfireRange = 128;
 
 //
 //
@@ -90,6 +95,7 @@ flowerCollectedListSpriteSep = sprite_get_width(flowerCollectedListSprite) + 1;
 flowerEffectIconSpriteWidth = sprite_get_width(flowerEffectIconSprite);
 
 flowerNameIconXoffset = 3;
+selectedFlowerYoffset = 0;
 
 ticksBeforeNextMoveResetVal = 10;
 ticksBeforeNextMove = ticksBeforeNextMoveResetVal;
@@ -103,6 +109,10 @@ flowerStringFlowerInfoLocation = lang_get_text("inventory.flower.location");
 flowerStringFlowerInfoPersistence = lang_get_text("inventory.flower.persistence");
 flowerStringAddtoFlame = lang_get_text("inventory.flower.add_to_flame");
 flowerStringAddMutator = lang_get_text("inventory.flower.add_mutator");
+flowerStringNoEffects = lang_get_text("inventory.flower.no_active_effects");
+flowerStringAlreadyHaveEffect = lang_get_text("inventory.flower.effect_already_have");
+
+alreadyHasEffectHovering = false;
 
 //Gotten On Switch
 flowerStringFlowerName = "";
@@ -114,5 +124,8 @@ flowerStringFlowerPersistence = "";
 flowerInfoSideSep = 5;
 flowerDescWrapLength = 0;
 
+mutatorSprite = sInventoryFlowerMutators;
 mutatorSelected = 0;
+mutatorSelectedSmooth = 0;
+mutatorCount = sprite_get_number(mutatorSprite);
 

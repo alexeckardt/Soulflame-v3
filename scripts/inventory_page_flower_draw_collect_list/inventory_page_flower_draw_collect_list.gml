@@ -18,6 +18,10 @@ function inventory_page_flower_draw_collect_list(centreX, centreY){
 		var xx = centreX + flowerCollectedListSpriteSep*indFromCenter*1.2 + indFromCenter;
 		var yy = centreY + sqr(indFromCenter);
 		
+		//Selected Popup
+		if (i = flowerCollectedHighlighting) 
+			yy += selectedFlowerYoffset;
+		
 		//Draw
 		//(floor so no jitters)
 		draw_sprite(flowerCollectedListSprite, flowerId, floor(xx), floor(yy));	
