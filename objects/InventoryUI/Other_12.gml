@@ -41,8 +41,7 @@ switch (subpage) {
 		draw_set_valign(fa_center);
 		var c = darkErrorColour;
 		
-		var str = (nearLitCampfire) ? flowerStringNoFlower : flowerStringNotAtCampfire;
-		
+		var str = flowerStringNoFlower;
 		draw_text_colour(centreX, addToFlameY, str, c, c, c, c, 1);
 		
 	} else {
@@ -54,15 +53,16 @@ switch (subpage) {
 		
 		//
 		//Draw Press Button to Add to flame
+		var str = flowerStringAddtoFlame;
 		var c = highlightedColour;
+		
 		if (alreadyHasEffectHovering) {
 			str = flowerStringAlreadyHaveEffect;
 			c = darkErrorColour;}
-		else if (!nearLitCampfire){
+		if (!nearLitCampfire){
 			str = flowerStringNotAtCampfire;
 			c = darkErrorColour;}
-		else{
-			str = flowerStringAddtoFlame;}
+			
 		
 		draw_text_colour(centreX, addToFlameY, str, c, c, c, c, 1);
 		
