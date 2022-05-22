@@ -53,6 +53,7 @@ function access_save_data(save_data, writing) {
 		//Effects
 		list_c("effectList", Player, save_data);
 		list("flowersHave", Player, save_data);
+		index("lastCampfireSatAtId", Player, save_data);
 	
 	//Game
 	index("timeInGame",				Game, save_data);

@@ -5,6 +5,9 @@ event_inherited();
 var keira = instance_nearest(x, y, oKeira);
 depth = keira.depth - 5;
 
+campfireId = game_persistence_create_name_room_specific("campfire");
+var imLastCampfire = (Player.lastCampfireSatAtId == campfireId);
+
 isSkipable = false;
 returnControlToPlayer = false;
 t_scene_info = [
@@ -27,13 +30,13 @@ t_scene_info = [
 
 //Visuals
 playerSittingHere = false;
-displayFire = false;
-lit = false;
+displayFire = imLastCampfire;
+lit = imLastCampfire;
 playerWASSittingHere = false;
 
 interactMessage = lang_get_text("ui.interact.rest");
 
-litPercent = 0;
+litPercent = imLastCampfire;
 fireIndex = 0;
 flameFrequencyStrength = 0;
 

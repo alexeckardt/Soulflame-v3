@@ -39,8 +39,13 @@ if (playerSittingHere) {
 			//Realize
 			playerWASSittingHere = true;
 			
-			//Update Effects
-			effect_update_time_left();
+			//Update Effects If not sat here before
+			if (Player.lastCampfireSatAtId != campfireId) {
+				effect_update_time_left();
+			}
+		
+			//Save
+			Player.lastCampfireSatAtId = campfireId;
 		
 		}
 			

@@ -13,7 +13,6 @@ heartCount = 0; //The actual max health;
 heartList = ds_list_create();
 healthBarHeight = 20;
 
-
 //Healing
 allowHealing = false;
 ticksToRestoreHeart = room_speed/2;
@@ -179,11 +178,12 @@ deadFadeOutTicks = deadTimeBeforeFadeOut;
 //Flowers
 flowersHave = ds_list_create();
 effectList = ds_list_create();
-
 effectSprite = sUIFlowerEffectIcon;
 effectSpriteSep = 2 + sprite_get_width(effectSprite);
 
-effect_add(flower.lapis_radiance, 2);
 effect_add(flower.lapis_radiance, 1);
+effect_add(flower.scarlet_fawn, 2);
 effect_add(flower.lapis_radiance+3, 0);
+
+lastCampfireSatAtId = "";
 
