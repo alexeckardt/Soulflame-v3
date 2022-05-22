@@ -23,6 +23,7 @@ function effect_update_time_left() {
 				
 				//Delete
 				delete struct;
+				ds_list_delete(list, i);
 				
 				//Don't Mess Up the Iteration after delete
 				i--;
