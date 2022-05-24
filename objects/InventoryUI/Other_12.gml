@@ -32,7 +32,7 @@ switch (subpage) {
 	inventory_page_flower_draw_collect_list(centreX, drawCollectedY);
 	
 	//Draw Selected Info
-	var sel = flowerCollectedHighlighting;
+	var sel = flowerHoveringId;
 	var addToFlameY = drawCollectedY - floor(flowerCollectedListSpriteSep*1.5);
 	if (sel == -1) {
 	
@@ -67,7 +67,7 @@ switch (subpage) {
 		draw_text_colour(centreX, floor(addToFlameY), str, c, c, c, c, 1);
 		
 		//
-		//Draw the Selected Info	
+		//Draw the Selected Info
 		inventory_page_flower_draw_stats(sel, centreX, centreY - floor(lineH*3));
 		//
 		

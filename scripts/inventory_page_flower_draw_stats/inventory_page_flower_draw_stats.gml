@@ -3,14 +3,13 @@
 //
 //
 //
-function inventory_page_flower_draw_stats(i, topLeftX, topLeftY, drawLeftSide = true){
+function inventory_page_flower_draw_stats(flowerId, topLeftX, topLeftY, drawLeftSide = true){
 
 	var list = Player.flowersHave;
-	var flowerId = list[| i];
 	
 	if (drawLeftSide) {
 		topLeftX += flowerInfoSideSep div 2;}
-	
+		
 	//Draw Text
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);

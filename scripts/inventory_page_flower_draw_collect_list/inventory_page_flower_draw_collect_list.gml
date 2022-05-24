@@ -31,14 +31,16 @@ function inventory_page_flower_draw_collect_list(centreX, centreY){
 	
 	//
 	//Draw the Selection Box
-	var w = flowerCollectedListSpriteSep;
-	var xx = centreX - w div 2;
-	var yy = centreY - w div 2;
-	
-	draw_sprite_ext(sInventoryItemSelectionBorder, 0, xx,	yy,		1,	1,	0, highlightedColour, 1);
-	draw_sprite_ext(sInventoryItemSelectionBorder, 0, xx+w,	yy,		-1, 1,	0, highlightedColour, 1);
-	draw_sprite_ext(sInventoryItemSelectionBorder, 0, xx,	yy+w,	1,	-1,	0, highlightedColour, 1);
-	draw_sprite_ext(sInventoryItemSelectionBorder, 0, xx+w,	yy+w,	-1, -1, 0, highlightedColour, 1);
+	if (!flowerHoveringOverEffects) {
+		var w = flowerCollectedListSpriteSep;
+		var xx = centreX - w div 2;
+		var yy = centreY - w div 2;
+		
+		draw_sprite_ext(sInventoryItemSelectionBorder, 0, xx,	yy,		1,	1,	0, highlightedColour, 1);
+		draw_sprite_ext(sInventoryItemSelectionBorder, 0, xx+w,	yy,		-1, 1,	0, highlightedColour, 1);
+		draw_sprite_ext(sInventoryItemSelectionBorder, 0, xx,	yy+w,	1,	-1,	0, highlightedColour, 1);
+		draw_sprite_ext(sInventoryItemSelectionBorder, 0, xx+w,	yy+w,	-1, -1, 0, highlightedColour, 1);
+	}
 	//
 	//
 		

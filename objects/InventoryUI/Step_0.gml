@@ -110,7 +110,25 @@ if (page == 2) {
 	//
 	var redetermineEffectInfo = false;
 	var mx = Controller.right - Controller.left;
+	var switchedLists = false;
 	
+	//Switch List
+	if (subpage == 0) {
+
+		//Switch to see my effects
+		if (Controller.uiUp) {
+			switchedLists = !flowerHoveringOverEffects;
+			flowerHoveringOverEffects = true;	
+			
+		} else
+		if (Controller.uiDown) {
+			switchedLists = flowerHoveringOverEffects;
+			flowerHoveringOverEffects = false;	
+		}
+	
+	}
+	
+
 	//Move Holding Not Instant
 	ticksBeforeNextMoveLeft--;
 	if (flowerScrollMovingDir != mx) {
@@ -120,27 +138,61 @@ if (page == 2) {
 	}	
 	
 	//Actually Scroll
-	if (flowerScrollMovingDir != 0) {
+	if (flowerScrollMovingDir != 0 || switchedLists) {
 		
 		//Check if good time
-		if (ticksBeforeNextMoveLeft < 0) {
+		if (ticksBeforeNextMoveLeft < 0 || switchedLists) {
 
 			//Lower the Time for the next move; reset timer
 			ticksBeforeNextMove -= 1;
 			ticksBeforeNextMoveLeft = ticksBeforeNextMove;
-		
+
 			//PAGE DIFF
 			if (subpage == 0) {
+	
+				var newFlowerId;
+	
+				//Scroll through the different
+	
+				//Check Inventory
+				if (!flowerHoveringOverEffects) {
 		
-				//Move in Direction & Clamp
-				flowerCollectedHighlighting += flowerScrollMovingDir;
-				var c = ds_list_size(Player.flowersHave);
-				flowerCollectedHighlighting = clamp(flowerCollectedHighlighting, -1, c-1);
-			
+					var list = Player.flowersHave;
+		
+					//Move in Direction & Clamp
+					flowerCollectedHighlighting += flowerScrollMovingDir;
+					var c = ds_list_size(list);
+					flowerCollectedHighlighting = clamp(flowerCollectedHighlighting, -1, c-1);
+					
+					//Get
+					if (flowerCollectedHighlighting != -1) 
+							flowerHoveringId = list[| flowerCollectedHighlighting];
+					else	flowerHoveringId = -1;
+					
+					//Store
+					newFlowerId = flowerHoveringId;
+					
+				//Check Effects
+				} else {
+					
+					var list = Player.effectList;
+					
+					//Move and Clamp
+					flowerHoveringOverEffectNum += flowerScrollMovingDir;
+					var c = ds_list_size(list);
+					flowerHoveringOverEffectNum = clamp(flowerHoveringOverEffectNum, 0, c-1);
+					
+					//Store
+					var flowerStruct = list[| flowerHoveringOverEffectNum];
+					flowerHoveringId = flowerStruct.effect;
+					mutatorSelected = flowerStruct.mutatorAdded;
+					
+					newFlowerId = flowerHoveringId;
+				}
+				
+				
 				//
 				//Get Other Info
-				var newFlowerId = Player.flowersHave[| flowerCollectedHighlighting];
-
 				flowerStringFlowerName = lang_get_text("flower." + string(newFlowerId) + ".name");
 				flowerStringFlowerDesc = lang_get_text("flower." + string(newFlowerId) + ".desc");
 				
@@ -151,6 +203,7 @@ if (page == 2) {
 				draw_set_font(fontKeira);
 				flowerDescWrapLength = string_width(flowerStringFlowerName) + flowerEffectIconSpriteWidth + flowerNameIconXoffset*2;
 				flowerStringFlowerDesc = string_wrap(flowerStringFlowerDesc, flowerDescWrapLength);
+				
 				
 			} else 
 			if (subpage == 1) {
@@ -168,7 +221,6 @@ if (page == 2) {
 	
 	//
 	//Reco
-	var flowerHoveringId = Player.flowersHave[| flowerCollectedHighlighting];;
 	if (redetermineEffectInfo) {
 			
 		//Temp
@@ -196,18 +248,23 @@ if (page == 2) {
 			lerp(flowerCollectedHighlightingSmooth, flowerCollectedHighlighting, 0.3*time);
 		
 		//Switch Subpage
-		if (Controller.uiSelectPressed) {
-			if (nearLitCampfire) {
-				if (flowerCollectedHighlighting != -1) {
-					if (!alreadyHasEffectHovering) {
-						subpage = 1;
-						selectedFlowerYoffset = -12;
+		if (!flowerHoveringOverEffects) {
+			if (Controller.uiSelectPressed) {
+				if (nearLitCampfire) {
+					if (flowerCollectedHighlighting != -1) {
+						if (!alreadyHasEffectHovering) {
+							
+								//Continue
+								subpage = 1;
+								selectedFlowerYoffset = -12; //poof little thingy
+								mutatorSelected = 0;
+								
+						}
 					}
 				}
 			}
 		}
 
-		
 	} else 
 	if (subpage == 1) {
 		
@@ -238,6 +295,7 @@ if (page == 2) {
 					
 					//Return
 					subpage = 0;
+					flowerHoveringOverEffects = false;
 					
 				}
 			}

@@ -127,6 +127,11 @@ flowerStringMutatorAdding = "";
 flowerInfoSideSep = 5;
 flowerDescWrapLength = 0;
 
+flowerHoveringOverEffectNum = 0;
+flowerHoveringOverEffects = false;
+
+flowerHoveringId = -1; //set
+
 mutatorSprite = sInventoryFlowerMutators;
 mutatorSelected = 0;
 mutatorSelectedSmooth = 0;
