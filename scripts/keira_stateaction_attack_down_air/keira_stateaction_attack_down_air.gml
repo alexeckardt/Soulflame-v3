@@ -28,16 +28,15 @@ function keira_stateaction_attack_down_air(){
 				
 		} else {
 				
-			//Check If Damage Connected, If So, Jump and Transition to Base State
-			//(Use Cool Animation Though)
+			//Check If Damage Connected, If So, Jump.
 			if (instance_exists(damageObj)) {
 				if (damageObj.hasHitEnemyAllowUpdate) {
 					
 					//Bounce Complete
 					allowControlOverIndex = -1;
-					image_index = image_number;
+					//image_index = image_number;
 					
-					//Roccognize Jumo
+					//Roccognize Jump
 					forceJump = true;
 					bouncingOffEnemy = true;
 					

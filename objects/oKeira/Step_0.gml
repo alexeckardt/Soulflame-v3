@@ -587,12 +587,25 @@ if (jumpTicks > 0) {
 		
 			//Bounce Off Enemy
 			if (bounceOffEnemy) {
+				
+				//Don't Jump Again
 				onGroundJump = false;
 				wallJump = false;
 				verticalClimb = false;
 				doubleJump = false;
 				
-				controlVSpeed += jumpSpeed * bounceJumpCoefficient; 
+				//Set Baseline
+				controlVSpeed = -2;
+				
+				//Real Update
+				if (vSpeed < 0) {
+					var goalVspd = jumpSpeed * bounceJumpCoefficient;
+					goalVspd = goalVspd - vSpeed;
+					
+					if (goalVspd < 0) {
+						controlVSpeed = goalVspd; }
+				}
+				
 				squishX = -squishOffset;
 				squishY = squishOffset;
 			}
