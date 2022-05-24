@@ -14,7 +14,7 @@ function enemy_take_damage() {
 	noDamageAfterHurtTicksLeft -= Game.delta;
 	
 	//Check If a Hitbox has been hit
-	if (hitboxTakingDamage != noone) {
+	if (hitboxTakingDamage != noone) && (hp > 0) {
 	
 		//LOL!
 		var damageingObject = hitboxTakingDamage.damagingObjectId;

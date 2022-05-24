@@ -42,10 +42,9 @@ var allowJumpWalls = false;
 
 
 //
-//Base State -- Idle and move around occasionally
+//Base State -- Idle
 if (STATE == state.base) {
 
-	//Hunt Bunfets
 	myGrav = 0.3;
 	hSpeedGoal = 0;
 
