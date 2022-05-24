@@ -17,9 +17,9 @@ function inventory_page_flower_draw_stats(i, topLeftX, topLeftY, drawLeftSide = 
 	draw_set_font(fontKeira);
 	
 	var lineHeight =string_height("|") + 1;
-	
-	var c = darkColour;
-	
+	var c = darkColour;	
+	var augmentedCol = c_lime;
+		
 	//Draw Headers
 	draw_text_colour(topLeftX, topLeftY+lineHeight*0, flowerStringFlowerInfoEffect, c, c, c, c, 1);
 	draw_text_colour(topLeftX, topLeftY+lineHeight*1, flowerStringFlowerInfoLocation, c, c, c, c, 1);
@@ -37,7 +37,7 @@ function inventory_page_flower_draw_stats(i, topLeftX, topLeftY, drawLeftSide = 
 	var effectCol = unhighlightedColour;
 		if(mutatorSelected == 1) {
 			effectString = string_replace_all(effectString, "!", "!!");
-			effectCol = c_red;
+			effectCol = augmentedCol;
 		}
 	effectString = string_replace_all(effectString, "!", "I");
 	draw_text_colour(topLeftX + effectW, topLeftY+lineHeight*0, effectString,
@@ -56,7 +56,7 @@ function inventory_page_flower_draw_stats(i, topLeftX, topLeftY, drawLeftSide = 
 	var persistString = string(flowerEffectPersistence);
 	var effectCol = unhighlightedColour;
 		if(mutatorSelected == 2) {
-			effectCol = c_green;
+			effectCol = augmentedCol;
 		}
 	draw_text_colour(topLeftX + persistenceW, topLeftY+lineHeight*2, persistString,
 							effectCol, effectCol, effectCol, effectCol, 1);
@@ -71,13 +71,13 @@ function inventory_page_flower_draw_stats(i, topLeftX, topLeftY, drawLeftSide = 
 		draw_set_halign(fa_right);
 		draw_set_valign(fa_top);
 		draw_set_font(fontKeira);	
-		
+
 		//Draw Icon
 		var iconX = topLeftX - flowerEffectIconSpriteWidth;
 		draw_sprite(flowerEffectIconSprite, flowerId, iconX, topLeftY);
 		
 		//Draw Flower Name
-		var nameCol = c_red;
+		var nameCol = flower_get_colour(flowerId);
 		draw_text_colour(iconX - flowerNameIconXoffset, topLeftY, flowerStringFlowerName,
 							nameCol, nameCol, nameCol, nameCol, 1);
 		

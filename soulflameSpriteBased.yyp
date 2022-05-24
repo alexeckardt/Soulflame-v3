@@ -344,6 +344,7 @@
     {"id":{"name":"roomSurfaceDropParkour","path":"rooms/roomSurfaceDropParkour/roomSurfaceDropParkour.yy",},"order":0,},
     {"id":{"name":"sHeartBackgroundEdge","path":"sprites/sHeartBackgroundEdge/sHeartBackgroundEdge.yy",},"order":1,},
     {"id":{"name":"sEssenceTokenChaos","path":"sprites/sEssenceTokenChaos/sEssenceTokenChaos.yy",},"order":1,},
+    {"id":{"name":"flower_get_colour","path":"scripts/flower_get_colour/flower_get_colour.yy",},"order":10,},
     {"id":{"name":"PointLight","path":"scripts/PointLight/PointLight.yy",},"order":4,},
     {"id":{"name":"sWeaponSwordRun","path":"sprites/sWeaponSwordRun/sWeaponSwordRun.yy",},"order":2,},
     {"id":{"name":"command_summon","path":"scripts/command_summon/command_summon.yy",},"order":0,},
