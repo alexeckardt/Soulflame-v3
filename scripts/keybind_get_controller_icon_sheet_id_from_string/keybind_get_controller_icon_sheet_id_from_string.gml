@@ -25,6 +25,15 @@ function keybind_get_controller_icon_sheet_id_from_string(keybind) {
 			return 5;
 		case "uiRightPage":
 			return 7;
+		case "uiUp":
+			return 21;
+		case "uiDown":
+			return 43;
+			
+		case "continue":
+			return 13;
+		case "back":
+			return 14;
 			
 	}
 

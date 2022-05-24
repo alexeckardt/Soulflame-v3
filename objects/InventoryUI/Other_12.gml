@@ -41,8 +41,9 @@ switch (subpage) {
 		draw_set_valign(fa_center);
 		var c = darkErrorColour;
 		
-		var str = flowerStringNoFlower;
-		draw_text_colour(centreX, floor(addToFlameY), str, c, c, c, c, 1);
+		if (!flowerHoveringOverEffects){
+			var str = flowerStringNoFlower;
+			draw_text_colour(centreX, floor(addToFlameY), str, c, c, c, c, 1);}
 		
 	} else {
 		
@@ -53,18 +54,18 @@ switch (subpage) {
 		
 		//
 		//Draw Press Button to Add to flame
-		var str = flowerStringAddtoFlame;
-		var c = highlightedColour;
+		if (!flowerHoveringOverEffects){
+			var str = flowerStringAddtoFlame;
+			var c = highlightedColour;
 		
-		if (alreadyHasEffectHovering) {
-			str = flowerStringAlreadyHaveEffect;
-			c = darkErrorColour;}
-		if (!nearLitCampfire){
-			str = flowerStringNotAtCampfire;
-			c = darkErrorColour;}
+			if (alreadyHasEffectHovering) {
+				str = flowerStringAlreadyHaveEffect;
+				c = darkErrorColour;}
+			if (!nearLitCampfire){
+				str = flowerStringNotAtCampfire;
+				c = darkErrorColour;}
 			
-		
-		draw_text_colour(centreX, floor(addToFlameY), str, c, c, c, c, 1);
+			draw_text_with_keybinds_alt(centreX, floor(addToFlameY), str, c, 1);}
 		
 		//
 		//Draw the Selected Info

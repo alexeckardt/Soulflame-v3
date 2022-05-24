@@ -171,6 +171,8 @@ if (page == 2) {
 					
 					//Store
 					newFlowerId = flowerHoveringId;
+					mutatorSelected = 0;
+					
 					
 				//Check Effects
 				} else {

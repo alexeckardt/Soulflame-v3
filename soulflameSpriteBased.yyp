@@ -303,6 +303,7 @@
     {"id":{"name":"oCameraOffsetChange","path":"objects/oCameraOffsetChange/oCameraOffsetChange.yy",},"order":15,},
     {"id":{"name":"essence_get_colour_emission","path":"scripts/essence_get_colour_emission/essence_get_colour_emission.yy",},"order":28,},
     {"id":{"name":"load_index","path":"scripts/load_index/load_index.yy",},"order":0,},
+    {"id":{"name":"draw_text_with_keybinds_alt","path":"scripts/draw_text_with_keybinds_alt/draw_text_with_keybinds_alt.yy",},"order":3,},
     {"id":{"name":"p_FireAura","path":"objects/p_FireAura/p_FireAura.yy",},"order":0,},
     {"id":{"name":"roundn","path":"scripts/roundn/roundn.yy",},"order":3,},
     {"id":{"name":"sKeiraAttackSlideRecover","path":"sprites/sKeiraAttackSlideRecover/sKeiraAttackSlideRecover.yy",},"order":8,},

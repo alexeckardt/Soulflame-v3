@@ -26,6 +26,15 @@ function keybind_get_keyboard_string_from_string(keybindStr) {
 			return Controller.inventoryLeftPageKey;
 		case "uiRightPage":
 			return Controller.inventoryRightPageKey;
+		case "uiUp":
+			return Controller.upKey;
+		case "uiDown":
+			return Controller.downKey;
+			
+		case "continue":
+			return Controller.uiSelectKey;
+		case "back":
+			return Controller.combatKey;
 			
 	}
 
