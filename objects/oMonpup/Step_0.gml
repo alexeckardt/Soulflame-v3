@@ -47,6 +47,7 @@ if (STATE == state.base) {
 
 	//Hunt Bunfets
 	myGrav = 0.3;
+	hSpeedGoal = 0;
 
 	//Check For Detection
 	if (seesTarget) {
@@ -61,9 +62,18 @@ if (STATE == state.ready_attack) {
 
 	//Define
 	allowJumpWalls = true;
+	
+	//
+	//
+	var dToTargetX = abs(x - lastSawTargetX);
+	var gX = lastSawTargetX;
+		//Move Back if too close
+		if (dToTargetX < pounceRad*0.8) {
+			gX = lastSawTargetX - pounceRad*point_to_position(lastSawTargetX);
+		}
 
 	//Generate Path To Player
-	pathfinder_generate_path(pathFinder, [lastSawTargetX, lastSawTargetY]);
+	pathfinder_generate_path(pathFinder, [gX, lastSawTargetY]);
 
 	//Follow the Path of where I want to Go
 	var p = pathfinder_get_positon(pathFinder, pathfinderRegenerateRange);
@@ -72,7 +82,7 @@ if (STATE == state.ready_attack) {
 	
 	//Decide Walk Position
 	//If same x, follow x direction
-	var distToGoalPos = point_distance(lastSawTargetX, lastSawTargetY, x, y);
+	var distToGoalPos = point_distance(gX, lastSawTargetY, x, y);
 	var tooClose = (distToGoalPos < closeEnoughPathXRange);
 	var atCliff = (!place_meeting(pathPointX, y+16, Solid) && pathPointY < y);
 	var dirToPathPoint = sign(point_to_position(pathPointX)*2 + directionFacing);
@@ -131,15 +141,23 @@ if (STATE == state.ready_attack) {
 	
 	//
 	//Check if should attack
-	//
 	
-	if (seesTarget && abs(y - lastSawTargetY) < 16 && abs(x - lastSawTargetX) < pounceRad) {
-	
-		if (onGround) {
-			STATE = state.bounce;
-			timeUntilJump = 30;
-			inAirFromJump = false;
-			jumpingDirection = point_to_position(target.x);
+	//Punce wihtin good range but also if too close
+	var goodXrange = (dToTargetX > pounceRad*0.8 && dToTargetX < pounceRad) || dToTargetX < pounceRad*0.25;
+	if (goodXrange) {
+		if (seesTarget) {
+			//Check if Good Y
+			if (abs(y - lastSawTargetY) < 16) && (onGround) {
+				STATE = state.bounce;
+				timeUntilJump = 30;
+				inAirFromJump = false;
+				jumpingDirection = point_to_position(target.x);
+				directionFacing = jumpingDirection;
+			}
+			
+		//Not See; Just Lose Interest
+		} else {
+			STATE = state.base;	
 		}
 	}
 	
@@ -156,6 +174,7 @@ if (STATE == state.bounce) {
 		
 		//Stop
 		hSpeedGoal = 0;
+		directionFacing = jumpingDirection;
 		
 		//Timer
 		timeUntilJump--;
@@ -170,9 +189,10 @@ if (STATE == state.bounce) {
 		if (!inAirFromJump) {
 			
 			//Bounce
-			var d = min(abs(x - target.x), pounceRad*3) * jumpingDirection;
+			directionFacing = jumpingDirection;
+			var d = min(abs(x - target.x)+12, pounceRad*3) * jumpingDirection;
 			
-			myGrav = 0.4;
+			myGrav = 0.2;
 			vSpeed = pounceJumpSpeed;
 			var gHspeed = (-d*myGrav)/(2*vSpeed) * ((point_to_position(target.x) != jumpingDirection)+1);;
 			hSpeedGoal = gHspeed;
@@ -181,7 +201,6 @@ if (STATE == state.bounce) {
 			//Don't Fly
 			inAirFromJump = true;
 			onGround = false;
-			
 			
 		} else {
 		

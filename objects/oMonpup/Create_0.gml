@@ -30,7 +30,7 @@ pounceX = 0;
 pounceRad = 128;
 maxJumpTiles = 6;
 
-pounceJumpSpeed = -8.5;
+pounceJumpSpeed = -6.5;
 
 myDamage = noone
 
