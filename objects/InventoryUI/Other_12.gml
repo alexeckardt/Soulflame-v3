@@ -99,8 +99,8 @@ switch (subpage) {
 	var sel = flowerCollectedHighlighting;
 	var addToFlameY = drawCollectedY - flowerCollectedListSpriteSep*2;
 	
-	draw_text_colour(centreX, addToFlameY,		 flowerStringAddtoFlame, c, c, c, c, 1);
-	draw_text_colour(centreX, addToFlameY+lineH, flowerStringCancelSelection, c, c, c, c, 1);
+	draw_text_with_keybinds_alt(centreX, floor(addToFlameY),		flowerStringAddMutator, c, 1);
+	draw_text_with_keybinds_alt(centreX, floor(addToFlameY+lineH),	flowerStringCancelSelection, c, 1);
 	
 	//
 	//Decide where to put the mutators
@@ -110,7 +110,7 @@ switch (subpage) {
 	
 	//
 	//Draw Header
-	var str = flowerStringAddMutator;
+	var str = flowerStringAddMutatorHeader;
 	var c = highlightedColour;
 	draw_set_valign(fa_bottom);
 	draw_set_halign(fa_center);

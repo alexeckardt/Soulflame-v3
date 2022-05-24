@@ -117,8 +117,13 @@ if (page == 2) {
 
 		//Switch to see my effects
 		if (Controller.uiUp) {
-			switchedLists = !flowerHoveringOverEffects;
-			flowerHoveringOverEffects = true;	
+			
+			//Make sure there are effects
+			var c = ds_list_size(Player.effectList);
+			if (c > 0) {
+				switchedLists = !flowerHoveringOverEffects;
+				flowerHoveringOverEffects = true;	
+			}
 			
 		} else
 		if (Controller.uiDown) {

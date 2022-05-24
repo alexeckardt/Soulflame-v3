@@ -112,7 +112,7 @@ flowerStringCancelSelection = lang_get_text("inventory.flower.cancel_selection")
 flowerStringAddMutator = lang_get_text("inventory.flower.add_mutator");
 flowerStringNoEffects = lang_get_text("inventory.flower.no_active_effects");
 flowerStringAlreadyHaveEffect = lang_get_text("inventory.flower.effect_already_have");
-flowerStringAddMutator = lang_get_text("inventory.flower.add_mutators");
+flowerStringAddMutatorHeader = lang_get_text("inventory.flower.add_mutators");
 
 alreadyHasEffectHovering = false;
 
