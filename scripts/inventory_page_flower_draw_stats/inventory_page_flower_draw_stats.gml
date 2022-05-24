@@ -32,27 +32,27 @@ function inventory_page_flower_draw_stats(i, topLeftX, topLeftY, drawLeftSide = 
 
 	//
 	//Effect
-	var effectW = string_width(flowerStringFlowerInfoEffect);
+	var effectW = string_width(flowerStringFlowerInfoEffect + " ");
 	var effectString = flowerEffectEffect;
 	var effectCol = unhighlightedColour;
 		if(mutatorSelected == 1) {
-			effectString = string_replace(effectString, "!", "!!");
+			effectString = string_replace_all(effectString, "!", "!!");
 			effectCol = c_red;
 		}
-	effectString = string_replace(effectString, "!", "I");
+	effectString = string_replace_all(effectString, "!", "I");
 	draw_text_colour(topLeftX + effectW, topLeftY+lineHeight*0, effectString,
 							effectCol, effectCol, effectCol, effectCol, 1);
 	
 	//
 	//Location
-	var locationW = string_width(flowerStringFlowerInfoLocation);
+	var locationW = string_width(flowerStringFlowerInfoLocation + " ");
 	effectCol = unhighlightedColour;
 	draw_text_colour(topLeftX + locationW, topLeftY+lineHeight*1, flowerEffectLocation,
 							effectCol, effectCol, effectCol, effectCol, 1);
 	
 	//
 	//Persistence
-	var persistenceW = string_width(flowerStringFlowerInfoPersistence);
+	var persistenceW = string_width(flowerStringFlowerInfoPersistence + " ");
 	var persistString = string(flowerEffectPersistence);
 	var effectCol = unhighlightedColour;
 		if(mutatorSelected == 2) {

@@ -12,8 +12,8 @@ var bottomDrawing = h - drawEdgeVBuffer;
 var pageDrawW = rightDrawing - leftDrawing;
 var pageDrawH = bottomDrawing - topDrawing;
 
-var centreX = leftDrawing + pageDrawW div 2
-var centreY = topDrawing + pageDrawH div 2;
+var centreX = floor(leftDrawing + pageDrawW div 2)
+var centreY = floor(topDrawing + pageDrawH div 2);
 var lineH = string_height("|") + 1;
 
 //
@@ -33,7 +33,7 @@ switch (subpage) {
 	
 	//Draw Selected Info
 	var sel = flowerCollectedHighlighting;
-	var addToFlameY = drawCollectedY - flowerCollectedListSpriteSep*1.5;
+	var addToFlameY = drawCollectedY - floor(flowerCollectedListSpriteSep*1.5);
 	if (sel == -1) {
 	
 		//No Info
@@ -42,7 +42,7 @@ switch (subpage) {
 		var c = darkErrorColour;
 		
 		var str = flowerStringNoFlower;
-		draw_text_colour(centreX, addToFlameY, str, c, c, c, c, 1);
+		draw_text_colour(centreX, floor(addToFlameY), str, c, c, c, c, 1);
 		
 	} else {
 		
@@ -64,11 +64,11 @@ switch (subpage) {
 			c = darkErrorColour;}
 			
 		
-		draw_text_colour(centreX, addToFlameY, str, c, c, c, c, 1);
+		draw_text_colour(centreX, floor(addToFlameY), str, c, c, c, c, 1);
 		
 		//
 		//Draw the Selected Info	
-		inventory_page_flower_draw_stats(sel, centreX, centreY - lineH*3);
+		inventory_page_flower_draw_stats(sel, centreX, centreY - floor(lineH*3));
 		//
 		
 	}

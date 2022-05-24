@@ -174,10 +174,10 @@ if (page == 2) {
 		//Temp
 		var tempStruct = flower_create_effect_struct(flowerHoveringId, mutatorSelected);
 		
-		flowerEffectEffect = "";
-		flowerEffectLocation = "";
+		flowerEffectEffect = lang_get_text("flower." + string(flowerHoveringId) + ".effect");
+		flowerEffectLocation = lang_get_text("flower." + string(flowerHoveringId) + ".location");
 		flowerEffectPersistence = tempStruct.campfiresLeft;
-		flowerStringMutatorAdding = lang_get_text("inventory.flower.mutator_name." + string(mutatorSelected));
+		flowerStringMutatorAdding = lang_get_text("flower.mutator_name." + string(mutatorSelected));
 		
 		//Remove Created
 		delete tempStruct;	
