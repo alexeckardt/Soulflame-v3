@@ -6,7 +6,7 @@
 function keira_decide_attack_state() {
 
 	//Check
-	var aerial = timeOffGround > 3;
+	var aerial = timeOffGround > 2;
 
 	//Direction Checked
 	var vstickDeadzone = 0.2;
@@ -113,6 +113,10 @@ function keira_decide_attack_state() {
 		//End horizontal
 		}			
 			
+			//
+			//NO ELSE (otherwise it wouldn't override)
+			//
+			
 		
 		//Up
 		if (upAttack) 
@@ -123,7 +127,8 @@ function keira_decide_attack_state() {
 								aerial, vTilt);
 			
 		}
-		else
+
+
 		//Down
 		if (downAttack) {
 			
@@ -133,6 +138,13 @@ function keira_decide_attack_state() {
 								
 			if (running && onGround && jumpTicks <= 0) {
 				testAttack = state.combat_slide;		
+			}
+			
+			//Update
+			if (testAttack == state.combat_down_tilt) {
+				if (!onGround) {
+					testAttack = state.combat_air_down_tilt;
+				}
 			}
 								
 		}

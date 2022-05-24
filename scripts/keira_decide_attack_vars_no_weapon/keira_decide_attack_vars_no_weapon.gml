@@ -192,9 +192,12 @@ function keira_decide_attack_vars_no_weapon(_nextState, damageStruct) {
 			adjustDirectionFacingPreDamage = true;
 			allowControlOverIndex = 1;
 		
-			var w = 30;
+			var w = 25;
+			var howfarbelow = 50;
+			var yy = -8;
+			
 			damageStruct.damage = bD*1.2;
-			keira_damage_update_struct(damageStruct,-w/2, 8, w, 35, 4, 0, 1, true);
+			keira_damage_update_struct(damageStruct,-w/2, yy, w, howfarbelow-yy, 4, 0, 1, true);
 			
 			//Stay In Air Longer
 			forceHalfGravity = true;
