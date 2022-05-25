@@ -14,6 +14,7 @@ function point_light_create(xx, yy, spd, moveDir, moveDirVariance, life, startCo
 	light.life = life;
 	light.startingLife = life;
 	
+	light.colour = startCol;
 	light.startCol = startCol;
 	light.endCol = endCol;
 	

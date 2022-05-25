@@ -4,7 +4,7 @@
 //
 function essence_get_colour_emission(_essenceVal) {
 	
-	if (_essenceVal == -1)	return bgr($52238f);
+	if (_essenceVal == -1)	return bgr($bb2eff);
 	if (_essenceVal == 0)	return bgr($b4babe);
 	if (_essenceVal == 1)	return bgr($b58d46);
 

@@ -6,7 +6,7 @@ function PointLight(_x, _y) constructor {
 
 	//Light Vars
 	active = true;
-	colour = c_white;
+	colour = c_red; //no colour to start
 	size = 8;
 	str = 0.3;
 	fov = 360;

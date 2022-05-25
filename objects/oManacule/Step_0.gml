@@ -115,8 +115,9 @@ if (emitOne) {
 
 	var newspd = random_range(0.25, 0.8);
 	var life = irandom_range(0.5/newspd, 1.2/newspd)*room_speed;
-			
-	var part = point_light_create(x, y, newspd, 180, 180, life, colour, 0);
+	var c = essence_get_colour_emission(align);	
+	
+	var part = point_light_create(x, y, newspd, 180, 180, life, c, 0);
 	part.doGravity = false;
 			
 	part.spdIncrease = -0.05;
