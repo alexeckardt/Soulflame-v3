@@ -83,7 +83,9 @@ if (point_distance(x, y, lastDeactivateX, lastDeactivateY) > cullCameraBuffer/2)
 	instance_activate_object(Important);
 	instance_activate_object(Solid);
 
-
+	lastDeactivateX = x;
+	lastDeactivateY = y;
+	
 }
 
 //

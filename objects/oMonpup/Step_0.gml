@@ -66,13 +66,15 @@ if (STATE == state.ready_attack) {
 	//
 	var dToTargetX = abs(x - lastSawTargetX);
 	var gX = lastSawTargetX;
+	var gY = lastSawTargetY;
 		//Move Back if too close
 		if (dToTargetX < pounceRad*0.8) {
 			gX = lastSawTargetX - pounceRad*point_to_position(lastSawTargetX);
+			gY = y;
 		}
 
 	//Generate Path To Player
-	pathfinder_generate_path(pathFinder, [gX, lastSawTargetY]);
+	pathfinder_generate_path(pathFinder, [gX, gY]);
 
 	//Follow the Path of where I want to Go
 	var p = pathfinder_get_positon(pathFinder, pathfinderRegenerateRange);
