@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "soulflameSpriteBased",
-    "path": "soulflameSpriteBased.yyp",
+    "name": "Debug",
+    "path": "folders/Sprites/Debug.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sprite128",

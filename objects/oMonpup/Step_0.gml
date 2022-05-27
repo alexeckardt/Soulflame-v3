@@ -173,6 +173,7 @@ if (STATE == state.bounce) {
 	//
 	if (timeUntilJump > 0) {
 		
+
 		//Stop
 		hSpeedGoal = 0;
 		directionFacing = jumpingDirection;
@@ -187,32 +188,38 @@ if (STATE == state.bounce) {
 	
 		//
 		//Jump V Speed
-		if (!inAirFromJump) {
-			
-			//Bounce
-			directionFacing = jumpingDirection;
-			var d = min(abs(x - target.x)+12, pounceRad*3) * jumpingDirection;
-			
-			myGrav = 0.2;
-			vSpeed = pounceJumpSpeed;
-			var gHspeed = (-d*myGrav)/(2*vSpeed) * ((point_to_position(target.x) != jumpingDirection)+1);;
-			hSpeedGoal = gHspeed;
-			controlHSpeed = gHspeed;
-			
-			//Don't Fly
-			inAirFromJump = true;
-			onGround = false;
-			
-		} else {
+		if (place_meeting(x, y+3, Solid)) {
 		
-			//In Air
-			if (onGround) {
-				STATE = state.land;
-				landingTicksLeft = landingTicks*3;
-				myGrav = 0.3;
+			if (!inAirFromJump) {
+				
+				//Bounce
+				directionFacing = jumpingDirection;
+				var d = min(abs(x - target.x)+12, pounceRad*3) * jumpingDirection;
+			
+				myGrav = 0.2;
+				vSpeed = pounceJumpSpeed;
+				var gHspeed = (-d*myGrav)/(2*vSpeed) * ((point_to_position(target.x) != jumpingDirection)+1);;
+				hSpeedGoal = gHspeed;
+				controlHSpeed = gHspeed;
+			
+				//Don't Fly
+				inAirFromJump = true;
+				onGround = false;
+				
+			} else {
+		
+				//In Air
+				if (onGround) {
+					STATE = state.land;
+					landingTicksLeft = landingTicks*3;
+					myGrav = 0.3;
+				}
+			
 			}
 			
 		}
+			
+		
 	}
 		
 		

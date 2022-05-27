@@ -81,8 +81,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "soulflameSpriteBased",
-    "path": "soulflameSpriteBased.yyp",
+    "name": "Story",
+    "path": "folders/Sprites/Story.yy",
   },
   "resourceVersion": "1.0",
   "name": "sWisp",
