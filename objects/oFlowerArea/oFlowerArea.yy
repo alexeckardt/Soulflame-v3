@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Important",
+    "path": "objects/Important/Important.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
