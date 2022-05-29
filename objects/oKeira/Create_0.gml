@@ -27,6 +27,13 @@ showReadyAfterAttackFor = showReadyAfterAttackForBase;
 SpriteMap = ds_map_create();
 keira_update_movement_sprites();
 
+//Correct Room
+roomTransitionPositioning = false;
+roomTransitionComingFromBelow = false;
+openingTransition = true;
+reachedGoodHeightRoomOpening = false;
+hasBeenInRoom = false;
+
 //Speed
 controlHSpeed = 0; //What I'm Controlling
 controlVSpeed = 0; //What I'm Controlling
@@ -213,3 +220,7 @@ scarfAmbientWindDir = 0;
 //Cutscene
 cutsceneStateSprite = sKeiraIdle;
 cutsceneStateIndexSpeed = 0.1;
+
+
+orgX = x;
+orgY = y;

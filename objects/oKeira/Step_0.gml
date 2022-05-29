@@ -9,8 +9,26 @@ squishY = lerp(squishY, 0, squishReturnSpeed*time);
 //Prelims
 var transitionPlaying = instance_nearest(x, y, oRoomTransition);
 if (transitionPlaying != noone) {
+	
 	if (transitionPlaying.freezePlayer) {
 		inControl = false;
+	}
+	
+	//Opening Transition Reccognize If I have to move to a good position
+	if (openingTransition) {
+		roomTransitionPositioning = true;
+		
+		if (y > room_height) {
+			roomTransitionComingFromBelow = true;}
+	}
+	
+} else {
+	openingTransition = false;	
+	
+	//Make Sure I've been in the room before I go through door
+	if (!hasBeenInRoom) {
+		var b = 32;
+		hasBeenInRoom = y > b && y < room_height-b;
 	}
 }
 
@@ -179,7 +197,58 @@ if (STATE == state.base && abs(controlHSpeed) >= 0.01) {
 	directionFacing = (hSpeedGoal != 0) ? sign(hSpeedGoal) : directionFacing;
 }
 
+//
+//Room Transition
+//
+if (roomTransitionPositioning) {
 
+	//Turn Off
+	inControl = false;
+
+	//If Above; No Gravity/room
+	if (y < 0) {
+		
+		//Stasis if Transition
+		if (transitionPlaying != noone) {
+			vSpeed = 0;
+			hSpeed = 0;}
+		
+	} else
+	if (roomTransitionComingFromBelow) {
+	
+		//
+		var nearestSolidXoff = 0;
+		while (!place_meeting(orgX + directionFacing*nearestSolidXoff, room_height-2, Solid) || nearestSolidXoff > room_width) nearestSolidXoff++;
+	
+		//Keep Track of (if i reach good height, Ignore that theres a wall so don't move up)
+		var wallThere = place_meeting(orgX + directionFacing*nearestSolidXoff, y, Solid);
+		var shouldGoUp = (wallThere || y > room_height);
+		if (!shouldGoUp) {
+			reachedGoodHeightRoomOpening = true;}
+		
+		//Move Up Until Platform is free
+		if (shouldGoUp) && (!reachedGoodHeightRoomOpening) {
+			
+			//Keep Momentum
+			vSpeed = -4;	
+			controlHSpeed = 0;
+			
+		} else {
+			
+			//Move Towards my goal
+			controlHSpeed = directionFacing*(nearestSolidXoff/16);	
+			
+		}
+		
+	}
+	
+	//Exit
+	if (onGround) {
+		roomTransitionPositioning = false;	
+		controlHSpeed = 0;
+	}
+
+}
 
 //Collision
 	//Update Mask

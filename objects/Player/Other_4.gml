@@ -9,16 +9,22 @@ if (!firstRoom) {
 	//Positions
 	k.x = roomStartPlayerX;
 	k.y = roomStartPlayerY;
+	k.orgX = roomStartPlayerX;
+	k.orgY = roomStartPlayerY;
 	k.directionFacing = roomStartPlayerD;
 	
 	//Make Player Start On Ground
-	var spr = oKeira.sprite_index;
-	var sprOffset = (sprite_get_bbox_bottom(spr) - sprite_get_yoffset(spr)) + 4;
-	for (var j = oKeira.y; j < room_height; j += 4) {
-		if (position_meeting(oKeira.x, j+sprOffset, Solid)) {
-			oKeira.y = j;
-			break;	
+	if (k.y > 0 && k.y < room_height) {
+		
+		var spr = oKeira.sprite_index;
+		var sprOffset = (sprite_get_bbox_bottom(spr) - sprite_get_yoffset(spr)) + 4;
+		for (var j = oKeira.y; j < room_height; j += 4) {
+			if (position_meeting(oKeira.x, j+sprOffset, Solid)) {
+				oKeira.y = j;
+				break;	
+			}
 		}
+		
 	}
 	
 	//Create Transition From Fade in

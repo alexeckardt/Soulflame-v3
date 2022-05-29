@@ -17,4 +17,4 @@ otherinfo1 = 0;
 otherinfo2 = 0;
 
 loadInstead = false;
-freezePlayer = false;
+freezePlayer = true;
