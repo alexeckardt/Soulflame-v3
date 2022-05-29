@@ -1,4 +1,4 @@
 roomTo = roomChasmShortcut;
-xTo = 1283;
-yTo = 233;
+xTo = 1408;
+yTo = 713;
 dirFacing = -1

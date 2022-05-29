@@ -1,4 +1,4 @@
-roomTo = roomChasmFallPool;
+roomTo = roomChasmPilgrimsPath;
 xTo = 32;
-yTo = 201;
+yTo = 1369;
 dirFacing = 1

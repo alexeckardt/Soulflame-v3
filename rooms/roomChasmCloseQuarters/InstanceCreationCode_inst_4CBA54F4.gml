@@ -1,4 +1,4 @@
 roomTo = roomChasmBottomRight;
-xTo = 332;
-yTo = -32;
+xTo = 32;
+yTo = 537;
 dirFacing = 1

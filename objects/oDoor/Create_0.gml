@@ -3,6 +3,6 @@
 //CC
 
 roomTo	= room;
-xTo		= oKeira.x;
-yTo		= oKeira.y;
-dirFacing = oKeira.directionFacing;
+xTo		= x;
+yTo		= y;
+dirFacing = 1;

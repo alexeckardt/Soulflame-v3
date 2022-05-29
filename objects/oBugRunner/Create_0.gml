@@ -51,3 +51,5 @@ function bug_runner_bounce() {
 	seesTarget = false;
 
 }
+
+mask_index = sBugRunnerIdle;

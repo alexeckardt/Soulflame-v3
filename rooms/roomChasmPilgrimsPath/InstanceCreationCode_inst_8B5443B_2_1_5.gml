@@ -1,4 +1,4 @@
-roomTo = roomChasmUnderHotspring;
-xTo = 1233;
-yTo = 601;
+roomTo = roomChasmRightPool;
+xTo = 1408;
+yTo = 265;
 dirFacing = -1

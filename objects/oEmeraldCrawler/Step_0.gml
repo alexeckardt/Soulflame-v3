@@ -3,6 +3,7 @@
 //Delta
 var time = Game.delta;
 var k = instance_nearest(x, y, oKeira);
+var visibleTarget = false;
 
 //Take Damage 
 enemy_take_damage();
@@ -21,7 +22,7 @@ if (STATE == state.base) {
 	inferPathTimeLeft -= time;
 	
 	//Check Target Visible
-	var visibleTarget = enemy_check_target_visible(target, sightRange, AirBlocks);
+	visibleTarget = enemy_check_target_visible(target, sightRange, PathfindVisible);
 	if (!seesTarget) {
 		
 		//Timer
@@ -53,8 +54,8 @@ if (STATE == state.base) {
 	if (inferPathTimeLeft > 0) {
 			
 		//Update Taarget Position; If not force fail path
-		if (!collision_line(x, y, target.x, target.y, AirBlocks, 1, false) 
-		&& !position_meeting(target.x, target.y, AirBlocks)) {
+		if (!collision_line(x, y, target.x, target.y, PathfindVisible, 1, false) 
+		&& !position_meeting(target.x, target.y, PathfindVisible)) {
 			lastSawTargetX = target.x;
 			lastSawTargetY = target.y;	
 		}
@@ -183,7 +184,7 @@ if (goingToOrbit) {
 	//Check If Space ahead is free
 	var xahead = x + lengthdir_x(spd*2, dirMoving);
 	var yahead = y + lengthdir_y(spd*2, dirMoving);
-	var shouldNotMoveForward = position_meeting(xahead, yahead, AirBlocks);
+	var shouldNotMoveForward = position_meeting(xahead, yahead, PathfindVisible);
 	//If Not free, modify
 	goalSpd /= 1 + shouldNotMoveForward;
 	turnSpeed += turningSpeed * 0.75 * shouldNotMoveForward

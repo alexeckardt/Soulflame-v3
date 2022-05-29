@@ -41,8 +41,10 @@ function keira_scarf_update(){
 	if (onGround) {
 		if (abs(hSpeed) > 1) {
 	
-			var upForce = (abs(hSpeed) / runSpeed / 1.5) * scarf.gravStr; //need twice run speed to be perfectly horizontal
-			keira_scarf_apply_force(upForce, 90);
+			if(instance_exists(scarf)) {
+				var upForce = (abs(hSpeed) / runSpeed / 1.5) * scarf.gravStr; //need twice run speed to be perfectly horizontal
+				keira_scarf_apply_force(upForce, 90);
+			}
 	
 		} else {
 		//Idling

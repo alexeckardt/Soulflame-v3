@@ -38,7 +38,7 @@ function command_tp(_x, _y){
 	}
 	if is_string(_y) && (string_pos("~", _y) == 1) { 
 		_y = real(string_copy(_y, 2, string_length(_y)-1)); 
-		_y = oKeira.x + _y;
+		_y = oKeira.y + _y;
 	}
 	
 	//Teleport

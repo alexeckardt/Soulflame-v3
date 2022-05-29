@@ -4,7 +4,7 @@ event_inherited();
 
 //Mutators
 hp = 6
-platinumDrop = 5
+platinumDrop = 5;
 platinumDropRange = 0.5;
 sightRange = 16*8;
 weight = 1;
@@ -27,14 +27,14 @@ idleSprite = sMonpupIdle;
 
 decidedPouncePosition = false;
 pounceX = 0;
-pounceRad = 128;
+pounceRad = 80;
 maxJumpTiles = 6;
 
 pounceJumpSpeed = -6.5;
 
 myDamage = noone
 
-runSpeed = 1.5;
+runSpeed = 2.5;
 
 //Path
 pathFinder = pathfinder_create(false);
