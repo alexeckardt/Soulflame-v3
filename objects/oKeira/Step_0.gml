@@ -192,7 +192,6 @@ if (inWater) {
 //Dir Facing
 if (STATE == state.base && abs(controlHSpeed) >= 0.01) {
 	
-
 	//Set
 	directionFacing = (hSpeedGoal != 0) ? sign(hSpeedGoal) : directionFacing;
 }
