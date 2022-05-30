@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 62,
+  "bbox_right": 67,
   "bbox_top": 0,
-  "bbox_bottom": 22,
+  "bbox_bottom": 123,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 63,
-  "height": 23,
+  "width": 68,
+  "height": 124,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"325d2faf-0974-4eb4-b3b9-6b83a2c3140f","path":"sprites/sEnvChasmRock1/sEnvChasmRock1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"325d2faf-0974-4eb4-b3b9-6b83a2c3140f","path":"sprites/sEnvChasmRock1/sEnvChasmRock1.yy",},"LayerId":{"name":"f9314856-69b8-412c-901c-244f2d7a9db1","path":"sprites/sEnvChasmRock1/sEnvChasmRock1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sEnvChasmRock1","path":"sprites/sEnvChasmRock1/sEnvChasmRock1.yy",},"resourceVersion":"1.0","name":"325d2faf-0974-4eb4-b3b9-6b83a2c3140f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"7e124954-c2e6-438c-a6b2-0fe7a486fc46","path":"sprites/sEnvPillarTallSpike/sEnvPillarTallSpike.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"7e124954-c2e6-438c-a6b2-0fe7a486fc46","path":"sprites/sEnvPillarTallSpike/sEnvPillarTallSpike.yy",},"LayerId":{"name":"9a62f63a-d308-4601-9ef4-d06e7f215129","path":"sprites/sEnvPillarTallSpike/sEnvPillarTallSpike.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sEnvPillarTallSpike","path":"sprites/sEnvPillarTallSpike/sEnvPillarTallSpike.yy",},"resourceVersion":"1.0","name":"7e124954-c2e6-438c-a6b2-0fe7a486fc46","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sEnvChasmRock1","path":"sprites/sEnvChasmRock1/sEnvChasmRock1.yy",},
+    "spriteId": {"name":"sEnvPillarTallSpike","path":"sprites/sEnvPillarTallSpike/sEnvPillarTallSpike.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"8cdda87a-35c3-4daa-9afa-1b5281b3700c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"325d2faf-0974-4eb4-b3b9-6b83a2c3140f","path":"sprites/sEnvChasmRock1/sEnvChasmRock1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"2e477781-66c4-411f-99b1-41667498b018","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7e124954-c2e6-438c-a6b2-0fe7a486fc46","path":"sprites/sEnvPillarTallSpike/sEnvPillarTallSpike.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -54,18 +54,18 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 31,
-    "yorigin": 11,
+    "xorigin": 34,
+    "yorigin": 62,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sEnvChasmRock1","path":"sprites/sEnvChasmRock1/sEnvChasmRock1.yy",},
+    "parent": {"name":"sEnvPillarTallSpike","path":"sprites/sEnvPillarTallSpike/sEnvPillarTallSpike.yy",},
     "resourceVersion": "1.4",
-    "name": "sEnvChasmRock1",
+    "name": "sEnvPillarTallSpike",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f9314856-69b8-412c-901c-244f2d7a9db1","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9a62f63a-d308-4601-9ef4-d06e7f215129","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Environment/Sprites/Chasm.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sEnvChasmRock1",
+  "name": "sEnvPillarTallSpike",
   "tags": [],
   "resourceType": "GMSprite",
 }
