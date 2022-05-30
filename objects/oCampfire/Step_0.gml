@@ -9,7 +9,7 @@ if (playerSittingHere) {
 	if (oKeira.STATE == state.situp) {
 		//Stop Sitting Here
 		playerSittingHere = false;
-			
+
 		//Save Game
 		save_game(true, false); //*Temporary*
 	}
@@ -46,6 +46,9 @@ if (playerSittingHere) {
 		
 			//Save
 			Player.lastCampfireSatAtId = campfireId;
+			
+			//Complete Instruction	
+			instruction_complete("campfire");
 		
 		}
 			
