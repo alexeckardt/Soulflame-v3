@@ -1,4 +1,4 @@
-roomTo = roomChasmBottomRight;
-xTo = 332;
+roomTo = roomChasmPilgrimCampfire;
+xTo = 101;
 yTo = -32;
-dirFacing = 1;
+dirFacing = 1

@@ -1,4 +1,4 @@
-roomTo = roomChasmUnderHotspring;
-xTo = 1233;
-yTo = 601;
-dirFacing = -1
+roomTo = roomChasmPilgrimsPath;
+xTo = 679 - 16;
+yTo = 1485 + 32;
+dirFacing = -1;

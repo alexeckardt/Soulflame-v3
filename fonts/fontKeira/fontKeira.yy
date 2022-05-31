@@ -10,7 +10,7 @@
   "bold": false,
   "italic": false,
   "charset": 0,
-  "AntiAlias": 1,
+  "AntiAlias": 0,
   "first": 0,
   "last": 0,
   "sampleText": "abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\nDefault character: ▯ (9647)",
@@ -21,7 +21,7 @@
     "path": "texturegroups/tg_Cutscenes",
   },
   "ascenderOffset": 2,
-  "ascender": 0,
+  "ascender": 7,
   "glyphs": {
     "32": {"x":2,"y":2,"w":3,"h":11,"character":32,"shift":3,"offset":0,},
     "33": {"x":64,"y":41,"w":3,"h":11,"character":33,"shift":4,"offset":0,},
@@ -118,7 +118,7 @@
     "124": {"x":52,"y":15,"w":1,"h":11,"character":124,"shift":2,"offset":0,},
     "125": {"x":47,"y":15,"w":3,"h":11,"character":125,"shift":4,"offset":0,},
     "126": {"x":114,"y":54,"w":5,"h":11,"character":126,"shift":6,"offset":0,},
-    "9647": {"x":2,"y":67,"w":6,"h":11,"character":9647,"shift":8,"offset":1,},
+    "9647": {"x":121,"y":54,"w":4,"h":11,"character":9647,"shift":8,"offset":2,},
   },
   "kerningPairs": [],
   "ranges": [
