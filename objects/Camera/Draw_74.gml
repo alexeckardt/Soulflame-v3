@@ -21,11 +21,18 @@ if (surface_exists(bkgSurf)) {
 
 
 //GAME LAYER
-display_set_gui_size(view_width, view_height);
-gpu_set_colorwriteenable(1,1,1,1);
-draw_surface_ext(lightLayerSurf, 0, 0, 1, 1, 0, c_white, 1);	
-gpu_set_colorwriteenable(1,1,1,1);
-display_set_gui_size(idealWidth*zoom, idealHeight*zoom);
+if (doBloom) {
+	shader_set(shdBloom);
+	shader_set_uniform_f(u_blursize, blurSize);
+	shader_set_uniform_f(u_intensity, bloomIntensity);
+}
+
+	display_set_gui_size(view_width, view_height);
+	gpu_set_colorwriteenable(1,1,1,1);
+	draw_surface_ext(lightLayerSurf, 0, 0, 1, 1, 0, c_white, 1);	
+	gpu_set_colorwriteenable(1,1,1,1);
+	display_set_gui_size(idealWidth*zoom, idealHeight*zoom);
+shader_reset();
 
 //anything below is above game layer
 //Draw Glowing 

@@ -46,6 +46,7 @@ function menu_pages_create(){
 				[],
 				["frameSkips",			m_e.shift_through_indexes,	g, "frameSkips",		["option.skip0", "option.skip1", "option.skip2", "option.skip3", "option.skip4"]],
 				["fastLighting",		m_e.shift_through_indexes,	c, "fastLighting",		["option.false", "option.true"]],
+				["doBloom",				m_e.shift_through_indexes,	c, "doBloom",			["option.false", "option.true"]],
 				[],
 				["audio",				m_e.page_transfer,	"audio_page", ],
 				["debugsettings",		m_e.page_transfer,	"debug_settings_page", ],

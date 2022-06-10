@@ -132,3 +132,12 @@ water_time_uniform = shader_get_uniform(shd_WaterDistort, "time");
 
 waterDistortSurf = -1;
 waterCameraDistortOffsetScale = 0;
+
+///
+u_blursize = shader_get_uniform(shdBloom, "blurSize");
+u_intensity = shader_get_uniform(shdBloom, "intensity");
+
+blurSize = 1;
+bloomIntensity = 1;
+
+doBloom = true;
