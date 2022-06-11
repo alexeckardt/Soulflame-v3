@@ -8,6 +8,8 @@ hp = 5;
 maxHpAtFullCorrupt = 3;
 dead = false;
 
+Name = "PLAYERNAME";
+
 heartCount = 0; //The actual max health;
 
 heartList = ds_list_create();
@@ -142,6 +144,7 @@ showInteractString = false;
 roomStartPlayerX = 0;
 roomStartPlayerY = 0;
 roomStartPlayerD = 1;
+roomStartindependentDelta = false;
 firstRoom = true;
 fadeInTransitionInfo = [0,0,0,0,0,0]
  
@@ -181,11 +184,5 @@ effectList = ds_list_create();
 effectSprite = sUIFlowerEffectIcon;
 effectSpriteSep = 2 + sprite_get_width(effectSprite);
 
-var i = 0;
-repeat (flower.height) {
-	effect_add(i, 1);
-	flower_collect(i);
-	i++;
-}
 lastCampfireSatAtId = "";
 

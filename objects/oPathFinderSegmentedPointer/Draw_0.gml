@@ -31,5 +31,5 @@ if (Game.showDebugOverlay && Game.devMode) || override {
 	}
 }
 
-//draw_sprite(sWhite, 0, x, y);
+//draw_sprite(sPixel, 0, x, y);
 

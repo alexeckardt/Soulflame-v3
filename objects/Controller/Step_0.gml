@@ -176,3 +176,13 @@ if (!usingController) {
 	inventoryPageLeft = keyboard_check_pressed(ord(inventoryLeftPageKey));
 	inventoryPageRight = keyboard_check_pressed(ord(inventoryRightPageKey));
 }
+
+//
+//Simple UI Selection Movmeent
+var tempuiVerticalMove = uiDown - uiUp;
+if (tempuiVerticalMove != uiVerticalMoveLast) {
+	uiVerticalMove = tempuiVerticalMove;
+	uiVerticalMoveLast = tempuiVerticalMove;
+} else {
+	uiVerticalMove = 0;	
+}

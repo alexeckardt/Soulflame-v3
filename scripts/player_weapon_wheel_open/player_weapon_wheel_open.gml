@@ -5,7 +5,7 @@
 function player_weapon_wheel_open(){
 
 	//Must Be Closed and Nothing Else is Open
-	var allowOpen = !Game.someUIopen && !weaponUiOpen && !instance_exists(Cutscene);
+	var allowOpen = !Game.someUIopen && !weaponUiOpen && !instance_exists(Cutscene) && instance_exists(oKeira);
 	if (allowOpen) {
 
 		//Allow for Forging

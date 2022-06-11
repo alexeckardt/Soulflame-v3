@@ -1,6 +1,7 @@
 /// @description 
 
-alpha += fadeSpeed * alphaDirection * Game.delta;
+var tt = (independentDelta) ? Game.independentDelta : Game.delta;
+alpha += fadeSpeed * alphaDirection * tt;
 
 //
 if (alphaDirection == 1 && alpha > transitionAlphaReq) {
@@ -32,6 +33,9 @@ if (alphaDirection == 1 && alpha > transitionAlphaReq) {
 			nextPD = Player.savePointD;
 
 			draw_texture_flush();
+			
+			//Make Sure
+			paused = false;
 	
 		} else {
 		
@@ -44,6 +48,7 @@ if (alphaDirection == 1 && alpha > transitionAlphaReq) {
 		Player.roomStartPlayerX = nextPX;
 		Player.roomStartPlayerY = nextPY;
 		Player.roomStartPlayerD = nextPD;
+		Player.roomStartindependentDelta = independentDelta;
 		
 			
 		//

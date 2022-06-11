@@ -2,7 +2,7 @@
 
 var c = Controller.id;
 
-if (c.pausePressed) {
+if (c.pausePressed && room != roomTitle) {
 	
 	if (!(instance_exists(InventoryUI) && !paused)) {
 	

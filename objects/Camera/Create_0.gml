@@ -137,7 +137,7 @@ waterCameraDistortOffsetScale = 0;
 u_blursize = shader_get_uniform(shdBloom, "blurSize");
 u_intensity = shader_get_uniform(shdBloom, "intensity");
 
-blurSize = 1;
-bloomIntensity = 1;
+blurSize = 0.001;
+bloomIntensity = 0.2;
 
 doBloom = true;

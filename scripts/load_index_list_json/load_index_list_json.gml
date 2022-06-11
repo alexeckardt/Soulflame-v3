@@ -12,6 +12,8 @@ function load_index_list_json(keyConstant, objId, save_data) {
 		var arrayFromJson = json_parse(loadedString);
 		var count = array_length(arrayFromJson);
 		
+		ds_list_clear(myList);
+		
 		for (var i = 0; i < count; i++) {	
 			ds_list_add(myList,arrayFromJson[i]);
 		}

@@ -67,7 +67,7 @@ surface_set_target(invenSurf);
 			highlightedColour, highlightedColour, highlightedColour, highlightedColour, 1);
 
 	//
-	//	Draw Keybinds to show how to transition left or right through pages
+	//	Draw Controller to show how to transition left or right through pages
 	//
 
 	var buff = 15;

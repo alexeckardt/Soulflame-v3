@@ -4,6 +4,7 @@ var keira = instance_nearest(x, y, oKeira);
 //Exit, No More Draw
 if (Game.paused) exit;
 if (instance_exists(InventoryUI)) exit;
+if (room == roomTitle) exit;
 
 //Set Scale
 var guiW = Camera.view_width / uiScale;

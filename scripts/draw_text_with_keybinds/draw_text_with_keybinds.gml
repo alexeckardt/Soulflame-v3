@@ -31,7 +31,7 @@ function draw_text_with_keybinds(_x, _y, _str, _infoList, _colour, _a) {
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	
-	//Draw The Keybinds
+	//Draw The Controller
 	var c = ds_list_size(_infoList);
 	for (var i = 0; i < c; i++) {
 	

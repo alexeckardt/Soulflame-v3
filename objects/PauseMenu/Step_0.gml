@@ -26,8 +26,8 @@ var pageList = page[1];
 	//Input
 	if (my != 0 && mx == 0) {
 			
-		vInputTime -= Game.indepedentDelta;
-		vScrollResetTime -=  Game.indepedentDelta
+		vInputTime -= Game.independentDelta;
+		vScrollResetTime -=  Game.independentDelta
 		
 		//Scroll Slow then Fast
 		var ticksUntilIncreaseOnHold = 3;
@@ -91,7 +91,7 @@ var pageList = page[1];
 	}
 	
 	//Scroll
-	scrollYOffset = lerp(scrollYOffset, scrollYGoal, 0.1*Game.indepedentDelta);
+	scrollYOffset = lerp(scrollYOffset, scrollYGoal, 0.1*Game.independentDelta);
 	
 	
 //Interacting
@@ -220,8 +220,8 @@ if (Controller.uiBackPressed) {
 				//Input
 				if (mx != 0 && my == 0) {
 			
-					hInputTime -= Game.indepedentDelta;
-					hScrollResetTime -=  Game.indepedentDelta;
+					hInputTime -= Game.independentDelta;
+					hScrollResetTime -=  Game.independentDelta;
 		
 					//Scroll Slow then Fast
 					var ticksUntilIncreaseOnHold = 1;
@@ -265,4 +265,4 @@ if (Controller.uiBackPressed) {
 	
 //Shake
 shakeOffset = cos((current_time-shakeAtTime) / shakePeriod) * shakeAmplitude * 2;
-shakeAmplitude = lerp(shakeAmplitude, 0, 0.05*Game.indepedentDelta);
+shakeAmplitude = lerp(shakeAmplitude, 0, 0.05*Game.independentDelta);

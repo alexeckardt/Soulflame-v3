@@ -13,6 +13,11 @@ commandInputObj = noone;
 
 iconPage = 0;
 
+uiVerticalMove = 0;
+uiVerticalMoveLast = 0;
+uiHorizontalMove = 0;
+uiHorizontalMoveLast = 0;
+
 function reset_keybind_vars() {
 
 	horizontalStick = 0;

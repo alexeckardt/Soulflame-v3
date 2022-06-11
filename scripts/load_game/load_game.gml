@@ -9,7 +9,7 @@ function load_game(saveFileName = undefined, startTransition = true) {
 	Game.saveSlotName = string_replace(save_file_name, ".sav", "");
 	
 	//Read File
-	var file = file_text_open_read(working_directory + save_file_name);
+	var file = file_text_open_read(game_save_id + save_file_name);
 	var save_string = file_text_read_string(file);
 		file_text_close(file);	
 
@@ -24,6 +24,8 @@ function load_game(saveFileName = undefined, startTransition = true) {
 	var date_saved		= global_save_data[? "date_saved"];
 	var save_data		= json_decode(global_save_data[? "save_data"]);
 	var save_position	= json_decode(global_save_data[? "save_position"]);
+	
+	Game.timeInGame = global_save_data[? "timePlayed"];
 	
 	//var settings_data	= json_decode(global_save_data[? "settings_data"]);
 	

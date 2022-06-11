@@ -3,10 +3,10 @@
 
 //deltaGet = delta_time*delta_scale*0.000001;
 deltaRatio = delta_time / idealDelta;
-indepedentDelta = clamp(delta_time / idealDelta, minDelta, maxDelta); 
+independentDelta = clamp(delta_time / idealDelta, minDelta, maxDelta); 
 
 
-if (indepedentDelta > deltatracking) {
+if (independentDelta > deltatracking) {
 	deltatracking = deltaRatio;
 	largestDelta = deltaRatio;
 } else {
@@ -25,7 +25,7 @@ event_user(1);
 //
 
 if (!paused) {
-	delta = roundn(indepedentDelta, 4);
+	delta = roundn(independentDelta, 4);
 	
 	if (delta > 10) {
 		delta = 0;
@@ -51,7 +51,7 @@ if (showDebugOverlay) {
 
 
 //Keep Track Of Time
-timeInGame += indepedentDelta;
+timeInGame += independentDelta;
 inGameTicks += delta;
 
 //Settings

@@ -18,3 +18,5 @@ otherinfo2 = 0;
 
 loadInstead = false;
 freezePlayer = true;
+
+independentDelta = false;

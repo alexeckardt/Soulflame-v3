@@ -3,6 +3,9 @@ randomize();
 
 //Save File info
 saveSlotName = "keira";
+saveExtension = ".sav";
+saveSlot = -1;
+saveFileName = saveSlotName + saveExtension;
 gameVersion = 1;
 gameSeed = irandom(100);
 
@@ -13,7 +16,7 @@ inGameTicks = 0;
 
 //Game Keep Track Of
 delta = -1; //For InGame
-indepedentDelta = -1; //Global, Always Set
+independentDelta = -1; //Global, Always Set
 delta_scale = 60;
 deltaRatio = 0;
 idealDelta = 1/delta_scale * 1000000;
