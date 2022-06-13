@@ -1,4 +1,5 @@
-room = roomShatterViewingHole
-room = roomChasmRightHotspring;
-room = roomLab;
 room = roomTitle;
+
+
+room = roomSurfaceTest;
+

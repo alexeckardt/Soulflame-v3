@@ -31,6 +31,8 @@ if (alphaDirection == 1 && alpha > transitionAlphaReq) {
 			nextPX = Player.savePointX;
 			nextPY = Player.savePointY;
 			nextPD = Player.savePointD;
+			
+			
 
 			draw_texture_flush();
 			
