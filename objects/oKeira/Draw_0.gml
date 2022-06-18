@@ -1,6 +1,6 @@
 /// @desc
 
-var z = 1
+var z = 1;
 
 var xsc = round(10 * directionFacing * (1 + squishX)) / 10;
 var ysc = round(10 * (1 + squishY)) / 10;

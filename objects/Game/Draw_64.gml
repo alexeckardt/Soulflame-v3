@@ -1,6 +1,6 @@
 /// @desc
 
-if (showDebugOverlay) {
+if (showDebugOverlay && instance_exists(Camera)) {
 	
 	draw_set_colour(c_white);
 	
