@@ -1,4 +1,4 @@
 # Soulflame v3
 
 v3 of Soulflame metriodvania.
-Currently in-development. 
+Development Currently Paused to focus on school and work.
